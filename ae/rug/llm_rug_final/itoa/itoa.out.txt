@@ -1,0 +1,180 @@
+-----------------
+src/udiv128.rs udiv128::u128_mulhi
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
+let mut p1 = 0u128; // None+u128
++udiv128::u128_mulhi(p0, p1);
++crate::udiv128::u128_mulhi(p0, p1);
++crate::udiv128::u128_mulhi(p0, p1);
+-----------------
+src/udiv128.rs udiv128::udivmod_1e19
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++udiv128::udivmod_1e19(p0);
++crate::udiv128::udivmod_1e19(p0);
++crate::udiv128::udivmod_1e19(p0);
+-----------------
+src/lib.rs private::Sealed::write
+deps:{"private::Sealed::write":{"Self":["std::marker::Copy","private::Sealed"]}}
+candidates:{"private::Sealed::write":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // <Self as private::Sealed>::Buffer
++p0.write(p1);
++private::Sealed::write(p0, p1);
++crate::private::Sealed::write(p0, p1);
++crate::private::Sealed::write(p0, p1);
+-----------------
+src/lib.rs <Buffer as std::default::Default>::default
+deps:{}
+candidates:{}
++<Buffer as std::default::Default>::default();
++crate::<Buffer as std::default::Default>::default();
++<Buffer>::default();
+-----------------
+src/lib.rs <Buffer as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Buffer
++p0.clone();
++<Buffer as std::clone::Clone>::clone(p0);
++crate::<Buffer as std::clone::Clone>::clone(p0);
++<Buffer>::clone(p0);
+-----------------
+src/lib.rs Buffer::new
+deps:{}
+candidates:{}
++Buffer::new();
++crate::Buffer::new();
++<Buffer>::new();
+-----------------
+src/lib.rs Buffer::format
+deps:{"Buffer::format":{"I":["std::marker::Sized","Integer"]}}
+candidates:{"Buffer::format":{"I":[]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Buffer
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.format(p1);
++Buffer::format(p0, p1);
++crate::Buffer::format(p0, p1);
++<Buffer>::format(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for i8>::write
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for i8>::write(p0, p1);
++crate::<impl private::Sealed for i8>::write(p0, p1);
++<i8>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for u8>::write
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for u8>::write(p0, p1);
++crate::<impl private::Sealed for u8>::write(p0, p1);
++<u8>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for i16>::write
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for i16>::write(p0, p1);
++crate::<impl private::Sealed for i16>::write(p0, p1);
++<i16>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for u16>::write
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for u16>::write(p0, p1);
++crate::<impl private::Sealed for u16>::write(p0, p1);
++<u16>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for i32>::write
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for i32>::write(p0, p1);
++crate::<impl private::Sealed for i32>::write(p0, p1);
++<i32>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for u32>::write
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for u32>::write(p0, p1);
++crate::<impl private::Sealed for u32>::write(p0, p1);
++<u32>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for i64>::write
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for i64>::write(p0, p1);
++crate::<impl private::Sealed for i64>::write(p0, p1);
++<i64>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for u64>::write
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for u64>::write(p0, p1);
++crate::<impl private::Sealed for u64>::write(p0, p1);
++<u64>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for isize>::write
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for isize>::write(p0, p1);
++crate::<impl private::Sealed for isize>::write(p0, p1);
++<isize>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for usize>::write
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for usize>::write(p0, p1);
++crate::<impl private::Sealed for usize>::write(p0, p1);
++<usize>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for i128>::write
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for i128>::write(p0, p1);
++crate::<impl private::Sealed for i128>::write(p0, p1);
++<i128>::write(p0, p1);
+-----------------
+src/lib.rs <impl private::Sealed for u128>::write
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::mem::MaybeUninit<u8>; _]
++p0.write(p1);
++<impl private::Sealed for u128>::write(p0, p1);
++crate::<impl private::Sealed for u128>::write(p0, p1);
++<u128>::write(p0, p1);

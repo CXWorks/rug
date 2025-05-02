@@ -1,0 +1,1026 @@
+-----------------
+src/display.rs display::pad
+deps:{"display::pad":{"impl FnOnce(&mut fmt::Formatter) -> fmt::Result":["std::marker::Sized","std::ops::FnOnce"],"impl FnOnce() -> usize":["std::marker::Sized","std::ops::FnOnce"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{}}
+candidates:{"display::pad":{"impl FnOnce(&mut fmt::Formatter) -> fmt::Result":["core::str::LinesAnyMap","core::str::IsWhitespace","core::str::IsNotEmpty","core::str::CharEscapeDebugContinue","core::str::UnsafeBytesToStr","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::IsAsciiWhitespace","core::slice::ascii::EscapeByte","std::panic::AssertUnwindSafe<F>","std::boxed::Box<F, A>","core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::CharEscapeDefault","std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>"],"impl FnOnce() -> usize":["core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","std::panic::AssertUnwindSafe<F>","core::str::LinesAnyMap","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::str::IsWhitespace","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::CharEscapeDefault","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::str::BytesIsNotEmpty","core::slice::ascii::EscapeByte","std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>","core::str::UnsafeBytesToStr","std::boxed::Box<F, A>","core::str::IsNotEmpty","core::str::IsAsciiWhitespace","core::str::CharEscapeDebugContinue"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
+let mut p1 = MaybeUninit::uninit().assume_init(); // impl FnOnce(&mut fmt::Formatter) -> fmt::Result
+let mut p2 = MaybeUninit::uninit().assume_init(); // impl FnOnce() -> usize
++display::pad(p0, p1, p2);
++crate::display::pad(p0, p1, p2);
++crate::display::pad(p0, p1, p2);
+-----------------
+src/display.rs display::digits
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++display::digits(p0);
++crate::display::digits(p0);
++crate::display::digits(p0);
+-----------------
+src/eval.rs eval::matches_req
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_req(p0, p1);
++crate::eval::matches_req(p0, p1);
++crate::eval::matches_req(p0, p1);
+-----------------
+src/eval.rs eval::matches_comparator
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_comparator(p0, p1);
++crate::eval::matches_comparator(p0, p1);
++crate::eval::matches_comparator(p0, p1);
+-----------------
+src/eval.rs eval::matches_impl
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_impl(p0, p1);
++crate::eval::matches_impl(p0, p1);
++crate::eval::matches_impl(p0, p1);
+-----------------
+src/eval.rs eval::matches_exact
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_exact(p0, p1);
++crate::eval::matches_exact(p0, p1);
++crate::eval::matches_exact(p0, p1);
+-----------------
+src/eval.rs eval::matches_greater
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_greater(p0, p1);
++crate::eval::matches_greater(p0, p1);
++crate::eval::matches_greater(p0, p1);
+-----------------
+src/eval.rs eval::matches_less
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_less(p0, p1);
++crate::eval::matches_less(p0, p1);
++crate::eval::matches_less(p0, p1);
+-----------------
+src/eval.rs eval::matches_tilde
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_tilde(p0, p1);
++crate::eval::matches_tilde(p0, p1);
++crate::eval::matches_tilde(p0, p1);
+-----------------
+src/eval.rs eval::matches_caret
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::matches_caret(p0, p1);
++crate::eval::matches_caret(p0, p1);
++crate::eval::matches_caret(p0, p1);
+-----------------
+src/eval.rs eval::pre_is_compatible
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++eval::pre_is_compatible(p0, p1);
++crate::eval::pre_is_compatible(p0, p1);
++crate::eval::pre_is_compatible(p0, p1);
+-----------------
+src/identifier.rs identifier::ptr_to_repr
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+*mut u8
++identifier::ptr_to_repr(p0);
++crate::identifier::ptr_to_repr(p0);
++crate::identifier::ptr_to_repr(p0);
+-----------------
+src/identifier.rs identifier::repr_to_ptr
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::ptr::NonNull<u8>
++identifier::repr_to_ptr(p0);
++crate::identifier::repr_to_ptr(p0);
++crate::identifier::repr_to_ptr(p0);
+-----------------
+src/identifier.rs identifier::repr_to_ptr_mut
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::ptr::NonNull<u8>
++identifier::repr_to_ptr_mut(p0);
++crate::identifier::repr_to_ptr_mut(p0);
++crate::identifier::repr_to_ptr_mut(p0);
+-----------------
+src/identifier.rs identifier::inline_len
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++identifier::inline_len(p0);
++crate::identifier::inline_len(p0);
++crate::identifier::inline_len(p0);
+-----------------
+src/identifier.rs identifier::inline_as_str
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++identifier::inline_as_str(p0);
++crate::identifier::inline_as_str(p0);
++crate::identifier::inline_as_str(p0);
+-----------------
+src/identifier.rs identifier::decode_len
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+*const u8
++identifier::decode_len(p0);
++crate::identifier::decode_len(p0);
++crate::identifier::decode_len(p0);
+-----------------
+src/identifier.rs identifier::decode_len::decode_len_cold
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+*const u8
++identifier::decode_len::decode_len_cold(p0);
++crate::identifier::decode_len::decode_len_cold(p0);
++crate::identifier::decode_len::decode_len_cold(p0);
+-----------------
+src/identifier.rs identifier::ptr_as_str
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // std::ptr::NonNull<u8>
++identifier::ptr_as_str(p0);
++crate::identifier::ptr_as_str(p0);
++crate::identifier::ptr_as_str(p0);
+-----------------
+src/identifier.rs identifier::bytes_for_varint
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::num::NonZeroUsize
++identifier::bytes_for_varint(p0);
++crate::identifier::bytes_for_varint(p0);
++crate::identifier::bytes_for_varint(p0);
+-----------------
+src/parse.rs parse::numeric_identifier
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // error::Position
++parse::numeric_identifier(&p0, p1);
++crate::parse::numeric_identifier(&p0, p1);
++crate::parse::numeric_identifier(&p0, p1);
+-----------------
+src/parse.rs parse::wildcard
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::wildcard(&p0);
++crate::parse::wildcard(&p0);
++crate::parse::wildcard(&p0);
+-----------------
+src/parse.rs parse::dot
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // error::Position
++parse::dot(&p0, p1);
++crate::parse::dot(&p0, p1);
++crate::parse::dot(&p0, p1);
+-----------------
+src/parse.rs parse::prerelease_identifier
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::prerelease_identifier(&p0);
++crate::parse::prerelease_identifier(&p0);
++crate::parse::prerelease_identifier(&p0);
+-----------------
+src/parse.rs parse::build_identifier
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::build_identifier(&p0);
++crate::parse::build_identifier(&p0);
++crate::parse::build_identifier(&p0);
+-----------------
+src/parse.rs parse::identifier
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // error::Position
++parse::identifier(&p0, p1);
++crate::parse::identifier(&p0, p1);
++crate::parse::identifier(&p0, p1);
+-----------------
+src/parse.rs parse::op
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::op(&p0);
++crate::parse::op(&p0);
++crate::parse::op(&p0);
+-----------------
+src/parse.rs parse::comparator
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::comparator(&p0);
++crate::parse::comparator(&p0);
++crate::parse::comparator(&p0);
+-----------------
+src/parse.rs parse::version_req
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<Comparator>
+let mut p2 = 0usize; // None+usize
++parse::version_req(&p0, p1, p2);
++crate::parse::version_req(&p0, p1, p2);
++crate::parse::version_req(&p0, p1, p2);
+-----------------
+src/display.rs display::<impl std::fmt::Display for Version>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Display for Version>::fmt(p0, p1);
++crate::display::<impl std::fmt::Display for Version>::fmt(p0, p1);
++<Version>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Display for VersionReq>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Display for VersionReq>::fmt(p0, p1);
++crate::display::<impl std::fmt::Display for VersionReq>::fmt(p0, p1);
++<VersionReq>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Display for Comparator>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Display for Comparator>::fmt(p0, p1);
++crate::display::<impl std::fmt::Display for Comparator>::fmt(p0, p1);
++<Comparator>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Display for Prerelease>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Display for Prerelease>::fmt(p0, p1);
++crate::display::<impl std::fmt::Display for Prerelease>::fmt(p0, p1);
++<Prerelease>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Display for BuildMetadata>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Display for BuildMetadata>::fmt(p0, p1);
++crate::display::<impl std::fmt::Display for BuildMetadata>::fmt(p0, p1);
++<BuildMetadata>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Debug for Version>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Debug for Version>::fmt(p0, p1);
++crate::display::<impl std::fmt::Debug for Version>::fmt(p0, p1);
++<Version>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Debug for Prerelease>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Debug for Prerelease>::fmt(p0, p1);
++crate::display::<impl std::fmt::Debug for Prerelease>::fmt(p0, p1);
++<Prerelease>::fmt(p0, p1);
+-----------------
+src/display.rs display::<impl std::fmt::Debug for BuildMetadata>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++display::<impl std::fmt::Debug for BuildMetadata>::fmt(p0, p1);
++crate::display::<impl std::fmt::Debug for BuildMetadata>::fmt(p0, p1);
++<BuildMetadata>::fmt(p0, p1);
+-----------------
+src/error.rs <error::Position as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Position
++p0.clone();
++<error::Position as std::clone::Clone>::clone(p0);
++crate::<error::Position as std::clone::Clone>::clone(p0);
++<error::Position>::clone(p0);
+-----------------
+src/error.rs <error::Position as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Position
++p0.assert_receiver_is_total_eq();
++<error::Position as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<error::Position as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<error::Position>::assert_receiver_is_total_eq(p0);
+-----------------
+src/error.rs <error::Position as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Position
+let mut p1 = & MaybeUninit::uninit().assume_init(); // error::Position
++p0.eq(p1);
++<error::Position as std::cmp::PartialEq>::eq(p0, p1);
++crate::<error::Position as std::cmp::PartialEq>::eq(p0, p1);
++<error::Position>::eq(p0, p1);
+-----------------
+src/error.rs error::<impl std::fmt::Display for parse::Error>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++error::<impl std::fmt::Display for parse::Error>::fmt(p0, p1);
++crate::error::<impl std::fmt::Display for parse::Error>::fmt(p0, p1);
++<parse::Error>::fmt(p0, p1);
+-----------------
+src/error.rs <error::Position as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Position
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<error::Position as std::fmt::Display>::fmt(p0, p1);
++crate::<error::Position as std::fmt::Display>::fmt(p0, p1);
++<error::Position>::fmt(p0, p1);
+-----------------
+src/error.rs error::<impl std::fmt::Debug for parse::Error>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++error::<impl std::fmt::Debug for parse::Error>::fmt(p0, p1);
++crate::error::<impl std::fmt::Debug for parse::Error>::fmt(p0, p1);
++<parse::Error>::fmt(p0, p1);
+-----------------
+src/error.rs <error::QuotedChar as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::QuotedChar
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<error::QuotedChar as std::fmt::Display>::fmt(p0, p1);
++crate::<error::QuotedChar as std::fmt::Display>::fmt(p0, p1);
++<error::QuotedChar>::fmt(p0, p1);
+-----------------
+src/identifier.rs identifier::Identifier::empty
+deps:{}
+candidates:{}
++identifier::Identifier::empty();
++crate::identifier::Identifier::empty();
++<identifier::Identifier>::empty();
+-----------------
+src/identifier.rs identifier::Identifier::new_unchecked
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++identifier::Identifier::new_unchecked(&p0);
++crate::identifier::Identifier::new_unchecked(&p0);
++<identifier::Identifier>::new_unchecked(&p0);
+-----------------
+src/identifier.rs identifier::Identifier::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.is_empty();
++identifier::Identifier::is_empty(p0);
++crate::identifier::Identifier::is_empty(p0);
++<identifier::Identifier>::is_empty(p0);
+-----------------
+src/identifier.rs identifier::Identifier::is_inline
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.is_inline();
++identifier::Identifier::is_inline(p0);
++crate::identifier::Identifier::is_inline(p0);
++<identifier::Identifier>::is_inline(p0);
+-----------------
+src/identifier.rs identifier::Identifier::is_empty_or_inline
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.is_empty_or_inline();
++identifier::Identifier::is_empty_or_inline(p0);
++crate::identifier::Identifier::is_empty_or_inline(p0);
++<identifier::Identifier>::is_empty_or_inline(p0);
+-----------------
+src/identifier.rs identifier::Identifier::as_str
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.as_str();
++identifier::Identifier::as_str(p0);
++crate::identifier::Identifier::as_str(p0);
++<identifier::Identifier>::as_str(p0);
+-----------------
+src/identifier.rs <identifier::Identifier as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.clone();
++<identifier::Identifier as std::clone::Clone>::clone(p0);
++crate::<identifier::Identifier as std::clone::Clone>::clone(p0);
++<identifier::Identifier>::clone(p0);
+-----------------
+src/identifier.rs <identifier::Identifier as std::ops::Drop>::drop
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.drop();
++<identifier::Identifier as std::ops::Drop>::drop(p0);
++crate::<identifier::Identifier as std::ops::Drop>::drop(p0);
++<identifier::Identifier>::drop(p0);
+-----------------
+src/identifier.rs <identifier::Identifier as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
++p0.eq(p1);
++<identifier::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++crate::<identifier::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++<identifier::Identifier>::eq(p0, p1);
+-----------------
+src/impls.rs impls::<impl std::default::Default for identifier::Identifier>::default
+deps:{}
+candidates:{}
++impls::<impl std::default::Default for identifier::Identifier>::default();
++crate::impls::<impl std::default::Default for identifier::Identifier>::default();
++<identifier::Identifier>::default();
+-----------------
+src/impls.rs impls::<impl std::hash::Hash for identifier::Identifier>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"impls::<impl std::hash::Hash for identifier::Identifier>::hash":{"H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"impls::<impl std::hash::Hash for identifier::Identifier>::hash":{"H":["<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>","std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // identifier::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // H
++p0.hash(p1);
++impls::<impl std::hash::Hash for identifier::Identifier>::hash(p0, p1);
++crate::impls::<impl std::hash::Hash for identifier::Identifier>::hash(p0, p1);
++<identifier::Identifier>::hash(p0, p1);
+-----------------
+src/impls.rs impls::<impl std::ops::Deref for Prerelease>::deref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.deref();
++impls::<impl std::ops::Deref for Prerelease>::deref(p0);
++crate::impls::<impl std::ops::Deref for Prerelease>::deref(p0);
++<Prerelease>::deref(p0);
+-----------------
+src/impls.rs impls::<impl std::ops::Deref for BuildMetadata>::deref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.deref();
++impls::<impl std::ops::Deref for BuildMetadata>::deref(p0);
++crate::impls::<impl std::ops::Deref for BuildMetadata>::deref(p0);
++<BuildMetadata>::deref(p0);
+-----------------
+src/impls.rs impls::<impl std::cmp::PartialOrd for Prerelease>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.partial_cmp(p1);
++impls::<impl std::cmp::PartialOrd for Prerelease>::partial_cmp(p0, p1);
++crate::impls::<impl std::cmp::PartialOrd for Prerelease>::partial_cmp(p0, p1);
++<Prerelease>::partial_cmp(p0, p1);
+-----------------
+src/impls.rs impls::<impl std::cmp::PartialOrd for BuildMetadata>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
+let mut p1 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.partial_cmp(p1);
++impls::<impl std::cmp::PartialOrd for BuildMetadata>::partial_cmp(p0, p1);
++crate::impls::<impl std::cmp::PartialOrd for BuildMetadata>::partial_cmp(p0, p1);
++<BuildMetadata>::partial_cmp(p0, p1);
+-----------------
+src/impls.rs impls::<impl std::cmp::Ord for Prerelease>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.cmp(p1);
++impls::<impl std::cmp::Ord for Prerelease>::cmp(p0, p1);
++crate::impls::<impl std::cmp::Ord for Prerelease>::cmp(p0, p1);
++<Prerelease>::cmp(p0, p1);
+-----------------
+src/impls.rs impls::<impl std::cmp::Ord for BuildMetadata>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
+let mut p1 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.cmp(p1);
++impls::<impl std::cmp::Ord for BuildMetadata>::cmp(p0, p1);
++crate::impls::<impl std::cmp::Ord for BuildMetadata>::cmp(p0, p1);
++<BuildMetadata>::cmp(p0, p1);
+-----------------
+src/impls.rs impls::<impl std::iter::FromIterator<Comparator> for VersionReq>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"impls::<impl std::iter::FromIterator<Comparator> for VersionReq>::from_iter":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::Fuse<I>","std::path::Components<'a>","std::iter::Enumerate<I>","std::io::Lines<B>","std::str::CharIndices<'a>","std::str::MatchIndices<'a, P>","std::slice::RSplitN<'a, T, P>","core::error::Source<'a>","std::collections::vec_deque::IterMut<'a, T>","std::slice::ChunksExact<'a, T>","std::option::Iter<'a, A>","core::slice::iter::GenericSplitN<I>","std::collections::btree_map::Values<'a, K, V>","std::collections::binary_heap::IntoIterSorted<T>","std::slice::Split<'a, T, P>","std::iter::Map<I, F>","std::slice::SplitInclusiveMut<'a, T, P>","std::collections::btree_set::Iter<'a, T>","std::str::LinesAny<'a>","std::collections::vec_deque::IntoIter<T, A>","std::collections::btree_set::Range<'a, T>","std::env::Vars","std::str::Split<'a, P>","std::slice::SplitMut<'a, T, P>","std::collections::hash_set::Intersection<'a, T, S>","std::collections::hash_map::Values<'a, K, V>","std::slice::Windows<'a, T>","std::slice::SplitN<'a, T, P>","std::os::unix::net::Incoming<'a>","std::ops::RangeFrom<A>","std::collections::vec_deque::Drain<'_, T, A>","std::string::Drain<'_>","std::char::CaseMappingIter","std::collections::linked_list::IntoIter<T>","std::iter::Scan<I, St, F>","std::array::IntoIter<T, N>","std::str::EscapeDefault<'a>","std::iter::Intersperse<I>","std::collections::hash_map::DrainFilter<'_, K, V, F>","std::str::SplitN<'a, P>","std::iter::RepeatN<A>","std::iter::TakeWhile<I, P>","std::char::ToUppercase","std::slice::Iter<'a, T>","std::slice::ArrayChunksMut<'a, T, N>","std::path::Iter<'a>","std::slice::SplitInclusive<'a, T, P>","std::sys_common::net::LookupHost","std::collections::hash_map::Drain<'a, K, V>","std::collections::hash_map::Keys<'a, K, V>","std::slice::GroupByMut<'a, T, P>","std::process::CommandEnvs<'a>","std::iter::FromFn<F>","std::collections::hash_set::Union<'a, T, S>","std::char::DecodeUtf16<I>","std::iter::StepBy<I>","std::iter::FlatMap<I, U, F>","std::iter::FilterMap<I, F>","std::str::SplitTerminator<'a, P>","std::sync::mpsc::IntoIter<T>","std::slice::RSplitMut<'a, T, P>","std::vec::DrainFilter<'_, T, F, A>","std::slice::ChunksExactMut<'a, T>","std::iter::sources::from_generator::FromGenerator<G>","std::char::ToLowercase","std::collections::hash_set::Drain<'a, K>","std::collections::hash_map::IntoIter<K, V>","std::collections::btree_set::DrainFilter<'_, T, F, A>","std::iter::SkipWhile<I, P>","std::vec::Splice<'_, I, A>","std::os::unix::net::Messages<'a>","std::boxed::Box<I, A>","std::io::Bytes<R>","std::sys_common::wtf8::EncodeWide<'a>","std::option::IterMut<'a, A>","std::str::SplitInclusive<'a, P>","std::iter::RepeatWith<F>","std::collections::hash_map::IntoKeys<K, V>","std::str::Bytes<'_>","std::collections::hash_map::IntoValues<K, V>","std::net::Incoming<'a>","std::iter::Inspect<I, F>","std::collections::linked_list::IterMut<'a, T>","std::sys_common::wstr::WStrUnits<'_>","std::slice::EscapeAscii<'a>","std::iter::Once<T>","std::iter::Rev<I>","std::char::EscapeDefault","std::sync::mpsc::Iter<'a, T>","std::str::SplitWhitespace<'a>","std::iter::IntersperseWith<I, G>","std::iter::Empty<T>","std::collections::btree_map::Keys<'a, K, V>","std::sys::unix::os::Env","std::char::EscapeUnicode","std::str::RSplitN<'a, P>","std::result::Iter<'a, T>","std::str::Matches<'a, P>","std::str::RMatches<'a, P>","std::iter::Skip<I>","std::collections::binary_heap::DrainSorted<'_, T>","std::slice::SplitNMut<'a, T, P>","std::collections::binary_heap::IntoIter<T>","std::ascii::EscapeDefault","std::sys_common::wtf8::Wtf8CodePoints<'a>","std::iter::Chain<A, B>","std::iter::Take<I>","std::iter::ByRefSized<'_, I>","std::os::unix::net::ancillary::AncillaryDataIter<'a, T>","std::collections::vec_deque::Iter<'a, T>","std::slice::IterMut<'a, T>","std::collections::btree_set::Difference<'a, T, A>","std::ops::index_range::IndexRange","std::iter::Cloned<I>","std::sys::unix::fs::ReadDir","std::iter::Successors<T, F>","std::collections::hash_set::Difference<'a, T, S>","std::result::IterMut<'a, T>","std::collections::btree_map::RangeMut<'a, K, V>","std::str::Chars<'a>","std::iter::adapters::GenericShunt<'_, I, R>","std::collections::btree_map::IntoIter<K, V, A>","std::slice::ArrayWindows<'a, T, N>","std::iter::Peekable<I>","std::slice::RSplitNMut<'a, T, P>","std::ops::RangeInclusive<A>","std::collections::btree_set::SymmetricDifference<'a, T>","std::os::unix::net::ScmCredentials<'a>","std::iter::Repeat<A>","std::iter::ArrayChunks<I, N>","<&mut I as std::iter::Iterator>","std::collections::hash_set::SymmetricDifference<'a, T, S>","std::env::ArgsOs","std::str::RSplitTerminator<'a, P>","std::collections::hash_set::IntoIter<K>","std::slice::ArrayChunks<'a, T, N>","std::process::CommandArgs<'a>","std::str::EncodeUtf16<'a>","std::fs::ReadDir","std::slice::Chunks<'a, T>","std::collections::btree_map::ValuesMut<'a, K, V>","std::slice::RChunksExactMut<'a, T>","std::collections::hash_map::Iter<'a, K, V>","std::str::Utf8Chunks<'a>","std::ops::Range<A>","std::iter::Cycle<I>","std::collections::linked_list::DrainFilter<'_, T, F>","std::collections::btree_map::IntoKeys<K, V, A>","std::slice::RSplit<'a, T, P>","std::collections::hash_set::Iter<'a, K>","std::collections::btree_set::IntoIter<T, A>","std::collections::hash_set::DrainFilter<'_, K, F>","std::iter::MapWhile<I, P>","std::iter::adapters::flatten::FlattenCompat<I, U>","std::str::Lines<'a>","std::option::Item<A>","std::iter::Zip<A, B>","std::slice::GroupBy<'a, T, P>","std::str::EscapeUnicode<'a>","std::iter::Flatten<I>","std::path::Ancestors<'a>","std::collections::btree_set::Intersection<'a, T, A>","std::env::Args","std::collections::btree_set::Union<'a, T>","std::sys::unix::process::process_common::CommandArgs<'a>","std::sys::unix::os::SplitPaths<'a>","std::net::IntoIncoming","std::io::Split<B>","std::collections::linked_list::Iter<'a, T>","std::iter::Copied<I>","std::vec::IntoIter<T, A>","std::sys::unix::args::Args","std::str::RMatchIndices<'a, P>","std::iter::Filter<I, P>","std::str::RSplit<'a, P>","std::collections::btree_map::Iter<'a, K, V>","std::collections::btree_map::DrainFilter<'_, K, V, F, A>","std::collections::btree_map::IterMut<'a, K, V>","std::env::VarsOs","std::collections::hash_map::ValuesMut<'a, K, V>","std::option::IntoIter<A>","std::env::SplitPaths<'a>","std::str::SplitAsciiWhitespace<'a>","std::os::unix::net::ScmRights<'a>","std::slice::RChunksExact<'a, T>","std::iter::OnceWith<F>","std::str::EscapeDebug<'a>","std::collections::binary_heap::Drain<'_, T>","std::slice::RChunks<'a, T>","std::char::EscapeDebug","std::sync::mpsc::TryIter<'a, T>","std::vec::Drain<'_, T, A>","std::collections::binary_heap::Iter<'a, T>","std::result::IntoIter<T>","std::slice::ChunksMut<'a, T>","std::collections::btree_map::Range<'a, K, V>","std::collections::hash_map::IterMut<'a, K, V>","std::collections::btree_map::IntoValues<K, V, A>","std::slice::RChunksMut<'a, T>"]},"impls::<impl std::iter::FromIterator<Comparator> for VersionReq>::from_iter":{"I":["std::sync::mpsc::Receiver<T>","std::result::Result<T, E>","&'a std::path::Path","std::collections::BTreeMap<K, V, A>","std::option::Option<T>","<&'a mut std::option::Option<T> as std::iter::IntoIterator>","<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>","std::collections::HashSet<T, S>","std::collections::LinkedList<T>","std::collections::VecDeque<T, A>","std::collections::HashMap<K, V, S>","&'a std::path::PathBuf","std::collections::BTreeSet<T, A>","&'a std::os::unix::net::UnixListener","std::vec::Vec<T, A>","std::collections::BinaryHeap<T>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++impls::<impl std::iter::FromIterator<Comparator> for VersionReq>::from_iter(p0);
++crate::impls::<impl std::iter::FromIterator<Comparator> for VersionReq>::from_iter(p0);
++<VersionReq>::from_iter(p0);
+-----------------
+src/parse.rs parse::<impl std::str::FromStr for Version>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::<impl std::str::FromStr for Version>::from_str(&p0);
++crate::parse::<impl std::str::FromStr for Version>::from_str(&p0);
++<Version>::from_str(&p0);
+-----------------
+src/parse.rs parse::<impl std::str::FromStr for VersionReq>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::<impl std::str::FromStr for VersionReq>::from_str(&p0);
++crate::parse::<impl std::str::FromStr for VersionReq>::from_str(&p0);
++<VersionReq>::from_str(&p0);
+-----------------
+src/parse.rs parse::<impl std::str::FromStr for Comparator>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::<impl std::str::FromStr for Comparator>::from_str(&p0);
++crate::parse::<impl std::str::FromStr for Comparator>::from_str(&p0);
++<Comparator>::from_str(&p0);
+-----------------
+src/parse.rs parse::<impl std::str::FromStr for Prerelease>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::<impl std::str::FromStr for Prerelease>::from_str(&p0);
++crate::parse::<impl std::str::FromStr for Prerelease>::from_str(&p0);
++<Prerelease>::from_str(&p0);
+-----------------
+src/parse.rs parse::<impl std::str::FromStr for BuildMetadata>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse::<impl std::str::FromStr for BuildMetadata>::from_str(&p0);
++crate::parse::<impl std::str::FromStr for BuildMetadata>::from_str(&p0);
++<BuildMetadata>::from_str(&p0);
+-----------------
+src/parse.rs parse::Error::new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // error::ErrorKind
++parse::Error::new(p0);
++crate::parse::Error::new(p0);
++<parse::Error>::new(p0);
+-----------------
+src/lib.rs <Version as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
++p0.clone();
++<Version as std::clone::Clone>::clone(p0);
++crate::<Version as std::clone::Clone>::clone(p0);
++<Version>::clone(p0);
+-----------------
+src/lib.rs <Version as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
++p0.assert_receiver_is_total_eq();
++<Version as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Version as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Version>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Version as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++p0.eq(p1);
++<Version as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Version as std::cmp::PartialEq>::eq(p0, p1);
++<Version>::eq(p0, p1);
+-----------------
+src/lib.rs <Version as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++p0.cmp(p1);
++<Version as std::cmp::Ord>::cmp(p0, p1);
++crate::<Version as std::cmp::Ord>::cmp(p0, p1);
++<Version>::cmp(p0, p1);
+-----------------
+src/lib.rs <Version as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++p0.partial_cmp(p1);
++<Version as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<Version as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<Version>::partial_cmp(p0, p1);
+-----------------
+src/lib.rs <Version as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Version as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Version as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::hash::SipHasher","std::hash::SipHasher13","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Version as std::hash::Hash>::hash(p0, p1);
++crate::<Version as std::hash::Hash>::hash(p0, p1);
++<Version>::hash(p0, p1);
+-----------------
+src/lib.rs <VersionReq as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
++p0.clone();
++<VersionReq as std::clone::Clone>::clone(p0);
++crate::<VersionReq as std::clone::Clone>::clone(p0);
++<VersionReq>::clone(p0);
+-----------------
+src/lib.rs <VersionReq as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
++p0.assert_receiver_is_total_eq();
++<VersionReq as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<VersionReq as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<VersionReq>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <VersionReq as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // VersionReq
++p0.eq(p1);
++<VersionReq as std::cmp::PartialEq>::eq(p0, p1);
++crate::<VersionReq as std::cmp::PartialEq>::eq(p0, p1);
++<VersionReq>::eq(p0, p1);
+-----------------
+src/lib.rs <VersionReq as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<VersionReq as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<VersionReq as std::hash::Hash>::hash":{"__H":["std::boxed::Box<T, A>","std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","<&mut H as std::hash::Hasher>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<VersionReq as std::hash::Hash>::hash(p0, p1);
++crate::<VersionReq as std::hash::Hash>::hash(p0, p1);
++<VersionReq>::hash(p0, p1);
+-----------------
+src/lib.rs <VersionReq as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<VersionReq as std::fmt::Debug>::fmt(p0, p1);
++crate::<VersionReq as std::fmt::Debug>::fmt(p0, p1);
++<VersionReq>::fmt(p0, p1);
+-----------------
+src/lib.rs <Comparator as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
++p0.clone();
++<Comparator as std::clone::Clone>::clone(p0);
++crate::<Comparator as std::clone::Clone>::clone(p0);
++<Comparator>::clone(p0);
+-----------------
+src/lib.rs <Comparator as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
++p0.assert_receiver_is_total_eq();
++<Comparator as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Comparator as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Comparator>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Comparator as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Comparator
++p0.eq(p1);
++<Comparator as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Comparator as std::cmp::PartialEq>::eq(p0, p1);
++<Comparator>::eq(p0, p1);
+-----------------
+src/lib.rs <Comparator as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Comparator as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Comparator as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Comparator as std::hash::Hash>::hash(p0, p1);
++crate::<Comparator as std::hash::Hash>::hash(p0, p1);
++<Comparator>::hash(p0, p1);
+-----------------
+src/lib.rs <Comparator as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Comparator as std::fmt::Debug>::fmt(p0, p1);
++crate::<Comparator as std::fmt::Debug>::fmt(p0, p1);
++<Comparator>::fmt(p0, p1);
+-----------------
+src/lib.rs <Op as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Op
++p0.clone();
++<Op as std::clone::Clone>::clone(p0);
++crate::<Op as std::clone::Clone>::clone(p0);
++<Op>::clone(p0);
+-----------------
+src/lib.rs <Op as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Op
++p0.assert_receiver_is_total_eq();
++<Op as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Op as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Op>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Op as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Op
++p0.eq(p1);
++<Op as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Op as std::cmp::PartialEq>::eq(p0, p1);
++<Op>::eq(p0, p1);
+-----------------
+src/lib.rs <Op as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Op as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Op as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Op as std::hash::Hash>::hash(p0, p1);
++crate::<Op as std::hash::Hash>::hash(p0, p1);
++<Op>::hash(p0, p1);
+-----------------
+src/lib.rs <Op as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Op as std::fmt::Debug>::fmt(p0, p1);
++crate::<Op as std::fmt::Debug>::fmt(p0, p1);
++<Op>::fmt(p0, p1);
+-----------------
+src/lib.rs <Prerelease as std::default::Default>::default
+deps:{}
+candidates:{}
++<Prerelease as std::default::Default>::default();
++crate::<Prerelease as std::default::Default>::default();
++<Prerelease>::default();
+-----------------
+src/lib.rs <Prerelease as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.clone();
++<Prerelease as std::clone::Clone>::clone(p0);
++crate::<Prerelease as std::clone::Clone>::clone(p0);
++<Prerelease>::clone(p0);
+-----------------
+src/lib.rs <Prerelease as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.assert_receiver_is_total_eq();
++<Prerelease as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Prerelease as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Prerelease>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Prerelease as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.eq(p1);
++<Prerelease as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Prerelease as std::cmp::PartialEq>::eq(p0, p1);
++<Prerelease>::eq(p0, p1);
+-----------------
+src/lib.rs <Prerelease as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Prerelease as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Prerelease as std::hash::Hash>::hash":{"__H":["<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::hash::SipHasher13"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Prerelease as std::hash::Hash>::hash(p0, p1);
++crate::<Prerelease as std::hash::Hash>::hash(p0, p1);
++<Prerelease>::hash(p0, p1);
+-----------------
+src/lib.rs <BuildMetadata as std::default::Default>::default
+deps:{}
+candidates:{}
++<BuildMetadata as std::default::Default>::default();
++crate::<BuildMetadata as std::default::Default>::default();
++<BuildMetadata>::default();
+-----------------
+src/lib.rs <BuildMetadata as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.clone();
++<BuildMetadata as std::clone::Clone>::clone(p0);
++crate::<BuildMetadata as std::clone::Clone>::clone(p0);
++<BuildMetadata>::clone(p0);
+-----------------
+src/lib.rs <BuildMetadata as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.assert_receiver_is_total_eq();
++<BuildMetadata as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<BuildMetadata as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<BuildMetadata>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <BuildMetadata as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
+let mut p1 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.eq(p1);
++<BuildMetadata as std::cmp::PartialEq>::eq(p0, p1);
++crate::<BuildMetadata as std::cmp::PartialEq>::eq(p0, p1);
++<BuildMetadata>::eq(p0, p1);
+-----------------
+src/lib.rs <BuildMetadata as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<BuildMetadata as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<BuildMetadata as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<BuildMetadata as std::hash::Hash>::hash(p0, p1);
++crate::<BuildMetadata as std::hash::Hash>::hash(p0, p1);
++<BuildMetadata>::hash(p0, p1);
+-----------------
+src/lib.rs Version::new
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0u64; // None+u64
++Version::new(p0, p1, p2);
++crate::Version::new(p0, p1, p2);
++<Version>::new(p0, p1, p2);
+-----------------
+src/lib.rs Version::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++Version::parse(&p0);
++crate::Version::parse(&p0);
++<Version>::parse(&p0);
+-----------------
+src/lib.rs VersionReq::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++VersionReq::parse(&p0);
++crate::VersionReq::parse(&p0);
++<VersionReq>::parse(&p0);
+-----------------
+src/lib.rs VersionReq::matches
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++p0.matches(p1);
++VersionReq::matches(p0, p1);
++crate::VersionReq::matches(p0, p1);
++<VersionReq>::matches(p0, p1);
+-----------------
+src/lib.rs <VersionReq as std::default::Default>::default
+deps:{}
+candidates:{}
++<VersionReq as std::default::Default>::default();
++crate::<VersionReq as std::default::Default>::default();
++<VersionReq>::default();
+-----------------
+src/lib.rs Comparator::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++Comparator::parse(&p0);
++crate::Comparator::parse(&p0);
++<Comparator>::parse(&p0);
+-----------------
+src/lib.rs Comparator::matches
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++p0.matches(p1);
++Comparator::matches(p0, p1);
++crate::Comparator::matches(p0, p1);
++<Comparator>::matches(p0, p1);
+-----------------
+src/lib.rs Prerelease::new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++Prerelease::new(&p0);
++crate::Prerelease::new(&p0);
++<Prerelease>::new(&p0);
+-----------------
+src/lib.rs Prerelease::as_str
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.as_str();
++Prerelease::as_str(p0);
++crate::Prerelease::as_str(p0);
++<Prerelease>::as_str(p0);
+-----------------
+src/lib.rs Prerelease::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Prerelease
++p0.is_empty();
++Prerelease::is_empty(p0);
++crate::Prerelease::is_empty(p0);
++<Prerelease>::is_empty(p0);
+-----------------
+src/lib.rs BuildMetadata::new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++BuildMetadata::new(&p0);
++crate::BuildMetadata::new(&p0);
++<BuildMetadata>::new(&p0);
+-----------------
+src/lib.rs BuildMetadata::as_str
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.as_str();
++BuildMetadata::as_str(p0);
++crate::BuildMetadata::as_str(p0);
++<BuildMetadata>::as_str(p0);
+-----------------
+src/lib.rs BuildMetadata::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // BuildMetadata
++p0.is_empty();
++BuildMetadata::is_empty(p0);
++crate::BuildMetadata::is_empty(p0);
++<BuildMetadata>::is_empty(p0);

@@ -1,0 +1,650 @@
+-----------------
+whirlpool/src/compress.rs compress::compress_block
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [0u8;1]; // None+[u8; _]
++compress::compress_block(p0, p1);
++crate::compress::compress_block(p0, p1);
++crate::compress::compress_block(p0, p1);
+-----------------
+whirlpool/src/compress.rs compress::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; _]]
++compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
+-----------------
+whirlpool/src/lib.rs adc
+deps:{}
+candidates:{}
+let mut p0 = &mut 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
+let mut p2 = &mut 0u64; // None+u64
++adc(p0, p1, p2);
++crate::adc(p0, p1, p2);
++crate::adc(p0, p1, p2);
+-----------------
+whirlpool/src/lib.rs convert
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <WhirlpoolCore as digest::core_api::BlockSizeUser>::BlockSize>]
++convert(p0);
++crate::convert(p0);
++crate::convert(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // WhirlpoolCore
++p0.clone();
++<WhirlpoolCore as core::clone::Clone>::clone(p0);
++crate::<WhirlpoolCore as core::clone::Clone>::clone(p0);
++<WhirlpoolCore>::clone(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <WhirlpoolCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<WhirlpoolCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<WhirlpoolCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<WhirlpoolCore>::update_blocks(p0, p1);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<WhirlpoolCore as digest::core_api::BlockSizeUser>::BlockSize, <WhirlpoolCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <WhirlpoolCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<WhirlpoolCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<WhirlpoolCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<WhirlpoolCore>::finalize_fixed_core(p0, p1, p2);
+-----------------
+whirlpool/src/lib.rs WhirlpoolCore::update_len
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = 0u64; // None+u64
++p0.update_len(p1);
++WhirlpoolCore::update_len(p0, p1);
++crate::WhirlpoolCore::update_len(p0, p1);
++<WhirlpoolCore>::update_len(p0, p1);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as core::default::Default>::default
+deps:{}
+candidates:{}
++<WhirlpoolCore as core::default::Default>::default();
++crate::<WhirlpoolCore as core::default::Default>::default();
++<WhirlpoolCore>::default();
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
++p0.reset();
++<WhirlpoolCore as digest::Reset>::reset(p0);
++crate::<WhirlpoolCore as digest::Reset>::reset(p0);
++<WhirlpoolCore>::reset(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<WhirlpoolCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<WhirlpoolCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<WhirlpoolCore>::write_alg_name(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<WhirlpoolCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<WhirlpoolCore as core::fmt::Debug>::fmt(p0, p1);
++<WhirlpoolCore>::fmt(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb160Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb160Core
++p0.clone();
++<Fsb160Core as core::clone::Clone>::clone(p0);
++crate::<Fsb160Core as core::clone::Clone>::clone(p0);
++<Fsb160Core>::clone(p0);
+-----------------
+fsb/src/macros.rs <Fsb160Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb160Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Fsb160Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Fsb160Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Fsb160Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Fsb160Core>::update_blocks(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb160Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb160Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Fsb160Core as digest::core_api::BlockSizeUser>::BlockSize, <Fsb160Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb160Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Fsb160Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Fsb160Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Fsb160Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+fsb/src/macros.rs <Fsb160Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Fsb160Core as core::default::Default>::default();
++crate::<Fsb160Core as core::default::Default>::default();
++<Fsb160Core>::default();
+-----------------
+fsb/src/macros.rs <Fsb160Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb160Core
++p0.reset();
++<Fsb160Core as digest::Reset>::reset(p0);
++crate::<Fsb160Core as digest::Reset>::reset(p0);
++<Fsb160Core>::reset(p0);
+-----------------
+fsb/src/macros.rs <Fsb160Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Fsb160Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Fsb160Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Fsb160Core>::write_alg_name(p0);
+-----------------
+fsb/src/macros.rs <Fsb160Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb160Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Fsb160Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Fsb160Core as core::fmt::Debug>::fmt(p0, p1);
++<Fsb160Core>::fmt(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb160Core::define_iv
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Fsb160Core::define_iv(p0);
++crate::Fsb160Core::define_iv(p0);
++<Fsb160Core>::define_iv(p0);
+-----------------
+fsb/src/macros.rs Fsb160Core::computing_w_indices
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb160Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb160Core::computing_w_indices(p0, p1);
++crate::Fsb160Core::computing_w_indices(p0, p1);
++<Fsb160Core>::computing_w_indices(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb160Core::dividing_bits
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb160Core as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p1 = 0usize; // None+usize
++Fsb160Core::dividing_bits(p0, p1);
++crate::Fsb160Core::dividing_bits(p0, p1);
++<Fsb160Core>::dividing_bits(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb160Core::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb160Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb160Core::compress(p0, p1);
++crate::Fsb160Core::compress(p0, p1);
++<Fsb160Core>::compress(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb160Core::shift_and_truncate
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = 0u32; // None+u32
++Fsb160Core::shift_and_truncate(p0, p1);
++crate::Fsb160Core::shift_and_truncate(p0, p1);
++<Fsb160Core>::shift_and_truncate(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb224Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb224Core
++p0.clone();
++<Fsb224Core as core::clone::Clone>::clone(p0);
++crate::<Fsb224Core as core::clone::Clone>::clone(p0);
++<Fsb224Core>::clone(p0);
+-----------------
+fsb/src/macros.rs <Fsb224Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb224Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Fsb224Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Fsb224Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Fsb224Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Fsb224Core>::update_blocks(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb224Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Fsb224Core as digest::core_api::BlockSizeUser>::BlockSize, <Fsb224Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb224Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Fsb224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Fsb224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Fsb224Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+fsb/src/macros.rs <Fsb224Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Fsb224Core as core::default::Default>::default();
++crate::<Fsb224Core as core::default::Default>::default();
++<Fsb224Core>::default();
+-----------------
+fsb/src/macros.rs <Fsb224Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb224Core
++p0.reset();
++<Fsb224Core as digest::Reset>::reset(p0);
++crate::<Fsb224Core as digest::Reset>::reset(p0);
++<Fsb224Core>::reset(p0);
+-----------------
+fsb/src/macros.rs <Fsb224Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Fsb224Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Fsb224Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Fsb224Core>::write_alg_name(p0);
+-----------------
+fsb/src/macros.rs <Fsb224Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb224Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Fsb224Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Fsb224Core as core::fmt::Debug>::fmt(p0, p1);
++<Fsb224Core>::fmt(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb224Core::define_iv
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Fsb224Core::define_iv(p0);
++crate::Fsb224Core::define_iv(p0);
++<Fsb224Core>::define_iv(p0);
+-----------------
+fsb/src/macros.rs Fsb224Core::computing_w_indices
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb224Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb224Core::computing_w_indices(p0, p1);
++crate::Fsb224Core::computing_w_indices(p0, p1);
++<Fsb224Core>::computing_w_indices(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb224Core::dividing_bits
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb224Core as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p1 = 0usize; // None+usize
++Fsb224Core::dividing_bits(p0, p1);
++crate::Fsb224Core::dividing_bits(p0, p1);
++<Fsb224Core>::dividing_bits(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb224Core::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb224Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb224Core::compress(p0, p1);
++crate::Fsb224Core::compress(p0, p1);
++<Fsb224Core>::compress(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb224Core::shift_and_truncate
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = 0u32; // None+u32
++Fsb224Core::shift_and_truncate(p0, p1);
++crate::Fsb224Core::shift_and_truncate(p0, p1);
++<Fsb224Core>::shift_and_truncate(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb256Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb256Core
++p0.clone();
++<Fsb256Core as core::clone::Clone>::clone(p0);
++crate::<Fsb256Core as core::clone::Clone>::clone(p0);
++<Fsb256Core>::clone(p0);
+-----------------
+fsb/src/macros.rs <Fsb256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Fsb256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Fsb256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Fsb256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Fsb256Core>::update_blocks(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Fsb256Core as digest::core_api::BlockSizeUser>::BlockSize, <Fsb256Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb256Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Fsb256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Fsb256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Fsb256Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+fsb/src/macros.rs <Fsb256Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Fsb256Core as core::default::Default>::default();
++crate::<Fsb256Core as core::default::Default>::default();
++<Fsb256Core>::default();
+-----------------
+fsb/src/macros.rs <Fsb256Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb256Core
++p0.reset();
++<Fsb256Core as digest::Reset>::reset(p0);
++crate::<Fsb256Core as digest::Reset>::reset(p0);
++<Fsb256Core>::reset(p0);
+-----------------
+fsb/src/macros.rs <Fsb256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Fsb256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Fsb256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Fsb256Core>::write_alg_name(p0);
+-----------------
+fsb/src/macros.rs <Fsb256Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Fsb256Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Fsb256Core as core::fmt::Debug>::fmt(p0, p1);
++<Fsb256Core>::fmt(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb256Core::define_iv
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Fsb256Core::define_iv(p0);
++crate::Fsb256Core::define_iv(p0);
++<Fsb256Core>::define_iv(p0);
+-----------------
+fsb/src/macros.rs Fsb256Core::computing_w_indices
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb256Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb256Core::computing_w_indices(p0, p1);
++crate::Fsb256Core::computing_w_indices(p0, p1);
++<Fsb256Core>::computing_w_indices(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb256Core::dividing_bits
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb256Core as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p1 = 0usize; // None+usize
++Fsb256Core::dividing_bits(p0, p1);
++crate::Fsb256Core::dividing_bits(p0, p1);
++<Fsb256Core>::dividing_bits(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb256Core::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb256Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb256Core::compress(p0, p1);
++crate::Fsb256Core::compress(p0, p1);
++<Fsb256Core>::compress(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb256Core::shift_and_truncate
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = 0u32; // None+u32
++Fsb256Core::shift_and_truncate(p0, p1);
++crate::Fsb256Core::shift_and_truncate(p0, p1);
++<Fsb256Core>::shift_and_truncate(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb384Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb384Core
++p0.clone();
++<Fsb384Core as core::clone::Clone>::clone(p0);
++crate::<Fsb384Core as core::clone::Clone>::clone(p0);
++<Fsb384Core>::clone(p0);
+-----------------
+fsb/src/macros.rs <Fsb384Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb384Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Fsb384Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Fsb384Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Fsb384Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Fsb384Core>::update_blocks(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb384Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Fsb384Core as digest::core_api::BlockSizeUser>::BlockSize, <Fsb384Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb384Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Fsb384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Fsb384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Fsb384Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+fsb/src/macros.rs <Fsb384Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Fsb384Core as core::default::Default>::default();
++crate::<Fsb384Core as core::default::Default>::default();
++<Fsb384Core>::default();
+-----------------
+fsb/src/macros.rs <Fsb384Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb384Core
++p0.reset();
++<Fsb384Core as digest::Reset>::reset(p0);
++crate::<Fsb384Core as digest::Reset>::reset(p0);
++<Fsb384Core>::reset(p0);
+-----------------
+fsb/src/macros.rs <Fsb384Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Fsb384Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Fsb384Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Fsb384Core>::write_alg_name(p0);
+-----------------
+fsb/src/macros.rs <Fsb384Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb384Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Fsb384Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Fsb384Core as core::fmt::Debug>::fmt(p0, p1);
++<Fsb384Core>::fmt(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb384Core::define_iv
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Fsb384Core::define_iv(p0);
++crate::Fsb384Core::define_iv(p0);
++<Fsb384Core>::define_iv(p0);
+-----------------
+fsb/src/macros.rs Fsb384Core::computing_w_indices
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb384Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb384Core::computing_w_indices(p0, p1);
++crate::Fsb384Core::computing_w_indices(p0, p1);
++<Fsb384Core>::computing_w_indices(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb384Core::dividing_bits
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb384Core as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p1 = 0usize; // None+usize
++Fsb384Core::dividing_bits(p0, p1);
++crate::Fsb384Core::dividing_bits(p0, p1);
++<Fsb384Core>::dividing_bits(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb384Core::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb384Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb384Core::compress(p0, p1);
++crate::Fsb384Core::compress(p0, p1);
++<Fsb384Core>::compress(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb384Core::shift_and_truncate
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = 0u32; // None+u32
++Fsb384Core::shift_and_truncate(p0, p1);
++crate::Fsb384Core::shift_and_truncate(p0, p1);
++<Fsb384Core>::shift_and_truncate(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb512Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb512Core
++p0.clone();
++<Fsb512Core as core::clone::Clone>::clone(p0);
++crate::<Fsb512Core as core::clone::Clone>::clone(p0);
++<Fsb512Core>::clone(p0);
+-----------------
+fsb/src/macros.rs <Fsb512Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb512Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Fsb512Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Fsb512Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Fsb512Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Fsb512Core>::update_blocks(p0, p1);
+-----------------
+fsb/src/macros.rs <Fsb512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb512Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Fsb512Core as digest::core_api::BlockSizeUser>::BlockSize, <Fsb512Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb512Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Fsb512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Fsb512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Fsb512Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+fsb/src/macros.rs <Fsb512Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Fsb512Core as core::default::Default>::default();
++crate::<Fsb512Core as core::default::Default>::default();
++<Fsb512Core>::default();
+-----------------
+fsb/src/macros.rs <Fsb512Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Fsb512Core
++p0.reset();
++<Fsb512Core as digest::Reset>::reset(p0);
++crate::<Fsb512Core as digest::Reset>::reset(p0);
++<Fsb512Core>::reset(p0);
+-----------------
+fsb/src/macros.rs <Fsb512Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Fsb512Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Fsb512Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Fsb512Core>::write_alg_name(p0);
+-----------------
+fsb/src/macros.rs <Fsb512Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Fsb512Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Fsb512Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Fsb512Core as core::fmt::Debug>::fmt(p0, p1);
++<Fsb512Core>::fmt(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb512Core::define_iv
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Fsb512Core::define_iv(p0);
++crate::Fsb512Core::define_iv(p0);
++<Fsb512Core>::define_iv(p0);
+-----------------
+fsb/src/macros.rs Fsb512Core::computing_w_indices
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb512Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb512Core::computing_w_indices(p0, p1);
++crate::Fsb512Core::computing_w_indices(p0, p1);
++<Fsb512Core>::computing_w_indices(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb512Core::dividing_bits
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb512Core as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p1 = 0usize; // None+usize
++Fsb512Core::dividing_bits(p0, p1);
++crate::Fsb512Core::dividing_bits(p0, p1);
++<Fsb512Core>::dividing_bits(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb512Core::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Fsb512Core as digest::core_api::BlockSizeUser>::BlockSize>
++Fsb512Core::compress(p0, p1);
++crate::Fsb512Core::compress(p0, p1);
++<Fsb512Core>::compress(p0, p1);
+-----------------
+fsb/src/macros.rs Fsb512Core::shift_and_truncate
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; _]
+let mut p1 = 0u32; // None+u32
++Fsb512Core::shift_and_truncate(p0, p1);
++crate::Fsb512Core::shift_and_truncate(p0, p1);
++<Fsb512Core>::shift_and_truncate(p0, p1);

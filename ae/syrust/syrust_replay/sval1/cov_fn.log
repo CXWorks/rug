@@ -1,0 +1,6 @@
+276 584
+error: cov/*: No such file or directory
+cov err ['/mnt/sda/xiang/syrust/syrust_replay/sval1/target/debug/deps/sval_derive-1bfd6f581242ea83']
+rm: cannot remove '*.profraw': No such file or directory
+error: cov/*: No such file or directory
+cov err ['/mnt/sda/xiang/syrust/syrust_replay/sval1/target/debug/deps/sval_json-266b245b3e838352']

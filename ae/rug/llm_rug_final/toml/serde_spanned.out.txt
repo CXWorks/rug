@@ -1,0 +1,123 @@
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::clone::Clone>::clone
+deps:{"<*const T as std::fmt::Debug>":{},"<spanned::Spanned<T> as std::clone::Clone>::clone":{"T":["std::marker::Sized","std::clone::Clone"]},"spanned::Spanned":{"T":["std::cmp::PartialEq","std::cmp::Eq","std::cmp::Ord","std::cmp::PartialOrd","std::fmt::Debug","std::clone::Clone","std::marker::Sized","std::hash::Hash"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+candidates:{"<*const T as std::fmt::Debug>":{},"<spanned::Spanned<T> as std::clone::Clone>::clone":{"T":["spanned::Spanned","std::clone::impls::<impl std::clone::Clone for *const T>"]},"spanned::Spanned":{"T":["spanned::Spanned","<*const T as std::fmt::Debug>"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.clone();
++<spanned::Spanned<T> as std::clone::Clone>::clone(p0);
++crate::<spanned::Spanned<T> as std::clone::Clone>::clone(p0);
++<spanned::Spanned<T>>::clone(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::fmt::Debug>::fmt
+deps:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<spanned::Spanned<T> as std::fmt::Debug>::fmt":{"T":["std::marker::Sized","std::fmt::Debug"]},"spanned::Spanned":{"T":["std::fmt::Debug","std::marker::Sized","std::cmp::Eq","std::cmp::Ord","std::cmp::PartialOrd","std::hash::Hash","std::cmp::PartialEq","std::clone::Clone"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>":{}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<spanned::Spanned<T> as std::fmt::Debug>::fmt":{"T":["<*mut T as std::fmt::Debug>","spanned::Spanned"]},"spanned::Spanned":{"T":["std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>","spanned::Spanned"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<spanned::Spanned<T> as std::fmt::Debug>::fmt(p0, p1);
++crate::<spanned::Spanned<T> as std::fmt::Debug>::fmt(p0, p1);
++<spanned::Spanned<T>>::fmt(p0, p1);
+-----------------
+crates/serde_spanned/src/spanned.rs spanned::Spanned::<T>::span
+deps:{"spanned::Spanned::<T>::span":{"T":["std::marker::Sized"]}}
+candidates:{"spanned::Spanned::<T>::span":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.span();
++spanned::Spanned::<T>::span(p0);
++crate::spanned::Spanned::<T>::span(p0);
++<spanned::Spanned<T>>::span(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs spanned::Spanned::<T>::into_inner
+deps:{"spanned::Spanned::<T>::into_inner":{"T":["std::marker::Sized"]}}
+candidates:{"spanned::Spanned::<T>::into_inner":{"T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.into_inner();
++spanned::Spanned::<T>::into_inner(p0);
++crate::spanned::Spanned::<T>::into_inner(p0);
++<spanned::Spanned<T>>::into_inner(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs spanned::Spanned::<T>::get_ref
+deps:{"spanned::Spanned::<T>::get_ref":{"T":["std::marker::Sized"]}}
+candidates:{"spanned::Spanned::<T>::get_ref":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.get_ref();
++spanned::Spanned::<T>::get_ref(p0);
++crate::spanned::Spanned::<T>::get_ref(p0);
++<spanned::Spanned<T>>::get_ref(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs spanned::Spanned::<T>::get_mut
+deps:{"spanned::Spanned::<T>::get_mut":{"T":["std::marker::Sized"]}}
+candidates:{"spanned::Spanned::<T>::get_mut":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.get_mut();
++spanned::Spanned::<T>::get_mut(p0);
++crate::spanned::Spanned::<T>::get_mut(p0);
++<spanned::Spanned<T>>::get_mut(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<std::string::String> as std::borrow::Borrow<str>>::borrow
+deps:{}
+candidates:{}
+let mut p0 = & std::string::String::new(); // None+spanned::Spanned<std::string::String>
++p0.borrow();
++<spanned::Spanned<std::string::String> as std::borrow::Borrow<str>>::borrow(p0);
++crate::<spanned::Spanned<std::string::String> as std::borrow::Borrow<str>>::borrow(p0);
++<spanned::Spanned<std::string::String>>::borrow(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::convert::AsRef<T>>::as_ref
+deps:{"<spanned::Spanned<T> as std::convert::AsRef<T>>::as_ref":{"T":["std::marker::Sized"]}}
+candidates:{"<spanned::Spanned<T> as std::convert::AsRef<T>>::as_ref":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.as_ref();
++<spanned::Spanned<T> as std::convert::AsRef<T>>::as_ref(p0);
++crate::<spanned::Spanned<T> as std::convert::AsRef<T>>::as_ref(p0);
++<spanned::Spanned<T>>::as_ref(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::convert::AsMut<T>>::as_mut
+deps:{"<spanned::Spanned<T> as std::convert::AsMut<T>>::as_mut":{"T":["std::marker::Sized"]}}
+candidates:{"<spanned::Spanned<T> as std::convert::AsMut<T>>::as_mut":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.as_mut();
++<spanned::Spanned<T> as std::convert::AsMut<T>>::as_mut(p0);
++crate::<spanned::Spanned<T> as std::convert::AsMut<T>>::as_mut(p0);
++<spanned::Spanned<T>>::as_mut(p0);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::cmp::PartialEq>::eq
+deps:{"<spanned::Spanned<T> as std::cmp::PartialEq>::eq":{"T":["std::marker::Sized","std::cmp::PartialEq"]},"spanned::Spanned":{"T":["std::cmp::PartialOrd","std::hash::Hash","std::clone::Clone","std::cmp::Eq","std::marker::Sized","std::fmt::Debug","std::cmp::Ord","std::cmp::PartialEq"]},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+candidates:{"<spanned::Spanned<T> as std::cmp::PartialEq>::eq":{"T":["spanned::Spanned","std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>"]},"spanned::Spanned":{"T":["std::ptr::const_ptr::<impl std::cmp::Ord for *const T>","spanned::Spanned"]},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.eq(p1);
++<spanned::Spanned<T> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<spanned::Spanned<T> as std::cmp::PartialEq>::eq(p0, p1);
++<spanned::Spanned<T>>::eq(p0, p1);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<spanned::Spanned<T> as std::hash::Hash>::hash":{"H":["std::hash::Hasher","std::marker::Sized"],"T":["std::marker::Sized","std::hash::Hash"]},"spanned::Spanned":{"T":["std::cmp::PartialEq","std::cmp::Eq","std::marker::Sized","std::cmp::Ord","std::clone::Clone","std::fmt::Debug","std::cmp::PartialOrd","std::hash::Hash"]},"std::hash::impls::<impl std::hash::Hash for &T>":{},"std::hash::impls::<impl std::hash::Hash for &mut T>":{},"std::hash::impls::<impl std::hash::Hash for *const T>":{},"std::hash::impls::<impl std::hash::Hash for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>":{}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<spanned::Spanned<T> as std::hash::Hash>::hash":{"H":["std::hash::SipHasher","std::hash::sip::Hasher<S>","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::hash::SipHasher13"],"T":["spanned::Spanned","std::hash::impls::<impl std::hash::Hash for &mut T>"]},"spanned::Spanned":{"T":["std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>","spanned::Spanned"]},"std::hash::impls::<impl std::hash::Hash for &T>":{},"std::hash::impls::<impl std::hash::Hash for &mut T>":{},"std::hash::impls::<impl std::hash::Hash for *const T>":{},"std::hash::impls::<impl std::hash::Hash for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // H
++p0.hash(p1);
++<spanned::Spanned<T> as std::hash::Hash>::hash(p0, p1);
++crate::<spanned::Spanned<T> as std::hash::Hash>::hash(p0, p1);
++<spanned::Spanned<T>>::hash(p0, p1);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::cmp::PartialOrd>::partial_cmp
+deps:{"<spanned::Spanned<T> as std::cmp::PartialOrd>::partial_cmp":{"T":["std::marker::Sized","std::cmp::PartialOrd"]},"spanned::Spanned":{"T":["std::cmp::PartialEq","std::cmp::PartialOrd","std::cmp::Eq","std::marker::Sized","std::fmt::Debug","std::hash::Hash","std::cmp::Ord","std::clone::Clone"]},"std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>":{}}
+candidates:{"<spanned::Spanned<T> as std::cmp::PartialOrd>::partial_cmp":{"T":["std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>","spanned::Spanned","std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>"]},"spanned::Spanned":{"T":["spanned::Spanned","std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>"]},"std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.partial_cmp(p1);
++<spanned::Spanned<T> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<spanned::Spanned<T> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<spanned::Spanned<T>>::partial_cmp(p0, p1);
+-----------------
+crates/serde_spanned/src/spanned.rs <spanned::Spanned<T> as std::cmp::Ord>::cmp
+deps:{"<spanned::Spanned<T> as std::cmp::Ord>::cmp":{"T":["std::marker::Sized","std::cmp::Ord"]},"spanned::Spanned":{"T":["std::cmp::Ord","std::marker::Sized","std::fmt::Debug","std::clone::Clone","std::cmp::PartialEq","std::cmp::PartialOrd","std::hash::Hash","std::cmp::Eq"]},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::cmp::impls::<impl std::cmp::Ord for &A>":{},"std::cmp::impls::<impl std::cmp::Ord for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{}}
+candidates:{"<spanned::Spanned<T> as std::cmp::Ord>::cmp":{"T":["std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>","std::cmp::impls::<impl std::cmp::Ord for &A>","spanned::Spanned"]},"spanned::Spanned":{"T":["std::ptr::const_ptr::<impl std::cmp::Ord for *const T>","spanned::Spanned"]},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::cmp::impls::<impl std::cmp::Ord for &A>":{},"std::cmp::impls::<impl std::cmp::Ord for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // spanned::Spanned<T>
++p0.cmp(p1);
++<spanned::Spanned<T> as std::cmp::Ord>::cmp(p0, p1);
++crate::<spanned::Spanned<T> as std::cmp::Ord>::cmp(p0, p1);
++<spanned::Spanned<T>>::cmp(p0, p1);

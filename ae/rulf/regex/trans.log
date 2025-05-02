@@ -1,0 +1,27 @@
+err tests_rug_343 sample rug_fuzz_0 "pattern1" {'sample': {'rug_fuzz_0': '"pattern1"', 'rug_fuzz_1': '"pattern2"'}}
+err tests_rug_343 sample rug_fuzz_1 "pattern2" {'sample': {'rug_fuzz_0': '"pattern1"', 'rug_fuzz_1': '"pattern2"'}}
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/exec.rs tests_rug_120
+err tests_rug_127 sample rug_fuzz_0 42 {'sample': {'rug_fuzz_0': '42'}}
+err tests_rug_127_prepare sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_1 42 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_1 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_2 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_1 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_2 42 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_127_prepare sample rug_fuzz_3 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/exec.rs tests_rug_145
+err tests_rug_13 sample rug_fuzz_0 true {'sample': {'rug_fuzz_0': 'true'}}
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/re_bytes.rs tests_llm_16_106
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/re_bytes.rs tests_llm_16_577
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/dfa.rs tests_llm_16_240_llm_16_239
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/dfa.rs tests_llm_16_267
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/dfa.rs tests_llm_16_285
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/dfa.rs tests_rug_77
+err tests_rug_90 sample rug_fuzz_0 10 {'sample': {'rug_fuzz_0': '10'}}
+err tests_rug_93 sample rug_fuzz_0 10 {'sample': {'rug_fuzz_0': '10'}}
+err regex /mnt/sda/xiang/rulf/rulf_hybrid/regex/./src/prog.rs tests_llm_16_90
+regex . 378 387 0
+err fin regex regex-syntax regex-syntax
+err fin regex rure regex-capi

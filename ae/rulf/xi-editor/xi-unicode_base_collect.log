@@ -1,0 +1,328 @@
+========================================
+    use crate::unicode::LineBreakIterator;
+    use crate::unicode::N_LINEBREAK_CATEGORIES;
+    use crate::unicode::LINEBREAK_STATE_MACHINE;
+    use crate::unicode::linebreak_property_str;
+    use std::cmp::Ordering;
+
+    #[test]
+    fn test_next() {
+        let s = "Hello, world!";
+        let mut iter = LineBreakIterator::new(s);
+        let mut expected_result = Some((5, false));
+        while let Some(expected) = expected_result {
+            let actual = iter.next();
+            assert_eq!(expected, actual);
+            expected_result = match expected_result {
+                Some((pos, _)) => {
+                    match pos.cmp(&s.len()) {
+                        Ordering::Greater => None,
+                        Ordering::Equal => Some((s.len() + 1, true)),
+                        Ordering::Less => {
+                            let (lb, len) = linebreak_property_str(s, pos);
+                            let i = (expected.1 as usize) * N_LINEBREAK_CATEGORIES + (lb as usize);
+                            let new = LINEBREAK_STATE_MACHINE[i];
+                            let result = pos + len;
+                            if (new as i8) < 0 {
+                                Some((result, new >= 0xc0))
+                            } else {
+                                Some((result, new >= 0xc0))
+                            }
+                        }
+                    }
+                }
+                None => None,
+            }
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use core::default::Default;
+
+    #[test]
+    fn test_default() {
+        let default_val: LineBreakLeafIter = Default::default();
+        // assert default values
+        assert_eq!(default_val.ix, 0);
+        assert_eq!(default_val.state, 0);
+    }
+}
+True
+========================================
+use crate::EmojiExt;
+
+#[test]
+fn test_is_emoji() {
+    assert_eq!(char::is_emoji('\u{1F600}'), true);
+    assert_eq!(char::is_emoji('\u{1F3F4}'), true);
+    assert_eq!(char::is_emoji('\u{231B}'), false);
+    assert_eq!(char::is_emoji('\u{307B}'), false);
+    assert_eq!(char::is_emoji('\u{1F1FA}'), false);
+}
+False
+========================================
+    use crate::EmojiExt;
+
+    #[test]
+    fn test_is_emoji_cancel_tag() {
+        assert_eq!('\u{E007F}'.is_emoji_cancel_tag(), true);
+        assert_eq!('\u{E007E}'.is_emoji_cancel_tag(), false);
+        assert_eq!('\u{1F600}'.is_emoji_cancel_tag(), false);
+    }
+}
+True
+========================================
+    use unicode::EmojiExt;
+    use std::char;
+
+    #[test]
+    fn test_is_emoji_combining_enclosing_keycap() {
+        assert_eq!(char::from_u32('\u{20E3}').unwrap().is_emoji_combining_enclosing_keycap(), true);
+    }
+}
+False
+========================================
+    use xi_unicode::EmojiExt;
+
+    #[test]
+    fn test_is_emoji_modifier() {
+        assert_eq!('\u{1F3FB}'.is_emoji_modifier(), true);
+        assert_eq!('\u{1F3FC}'.is_emoji_modifier(), true);
+        assert_eq!('\u{1F3FD}'.is_emoji_modifier(), true);
+        assert_eq!('\u{1F3FE}'.is_emoji_modifier(), true);
+        assert_eq!('\u{1F3FF}'.is_emoji_modifier(), true);
+        assert_eq!('\u{1F3FA}'.is_emoji_modifier(), false);
+        assert_eq!('\u{1F4A9}'.is_emoji_modifier(), false);
+    }
+}
+False
+========================================
+    use unicode_segmentation::UnicodeSegmentation;
+
+    #[test]
+    fn test_is_emoji_modifier_base() {
+        // test cases here
+    }
+}
+False
+========================================
+    use crate::EmojiExt;
+
+    #[test]
+    fn test_is_regional_indicator_symbol() {
+        assert_eq!('\u{1F1E6}'.is_regional_indicator_symbol(), true);
+        assert_eq!('\u{1F3F3}'.is_regional_indicator_symbol(), false);
+        assert_eq!('A'.is_regional_indicator_symbol(), false);
+    }
+}
+True
+========================================
+    use unicode::EmojiExt;
+
+    #[test]
+    fn test_is_tag_spec_char() {
+        assert_eq!('\u{E0020}'.is_tag_spec_char(), true);
+        assert_eq!('\u{E007E}'.is_tag_spec_char(), true);
+        assert_eq!('\u{E001F}'.is_tag_spec_char(), false);
+        assert_eq!('\u{E007F}'.is_tag_spec_char(), false);
+    }
+}
+False
+========================================
+    use unicode_traits::EmojiExt;
+
+    #[test]
+    fn test_is_zwj() {
+        assert_eq!('\u{200D}'.is_zwj(), true);
+        assert_eq!('a'.is_zwj(), false);
+        assert_eq!('\u{1F469}'.is_zwj(), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use core::cmp::Ordering;
+
+    #[test]
+    fn test_line_break_iterator_new_empty_string() {
+        let mut iterator = LineBreakIterator::new("");
+        assert_eq!(iterator.next(), Some((0, true)));
+        assert_eq!(iterator.next(), Some((0, true)));
+        assert_eq!(iterator.next(), None);
+    }
+
+    #[test]
+    fn test_line_break_iterator_new_non_empty_string() {
+        let mut iterator = LineBreakIterator::new("Hello\nWorld");
+        assert_eq!(iterator.next(), Some((0, true)));
+        assert_eq!(iterator.next(), Some((5, false)));
+        assert_eq!(iterator.next(), Some((6, true)));
+        assert_eq!(iterator.next(), Some((7, false)));
+        assert_eq!(iterator.next(), Some((8, true)));
+        assert_eq!(iterator.next(), Some((9, false)));
+        assert_eq!(iterator.next(), Some((10, true)));
+        assert_eq!(iterator.next(), Some((11, false)));
+        assert_eq!(iterator.next(), Some((12, true)));
+        assert_eq!(iterator.next(), Some((12, true)));
+        assert_eq!(iterator.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_line_break_leaf_iter_new() {
+        let s = "hello world";
+        let ix = 5;
+        let iterator = LineBreakLeafIter::new(s, ix);
+        assert_eq!(iterator.ix, 10);
+        assert_eq!(iterator.state, 0);
+    }
+
+    #[test]
+    fn test_line_break_leaf_iter_next() {
+        let s = "hello world";
+        let ix = 5;
+        let mut iterator = LineBreakLeafIter::new(s, ix);
+        let (result, is_hard_break) = iterator.next(s);
+        assert_eq!(result, 10);
+        assert_eq!(is_hard_break, false);
+    }
+}
+True
+========================================
+    use crate::unicode::LineBreakLeafIter;
+    use crate::LineBreakLeafIter;
+
+    #[test]
+    fn test_line_break_leaf_iter_next() {
+        let mut iter = LineBreakLeafIter::default();
+
+        let s = "";
+        assert_eq!(iter.next(s), (0, false));
+
+        let s = "Hello, Rust!";
+        assert_eq!(iter.next(s), (0, false));
+        assert_eq!(iter.next(s), (1, false));
+        assert_eq!(iter.next(s), (2, false));
+        assert_eq!(iter.next(s), (3, false));
+        assert_eq!(iter.next(s), (4, false));
+        assert_eq!(iter.next(s), (5, false));
+        assert_eq!(iter.next(s), (6, false));
+        assert_eq!(iter.next(s), (7, false));
+        assert_eq!(iter.next(s), (8, false));
+        assert_eq!(iter.next(s), (9, false));
+        assert_eq!(iter.next(s), (10, false));
+        assert_eq!(iter.next(s), (11, false));
+        assert_eq!(iter.next(s), (12, false));
+
+        let s = "Hello, Rust!\n";
+        assert_eq!(iter.next(s), (0, false));
+        assert_eq!(iter.next(s), (1, false));
+        assert_eq!(iter.next(s), (2, false));
+        assert_eq!(iter.next(s), (3, false));
+        assert_eq!(iter.next(s), (4, false));
+        assert_eq!(iter.next(s), (5, false));
+        assert_eq!(iter.next(s), (6, false));
+        assert_eq!(iter.next(s), (7, false));
+        assert_eq!(iter.next(s), (8, false));
+        assert_eq!(iter.next(s), (9, false));
+        assert_eq!(iter.next(s), (10, false));
+        assert_eq!(iter.next(s), (11, false));
+        assert_eq!(iter.next(s), (12, false));
+        assert_eq!(iter.next(s), (13, false));
+        assert_eq!(iter.next(s), (14, false));
+        assert_eq!(iter.next(s), (14, false));
+        assert_eq!(iter.next(s), (14, true));
+        assert_eq!(iter.next(s), (14, false));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_is_in_asc_list() {
+        let list: [i32; 6] = [1, 3, 5, 7, 9, 11];
+        
+        assert_eq!(is_in_asc_list(3, &list, 0, 5), true);
+        assert_eq!(is_in_asc_list(4, &list, 0, 5), false);
+        assert_eq!(is_in_asc_list(9, &list, 0, 5), true);
+        assert_eq!(is_in_asc_list(10, &list, 0, 5), false);
+    }
+}
+True
+========================================
+    use crate::is_keycap_base;
+
+    #[test]
+    fn test_is_keycap_base() {
+        assert_eq!(is_keycap_base('0'), true);
+        assert_eq!(is_keycap_base('9'), true);
+        assert_eq!(is_keycap_base('#'), true);
+        assert_eq!(is_keycap_base('*'), true);
+
+        assert_eq!(is_keycap_base('a'), false);
+        assert_eq!(is_keycap_base('Z'), false);
+        assert_eq!(is_keycap_base(' '), false);
+    }
+}
+True
+========================================
+    use xi_unicode::unicode::is_variation_selector;
+
+    #[test]
+    fn test_is_variation_selector() {
+        assert_eq!(is_variation_selector('\u{FE00}'), true);
+        assert_eq!(is_variation_selector('\u{FE0F}'), true);
+        assert_eq!(is_variation_selector('\u{E0100}'), true);
+        assert_eq!(is_variation_selector('\u{E01EF}'), true);
+        assert_eq!(is_variation_selector('\u{0000}'), false);
+        assert_eq!(is_variation_selector('\u{FFFF}'), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_linebreak_property() {
+        assert_eq!(linebreak_property('\u{61}'), 1);
+        assert_eq!(linebreak_property('\u{4E}'), 1);
+        assert_eq!(linebreak_property('\u{8A}'), 2);
+        assert_eq!(linebreak_property('\u{A0}'), 6);
+        assert_eq!(linebreak_property('\u{4E1C}'), 3);
+        assert_eq!(linebreak_property('\u{1F601}'), 3);
+        assert_eq!(linebreak_property('\u{1F601}'), 3);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::linebreak_property_str;
+
+    #[test]
+    fn test_linebreak_property_str() {
+        assert_eq!(linebreak_property_str("\u{000Au}", 0), (1, 1));
+        assert_eq!(linebreak_property_str("\u{0CF1}", 0), (2, 3));
+        assert_eq!(linebreak_property_str("\u{1F469}", 0), (3, 4));
+        assert_eq!(linebreak_property_str("\u{1F469}\u{1F3FF}", 0), (3, 4));
+    }
+}
+False
+xi-editor xi-unicode 8 18

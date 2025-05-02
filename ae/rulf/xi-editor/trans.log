@@ -1,0 +1,17 @@
+err xi-editor /mnt/sda/xiang/rulf/rulf_hybrid/xi-editor/./src/main.rs tests_llm_16_4_llm_16_3
+xi-core . 5 6 0
+err xi-editor /mnt/sda/xiang/rulf/rulf_hybrid/xi-editor/core-lib/src/edit_ops.rs tests_llm_16_264
+err xi-editor /mnt/sda/xiang/rulf/rulf_hybrid/xi-editor/core-lib/src/config.rs tests_llm_16_224_llm_16_223
+err xi-editor /mnt/sda/xiang/rulf/rulf_hybrid/xi-editor/core-lib/src/plugins/mod.rs tests_llm_16_608_llm_16_607
+err xi-editor /mnt/sda/xiang/rulf/rulf_hybrid/xi-editor/core-lib/src/file.rs tests_llm_16_436
+err xi-editor /mnt/sda/xiang/rulf/rulf_hybrid/xi-editor/core-lib/src/view.rs tests_llm_16_776_llm_16_775
+xi-core-lib core-lib 155 161 0
+xi-lang experimental/lang 190 196 0
+xi-lsp-lib lsp-lib 192 198 0
+xi-plugin-lib plugin-lib 204 210 0
+err fin xi-editor xi-rope rope
+xi-rpc rpc 219 225 0
+xi-sample-plugin sample-plugin 220 226 0
+xi-syntect-plugin syntect-plugin 224 230 0
+err fin xi-editor xi-trace trace
+err fin xi-editor xi-unicode unicode

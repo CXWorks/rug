@@ -1,0 +1,429 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
+
+
+# Make data base, printed on Wed Jun  1 22:08:12 2022
+
+# Variables
+
+# environment
+JENV_SHELL = zsh
+# automatic
+?F = $(notdir $?)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from `makefile', line 9)
+MAIN_FILE := src/lib.rs
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+ARCHFLAGS = -arch arm64
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/tim/Documents/master-thesis/evaluation/gamie
+# makefile (from `makefile', line 1)
+SHELL := /bin/bash
+# environment
+VSCODE_NLS_CONFIG = {"locale":"de","availableLanguages":{"*":"de"},"_languagePackId":"76abe230f76758c10463f0219f362aef.de","_translationsConfigFile":"/Users/tim/Library/Application Support/Code/clp/76abe230f76758c10463f0219f362aef.de/tcf.json","_cacheRoot":"/Users/tim/Library/Application Support/Code/clp/76abe230f76758c10463f0219f362aef.de","_resolvedLanguagePackCoreLocation":"/Users/tim/Library/Application Support/Code/clp/76abe230f76758c10463f0219f362aef.de/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/Users/tim/Library/Application Support/Code/clp/76abe230f76758c10463f0219f362aef.de/corrupted.info","_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/xn/k9zss0q14x12mk48vy5xg8yh0000gn/T/vscode-ipc-f7d85890-ef02-4ff9-8a87-68012bd3ccd3.sock
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /Users/tim/.jenv/shims:/Applications/Sublime Text.app/Contents/SharedSupport/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/go/bin:/usr/local/aria2/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/tim/.cargo/bin:/bin:/Users/tim/.jenv/bin:/Users/tim/Library/Android/sdk/platform-tools:/Users/tim/Library/Android/sdk/tools/bin:/Users/tim/Library/Android/sdk/build-tools/30.0.3:/Users/tim/.cargo/bin:/Users/tim/Library/Android/sdk/emulator:/Users/tim/bin:/usr/local/Homebrew/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+# environment
+JENV_FORCEJAVAHOME = true
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `makefile', line 3)
+ANALYZER := 
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+ANDROID_HOME = /Users/tim/Library/Android/sdk
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.0cmZ2y6Vw5/Listeners
+# environment
+JDK_HOME = /Users/tim/.jenv/versions/1.8
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.PWEVAIVRP3/org.macosforge.xquartz:0
+# makefile (from `makefile', line 2)
+INSTRUMENTER := 
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/tim/Documents/master-thesis/evaluation/gamie
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+MANPATH = /opt/homebrew/share/man::
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/tim
+# makefile (from `makefile', line 7)
+FEATURES := "all"
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/tim/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LOGNAME = tim
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/tim/.oh-my-zsh
+# makefile (from `makefile', line 4)
+MONITOR := 
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+JENV_FORCEJDKHOME = true
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# environment
+JAVA_HOME = /Users/tim/Library/Java/JavaVirtualMachines/azul-17.0.2/Contents/Home
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = tim
+# makefile
+.DEFAULT_GOAL := clean
+# environment
+JENV_LOADED = 1
+# makefile (from `makefile', line 10)
+RUN := 0
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/xn/k9zss0q14x12mk48vy5xg8yh0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/tim/Library/Application Support/Code/1.67.2-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.68840213.68840219
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `makefile', line 5)
+CRATE_ROOT := /Users/tim/Documents/master-thesis/evaluation/gamie
+# automatic
++F = $(notdir $+)
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# makefile (from `makefile', line 6)
+OUTPUT := /Users/tim/Documents/master-thesis/evaluation/gamie/rusty-unit
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x3
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+ANDROID_SDK_ROOT = /Users/tim/Library/Android/sdk
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# makefile (from `makefile', line 8)
+CRATE_NAME := gamie
+# environment
+VSCODE_PID = 48358
+# variable set hash-table stats:
+# Load=90/1024=9%, Rehash=0, Collisions=3/121=2%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777230, inode 53764379): 14 files, no impossibilities.
+
+# 14 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+src/rusty_monitor.rs:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 26):
+	$(CP) $(MONITOR) ./src/rusty_monitor.rs
+	
+
+clean-build:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 23):
+	$(RM) -r target
+	
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+analyze: analysis/hir/hir.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+coverage/data.json: coverage/rusty_tests.profdata
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 45):
+	mkdir -p coverage
+	$(shell ru export-cov "coverage/rusty_tests.profdata" "coverage/data.json" $(FEATURES))
+	
+
+random-search: analysis/hir/hir.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 59):
+	java -jar ~/bin/rusty-unit.jar --algo random \
+	-c $(CRATE_ROOT) \
+	-m $(MAIN_FILE) \
+	-n $(CRATE_NAME) \
+	--o $(OUTPUT)-$(RUN) \
+	--run $(RUN) \
+	--hir $(CRATE_ROOT)/analysis/hir/hir.json \
+	--mir $(CRATE_ROOT)/analysis/mir/original \
+	--instrumenter $(INSTRUMENTER) \
+	--features $(FEATURES) \
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 21:28:14
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+clean-logs:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 16):
+	$(RM) -f tests.error
+	$(RM) -f tests.log
+	
+
+dynamosa: analysis/hir/hir.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 71):
+	java -jar ~/bin/rusty-unit.jar --algo dynamosa \
+	-c $(CRATE_ROOT) \
+	-m $(MAIN_FILE) \
+	-n $(CRATE_NAME) \
+	--o $(OUTPUT)-$(RUN) \
+	--run $(RUN) \
+	--hir $(CRATE_ROOT)/analysis/hir/hir.json \
+	--mir $(CRATE_ROOT)/analysis/mir/original \
+	--instrumenter $(INSTRUMENTER) \
+	--features $(FEATURES) \
+	--seed-all-methods \
+	--seed-random-population \
+	--seed-constant-pool
+	
+
+execute:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 98):
+	@export RUSTC_WRAPPER=$(INSTRUMENTER) && \
+	export RU_STAGE=instrumentation && \
+	export RU_CRATE_NAME=$(CRATE_NAME) && \
+	export RU_CRATE_ROOT=$(CRATE_ROOT) && \
+	export RU_RUN=$(RUN) && \
+	cargo test rusty_tests
+	
+
+coverage-html: coverage/report.html
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean-coverage:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 20):
+	$(RM) -r coverage
+	
+
+clean: clean-build clean-coverage clean-logs
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 13):
+	$(RM) -r analysis
+	
+
+coverage: coverage/data.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+coverage/rusty_tests.profdata:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 39):
+	@export RUSTFLAGS="-C instrument-coverage -Awarnings" && \
+	export LLVM_PROFILE_FILE="coverage/rusty-test-%m.profraw" && \
+	cargo +nightly-aarch64-apple-darwin test rusty_tests --features $(FEATURES) && \
+	cargo +nightly-aarch64-apple-darwin profdata -- merge -sparse "coverage/"rusty-test*.profraw -o "coverage/rusty_tests.profdata"
+	
+
+analysis/hir/hir.json: src/rusty_monitor.rs
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 29):
+	@export RUST_LOG=debug && \
+	export RUST_BACKTRACE=full && \
+	export RU_CRATE_NAME=$(CRATE_NAME) && \
+	export RU_CRATE_ROOT=$(CRATE_ROOT) && \
+	export RU_RUN=$(RUN) && \
+	export RUSTC_WRAPPER=$(ANALYZER) && \
+	export RUST_BACKTRACE=1 && \
+	cargo +nightly-aarch64-apple-darwin build --features $(FEATURES)
+	
+
+coverage/report.html: coverage/rusty_tests.profdata
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 49):
+	mkdir -p coverage
+	$(shell ru show-cov "coverage/rusty_tests.profdata" "coverage/report.html" $(FEATURES))
+	
+
+dynamosa-poor: analysis/hir/hir.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 86):
+	java -jar ~/bin/rusty-unit.jar --algo dynamosa \
+	-c $(CRATE_ROOT) \
+	-m $(MAIN_FILE) \
+	-n $(CRATE_NAME) \
+	--o $(OUTPUT)-$(RUN) \
+	--run $(RUN) \
+	--hir $(CRATE_ROOT)/analysis/hir/hir.json \
+	--mir $(CRATE_ROOT)/analysis/mir/original \
+	--instrumenter $(INSTRUMENTER) \
+	--features $(FEATURES)
+	
+
+# files hash-table stats:
+# Load=20/1024=2%, Rehash=0, Collisions=0/44=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Wed Jun  1 22:08:12 2022
+
+ 

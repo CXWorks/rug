@@ -1,0 +1,268 @@
+-----------------
+sha1/src/compress/soft.rs compress::soft::add
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::add(p0, p1);
++crate::compress::soft::add(p0, p1);
++crate::compress::soft::add(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::xor
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::xor(p0, p1);
++crate::compress::soft::xor(p0, p1);
++crate::compress::soft::xor(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1_first_add
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1_first_add(p0, p1);
++crate::compress::soft::sha1_first_add(p0, p1);
++crate::compress::soft::sha1_first_add(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1msg1
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1msg1(p0, p1);
++crate::compress::soft::sha1msg1(p0, p1);
++crate::compress::soft::sha1msg1(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1msg2
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1msg2(p0, p1);
++crate::compress::soft::sha1msg2(p0, p1);
++crate::compress::soft::sha1msg2(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1_first_half
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1_first_half(p0, p1);
++crate::compress::soft::sha1_first_half(p0, p1);
++crate::compress::soft::sha1_first_half(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1_digest_round_x4
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
+let mut p2 = 0i8; // None+i8
++compress::soft::sha1_digest_round_x4(p0, p1, p2);
++crate::compress::soft::sha1_digest_round_x4(p0, p1, p2);
++crate::compress::soft::sha1_digest_round_x4(p0, p1, p2);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1rnds4c
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1rnds4c(p0, p1);
++crate::compress::soft::sha1rnds4c(p0, p1);
++crate::compress::soft::sha1rnds4c(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1rnds4p
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1rnds4p(p0, p1);
++crate::compress::soft::sha1rnds4p(p0, p1);
++crate::compress::soft::sha1rnds4p(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1rnds4m
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++compress::soft::sha1rnds4m(p0, p1);
++crate::compress::soft::sha1rnds4m(p0, p1);
++crate::compress::soft::sha1rnds4m(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::sha1_digest_block_u32
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 5]
+let mut p1 = & [0u32;1]; // None+[u32; 16]
++compress::soft::sha1_digest_block_u32(p0, p1);
++crate::compress::soft::sha1_digest_block_u32(p0, p1);
++crate::compress::soft::sha1_digest_block_u32(p0, p1);
+-----------------
+sha1/src/compress/soft.rs compress::soft::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 5]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; _]]
++compress::soft::compress(p0, p1);
++crate::compress::soft::compress(p0, p1);
++crate::compress::soft::compress(p0, p1);
+-----------------
+sha1/src/compress/x86.rs compress::x86::digest_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 5]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 64]]
++compress::x86::digest_blocks(p0, p1);
++crate::compress::x86::digest_blocks(p0, p1);
++crate::compress::x86::digest_blocks(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs compress::x86::shani_cpuid::init_get
+deps:{}
+candidates:{}
++compress::x86::shani_cpuid::init_get();
++crate::compress::x86::shani_cpuid::init_get();
++crate::compress::x86::shani_cpuid::init_get();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/x86.rs compress::x86::shani_cpuid::init_get::cpuid
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++compress::x86::shani_cpuid::init_get::cpuid(p0);
++crate::compress::x86::shani_cpuid::init_get::cpuid(p0);
++crate::compress::x86::shani_cpuid::init_get::cpuid(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/x86.rs compress::x86::shani_cpuid::init_get::cpuid_count
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
++compress::x86::shani_cpuid::init_get::cpuid_count(p0, p1);
++crate::compress::x86::shani_cpuid::init_get::cpuid_count(p0, p1);
++crate::compress::x86::shani_cpuid::init_get::cpuid_count(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs compress::x86::shani_cpuid::init
+deps:{}
+candidates:{}
++compress::x86::shani_cpuid::init();
++crate::compress::x86::shani_cpuid::init();
++crate::compress::x86::shani_cpuid::init();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs compress::x86::shani_cpuid::get
+deps:{}
+candidates:{}
++compress::x86::shani_cpuid::get();
++crate::compress::x86::shani_cpuid::get();
++crate::compress::x86::shani_cpuid::get();
+-----------------
+sha1/src/compress/x86.rs compress::x86::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 5]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 64]]
++compress::x86::compress(p0, p1);
++crate::compress::x86::compress(p0, p1);
++crate::compress::x86::compress(p0, p1);
+-----------------
+sha1/src/compress.rs compress::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 5]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sha1Core as digest::core_api::BlockSizeUser>::BlockSize>]
++compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs <compress::x86::shani_cpuid::InitToken as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // compress::x86::shani_cpuid::InitToken
++p0.clone();
++<compress::x86::shani_cpuid::InitToken as std::clone::Clone>::clone(p0);
++crate::<compress::x86::shani_cpuid::InitToken as std::clone::Clone>::clone(p0);
++<compress::x86::shani_cpuid::InitToken>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs <compress::x86::shani_cpuid::InitToken as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // compress::x86::shani_cpuid::InitToken
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<compress::x86::shani_cpuid::InitToken as std::fmt::Debug>::fmt(p0, p1);
++crate::<compress::x86::shani_cpuid::InitToken as std::fmt::Debug>::fmt(p0, p1);
++<compress::x86::shani_cpuid::InitToken>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs compress::x86::shani_cpuid::InitToken::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // compress::x86::shani_cpuid::InitToken
++p0.get();
++compress::x86::shani_cpuid::InitToken::get(p0);
++crate::compress::x86::shani_cpuid::InitToken::get(p0);
++<compress::x86::shani_cpuid::InitToken>::get(p0);
+-----------------
+sha1/src/lib.rs <Sha1Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha1Core
++p0.clone();
++<Sha1Core as std::clone::Clone>::clone(p0);
++crate::<Sha1Core as std::clone::Clone>::clone(p0);
++<Sha1Core>::clone(p0);
+-----------------
+sha1/src/lib.rs <Sha1Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha1Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sha1Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Sha1Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Sha1Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Sha1Core>::update_blocks(p0, p1);
+-----------------
+sha1/src/lib.rs <Sha1Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha1Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Sha1Core as digest::core_api::BlockSizeUser>::BlockSize, <Sha1Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Sha1Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Sha1Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Sha1Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Sha1Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha1/src/lib.rs <Sha1Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Sha1Core as std::default::Default>::default();
++crate::<Sha1Core as std::default::Default>::default();
++<Sha1Core>::default();
+-----------------
+sha1/src/lib.rs <Sha1Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha1Core
++p0.reset();
++<Sha1Core as digest::Reset>::reset(p0);
++crate::<Sha1Core as digest::Reset>::reset(p0);
++<Sha1Core>::reset(p0);
+-----------------
+sha1/src/lib.rs <Sha1Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Sha1Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Sha1Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Sha1Core>::write_alg_name(p0);
+-----------------
+sha1/src/lib.rs <Sha1Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha1Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sha1Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sha1Core as std::fmt::Debug>::fmt(p0, p1);
++<Sha1Core>::fmt(p0, p1);

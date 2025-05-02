@@ -1,0 +1,1888 @@
+-----------------
+src/parser.rs parser::try_parse
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++parser::try_parse(p0);
++crate::parser::try_parse(p0);
++crate::parser::try_parse(p0);
+-----------------
+src/parser.rs parser::parse_simple
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++parser::parse_simple(p0);
++crate::parser::parse_simple(p0);
++crate::parser::parse_simple(p0);
+-----------------
+src/parser.rs parser::parse_hyphenated
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++parser::parse_hyphenated(p0);
++crate::parser::parse_hyphenated(p0);
++crate::parser::parse_hyphenated(p0);
+-----------------
+src/fmt.rs fmt::format_simple
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
+let mut p1 = true; // None+bool
++fmt::format_simple(p0, p1);
++crate::fmt::format_simple(p0, p1);
++crate::fmt::format_simple(p0, p1);
+-----------------
+src/fmt.rs fmt::format_hyphenated
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
+let mut p1 = true; // None+bool
++fmt::format_hyphenated(p0, p1);
++crate::fmt::format_hyphenated(p0, p1);
++crate::fmt::format_hyphenated(p0, p1);
+-----------------
+src/fmt.rs fmt::encode_simple
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
+let mut p2 = true; // None+bool
++fmt::encode_simple(p0, p1, p2);
++crate::fmt::encode_simple(p0, p1, p2);
++crate::fmt::encode_simple(p0, p1, p2);
+-----------------
+src/fmt.rs fmt::encode_hyphenated
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
+let mut p2 = true; // None+bool
++fmt::encode_hyphenated(p0, p1, p2);
++crate::fmt::encode_hyphenated(p0, p1, p2);
++crate::fmt::encode_hyphenated(p0, p1, p2);
+-----------------
+src/fmt.rs fmt::encode_braced
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
+let mut p2 = true; // None+bool
++fmt::encode_braced(p0, p1, p2);
++crate::fmt::encode_braced(p0, p1, p2);
++crate::fmt::encode_braced(p0, p1, p2);
+-----------------
+src/fmt.rs fmt::encode_urn
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
+let mut p2 = true; // None+bool
++fmt::encode_urn(p0, p1, p2);
++crate::fmt::encode_urn(p0, p1, p2);
++crate::fmt::encode_urn(p0, p1, p2);
+-----------------
+src/timestamp.rs timestamp::encode_rfc4122_timestamp
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u16; // None+u16
+let mut p2 = & [0u8;1]; // None+[u8; 6]
++timestamp::encode_rfc4122_timestamp(p0, p1, p2);
++crate::timestamp::encode_rfc4122_timestamp(p0, p1, p2);
++crate::timestamp::encode_rfc4122_timestamp(p0, p1, p2);
+-----------------
+src/timestamp.rs timestamp::decode_rfc4122_timestamp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++timestamp::decode_rfc4122_timestamp(p0);
++crate::timestamp::decode_rfc4122_timestamp(p0);
++crate::timestamp::decode_rfc4122_timestamp(p0);
+-----------------
+src/timestamp.rs timestamp::now
+deps:{}
+candidates:{}
++timestamp::now();
++crate::timestamp::now();
++crate::timestamp::now();
+-----------------
+src/timestamp.rs timestamp::ClockSequence::generate_sequence
+deps:{"<&'a T as timestamp::ClockSequence>":{},"timestamp::ClockSequence::generate_sequence":{"Self":["timestamp::ClockSequence"]}}
+candidates:{"<&'a T as timestamp::ClockSequence>":{},"timestamp::ClockSequence::generate_sequence":{"Self":["<&'a T as timestamp::ClockSequence>","timestamp::context::NoContext"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0u32; // None+u32
++p0.generate_sequence(p1, p2);
++timestamp::ClockSequence::generate_sequence(p0, p1, p2);
++crate::timestamp::ClockSequence::generate_sequence(p0, p1, p2);
++crate::timestamp::ClockSequence::generate_sequence(p0, p1, p2);
+-----------------
+src/builder.rs <builder::Builder as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // builder::Builder
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<builder::Builder as std::fmt::Debug>::fmt(p0, p1);
++crate::<builder::Builder as std::fmt::Debug>::fmt(p0, p1);
++<builder::Builder>::fmt(p0, p1);
+-----------------
+src/builder.rs builder::<impl Uuid>::nil
+deps:{}
+candidates:{}
++builder::<impl Uuid>::nil();
++crate::builder::<impl Uuid>::nil();
++<Uuid>::nil();
+-----------------
+src/builder.rs builder::<impl Uuid>::from_fields
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u16; // None+u16
+let mut p2 = 0u16; // None+u16
+let mut p3 = & [0u8;1]; // None+[u8; 8]
++builder::<impl Uuid>::from_fields(p0, p1, p2, p3);
++crate::builder::<impl Uuid>::from_fields(p0, p1, p2, p3);
++<Uuid>::from_fields(p0, p1, p2, p3);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_fields_le
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u16; // None+u16
+let mut p2 = 0u16; // None+u16
+let mut p3 = & [0u8;1]; // None+[u8; 8]
++builder::<impl Uuid>::from_fields_le(p0, p1, p2, p3);
++crate::builder::<impl Uuid>::from_fields_le(p0, p1, p2, p3);
++<Uuid>::from_fields_le(p0, p1, p2, p3);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_u128
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++builder::<impl Uuid>::from_u128(p0);
++crate::builder::<impl Uuid>::from_u128(p0);
++<Uuid>::from_u128(p0);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_u128_le
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++builder::<impl Uuid>::from_u128_le(p0);
++crate::builder::<impl Uuid>::from_u128_le(p0);
++<Uuid>::from_u128_le(p0);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_u64_pair
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
++builder::<impl Uuid>::from_u64_pair(p0, p1);
++crate::builder::<impl Uuid>::from_u64_pair(p0, p1);
++<Uuid>::from_u64_pair(p0, p1);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_slice
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++builder::<impl Uuid>::from_slice(p0);
++crate::builder::<impl Uuid>::from_slice(p0);
++<Uuid>::from_slice(p0);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_slice_le
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++builder::<impl Uuid>::from_slice_le(p0);
++crate::builder::<impl Uuid>::from_slice_le(p0);
++<Uuid>::from_slice_le(p0);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_bytes
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::<impl Uuid>::from_bytes(p0);
++crate::builder::<impl Uuid>::from_bytes(p0);
++<Uuid>::from_bytes(p0);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_bytes_le
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::<impl Uuid>::from_bytes_le(p0);
++crate::builder::<impl Uuid>::from_bytes_le(p0);
++<Uuid>::from_bytes_le(p0);
+-----------------
+src/builder.rs builder::<impl Uuid>::from_bytes_ref
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 16]
++builder::<impl Uuid>::from_bytes_ref(p0);
++crate::builder::<impl Uuid>::from_bytes_ref(p0);
++<Uuid>::from_bytes_ref(p0);
+-----------------
+src/builder.rs builder::Builder::from_bytes
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::Builder::from_bytes(p0);
++crate::builder::Builder::from_bytes(p0);
++<builder::Builder>::from_bytes(p0);
+-----------------
+src/builder.rs builder::Builder::from_bytes_le
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::Builder::from_bytes_le(p0);
++crate::builder::Builder::from_bytes_le(p0);
++<builder::Builder>::from_bytes_le(p0);
+-----------------
+src/builder.rs builder::Builder::from_rfc4122_timestamp
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u16; // None+u16
+let mut p2 = & [0u8;1]; // None+[u8; 6]
++builder::Builder::from_rfc4122_timestamp(p0, p1, p2);
++crate::builder::Builder::from_rfc4122_timestamp(p0, p1, p2);
++<builder::Builder>::from_rfc4122_timestamp(p0, p1, p2);
+-----------------
+src/builder.rs builder::Builder::from_md5_bytes
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::Builder::from_md5_bytes(p0);
++crate::builder::Builder::from_md5_bytes(p0);
++<builder::Builder>::from_md5_bytes(p0);
+-----------------
+src/builder.rs builder::Builder::from_random_bytes
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::Builder::from_random_bytes(p0);
++crate::builder::Builder::from_random_bytes(p0);
++<builder::Builder>::from_random_bytes(p0);
+-----------------
+src/builder.rs builder::Builder::from_sha1_bytes
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 16]
++builder::Builder::from_sha1_bytes(p0);
++crate::builder::Builder::from_sha1_bytes(p0);
++<builder::Builder>::from_sha1_bytes(p0);
+-----------------
+src/builder.rs builder::Builder::from_slice
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++builder::Builder::from_slice(p0);
++crate::builder::Builder::from_slice(p0);
++<builder::Builder>::from_slice(p0);
+-----------------
+src/builder.rs builder::Builder::from_slice_le
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++builder::Builder::from_slice_le(p0);
++crate::builder::Builder::from_slice_le(p0);
++<builder::Builder>::from_slice_le(p0);
+-----------------
+src/builder.rs builder::Builder::from_fields
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u16; // None+u16
+let mut p2 = 0u16; // None+u16
+let mut p3 = & [0u8;1]; // None+[u8; 8]
++builder::Builder::from_fields(p0, p1, p2, p3);
++crate::builder::Builder::from_fields(p0, p1, p2, p3);
++<builder::Builder>::from_fields(p0, p1, p2, p3);
+-----------------
+src/builder.rs builder::Builder::from_fields_le
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u16; // None+u16
+let mut p2 = 0u16; // None+u16
+let mut p3 = & [0u8;1]; // None+[u8; 8]
++builder::Builder::from_fields_le(p0, p1, p2, p3);
++crate::builder::Builder::from_fields_le(p0, p1, p2, p3);
++<builder::Builder>::from_fields_le(p0, p1, p2, p3);
+-----------------
+src/builder.rs builder::Builder::from_u128
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++builder::Builder::from_u128(p0);
++crate::builder::Builder::from_u128(p0);
++<builder::Builder>::from_u128(p0);
+-----------------
+src/builder.rs builder::Builder::from_u128_le
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++builder::Builder::from_u128_le(p0);
++crate::builder::Builder::from_u128_le(p0);
++<builder::Builder>::from_u128_le(p0);
+-----------------
+src/builder.rs builder::Builder::nil
+deps:{}
+candidates:{}
++builder::Builder::nil();
++crate::builder::Builder::nil();
++<builder::Builder>::nil();
+-----------------
+src/builder.rs builder::Builder::set_variant
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // builder::Builder
+let mut p1 = MaybeUninit::uninit().assume_init(); // Variant
++p0.set_variant(p1);
++builder::Builder::set_variant(p0, p1);
++crate::builder::Builder::set_variant(p0, p1);
++<builder::Builder>::set_variant(p0, p1);
+-----------------
+src/builder.rs builder::Builder::with_variant
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // builder::Builder
+let mut p1 = MaybeUninit::uninit().assume_init(); // Variant
++p0.with_variant(p1);
++builder::Builder::with_variant(p0, p1);
++crate::builder::Builder::with_variant(p0, p1);
++<builder::Builder>::with_variant(p0, p1);
+-----------------
+src/builder.rs builder::Builder::set_version
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // builder::Builder
+let mut p1 = MaybeUninit::uninit().assume_init(); // Version
++p0.set_version(p1);
++builder::Builder::set_version(p0, p1);
++crate::builder::Builder::set_version(p0, p1);
++<builder::Builder>::set_version(p0, p1);
+-----------------
+src/builder.rs builder::Builder::with_version
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // builder::Builder
+let mut p1 = MaybeUninit::uninit().assume_init(); // Version
++p0.with_version(p1);
++builder::Builder::with_version(p0, p1);
++crate::builder::Builder::with_version(p0, p1);
++<builder::Builder>::with_version(p0, p1);
+-----------------
+src/builder.rs builder::Builder::as_uuid
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // builder::Builder
++p0.as_uuid();
++builder::Builder::as_uuid(p0);
++crate::builder::Builder::as_uuid(p0);
++<builder::Builder>::as_uuid(p0);
+-----------------
+src/builder.rs builder::Builder::into_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // builder::Builder
++p0.into_uuid();
++builder::Builder::into_uuid(p0);
++crate::builder::Builder::into_uuid(p0);
++<builder::Builder>::into_uuid(p0);
+-----------------
+src/error.rs <error::Error as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Error
++p0.clone();
++<error::Error as std::clone::Clone>::clone(p0);
++crate::<error::Error as std::clone::Clone>::clone(p0);
++<error::Error>::clone(p0);
+-----------------
+src/error.rs <error::Error as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<error::Error as std::fmt::Debug>::fmt(p0, p1);
++crate::<error::Error as std::fmt::Debug>::fmt(p0, p1);
++<error::Error>::fmt(p0, p1);
+-----------------
+src/error.rs <error::Error as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Error
++p0.assert_receiver_is_total_eq();
++<error::Error as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<error::Error as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<error::Error>::assert_receiver_is_total_eq(p0);
+-----------------
+src/error.rs <error::Error as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<error::Error as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<error::Error as std::hash::Hash>::hash":{"__H":["std::boxed::Box<T, A>","std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>","std::hash::SipHasher","std::hash::SipHasher13"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<error::Error as std::hash::Hash>::hash(p0, p1);
++crate::<error::Error as std::hash::Hash>::hash(p0, p1);
++<error::Error>::hash(p0, p1);
+-----------------
+src/error.rs <error::Error as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Error
+let mut p1 = & MaybeUninit::uninit().assume_init(); // error::Error
++p0.eq(p1);
++<error::Error as std::cmp::PartialEq>::eq(p0, p1);
++crate::<error::Error as std::cmp::PartialEq>::eq(p0, p1);
++<error::Error>::eq(p0, p1);
+-----------------
+src/error.rs <error::ErrorKind as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::ErrorKind
++p0.clone();
++<error::ErrorKind as std::clone::Clone>::clone(p0);
++crate::<error::ErrorKind as std::clone::Clone>::clone(p0);
++<error::ErrorKind>::clone(p0);
+-----------------
+src/error.rs <error::ErrorKind as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::ErrorKind
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<error::ErrorKind as std::fmt::Debug>::fmt(p0, p1);
++crate::<error::ErrorKind as std::fmt::Debug>::fmt(p0, p1);
++<error::ErrorKind>::fmt(p0, p1);
+-----------------
+src/error.rs <error::ErrorKind as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::ErrorKind
++p0.assert_receiver_is_total_eq();
++<error::ErrorKind as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<error::ErrorKind as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<error::ErrorKind>::assert_receiver_is_total_eq(p0);
+-----------------
+src/error.rs <error::ErrorKind as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<error::ErrorKind as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<error::ErrorKind as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::ErrorKind
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<error::ErrorKind as std::hash::Hash>::hash(p0, p1);
++crate::<error::ErrorKind as std::hash::Hash>::hash(p0, p1);
++<error::ErrorKind>::hash(p0, p1);
+-----------------
+src/error.rs <error::ErrorKind as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::ErrorKind
+let mut p1 = & MaybeUninit::uninit().assume_init(); // error::ErrorKind
++p0.eq(p1);
++<error::ErrorKind as std::cmp::PartialEq>::eq(p0, p1);
++crate::<error::ErrorKind as std::cmp::PartialEq>::eq(p0, p1);
++<error::ErrorKind>::eq(p0, p1);
+-----------------
+src/error.rs <error::InvalidUuid<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
++p0.clone();
++<error::InvalidUuid<'a> as std::clone::Clone>::clone(p0);
++crate::<error::InvalidUuid<'a> as std::clone::Clone>::clone(p0);
++<error::InvalidUuid<'a>>::clone(p0);
+-----------------
+src/error.rs <error::InvalidUuid<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<error::InvalidUuid<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<error::InvalidUuid<'a> as std::fmt::Debug>::fmt(p0, p1);
++<error::InvalidUuid<'a>>::fmt(p0, p1);
+-----------------
+src/error.rs <error::InvalidUuid<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
++p0.assert_receiver_is_total_eq();
++<error::InvalidUuid<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<error::InvalidUuid<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<error::InvalidUuid<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/error.rs <error::InvalidUuid<'a> as std::hash::Hash>::hash
+'a
+deps:{"<&mut H as std::hash::Hasher>":{},"<error::InvalidUuid<'a> as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<error::InvalidUuid<'a> as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>","std::hash::SipHasher","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<error::InvalidUuid<'a> as std::hash::Hash>::hash(p0, p1);
++crate::<error::InvalidUuid<'a> as std::hash::Hash>::hash(p0, p1);
++<error::InvalidUuid<'a>>::hash(p0, p1);
+-----------------
+src/error.rs <error::InvalidUuid<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
++p0.eq(p1);
++<error::InvalidUuid<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<error::InvalidUuid<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<error::InvalidUuid<'a>>::eq(p0, p1);
+-----------------
+src/error.rs error::InvalidUuid::<'a>::into_err
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // error::InvalidUuid<'a>
++p0.into_err();
++error::InvalidUuid::<'a>::into_err(p0);
++crate::error::InvalidUuid::<'a>::into_err(p0);
++<error::InvalidUuid<'a>>::into_err(p0);
+-----------------
+src/error.rs <error::Error as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // error::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<error::Error as std::fmt::Display>::fmt(p0, p1);
++crate::<error::Error as std::fmt::Display>::fmt(p0, p1);
++<error::Error>::fmt(p0, p1);
+-----------------
+src/parser.rs parser::<impl std::str::FromStr for Uuid>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parser::<impl std::str::FromStr for Uuid>::from_str(&p0);
++crate::parser::<impl std::str::FromStr for Uuid>::from_str(&p0);
++<Uuid>::from_str(&p0);
+-----------------
+src/parser.rs parser::<impl std::convert::TryFrom<&str> for Uuid>::try_from
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parser::<impl std::convert::TryFrom<&str> for Uuid>::try_from(&p0);
++crate::parser::<impl std::convert::TryFrom<&str> for Uuid>::try_from(&p0);
++<Uuid>::try_from(&p0);
+-----------------
+src/parser.rs parser::<impl Uuid>::parse_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parser::<impl Uuid>::parse_str(&p0);
++crate::parser::<impl Uuid>::parse_str(&p0);
++<Uuid>::parse_str(&p0);
+-----------------
+src/parser.rs parser::<impl Uuid>::try_parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parser::<impl Uuid>::try_parse(&p0);
++crate::parser::<impl Uuid>::try_parse(&p0);
++<Uuid>::try_parse(&p0);
+-----------------
+src/parser.rs parser::<impl Uuid>::try_parse_ascii
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++parser::<impl Uuid>::try_parse_ascii(p0);
++crate::parser::<impl Uuid>::try_parse_ascii(p0);
++<Uuid>::try_parse_ascii(p0);
+-----------------
+src/fmt.rs fmt::<impl std::fmt::Debug for Uuid>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++fmt::<impl std::fmt::Debug for Uuid>::fmt(p0, p1);
++crate::fmt::<impl std::fmt::Debug for Uuid>::fmt(p0, p1);
++<Uuid>::fmt(p0, p1);
+-----------------
+src/fmt.rs fmt::<impl std::fmt::Display for Uuid>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++fmt::<impl std::fmt::Display for Uuid>::fmt(p0, p1);
++crate::fmt::<impl std::fmt::Display for Uuid>::fmt(p0, p1);
++<Uuid>::fmt(p0, p1);
+-----------------
+src/fmt.rs fmt::<impl std::fmt::Display for Variant>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Variant
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++fmt::<impl std::fmt::Display for Variant>::fmt(p0, p1);
++crate::fmt::<impl std::fmt::Display for Variant>::fmt(p0, p1);
++<Variant>::fmt(p0, p1);
+-----------------
+src/fmt.rs fmt::<impl std::fmt::LowerHex for Uuid>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++fmt::<impl std::fmt::LowerHex for Uuid>::fmt(p0, p1);
++crate::fmt::<impl std::fmt::LowerHex for Uuid>::fmt(p0, p1);
++<Uuid>::fmt(p0, p1);
+-----------------
+src/fmt.rs fmt::<impl std::fmt::UpperHex for Uuid>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++fmt::<impl std::fmt::UpperHex for Uuid>::fmt(p0, p1);
++crate::fmt::<impl std::fmt::UpperHex for Uuid>::fmt(p0, p1);
++<Uuid>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.clone();
++<fmt::Hyphenated as std::clone::Clone>::clone(p0);
++crate::<fmt::Hyphenated as std::clone::Clone>::clone(p0);
++<fmt::Hyphenated>::clone(p0);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fmt::Hyphenated as std::fmt::Debug>::fmt(p0, p1);
++crate::<fmt::Hyphenated as std::fmt::Debug>::fmt(p0, p1);
++<fmt::Hyphenated>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::default::Default>::default
+deps:{}
+candidates:{}
++<fmt::Hyphenated as std::default::Default>::default();
++crate::<fmt::Hyphenated as std::default::Default>::default();
++<fmt::Hyphenated>::default();
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.assert_receiver_is_total_eq();
++<fmt::Hyphenated as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fmt::Hyphenated as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fmt::Hyphenated>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<fmt::Hyphenated as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<fmt::Hyphenated as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","std::hash::SipHasher13","std::hash::SipHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<fmt::Hyphenated as std::hash::Hash>::hash(p0, p1);
++crate::<fmt::Hyphenated as std::hash::Hash>::hash(p0, p1);
++<fmt::Hyphenated>::hash(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.cmp(p1);
++<fmt::Hyphenated as std::cmp::Ord>::cmp(p0, p1);
++crate::<fmt::Hyphenated as std::cmp::Ord>::cmp(p0, p1);
++<fmt::Hyphenated>::cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.eq(p1);
++<fmt::Hyphenated as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fmt::Hyphenated as std::cmp::PartialEq>::eq(p0, p1);
++<fmt::Hyphenated>::eq(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.partial_cmp(p1);
++<fmt::Hyphenated as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<fmt::Hyphenated as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<fmt::Hyphenated>::partial_cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.clone();
++<fmt::Simple as std::clone::Clone>::clone(p0);
++crate::<fmt::Simple as std::clone::Clone>::clone(p0);
++<fmt::Simple>::clone(p0);
+-----------------
+src/fmt.rs <fmt::Simple as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fmt::Simple as std::fmt::Debug>::fmt(p0, p1);
++crate::<fmt::Simple as std::fmt::Debug>::fmt(p0, p1);
++<fmt::Simple>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::default::Default>::default
+deps:{}
+candidates:{}
++<fmt::Simple as std::default::Default>::default();
++crate::<fmt::Simple as std::default::Default>::default();
++<fmt::Simple>::default();
+-----------------
+src/fmt.rs <fmt::Simple as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.assert_receiver_is_total_eq();
++<fmt::Simple as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fmt::Simple as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fmt::Simple>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fmt.rs <fmt::Simple as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<fmt::Simple as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<fmt::Simple as std::hash::Hash>::hash":{"__H":["std::boxed::Box<T, A>","std::hash::sip::Hasher<S>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher13","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<fmt::Simple as std::hash::Hash>::hash(p0, p1);
++crate::<fmt::Simple as std::hash::Hash>::hash(p0, p1);
++<fmt::Simple>::hash(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.cmp(p1);
++<fmt::Simple as std::cmp::Ord>::cmp(p0, p1);
++crate::<fmt::Simple as std::cmp::Ord>::cmp(p0, p1);
++<fmt::Simple>::cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.eq(p1);
++<fmt::Simple as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fmt::Simple as std::cmp::PartialEq>::eq(p0, p1);
++<fmt::Simple>::eq(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.partial_cmp(p1);
++<fmt::Simple as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<fmt::Simple as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<fmt::Simple>::partial_cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.clone();
++<fmt::Urn as std::clone::Clone>::clone(p0);
++crate::<fmt::Urn as std::clone::Clone>::clone(p0);
++<fmt::Urn>::clone(p0);
+-----------------
+src/fmt.rs <fmt::Urn as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fmt::Urn as std::fmt::Debug>::fmt(p0, p1);
++crate::<fmt::Urn as std::fmt::Debug>::fmt(p0, p1);
++<fmt::Urn>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::default::Default>::default
+deps:{}
+candidates:{}
++<fmt::Urn as std::default::Default>::default();
++crate::<fmt::Urn as std::default::Default>::default();
++<fmt::Urn>::default();
+-----------------
+src/fmt.rs <fmt::Urn as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.assert_receiver_is_total_eq();
++<fmt::Urn as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fmt::Urn as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fmt::Urn>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fmt.rs <fmt::Urn as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<fmt::Urn as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<fmt::Urn as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<fmt::Urn as std::hash::Hash>::hash(p0, p1);
++crate::<fmt::Urn as std::hash::Hash>::hash(p0, p1);
++<fmt::Urn>::hash(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.cmp(p1);
++<fmt::Urn as std::cmp::Ord>::cmp(p0, p1);
++crate::<fmt::Urn as std::cmp::Ord>::cmp(p0, p1);
++<fmt::Urn>::cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.eq(p1);
++<fmt::Urn as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fmt::Urn as std::cmp::PartialEq>::eq(p0, p1);
++<fmt::Urn>::eq(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.partial_cmp(p1);
++<fmt::Urn as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<fmt::Urn as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<fmt::Urn>::partial_cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.clone();
++<fmt::Braced as std::clone::Clone>::clone(p0);
++crate::<fmt::Braced as std::clone::Clone>::clone(p0);
++<fmt::Braced>::clone(p0);
+-----------------
+src/fmt.rs <fmt::Braced as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fmt::Braced as std::fmt::Debug>::fmt(p0, p1);
++crate::<fmt::Braced as std::fmt::Debug>::fmt(p0, p1);
++<fmt::Braced>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::default::Default>::default
+deps:{}
+candidates:{}
++<fmt::Braced as std::default::Default>::default();
++crate::<fmt::Braced as std::default::Default>::default();
++<fmt::Braced>::default();
+-----------------
+src/fmt.rs <fmt::Braced as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.assert_receiver_is_total_eq();
++<fmt::Braced as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fmt::Braced as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fmt::Braced>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fmt.rs <fmt::Braced as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<fmt::Braced as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<fmt::Braced as std::hash::Hash>::hash":{"__H":["<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","std::hash::SipHasher","std::hash::SipHasher13"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<fmt::Braced as std::hash::Hash>::hash(p0, p1);
++crate::<fmt::Braced as std::hash::Hash>::hash(p0, p1);
++<fmt::Braced>::hash(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.cmp(p1);
++<fmt::Braced as std::cmp::Ord>::cmp(p0, p1);
++crate::<fmt::Braced as std::cmp::Ord>::cmp(p0, p1);
++<fmt::Braced>::cmp(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.eq(p1);
++<fmt::Braced as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fmt::Braced as std::cmp::PartialEq>::eq(p0, p1);
++<fmt::Braced>::eq(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.partial_cmp(p1);
++<fmt::Braced as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<fmt::Braced as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<fmt::Braced>::partial_cmp(p0, p1);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::hyphenated
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++p0.hyphenated();
++fmt::<impl Uuid>::hyphenated(p0);
++crate::fmt::<impl Uuid>::hyphenated(p0);
++<Uuid>::hyphenated(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::as_hyphenated
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_hyphenated();
++fmt::<impl Uuid>::as_hyphenated(p0);
++crate::fmt::<impl Uuid>::as_hyphenated(p0);
++<Uuid>::as_hyphenated(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::simple
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++p0.simple();
++fmt::<impl Uuid>::simple(p0);
++crate::fmt::<impl Uuid>::simple(p0);
++<Uuid>::simple(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::as_simple
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_simple();
++fmt::<impl Uuid>::as_simple(p0);
++crate::fmt::<impl Uuid>::as_simple(p0);
++<Uuid>::as_simple(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::urn
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++p0.urn();
++fmt::<impl Uuid>::urn(p0);
++crate::fmt::<impl Uuid>::urn(p0);
++<Uuid>::urn(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::as_urn
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_urn();
++fmt::<impl Uuid>::as_urn(p0);
++crate::fmt::<impl Uuid>::as_urn(p0);
++<Uuid>::as_urn(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::braced
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++p0.braced();
++fmt::<impl Uuid>::braced(p0);
++crate::fmt::<impl Uuid>::braced(p0);
++<Uuid>::braced(p0);
+-----------------
+src/fmt.rs fmt::<impl Uuid>::as_braced
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_braced();
++fmt::<impl Uuid>::as_braced(p0);
++crate::fmt::<impl Uuid>::as_braced(p0);
++<Uuid>::as_braced(p0);
+-----------------
+src/fmt.rs fmt::Hyphenated::from_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++fmt::Hyphenated::from_uuid(p0);
++crate::fmt::Hyphenated::from_uuid(p0);
++<fmt::Hyphenated>::from_uuid(p0);
+-----------------
+src/fmt.rs fmt::Hyphenated::encode_lower
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_lower(p1);
++fmt::Hyphenated::encode_lower(p0, p1);
++crate::fmt::Hyphenated::encode_lower(p0, p1);
++<fmt::Hyphenated>::encode_lower(p0, p1);
+-----------------
+src/fmt.rs fmt::Hyphenated::encode_upper
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_upper(p1);
++fmt::Hyphenated::encode_upper(p0, p1);
++crate::fmt::Hyphenated::encode_upper(p0, p1);
++<fmt::Hyphenated>::encode_upper(p0, p1);
+-----------------
+src/fmt.rs fmt::Hyphenated::as_uuid
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.as_uuid();
++fmt::Hyphenated::as_uuid(p0);
++crate::fmt::Hyphenated::as_uuid(p0);
++<fmt::Hyphenated>::as_uuid(p0);
+-----------------
+src/fmt.rs fmt::Hyphenated::into_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.into_uuid();
++fmt::Hyphenated::into_uuid(p0);
++crate::fmt::Hyphenated::into_uuid(p0);
++<fmt::Hyphenated>::into_uuid(p0);
+-----------------
+src/fmt.rs fmt::Braced::from_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++fmt::Braced::from_uuid(p0);
++crate::fmt::Braced::from_uuid(p0);
++<fmt::Braced>::from_uuid(p0);
+-----------------
+src/fmt.rs fmt::Braced::encode_lower
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_lower(p1);
++fmt::Braced::encode_lower(p0, p1);
++crate::fmt::Braced::encode_lower(p0, p1);
++<fmt::Braced>::encode_lower(p0, p1);
+-----------------
+src/fmt.rs fmt::Braced::encode_upper
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_upper(p1);
++fmt::Braced::encode_upper(p0, p1);
++crate::fmt::Braced::encode_upper(p0, p1);
++<fmt::Braced>::encode_upper(p0, p1);
+-----------------
+src/fmt.rs fmt::Braced::as_uuid
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.as_uuid();
++fmt::Braced::as_uuid(p0);
++crate::fmt::Braced::as_uuid(p0);
++<fmt::Braced>::as_uuid(p0);
+-----------------
+src/fmt.rs fmt::Braced::into_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.into_uuid();
++fmt::Braced::into_uuid(p0);
++crate::fmt::Braced::into_uuid(p0);
++<fmt::Braced>::into_uuid(p0);
+-----------------
+src/fmt.rs fmt::Simple::from_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++fmt::Simple::from_uuid(p0);
++crate::fmt::Simple::from_uuid(p0);
++<fmt::Simple>::from_uuid(p0);
+-----------------
+src/fmt.rs fmt::Simple::encode_lower
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_lower(p1);
++fmt::Simple::encode_lower(p0, p1);
++crate::fmt::Simple::encode_lower(p0, p1);
++<fmt::Simple>::encode_lower(p0, p1);
+-----------------
+src/fmt.rs fmt::Simple::encode_upper
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_upper(p1);
++fmt::Simple::encode_upper(p0, p1);
++crate::fmt::Simple::encode_upper(p0, p1);
++<fmt::Simple>::encode_upper(p0, p1);
+-----------------
+src/fmt.rs fmt::Simple::as_uuid
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.as_uuid();
++fmt::Simple::as_uuid(p0);
++crate::fmt::Simple::as_uuid(p0);
++<fmt::Simple>::as_uuid(p0);
+-----------------
+src/fmt.rs fmt::Simple::into_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.into_uuid();
++fmt::Simple::into_uuid(p0);
++crate::fmt::Simple::into_uuid(p0);
++<fmt::Simple>::into_uuid(p0);
+-----------------
+src/fmt.rs fmt::Urn::from_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++fmt::Urn::from_uuid(p0);
++crate::fmt::Urn::from_uuid(p0);
++<fmt::Urn>::from_uuid(p0);
+-----------------
+src/fmt.rs fmt::Urn::encode_lower
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_lower(p1);
++fmt::Urn::encode_lower(p0, p1);
++crate::fmt::Urn::encode_lower(p0, p1);
++<fmt::Urn>::encode_lower(p0, p1);
+-----------------
+src/fmt.rs fmt::Urn::encode_upper
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.encode_upper(p1);
++fmt::Urn::encode_upper(p0, p1);
++crate::fmt::Urn::encode_upper(p0, p1);
++<fmt::Urn>::encode_upper(p0, p1);
+-----------------
+src/fmt.rs fmt::Urn::as_uuid
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.as_uuid();
++fmt::Urn::as_uuid(p0);
++crate::fmt::Urn::as_uuid(p0);
++<fmt::Urn>::as_uuid(p0);
+-----------------
+src/fmt.rs fmt::Urn::into_uuid
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.into_uuid();
++fmt::Urn::into_uuid(p0);
++crate::fmt::Urn::into_uuid(p0);
++<fmt::Urn>::into_uuid(p0);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fmt::Hyphenated as std::fmt::Display>::fmt(p0, p1);
++crate::<fmt::Hyphenated as std::fmt::Display>::fmt(p0, p1);
++<fmt::Hyphenated>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::fmt::LowerHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Hyphenated as std::fmt::LowerHex>::fmt(p0, p1);
++crate::<fmt::Hyphenated as std::fmt::LowerHex>::fmt(p0, p1);
++<fmt::Hyphenated>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::fmt::UpperHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Hyphenated as std::fmt::UpperHex>::fmt(p0, p1);
++crate::<fmt::Hyphenated as std::fmt::UpperHex>::fmt(p0, p1);
++<fmt::Hyphenated>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::convert::From<Uuid>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++<fmt::Hyphenated as std::convert::From<Uuid>>::from(p0);
++crate::<fmt::Hyphenated as std::convert::From<Uuid>>::from(p0);
++<fmt::Hyphenated>::from(p0);
+-----------------
+src/fmt.rs fmt::<impl std::convert::From<fmt::Hyphenated> for Uuid>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++fmt::<impl std::convert::From<fmt::Hyphenated> for Uuid>::from(p0);
++crate::fmt::<impl std::convert::From<fmt::Hyphenated> for Uuid>::from(p0);
++<Uuid>::from(p0);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::convert::AsRef<Uuid>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.as_ref();
++<fmt::Hyphenated as std::convert::AsRef<Uuid>>::as_ref(p0);
++crate::<fmt::Hyphenated as std::convert::AsRef<Uuid>>::as_ref(p0);
++<fmt::Hyphenated>::as_ref(p0);
+-----------------
+src/fmt.rs <fmt::Hyphenated as std::borrow::Borrow<Uuid>>::borrow
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Hyphenated
++p0.borrow();
++<fmt::Hyphenated as std::borrow::Borrow<Uuid>>::borrow(p0);
++crate::<fmt::Hyphenated as std::borrow::Borrow<Uuid>>::borrow(p0);
++<fmt::Hyphenated>::borrow(p0);
+-----------------
+src/fmt.rs <fmt::Simple as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fmt::Simple as std::fmt::Display>::fmt(p0, p1);
++crate::<fmt::Simple as std::fmt::Display>::fmt(p0, p1);
++<fmt::Simple>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::fmt::LowerHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Simple as std::fmt::LowerHex>::fmt(p0, p1);
++crate::<fmt::Simple as std::fmt::LowerHex>::fmt(p0, p1);
++<fmt::Simple>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::fmt::UpperHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Simple as std::fmt::UpperHex>::fmt(p0, p1);
++crate::<fmt::Simple as std::fmt::UpperHex>::fmt(p0, p1);
++<fmt::Simple>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Simple as std::convert::From<Uuid>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++<fmt::Simple as std::convert::From<Uuid>>::from(p0);
++crate::<fmt::Simple as std::convert::From<Uuid>>::from(p0);
++<fmt::Simple>::from(p0);
+-----------------
+src/fmt.rs fmt::<impl std::convert::From<fmt::Simple> for Uuid>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Simple
++fmt::<impl std::convert::From<fmt::Simple> for Uuid>::from(p0);
++crate::fmt::<impl std::convert::From<fmt::Simple> for Uuid>::from(p0);
++<Uuid>::from(p0);
+-----------------
+src/fmt.rs <fmt::Simple as std::convert::AsRef<Uuid>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.as_ref();
++<fmt::Simple as std::convert::AsRef<Uuid>>::as_ref(p0);
++crate::<fmt::Simple as std::convert::AsRef<Uuid>>::as_ref(p0);
++<fmt::Simple>::as_ref(p0);
+-----------------
+src/fmt.rs <fmt::Simple as std::borrow::Borrow<Uuid>>::borrow
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Simple
++p0.borrow();
++<fmt::Simple as std::borrow::Borrow<Uuid>>::borrow(p0);
++crate::<fmt::Simple as std::borrow::Borrow<Uuid>>::borrow(p0);
++<fmt::Simple>::borrow(p0);
+-----------------
+src/fmt.rs <fmt::Urn as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fmt::Urn as std::fmt::Display>::fmt(p0, p1);
++crate::<fmt::Urn as std::fmt::Display>::fmt(p0, p1);
++<fmt::Urn>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::fmt::LowerHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Urn as std::fmt::LowerHex>::fmt(p0, p1);
++crate::<fmt::Urn as std::fmt::LowerHex>::fmt(p0, p1);
++<fmt::Urn>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::fmt::UpperHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Urn as std::fmt::UpperHex>::fmt(p0, p1);
++crate::<fmt::Urn as std::fmt::UpperHex>::fmt(p0, p1);
++<fmt::Urn>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Urn as std::convert::From<Uuid>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++<fmt::Urn as std::convert::From<Uuid>>::from(p0);
++crate::<fmt::Urn as std::convert::From<Uuid>>::from(p0);
++<fmt::Urn>::from(p0);
+-----------------
+src/fmt.rs fmt::<impl std::convert::From<fmt::Urn> for Uuid>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Urn
++fmt::<impl std::convert::From<fmt::Urn> for Uuid>::from(p0);
++crate::fmt::<impl std::convert::From<fmt::Urn> for Uuid>::from(p0);
++<Uuid>::from(p0);
+-----------------
+src/fmt.rs <fmt::Urn as std::convert::AsRef<Uuid>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.as_ref();
++<fmt::Urn as std::convert::AsRef<Uuid>>::as_ref(p0);
++crate::<fmt::Urn as std::convert::AsRef<Uuid>>::as_ref(p0);
++<fmt::Urn>::as_ref(p0);
+-----------------
+src/fmt.rs <fmt::Urn as std::borrow::Borrow<Uuid>>::borrow
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Urn
++p0.borrow();
++<fmt::Urn as std::borrow::Borrow<Uuid>>::borrow(p0);
++crate::<fmt::Urn as std::borrow::Borrow<Uuid>>::borrow(p0);
++<fmt::Urn>::borrow(p0);
+-----------------
+src/fmt.rs <fmt::Braced as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fmt::Braced as std::fmt::Display>::fmt(p0, p1);
++crate::<fmt::Braced as std::fmt::Display>::fmt(p0, p1);
++<fmt::Braced>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::fmt::LowerHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Braced as std::fmt::LowerHex>::fmt(p0, p1);
++crate::<fmt::Braced as std::fmt::LowerHex>::fmt(p0, p1);
++<fmt::Braced>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::fmt::UpperHex>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.fmt(p1);
++<fmt::Braced as std::fmt::UpperHex>::fmt(p0, p1);
++crate::<fmt::Braced as std::fmt::UpperHex>::fmt(p0, p1);
++<fmt::Braced>::fmt(p0, p1);
+-----------------
+src/fmt.rs <fmt::Braced as std::convert::From<Uuid>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++<fmt::Braced as std::convert::From<Uuid>>::from(p0);
++crate::<fmt::Braced as std::convert::From<Uuid>>::from(p0);
++<fmt::Braced>::from(p0);
+-----------------
+src/fmt.rs fmt::<impl std::convert::From<fmt::Braced> for Uuid>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fmt::Braced
++fmt::<impl std::convert::From<fmt::Braced> for Uuid>::from(p0);
++crate::fmt::<impl std::convert::From<fmt::Braced> for Uuid>::from(p0);
++<Uuid>::from(p0);
+-----------------
+src/fmt.rs <fmt::Braced as std::convert::AsRef<Uuid>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.as_ref();
++<fmt::Braced as std::convert::AsRef<Uuid>>::as_ref(p0);
++crate::<fmt::Braced as std::convert::AsRef<Uuid>>::as_ref(p0);
++<fmt::Braced>::as_ref(p0);
+-----------------
+src/fmt.rs <fmt::Braced as std::borrow::Borrow<Uuid>>::borrow
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fmt::Braced
++p0.borrow();
++<fmt::Braced as std::borrow::Borrow<Uuid>>::borrow(p0);
++crate::<fmt::Braced as std::borrow::Borrow<Uuid>>::borrow(p0);
++<fmt::Braced>::borrow(p0);
+-----------------
+src/timestamp.rs <timestamp::Timestamp as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<timestamp::Timestamp as std::fmt::Debug>::fmt(p0, p1);
++crate::<timestamp::Timestamp as std::fmt::Debug>::fmt(p0, p1);
++<timestamp::Timestamp>::fmt(p0, p1);
+-----------------
+src/timestamp.rs <timestamp::Timestamp as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
++p0.clone();
++<timestamp::Timestamp as std::clone::Clone>::clone(p0);
++crate::<timestamp::Timestamp as std::clone::Clone>::clone(p0);
++<timestamp::Timestamp>::clone(p0);
+-----------------
+src/timestamp.rs <timestamp::Timestamp as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
+let mut p1 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
++p0.eq(p1);
++<timestamp::Timestamp as std::cmp::PartialEq>::eq(p0, p1);
++crate::<timestamp::Timestamp as std::cmp::PartialEq>::eq(p0, p1);
++<timestamp::Timestamp>::eq(p0, p1);
+-----------------
+src/timestamp.rs <timestamp::Timestamp as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
++p0.assert_receiver_is_total_eq();
++<timestamp::Timestamp as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<timestamp::Timestamp as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<timestamp::Timestamp>::assert_receiver_is_total_eq(p0);
+-----------------
+src/timestamp.rs <timestamp::Timestamp as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<timestamp::Timestamp as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<timestamp::Timestamp as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","std::hash::SipHasher13","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<timestamp::Timestamp as std::hash::Hash>::hash(p0, p1);
++crate::<timestamp::Timestamp as std::hash::Hash>::hash(p0, p1);
++<timestamp::Timestamp>::hash(p0, p1);
+-----------------
+src/timestamp.rs timestamp::Timestamp::now
+deps:{"<&'a T as timestamp::ClockSequence>":{},"timestamp::Timestamp::now":{"impl ClockSequence<Output = u16>":["std::marker::Sized","timestamp::ClockSequence"]}}
+candidates:{"<&'a T as timestamp::ClockSequence>":{},"timestamp::Timestamp::now":{"impl ClockSequence<Output = u16>":["timestamp::context::NoContext","<&'a T as timestamp::ClockSequence>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // impl ClockSequence<Output = u16>
++timestamp::Timestamp::now(p0);
++crate::timestamp::Timestamp::now(p0);
++<timestamp::Timestamp>::now(p0);
+-----------------
+src/timestamp.rs timestamp::Timestamp::from_rfc4122
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u16; // None+u16
++timestamp::Timestamp::from_rfc4122(p0, p1);
++crate::timestamp::Timestamp::from_rfc4122(p0, p1);
++<timestamp::Timestamp>::from_rfc4122(p0, p1);
+-----------------
+src/timestamp.rs timestamp::Timestamp::from_unix
+deps:{"<&'a T as timestamp::ClockSequence>":{},"timestamp::Timestamp::from_unix":{"impl ClockSequence<Output = u16>":["std::marker::Sized","timestamp::ClockSequence"]}}
+candidates:{"<&'a T as timestamp::ClockSequence>":{},"timestamp::Timestamp::from_unix":{"impl ClockSequence<Output = u16>":["timestamp::context::NoContext","<&'a T as timestamp::ClockSequence>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // impl ClockSequence<Output = u16>
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0u32; // None+u32
++timestamp::Timestamp::from_unix(p0, p1, p2);
++crate::timestamp::Timestamp::from_unix(p0, p1, p2);
++<timestamp::Timestamp>::from_unix(p0, p1, p2);
+-----------------
+src/timestamp.rs timestamp::Timestamp::to_unix
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
++p0.to_unix();
++timestamp::Timestamp::to_unix(p0);
++crate::timestamp::Timestamp::to_unix(p0);
++<timestamp::Timestamp>::to_unix(p0);
+-----------------
+src/timestamp.rs timestamp::Timestamp::rfc4122_to_unix
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++timestamp::Timestamp::rfc4122_to_unix(p0);
++crate::timestamp::Timestamp::rfc4122_to_unix(p0);
++<timestamp::Timestamp>::rfc4122_to_unix(p0);
+-----------------
+src/timestamp.rs timestamp::Timestamp::to_unix_nanos
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::Timestamp
++p0.to_unix_nanos();
++timestamp::Timestamp::to_unix_nanos(p0);
++crate::timestamp::Timestamp::to_unix_nanos(p0);
++<timestamp::Timestamp>::to_unix_nanos(p0);
+-----------------
+src/timestamp.rs <&'a T as timestamp::ClockSequence>::generate_sequence
+'a
+deps:{"<&'a T as timestamp::ClockSequence>":{},"<&'a T as timestamp::ClockSequence>::generate_sequence":{"T":["timestamp::ClockSequence"]}}
+candidates:{"<&'a T as timestamp::ClockSequence>":{},"<&'a T as timestamp::ClockSequence>::generate_sequence":{"T":["<&'a T as timestamp::ClockSequence>","timestamp::context::NoContext"]}}
+let mut p0 = & & MaybeUninit::uninit().assume_init(); // T
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0u32; // None+u32
++p0.generate_sequence(p1, p2);
++<&'a T as timestamp::ClockSequence>::generate_sequence(p0, p1, p2);
++crate::<&'a T as timestamp::ClockSequence>::generate_sequence(p0, p1, p2);
++<&'a T>::generate_sequence(p0, p1, p2);
+-----------------
+src/timestamp.rs <timestamp::context::NoContext as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::context::NoContext
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<timestamp::context::NoContext as std::fmt::Debug>::fmt(p0, p1);
++crate::<timestamp::context::NoContext as std::fmt::Debug>::fmt(p0, p1);
++<timestamp::context::NoContext>::fmt(p0, p1);
+-----------------
+src/timestamp.rs <timestamp::context::NoContext as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::context::NoContext
++p0.clone();
++<timestamp::context::NoContext as std::clone::Clone>::clone(p0);
++crate::<timestamp::context::NoContext as std::clone::Clone>::clone(p0);
++<timestamp::context::NoContext>::clone(p0);
+-----------------
+src/timestamp.rs <timestamp::context::NoContext as std::default::Default>::default
+deps:{}
+candidates:{}
++<timestamp::context::NoContext as std::default::Default>::default();
++crate::<timestamp::context::NoContext as std::default::Default>::default();
++<timestamp::context::NoContext>::default();
+-----------------
+src/timestamp.rs <timestamp::context::NoContext as timestamp::ClockSequence>::generate_sequence
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // timestamp::context::NoContext
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0u32; // None+u32
++p0.generate_sequence(p1, p2);
++<timestamp::context::NoContext as timestamp::ClockSequence>::generate_sequence(p0, p1, p2);
++crate::<timestamp::context::NoContext as timestamp::ClockSequence>::generate_sequence(p0, p1, p2);
++<timestamp::context::NoContext>::generate_sequence(p0, p1, p2);
+-----------------
+src/lib.rs <Version as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
++p0.clone();
++<Version as std::clone::Clone>::clone(p0);
++crate::<Version as std::clone::Clone>::clone(p0);
++<Version>::clone(p0);
+-----------------
+src/lib.rs <Version as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Version as std::fmt::Debug>::fmt(p0, p1);
++crate::<Version as std::fmt::Debug>::fmt(p0, p1);
++<Version>::fmt(p0, p1);
+-----------------
+src/lib.rs <Version as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Version
++p0.eq(p1);
++<Version as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Version as std::cmp::PartialEq>::eq(p0, p1);
++<Version>::eq(p0, p1);
+-----------------
+src/lib.rs <Variant as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Variant
++p0.clone();
++<Variant as std::clone::Clone>::clone(p0);
++crate::<Variant as std::clone::Clone>::clone(p0);
++<Variant>::clone(p0);
+-----------------
+src/lib.rs <Variant as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Variant
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Variant as std::fmt::Debug>::fmt(p0, p1);
++crate::<Variant as std::fmt::Debug>::fmt(p0, p1);
++<Variant>::fmt(p0, p1);
+-----------------
+src/lib.rs <Variant as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Variant
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Variant
++p0.eq(p1);
++<Variant as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Variant as std::cmp::PartialEq>::eq(p0, p1);
++<Variant>::eq(p0, p1);
+-----------------
+src/lib.rs <Uuid as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.clone();
++<Uuid as std::clone::Clone>::clone(p0);
++crate::<Uuid as std::clone::Clone>::clone(p0);
++<Uuid>::clone(p0);
+-----------------
+src/lib.rs <Uuid as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.assert_receiver_is_total_eq();
++<Uuid as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Uuid as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Uuid>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Uuid as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Uuid as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Uuid as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher13","std::boxed::Box<T, A>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Uuid as std::hash::Hash>::hash(p0, p1);
++crate::<Uuid as std::hash::Hash>::hash(p0, p1);
++<Uuid>::hash(p0, p1);
+-----------------
+src/lib.rs <Uuid as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.cmp(p1);
++<Uuid as std::cmp::Ord>::cmp(p0, p1);
++crate::<Uuid as std::cmp::Ord>::cmp(p0, p1);
++<Uuid>::cmp(p0, p1);
+-----------------
+src/lib.rs <Uuid as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.eq(p1);
++<Uuid as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Uuid as std::cmp::PartialEq>::eq(p0, p1);
++<Uuid>::eq(p0, p1);
+-----------------
+src/lib.rs <Uuid as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.partial_cmp(p1);
++<Uuid as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<Uuid as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<Uuid>::partial_cmp(p0, p1);
+-----------------
+src/lib.rs Uuid::get_variant
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.get_variant();
++Uuid::get_variant(p0);
++crate::Uuid::get_variant(p0);
++<Uuid>::get_variant(p0);
+-----------------
+src/lib.rs Uuid::get_version_num
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.get_version_num();
++Uuid::get_version_num(p0);
++crate::Uuid::get_version_num(p0);
++<Uuid>::get_version_num(p0);
+-----------------
+src/lib.rs Uuid::get_version
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.get_version();
++Uuid::get_version(p0);
++crate::Uuid::get_version(p0);
++<Uuid>::get_version(p0);
+-----------------
+src/lib.rs Uuid::as_fields
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_fields();
++Uuid::as_fields(p0);
++crate::Uuid::as_fields(p0);
++<Uuid>::as_fields(p0);
+-----------------
+src/lib.rs Uuid::to_fields_le
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.to_fields_le();
++Uuid::to_fields_le(p0);
++crate::Uuid::to_fields_le(p0);
++<Uuid>::to_fields_le(p0);
+-----------------
+src/lib.rs Uuid::as_u128
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_u128();
++Uuid::as_u128(p0);
++crate::Uuid::as_u128(p0);
++<Uuid>::as_u128(p0);
+-----------------
+src/lib.rs Uuid::to_u128_le
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.to_u128_le();
++Uuid::to_u128_le(p0);
++crate::Uuid::to_u128_le(p0);
++<Uuid>::to_u128_le(p0);
+-----------------
+src/lib.rs Uuid::as_u64_pair
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_u64_pair();
++Uuid::as_u64_pair(p0);
++crate::Uuid::as_u64_pair(p0);
++<Uuid>::as_u64_pair(p0);
+-----------------
+src/lib.rs Uuid::as_bytes
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_bytes();
++Uuid::as_bytes(p0);
++crate::Uuid::as_bytes(p0);
++<Uuid>::as_bytes(p0);
+-----------------
+src/lib.rs Uuid::into_bytes
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Uuid
++p0.into_bytes();
++Uuid::into_bytes(p0);
++crate::Uuid::into_bytes(p0);
++<Uuid>::into_bytes(p0);
+-----------------
+src/lib.rs Uuid::to_bytes_le
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.to_bytes_le();
++Uuid::to_bytes_le(p0);
++crate::Uuid::to_bytes_le(p0);
++<Uuid>::to_bytes_le(p0);
+-----------------
+src/lib.rs Uuid::is_nil
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.is_nil();
++Uuid::is_nil(p0);
++crate::Uuid::is_nil(p0);
++<Uuid>::is_nil(p0);
+-----------------
+src/lib.rs Uuid::encode_buffer
+deps:{}
+candidates:{}
++Uuid::encode_buffer();
++crate::Uuid::encode_buffer();
++<Uuid>::encode_buffer();
+-----------------
+src/lib.rs Uuid::get_timestamp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.get_timestamp();
++Uuid::get_timestamp(p0);
++crate::Uuid::get_timestamp(p0);
++<Uuid>::get_timestamp(p0);
+-----------------
+src/lib.rs <Uuid as std::default::Default>::default
+deps:{}
+candidates:{}
++<Uuid as std::default::Default>::default();
++crate::<Uuid as std::default::Default>::default();
++<Uuid>::default();
+-----------------
+src/lib.rs <Uuid as std::convert::AsRef<[u8]>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Uuid
++p0.as_ref();
++<Uuid as std::convert::AsRef<[u8]>>::as_ref(p0);
++crate::<Uuid as std::convert::AsRef<[u8]>>::as_ref(p0);
++<Uuid>::as_ref(p0);

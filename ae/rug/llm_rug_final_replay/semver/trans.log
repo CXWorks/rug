@@ -1,0 +1,2 @@
+err tests_rug_66 sample rug_fuzz_0 "1.2.3+sample" {'sample': {'rug_fuzz_0': '"1.2.3+sample"'}}
+semver . 51 51 0

@@ -1,0 +1,74 @@
+-----------------
+md2/src/lib.rs <Md2Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Md2Core
++p0.clone();
++<Md2Core as core::clone::Clone>::clone(p0);
++crate::<Md2Core as core::clone::Clone>::clone(p0);
++<Md2Core>::clone(p0);
+-----------------
+md2/src/lib.rs Md2Core::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md2Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Md2Core as digest::core_api::BlockSizeUser>::BlockSize>
++p0.compress(p1);
++Md2Core::compress(p0, p1);
++crate::Md2Core::compress(p0, p1);
++<Md2Core>::compress(p0, p1);
+-----------------
+md2/src/lib.rs <Md2Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md2Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Md2Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Md2Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Md2Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Md2Core>::update_blocks(p0, p1);
+-----------------
+md2/src/lib.rs <Md2Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md2Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Md2Core as digest::core_api::BlockSizeUser>::BlockSize, <Md2Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Md2Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Md2Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Md2Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Md2Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+md2/src/lib.rs <Md2Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Md2Core as core::default::Default>::default();
++crate::<Md2Core as core::default::Default>::default();
++<Md2Core>::default();
+-----------------
+md2/src/lib.rs <Md2Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md2Core
++p0.reset();
++<Md2Core as digest::Reset>::reset(p0);
++crate::<Md2Core as digest::Reset>::reset(p0);
++<Md2Core>::reset(p0);
+-----------------
+md2/src/lib.rs <Md2Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Md2Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Md2Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Md2Core>::write_alg_name(p0);
+-----------------
+md2/src/lib.rs <Md2Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Md2Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Md2Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Md2Core as core::fmt::Debug>::fmt(p0, p1);
++<Md2Core>::fmt(p0, p1);

@@ -1,0 +1,1585 @@
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::hidden::skip
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::hidden::skip(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::hidden::skip(p0);
++<SemverParser>::parse::rules::hidden::skip(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::range_set
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::range_set(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::range_set(p0);
++<SemverParser>::parse::rules::visible::range_set(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::logical_or
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::logical_or(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::logical_or(p0);
++<SemverParser>::parse::rules::visible::logical_or(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::range
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::range(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::range(p0);
++<SemverParser>::parse::rules::visible::range(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::empty
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::empty(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::empty(p0);
++<SemverParser>::parse::rules::visible::empty(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::hyphen
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::hyphen(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::hyphen(p0);
++<SemverParser>::parse::rules::visible::hyphen(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::simple
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::simple(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::simple(p0);
++<SemverParser>::parse::rules::visible::simple(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::primitive
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::primitive(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::primitive(p0);
++<SemverParser>::parse::rules::visible::primitive(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::primitive_op
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::primitive_op(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::primitive_op(p0);
++<SemverParser>::parse::rules::visible::primitive_op(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::partial
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::partial(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::partial(p0);
++<SemverParser>::parse::rules::visible::partial(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::xr
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::xr(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::xr(p0);
++<SemverParser>::parse::rules::visible::xr(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::xr_op
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::xr_op(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::xr_op(p0);
++<SemverParser>::parse::rules::visible::xr_op(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::nr
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::nr(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::nr(p0);
++<SemverParser>::parse::rules::visible::nr(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::tilde
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::tilde(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::tilde(p0);
++<SemverParser>::parse::rules::visible::tilde(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::caret
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::caret(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::caret(p0);
++<SemverParser>::parse::rules::visible::caret(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::qualifier
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::qualifier(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::qualifier(p0);
++<SemverParser>::parse::rules::visible::qualifier(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::parts
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::parts(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::parts(p0);
++<SemverParser>::parse::rules::visible::parts(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::part
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::part(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::part(p0);
++<SemverParser>::parse::rules::visible::part(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::space
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::space(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::space(p0);
++<SemverParser>::parse::rules::visible::space(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::EOI
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::EOI(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::EOI(p0);
++<SemverParser>::parse::rules::visible::EOI(p0);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::SOI
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::boxed::Box<pest::ParserState<'_, generated::Rule>>
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::SOI(p0);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse::rules::visible::SOI(p0);
++<SemverParser>::parse::rules::visible::SOI(p0);
+-----------------
+src/range_set.rs range_set::from_pair_iterator
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // pest::iterators::Pair<'_, generated::Rule>
+let mut p1 = MaybeUninit::uninit().assume_init(); // range_set::Compat
++range_set::from_pair_iterator(p0, p1);
++crate::range_set::from_pair_iterator(p0, p1);
++crate::range_set::from_pair_iterator(p0, p1);
+-----------------
+src/range.rs range::from_pair_iterator
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // pest::iterators::Pair<'_, generated::Rule>
+let mut p1 = MaybeUninit::uninit().assume_init(); // range_set::Compat
++range::from_pair_iterator(p0, p1);
++crate::range::from_pair_iterator(p0, p1);
++crate::range::from_pair_iterator(p0, p1);
+-----------------
+src/range.rs range::simple::from_pair_iterator
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // pest::iterators::Pair<'_, generated::Rule>
+let mut p1 = MaybeUninit::uninit().assume_init(); // range_set::Compat
++range::simple::from_pair_iterator(p0, p1);
++crate::range::simple::from_pair_iterator(p0, p1);
++crate::range::simple::from_pair_iterator(p0, p1);
+-----------------
+src/range.rs range::simple::handle_caret_range
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<range::Comparator>
++range::simple::handle_caret_range(p0, p1);
++crate::range::simple::handle_caret_range(p0, p1);
++crate::range::simple::handle_caret_range(p0, p1);
+-----------------
+src/range.rs range::simple::from_hyphen_range
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // pest::iterators::Pair<'_, generated::Rule>
++range::simple::from_hyphen_range(p0);
++crate::range::simple::from_hyphen_range(p0);
++crate::range::simple::from_hyphen_range(p0);
+-----------------
+src/range.rs range::simple::parse_partial
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::vec::Vec<pest::iterators::Pair<'_, generated::Rule>>
++range::simple::parse_partial(p0);
++crate::range::simple::parse_partial(p0);
++crate::range::simple::parse_partial(p0);
+-----------------
+src/version.rs version::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++version::parse(&p0);
++crate::version::parse(&p0);
++crate::version::parse(&p0);
+-----------------
+src/generated.rs <generated::Rule as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
++p0.clone();
++<generated::Rule as std::clone::Clone>::clone(p0);
++crate::<generated::Rule as std::clone::Clone>::clone(p0);
++<generated::Rule>::clone(p0);
+-----------------
+src/generated.rs <generated::Rule as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<generated::Rule as std::fmt::Debug>::fmt(p0, p1);
++crate::<generated::Rule as std::fmt::Debug>::fmt(p0, p1);
++<generated::Rule>::fmt(p0, p1);
+-----------------
+src/generated.rs <generated::Rule as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
++p0.assert_receiver_is_total_eq();
++<generated::Rule as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<generated::Rule as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<generated::Rule>::assert_receiver_is_total_eq(p0);
+-----------------
+src/generated.rs <generated::Rule as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<generated::Rule as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<generated::Rule as std::hash::Hash>::hash":{"__H":["<&mut H as std::hash::Hasher>","std::hash::SipHasher13","std::hash::sip::Hasher<S>","std::hash::SipHasher","std::boxed::Box<T, A>","std::collections::hash_map::DefaultHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<generated::Rule as std::hash::Hash>::hash(p0, p1);
++crate::<generated::Rule as std::hash::Hash>::hash(p0, p1);
++<generated::Rule>::hash(p0, p1);
+-----------------
+src/generated.rs <generated::Rule as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
+let mut p1 = & MaybeUninit::uninit().assume_init(); // generated::Rule
++p0.cmp(p1);
++<generated::Rule as std::cmp::Ord>::cmp(p0, p1);
++crate::<generated::Rule as std::cmp::Ord>::cmp(p0, p1);
++<generated::Rule>::cmp(p0, p1);
+-----------------
+src/generated.rs <generated::Rule as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
+let mut p1 = & MaybeUninit::uninit().assume_init(); // generated::Rule
++p0.eq(p1);
++<generated::Rule as std::cmp::PartialEq>::eq(p0, p1);
++crate::<generated::Rule as std::cmp::PartialEq>::eq(p0, p1);
++<generated::Rule>::eq(p0, p1);
+-----------------
+src/generated.rs <generated::Rule as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // generated::Rule
+let mut p1 = & MaybeUninit::uninit().assume_init(); // generated::Rule
++p0.partial_cmp(p1);
++<generated::Rule as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<generated::Rule as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<generated::Rule>::partial_cmp(p0, p1);
+-----------------
+src/generated.rs generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // generated::Rule
+let mut p1 = "sample"; // None+&str
++generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse(p0, &p1);
++crate::generated::<impl pest::Parser<generated::Rule> for SemverParser>::parse(p0, &p1);
++<SemverParser>::parse(p0, &p1);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
++p0.clone();
++<range_set::RangeSet as std::clone::Clone>::clone(p0);
++crate::<range_set::RangeSet as std::clone::Clone>::clone(p0);
++<range_set::RangeSet>::clone(p0);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
++p0.eq(p1);
++<range_set::RangeSet as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range_set::RangeSet as std::cmp::PartialEq>::eq(p0, p1);
++<range_set::RangeSet>::eq(p0, p1);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
++p0.assert_receiver_is_total_eq();
++<range_set::RangeSet as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range_set::RangeSet as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range_set::RangeSet>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
++p0.partial_cmp(p1);
++<range_set::RangeSet as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range_set::RangeSet as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range_set::RangeSet>::partial_cmp(p0, p1);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
++p0.cmp(p1);
++<range_set::RangeSet as std::cmp::Ord>::cmp(p0, p1);
++crate::<range_set::RangeSet as std::cmp::Ord>::cmp(p0, p1);
++<range_set::RangeSet>::cmp(p0, p1);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range_set::RangeSet as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range_set::RangeSet as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher","std::hash::SipHasher13"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range_set::RangeSet as std::hash::Hash>::hash(p0, p1);
++crate::<range_set::RangeSet as std::hash::Hash>::hash(p0, p1);
++<range_set::RangeSet>::hash(p0, p1);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::RangeSet
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range_set::RangeSet as std::fmt::Debug>::fmt(p0, p1);
++crate::<range_set::RangeSet as std::fmt::Debug>::fmt(p0, p1);
++<range_set::RangeSet>::fmt(p0, p1);
+-----------------
+src/range_set.rs <range_set::Compat as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
++p0.clone();
++<range_set::Compat as std::clone::Clone>::clone(p0);
++crate::<range_set::Compat as std::clone::Clone>::clone(p0);
++<range_set::Compat>::clone(p0);
+-----------------
+src/range_set.rs <range_set::Compat as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
++p0.eq(p1);
++<range_set::Compat as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range_set::Compat as std::cmp::PartialEq>::eq(p0, p1);
++<range_set::Compat>::eq(p0, p1);
+-----------------
+src/range_set.rs <range_set::Compat as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
++p0.assert_receiver_is_total_eq();
++<range_set::Compat as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range_set::Compat as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range_set::Compat>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range_set.rs <range_set::Compat as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
++p0.partial_cmp(p1);
++<range_set::Compat as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range_set::Compat as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range_set::Compat>::partial_cmp(p0, p1);
+-----------------
+src/range_set.rs <range_set::Compat as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
++p0.cmp(p1);
++<range_set::Compat as std::cmp::Ord>::cmp(p0, p1);
++crate::<range_set::Compat as std::cmp::Ord>::cmp(p0, p1);
++<range_set::Compat>::cmp(p0, p1);
+-----------------
+src/range_set.rs <range_set::Compat as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range_set::Compat as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range_set::Compat as std::hash::Hash>::hash":{"__H":["std::boxed::Box<T, A>","std::hash::SipHasher13","std::hash::SipHasher","std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range_set::Compat as std::hash::Hash>::hash(p0, p1);
++crate::<range_set::Compat as std::hash::Hash>::hash(p0, p1);
++<range_set::Compat>::hash(p0, p1);
+-----------------
+src/range_set.rs <range_set::Compat as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range_set::Compat
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range_set::Compat as std::fmt::Debug>::fmt(p0, p1);
++crate::<range_set::Compat as std::fmt::Debug>::fmt(p0, p1);
++<range_set::Compat>::fmt(p0, p1);
+-----------------
+src/range_set.rs range_set::RangeSet::new
+deps:{}
+candidates:{}
++range_set::RangeSet::new();
++crate::range_set::RangeSet::new();
++<range_set::RangeSet>::new();
+-----------------
+src/range_set.rs range_set::RangeSet::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // range_set::Compat
++range_set::RangeSet::parse(&p0, p1);
++crate::range_set::RangeSet::parse(&p0, p1);
++<range_set::RangeSet>::parse(&p0, p1);
+-----------------
+src/range_set.rs <range_set::RangeSet as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<range_set::RangeSet as std::str::FromStr>::from_str(&p0);
++crate::<range_set::RangeSet as std::str::FromStr>::from_str(&p0);
++<range_set::RangeSet>::from_str(&p0);
+-----------------
+src/range.rs <range::Range as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
++p0.clone();
++<range::Range as std::clone::Clone>::clone(p0);
++crate::<range::Range as std::clone::Clone>::clone(p0);
++<range::Range>::clone(p0);
+-----------------
+src/range.rs <range::Range as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Range
++p0.eq(p1);
++<range::Range as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range::Range as std::cmp::PartialEq>::eq(p0, p1);
++<range::Range>::eq(p0, p1);
+-----------------
+src/range.rs <range::Range as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
++p0.assert_receiver_is_total_eq();
++<range::Range as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range::Range as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range::Range>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range.rs <range::Range as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Range
++p0.partial_cmp(p1);
++<range::Range as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range::Range as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range::Range>::partial_cmp(p0, p1);
+-----------------
+src/range.rs <range::Range as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Range
++p0.cmp(p1);
++<range::Range as std::cmp::Ord>::cmp(p0, p1);
++crate::<range::Range as std::cmp::Ord>::cmp(p0, p1);
++<range::Range>::cmp(p0, p1);
+-----------------
+src/range.rs <range::Range as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range::Range as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range::Range as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::hash::SipHasher","std::boxed::Box<T, A>","std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range::Range as std::hash::Hash>::hash(p0, p1);
++crate::<range::Range as std::hash::Hash>::hash(p0, p1);
++<range::Range>::hash(p0, p1);
+-----------------
+src/range.rs <range::Range as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Range
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range::Range as std::fmt::Debug>::fmt(p0, p1);
++crate::<range::Range as std::fmt::Debug>::fmt(p0, p1);
++<range::Range>::fmt(p0, p1);
+-----------------
+src/range.rs <range::Comparator as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
++p0.clone();
++<range::Comparator as std::clone::Clone>::clone(p0);
++crate::<range::Comparator as std::clone::Clone>::clone(p0);
++<range::Comparator>::clone(p0);
+-----------------
+src/range.rs <range::Comparator as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Comparator
++p0.eq(p1);
++<range::Comparator as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range::Comparator as std::cmp::PartialEq>::eq(p0, p1);
++<range::Comparator>::eq(p0, p1);
+-----------------
+src/range.rs <range::Comparator as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
++p0.assert_receiver_is_total_eq();
++<range::Comparator as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range::Comparator as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range::Comparator>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range.rs <range::Comparator as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Comparator
++p0.partial_cmp(p1);
++<range::Comparator as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range::Comparator as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range::Comparator>::partial_cmp(p0, p1);
+-----------------
+src/range.rs <range::Comparator as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Comparator
++p0.cmp(p1);
++<range::Comparator as std::cmp::Ord>::cmp(p0, p1);
++crate::<range::Comparator as std::cmp::Ord>::cmp(p0, p1);
++<range::Comparator>::cmp(p0, p1);
+-----------------
+src/range.rs <range::Comparator as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range::Comparator as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range::Comparator as std::hash::Hash>::hash":{"__H":["std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>","std::hash::SipHasher13","std::hash::SipHasher","std::collections::hash_map::DefaultHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range::Comparator as std::hash::Hash>::hash(p0, p1);
++crate::<range::Comparator as std::hash::Hash>::hash(p0, p1);
++<range::Comparator>::hash(p0, p1);
+-----------------
+src/range.rs <range::Comparator as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Comparator
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range::Comparator as std::fmt::Debug>::fmt(p0, p1);
++crate::<range::Comparator as std::fmt::Debug>::fmt(p0, p1);
++<range::Comparator>::fmt(p0, p1);
+-----------------
+src/range.rs <range::Op as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
++p0.clone();
++<range::Op as std::clone::Clone>::clone(p0);
++crate::<range::Op as std::clone::Clone>::clone(p0);
++<range::Op>::clone(p0);
+-----------------
+src/range.rs <range::Op as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Op
++p0.eq(p1);
++<range::Op as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range::Op as std::cmp::PartialEq>::eq(p0, p1);
++<range::Op>::eq(p0, p1);
+-----------------
+src/range.rs <range::Op as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
++p0.assert_receiver_is_total_eq();
++<range::Op as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range::Op as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range::Op>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range.rs <range::Op as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Op
++p0.partial_cmp(p1);
++<range::Op as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range::Op as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range::Op>::partial_cmp(p0, p1);
+-----------------
+src/range.rs <range::Op as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Op
++p0.cmp(p1);
++<range::Op as std::cmp::Ord>::cmp(p0, p1);
++crate::<range::Op as std::cmp::Ord>::cmp(p0, p1);
++<range::Op>::cmp(p0, p1);
+-----------------
+src/range.rs <range::Op as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range::Op as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range::Op as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher13","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::collections::hash_map::DefaultHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range::Op as std::hash::Hash>::hash(p0, p1);
++crate::<range::Op as std::hash::Hash>::hash(p0, p1);
++<range::Op>::hash(p0, p1);
+-----------------
+src/range.rs <range::Op as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range::Op as std::fmt::Debug>::fmt(p0, p1);
++crate::<range::Op as std::fmt::Debug>::fmt(p0, p1);
++<range::Op>::fmt(p0, p1);
+-----------------
+src/range.rs <range::Identifier as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
++p0.clone();
++<range::Identifier as std::clone::Clone>::clone(p0);
++crate::<range::Identifier as std::clone::Clone>::clone(p0);
++<range::Identifier>::clone(p0);
+-----------------
+src/range.rs <range::Identifier as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Identifier
++p0.eq(p1);
++<range::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++<range::Identifier>::eq(p0, p1);
+-----------------
+src/range.rs <range::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
++p0.assert_receiver_is_total_eq();
++<range::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range::Identifier>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range.rs <range::Identifier as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Identifier
++p0.partial_cmp(p1);
++<range::Identifier as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range::Identifier as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range::Identifier>::partial_cmp(p0, p1);
+-----------------
+src/range.rs <range::Identifier as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Identifier
++p0.cmp(p1);
++<range::Identifier as std::cmp::Ord>::cmp(p0, p1);
++crate::<range::Identifier as std::cmp::Ord>::cmp(p0, p1);
++<range::Identifier>::cmp(p0, p1);
+-----------------
+src/range.rs <range::Identifier as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range::Identifier as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range::Identifier as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher13","std::hash::SipHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range::Identifier as std::hash::Hash>::hash(p0, p1);
++crate::<range::Identifier as std::hash::Hash>::hash(p0, p1);
++<range::Identifier>::hash(p0, p1);
+-----------------
+src/range.rs <range::Identifier as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range::Identifier as std::fmt::Debug>::fmt(p0, p1);
++crate::<range::Identifier as std::fmt::Debug>::fmt(p0, p1);
++<range::Identifier>::fmt(p0, p1);
+-----------------
+src/range.rs <range::Partial as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
++p0.clone();
++<range::Partial as std::clone::Clone>::clone(p0);
++crate::<range::Partial as std::clone::Clone>::clone(p0);
++<range::Partial>::clone(p0);
+-----------------
+src/range.rs <range::Partial as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Partial
++p0.eq(p1);
++<range::Partial as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range::Partial as std::cmp::PartialEq>::eq(p0, p1);
++<range::Partial>::eq(p0, p1);
+-----------------
+src/range.rs <range::Partial as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
++p0.assert_receiver_is_total_eq();
++<range::Partial as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range::Partial as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range::Partial>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range.rs <range::Partial as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Partial
++p0.partial_cmp(p1);
++<range::Partial as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range::Partial as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range::Partial>::partial_cmp(p0, p1);
+-----------------
+src/range.rs <range::Partial as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::Partial
++p0.cmp(p1);
++<range::Partial as std::cmp::Ord>::cmp(p0, p1);
++crate::<range::Partial as std::cmp::Ord>::cmp(p0, p1);
++<range::Partial>::cmp(p0, p1);
+-----------------
+src/range.rs <range::Partial as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range::Partial as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range::Partial as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","std::hash::SipHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher13","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range::Partial as std::hash::Hash>::hash(p0, p1);
++crate::<range::Partial as std::hash::Hash>::hash(p0, p1);
++<range::Partial>::hash(p0, p1);
+-----------------
+src/range.rs <range::Partial as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range::Partial as std::fmt::Debug>::fmt(p0, p1);
++crate::<range::Partial as std::fmt::Debug>::fmt(p0, p1);
++<range::Partial>::fmt(p0, p1);
+-----------------
+src/range.rs <range::PartialKind as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
++p0.clone();
++<range::PartialKind as std::clone::Clone>::clone(p0);
++crate::<range::PartialKind as std::clone::Clone>::clone(p0);
++<range::PartialKind>::clone(p0);
+-----------------
+src/range.rs <range::PartialKind as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
++p0.eq(p1);
++<range::PartialKind as std::cmp::PartialEq>::eq(p0, p1);
++crate::<range::PartialKind as std::cmp::PartialEq>::eq(p0, p1);
++<range::PartialKind>::eq(p0, p1);
+-----------------
+src/range.rs <range::PartialKind as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
++p0.assert_receiver_is_total_eq();
++<range::PartialKind as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<range::PartialKind as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<range::PartialKind>::assert_receiver_is_total_eq(p0);
+-----------------
+src/range.rs <range::PartialKind as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
++p0.partial_cmp(p1);
++<range::PartialKind as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<range::PartialKind as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<range::PartialKind>::partial_cmp(p0, p1);
+-----------------
+src/range.rs <range::PartialKind as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
+let mut p1 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
++p0.cmp(p1);
++<range::PartialKind as std::cmp::Ord>::cmp(p0, p1);
++crate::<range::PartialKind as std::cmp::Ord>::cmp(p0, p1);
++<range::PartialKind>::cmp(p0, p1);
+-----------------
+src/range.rs <range::PartialKind as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<range::PartialKind as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<range::PartialKind as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher","std::boxed::Box<T, A>","std::hash::SipHasher13","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<range::PartialKind as std::hash::Hash>::hash(p0, p1);
++crate::<range::PartialKind as std::hash::Hash>::hash(p0, p1);
++<range::PartialKind>::hash(p0, p1);
+-----------------
+src/range.rs <range::PartialKind as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::PartialKind
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<range::PartialKind as std::fmt::Debug>::fmt(p0, p1);
++crate::<range::PartialKind as std::fmt::Debug>::fmt(p0, p1);
++<range::PartialKind>::fmt(p0, p1);
+-----------------
+src/range.rs range::Partial::new
+deps:{}
+candidates:{}
++range::Partial::new();
++crate::range::Partial::new();
++<range::Partial>::new();
+-----------------
+src/range.rs range::Partial::as_comparator
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // range::Partial
+let mut p1 = MaybeUninit::uninit().assume_init(); // range::Op
++p0.as_comparator(p1);
++range::Partial::as_comparator(p0, p1);
++crate::range::Partial::as_comparator(p0, p1);
++<range::Partial>::as_comparator(p0, p1);
+-----------------
+src/range.rs range::Partial::inc_major
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.inc_major();
++range::Partial::inc_major(p0);
++crate::range::Partial::inc_major(p0);
++<range::Partial>::inc_major(p0);
+-----------------
+src/range.rs range::Partial::inc_minor
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.inc_minor();
++range::Partial::inc_minor(p0);
++crate::range::Partial::inc_minor(p0);
++<range::Partial>::inc_minor(p0);
+-----------------
+src/range.rs range::Partial::inc_patch
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.inc_patch();
++range::Partial::inc_patch(p0);
++crate::range::Partial::inc_patch(p0);
++<range::Partial>::inc_patch(p0);
+-----------------
+src/range.rs range::Partial::zero_missing
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.zero_missing();
++range::Partial::zero_missing(p0);
++crate::range::Partial::zero_missing(p0);
++<range::Partial>::zero_missing(p0);
+-----------------
+src/range.rs range::Partial::zero_minor
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.zero_minor();
++range::Partial::zero_minor(p0);
++crate::range::Partial::zero_minor(p0);
++<range::Partial>::zero_minor(p0);
+-----------------
+src/range.rs range::Partial::zero_patch
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.zero_patch();
++range::Partial::zero_patch(p0);
++crate::range::Partial::zero_patch(p0);
++<range::Partial>::zero_patch(p0);
+-----------------
+src/range.rs range::Partial::no_pre
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // range::Partial
++p0.no_pre();
++range::Partial::no_pre(p0);
++crate::range::Partial::no_pre(p0);
++<range::Partial>::no_pre(p0);
+-----------------
+src/lexer.rs <lexer::Token<'input> as std::fmt::Debug>::fmt
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<lexer::Token<'input> as std::fmt::Debug>::fmt(p0, p1);
++crate::<lexer::Token<'input> as std::fmt::Debug>::fmt(p0, p1);
++<lexer::Token<'input>>::fmt(p0, p1);
+-----------------
+src/lexer.rs <lexer::Token<'input> as std::cmp::PartialEq>::eq
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
++p0.eq(p1);
++<lexer::Token<'input> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<lexer::Token<'input> as std::cmp::PartialEq>::eq(p0, p1);
++<lexer::Token<'input>>::eq(p0, p1);
+-----------------
+src/lexer.rs <lexer::Token<'input> as std::cmp::Eq>::assert_receiver_is_total_eq
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
++p0.assert_receiver_is_total_eq();
++<lexer::Token<'input> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<lexer::Token<'input> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<lexer::Token<'input>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lexer.rs <lexer::Token<'input> as std::cmp::PartialOrd>::partial_cmp
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
++p0.partial_cmp(p1);
++<lexer::Token<'input> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<lexer::Token<'input> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<lexer::Token<'input>>::partial_cmp(p0, p1);
+-----------------
+src/lexer.rs <lexer::Token<'input> as std::cmp::Ord>::cmp
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
++p0.cmp(p1);
++<lexer::Token<'input> as std::cmp::Ord>::cmp(p0, p1);
++crate::<lexer::Token<'input> as std::cmp::Ord>::cmp(p0, p1);
++<lexer::Token<'input>>::cmp(p0, p1);
+-----------------
+src/lexer.rs lexer::Token::<'input>::is_whitespace
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
++p0.is_whitespace();
++lexer::Token::<'input>::is_whitespace(p0);
++crate::lexer::Token::<'input>::is_whitespace(p0);
++<lexer::Token<'input>>::is_whitespace(p0);
+-----------------
+src/lexer.rs lexer::Token::<'input>::is_wildcard
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Token<'input>
++p0.is_wildcard();
++lexer::Token::<'input>::is_wildcard(p0);
++crate::lexer::Token::<'input>::is_wildcard(p0);
++<lexer::Token<'input>>::is_wildcard(p0);
+-----------------
+src/lexer.rs <lexer::Error as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<lexer::Error as std::fmt::Debug>::fmt(p0, p1);
++crate::<lexer::Error as std::fmt::Debug>::fmt(p0, p1);
++<lexer::Error>::fmt(p0, p1);
+-----------------
+src/lexer.rs <lexer::Error as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Error
+let mut p1 = & MaybeUninit::uninit().assume_init(); // lexer::Error
++p0.eq(p1);
++<lexer::Error as std::cmp::PartialEq>::eq(p0, p1);
++crate::<lexer::Error as std::cmp::PartialEq>::eq(p0, p1);
++<lexer::Error>::eq(p0, p1);
+-----------------
+src/lexer.rs <lexer::Error as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Error
++p0.assert_receiver_is_total_eq();
++<lexer::Error as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<lexer::Error as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<lexer::Error>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lexer.rs <lexer::Error as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Error
+let mut p1 = & MaybeUninit::uninit().assume_init(); // lexer::Error
++p0.partial_cmp(p1);
++<lexer::Error as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<lexer::Error as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<lexer::Error>::partial_cmp(p0, p1);
+-----------------
+src/lexer.rs <lexer::Error as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Error
+let mut p1 = & MaybeUninit::uninit().assume_init(); // lexer::Error
++p0.cmp(p1);
++<lexer::Error as std::cmp::Ord>::cmp(p0, p1);
++crate::<lexer::Error as std::cmp::Ord>::cmp(p0, p1);
++<lexer::Error>::cmp(p0, p1);
+-----------------
+src/lexer.rs <lexer::Lexer<'input> as std::fmt::Debug>::fmt
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<lexer::Lexer<'input> as std::fmt::Debug>::fmt(p0, p1);
++crate::<lexer::Lexer<'input> as std::fmt::Debug>::fmt(p0, p1);
++<lexer::Lexer<'input>>::fmt(p0, p1);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::new
+'input
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++lexer::Lexer::<'input>::new(&p0);
++crate::lexer::Lexer::<'input>::new(&p0);
++<lexer::Lexer<'input>>::new(&p0);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::step
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
++p0.step();
++lexer::Lexer::<'input>::step(p0);
++crate::lexer::Lexer::<'input>::step(p0);
++<lexer::Lexer<'input>>::step(p0);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::step_n
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
+let mut p1 = 0usize; // None+usize
++p0.step_n(p1);
++lexer::Lexer::<'input>::step_n(p0, p1);
++crate::lexer::Lexer::<'input>::step_n(p0, p1);
++<lexer::Lexer<'input>>::step_n(p0, p1);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::one
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
++p0.one();
++lexer::Lexer::<'input>::one(p0);
++crate::lexer::Lexer::<'input>::one(p0);
++<lexer::Lexer<'input>>::one(p0);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::two
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
++p0.two();
++lexer::Lexer::<'input>::two(p0);
++crate::lexer::Lexer::<'input>::two(p0);
++<lexer::Lexer<'input>>::two(p0);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::component
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
+let mut p1 = 0usize; // None+usize
++p0.component(p1);
++lexer::Lexer::<'input>::component(p0, p1);
++crate::lexer::Lexer::<'input>::component(p0, p1);
++<lexer::Lexer<'input>>::component(p0, p1);
+-----------------
+src/lexer.rs lexer::Lexer::<'input>::whitespace
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
+let mut p1 = 0usize; // None+usize
++p0.whitespace(p1);
++lexer::Lexer::<'input>::whitespace(p0, p1);
++crate::lexer::Lexer::<'input>::whitespace(p0, p1);
++<lexer::Lexer<'input>>::whitespace(p0, p1);
+-----------------
+src/lexer.rs <lexer::Lexer<'input> as std::iter::Iterator>::next
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // lexer::Lexer<'input>
++p0.next();
++<lexer::Lexer<'input> as std::iter::Iterator>::next(p0);
++crate::<lexer::Lexer<'input> as std::iter::Iterator>::next(p0);
++<lexer::Lexer<'input>>::next(p0);
+-----------------
+src/parser.rs <parser::Error<'input> as std::fmt::Debug>::fmt
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<parser::Error<'input> as std::fmt::Debug>::fmt(p0, p1);
++crate::<parser::Error<'input> as std::fmt::Debug>::fmt(p0, p1);
++<parser::Error<'input>>::fmt(p0, p1);
+-----------------
+src/parser.rs <parser::Error<'input> as std::cmp::PartialEq>::eq
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
++p0.eq(p1);
++<parser::Error<'input> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<parser::Error<'input> as std::cmp::PartialEq>::eq(p0, p1);
++<parser::Error<'input>>::eq(p0, p1);
+-----------------
+src/parser.rs <parser::Error<'input> as std::cmp::Eq>::assert_receiver_is_total_eq
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
++p0.assert_receiver_is_total_eq();
++<parser::Error<'input> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<parser::Error<'input> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<parser::Error<'input>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/parser.rs <parser::Error<'input> as std::cmp::PartialOrd>::partial_cmp
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
++p0.partial_cmp(p1);
++<parser::Error<'input> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<parser::Error<'input> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<parser::Error<'input>>::partial_cmp(p0, p1);
+-----------------
+src/parser.rs <parser::Error<'input> as std::cmp::Ord>::cmp
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
++p0.cmp(p1);
++<parser::Error<'input> as std::cmp::Ord>::cmp(p0, p1);
++crate::<parser::Error<'input> as std::cmp::Ord>::cmp(p0, p1);
++<parser::Error<'input>>::cmp(p0, p1);
+-----------------
+src/parser.rs <parser::Error<'input> as std::convert::From<lexer::Error>>::from
+'input
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // lexer::Error
++<parser::Error<'input> as std::convert::From<lexer::Error>>::from(p0);
++crate::<parser::Error<'input> as std::convert::From<lexer::Error>>::from(p0);
++<parser::Error<'input>>::from(p0);
+-----------------
+src/parser.rs <parser::Error<'input> as std::fmt::Display>::fmt
+'input
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parser::Error<'input>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<parser::Error<'input> as std::fmt::Display>::fmt(p0, p1);
++crate::<parser::Error<'input> as std::fmt::Display>::fmt(p0, p1);
++<parser::Error<'input>>::fmt(p0, p1);
+-----------------
+src/parser.rs parser::<impl std::convert::From<parser::Error<'input>> for std::string::String>::from
+'input
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parser::Error<'input>
++parser::<impl std::convert::From<parser::Error<'input>> for std::string::String>::from(p0);
++crate::parser::<impl std::convert::From<parser::Error<'input>> for std::string::String>::from(p0);
++<std::string::String>::from(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::new
+'input
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parser::Parser::<'input>::new(&p0);
++crate::parser::Parser::<'input>::new(&p0);
++<parser::Parser<'input>>::new(&p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::pop
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.pop();
++parser::Parser::<'input>::pop(p0);
++crate::parser::Parser::<'input>::pop(p0);
++<parser::Parser<'input>>::pop(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::peek
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.peek();
++parser::Parser::<'input>::peek(p0);
++crate::parser::Parser::<'input>::peek(p0);
++<parser::Parser<'input>>::peek(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::skip_whitespace
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.skip_whitespace();
++parser::Parser::<'input>::skip_whitespace(p0);
++crate::parser::Parser::<'input>::skip_whitespace(p0);
++<parser::Parser<'input>>::skip_whitespace(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::component
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.component();
++parser::Parser::<'input>::component(p0);
++crate::parser::Parser::<'input>::component(p0);
++<parser::Parser<'input>>::component(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::numeric
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.numeric();
++parser::Parser::<'input>::numeric(p0);
++crate::parser::Parser::<'input>::numeric(p0);
++<parser::Parser<'input>>::numeric(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::dot_component
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.dot_component();
++parser::Parser::<'input>::dot_component(p0);
++crate::parser::Parser::<'input>::dot_component(p0);
++<parser::Parser<'input>>::dot_component(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::dot_numeric
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.dot_numeric();
++parser::Parser::<'input>::dot_numeric(p0);
++crate::parser::Parser::<'input>::dot_numeric(p0);
++<parser::Parser<'input>>::dot_numeric(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::identifier
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.identifier();
++parser::Parser::<'input>::identifier(p0);
++crate::parser::Parser::<'input>::identifier(p0);
++<parser::Parser<'input>>::identifier(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::pre
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.pre();
++parser::Parser::<'input>::pre(p0);
++crate::parser::Parser::<'input>::pre(p0);
++<parser::Parser<'input>>::pre(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::parts
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.parts();
++parser::Parser::<'input>::parts(p0);
++crate::parser::Parser::<'input>::parts(p0);
++<parser::Parser<'input>>::parts(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::plus_build_metadata
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.plus_build_metadata();
++parser::Parser::<'input>::plus_build_metadata(p0);
++crate::parser::Parser::<'input>::plus_build_metadata(p0);
++<parser::Parser<'input>>::plus_build_metadata(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::version
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.version();
++parser::Parser::<'input>::version(p0);
++crate::parser::Parser::<'input>::version(p0);
++<parser::Parser<'input>>::version(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::is_eof
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.is_eof();
++parser::Parser::<'input>::is_eof(p0);
++crate::parser::Parser::<'input>::is_eof(p0);
++<parser::Parser<'input>>::is_eof(p0);
+-----------------
+src/parser.rs parser::Parser::<'input>::tail
+'input
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // parser::Parser<'input>
++p0.tail();
++parser::Parser::<'input>::tail(p0);
++crate::parser::Parser::<'input>::tail(p0);
++<parser::Parser<'input>>::tail(p0);
+-----------------
+src/version.rs <version::Version as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.clone();
++<version::Version as std::clone::Clone>::clone(p0);
++crate::<version::Version as std::clone::Clone>::clone(p0);
++<version::Version>::clone(p0);
+-----------------
+src/version.rs <version::Version as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.partial_cmp(p1);
++<version::Version as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version::Version as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version::Version>::partial_cmp(p0, p1);
+-----------------
+src/version.rs <version::Version as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.cmp(p1);
++<version::Version as std::cmp::Ord>::cmp(p0, p1);
++crate::<version::Version as std::cmp::Ord>::cmp(p0, p1);
++<version::Version>::cmp(p0, p1);
+-----------------
+src/version.rs <version::Version as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version::Version as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version::Version as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::boxed::Box<T, A>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version::Version as std::hash::Hash>::hash(p0, p1);
++crate::<version::Version as std::hash::Hash>::hash(p0, p1);
++<version::Version>::hash(p0, p1);
+-----------------
+src/version.rs <version::Version as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version::Version as std::fmt::Debug>::fmt(p0, p1);
++crate::<version::Version as std::fmt::Debug>::fmt(p0, p1);
++<version::Version>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Version as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.eq(p1);
++<version::Version as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version::Version as std::cmp::PartialEq>::eq(p0, p1);
++<version::Version>::eq(p0, p1);
+-----------------
+src/version.rs <version::Version as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.assert_receiver_is_total_eq();
++<version::Version as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version::Version as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version::Version>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version.rs <version::Identifier as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.clone();
++<version::Identifier as std::clone::Clone>::clone(p0);
++crate::<version::Identifier as std::clone::Clone>::clone(p0);
++<version::Identifier>::clone(p0);
+-----------------
+src/version.rs <version::Identifier as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.partial_cmp(p1);
++<version::Identifier as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version::Identifier as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version::Identifier>::partial_cmp(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.cmp(p1);
++<version::Identifier as std::cmp::Ord>::cmp(p0, p1);
++crate::<version::Identifier as std::cmp::Ord>::cmp(p0, p1);
++<version::Identifier>::cmp(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version::Identifier as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version::Identifier as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version::Identifier as std::hash::Hash>::hash(p0, p1);
++crate::<version::Identifier as std::hash::Hash>::hash(p0, p1);
++<version::Identifier>::hash(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version::Identifier as std::fmt::Debug>::fmt(p0, p1);
++crate::<version::Identifier as std::fmt::Debug>::fmt(p0, p1);
++<version::Identifier>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.eq(p1);
++<version::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++<version::Identifier>::eq(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.assert_receiver_is_total_eq();
++<version::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version::Identifier>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version.rs version::Identifier::concat
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = "sample"; // None+&str
++p0.concat(&p1);
++version::Identifier::concat(p0, &p1);
++crate::version::Identifier::concat(p0, &p1);
++<version::Identifier>::concat(p0, &p1);
+-----------------
+src/version.rs <version::Version as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version::Version as std::fmt::Display>::fmt(p0, p1);
++crate::<version::Version as std::fmt::Display>::fmt(p0, p1);
++<version::Version>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version::Identifier as std::fmt::Display>::fmt(p0, p1);
++crate::<version::Identifier as std::fmt::Display>::fmt(p0, p1);
++<version::Identifier>::fmt(p0, p1);

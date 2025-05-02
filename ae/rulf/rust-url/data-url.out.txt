@@ -1,0 +1,333 @@
+-----------------
+data-url/src/forgiving_base64.rs forgiving_base64::decode_to_vec
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++forgiving_base64::decode_to_vec(p0);
++crate::forgiving_base64::decode_to_vec(p0);
++crate::forgiving_base64::decode_to_vec(p0);
+-----------------
+data-url/src/mime.rs mime::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++mime::parse(&p0);
++crate::mime::parse(&p0);
++crate::mime::parse(&p0);
+-----------------
+data-url/src/mime.rs mime::split2
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = 'a'; // None+char
++mime::split2(&p0, p1);
++crate::mime::split2(&p0, p1);
++crate::mime::split2(&p0, p1);
+-----------------
+data-url/src/mime.rs mime::parse_parameters
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = &mut std::string::String::new(); // None+std::vec::Vec<(std::string::String, std::string::String)>
++mime::parse_parameters(&p0, p1);
++crate::mime::parse_parameters(&p0, p1);
++crate::mime::parse_parameters(&p0, p1);
+-----------------
+data-url/src/mime.rs mime::contains
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [(std::string::String, std::string::String)]
+let mut p1 = "sample"; // None+&str
++mime::contains(p0, &p1);
++crate::mime::contains(p0, &p1);
++crate::mime::contains(p0, &p1);
+-----------------
+data-url/src/mime.rs mime::valid_value
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++mime::valid_value(&p0);
++crate::mime::valid_value(&p0);
++crate::mime::valid_value(&p0);
+-----------------
+data-url/src/mime.rs mime::ascii_whitespace
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++mime::ascii_whitespace(p0);
++crate::mime::ascii_whitespace(p0);
++crate::mime::ascii_whitespace(p0);
+-----------------
+data-url/src/mime.rs mime::only_http_token_code_points
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++mime::only_http_token_code_points(&p0);
++crate::mime::only_http_token_code_points(&p0);
++crate::mime::only_http_token_code_points(&p0);
+-----------------
+data-url/src/lib.rs pretend_parse_data_url
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++pretend_parse_data_url(&p0);
++crate::pretend_parse_data_url(&p0);
++crate::pretend_parse_data_url(&p0);
+-----------------
+data-url/src/lib.rs find_comma_before_fragment
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++find_comma_before_fragment(&p0);
++crate::find_comma_before_fragment(&p0);
++crate::find_comma_before_fragment(&p0);
+-----------------
+data-url/src/lib.rs parse_header
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++parse_header(&p0);
++crate::parse_header(&p0);
++crate::parse_header(&p0);
+-----------------
+data-url/src/lib.rs remove_base64_suffix
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++remove_base64_suffix(&p0);
++crate::remove_base64_suffix(&p0);
++crate::remove_base64_suffix(&p0);
+-----------------
+data-url/src/lib.rs percent_encode
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
+let mut p1 = &mut std::string::String::new(); // None+std::string::String
++percent_encode(p0, p1);
++crate::percent_encode(p0, p1);
++crate::percent_encode(p0, p1);
+-----------------
+data-url/src/lib.rs decode_without_base64
+deps:{"decode_without_base64":{"E":["std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnMut"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"decode_without_base64":{"E":["RUG_ANY"],"F":["core::slice::ascii::EscapeByte","core::str::IsAsciiWhitespace","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::str::LinesAnyMap","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","std::boxed::Box<F, A>","core::str::IsNotEmpty","core::str::IsWhitespace","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::str::UnsafeBytesToStr","core::str::BytesIsNotEmpty","core::str::CharEscapeDefault","core::str::CharEscapeDebugContinue"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++decode_without_base64(&p0, p1);
++crate::decode_without_base64(&p0, p1);
++crate::decode_without_base64(&p0, p1);
+-----------------
+data-url/src/lib.rs decode_with_base64
+deps:{"decode_with_base64":{"E":["std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnMut"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"decode_with_base64":{"E":["RUG_ANY"],"F":["std::boxed::Box<F, A>","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::CharEscapeDebugContinue","core::str::IsAsciiWhitespace","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::str::BytesIsNotEmpty","core::str::LinesAnyMap","core::slice::ascii::EscapeByte","core::str::UnsafeBytesToStr","core::str::IsWhitespace","core::str::CharEscapeDefault","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::IsNotEmpty"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++decode_with_base64(&p0, p1);
++crate::decode_with_base64(&p0, p1);
++crate::decode_with_base64(&p0, p1);
+-----------------
+data-url/src/forgiving_base64.rs <forgiving_base64::InvalidBase64 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // forgiving_base64::InvalidBase64
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<forgiving_base64::InvalidBase64 as std::fmt::Debug>::fmt(p0, p1);
++crate::<forgiving_base64::InvalidBase64 as std::fmt::Debug>::fmt(p0, p1);
++<forgiving_base64::InvalidBase64>::fmt(p0, p1);
+-----------------
+data-url/src/forgiving_base64.rs <forgiving_base64::InvalidBase64Details as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // forgiving_base64::InvalidBase64Details
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<forgiving_base64::InvalidBase64Details as std::fmt::Debug>::fmt(p0, p1);
++crate::<forgiving_base64::InvalidBase64Details as std::fmt::Debug>::fmt(p0, p1);
++<forgiving_base64::InvalidBase64Details>::fmt(p0, p1);
+-----------------
+data-url/src/forgiving_base64.rs <forgiving_base64::DecodeError<E> as std::fmt::Debug>::fmt
+deps:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<forgiving_base64::DecodeError<E> as std::fmt::Debug>::fmt":{"E":["std::fmt::Debug","std::marker::Sized"]},"forgiving_base64::DecodeError":{"E":["std::marker::Sized","std::fmt::Debug"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<forgiving_base64::DecodeError<E> as std::fmt::Debug>::fmt":{"E":["forgiving_base64::InvalidBase64Details","mime::MimeParsingError","forgiving_base64::DecodeError","DataUrlError","forgiving_base64::InvalidBase64","<*const T as std::fmt::Debug>","mime::Mime","<&mut T as std::fmt::Debug>"]},"forgiving_base64::DecodeError":{"E":["mime::Mime","DataUrlError","<*const T as std::fmt::Debug>","mime::MimeParsingError","forgiving_base64::InvalidBase64Details","forgiving_base64::InvalidBase64","forgiving_base64::DecodeError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // forgiving_base64::DecodeError<E>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<forgiving_base64::DecodeError<E> as std::fmt::Debug>::fmt(p0, p1);
++crate::<forgiving_base64::DecodeError<E> as std::fmt::Debug>::fmt(p0, p1);
++<forgiving_base64::DecodeError<E>>::fmt(p0, p1);
+-----------------
+data-url/src/forgiving_base64.rs <forgiving_base64::DecodeError<E> as std::convert::From<forgiving_base64::InvalidBase64Details>>::from
+deps:{"<forgiving_base64::DecodeError<E> as std::convert::From<forgiving_base64::InvalidBase64Details>>::from":{"E":["std::marker::Sized"]}}
+candidates:{"<forgiving_base64::DecodeError<E> as std::convert::From<forgiving_base64::InvalidBase64Details>>::from":{"E":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // forgiving_base64::InvalidBase64Details
++<forgiving_base64::DecodeError<E> as std::convert::From<forgiving_base64::InvalidBase64Details>>::from(p0);
++crate::<forgiving_base64::DecodeError<E> as std::convert::From<forgiving_base64::InvalidBase64Details>>::from(p0);
++<forgiving_base64::DecodeError<E>>::from(p0);
+-----------------
+data-url/src/forgiving_base64.rs <forgiving_base64::InvalidBase64 as std::convert::From<forgiving_base64::DecodeError<forgiving_base64::Impossible>>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // forgiving_base64::DecodeError<forgiving_base64::Impossible>
++<forgiving_base64::InvalidBase64 as std::convert::From<forgiving_base64::DecodeError<forgiving_base64::Impossible>>>::from(p0);
++crate::<forgiving_base64::InvalidBase64 as std::convert::From<forgiving_base64::DecodeError<forgiving_base64::Impossible>>>::from(p0);
++<forgiving_base64::InvalidBase64>::from(p0);
+-----------------
+data-url/src/forgiving_base64.rs forgiving_base64::Decoder::<F, E>::new
+deps:{"forgiving_base64::Decoder::<F, E>::new":{"E":["std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnMut"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"forgiving_base64::Decoder::<F, E>::new":{"E":["RUG_ANY"],"F":["core::str::IsNotEmpty","core::str::CharEscapeDefault","core::str::IsWhitespace","core::str::CharEscapeDebugContinue","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::str::LinesAnyMap","std::boxed::Box<F, A>","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::IsAsciiWhitespace","core::str::CharEscapeUnicode","std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>","core::str::BytesIsNotEmpty","core::str::UnsafeBytesToStr","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::slice::ascii::EscapeByte","core::const_closure::ConstFnMutClosure<&'a mut A, Function>"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // F
++forgiving_base64::Decoder::<F, E>::new(p0);
++crate::forgiving_base64::Decoder::<F, E>::new(p0);
++<forgiving_base64::Decoder<F, E>>::new(p0);
+-----------------
+data-url/src/forgiving_base64.rs forgiving_base64::Decoder::<F, E>::feed
+deps:{"forgiving_base64::Decoder::<F, E>::feed":{"E":["std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnMut"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"forgiving_base64::Decoder::<F, E>::feed":{"E":["RUG_ANY"],"F":["core::str::UnsafeBytesToStr","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::str::BytesIsNotEmpty","core::str::LinesAnyMap","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","std::boxed::Box<F, A>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::IsAsciiWhitespace","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::CharEscapeDefault","core::str::IsWhitespace","core::str::CharEscapeUnicode","core::str::IsNotEmpty","core::str::CharEscapeDebugContinue","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::slice::ascii::EscapeByte"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // forgiving_base64::Decoder<F, E>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.feed(p1);
++forgiving_base64::Decoder::<F, E>::feed(p0, p1);
++crate::forgiving_base64::Decoder::<F, E>::feed(p0, p1);
++<forgiving_base64::Decoder<F, E>>::feed(p0, p1);
+-----------------
+data-url/src/forgiving_base64.rs forgiving_base64::Decoder::<F, E>::finish
+deps:{"forgiving_base64::Decoder::<F, E>::finish":{"E":["std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnMut"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"forgiving_base64::Decoder::<F, E>::finish":{"E":["RUG_ANY"],"F":["core::str::IsAsciiWhitespace","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::str::CharEscapeDefault","core::slice::ascii::EscapeByte","core::str::IsWhitespace","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","std::boxed::Box<F, A>","core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::CharEscapeUnicode","core::str::UnsafeBytesToStr","core::str::LinesAnyMap","core::str::IsNotEmpty","core::str::CharEscapeDebugContinue","core::const_closure::ConstFnMutClosure<&'a mut A, Function>"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // forgiving_base64::Decoder<F, E>
++p0.finish();
++forgiving_base64::Decoder::<F, E>::finish(p0);
++crate::forgiving_base64::Decoder::<F, E>::finish(p0);
++<forgiving_base64::Decoder<F, E>>::finish(p0);
+-----------------
+data-url/src/mime.rs <mime::Mime as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // mime::Mime
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<mime::Mime as std::fmt::Debug>::fmt(p0, p1);
++crate::<mime::Mime as std::fmt::Debug>::fmt(p0, p1);
++<mime::Mime>::fmt(p0, p1);
+-----------------
+data-url/src/mime.rs <mime::Mime as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // mime::Mime
+let mut p1 = & MaybeUninit::uninit().assume_init(); // mime::Mime
++p0.eq(p1);
++<mime::Mime as std::cmp::PartialEq>::eq(p0, p1);
++crate::<mime::Mime as std::cmp::PartialEq>::eq(p0, p1);
++<mime::Mime>::eq(p0, p1);
+-----------------
+data-url/src/mime.rs <mime::Mime as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // mime::Mime
++p0.assert_receiver_is_total_eq();
++<mime::Mime as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<mime::Mime as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<mime::Mime>::assert_receiver_is_total_eq(p0);
+-----------------
+data-url/src/mime.rs mime::Mime::get_parameter
+deps:{"mime::Mime::get_parameter":{"P":["std::cmp::PartialEq"]},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+candidates:{"mime::Mime::get_parameter":{"P":["std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>","mime::Mime"]},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // mime::Mime
+let mut p1 = & MaybeUninit::uninit().assume_init(); // P
++p0.get_parameter(p1);
++mime::Mime::get_parameter(p0, p1);
++crate::mime::Mime::get_parameter(p0, p1);
++<mime::Mime>::get_parameter(p0, p1);
+-----------------
+data-url/src/mime.rs <mime::MimeParsingError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // mime::MimeParsingError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<mime::MimeParsingError as std::fmt::Debug>::fmt(p0, p1);
++crate::<mime::MimeParsingError as std::fmt::Debug>::fmt(p0, p1);
++<mime::MimeParsingError>::fmt(p0, p1);
+-----------------
+data-url/src/mime.rs <mime::Mime as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<mime::Mime as std::str::FromStr>::from_str(&p0);
++crate::<mime::Mime as std::str::FromStr>::from_str(&p0);
++<mime::Mime>::from_str(&p0);
+-----------------
+data-url/src/mime.rs <mime::Mime as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // mime::Mime
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<mime::Mime as std::fmt::Display>::fmt(p0, p1);
++crate::<mime::Mime as std::fmt::Display>::fmt(p0, p1);
++<mime::Mime>::fmt(p0, p1);
+-----------------
+data-url/src/lib.rs <DataUrlError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // DataUrlError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<DataUrlError as std::fmt::Debug>::fmt(p0, p1);
++crate::<DataUrlError as std::fmt::Debug>::fmt(p0, p1);
++<DataUrlError>::fmt(p0, p1);
+-----------------
+data-url/src/lib.rs DataUrl::<'a>::process
+'a
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++DataUrl::<'a>::process(&p0);
++crate::DataUrl::<'a>::process(&p0);
++<DataUrl<'a>>::process(&p0);
+-----------------
+data-url/src/lib.rs DataUrl::<'a>::mime_type
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // DataUrl<'a>
++p0.mime_type();
++DataUrl::<'a>::mime_type(p0);
++crate::DataUrl::<'a>::mime_type(p0);
++<DataUrl<'a>>::mime_type(p0);
+-----------------
+data-url/src/lib.rs DataUrl::<'a>::decode
+'a
+deps:{"DataUrl::<'a>::decode":{"E":["std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnMut"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"DataUrl::<'a>::decode":{"E":["RUG_ANY"],"F":["core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::str::LinesAnyMap","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::IsWhitespace","core::slice::ascii::EscapeByte","core::str::CharEscapeUnicode","core::str::IsAsciiWhitespace","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::UnsafeBytesToStr","core::str::CharEscapeDefault","core::str::CharEscapeDebugContinue","std::boxed::Box<F, A>","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::IsNotEmpty"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // DataUrl<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++p0.decode(p1);
++DataUrl::<'a>::decode(p0, p1);
++crate::DataUrl::<'a>::decode(p0, p1);
++<DataUrl<'a>>::decode(p0, p1);
+-----------------
+data-url/src/lib.rs DataUrl::<'a>::decode_to_vec
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // DataUrl<'a>
++p0.decode_to_vec();
++DataUrl::<'a>::decode_to_vec(p0);
++crate::DataUrl::<'a>::decode_to_vec(p0);
++<DataUrl<'a>>::decode_to_vec(p0);
+-----------------
+data-url/src/lib.rs FragmentIdentifier::<'a>::to_percent_encoded
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // FragmentIdentifier<'a>
++p0.to_percent_encoded();
++FragmentIdentifier::<'a>::to_percent_encoded(p0);
++crate::FragmentIdentifier::<'a>::to_percent_encoded(p0);
++<FragmentIdentifier<'a>>::to_percent_encoded(p0);

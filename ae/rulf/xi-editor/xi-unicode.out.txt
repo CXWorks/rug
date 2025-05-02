@@ -1,0 +1,252 @@
+-----------------
+unicode/src/lib.rs linebreak_property
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++linebreak_property(p0);
++crate::linebreak_property(p0);
++crate::linebreak_property(p0);
+-----------------
+unicode/src/lib.rs linebreak_property_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = 0usize; // None+usize
++linebreak_property_str(&p0, p1);
++crate::linebreak_property_str(&p0, p1);
++crate::linebreak_property_str(&p0, p1);
+-----------------
+unicode/src/lib.rs is_in_asc_list
+deps:{"is_in_asc_list":{"T":["core::marker::Sized","core::cmp::PartialOrd"]}}
+candidates:{"is_in_asc_list":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // T
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [T]
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++is_in_asc_list(p0, p1, p2, p3);
++crate::is_in_asc_list(p0, p1, p2, p3);
++crate::is_in_asc_list(p0, p1, p2, p3);
+-----------------
+unicode/src/lib.rs is_variation_selector
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++is_variation_selector(p0);
++crate::is_variation_selector(p0);
++crate::is_variation_selector(p0);
+-----------------
+unicode/src/lib.rs is_keycap_base
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++is_keycap_base(p0);
++crate::is_keycap_base(p0);
++crate::is_keycap_base(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_regional_indicator_symbol
+deps:{"EmojiExt::is_regional_indicator_symbol":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_regional_indicator_symbol":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_regional_indicator_symbol();
++EmojiExt::is_regional_indicator_symbol(p0);
++crate::EmojiExt::is_regional_indicator_symbol(p0);
++crate::EmojiExt::is_regional_indicator_symbol(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_emoji_modifier
+deps:{"EmojiExt::is_emoji_modifier":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_emoji_modifier":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_emoji_modifier();
++EmojiExt::is_emoji_modifier(p0);
++crate::EmojiExt::is_emoji_modifier(p0);
++crate::EmojiExt::is_emoji_modifier(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_emoji_combining_enclosing_keycap
+deps:{"EmojiExt::is_emoji_combining_enclosing_keycap":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_emoji_combining_enclosing_keycap":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_emoji_combining_enclosing_keycap();
++EmojiExt::is_emoji_combining_enclosing_keycap(p0);
++crate::EmojiExt::is_emoji_combining_enclosing_keycap(p0);
++crate::EmojiExt::is_emoji_combining_enclosing_keycap(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_emoji
+deps:{"EmojiExt::is_emoji":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_emoji":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_emoji();
++EmojiExt::is_emoji(p0);
++crate::EmojiExt::is_emoji(p0);
++crate::EmojiExt::is_emoji(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_emoji_modifier_base
+deps:{"EmojiExt::is_emoji_modifier_base":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_emoji_modifier_base":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_emoji_modifier_base();
++EmojiExt::is_emoji_modifier_base(p0);
++crate::EmojiExt::is_emoji_modifier_base(p0);
++crate::EmojiExt::is_emoji_modifier_base(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_tag_spec_char
+deps:{"EmojiExt::is_tag_spec_char":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_tag_spec_char":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_tag_spec_char();
++EmojiExt::is_tag_spec_char(p0);
++crate::EmojiExt::is_tag_spec_char(p0);
++crate::EmojiExt::is_tag_spec_char(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_emoji_cancel_tag
+deps:{"EmojiExt::is_emoji_cancel_tag":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_emoji_cancel_tag":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_emoji_cancel_tag();
++EmojiExt::is_emoji_cancel_tag(p0);
++crate::EmojiExt::is_emoji_cancel_tag(p0);
++crate::EmojiExt::is_emoji_cancel_tag(p0);
+-----------------
+unicode/src/lib.rs EmojiExt::is_zwj
+deps:{"EmojiExt::is_zwj":{"Self":["EmojiExt"]}}
+candidates:{"EmojiExt::is_zwj":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_zwj();
++EmojiExt::is_zwj(p0);
++crate::EmojiExt::is_zwj(p0);
++crate::EmojiExt::is_zwj(p0);
+-----------------
+unicode/src/lib.rs <LineBreakIterator<'a> as core::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // LineBreakIterator<'a>
++p0.clone();
++<LineBreakIterator<'a> as core::clone::Clone>::clone(p0);
++crate::<LineBreakIterator<'a> as core::clone::Clone>::clone(p0);
++<LineBreakIterator<'a>>::clone(p0);
+-----------------
+unicode/src/lib.rs <LineBreakIterator<'a> as core::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // LineBreakIterator<'a>
++p0.next();
++<LineBreakIterator<'a> as core::iter::Iterator>::next(p0);
++crate::<LineBreakIterator<'a> as core::iter::Iterator>::next(p0);
++<LineBreakIterator<'a>>::next(p0);
+-----------------
+unicode/src/lib.rs LineBreakIterator::<'a>::new
+'a
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++LineBreakIterator::<'a>::new(&p0);
++crate::LineBreakIterator::<'a>::new(&p0);
++<LineBreakIterator<'a>>::new(&p0);
+-----------------
+unicode/src/lib.rs <LineBreakLeafIter as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // LineBreakLeafIter
++p0.clone();
++<LineBreakLeafIter as core::clone::Clone>::clone(p0);
++crate::<LineBreakLeafIter as core::clone::Clone>::clone(p0);
++<LineBreakLeafIter>::clone(p0);
+-----------------
+unicode/src/lib.rs <LineBreakLeafIter as core::default::Default>::default
+deps:{}
+candidates:{}
++<LineBreakLeafIter as core::default::Default>::default();
++crate::<LineBreakLeafIter as core::default::Default>::default();
++<LineBreakLeafIter>::default();
+-----------------
+unicode/src/lib.rs LineBreakLeafIter::new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = 0usize; // None+usize
++LineBreakLeafIter::new(&p0, p1);
++crate::LineBreakLeafIter::new(&p0, p1);
++<LineBreakLeafIter>::new(&p0, p1);
+-----------------
+unicode/src/lib.rs LineBreakLeafIter::next
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // LineBreakLeafIter
+let mut p1 = "sample"; // None+&str
++p0.next(&p1);
++LineBreakLeafIter::next(p0, &p1);
++crate::LineBreakLeafIter::next(p0, &p1);
++<LineBreakLeafIter>::next(p0, &p1);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_regional_indicator_symbol
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_regional_indicator_symbol();
++<char as EmojiExt>::is_regional_indicator_symbol(p0);
++crate::<char as EmojiExt>::is_regional_indicator_symbol(p0);
++<char>::is_regional_indicator_symbol(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_emoji_modifier
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_emoji_modifier();
++<char as EmojiExt>::is_emoji_modifier(p0);
++crate::<char as EmojiExt>::is_emoji_modifier(p0);
++<char>::is_emoji_modifier(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_emoji_combining_enclosing_keycap
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_emoji_combining_enclosing_keycap();
++<char as EmojiExt>::is_emoji_combining_enclosing_keycap(p0);
++crate::<char as EmojiExt>::is_emoji_combining_enclosing_keycap(p0);
++<char>::is_emoji_combining_enclosing_keycap(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_emoji
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_emoji();
++<char as EmojiExt>::is_emoji(p0);
++crate::<char as EmojiExt>::is_emoji(p0);
++<char>::is_emoji(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_emoji_modifier_base
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_emoji_modifier_base();
++<char as EmojiExt>::is_emoji_modifier_base(p0);
++crate::<char as EmojiExt>::is_emoji_modifier_base(p0);
++<char>::is_emoji_modifier_base(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_tag_spec_char
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_tag_spec_char();
++<char as EmojiExt>::is_tag_spec_char(p0);
++crate::<char as EmojiExt>::is_tag_spec_char(p0);
++<char>::is_tag_spec_char(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_emoji_cancel_tag
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_emoji_cancel_tag();
++<char as EmojiExt>::is_emoji_cancel_tag(p0);
++crate::<char as EmojiExt>::is_emoji_cancel_tag(p0);
++<char>::is_emoji_cancel_tag(p0);
+-----------------
+unicode/src/lib.rs <char as EmojiExt>::is_zwj
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++p0.is_zwj();
++<char as EmojiExt>::is_zwj(p0);
++crate::<char as EmojiExt>::is_zwj(p0);
++<char>::is_zwj(p0);

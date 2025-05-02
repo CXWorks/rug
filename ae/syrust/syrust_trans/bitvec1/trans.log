@@ -1,0 +1,12 @@
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/api.rs tests_rug_837
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/api.rs tests_rug_839
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/api.rs tests_rug_840
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/api.rs tests_rug_842
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/iter.rs tests_rug_858
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice.rs tests_rug_46
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/api.rs tests_rug_140
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/api.rs tests_rug_142
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec.rs tests_rug_811
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec.rs tests_rug_818
+err bitvec1 /mnt/sda/xiang/syrust/syrust/bitvec1/./src/boxed/api.rs tests_rug_776
+bitvec . 127 138 0

@@ -1,0 +1,1 @@
+{"tests_rug_391": {"test_digit": {"rug_fuzz_0": "\"1234\""}}, "tests_rug_392": {"test_from": {"rug_fuzz_0": "2022", "rug_fuzz_1": "12", "rug_fuzz_2": "31"}}, "tests_rug_393": {"test_from": {"rug_fuzz_0": "12", "rug_fuzz_1": "34", "rug_fuzz_2": "56", "rug_fuzz_3": "789_000_000"}}, "tests_rug_394": {"test_from_str": {"rug_fuzz_0": "\"2021-08-25T10:30:00.00Z\""}}}

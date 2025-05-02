@@ -1,0 +1,28 @@
+err tests_rug_562 sample rug_fuzz_0 "pattern" {'sample': {'rug_fuzz_0': '"pattern"'}}
+err tests_rug_178 sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_178 sample rug_fuzz_1 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_1 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_1 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_2 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_3 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_0 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_1 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_2 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err tests_rug_178_prepare sample rug_fuzz_3 0 {'sample': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0', 'rug_fuzz_2': '0', 'rug_fuzz_3': '0'}}
+err regex /mnt/sda/xiang/rug/llm_rug_final/regex/./src/input.rs tests_rug_482
+err regex /mnt/sda/xiang/rug/llm_rug_final/regex/./src/expand.rs tests_rug_204
+err regex /mnt/sda/xiang/rug/llm_rug_final/regex/./src/compile.rs tests_rug_34
+err regex /mnt/sda/xiang/rug/llm_rug_final/regex/./src/re_bytes.rs tests_rug_323
+err tests_rug_328 sample rug_fuzz_0 b"sample data" {'sample': {'rug_fuzz_0': 'b"sample data"'}}
+err tests_rug_407 sample rug_fuzz_0 "" {'sample': {'rug_fuzz_0': '""', 'rug_fuzz_1': '"sample data"', 'rug_fuzz_2': '"some text"', 'rug_fuzz_3': '5'}}
+err tests_rug_407 sample rug_fuzz_1 "sample data" {'sample': {'rug_fuzz_0': '""', 'rug_fuzz_1': '"sample data"', 'rug_fuzz_2': '"some text"', 'rug_fuzz_3': '5'}}
+err tests_rug_407 sample rug_fuzz_2 "some text" {'sample': {'rug_fuzz_0': '""', 'rug_fuzz_1': '"sample data"', 'rug_fuzz_2': '"some text"', 'rug_fuzz_3': '5'}}
+err tests_rug_407 sample rug_fuzz_3 5 {'sample': {'rug_fuzz_0': '""', 'rug_fuzz_1': '"sample data"', 'rug_fuzz_2': '"some text"', 'rug_fuzz_3': '5'}}
+err tests_rug_414 sample rug_fuzz_0 "" {'sample': {'rug_fuzz_0': '""'}}
+err tests_rug_418 sample rug_fuzz_0 "" {'sample': {'rug_fuzz_0': '""'}}
+err tests_rug_419 sample rug_fuzz_0 "" {'sample': {'rug_fuzz_0': '""'}}
+err tests_rug_421 sample rug_fuzz_0 "" {'sample': {'rug_fuzz_0': '""'}}
+err tests_rug_454 sample rug_fuzz_0 "sample data" {'sample': {'rug_fuzz_0': '"sample data"'}}
+regex . 334 338 0

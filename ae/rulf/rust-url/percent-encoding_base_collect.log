@@ -1,0 +1,402 @@
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_next() {
+        let bytes: Vec<u8> = vec![b'A', b'%', b'3', b'4', b'%', b'6', b'1', b'%', b'0', b'0'];
+        let mut decoder = PercentDecode {
+            bytes: bytes.iter(),
+        };
+        
+        assert_eq!(decoder.next(), Some(b'A'));
+        assert_eq!(decoder.next(), Some(b'4'));
+        assert_eq!(decoder.next(), Some(b'a'));
+        assert_eq!(decoder.next(), Some(b'\0'));
+        assert_eq!(decoder.next(), None);
+    }
+}
+True
+========================================
+    use crate::PercentDecode;
+    
+    #[test]
+    fn size_hint_returns_correct_values() {
+        let bytes: [u8; 5] = [0x25, 0x68, 0x65, 0x6c, 0x6c];
+        let percent_decode = PercentDecode { bytes: bytes.iter() };
+        let (lower, upper) = percent_decode.size_hint();
+        assert_eq!(lower, 2);
+        assert_eq!(upper, Some(5));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use percent_encoding::{AsciiSet, CONTROLS, PercentEncode};
+
+    #[test]
+    fn test_next() {
+        let ascii_set: AsciiSet = CONTROLS;
+        let bytes: [u8; 5] = [97, 98, 99, 100, 101]; // example bytes
+        let mut percent_encode = PercentEncode {
+            bytes: &bytes,
+            ascii_set: &ascii_set,
+        };
+
+        assert_eq!(percent_encode.next(), Some("%61"));
+        assert_eq!(percent_encode.next(), Some("bcde"));
+        assert_eq!(percent_encode.next(), None);
+    }
+}
+False
+========================================
+    use percent_encoding::{AsciiSet, PercentEncode};
+
+    #[test]
+    fn test_size_hint() {
+        let ascii_set = AsciiSet { mask: [0; 8] }; // create an empty AsciiSet
+        let bytes: [u8; 3] = [0x61, 0x62, 0x63]; // create an array of bytes
+
+        let percent_encode = PercentEncode {
+            bytes: &bytes,
+            ascii_set: &ascii_set,
+        };
+
+        let (lower, upper) = percent_encode.size_hint(); // call the size_hint() function
+
+        assert_eq!(lower, 1); // assert the lower bound of the size hint
+        assert_eq!(upper, Some(3)); // assert the upper bound of the size hint
+    }
+}
+False
+========================================
+    use crate::PercentDecode;
+    use std::borrow::Cow;
+    
+    #[test]
+    fn test_from_percent_decode() {
+        let data: &[u8] = b"hello%20world%21";
+        let percent_decode = PercentDecode {
+            bytes: data.iter(),
+        };
+        let cow: Cow<[u8]> = From::from(percent_decode);
+        let expected: Cow<[u8]> = Cow::Borrowed(b"hello%20world%21");
+        assert_eq!(cow, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_from() {
+        let iter: PercentEncode = unimplemented!(); // Provide the input
+
+        let result: Cow<str> = From::from(iter);
+
+        // Perform assertions on result
+        unimplemented!(); // Provide assertions
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_add() {
+        let set = AsciiSet {
+            mask: [0; ASCII_RANGE_LEN / BITS_PER_CHUNK],
+        };
+        let new_set = set.add(b'A');
+        let expected_set = AsciiSet {
+            mask: [1; ASCII_RANGE_LEN / BITS_PER_CHUNK],
+        };
+        assert_eq!(new_set.mask, expected_set.mask);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::AsciiSet;
+
+    #[test]
+    fn test_contains() {
+        let ascii_set = AsciiSet {
+            mask: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_remove() {
+        let set = AsciiSet {
+            mask: [0; ASCII_RANGE_LEN / BITS_PER_CHUNK],
+        };
+        let byte = b'A'; // test byte
+        let result = set.remove(byte);
+        assert_eq!(result.mask[byte as usize / BITS_PER_CHUNK], 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_should_percent_encode_non_ascii() {
+        let ascii_set = AsciiSet { mask: [0; ASCII_RANGE_LEN / BITS_PER_CHUNK] };
+        assert_eq!(ascii_set.should_percent_encode(128), true);
+    }
+    
+    #[test]
+    fn test_should_percent_encode_in_set() {
+        let ascii_set = AsciiSet { mask: [0; ASCII_RANGE_LEN / BITS_PER_CHUNK] };
+        assert_eq!(ascii_set.should_percent_encode(32), true);
+    }
+    
+    #[test]
+    fn test_should_percent_encode_not_in_set() {
+        let ascii_set = AsciiSet { mask: [0; ASCII_RANGE_LEN / BITS_PER_CHUNK] };
+        assert_eq!(ascii_set.should_percent_encode(33), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use percent_encoding::percent_decode;
+
+    #[test]
+    fn test_decode_utf8_borrowed_valid() {
+        let input = "Hello%20World%21";
+        let decoded = percent_decode(input.as_bytes()).decode_utf8().unwrap();
+        assert_eq!(decoded, "Hello World!");
+    }
+
+    #[test]
+    fn test_decode_utf8_borrowed_invalid() {
+        let input = "Hello%80World";
+        let decoded = percent_decode(input.as_bytes()).decode_utf8();
+        assert!(decoded.is_err());
+    }
+
+    #[test]
+    fn test_decode_utf8_owned_valid() {
+        let input = "Hello%20World%21".to_owned();
+        let decoded = percent_decode(input.as_bytes()).decode_utf8().unwrap();
+        assert_eq!(decoded, "Hello World!");
+    }
+
+    #[test]
+    fn test_decode_utf8_owned_invalid() {
+        let input = "Hello%80World".to_owned();
+        let decoded = percent_decode(input.as_bytes()).decode_utf8();
+        assert!(decoded.is_err());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+    use std::str::Utf8Error;
+
+    #[test]
+    fn test_decode_utf8_lossy() {
+        let bytes: &[u8] = &[116, 101, 115, 116, 37, 50, 48, 116, 101, 120, 116];
+        let percent_decode = PercentDecode { bytes: bytes.iter() };
+
+        let result: Cow<str> = percent_decode.decode_utf8_lossy();
+
+        let expected: Cow<str> = "test%20text".into();
+
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_if_any() {
+        let bytes: &[u8] = &[b'a', b'%', b'2', b'0', b' ', b't', b'e', b's', b't', b'%', b'2', b'5', b'%', b'3', b'0', b'%', b'4', b'5', b'%', b'4', b'0', b' ', b's', b't', b'r', b'i', b'n', b'g'];
+        let decoded = PercentDecode { bytes: bytes.iter() }.if_any();
+        assert_eq!(decoded.unwrap(), b"a%20 test%25%30%45%40 string");
+
+        let bytes: &[u8] = &[b'a', b'b', b'c', b' ', b'd', b'e', b'f'];
+        let decoded = PercentDecode { bytes: bytes.iter() }.if_any();
+        assert_eq!(decoded, None);
+    }
+}
+True
+========================================
+    use std::mem;
+
+    #[test]
+    fn test_static_assert() {
+        $(let _ = mem::transmute::<[u8; $bool as usize], u8>;)+
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_after_percent_sign_with_valid_hex() {
+        let mut iter = [b'A', b'B'].iter();
+        assert_eq!(after_percent_sign(&mut iter), Some(0xAB));
+    }
+    
+    #[test]
+    fn test_after_percent_sign_with_invalid_hex() {
+        let mut iter = [b'G', b'H'].iter();
+        assert_eq!(after_percent_sign(&mut iter), None);
+    }
+    
+    #[test]
+    fn test_after_percent_sign_with_empty_iter() {
+        let mut iter = [].iter();
+        assert_eq!(after_percent_sign(&mut iter), None);
+    }
+}
+True
+========================================
+    use std::borrow::Cow;
+    
+    #[test]
+    fn test_decode_utf8_lossy() {
+        let borrowed_input: Vec<u8> = vec![72, 101, 108, 108, 111];
+        let borrowed_cow: Cow<'_, [u8]> = Cow::Borrowed(&borrowed_input);
+        let borrowed_result: Cow<'_, str> = super::decode_utf8_lossy(borrowed_cow);
+        assert_eq!(borrowed_result, "Hello");
+        
+        let owned_input: Vec<u8> = vec![227, 129, 130, 227, 129, 132, 227, 129, 139];
+        let owned_cow: Cow<'_, [u8]> = Cow::Owned(owned_input);
+        let owned_result: Cow<'_, str> = super::decode_utf8_lossy(owned_cow);
+        assert_eq!(owned_result, "あいこ");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_percent_decode() {
+        let input = b"foo%20bar%3f";
+        let expected_output = "foo bar?";
+        
+        let decoded = percent_decode(input).decode_utf8().unwrap();
+        
+        assert_eq!(decoded, expected_output);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_percent_decode_str() {
+        assert_eq!(percent_decode_str("Hello%20World").collect::<Vec<u8>>(), b"Hello World");
+        assert_eq!(percent_decode_str("Hello%2BWorld").collect::<Vec<u8>>(), b"Hello+World");
+    }
+
+    #[test]
+    #[cfg(feature = "std")]
+    fn test_percent_decode_str_if_any() {
+        let percent_decoded = percent_decode_str("Hello%20World");
+        assert_eq!(percent_decoded.if_any(), None);
+    }
+
+    #[test]
+    #[cfg(feature = "std")]
+    fn test_percent_decode_str_decode_utf8() {
+        let percent_decoded = percent_decode_str("Hello%20World");
+        assert_eq!(percent_decoded.decode_utf8(), Ok(Cow::Borrowed("Hello World")));
+
+        let percent_decoded = percent_decode_str("Hello%2BWorld");
+        assert_eq!(percent_decoded.decode_utf8(), Ok(Cow::Borrowed("Hello+World")));
+    }
+
+    #[test]
+    #[cfg(feature = "std")]
+    fn test_percent_decode_str_decode_utf8_lossy() {
+        let percent_decoded = percent_decode_str("Hello%20World");
+        assert_eq!(percent_decoded.decode_utf8_lossy(), Cow::Borrowed("Hello World"));
+
+        let percent_decoded = percent_decode_str("Hello%2BWorld");
+        assert_eq!(percent_decoded.decode_utf8_lossy(), Cow::Borrowed("Hello+World"));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use percent_encoding::{percent_encode, AsciiSet};
+
+    #[test]
+    fn test_percent_encode() {
+        let ascii_set = AsciiSet::new().add(b'/');
+        let input = b"foo/bar?";
+        let encoded = percent_encode(input, &ascii_set).to_string();
+        assert_eq!(encoded, "foo%2Fbar%3F");
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use percent_encoding::percent_encode_byte;
+
+    #[test]
+    fn test_percent_encode_byte() {
+        assert_eq!(percent_encode_byte(0), "%00");
+        assert_eq!(percent_encode_byte(1), "%01");
+        assert_eq!(percent_encode_byte(2), "%02");
+        assert_eq!(percent_encode_byte(3), "%03");
+        assert_eq!(percent_encode_byte(4), "%04");
+        // ... Add more test cases for other values
+    }
+}
+False
+========================================
+    use percent_encoding::{utf8_percent_encode, NON_ALPHANUMERIC, AsciiSet, PercentEncode};
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_utf8_percent_encode() {
+        let input = "foo bar?";
+        let ascii_set = &NON_ALPHANUMERIC;
+        let expected_output = "foo%20bar%3F";
+
+        let result: PercentEncode = utf8_percent_encode(input, ascii_set);
+        assert_eq!(result.to_string(), expected_output);
+    }
+}
+False
+rust-url percent-encoding 13 21

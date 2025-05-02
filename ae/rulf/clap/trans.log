@@ -1,0 +1,11 @@
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/args/arg.rs tests_rug_363
+err tests_rug_378 sample rug_fuzz_0 "sample" {'sample': {'rug_fuzz_0': '"sample"'}}
+err in scan file /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/args/any_arg.rs
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/args/arg_matches.rs tests_llm_16_236
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/args/arg_matches.rs tests_rug_135
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/args/arg_matches.rs tests_rug_149
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/macros.rs tests_rug_114
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/macros.rs tests_rug_115
+err clap /mnt/sda/xiang/rulf/rulf_hybrid/clap/./src/completions/mod.rs tests_rug_176
+err tests_rug_317 sample rug_fuzz_0 "myapp" {'sample': {'rug_fuzz_0': '"myapp"'}}
+clap . 352 359 0

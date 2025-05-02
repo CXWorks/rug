@@ -1,0 +1,314 @@
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/x_user_defined.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/iso_2022_jp.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/euc_kr.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/euc_jp.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/macros.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/handles.rs
+err tests_rug_148 test_new_byte_source
+    Blocking waiting for file lock on package cache
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/handles.rs:2124:25
+     |
+2124 |         ByteSource::new(p0);
+     |                         ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_153 test_byte_read_handle_new
+    Blocking waiting for file lock on package cache
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/handles.rs:2177:34
+     |
+2177 |         ByteReadHandle::new(&mut p0);
+     |                                  ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_156 test_handle_new
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `source` in this scope
+    --> src/handles.rs:2202:36
+     |
+2202 |         ByteUnreadHandle::new(&mut source);
+     |                                    ^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/single_byte.rs
+err tests_rug_464 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+   --> src/single_byte.rs:717:9
+    |
+717 |         p0.latin1_byte_compatible_up_to(p1);
+    |         ^^ help: a local variable with a similar name exists: `p1`
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/variant.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/mem.rs
+err tests_rug_293 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:2623:28
+     |
+2623 |         mem::is_ascii_impl(p0);
+     |                            ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_299 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:2737:42
+     |
+2737 |         let result = is_utf8_latin1_impl(p0);
+     |                                          ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_302 test_rug
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:2795:30
+     |
+2795 |         crate::mem::is_ascii(p0);
+     |                              ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_304 test_is_utf8_latin1
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:2825:54
+     |
+2825 |         debug_assert_eq!(crate ::mem::is_utf8_latin1(p0), true);
+     |                                                      ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_307 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:2873:34
+     |
+2873 |         crate::mem::is_utf8_bidi(p0);
+     |                                  ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_329 test_decode_latin1
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `bytes` in this scope
+    --> src/mem.rs:3286:35
+     |
+3286 |         crate::mem::decode_latin1(bytes);
+     |                                   ^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_332 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:3336:44
+     |
+3336 |         debug_assert_eq!(utf8_latin1_up_to(p0), 0);
+     |                                            ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_336 test_encoding_rs
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:3404:40
+     |
+3404 |         let mut p1: Vec<u16> = vec![0; p0.len()];
+     |                                        ^^ not found in this scope
+
+error[E0425]: cannot find value `p0` in this scope
+    --> src/mem.rs:3405:40
+     |
+3405 |         mem::copy_ascii_to_basic_latin(p0, &mut p1);
+     |                                        ^^ help: a local variable with a similar name exists: `p1`
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to 2 previous errors
+
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/replacement.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/ascii.rs
+err tests_rug_87 test_validate_ascii
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+   --> src/ascii.rs:746:38
+    |
+746 |         crate::ascii::validate_ascii(p0);
+    |                                      ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_98 test_ascii_valid_up_to
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+   --> src/ascii.rs:894:59
+    |
+894 |         debug_assert_eq!(crate ::ascii::ascii_valid_up_to(p0), 11);
+    |                                                           ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/data.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/shift_jis.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/test_labels_names.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/gb18030.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/utf_8.rs
+err tests_rug_64 test_utf8_valid_up_to
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/utf_8.rs:1771:40
+     |
+1771 |         crate::utf_8::utf8_valid_up_to(p0);
+     |                                        ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/lib.rs
+err tests_rug_351 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6015:29
+     |
+6015 |         Encoding::for_label(p0);
+     |                             ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_352 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6028:46
+     |
+6028 |         <Encoding>::for_label_no_replacement(p0);
+     |                                              ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_353 test_for_bom
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6041:40
+     |
+6041 |         let result = Encoding::for_bom(p0);
+     |                                        ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_360 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `v3` in this scope
+    --> src/lib.rs:6170:19
+     |
+6170 |         let p0 = &v3;
+     |                   ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_361 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6188:22
+     |
+6188 |         let result = p0.decode_with_bom_removal(p1);
+     |                      ^^ help: a local variable with a similar name exists: `p1`
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_362 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `v3` in this scope
+    --> src/lib.rs:6206:50
+     |
+6206 |         <Encoding>::decode_without_bom_handling(&v3, bytes);
+     |                                                  ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_363 test_rug
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `v3` in this scope
+    --> src/lib.rs:6223:13
+     |
+6223 |             v3.decode_without_bom_handling_and_without_replacement(bytes),
+     |             ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_370 test_utf8_valid_up_to
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6355:43
+     |
+6355 |         crate::Encoding::utf8_valid_up_to(p0);
+     |                                           ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_371 test_ascii_valid_up_to
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6368:37
+     |
+6368 |         Encoding::ascii_valid_up_to(p0);
+     |                                     ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to previous error
+
+err tests_rug_372 test_iso_2022_jp_ascii_valid_up_to
+   Compiling encoding_rs v0.8.23 (/mnt/sda/xiang/syrust/syrust/encoding_rs1)
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6381:62
+     |
+6381 |         let result = Encoding::iso_2022_jp_ascii_valid_up_to(p0);
+     |                                                              ^^ not found in this scope
+
+error[E0425]: cannot find value `p0` in this scope
+    --> src/lib.rs:6382:34
+     |
+6382 |         debug_assert_eq!(result, p0.len());
+     |                                  ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encoding_rs` due to 2 previous errors
+
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/utf_16.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/simd_funcs.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/testing.rs
+/mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/big5.rs
+done

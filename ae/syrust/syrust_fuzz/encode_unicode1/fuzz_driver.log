@@ -1,0 +1,62 @@
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/decoding_iterators.rs
+err tests_rug_204 test_rug
+   Compiling libc v0.2.153
+   Compiling cfg-if v1.0.0
+   Compiling proc-macro2 v1.0.79
+   Compiling unicode-ident v1.0.12
+   Compiling syn v1.0.109
+   Compiling cc v1.0.90
+   Compiling memchr v2.7.1
+   Compiling gimli v0.28.1
+   Compiling ppv-lite86 v0.2.17
+   Compiling anyhow v1.0.81
+   Compiling adler v1.0.2
+   Compiling rustc-demangle v0.1.23
+   Compiling either v1.10.0
+   Compiling pretty-hex v0.3.0
+   Compiling lazy_static v1.0.2
+   Compiling arbitrary v1.3.2
+   Compiling miniz_oxide v0.7.2
+   Compiling object v0.32.2
+   Compiling backtrace v0.3.69
+   Compiling quote v1.0.35
+   Compiling getrandom v0.2.12
+   Compiling rand_core v0.6.4
+   Compiling rand_chacha v0.3.1
+   Compiling addr2line v0.21.0
+   Compiling rand v0.8.5
+   Compiling bolero-generator-derive v0.8.0
+   Compiling bolero-generator v0.8.0
+   Compiling bolero-engine v0.8.1
+   Compiling bolero v0.8.0
+   Compiling encode_unicode v0.3.6 (/mnt/sda/xiang/syrust/syrust/encode_unicode1)
+error[E0425]: cannot find value `p0` in this scope
+   --> src/decoding_iterators.rs:500:64
+    |
+500 |         decoding_iterators::Utf8CharMerger::<_, _>::into_inner(p0);
+    |                                                                ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encode_unicode` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/traits.rs
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/utf16_char.rs
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/utf16_iterators.rs
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/utf8_iterators.rs
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/errors.rs
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/utf8_char.rs
+err tests_rug_133 test_rug
+   Compiling encode_unicode v0.3.6 (/mnt/sda/xiang/syrust/syrust/encode_unicode1)
+error[E0425]: cannot find value `p0` in this scope
+   --> src/utf8_char.rs:980:58
+    |
+980 |             let _ = Utf8Char::from_slice_start_unchecked(p0);
+    |                                                          ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `encode_unicode` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/encode_unicode1/./src/lib.rs
+done

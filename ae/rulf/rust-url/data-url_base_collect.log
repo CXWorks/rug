@@ -1,0 +1,717 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use forgiving_base64::{DecodeError, InvalidBase64Details, InvalidBase64};
+
+    #[test]
+    fn test_from() {
+        let e = InvalidBase64Details::UnexpectedSymbol(b'A');
+        let result: DecodeError<()> = DecodeError::InvalidBase64(InvalidBase64(e));
+        assert_eq!(result, from(e));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use forgiving_base64::{DecodeError, InvalidBase64, InvalidBase64Details, Impossible};
+
+    #[test]
+    fn test_from() {
+        let e: DecodeError<Impossible> = DecodeError::InvalidBase64(InvalidBase64(InvalidBase64Details::UnexpectedSymbol(0)));
+        let res: InvalidBase64 = from(e);
+        assert_eq!(res, InvalidBase64(InvalidBase64Details::UnexpectedSymbol(0)));
+    }
+}
+True
+========================================
+    use crate::mime::Mime;
+    use crate::mime::mime_parsing::MimeParsingError;
+    use std::str::FromStr;
+    
+    #[test]
+    fn test_from_str_valid_input() {
+        let input = "text/plain; charset=utf-8";
+        let expected = Mime::from_str(input).unwrap();
+        let result = <Mime as FromStr>::from_str(input).unwrap();
+        assert_eq!(result, expected);
+    }
+    
+    #[test]
+    #[should_panic]
+    fn test_from_str_invalid_input() {
+        let input = "invalid_mime";
+        let expected = MimeParsingError(());
+        let result = <Mime as FromStr>::from_str(input).unwrap();
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use forgiving_base64::DecodeError;
+
+    #[test]
+    fn test_decode_with_base64() {
+        let data_url = DataUrl {
+            mime_type: mime::Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+            },
+            base64: true,
+            encoded_body_plus_fragment: "SGVsbG8gd29ybGQh",
+        };
+
+        let result = data_url.decode(|bytes| {
+            assert_eq!(bytes, "Hello world!".as_bytes());
+            Ok(())
+        });
+
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), None);
+    }
+
+    #[test]
+    fn test_decode_without_base64() {
+        let data_url = DataUrl {
+            mime_type: mime::Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+            },
+            base64: false,
+            encoded_body_plus_fragment: "Hello world!",
+        };
+
+        let result = data_url.decode(|bytes| {
+            assert_eq!(bytes, "Hello world!".as_bytes());
+            Ok(())
+        });
+
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), None);
+    }
+
+    #[test]
+    fn test_decode_to_vec() {
+        let data_url = DataUrl {
+            mime_type: mime::Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+            },
+            base64: false,
+            encoded_body_plus_fragment: "Hello world!",
+        };
+
+        let result = data_url.decode_to_vec();
+
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), (b"Hello world!".to_vec(), None));
+    }
+
+    #[test]
+    fn test_decode_to_vec_with_fragment() {
+        let data_url = DataUrl {
+            mime_type: mime::Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+            },
+            base64: false,
+            encoded_body_plus_fragment: "Hello world!#fragment",
+        };
+
+        let result = data_url.decode_to_vec();
+
+        assert!(result.is_ok());
+        assert_eq!(
+            result.unwrap(),
+            (b"Hello world!".to_vec(), Some("fragment".to_string()))
+        );
+    }
+
+    #[test]
+    fn test_decode_with_base64_error() {
+        let data_url = DataUrl {
+            mime_type: mime::Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+            },
+            base64: true,
+            encoded_body_plus_fragment: "SGVsbG8gd29ybGQh",
+        };
+
+        let result = data_url.decode(|_| Err(DecodeError::InvalidCharacter));
+
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), DecodeError::InvalidCharacter);
+    }
+
+    #[test]
+    fn test_decode_without_base64_error() {
+        let data_url = DataUrl {
+            mime_type: mime::Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+            },
+            base64: false,
+            encoded_body_plus_fragment: "Hello world!",
+        };
+
+        let result = data_url.decode(|_| Err(DecodeError::WriteError));
+
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), DecodeError::WriteError);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_decode_to_vec() {
+        let data_url = DataUrl {
+            mime_type: Mime {
+                type_: "text".to_string(),
+                subtype: "plain".to_string(),
+                parameters: vec![],
+            },
+            base64: false,
+            encoded_body_plus_fragment: "SGVsbG8gd29ybGQ=", // "Hello world" encoded in base64
+        };
+
+        let result = data_url.decode_to_vec();
+
+        assert!(result.is_ok());
+
+        let (body, fragment) = result.unwrap();
+
+        assert_eq!(body, b"Hello world");
+        assert_eq!(fragment, None);
+    }
+}
+True
+========================================
+    use crate::data_url::DataUrl;
+    use std::str::FromStr;
+
+    #[test]
+    fn test_mime_type() {
+        let data_url = DataUrl::process("data:text/plain;base64,SGVsbG8sIHdvcmxkIQ==").unwrap();
+        let mime_type = data_url.mime_type();
+        let expected_mime_type = mime::Mime::from_str("text/plain").unwrap();
+        assert_eq!(*mime_type, expected_mime_type);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_process_valid_data_url() {
+        let input = "data:text/plain;base64,SGVsbG8gd29ybGQ=";
+        let result = process(input);
+        assert!(result.is_ok());
+        let data_url = result.unwrap();
+        assert_eq!(data_url.mime_type, "text/plain");
+        assert_eq!(data_url.base64, true);
+        assert_eq!(data_url.encoded_body_plus_fragment, "SGVsbG8gd29ybGQ=");
+    }
+
+    #[test]
+    fn test_process_invalid_data_url() {
+        let input = "https://example.com";
+        let result = process(input);
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), DataUrlError::NotADataUrl);
+    }
+
+    #[test]
+    fn test_process_data_url_without_comma() {
+        let input = "data:text/plain;base64";
+        let result = process(input);
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), DataUrlError::NoComma);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use url::percent_encoding::percent_encode;
+
+    #[test]
+    fn test_to_percent_encoded() {
+        let fragment = FragmentIdentifier("test#123");
+        let encoded = fragment.to_percent_encoded();
+        assert_eq!(encoded, "test#123");
+    }
+
+    #[test]
+    fn test_to_percent_encoded_special_characters() {
+        let fragment = FragmentIdentifier("test#<>&");
+        let encoded = fragment.to_percent_encoded();
+        assert_eq!(encoded, "test%23%3C%3E%26");
+    }
+
+    #[test]
+    fn test_to_percent_encoded_ascii_control_characters() {
+        let fragment = FragmentIdentifier("test#\t\r");
+        let encoded = fragment.to_percent_encoded();
+        assert_eq!(encoded, "test#");
+    }
+
+    #[test]
+    fn test_to_percent_encoded_extended_ascii() {
+        let fragment = FragmentIdentifier("test#ä");
+        let encoded = fragment.to_percent_encoded();
+        assert_eq!(encoded, "test#%C3%A4");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_decode_with_base64() {
+        let encoded_body_plus_fragment = "SGVsbG8gd29ybGQ#"; // Example input
+        let write_bytes = |_: &[u8]| -> Result<(), Error> { Ok(()) }; // Example implementation of write_bytes closure
+        
+        let result = decode_with_base64(encoded_body_plus_fragment, write_bytes);
+        
+        assert_eq!(result, Ok(None)); // Example assertion
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_decode_without_base64() {
+        let mut buffer: Vec<u8> = Vec::new();
+        let result = decode_without_base64("Hello%20World%21%23%25%5E%2A%28%29%5B%5D%7B%7D%7E%60%3B%2F%3F%3A%40%26%3D%2B%24%2C%20%7C%3C%3E", |data| {
+            buffer.extend_from_slice(data);
+            Ok(())
+        });
+        let expected = Ok(None);
+        assert_eq!(result, expected);
+        assert_eq!(buffer, b"Hello World!#%^*()[]{}~`;/?:@&=+$, |<>");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_find_comma_before_fragment() {
+        assert_eq!(find_comma_before_fragment(""), None);
+        assert_eq!(find_comma_before_fragment("#fragment"), None);
+        assert_eq!(find_comma_before_fragment("data:text/plain,Hello,World"), Some(("data:text/plain", "Hello,World")));
+        assert_eq!(find_comma_before_fragment("data:text/plain,Hello,World#fragment"), Some(("data:text/plain", "Hello,World#fragment")));
+        assert_eq!(find_comma_before_fragment("data:text/plain,Hello,World,And,More,Data"), Some(("data:text/plain", "Hello,World,And,More,Data")));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_feed() {
+        // Arrange
+        let mut decoder = Decoder::new(|bytes| {
+            // Assert
+            assert_eq!(bytes, &[0, 0, 0]);
+            Ok(())
+        });
+        let input = [66, 67, 65, 61, 61, 66, 67, 65, 61, 61];
+        
+        // Act
+        let result = decoder.feed(&input);
+
+        // Assert
+        assert!(result.is_ok());
+    }
+}
+
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::result::Result;
+    
+    #[test]
+    fn test_finish() -> Result<(), DecodeError<()>> {
+        let decoder = Decoder::new(|_: &[u8]| Ok(()));
+        decoder.finish()
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::error::Error;
+
+    // Mock write_bytes function
+    fn write_bytes_mock(bytes: &[u8]) -> Result<(), Box<dyn Error>> {
+        // Mock implementation
+        Ok(())
+    }
+
+    #[test]
+    fn test_new() {
+        let decoder: Decoder<_, Box<dyn Error>> = Decoder::<_, Box<dyn Error>>::new(write_bytes_mock);
+        // Assertion(s) here
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::forgiving_base64::InvalidBase64;
+    use crate::forgiving_base64::Decoder;
+
+    #[test]
+    fn test_decode_to_vec() {
+        let test_input: &[u8] = &[97, 98, 99, 100]; // b"abcd"
+        let expected_result: Result<Vec<u8>, InvalidBase64> = Ok(vec![0b01100001, 0b01100010, 0b01100011, 0b01100100]); // [97, 98, 99, 100]
+        let result = decode_to_vec(test_input);
+        assert_eq!(result, expected_result);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_get_parameter_existing() {
+        let mime = Mime {
+            type_: "text".to_string(),
+            subtype: "plain".to_string(),
+            parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+        };
+        
+        let result = mime.get_parameter("charset");
+        assert_eq!(result, Some("UTF-8"));
+    }
+    
+    #[test]
+    fn test_get_parameter_non_existing() {
+        let mime = Mime {
+            type_: "text".to_string(),
+            subtype: "plain".to_string(),
+            parameters: vec![("charset".to_string(), "UTF-8".to_string())],
+        };
+        
+        let result = mime.get_parameter("format");
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_ascii_whitespace() {
+        assert_eq!(ascii_whitespace(' '), true);
+        assert_eq!(ascii_whitespace('\t'), true);
+        assert_eq!(ascii_whitespace('\n'), true);
+        assert_eq!(ascii_whitespace('\r'), true);
+        assert_eq!(ascii_whitespace('\x0C'), true);
+        assert_eq!(ascii_whitespace('a'), false);
+        assert_eq!(ascii_whitespace('1'), false);
+        assert_eq!(ascii_whitespace('?'), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_contains() {
+        let parameters: &[(String, String)] = &[("name1".to_string(), "value1".to_string()), ("name2".to_string(), "value2".to_string()), ("name3".to_string(), "value3".to_string())];
+        
+        assert_eq!(contains(parameters, "name1"), true);
+        assert_eq!(contains(parameters, "name2"), true);
+        assert_eq!(contains(parameters, "name3"), true);
+        assert_eq!(contains(parameters, "name4"), false);
+    }
+}
+True
+========================================
+    use crate::only_http_token_code_points;
+
+    #[test]
+    fn test_only_http_token_code_points() {
+        assert_eq!(only_http_token_code_points("rust"), true);
+        assert_eq!(only_http_token_code_points("rust-lang"), false);
+        assert_eq!(only_http_token_code_points("123"), false);
+        assert_eq!(only_http_token_code_points("hello world"), false);
+        assert_eq!(only_http_token_code_points("HTTP"), true);
+        assert_eq!(only_http_token_code_points("HTTP/1.1"), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse() {
+        assert_eq!(
+            parse("text/html;charset=utf-8"),
+            Some(Mime {
+                type_: "text".to_ascii_lowercase(),
+                subtype: "html".to_ascii_lowercase(),
+                parameters: vec![("charset".to_string(), "utf-8".to_string())],
+            })
+        );
+
+        assert_eq!(
+            parse("application/json"),
+            Some(Mime {
+                type_: "application".to_ascii_lowercase(),
+                subtype: "json".to_ascii_lowercase(),
+                parameters: vec![],
+            })
+        );
+
+        assert_eq!(
+            parse("image/jpeg;quality=80"),
+            Some(Mime {
+                type_: "image".to_ascii_lowercase(),
+                subtype: "jpeg".to_ascii_lowercase(),
+                parameters: vec![("quality".to_string(), "80".to_string())],
+            })
+        );
+
+        assert_eq!(parse("invalid"), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_parameters() {
+        let mut parameters: Vec<(String, String)> = Vec::new();
+
+        parse_parameters("charset=UTF-8", &mut parameters);
+        assert_eq!(parameters, vec![("charset".to_owned(), "UTF-8".to_owned())]);
+
+        parse_parameters("charset=UTF-8; q=0.5; foo=bar", &mut parameters);
+        assert_eq!(
+            parameters,
+            vec![
+                ("charset".to_owned(), "UTF-8".to_owned()),
+                ("q".to_owned(), "0.5".to_owned()),
+                ("foo".to_owned(), "bar".to_owned()),
+            ]
+        );
+
+        parse_parameters("charset=UTF-8; q=0.5; foo=bar; bz=qux", &mut parameters);
+        assert_eq!(
+            parameters,
+            vec![
+                ("charset".to_owned(), "UTF-8".to_owned()),
+                ("q".to_owned(), "0.5".to_owned()),
+                ("foo".to_owned(), "bar".to_owned()),
+                ("bz".to_owned(), "qux".to_owned()),
+            ]
+        );
+
+        parse_parameters("charset=UTF-8; q=0.5; foo=bar; bz=qux; extended=\"yes;no\"", &mut parameters);
+        assert_eq!(
+            parameters,
+            vec![
+                ("charset".to_owned(), "UTF-8".to_owned()),
+                ("q".to_owned(), "0.5".to_owned()),
+                ("foo".to_owned(), "bar".to_owned()),
+                ("bz".to_owned(), "qux".to_owned()),
+                ("extended".to_owned(), "yes;no".to_owned()),
+            ]
+        );
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_split2() {
+        let s = "hello,world";
+        let separator = ',';
+
+        let (first, second) = split2(s, separator);
+
+        assert_eq!(first, "hello");
+        assert_eq!(second, Some("world"));
+    }
+}
+True
+========================================
+    use crate::mime::valid_value;
+
+    #[test]
+    fn test_valid_value() {
+        // Test case with valid value
+        assert_eq!(valid_value("text/plain"), true);
+
+        // Test case with valid value containing space
+        assert_eq!(valid_value("image/jpeg "), true);
+
+        // Test case with valid value containing special characters
+        assert_eq!(valid_value("application/pdf?"), true);
+
+        // Test case with valid value containing non-ASCII characters
+        assert_eq!(valid_value("αβγδε"), true);
+
+        // Test case with invalid value containing control characters
+        assert_eq!(valid_value("text/\tplain"), false);
+
+        // Test case with empty value
+        assert_eq!(valid_value(""), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use mime::Mime;
+
+    #[test]
+    fn test_parse_header() {
+        let (mime_type, base64) = parse_header("text/plain; charset=utf-8");
+        assert_eq!(
+            mime_type,
+            Mime {
+                type_: String::from("text"),
+                subtype: String::from("plain"),
+                parameters: vec![(String::from("charset"), String::from("utf-8"))]
+            }
+        );
+        assert_eq!(base64, false);
+
+        let (mime_type, base64) = parse_header("image/png; base64");
+        assert_eq!(
+            mime_type,
+            Mime {
+                type_: String::from("image"),
+                subtype: String::from("png"),
+                parameters: vec![]
+            }
+        );
+        assert_eq!(base64, true);
+
+        let (mime_type, base64) = parse_header("text/plain");
+        assert_eq!(
+            mime_type,
+            Mime {
+                type_: String::from("text"),
+                subtype: String::from("plain"),
+                parameters: vec![]
+            }
+        );
+        assert_eq!(base64, false);
+    }
+}
+True
+========================================
+    use crate::percent_encode;
+
+    #[test]
+    fn test_percent_encode() {
+        let mut string = String::new();
+        percent_encode(10, &mut string);
+        assert_eq!(string, "%0A");
+
+        string = String::new();
+        percent_encode(27, &mut string);
+        assert_eq!(string, "%1B");
+
+        string = String::new();
+        percent_encode(255, &mut string);
+        assert_eq!(string, "%FF");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+
+    #[test]
+    fn test_pretend_parse_data_url() {
+        assert_eq!(pretend_parse_data_url("data:text/plain;charset=utf-8,Hello%20World%21#test"), Some("text/plain;charset=utf-8,Hello%20World%21#test"));
+        assert_eq!(pretend_parse_data_url("data:;base64,SGVsbG8gV29ybGQgKlQrIQ=="), Some(";base64,SGVsbG8gV29ybGQgKlQrIQ=="));
+        assert_eq!(pretend_parse_data_url("data:application/pdf,%25PDF-1.3%0A%25%C3%8E%C3%8F%C2%0A3%20%20%20%20%20%20%20%20%20%20%20%2018%20obj%0A%20%20%20%20%3E%3E%0A"),
+                   Some("application/pdf,%25PDF-1.3%0A%25%C3%8E%C3%8F%C2%0A3%20%20%20%20%20%20%20%20%20%20%20%2018%20obj%0A%20%20%20%20%3E%3E%0A"));
+        assert_eq!(pretend_parse_data_url("data:application/octet-stream;base64,SGVsbG8gV29ybGQgKlQrIQ==#test"), Some("application/octet-stream;base64,SGVsbG8gV29ybGQgKlQrIQ==#test"));
+        assert_eq!(pretend_parse_data_url("data:dummy"), None);
+        assert_eq!(pretend_parse_data_url("data:Hello"), Some("Hello"));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_remove_base64_suffix_none() {
+        assert_eq!(remove_base64_suffix(""), None);
+        assert_eq!(remove_base64_suffix("data:;base64,"), None);
+        assert_eq!(remove_base64_suffix("data:;64esa;"), None);
+    }
+
+    #[test]
+    fn test_remove_base64_suffix() {
+        assert_eq!(remove_base64_suffix("data:;base64"), None);
+        assert_eq!(remove_base64_suffix("data:;base64,"), None);
+        assert_eq!(remove_base64_suffix("data:;base64,z"), None);
+        assert_eq!(remove_base64_suffix("data:;base64,ze"), None);
+        assert_eq!(remove_base64_suffix("data:;base64,ze="), None);
+        assert_eq!(remove_base64_suffix("data:;base64,ze=="), Some("data:;base64,ze=="));
+        assert_eq!(remove_base64_suffix("data:;base64,ze== "), Some("data:;base64,ze== "));
+        assert_eq!(remove_base64_suffix("data:;base64, ze=="), Some("data:;base64, ze=="));
+        assert_eq!(remove_base64_suffix("data:;base64,  ze==  "), Some("data:;base64,  ze==  "));
+    }
+}
+True
+rust-url data-url 27 27

@@ -1,0 +1,140 @@
+-----------------
+shabal/src/core_api.rs core_api::read_m
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>
++core_api::read_m(p0);
++crate::core_api::read_m(p0);
++crate::core_api::read_m(p0);
+-----------------
+shabal/src/core_api.rs <core_api::ShabalVarCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
++p0.clone();
++<core_api::ShabalVarCore as std::clone::Clone>::clone(p0);
++crate::<core_api::ShabalVarCore as std::clone::Clone>::clone(p0);
++<core_api::ShabalVarCore>::clone(p0);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::add_m
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [std::num::Wrapping<u32>; 16]
++p0.add_m(p1);
++core_api::ShabalVarCore::add_m(p0, p1);
++crate::core_api::ShabalVarCore::add_m(p0, p1);
++<core_api::ShabalVarCore>::add_m(p0, p1);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::sub_m
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [std::num::Wrapping<u32>; 16]
++p0.sub_m(p1);
++core_api::ShabalVarCore::sub_m(p0, p1);
++crate::core_api::ShabalVarCore::sub_m(p0, p1);
++<core_api::ShabalVarCore>::sub_m(p0, p1);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::xor_w
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
++p0.xor_w();
++core_api::ShabalVarCore::xor_w(p0);
++crate::core_api::ShabalVarCore::xor_w(p0);
++<core_api::ShabalVarCore>::xor_w(p0);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::perm
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [std::num::Wrapping<u32>; 16]
++p0.perm(p1);
++core_api::ShabalVarCore::perm(p0, p1);
++crate::core_api::ShabalVarCore::perm(p0, p1);
++<core_api::ShabalVarCore>::perm(p0, p1);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::perm_elt
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
+let mut p4 = 0usize; // None+usize
+let mut p5 = 0usize; // None+usize
+let mut p6 = 0usize; // None+usize
+let mut p7 = 0usize; // None+usize
+let mut p8 = MaybeUninit::uninit().assume_init(); // std::num::Wrapping<u32>
++p0.perm_elt(p1, p2, p3, p4, p5, p6, p7, p8);
++core_api::ShabalVarCore::perm_elt(p0, p1, p2, p3, p4, p5, p6, p7, p8);
++crate::core_api::ShabalVarCore::perm_elt(p0, p1, p2, p3, p4, p5, p6, p7, p8);
++<core_api::ShabalVarCore>::perm_elt(p0, p1, p2, p3, p4, p5, p6, p7, p8);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::perm_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [std::num::Wrapping<u32>; 16]
++p0.perm_blocks(p1);
++core_api::ShabalVarCore::perm_blocks(p0, p1);
++crate::core_api::ShabalVarCore::perm_blocks(p0, p1);
++<core_api::ShabalVarCore>::perm_blocks(p0, p1);
+-----------------
+shabal/src/core_api.rs core_api::ShabalVarCore::swap_b_c
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
++p0.swap_b_c();
++core_api::ShabalVarCore::swap_b_c(p0);
++crate::core_api::ShabalVarCore::swap_b_c(p0);
++<core_api::ShabalVarCore>::swap_b_c(p0);
+-----------------
+shabal/src/core_api.rs <core_api::ShabalVarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>]
++p0.update_blocks(p1);
++<core_api::ShabalVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<core_api::ShabalVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<core_api::ShabalVarCore>::update_blocks(p0, p1);
+-----------------
+shabal/src/core_api.rs <core_api::ShabalVarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<core_api::ShabalVarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<core_api::ShabalVarCore as digest::core_api::VariableOutputCore>::new(p0);
++<core_api::ShabalVarCore>::new(p0);
+-----------------
+shabal/src/core_api.rs <core_api::ShabalVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<core_api::ShabalVarCore as digest::core_api::BlockSizeUser>::BlockSize, <core_api::ShabalVarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <core_api::ShabalVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<core_api::ShabalVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<core_api::ShabalVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<core_api::ShabalVarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+shabal/src/core_api.rs <core_api::ShabalVarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<core_api::ShabalVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<core_api::ShabalVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<core_api::ShabalVarCore>::write_alg_name(p0);
+-----------------
+shabal/src/core_api.rs <core_api::ShabalVarCore as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::ShabalVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<core_api::ShabalVarCore as std::fmt::Debug>::fmt(p0, p1);
++crate::<core_api::ShabalVarCore as std::fmt::Debug>::fmt(p0, p1);
++<core_api::ShabalVarCore>::fmt(p0, p1);

@@ -1,0 +1,25 @@
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/de.rs tests_llm_16_787
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/de.rs tests_llm_16_829_llm_16_828
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/de.rs tests_llm_16_844_llm_16_843
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/map.rs tests_llm_16_305
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/number.rs tests_llm_16_168_llm_16_167
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/number.rs tests_llm_16_936
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/value/de.rs tests_llm_16_599
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/value/de.rs tests_rug_247
+err tests_rug_224 sample rug_fuzz_0 "key" {'sample': {'rug_fuzz_0': '"key"', 'rug_fuzz_1': '42'}}
+err tests_rug_224 sample rug_fuzz_1 42 {'sample': {'rug_fuzz_0': '"key"', 'rug_fuzz_1': '42'}}
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/value/ser.rs tests_llm_16_772
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/value/from.rs tests_rug_601
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/error.rs tests_llm_16_247_llm_16_246
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/error.rs tests_rug_103
+err in scan file /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/features_check/error.rs
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/ser.rs tests_llm_16_101
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/ser.rs tests_llm_16_423_llm_16_422
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/ser.rs tests_llm_16_503
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/ser.rs tests_llm_16_508
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/ser.rs tests_llm_16_515
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/ser.rs tests_llm_16_516
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/read.rs tests_llm_16_7
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/read.rs tests_llm_16_401
+err serde-json /mnt/sda/xiang/rulf/rulf_hybrid/serde-json/./src/read.rs tests_llm_16_406
+serde_json . 316 337 0

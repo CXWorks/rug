@@ -1,0 +1,169 @@
+-----------------
+tiger/src/compress.rs compress::round
+deps:{}
+candidates:{}
+let mut p0 = &mut 0u64; // None+u64
+let mut p1 = &mut 0u64; // None+u64
+let mut p2 = &mut 0u64; // None+u64
+let mut p3 = & 0u64; // None+u64
+let mut p4 = 0u8; // None+u8
++compress::round(p0, p1, p2, p3, p4);
++crate::compress::round(p0, p1, p2, p3, p4);
++crate::compress::round(p0, p1, p2, p3, p4);
+-----------------
+tiger/src/compress.rs compress::pass
+deps:{}
+candidates:{}
+let mut p0 = &mut 0u64; // None+u64
+let mut p1 = &mut 0u64; // None+u64
+let mut p2 = &mut 0u64; // None+u64
+let mut p3 = & [0u64;1]; // None+[u64; 8]
+let mut p4 = 0u8; // None+u8
++compress::pass(p0, p1, p2, p3, p4);
++crate::compress::pass(p0, p1, p2, p3, p4);
++crate::compress::pass(p0, p1, p2, p3, p4);
+-----------------
+tiger/src/compress.rs compress::key_schedule
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
++compress::key_schedule(p0);
++crate::compress::key_schedule(p0);
++crate::compress::key_schedule(p0);
+-----------------
+tiger/src/compress.rs compress::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 3]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
+-----------------
+tiger/src/lib.rs <TigerCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TigerCore
++p0.clone();
++<TigerCore as core::clone::Clone>::clone(p0);
++crate::<TigerCore as core::clone::Clone>::clone(p0);
++<TigerCore>::clone(p0);
+-----------------
+tiger/src/lib.rs <TigerCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TigerCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <TigerCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<TigerCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<TigerCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<TigerCore>::update_blocks(p0, p1);
+-----------------
+tiger/src/lib.rs <TigerCore as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TigerCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<TigerCore as digest::core_api::BlockSizeUser>::BlockSize, <TigerCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <TigerCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<TigerCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<TigerCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<TigerCore>::finalize_fixed_core(p0, p1, p2);
+-----------------
+tiger/src/lib.rs <TigerCore as core::default::Default>::default
+deps:{}
+candidates:{}
++<TigerCore as core::default::Default>::default();
++crate::<TigerCore as core::default::Default>::default();
++<TigerCore>::default();
+-----------------
+tiger/src/lib.rs <TigerCore as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TigerCore
++p0.reset();
++<TigerCore as digest::Reset>::reset(p0);
++crate::<TigerCore as digest::Reset>::reset(p0);
++<TigerCore>::reset(p0);
+-----------------
+tiger/src/lib.rs <TigerCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<TigerCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<TigerCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<TigerCore>::write_alg_name(p0);
+-----------------
+tiger/src/lib.rs <TigerCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TigerCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<TigerCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<TigerCore as core::fmt::Debug>::fmt(p0, p1);
++<TigerCore>::fmt(p0, p1);
+-----------------
+tiger/src/lib.rs <Tiger2Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Tiger2Core
++p0.clone();
++<Tiger2Core as core::clone::Clone>::clone(p0);
++crate::<Tiger2Core as core::clone::Clone>::clone(p0);
++<Tiger2Core>::clone(p0);
+-----------------
+tiger/src/lib.rs <Tiger2Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Tiger2Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Tiger2Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Tiger2Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Tiger2Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Tiger2Core>::update_blocks(p0, p1);
+-----------------
+tiger/src/lib.rs <Tiger2Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Tiger2Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Tiger2Core as digest::core_api::BlockSizeUser>::BlockSize, <Tiger2Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Tiger2Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Tiger2Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Tiger2Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Tiger2Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+tiger/src/lib.rs <Tiger2Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Tiger2Core as core::default::Default>::default();
++crate::<Tiger2Core as core::default::Default>::default();
++<Tiger2Core>::default();
+-----------------
+tiger/src/lib.rs <Tiger2Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Tiger2Core
++p0.reset();
++<Tiger2Core as digest::Reset>::reset(p0);
++crate::<Tiger2Core as digest::Reset>::reset(p0);
++<Tiger2Core>::reset(p0);
+-----------------
+tiger/src/lib.rs <Tiger2Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Tiger2Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Tiger2Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Tiger2Core>::write_alg_name(p0);
+-----------------
+tiger/src/lib.rs <Tiger2Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Tiger2Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Tiger2Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Tiger2Core as core::fmt::Debug>::fmt(p0, p1);
++<Tiger2Core>::fmt(p0, p1);

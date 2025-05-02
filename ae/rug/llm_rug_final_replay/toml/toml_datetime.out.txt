@@ -1,0 +1,343 @@
+-----------------
+crates/toml_datetime/src/datetime.rs datetime::digit
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::str::Chars<'_>
++datetime::digit(p0);
++crate::datetime::digit(p0);
++crate::datetime::digit(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
++p0.eq(p1);
++<datetime::Datetime as std::cmp::PartialEq>::eq(p0, p1);
++crate::<datetime::Datetime as std::cmp::PartialEq>::eq(p0, p1);
++<datetime::Datetime>::eq(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
++p0.assert_receiver_is_total_eq();
++<datetime::Datetime as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<datetime::Datetime as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<datetime::Datetime>::assert_receiver_is_total_eq(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
++p0.partial_cmp(p1);
++<datetime::Datetime as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<datetime::Datetime as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<datetime::Datetime>::partial_cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
++p0.cmp(p1);
++<datetime::Datetime as std::cmp::Ord>::cmp(p0, p1);
++crate::<datetime::Datetime as std::cmp::Ord>::cmp(p0, p1);
++<datetime::Datetime>::cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
++p0.clone();
++<datetime::Datetime as std::clone::Clone>::clone(p0);
++crate::<datetime::Datetime as std::clone::Clone>::clone(p0);
++<datetime::Datetime>::clone(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<datetime::Datetime as std::fmt::Debug>::fmt(p0, p1);
++crate::<datetime::Datetime as std::fmt::Debug>::fmt(p0, p1);
++<datetime::Datetime>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::DatetimeParseError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::DatetimeParseError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<datetime::DatetimeParseError as std::fmt::Debug>::fmt(p0, p1);
++crate::<datetime::DatetimeParseError as std::fmt::Debug>::fmt(p0, p1);
++<datetime::DatetimeParseError>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::DatetimeParseError as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::DatetimeParseError
++p0.clone();
++<datetime::DatetimeParseError as std::clone::Clone>::clone(p0);
++crate::<datetime::DatetimeParseError as std::clone::Clone>::clone(p0);
++<datetime::DatetimeParseError>::clone(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Date
++p0.eq(p1);
++<datetime::Date as std::cmp::PartialEq>::eq(p0, p1);
++crate::<datetime::Date as std::cmp::PartialEq>::eq(p0, p1);
++<datetime::Date>::eq(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
++p0.assert_receiver_is_total_eq();
++<datetime::Date as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<datetime::Date as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<datetime::Date>::assert_receiver_is_total_eq(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Date
++p0.partial_cmp(p1);
++<datetime::Date as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<datetime::Date as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<datetime::Date>::partial_cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Date
++p0.cmp(p1);
++<datetime::Date as std::cmp::Ord>::cmp(p0, p1);
++crate::<datetime::Date as std::cmp::Ord>::cmp(p0, p1);
++<datetime::Date>::cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
++p0.clone();
++<datetime::Date as std::clone::Clone>::clone(p0);
++crate::<datetime::Date as std::clone::Clone>::clone(p0);
++<datetime::Date>::clone(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<datetime::Date as std::fmt::Debug>::fmt(p0, p1);
++crate::<datetime::Date as std::fmt::Debug>::fmt(p0, p1);
++<datetime::Date>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Time
++p0.eq(p1);
++<datetime::Time as std::cmp::PartialEq>::eq(p0, p1);
++crate::<datetime::Time as std::cmp::PartialEq>::eq(p0, p1);
++<datetime::Time>::eq(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
++p0.assert_receiver_is_total_eq();
++<datetime::Time as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<datetime::Time as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<datetime::Time>::assert_receiver_is_total_eq(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Time
++p0.partial_cmp(p1);
++<datetime::Time as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<datetime::Time as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<datetime::Time>::partial_cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Time
++p0.cmp(p1);
++<datetime::Time as std::cmp::Ord>::cmp(p0, p1);
++crate::<datetime::Time as std::cmp::Ord>::cmp(p0, p1);
++<datetime::Time>::cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
++p0.clone();
++<datetime::Time as std::clone::Clone>::clone(p0);
++crate::<datetime::Time as std::clone::Clone>::clone(p0);
++<datetime::Time>::clone(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<datetime::Time as std::fmt::Debug>::fmt(p0, p1);
++crate::<datetime::Time as std::fmt::Debug>::fmt(p0, p1);
++<datetime::Time>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
++p0.eq(p1);
++<datetime::Offset as std::cmp::PartialEq>::eq(p0, p1);
++crate::<datetime::Offset as std::cmp::PartialEq>::eq(p0, p1);
++<datetime::Offset>::eq(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
++p0.assert_receiver_is_total_eq();
++<datetime::Offset as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<datetime::Offset as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<datetime::Offset>::assert_receiver_is_total_eq(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
++p0.partial_cmp(p1);
++<datetime::Offset as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<datetime::Offset as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<datetime::Offset>::partial_cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
+let mut p1 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
++p0.cmp(p1);
++<datetime::Offset as std::cmp::Ord>::cmp(p0, p1);
++crate::<datetime::Offset as std::cmp::Ord>::cmp(p0, p1);
++<datetime::Offset>::cmp(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
++p0.clone();
++<datetime::Offset as std::clone::Clone>::clone(p0);
++crate::<datetime::Offset as std::clone::Clone>::clone(p0);
++<datetime::Offset>::clone(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<datetime::Offset as std::fmt::Debug>::fmt(p0, p1);
++crate::<datetime::Offset as std::fmt::Debug>::fmt(p0, p1);
++<datetime::Offset>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::convert::From<datetime::Date>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // datetime::Date
++<datetime::Datetime as std::convert::From<datetime::Date>>::from(p0);
++crate::<datetime::Datetime as std::convert::From<datetime::Date>>::from(p0);
++<datetime::Datetime>::from(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::convert::From<datetime::Time>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // datetime::Time
++<datetime::Datetime as std::convert::From<datetime::Time>>::from(p0);
++crate::<datetime::Datetime as std::convert::From<datetime::Time>>::from(p0);
++<datetime::Datetime>::from(p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Datetime
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<datetime::Datetime as std::fmt::Display>::fmt(p0, p1);
++crate::<datetime::Datetime as std::fmt::Display>::fmt(p0, p1);
++<datetime::Datetime>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Date as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Date
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<datetime::Date as std::fmt::Display>::fmt(p0, p1);
++crate::<datetime::Date as std::fmt::Display>::fmt(p0, p1);
++<datetime::Date>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Time as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Time
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<datetime::Time as std::fmt::Display>::fmt(p0, p1);
++crate::<datetime::Time as std::fmt::Display>::fmt(p0, p1);
++<datetime::Time>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Offset as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::Offset
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<datetime::Offset as std::fmt::Display>::fmt(p0, p1);
++crate::<datetime::Offset as std::fmt::Display>::fmt(p0, p1);
++<datetime::Offset>::fmt(p0, p1);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::Datetime as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<datetime::Datetime as std::str::FromStr>::from_str(&p0);
++crate::<datetime::Datetime as std::str::FromStr>::from_str(&p0);
++<datetime::Datetime>::from_str(&p0);
+-----------------
+crates/toml_datetime/src/datetime.rs <datetime::DatetimeParseError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // datetime::DatetimeParseError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<datetime::DatetimeParseError as std::fmt::Display>::fmt(p0, p1);
++crate::<datetime::DatetimeParseError as std::fmt::Display>::fmt(p0, p1);
++<datetime::DatetimeParseError>::fmt(p0, p1);

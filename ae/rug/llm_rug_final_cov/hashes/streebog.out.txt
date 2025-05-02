@@ -1,0 +1,232 @@
+-----------------
+streebog/src/core_api.rs core_api::lps
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; 64]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++core_api::lps(p0, p1);
++crate::core_api::lps(p0, p1);
++crate::core_api::lps(p0, p1);
+-----------------
+streebog/src/core_api.rs core_api::adc
+deps:{}
+candidates:{}
+let mut p0 = &mut 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
+let mut p2 = &mut 0u64; // None+u64
++core_api::adc(p0, p1, p2);
++crate::core_api::adc(p0, p1, p2);
++crate::core_api::adc(p0, p1, p2);
+-----------------
+streebog/src/core_api.rs core_api::to_bytes
+deps:{}
+candidates:{}
+let mut p0 = & [0u64;1]; // None+[u64; 8]
++core_api::to_bytes(p0);
++crate::core_api::to_bytes(p0);
++crate::core_api::to_bytes(p0);
+-----------------
+streebog/src/core_api.rs core_api::from_bytes
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 64]
++core_api::from_bytes(p0);
++crate::core_api::from_bytes(p0);
++crate::core_api::from_bytes(p0);
+-----------------
+streebog/src/core_api.rs <core_api::StreebogVarCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
++p0.clone();
++<core_api::StreebogVarCore as std::clone::Clone>::clone(p0);
++crate::<core_api::StreebogVarCore as std::clone::Clone>::clone(p0);
++<core_api::StreebogVarCore>::clone(p0);
+-----------------
+streebog/src/core_api.rs core_api::StreebogVarCore::g
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = & [0u8;1]; // None+[u8; 64]
+let mut p2 = & [0u8;1]; // None+[u8; 64]
++p0.g(p1, p2);
++core_api::StreebogVarCore::g(p0, p1, p2);
++crate::core_api::StreebogVarCore::g(p0, p1, p2);
++<core_api::StreebogVarCore>::g(p0, p1, p2);
+-----------------
+streebog/src/core_api.rs core_api::StreebogVarCore::update_sigma
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++p0.update_sigma(p1);
++core_api::StreebogVarCore::update_sigma(p0, p1);
++crate::core_api::StreebogVarCore::update_sigma(p0, p1);
++<core_api::StreebogVarCore>::update_sigma(p0, p1);
+-----------------
+streebog/src/core_api.rs core_api::StreebogVarCore::update_n
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = 0u64; // None+u64
++p0.update_n(p1);
++core_api::StreebogVarCore::update_n(p0, p1);
++crate::core_api::StreebogVarCore::update_n(p0, p1);
++<core_api::StreebogVarCore>::update_n(p0, p1);
+-----------------
+streebog/src/core_api.rs core_api::StreebogVarCore::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = & [0u8;1]; // None+[u8; 64]
+let mut p2 = 0u64; // None+u64
++p0.compress(p1, p2);
++core_api::StreebogVarCore::compress(p0, p1, p2);
++crate::core_api::StreebogVarCore::compress(p0, p1, p2);
++<core_api::StreebogVarCore>::compress(p0, p1, p2);
+-----------------
+streebog/src/core_api.rs <core_api::StreebogVarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <core_api::StreebogVarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<core_api::StreebogVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<core_api::StreebogVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<core_api::StreebogVarCore>::update_blocks(p0, p1);
+-----------------
+streebog/src/core_api.rs <core_api::StreebogVarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<core_api::StreebogVarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<core_api::StreebogVarCore as digest::core_api::VariableOutputCore>::new(p0);
++<core_api::StreebogVarCore>::new(p0);
+-----------------
+streebog/src/core_api.rs <core_api::StreebogVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<core_api::StreebogVarCore as digest::core_api::BlockSizeUser>::BlockSize, <core_api::StreebogVarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <core_api::StreebogVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<core_api::StreebogVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<core_api::StreebogVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<core_api::StreebogVarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+streebog/src/core_api.rs <core_api::StreebogVarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<core_api::StreebogVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<core_api::StreebogVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<core_api::StreebogVarCore>::write_alg_name(p0);
+-----------------
+streebog/src/core_api.rs <core_api::StreebogVarCore as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::StreebogVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<core_api::StreebogVarCore as std::fmt::Debug>::fmt(p0, p1);
++crate::<core_api::StreebogVarCore as std::fmt::Debug>::fmt(p0, p1);
++<core_api::StreebogVarCore>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid256 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid256
++p0.clone();
++<Oid256 as std::clone::Clone>::clone(p0);
++crate::<Oid256 as std::clone::Clone>::clone(p0);
++<Oid256>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid256 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid256
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Oid256 as std::fmt::Debug>::fmt(p0, p1);
++crate::<Oid256 as std::fmt::Debug>::fmt(p0, p1);
++<Oid256>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid256 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid256
++p0.assert_receiver_is_total_eq();
++<Oid256 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Oid256 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Oid256>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid256 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid256
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Oid256
++p0.eq(p1);
++<Oid256 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Oid256 as std::cmp::PartialEq>::eq(p0, p1);
++<Oid256>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid256 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Oid256 as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Oid256 as std::hash::Hash>::hash":{"__H":["<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","std::hash::SipHasher13","std::boxed::Box<T, A>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid256
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Oid256 as std::hash::Hash>::hash(p0, p1);
++crate::<Oid256 as std::hash::Hash>::hash(p0, p1);
++<Oid256>::hash(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid512 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid512
++p0.clone();
++<Oid512 as std::clone::Clone>::clone(p0);
++crate::<Oid512 as std::clone::Clone>::clone(p0);
++<Oid512>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid512 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid512
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Oid512 as std::fmt::Debug>::fmt(p0, p1);
++crate::<Oid512 as std::fmt::Debug>::fmt(p0, p1);
++<Oid512>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid512 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid512
++p0.assert_receiver_is_total_eq();
++<Oid512 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Oid512 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Oid512>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid512 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid512
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Oid512
++p0.eq(p1);
++<Oid512 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Oid512 as std::cmp::PartialEq>::eq(p0, p1);
++<Oid512>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <Oid512 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Oid512 as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Oid512 as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","std::hash::SipHasher","std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Oid512
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<Oid512 as std::hash::Hash>::hash(p0, p1);
++crate::<Oid512 as std::hash::Hash>::hash(p0, p1);
++<Oid512>::hash(p0, p1);

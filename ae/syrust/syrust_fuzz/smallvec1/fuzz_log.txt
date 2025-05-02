@@ -1,0 +1,3 @@
+smallvec1 smallvec {}
+empty  smallvec1/.
+smallvec1 done

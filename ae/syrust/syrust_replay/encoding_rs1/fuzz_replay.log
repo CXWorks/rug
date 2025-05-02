@@ -1,0 +1,48 @@
+encoding_rs1 encoding_rs . ['/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/x_user_defined.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/iso_2022_jp.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/euc_kr.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/euc_jp.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/macros.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/handles.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/single_byte.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/variant.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/mem.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/replacement.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/ascii.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/data.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/shift_jis.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/test_labels_names.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/gb18030.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/utf_8.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/lib.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/utf_16.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/simd_funcs.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/testing.rs', '/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/big5.rs']
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/x_user_defined.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/iso_2022_jp.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/euc_kr.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/euc_jp.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/macros.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/handles.rs
+err tests_rug_148 test_new_byte_source
+err tests_rug_153 test_byte_read_handle_new
+err tests_rug_156 test_handle_new
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/single_byte.rs
+err tests_rug_464 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/variant.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/mem.rs
+err tests_rug_293 test_rug
+err tests_rug_299 test_rug
+err tests_rug_302 test_rug
+err tests_rug_304 test_is_utf8_latin1
+err tests_rug_307 test_rug
+err tests_rug_329 test_decode_latin1
+err tests_rug_332 test_rug
+err tests_rug_336 test_encoding_rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/replacement.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/ascii.rs
+err tests_rug_87 test_validate_ascii
+err tests_rug_98 test_ascii_valid_up_to
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/data.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/shift_jis.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/test_labels_names.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/gb18030.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/utf_8.rs
+err tests_rug_64 test_utf8_valid_up_to
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/lib.rs
+err tests_rug_351 test_rug
+err tests_rug_352 test_rug
+err tests_rug_353 test_for_bom
+err tests_rug_360 test_rug
+err tests_rug_361 test_rug
+err tests_rug_362 test_rug
+err tests_rug_363 test_rug
+err tests_rug_370 test_utf8_valid_up_to
+err tests_rug_371 test_ascii_valid_up_to
+err tests_rug_372 test_iso_2022_jp_ascii_valid_up_to
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/utf_16.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/simd_funcs.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/testing.rs
+/mnt/sda/xiang/syrust/syrust_replay/encoding_rs1/./src/big5.rs
+done

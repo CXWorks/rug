@@ -1,0 +1,8 @@
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_17
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_24
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_25
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_26
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_29
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_30
+err cbor1 /mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs tests_rug_32
+cbor-codec . 63 70 0

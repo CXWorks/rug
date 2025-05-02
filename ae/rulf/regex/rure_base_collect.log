@@ -1,0 +1,1097 @@
+========================================
+    use crate::Options;
+    use std::default::Default;
+
+    #[test]
+    fn test_default_options() {
+        let options: Options = Default::default();
+        assert_eq!(options.size_limit, 10 * (1 << 20));
+        assert_eq!(options.dfa_size_limit, 2 * (1 << 20));
+    }
+}
+True
+========================================
+    use std::collections::HashMap;
+    use std::ops::Deref;
+    use bytes::Regex;
+    use crate::Regex as RureRegex;
+
+    #[test]
+    fn test_deref() {
+        let regex = RureRegex {
+            re: Regex::new(r"pattern").unwrap(),
+            capture_names: HashMap::new(),
+        };
+
+        let deref_result: &Regex = regex.deref();
+        assert!(deref_result.is_match("text"));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::bytes::RegexSet;
+    use crate::bytes; // Add this line to import the missing `bytes` module
+
+    #[test]
+    fn test_deref() {
+        let regex_set = RegexSet {
+            re: bytes::RegexSet::new(&["pattern1", "pattern2"]).unwrap(),
+        };
+        let dereferenced = regex_set.deref();
+        assert_eq!(dereferenced, &regex_set.re);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::error::Error;
+    use std::str;
+    use std::ffi;
+
+    #[test]
+    fn test_is_err_false() {
+        let error = error::Error::new(ErrorKind::None);
+        assert_eq!(error.is_err(), false);
+    }
+
+    #[test]
+    fn test_is_err_true_str() {
+        let error = error::Error::new(ErrorKind::Str(str::Utf8Error {}));
+        assert_eq!(error.is_err(), true);
+    }
+
+    #[test]
+    fn test_is_err_true_regex() {
+        let error = error::Error::new(ErrorKind::Regex(regex::Error {}));
+        assert_eq!(error.is_err(), true);
+    }
+
+    #[test]
+    fn test_is_err_true_nul() {
+        let error = error::Error::new(ErrorKind::Nul(ffi::NulError {}));
+        assert_eq!(error.is_err(), true);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ffi::CString;
+    use std::error::Error as StdError;
+    use std::fmt;
+    use std::str;
+    use regex::Error as RegexError;
+    use std::convert::From;
+
+    #[test]
+    fn test_new() {
+        let kind = ErrorKind::None;
+        let error = Error::new(kind);
+        assert_eq!(error.kind, kind);
+        assert_eq!(error.message, None);
+    }
+
+    #[test]
+    fn test_is_err_when_kind_is_none() {
+        let kind = ErrorKind::None;
+        let error = Error::new(kind);
+        assert_eq!(error.is_err(), false);
+    }
+
+    #[test]
+    fn test_is_err_when_kind_is_str() {
+        let error_message = CString::new("error message").unwrap();
+        let kind = ErrorKind::Str(str::Utf8Error::from(error_message.clone()));
+        let error = Error::new(kind);
+        assert_eq!(error.is_err(), true);
+    }
+
+    #[test]
+    fn test_is_err_when_kind_is_regex() {
+        let regex_error = RegexError::Syntax("invalid syntax".to_string());
+        let kind = ErrorKind::Regex(regex_error);
+        let error = Error::new(kind);
+        assert_eq!(error.is_err(), true);
+    }
+
+    #[test]
+    fn test_is_err_when_kind_is_nul() {
+        let ffi_error = ffi::NulError::from("null byte found");
+        let kind = ErrorKind::Nul(ffi_error);
+        let error = Error::new(kind);
+        assert_eq!(error.is_err(), true);
+    }
+
+    #[test]
+    fn test_display() {
+        let kind = ErrorKind::None;
+        let error = Error::new(kind);
+        assert_eq!(error.to_string(), "no error");
+
+        let error_message = CString::new("error message").unwrap();
+        let kind = ErrorKind::Str(str::Utf8Error::from(error_message.clone()));
+        let error = Error::new(kind);
+        assert_eq!(error.to_string(), error_message.to_string_lossy().to_string());
+
+        let regex_error = RegexError::Syntax("invalid syntax".to_string());
+        let kind = ErrorKind::Regex(regex_error);
+        let error = Error::new(kind);
+        assert_eq!(error.to_string(), "invalid syntax");
+
+        let ffi_error = ffi::NulError::new("null byte found").unwrap();
+        let kind = ErrorKind::Nul(ffi_error);
+        let error = Error::new(kind);
+        assert_eq!(error.to_string(), "null byte found");
+    }
+}
+False
+========================================
+    use crate::error::ErrorKind;
+    use crate::error::Error;
+    use crate::regex_capi::error::rure_error_free;
+
+    #[test]
+    fn test_rure_error_free() {
+        let error_kind = ErrorKind::Str(str::Utf8Error::from("Error message"));
+        let error = Error::new(error_kind);
+        let message = error.to_string();
+        rure_error_free(Box::new(error) as *mut Error);
+    }
+}
+False
+========================================
+    use rure_error_message;
+    use rure_error_message::error::{Error, ErrorKind};
+    use std::ffi::CString;
+
+    #[test]
+    fn test_rure_error_message() {
+        let error = Error::new(ErrorKind::Str(ffi::Utf8Error::from("error message")));
+        let result = unsafe {
+            rure_error_message(std::ffi::CString::new("test_function\0").unwrap().as_ptr(), &error)
+        };
+        assert_eq!(result, std::ffi::CString::new("error message").unwrap().as_ptr());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::error::{Error, ErrorKind};
+
+    #[test]
+    fn test_rure_error_new_no_panic() {
+        let result = crate::error::rure_error_new(|| {
+            // Your test code here
+            // This code will not panic
+        });
+
+        assert_eq!(result, std::ptr::null_mut());
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_rure_error_new_panic() {
+        crate::error::rure_error_new(|| {
+            // Your test code here
+            // This code will panic
+            panic!("Panic!");
+        });
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ffi::CString;
+    use std::ptr;
+    use std::collections::HashMap;
+    use crate::Result;
+    use crate::ptr::null;
+    use crate::errors::RureError;
+    
+    #[test]
+    fn test_rure_capture_name_index() {
+        let pattern = CString::new(r"(?P<num>\d+)").unwrap();
+        let regex = unsafe {
+            let mut err = null();
+            let regex = rure_compile!(pattern.as_ptr(), &mut err);
+            if regex.is_null() {
+                let err = RureError::from_raw(err);
+                panic!("Failed to compile regex: {:?}", err);
+            }
+            crate::Regex {
+                re: regex,
+                capture_names: HashMap::new()
+            }
+        };
+        let input = b"123";
+        let captures = regex.captures(input);
+        assert!(captures.is_some());
+        let capture_name = "num";
+        let expected_index = 0;
+        let index = rure_capture_name_index(&regex, capture_name.as_ptr());
+        assert_eq!(index, expected_index);
+    }
+}
+False
+========================================
+    use regex_syntax::ast::Printer;
+    use crate::Captures;
+    use crate::rure_match;
+    use std::ffi::CStr;
+    use libc::size_t;
+
+    #[repr(C)]
+    pub struct rure_match {
+        pub start: size_t,
+        pub end: size_t,
+    }
+    
+    #[no_mangle]
+    #[allow(non_snake_case)]
+    extern "C" fn rure_captures_at(
+        captures: *const Captures,
+        i: size_t,
+    ) -> rure_match {
+        unsafe {
+            let captures = &*captures;
+            let locations = captures.0;
+            let location = locations.get(i);
+            
+            let start = if let Some((start, _)) = location {
+                start as size_t
+            } else {
+                0 as size_t
+            };
+            
+            let end = if let Some((_, end)) = location {
+                end as size_t
+            } else {
+                0 as size_t
+            };
+            
+            rure_match {
+                start,
+                end,
+            }
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::crate::Captures;
+
+    #[test]
+    fn test_rure_captures_free() {
+        // Create a mock Captures object
+        let mock_captures = Captures::from(vec![]);
+
+        // Call the target function
+        let result = unsafe { crate::rure_captures_free(mock_captures) };
+
+        // Add assertion here to validate the result
+        assert_eq!(result, /* expected result */);
+    }
+}
+False
+========================================
+    use std::io::Write;
+    use std::panic::{self, AssertUnwindSafe};
+    use libc::abort;
+    use crate::rure_captures_len;
+    use crate::crate::Captures;
+
+    #[test]
+    fn test_rure_captures_len() {
+        let locations = vec![
+            Captures(vec![(0, 5), (6, 9), (10, 15)]),
+            Captures(vec![(0, 10)]),
+            Captures(vec![]),
+        ];
+        
+        let result = panic::catch_unwind(AssertUnwindSafe(move || {
+            let captures = locations.iter().map(|c| c.0.as_ptr()).collect::<Vec<*const (usize, usize)>>();  // updated
+            rure_captures_len(captures.as_ptr() as *const *const (usize, usize), captures.len() as u32)  // updated
+        }));
+        
+        match result {
+            Ok(v) => {
+                assert_eq!(v, 3);  // change the expected result accordingly
+            },
+            Err(err) => {
+                let msg = if let Some(&s) = err.downcast_ref::<&str>() {
+                    s.to_owned()
+                } else if let Some(s) = err.downcast_ref::<String>() {
+                    s.to_owned()
+                } else {
+                    "UNABLE TO SHOW RESULT OF PANIC.".to_owned()
+                };
+                let _ = writeln!(&mut std::io::stderr(), "panic unwind caught, aborting: {:?}", msg);
+                unsafe { abort() }
+            }
+        };
+    }
+}
+False
+========================================
+    use std::ptr;
+    use std::os::raw::c_char;
+    use std::collections::HashMap;
+    use libc::abort;
+    use crate::bytes;
+    use crate::{Captures, Regex};
+
+    extern "C" {
+        fn rure_captures_new(
+            ptr: *const c_char, len: usize, regex_ptr: *const Regex,
+            ptr_ptr: *mut *const Captures,
+        ) -> usize;
+    }
+
+    #[test]
+    fn test_rure_captures_new() {
+        let regex = Regex {
+            re: bytes::Regex::new("").unwrap(),
+            capture_names: HashMap::new(),
+        };
+
+        let regex_ptr: *const Regex = &regex;
+        let regex_ptr_ptr: *const *const Regex = &regex_ptr;
+        let mut captures_ptr: *mut Captures = ptr::null_mut();
+        let captures_ptr_ptr: *mut *const Captures = &mut captures_ptr;
+
+        let input = b"test";
+        let len = input.len() as usize;
+        let ptr = input.as_ptr() as *const c_char;
+
+        let result = unsafe {
+            rure_captures_new(ptr, len, regex_ptr, captures_ptr_ptr)
+        };
+
+        assert_eq!(result, 0);
+    }
+}
+False
+========================================
+    use crate::rure_compile;
+    use crate::error::{Error, ErrorKind};
+    use crate::crate::{Options, Regex};
+    use std::fmt::Display;
+    use std::default::Default;
+    use std::io::{self, Write};
+    use std::panic::{self, AssertUnwindSafe};
+    use std::unexpected as libc::abort;
+    use std::ops::Deref;
+    use std::ffi::NulError;
+    use std::collections::HashMap;
+    use std::str::Utf8Error;
+    
+    #[no_mangle]
+    pub extern fn rure_compile() {
+        // Your test code goes here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::Write;
+    use std::panic::{self};
+    use std::collections::HashMap;
+    use crate::Regex;
+    use libc::abort;
+    use std::ffi::CString;
+    use std::os::raw::c_char;
+
+    #[test]
+    fn test_rure_compile_must() {
+        // Test input
+        let name = CString::new("test_regex").expect("CString::new failed");
+        let arg: u8 = 123;
+        let arg_ty = CString::new("u8").expect("CString::new failed");
+        let ret: u32 = 456;
+        let body: &str = "println!(\"Hello, world!\");";
+
+        let mut capture_names: HashMap<String, i32> = HashMap::new();
+        capture_names.insert(String::from("name"), 1);
+        capture_names.insert(String::from("age"), 2);
+        let regex = Regex {
+            re: crate::Regex::new("a+").unwrap(),
+            capture_names: capture_names,
+        };
+
+        // Expected output
+        let expected_output: u32 = 456;
+
+        // Run the target function
+        let result = rure_compile_must(
+            name.as_ptr(),
+            arg,
+            arg_ty.as_ptr(),
+            ret,
+            {
+                let body = body;
+                move || {
+                    // Test the body here
+                    println!("Hello, world!");
+                }
+            }
+        );
+
+        // Assert the result
+        assert_eq!(result, expected_output);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::error::{Error, ErrorKind};
+    use crate::Options;
+    use std::error::Error as StdError;
+    use std::error::ErrorKind as StdErrorKind;
+    use std::ffi::CString;
+    use std::panic::{self, AssertUnwindSafe};
+
+    #[test]
+    fn test_rure_compile_set() {
+        // Create input variables
+        let name: CString = CString::new("test_name").unwrap();
+        let arg: i32 = 10;
+        let arg_ty: i32 = 5;
+        let ret: i32 = 0;
+        let body: i32 = 1;
+
+        // Call the target function
+        let result = panic::catch_unwind(AssertUnwindSafe(move || {
+            rure_compile_set(
+                name.as_ptr(),
+                arg.try_into().unwrap(),
+                arg_ty.try_into().unwrap(),
+                ret.try_into().unwrap(),
+                body.try_into().unwrap(),
+            )
+        }));
+
+        // Assert the result
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), body.try_into().unwrap());
+    }
+}
+False
+========================================
+    use std::ffi::CString;
+    use crate::rure_cstring_free;
+
+    #[test]
+    fn test_rure_cstring_free() {
+        let cstring = CString::new("test").unwrap();
+        let ptr = cstring.into_raw();
+
+        unsafe {
+            rure_cstring_free(ptr);
+        }
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ffi::CStr;
+
+    #[test]
+    fn test_rure_escape() {
+        let pattern: &'static [u8] = b"test pattern";
+        let length: usize = pattern.len();
+        let mut error = Error::new(ErrorKind::None);
+        let result = unsafe { rure_escape(pattern.as_ptr(), length, &mut error) };
+
+        assert!(!result.is_null());
+
+        let cstr = unsafe { CStr::from_ptr(result) };
+        let escaped_pattern = cstr.to_string_lossy();
+
+        assert_eq!(escaped_pattern, "test\\ pattern");
+    }
+}
+True
+========================================
+    use std::io::Write;
+    use std::panic::{self, AssertUnwindSafe};
+    use libc::{c_char, abort};
+    use crate::rure_escape_must;
+    use std::ffi::CString;
+
+    #[test]
+    fn test_rure_escape_must() {
+        let name = CString::new("test_name").expect("Failed to create CString");
+        let arg = CString::new("test_arg").expect("Failed to create CString");
+        let arg_ty = CString::new("test_arg_ty").expect("Failed to create CString");
+        let ret = CString::new("test_ret").expect("Failed to create CString");
+        let body = CString::new("test_body").expect("Failed to create CString");
+
+        let result = panic::catch_unwind(AssertUnwindSafe(move || {
+            unsafe {
+                rure_escape_must(
+                    name.as_ptr(),
+                    arg.as_ptr(),
+                    arg_ty.as_ptr(),
+                    ret.as_ptr(),
+                    body.as_ptr(),
+                )
+            }
+        }));
+
+        match result {
+            Ok(v) => assert_eq!(v, expected_value), // Modify expected_value according to your requirement
+            Err(err) => {
+                let msg = if let Some(&s) = err.downcast_ref::<&str>() {
+                    s.to_owned()
+                } else if let Some(s) = err.downcast_ref::<String>() {
+                    s.to_owned()
+                } else {
+                    "UNABLE TO SHOW RESULT OF PANIC.".to_owned()
+                };
+
+                let mut stderr = Vec::new();
+                let _ = writeln!(&mut stderr, "panic unwind caught, aborting: {:?}", msg);
+                assert!(false, "{}", String::from_utf8(stderr).unwrap());
+                unsafe {
+                    abort();
+                }
+            }
+        }
+    }
+}
+False
+========================================
+    use std::ffi::CString;
+    use std::ptr;
+    use std::os::raw::c_void;
+    use std::mem;
+    use std::slice;
+    use crate::Regex;
+    use crate::rure_find;
+    use crate::rure_match;
+
+    #[test]
+    fn test_rure_find() {
+        let pattern = CString::new("pattern").unwrap();
+        let text = CString::new("text").unwrap();
+        let regex = Regex::new(pattern.to_str().unwrap()).unwrap();
+
+        let mut matches = Vec::<rure_match>::with_capacity(10);
+        let mut count = 10;
+        let result = unsafe {
+            rure_find(
+                regex.as_ptr() as *const _,
+                text.as_ptr() as *const _,
+                text.as_bytes().len(),
+                matches.as_mut_ptr(),
+                &mut count as *mut _,
+            )
+        };
+
+        assert_eq!(result, true);
+        assert_eq!(count, 1);
+        assert_eq!(matches[0].start, 0);
+        assert_eq!(matches[0].end, text.as_bytes().len());
+    }
+}
+False
+========================================
+    use crate::{Captures, Regex};
+
+    #[test]
+    fn test_rure_find_captures() {
+        // Your test case goes here
+        // use rure_find_captures with your test case
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ptr;
+    use crate::Regex;
+    use std::collections::HashMap;
+
+    #[test]
+    fn test_rure_free() {
+        // Test case parameters
+        let arg1: *const Regex = ptr::null();
+        let arg2: *mut i32 = ptr::null_mut();
+
+        // Call the target function
+        rure_free(arg1);
+
+        // Add assertions here
+        // assert_eq!(expected_result, actual_result);
+    }
+}
+True
+========================================
+    use crate::crate::Regex;
+
+    #[test]
+    fn test_rure_is_match() {
+        let regex = Regex::new(r"^\d+$").unwrap();
+        assert!(regex.is_match("123"));
+        assert!(!regex.is_match("abc"));
+    }
+}
+False
+========================================
+    use crate::IterCaptureNames;
+    use crate::CaptureNames;
+    use libc::c_char;
+    use std::ptr;
+    use std::ffi::CStr;
+    use std::os::raw::c_uint;
+    use std::io::Write;
+    use std::panic::{self, AssertUnwindSafe};
+    use std::libc::abort;
+
+    #[test]
+    fn test_rure_iter_capture_names_free() {
+        // Create a sample IterCaptureNames instance
+        let mut iter = IterCaptureNames {
+            capture_names: CaptureNames::new(),
+            name_ptrs: Vec::new(),
+        };
+
+        // Call the target function
+        crate::rure_iter_capture_names_free(&mut iter);
+
+        // Assert that IterCaptureNames instance is cleaned up properly
+        assert!(iter.capture_names.len() == 0);
+        assert!(iter.name_ptrs.len() == 0);
+
+        // Assert that name_ptrs is properly freed
+        assert!(iter.name_ptrs.capacity() == 0);
+
+        // Assert that name_ptrs is nullified
+        assert!(iter.name_ptrs.as_ptr() == ptr::null());
+    }
+}
+False
+========================================
+#[test]
+fn test_rure_iter_capture_names_new() {
+    let re = crate::Regex::new("([a-z]+)").unwrap();
+    let iter = re.captures_iter("hello world");
+
+    let re_ptr: *const crate::Regex = &re as *const _;
+    let capture_names_ptr: *mut crate::IterCaptureNames = unsafe { rure_iter_capture_names_new(re_ptr) };
+
+    let mut ptrs: Vec<*mut libc::c_char> = Vec::new();
+    let mut found = false;
+
+    while let Some(caps) = iter.next() {
+        let capture_names = unsafe { &mut *capture_names_ptr }.capture_names();
+        for (i, name) in capture_names.iter().enumerate() {
+            let name_ptr = name.as_ptr() as *mut libc::c_char;
+            ptrs.push(name_ptr);
+
+            let name_str: *mut *mut libc::c_char = ptr::null_mut();
+            assert_eq!(
+                crate::rure_iter_captures_nth(name_ptr, ptrs.len() as libc::c_int, &mut name_str as *mut _),
+                capture_names.len() as libc::c_int
+            );
+
+            assert_eq!(
+                crate::rure_iter_capture_names_nth(capture_names_ptr, i as libc::c_int),
+                name.as_ptr() as *mut libc::c_char
+            );
+            found = true;
+
+            // Break the loop if all names are found
+            if found && ptrs.len() == capture_names.len() {
+                break;
+            }
+        }
+    }
+
+    unsafe { crate::rure_capture_names_free(capture_names_ptr) };
+    unsafe { crate::rure_captures_free(ptrs.as_mut_ptr()) };
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ffi::CString;
+    use std::os::raw::c_char;
+    use crate::IterCaptureNames;
+    use regex::bytes::CaptureNames;
+    use std::ptr;
+
+    #[test]
+    fn test_rure_iter_capture_names_next() {
+        unsafe {
+            // Create a test IterCaptureNames object
+            let test_capture_names = IterCaptureNames {
+                capture_names: CaptureNames::new(b"test pattern"),
+                name_ptrs: vec![ptr::null_mut(), ptr::null_mut(), ptr::null_mut()],
+            };
+
+            // Call the target function
+            let result = rure_iter_capture_names_next(&test_capture_names as *const IterCaptureNames);
+
+            // Assert the result as per your requirement
+            assert_eq!(result, YOUR_EXPECTED_RESULT);
+        }
+    }
+}
+False
+========================================
+    use std::ffi::CString;
+    use crate::Iter;
+    use crate::Regex;
+    use regex::bytes::Regex as BytesRegex;
+    use std::io::Write;
+    use libc::abort;
+    use std::collections::HashMap;
+    use std::panic::PanicInfo;
+
+    fn capture_names(regex: &Regex) -> HashMap<String, i32> {
+        regex.capture_names().clone()
+    }
+
+    fn last_end(iter: &Iter) -> usize {
+        iter.last_end()
+    }
+
+    #[no_mangle]
+    extern fn rure_iter_free(iter: *mut Iter) {
+        use std::panic::{self, AssertUnwindSafe};
+        match panic::catch_unwind(AssertUnwindSafe(move || {
+            unsafe {
+                Box::from_raw(iter);
+            }
+        })) {
+            Ok(_) => (),
+            Err(err) => {
+                let msg = if let Some(s) = err.downcast_ref::<CString>() {
+                    s.to_string_lossy().into_owned()
+                } else {
+                    "UNABLE TO SHOW RESULT OF PANIC.".to_owned()
+                };
+                let _ = writeln!(
+                    &mut std::io::stderr(),
+                    "panic unwind caught, aborting: {:?}",
+                    msg);
+                unsafe { abort() }
+            }
+        }
+    }
+
+    #[test]
+    fn test_rure_iter_free() {
+        let regex = Regex {
+            re: BytesRegex::new("").unwrap(),
+            capture_names: HashMap::new(),
+        };
+        let iter = Box::into_raw(Box::new(Iter {
+            re: &regex,
+            last_end: 0,
+            last_match: None,
+        }));
+
+        unsafe {
+            rure_iter_free(iter);
+        }
+
+        // Verify that iter has been freed properly
+        // Add assertions here
+    }
+}
+False
+========================================
+    use crate::{Regex, Iter};
+    use std::ffi::CStr;
+    use std::os::raw::c_char;
+    use std::collections::HashMap;
+    
+    #[test]
+    fn test_rure_iter_new() {
+        let regex = Regex {
+            re: regex::bytes::Regex::new(r"(\d+)").unwrap(),
+            capture_names: HashMap::new(),
+        };
+        let string = "abc123def456";
+        let c_str = string.as_ptr() as *const c_char;
+        let iter = unsafe { crate::rure_iter_new(&regex as *const Regex, c_str) };
+        let mut vec = Vec::new();
+        loop {
+            let match_index = unsafe { crate::rure_iter_next(iter, 0 as *const u8, 0usize, 0 as *mut rure_match) };
+            if match_index == 0 {
+                break;
+            } else {
+                vec.push(match_index as usize);
+            }
+        }
+        assert_eq!(vec, vec![3, 6]);
+        unsafe { crate::rure_iter_free(iter); }
+    }
+}
+False
+========================================
+    use std::io::{self, Write};
+    use std::panic::{self, AssertUnwindSafe};
+    use libc::abort;
+    use crate::Regex;
+    use crate::rure_match::{rure_match, size_t};
+
+    #[test]
+    fn test_rure_iter_next() {
+        #[no_mangle]
+        pub extern fn rure_iter_next(re: *const Regex, last_end: usize, last_match: *mut usize, match_obj: *mut rure_match, n: size_t) -> size_t {
+            match panic::catch_unwind(AssertUnwindSafe(move || {
+                // Your test code here
+            })) {
+                Ok(v) => v,
+                Err(err) => {
+                    let msg = if let Some(&s) = err.downcast_ref::<&str>() {
+                        s.to_owned()
+                    } else if let Some(s) = err.downcast_ref::<String>() {
+                        s.to_owned()
+                    } else {
+                        "UNABLE TO SHOW RESULT OF PANIC.".to_owned()
+                    };
+                    let _ = writeln!(
+                        &mut io::stderr(),
+                        "panic unwind caught, aborting: {:?}",
+                        msg);
+                    unsafe { abort() }
+                }
+            }
+        }
+    }
+}
+False
+========================================
+    use std::collections::HashMap;
+    use crate::{Captures, Iter, Regex};
+    use regex_capi::rure_iter_next_captures;
+
+    #[test]
+    fn test_rure_iter_next_captures() {
+        // Create a Regex object
+        let re = Regex::with_options(r"\w+").unwrap();
+
+        // Create an Iter object
+        let iter = re.find_iter("hello world");
+
+        // Call rure_iter_next_captures
+        let captures = rure_iter_next_captures(&iter);
+
+        // Assert the result
+        assert_eq!(captures, Some(Captures::from_ffi(None)));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::rure_options_dfa_size_limit;
+    use crate::Options;
+
+    #[test]
+    fn test_rure_options_dfa_size_limit() {
+        let mut options: Options = Default::default();
+        let limit = 0usize;
+        let result = unsafe { rure_options_dfa_size_limit(&mut options as *mut Options, limit) };
+
+        // Assert here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ptr;
+    use crate::Options;
+    use crate::rure_options_free;
+
+    #[test]
+    fn test_rure_options_free() {
+        let mut options = Options::default();
+
+        unsafe {
+            rure_options_free(&mut options);
+        }
+    }
+}
+True
+========================================
+    use crate::{Options, rure_options_new};
+
+    #[test]
+    fn test_rure_options_new() {
+        // Perform any setup if needed
+
+        let options = rure_options_new();
+
+        // Perform any assertions on options if needed
+    }
+}
+True
+========================================
+    use crate::Options;
+
+    #[test]
+    fn test_rure_options_size_limit() {
+        // Set up
+        let expected_size_limit = 10 * (1 << 20);
+        let expected_dfa_size_limit = 2 * (1 << 20);
+        let mut options = Options::default();
+
+        // Execution
+        let actual_size_limit = rure_options_size_limit(&mut options);
+        let actual_dfa_size_limit = rure_options_dfa_size_limit(&mut options);
+
+        // Assertion
+        assert_eq!(expected_size_limit, actual_size_limit);
+        assert_eq!(expected_dfa_size_limit, actual_dfa_size_limit);
+    }
+}
+False
+========================================
+    use crate::rure_set_free;
+    use crate::bytes::RegexSet;
+    
+    #[test]
+    fn test_rure_set_free() {
+        let set = RegexSet::new(&["foo", "bar"]).unwrap();
+        
+        unsafe {
+            rure_set_free(set);
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::bytes::RegexSet;
+
+    #[test]
+    fn test_rure_set_is_match() {
+        // Initialize regex patterns
+        let patterns = vec![
+            r"foo",
+            r"bar",
+            r"baz",
+        ];
+
+        // Create a RegexSet
+        let regex_set = RegexSet::new(patterns).unwrap();
+
+        // Call the target function
+        let result = rure_set_is_match(&regex_set as *const RegexSet, 0, 0);
+
+        // Add assertions for the expected result
+        assert_eq!(result, true);
+    }
+}
+False
+========================================
+    use crate::RegexSet;
+
+    #[test]
+    fn test_rure_set_len() {
+        // Construct a RegexSet object
+        let regex_set = RegexSet::new(&[
+            r"([a-z]+)",
+            r"([A-Z]+)",
+            r"([0-9]+)",
+            r"([^\w\s]+)",
+        ]).unwrap();
+
+        // Get the length of the regex set
+        let len = rure_set_len(&regex_set);
+
+        // Assert the length equals to the number of regexes
+        assert_eq!(len, regex_set.len());
+    }
+
+    #[link(name = "regex_capi")]
+    extern "C" {
+        fn rure_set_len(set: *const RegexSet) -> usize;
+    }
+}
+False
+========================================
+    use crate::bytes::RegexSet;
+
+    #[test]
+    fn test_rure_set_matches() {
+        // Create a RegexSet
+        let regexes = RegexSet::new(&["foo", "bar", "baz"]).unwrap();
+
+        // Call the target function
+        let result = unsafe {
+            rure_set_matches(
+                regexes.as_ptr() as *const rure_set_matches::RegexSet,
+                "foo\0".as_ptr(),
+                4,
+                0
+            )
+        };
+
+        // Assertions
+        assert_eq!(result, 1);
+    }
+}
+False
+========================================
+    use crate::{Regex, rure_shortest_match};
+
+    #[test]
+    fn test_rure_shortest_match() {
+        // Create a pattern to match
+        let pattern = Regex::new(r"\d+").unwrap();
+
+        // Create a test string
+        let test_string = "abc123def";
+
+        // Call the rure_shortest_match function
+        let mut start = 0 as usize;
+        let mut end = 0 as usize;
+        let result = unsafe {
+            rure_shortest_match(
+                pattern.as_ptr(),
+                test_string.as_ptr(),
+                test_string.len(),
+                &mut start as *mut usize,
+                &mut end as *mut usize,
+            )
+        };
+
+        // Assert that the result is the expected value
+        assert_eq!(start, 3);
+        assert_eq!(end, 6);
+    }
+}
+False
+regex rure 7 39

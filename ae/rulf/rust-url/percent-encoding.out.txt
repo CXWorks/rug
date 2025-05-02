@@ -1,0 +1,237 @@
+-----------------
+percent_encoding/src/lib.rs _static_assert
+deps:{}
+candidates:{}
++_static_assert();
++crate::_static_assert();
++crate::_static_assert();
+-----------------
+percent_encoding/src/lib.rs percent_encode_byte
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++percent_encode_byte(p0);
++crate::percent_encode_byte(p0);
++crate::percent_encode_byte(p0);
+-----------------
+percent_encoding/src/lib.rs percent_encode
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // AsciiSet
++percent_encode(p0, p1);
++crate::percent_encode(p0, p1);
++crate::percent_encode(p0, p1);
+-----------------
+percent_encoding/src/lib.rs utf8_percent_encode
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = & MaybeUninit::uninit().assume_init(); // AsciiSet
++utf8_percent_encode(&p0, p1);
++crate::utf8_percent_encode(&p0, p1);
++crate::utf8_percent_encode(&p0, p1);
+-----------------
+percent_encoding/src/lib.rs percent_decode_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++percent_decode_str(&p0);
++crate::percent_decode_str(&p0);
++crate::percent_decode_str(&p0);
+-----------------
+percent_encoding/src/lib.rs percent_decode
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++percent_decode(p0);
++crate::percent_decode(p0);
++crate::percent_decode(p0);
+-----------------
+percent_encoding/src/lib.rs after_percent_sign
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::slice::Iter<'_, u8>
++after_percent_sign(p0);
++crate::after_percent_sign(p0);
++crate::after_percent_sign(p0);
+-----------------
+percent_encoding/src/lib.rs decode_utf8_lossy
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::borrow::Cow<'_, [u8]>
++decode_utf8_lossy(p0);
++crate::decode_utf8_lossy(p0);
++crate::decode_utf8_lossy(p0);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::contains
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.contains(p1);
++AsciiSet::contains(p0, p1);
++crate::AsciiSet::contains(p0, p1);
++<AsciiSet>::contains(p0, p1);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::should_percent_encode
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.should_percent_encode(p1);
++AsciiSet::should_percent_encode(p0, p1);
++crate::AsciiSet::should_percent_encode(p0, p1);
++<AsciiSet>::should_percent_encode(p0, p1);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::add
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.add(p1);
++AsciiSet::add(p0, p1);
++crate::AsciiSet::add(p0, p1);
++<AsciiSet>::add(p0, p1);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::remove
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.remove(p1);
++AsciiSet::remove(p0, p1);
++crate::AsciiSet::remove(p0, p1);
++<AsciiSet>::remove(p0, p1);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++p0.clone();
++<PercentEncode<'a> as std::clone::Clone>::clone(p0);
++crate::<PercentEncode<'a> as std::clone::Clone>::clone(p0);
++<PercentEncode<'a>>::clone(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++p0.next();
++<PercentEncode<'a> as std::iter::Iterator>::next(p0);
++crate::<PercentEncode<'a> as std::iter::Iterator>::next(p0);
++<PercentEncode<'a>>::next(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::iter::Iterator>::size_hint
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++p0.size_hint();
++<PercentEncode<'a> as std::iter::Iterator>::size_hint(p0);
++crate::<PercentEncode<'a> as std::iter::Iterator>::size_hint(p0);
++<PercentEncode<'a>>::size_hint(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::fmt::Display>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<PercentEncode<'a> as std::fmt::Display>::fmt(p0, p1);
++crate::<PercentEncode<'a> as std::fmt::Display>::fmt(p0, p1);
++<PercentEncode<'a>>::fmt(p0, p1);
+-----------------
+percent_encoding/src/lib.rs <impl std::convert::From<PercentEncode<'a>> for std::borrow::Cow<'a, str>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++<impl std::convert::From<PercentEncode<'a>> for std::borrow::Cow<'a, str>>::from(p0);
++crate::<impl std::convert::From<PercentEncode<'a>> for std::borrow::Cow<'a, str>>::from(p0);
++<std::borrow::Cow<'a, str>>::from(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.clone();
++<PercentDecode<'a> as std::clone::Clone>::clone(p0);
++crate::<PercentDecode<'a> as std::clone::Clone>::clone(p0);
++<PercentDecode<'a>>::clone(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<PercentDecode<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<PercentDecode<'a> as std::fmt::Debug>::fmt(p0, p1);
++<PercentDecode<'a>>::fmt(p0, p1);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.next();
++<PercentDecode<'a> as std::iter::Iterator>::next(p0);
++crate::<PercentDecode<'a> as std::iter::Iterator>::next(p0);
++<PercentDecode<'a>>::next(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::iter::Iterator>::size_hint
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.size_hint();
++<PercentDecode<'a> as std::iter::Iterator>::size_hint(p0);
++crate::<PercentDecode<'a> as std::iter::Iterator>::size_hint(p0);
++<PercentDecode<'a>>::size_hint(p0);
+-----------------
+percent_encoding/src/lib.rs <impl std::convert::From<PercentDecode<'a>> for std::borrow::Cow<'a, [u8]>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++<impl std::convert::From<PercentDecode<'a>> for std::borrow::Cow<'a, [u8]>>::from(p0);
++crate::<impl std::convert::From<PercentDecode<'a>> for std::borrow::Cow<'a, [u8]>>::from(p0);
++<std::borrow::Cow<'a, [u8]>>::from(p0);
+-----------------
+percent_encoding/src/lib.rs PercentDecode::<'a>::if_any
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.if_any();
++PercentDecode::<'a>::if_any(p0);
++crate::PercentDecode::<'a>::if_any(p0);
++<PercentDecode<'a>>::if_any(p0);
+-----------------
+percent_encoding/src/lib.rs PercentDecode::<'a>::decode_utf8
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.decode_utf8();
++PercentDecode::<'a>::decode_utf8(p0);
++crate::PercentDecode::<'a>::decode_utf8(p0);
++<PercentDecode<'a>>::decode_utf8(p0);
+-----------------
+percent_encoding/src/lib.rs PercentDecode::<'a>::decode_utf8_lossy
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.decode_utf8_lossy();
++PercentDecode::<'a>::decode_utf8_lossy(p0);
++crate::PercentDecode::<'a>::decode_utf8_lossy(p0);
++<PercentDecode<'a>>::decode_utf8_lossy(p0);

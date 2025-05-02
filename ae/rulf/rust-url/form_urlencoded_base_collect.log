@@ -1,0 +1,654 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use std::string::String;
+
+    #[test]
+    fn test_as_mut_string() {
+        let mut input: String = String::from("example");
+        let result = input.as_mut_string();
+        assert_eq!(result, &mut input);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::string::String;
+    use crate::Target;
+
+    #[test]
+    fn test_finish() {
+        let mut string = String::new();
+        let result = string.finish();
+
+        // Assert
+        assert_eq!(result, string);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_next() {
+        let mut bytes = [b'h', b'e', b'l', b'l', b'o'];
+        let mut iter = ByteSerialize { bytes: &bytes[..] };
+        assert_eq!(iter.next(), Some("h"));
+        assert_eq!(iter.next(), Some("e"));
+        assert_eq!(iter.next(), Some("l"));
+        assert_eq!(iter.next(), Some("l"));
+        assert_eq!(iter.next(), Some("o"));
+        assert_eq!(iter.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::fmt::Debug;
+    use std::iter::Iterator;
+
+    #[test]
+    fn test_size_hint_empty_bytes() {
+        let bytes: &[u8] = &[];
+        let byte_serialize = ByteSerialize { bytes };
+        let (lower, upper) = byte_serialize.size_hint();
+        assert_eq!(lower, 0);
+        assert_eq!(upper, Some(0));
+    }
+
+    #[test]
+    fn test_size_hint_non_empty_bytes() {
+        let bytes: &[u8] = &[1, 2, 3];
+        let byte_serialize = ByteSerialize { bytes };
+        let (lower, upper) = byte_serialize.size_hint();
+        assert_eq!(lower, 1);
+        assert_eq!(upper, Some(3));
+    }
+
+    fn byte_serialized_unchanged(_byte: u8) -> bool {
+        // Implement byte_serialized_unchanged if necessary
+        // This is a dummy implementation for demonstration purposes
+        true
+    }
+
+    fn percent_encode_byte(_byte: u8) -> &str {
+        // Implement percent_encode_byte if necessary
+        // This is a dummy implementation for demonstration purposes
+        ""
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+
+    fn decode(name: &[u8]) -> Cow<str> {
+        // Implementation of decode function
+    }
+
+    #[test]
+    fn test_next() {
+        let mut input: &[u8] = &[/* input bytes */];
+        let mut parse = Parse { input };
+
+        // Test assertions
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+    
+    #[test]
+    fn test_next() {
+        // Initialize the Parse struct
+        let input: &[u8] = &[ /* input bytes here */ ];
+        let parse = Parse { input };
+        
+        // Initialize the ParseIntoOwned struct
+        let parse_into_owned = parse.into_owned();
+        
+        // Call the next() function
+        let result = parse_into_owned.next();
+        
+        // Assert the result
+        assert_eq!(result, /* expected result */);
+    }    
+}
+True
+========================================
+    use std::string::String;
+    use crate::Target;
+    
+    #[test]
+    fn test_as_mut_string() {
+        let mut s = String::from("hello");
+        let as_mut_string = s.as_mut_string();
+        
+        assert_eq!(as_mut_string, &mut s);
+    }
+}
+True
+========================================
+    use crate::Target;
+
+    #[test]
+    fn test_finish() {
+        let mut string = String::from("test string");
+        let result = string.finish();
+        assert_eq!(result, String::from("test string"));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+    
+    #[test]
+    fn test_into_owned() {
+        let input: &[u8] = b"key1=value1&key2=value2&key3=value3";
+        let parse: Parse = Parse { input };
+        let parse_into_owned: ParseIntoOwned = parse.into_owned();
+        let expected: Vec<(String, String)> = vec![
+            (String::from("key1"), String::from("value1")),
+            (String::from("key2"), String::from("value2")),
+            (String::from("key3"), String::from("value3")),
+        ];
+        let result: Vec<(String, String)> = parse_into_owned.collect();
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    #[should_panic]
+    fn test_append_key_only_panics_after_finish() {
+        let mut serializer = Serializer::new(String::new());
+        serializer.finish();
+        serializer.append_key_only("name");
+    }
+}
+True
+========================================
+    use crate::crate::Serializer;
+
+    #[test]
+    #[should_panic(expected = "url::crate::Serializer double finish")]
+    fn test_append_pair() {
+        let mut target = String::new();
+        let mut serializer = Serializer::new(target);
+        serializer.append_pair("name", "value");
+        serializer.finish();
+        serializer.append_pair("name2", "value2");
+    }
+}
+True
+========================================
+    use crate::crate::Serializer;
+    use crate::crate::Target;
+
+    #[test]
+    fn test_clear() {
+        let mut target = String::new();
+        target.push_str("foo=bar&baz=qux");
+        let mut serializer = Serializer::new(target);
+        
+        serializer.clear();
+        
+        let expected = "";
+        assert_eq!(serializer.finish(), expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::Serializer;
+
+    #[test]
+    fn test_encoding_override() {
+        let mut serializer = Serializer::new(String::new());
+        let encoding_override = EncodingOverride::new();
+        let result = serializer.encoding_override(encoding_override);
+        // Add assertions here
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    struct MockTarget {
+        string: String
+    }
+    
+    impl Target for MockTarget {
+        fn as_mut_string(&mut self) -> &mut String {
+            &mut self.string
+        }
+        
+        fn finish(self) -> Self::Finished {
+            self.string
+        }
+        
+        type Finished = String;
+    }
+    
+    #[test]
+    fn test_extend_keys_only() {
+        let mut serializer = Serializer::new(MockTarget { string: String::new() });
+        serializer.extend_keys_only(vec!["key1", "key2", "key3"]);
+        assert_eq!(serializer.finish(), "key1=&key2=&key3=");
+    }
+}
+True
+========================================
+    use crate::crate::Serializer;
+
+    #[test]
+    fn test_extend_pairs() {
+        let mut serializer = Serializer::new(String::new());
+        serializer.extend_pairs(vec![("name1", "value1"), ("name2", "value2")]);
+
+        let encoded = serializer.finish();
+        assert_eq!(encoded, "name1=value1&name2=value2");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{Target, Serializer};
+
+    fn create_serializer() -> Serializer<String> {
+        Serializer::new(String::new())
+    }
+
+    #[test]
+    fn test_finish() {
+        let encoded: String = create_serializer()
+            .append_pair("foo", "bar & baz")
+            .append_pair("saison", "Été+hiver")
+            .finish();
+        assert_eq!(encoded, "foo=bar+%26+baz&saison=%C3%89t%C3%A9%2Bhiver");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Borrow;
+    use crate::Serializer;
+    
+    #[test]
+    fn test_for_suffix_invalid_length() {
+        let target = String::from("example");
+        let start_position = 8;
+        let result = std::panic::catch_unwind(|| {
+            Serializer::<'_, String>::for_suffix(target, start_position);
+        });
+        assert!(result.is_err());
+    }
+}
+True
+========================================
+    use crate::Serializer;
+
+    #[test]
+    fn test_new() {
+        let target = String::new();
+        let serializer = Serializer::new(target);
+        // Add your assertions here
+    }
+}
+True
+========================================
+    use crate::crate::{append_encoded, encode, EncodingOverride, byte_serialize};
+    use std::string::String;
+    use std::str::FromStr;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_append_encoded() {
+        let mut string = String::new();
+        let s = "Hello World";
+        let encoding: EncodingOverride<'_> = EncodingOverride::No;
+        append_encoded(s, &mut string, encoding);
+        let expected = String::from("Hello%20World");
+        assert_eq!(string, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::Target;
+
+    #[test]
+    fn test_append_key_only() {
+        let mut string: String = String::new();
+        let start_position: usize = 0;
+        let encoding: EncodingOverride = EncodingOverride::Default;
+        let name: &str = "test_name";
+
+        append_key_only(&mut string, start_position, encoding, name);
+
+        let expected_output: String = "test_name".to_string();
+        assert_eq!(string, expected_output);
+    }
+}
+True
+========================================
+    use crate::crate::append_pair;
+    use crate::crate::crate::EncodingOverride;
+    use std::string::String;
+
+    #[test]
+    fn test_append_pair() {
+        let mut string = String::new();
+        let start_position = 0;
+        let encoding = EncodingOverride::UTF8;
+        let name = "name";
+        let value = "value";
+    
+        append_pair(&mut string, start_position, encoding, name, value);
+
+        // Assert the expected string value
+        assert_eq!("name=value", string);
+    }
+}
+True
+========================================
+    use crate::Target;
+
+    #[test]
+    fn test_append_separator_if_needed() {
+        let mut string = String::from("abc");
+        let start_position = 1;
+        crate::append_separator_if_needed(&mut string, start_position);
+        assert_eq!(string, "abc&");
+        
+        let mut string = String::from("xyz");
+        let start_position = 3;
+        crate::append_separator_if_needed(&mut string, start_position);
+        assert_eq!(string, "xyz");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_byte_serialize() {
+        let input = &[97, 98, 99, 32, 100, 101, 102];
+        let expected_output = ["a", "b", "c", "+", "d", "e", "f"];
+
+        let result: Vec<&str> = byte_serialize(input).collect();
+        assert_eq!(result, expected_output);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_byte_serialized_unchanged() {
+        assert_eq!(byte_serialized_unchanged(b'*'), true);
+        assert_eq!(byte_serialized_unchanged(b'-'), true);
+        assert_eq!(byte_serialized_unchanged(b'.'), true);
+        assert_eq!(byte_serialized_unchanged(b'0'), true);
+        assert_eq!(byte_serialized_unchanged(b'9'), true);
+        assert_eq!(byte_serialized_unchanged(b'A'), true);
+        assert_eq!(byte_serialized_unchanged(b'Z'), true);
+        assert_eq!(byte_serialized_unchanged(b'_'), true);
+        assert_eq!(byte_serialized_unchanged(b'a'), true);
+        assert_eq!(byte_serialized_unchanged(b'z'), true);
+        assert_eq!(byte_serialized_unchanged(b'@'), false);
+        assert_eq!(byte_serialized_unchanged(b' '), false);
+        assert_eq!(byte_serialized_unchanged(b'!'), false);
+        assert_eq!(byte_serialized_unchanged(b':'), false);
+    }
+}
+True
+========================================
+    use std::borrow::Cow;
+    use std::str::FromStr;
+    use std::string::ToString;
+    use percent_encoding::percent_decode;
+    use encoding::all::UTF_8;
+    use encoding::{DecoderTrap, EncoderTrap, Encoding};
+    use encoding::all::ASCII;
+    use crate::byte_classes::SOFT_EOF;
+    use crate::byte_classes::SOFTEOF_ENCODED;
+    use crate::byte_classes::NEWLINE_ENCODED;
+    use crate::byte_classes::EFFICIENT_AMP_ENCODED;
+    use crate::byte_classes::EFFICIENT_ASTERISK_ENCODED;
+    use crate::byte_classes::UTF8_ENCODED_FAST_PATH;
+    use crate::byte_classes::UTF8_ALLOW_RANGE;
+    use crate::byte_classes::FORM_URLENCODED_ENCODED;
+    use crate::byte_classes::LEFT_BRACKET_ENCODED;
+    use crate::byte_classes::RIGHT_BRACKET_ENCODED;
+    use crate::byte_classes::LEFT_BRACE_ENCODED;
+    use crate::byte_classes::RIGHT_BRACE_ENCODED;
+    use crate::byte_classes::OG_ENCODED_FAST_PATH;
+    use crate::byte_classes::AMP_ENCODED;
+    use crate::byte_classes::TRACK_SPACE_ENCODED;
+    use crate::byte_classes::TRACK_PLUS_ENCODED;
+    use crate::byte_classes::TRACK_PERCENT_ENCODED;
+    use crate::byte_classes::TRACK_SLASH_ENCODED;
+    use crate::byte_classes::AMP_ENCODED_FAST_PATH;
+    use crate::percent_decode;
+    use crate::replace_plus;
+    use crate::replace_last;
+    use crate::replace_multi;
+    use crate::replace_multi_after_plus;
+    use crate::replace_plus_after_multi;
+    use crate::replace_multi_after_plus_appears;
+    use crate::replace_multi_after_plus_appears_multi;
+    use crate::replace_plus;
+    use crate::trim_buffer;
+    use crate::VALID_UTF8_CHARS;
+    use crate::VALID_UTF8_CONTINUES;
+    use crate::push_buffer;
+    use crate::validate_utf8;
+    use crate::form_urlencoded_slice;
+    use crate::form_urlencoded_tuple;
+
+    #[test]
+    fn test_decode() {
+        let input = "foo=bar%20baz&key=val%201%202%303";
+        assert_eq!(decode(input.as_bytes()), "foo=bar baz&key=val 1 2 3");
+    }
+}
+True
+========================================
+    use crate::decode_utf8_lossy;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_decode_utf8_lossy_borrowed() {
+        let input: Cow<[u8]> = Cow::Borrowed(b"hello");
+        let expected: Cow<str> = Cow::Borrowed("hello");
+        assert_eq!(decode_utf8_lossy(input), expected);
+    }
+
+    #[test]
+    fn test_decode_utf8_lossy_owned_borrowed() {
+        let input: Cow<[u8]> = Cow::Owned(vec![104, 101, 108, 108, 111]);
+        let expected: Cow<str> = Cow::Owned("hello".to_owned());
+        assert_eq!(decode_utf8_lossy(input), expected);
+    }
+
+    #[test]
+    fn test_decode_utf8_lossy_owned_owned() {
+        let input: Cow<[u8]> = Cow::Owned(vec![104, 101, 108, 108, 111, 226, 128, 140]);
+        let expected: Cow<str> = Cow::Owned("hello�".to_owned());
+        assert_eq!(decode_utf8_lossy(input), expected);
+    }
+}
+True
+========================================
+    use crate::crate::encode;
+    use crate::crate::EncodingOverride;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_encode_without_override() {
+        let input = "param1=value1&param2=value2";
+        let expected = input.as_bytes().into();
+
+        let encoding_override: Option<EncodingOverride<'_>> = None;
+        let result = encode(encoding_override, input);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_encode_with_override() {
+        let input = "param1=value1&param2=value2";
+        let expected = input.as_bytes().into();
+
+        let encoding_override: Option<EncodingOverride<'_>> = Some(|input: &str| input.to_uppercase().into_bytes().into());
+        let result = encode(encoding_override, input);
+
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_parse() {
+        // Test case 1
+        let input1 = b"key1=value1&key2=value2";
+        let expected1: Vec<(&str, &str)> = vec![
+            ("key1", "value1"),
+            ("key2", "value2"),
+        ];
+        let result1: Vec<(Cow<str>, Cow<str>)> = parse(&input1).collect();
+        let result1: Vec<(&str, &str)> = result1
+            .iter()
+            .map(|(name, value)| (name.as_ref(), value.as_ref()))
+            .collect();
+        assert_eq!(result1, expected1);
+
+        // Test case 2
+        let input2 = b"key1=value1&key2=value2&key3=value3";
+        let expected2: Vec<(&str, &str)> = vec![
+            ("key1", "value1"),
+            ("key2", "value2"),
+            ("key3", "value3"),
+        ];
+        let result2: Vec<(Cow<str>, Cow<str>)> = parse(&input2).collect();
+        let result2: Vec<(&str, &str)> = result2
+            .iter()
+            .map(|(name, value)| (name.as_ref(), value.as_ref()))
+            .collect();
+        assert_eq!(result2, expected2);
+
+        // Test case 3
+        let input3 = b"key1=value1&key2&key3=value3";
+        let expected3: Vec<(&str, &str)> = vec![
+            ("key1", "value1"),
+            ("key2", ""),
+            ("key3", "value3"),
+        ];
+        let result3: Vec<(Cow<str>, Cow<str>)> = parse(&input3).collect();
+        let result3: Vec<(&str, &str)> = result3
+            .iter()
+            .map(|(name, value)| (name.as_ref(), value.as_ref()))
+            .collect();
+        assert_eq!(result3, expected3);
+    }
+}
+True
+========================================
+    use std::borrow::Cow;
+    
+    use crate::replace_plus;
+    
+    #[test]
+    fn test_replace_plus() {
+        // Test input without '+'
+        assert_eq!(replace_plus(b"hello world"), Cow::Borrowed(b"hello world"));
+        
+        // Test input with single '+'
+        assert_eq!(replace_plus(b"hello+world"), Cow::Borrowed(b"hello world"));
+        
+        // Test input with multiple '+'
+        assert_eq!(replace_plus(b"hello++world"), Cow::Borrowed(b"hello  world"));
+        
+        // Test input with '+' at the beginning
+        assert_eq!(replace_plus(b"+hello+world"), Cow::Borrowed(b" hello world"));
+        
+        // Test input with '+' at the end
+        assert_eq!(replace_plus(b"hello+world+"), Cow::Borrowed(b"hello world "));
+        
+        // Test input with '+' at both the beginning and end
+        assert_eq!(replace_plus(b"+hello+world+"), Cow::Borrowed(b" hello world "));
+        
+        // Test input with '+' in the middle
+        assert_eq!(replace_plus(b"hello+my+name+is"), Cow::Borrowed(b"hello my name is"));
+        
+        // Test input with empty string
+        assert_eq!(replace_plus(b""), Cow::Borrowed(b""));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    struct MockTarget(String);
+    
+    impl Target for MockTarget {
+        fn as_mut_string(&mut self) -> &mut String {
+            &mut self.0
+        }
+        fn finish(self) -> Self::Finished {
+            self
+        }
+        
+        type Finished = Self;
+    }
+    
+    #[test]
+    fn test_string() {
+        let mut target = MockTarget(String::new());
+        let result = string(&mut Some(&mut target));    
+        assert_eq!(result, &mut String::new());
+    }
+}
+True
+rust-url form_urlencoded 30 30

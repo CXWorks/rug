@@ -1,0 +1,10 @@
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/handles.rs tests_rug_173
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/handles.rs tests_rug_189
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/handles.rs tests_rug_272
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/handles.rs tests_rug_275
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/single_byte.rs tests_rug_458
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/single_byte.rs tests_rug_459
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/single_byte.rs tests_rug_468
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/ascii.rs tests_rug_82
+err encoding_rs1 /mnt/sda/xiang/syrust/syrust/encoding_rs1/./src/ascii.rs tests_rug_83
+encoding_rs . 306 315 0

@@ -1,0 +1,260 @@
+-----------------
+gost94/src/gost94_core.rs gost94_core::sbox
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = & [[0u8;1];1]; // None+[[u8; 16]; 8]
++gost94_core::sbox(p0, p1);
++crate::gost94_core::sbox(p0, p1);
++crate::gost94_core::sbox(p0, p1);
+-----------------
+gost94/src/gost94_core.rs gost94_core::g
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = & [[0u8;1];1]; // None+[[u8; 16]; 8]
++gost94_core::g(p0, p1, p2);
++crate::gost94_core::g(p0, p1, p2);
++crate::gost94_core::g(p0, p1, p2);
+-----------------
+gost94/src/gost94_core.rs gost94_core::encrypt
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+[u8]
+let mut p1 = [0u8;1]; // None+[u8; 32]
+let mut p2 = & [[0u8;1];1]; // None+[[u8; 16]; 8]
++gost94_core::encrypt(p0, p1, p2);
++crate::gost94_core::encrypt(p0, p1, p2);
++crate::gost94_core::encrypt(p0, p1, p2);
+-----------------
+gost94/src/gost94_core.rs gost94_core::x
+deps:{}
+candidates:{}
+let mut p0 = & [0u8;1]; // None+[u8; 32]
+let mut p1 = & [0u8;1]; // None+[u8; 32]
++gost94_core::x(p0, p1);
++crate::gost94_core::x(p0, p1);
++crate::gost94_core::x(p0, p1);
+-----------------
+gost94/src/gost94_core.rs gost94_core::x_mut
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; 32]
+let mut p1 = & [0u8;1]; // None+[u8; 32]
++gost94_core::x_mut(p0, p1);
++crate::gost94_core::x_mut(p0, p1);
++crate::gost94_core::x_mut(p0, p1);
+-----------------
+gost94/src/gost94_core.rs gost94_core::a
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 32]
++gost94_core::a(p0);
++crate::gost94_core::a(p0);
++crate::gost94_core::a(p0);
+-----------------
+gost94/src/gost94_core.rs gost94_core::p
+deps:{}
+candidates:{}
+let mut p0 = [0u8;1]; // None+[u8; 32]
++gost94_core::p(p0);
++crate::gost94_core::p(p0);
++crate::gost94_core::p(p0);
+-----------------
+gost94/src/gost94_core.rs gost94_core::psi
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8;1]; // None+[u8; 32]
++gost94_core::psi(p0);
++crate::gost94_core::psi(p0);
++crate::gost94_core::psi(p0);
+-----------------
+gost94/src/gost94_core.rs gost94_core::adc
+deps:{}
+candidates:{}
+let mut p0 = &mut 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
+let mut p2 = &mut 0u64; // None+u64
++gost94_core::adc(p0, p1, p2);
++crate::gost94_core::adc(p0, p1, p2);
++crate::gost94_core::adc(p0, p1, p2);
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as core::clone::Clone>::clone
+deps:{"<gost94_core::Gost94Core<P> as core::clone::Clone>::clone":{"P":["core::marker::Sized","core::clone::Clone","params::Gost94Params"]}}
+candidates:{"<gost94_core::Gost94Core<P> as core::clone::Clone>::clone":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
++p0.clone();
++<gost94_core::Gost94Core<P> as core::clone::Clone>::clone(p0);
++crate::<gost94_core::Gost94Core<P> as core::clone::Clone>::clone(p0);
++<gost94_core::Gost94Core<P>>::clone(p0);
+-----------------
+gost94/src/gost94_core.rs gost94_core::Gost94Core::<P>::shuffle
+deps:{"gost94_core::Gost94Core::<P>::shuffle":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"gost94_core::Gost94Core::<P>::shuffle":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = & [0u8;1]; // None+[u8; 32]
+let mut p2 = & [0u8;1]; // None+[u8; 32]
++p0.shuffle(p1, p2);
++gost94_core::Gost94Core::<P>::shuffle(p0, p1, p2);
++crate::gost94_core::Gost94Core::<P>::shuffle(p0, p1, p2);
++<gost94_core::Gost94Core<P>>::shuffle(p0, p1, p2);
+-----------------
+gost94/src/gost94_core.rs gost94_core::Gost94Core::<P>::f
+deps:{"gost94_core::Gost94Core::<P>::f":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"gost94_core::Gost94Core::<P>::f":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = & [0u8;1]; // None+[u8; 32]
++p0.f(p1);
++gost94_core::Gost94Core::<P>::f(p0, p1);
++crate::gost94_core::Gost94Core::<P>::f(p0, p1);
++<gost94_core::Gost94Core<P>>::f(p0, p1);
+-----------------
+gost94/src/gost94_core.rs gost94_core::Gost94Core::<P>::update_sigma
+deps:{"gost94_core::Gost94Core::<P>::update_sigma":{"P":["core::marker::Sized","params::Gost94Params"]}}
+candidates:{"gost94_core::Gost94Core::<P>::update_sigma":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = & [0u8;1]; // None+[u8; 32]
++p0.update_sigma(p1);
++gost94_core::Gost94Core::<P>::update_sigma(p0, p1);
++crate::gost94_core::Gost94Core::<P>::update_sigma(p0, p1);
++<gost94_core::Gost94Core<P>>::update_sigma(p0, p1);
+-----------------
+gost94/src/gost94_core.rs gost94_core::Gost94Core::<P>::update_n
+deps:{"gost94_core::Gost94Core::<P>::update_n":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"gost94_core::Gost94Core::<P>::update_n":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = 0usize; // None+usize
++p0.update_n(p1);
++gost94_core::Gost94Core::<P>::update_n(p0, p1);
++crate::gost94_core::Gost94Core::<P>::update_n(p0, p1);
++<gost94_core::Gost94Core<P>>::update_n(p0, p1);
+-----------------
+gost94/src/gost94_core.rs gost94_core::Gost94Core::<P>::compress
+deps:{"gost94_core::Gost94Core::<P>::compress":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"gost94_core::Gost94Core::<P>::compress":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = & [0u8;1]; // None+[u8; 32]
++p0.compress(p1);
++gost94_core::Gost94Core::<P>::compress(p0, p1);
++crate::gost94_core::Gost94Core::<P>::compress(p0, p1);
++<gost94_core::Gost94Core<P>>::compress(p0, p1);
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as digest::core_api::UpdateCore>::update_blocks
+deps:{"<gost94_core::Gost94Core<P> as digest::core_api::UpdateCore>::update_blocks":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"<gost94_core::Gost94Core<P> as digest::core_api::UpdateCore>::update_blocks":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <gost94_core::Gost94Core<P> as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<gost94_core::Gost94Core<P> as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<gost94_core::Gost94Core<P> as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<gost94_core::Gost94Core<P>>::update_blocks(p0, p1);
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{"<gost94_core::Gost94Core<P> as digest::core_api::FixedOutputCore>::finalize_fixed_core":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"<gost94_core::Gost94Core<P> as digest::core_api::FixedOutputCore>::finalize_fixed_core":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<gost94_core::Gost94Core<P> as digest::core_api::BlockSizeUser>::BlockSize, <gost94_core::Gost94Core<P> as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <gost94_core::Gost94Core<P> as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<gost94_core::Gost94Core<P> as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<gost94_core::Gost94Core<P> as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<gost94_core::Gost94Core<P>>::finalize_fixed_core(p0, p1, p2);
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as core::default::Default>::default
+deps:{"<gost94_core::Gost94Core<P> as core::default::Default>::default":{"P":["core::marker::Sized","params::Gost94Params"]}}
+candidates:{"<gost94_core::Gost94Core<P> as core::default::Default>::default":{}}
++<gost94_core::Gost94Core<P> as core::default::Default>::default();
++crate::<gost94_core::Gost94Core<P> as core::default::Default>::default();
++<gost94_core::Gost94Core<P>>::default();
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as digest::Reset>::reset
+deps:{"<gost94_core::Gost94Core<P> as digest::Reset>::reset":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"<gost94_core::Gost94Core<P> as digest::Reset>::reset":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
++p0.reset();
++<gost94_core::Gost94Core<P> as digest::Reset>::reset(p0);
++crate::<gost94_core::Gost94Core<P> as digest::Reset>::reset(p0);
++<gost94_core::Gost94Core<P>>::reset(p0);
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as digest::core_api::AlgorithmName>::write_alg_name
+deps:{"<gost94_core::Gost94Core<P> as digest::core_api::AlgorithmName>::write_alg_name":{"P":["params::Gost94Params","core::marker::Sized"]}}
+candidates:{"<gost94_core::Gost94Core<P> as digest::core_api::AlgorithmName>::write_alg_name":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<gost94_core::Gost94Core<P> as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<gost94_core::Gost94Core<P> as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<gost94_core::Gost94Core<P>>::write_alg_name(p0);
+-----------------
+gost94/src/gost94_core.rs <gost94_core::Gost94Core<P> as core::fmt::Debug>::fmt
+deps:{"<gost94_core::Gost94Core<P> as core::fmt::Debug>::fmt":{"P":["core::marker::Sized","params::Gost94Params"]}}
+candidates:{"<gost94_core::Gost94Core<P> as core::fmt::Debug>::fmt":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gost94_core::Gost94Core<P>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<gost94_core::Gost94Core<P> as core::fmt::Debug>::fmt(p0, p1);
++crate::<gost94_core::Gost94Core<P> as core::fmt::Debug>::fmt(p0, p1);
++<gost94_core::Gost94Core<P>>::fmt(p0, p1);
+-----------------
+gost94/src/params.rs <params::CryptoProParam as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // params::CryptoProParam
++p0.clone();
++<params::CryptoProParam as core::clone::Clone>::clone(p0);
++crate::<params::CryptoProParam as core::clone::Clone>::clone(p0);
++<params::CryptoProParam>::clone(p0);
+-----------------
+gost94/src/params.rs <params::CryptoProParam as core::default::Default>::default
+deps:{}
+candidates:{}
++<params::CryptoProParam as core::default::Default>::default();
++crate::<params::CryptoProParam as core::default::Default>::default();
++<params::CryptoProParam>::default();
+-----------------
+gost94/src/params.rs <params::S2015Param as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // params::S2015Param
++p0.clone();
++<params::S2015Param as core::clone::Clone>::clone(p0);
++crate::<params::S2015Param as core::clone::Clone>::clone(p0);
++<params::S2015Param>::clone(p0);
+-----------------
+gost94/src/params.rs <params::S2015Param as core::default::Default>::default
+deps:{}
+candidates:{}
++<params::S2015Param as core::default::Default>::default();
++crate::<params::S2015Param as core::default::Default>::default();
++<params::S2015Param>::default();
+-----------------
+gost94/src/params.rs <params::TestParam as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // params::TestParam
++p0.clone();
++<params::TestParam as core::clone::Clone>::clone(p0);
++crate::<params::TestParam as core::clone::Clone>::clone(p0);
++<params::TestParam>::clone(p0);
+-----------------
+gost94/src/params.rs <params::TestParam as core::default::Default>::default
+deps:{}
+candidates:{}
++<params::TestParam as core::default::Default>::default();
++crate::<params::TestParam as core::default::Default>::default();
++<params::TestParam>::default();
+-----------------
+gost94/src/params.rs <params::GOST28147UAParam as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // params::GOST28147UAParam
++p0.clone();
++<params::GOST28147UAParam as core::clone::Clone>::clone(p0);
++crate::<params::GOST28147UAParam as core::clone::Clone>::clone(p0);
++<params::GOST28147UAParam>::clone(p0);
+-----------------
+gost94/src/params.rs <params::GOST28147UAParam as core::default::Default>::default
+deps:{}
+candidates:{}
++<params::GOST28147UAParam as core::default::Default>::default();
++crate::<params::GOST28147UAParam as core::default::Default>::default();
++<params::GOST28147UAParam>::default();

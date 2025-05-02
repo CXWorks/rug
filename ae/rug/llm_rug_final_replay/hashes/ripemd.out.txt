@@ -1,0 +1,312 @@
+-----------------
+ripemd/src/c128.rs c128::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++c128::compress(p0, p1);
++crate::c128::compress(p0, p1);
++crate::c128::compress(p0, p1);
+-----------------
+ripemd/src/c160.rs c160::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++c160::compress(p0, p1);
++crate::c160::compress(p0, p1);
++crate::c160::compress(p0, p1);
+-----------------
+ripemd/src/c256.rs c256::swap_idx
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = &mut [0u32;1]; // None+[u32; _]
+let mut p2 = 0usize; // None+usize
++c256::swap_idx(p0, p1, p2);
++crate::c256::swap_idx(p0, p1, p2);
++crate::c256::swap_idx(p0, p1, p2);
+-----------------
+ripemd/src/c256.rs c256::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++c256::compress(p0, p1);
++crate::c256::compress(p0, p1);
++crate::c256::compress(p0, p1);
+-----------------
+ripemd/src/c320.rs c320::swap_idx
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = &mut [0u32;1]; // None+[u32; _]
+let mut p2 = 0usize; // None+usize
++c320::swap_idx(p0, p1, p2);
++crate::c320::swap_idx(p0, p1, p2);
++crate::c320::swap_idx(p0, p1, p2);
+-----------------
+ripemd/src/c320.rs c320::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++c320::compress(p0, p1);
++crate::c320::compress(p0, p1);
++crate::c320::compress(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd128Core
++p0.clone();
++<Ripemd128Core as core::clone::Clone>::clone(p0);
++crate::<Ripemd128Core as core::clone::Clone>::clone(p0);
++<Ripemd128Core>::clone(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd128Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Ripemd128Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Ripemd128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Ripemd128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Ripemd128Core>::update_blocks(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Ripemd128Core as digest::core_api::BlockSizeUser>::BlockSize, <Ripemd128Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Ripemd128Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Ripemd128Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Ripemd128Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Ripemd128Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Ripemd128Core as core::default::Default>::default();
++crate::<Ripemd128Core as core::default::Default>::default();
++<Ripemd128Core>::default();
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd128Core
++p0.reset();
++<Ripemd128Core as digest::Reset>::reset(p0);
++crate::<Ripemd128Core as digest::Reset>::reset(p0);
++<Ripemd128Core>::reset(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Ripemd128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Ripemd128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Ripemd128Core>::write_alg_name(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd128Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Ripemd128Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Ripemd128Core as core::fmt::Debug>::fmt(p0, p1);
++<Ripemd128Core>::fmt(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd160Core
++p0.clone();
++<Ripemd160Core as core::clone::Clone>::clone(p0);
++crate::<Ripemd160Core as core::clone::Clone>::clone(p0);
++<Ripemd160Core>::clone(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd160Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Ripemd160Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Ripemd160Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Ripemd160Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Ripemd160Core>::update_blocks(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd160Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Ripemd160Core as digest::core_api::BlockSizeUser>::BlockSize, <Ripemd160Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Ripemd160Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Ripemd160Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Ripemd160Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Ripemd160Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Ripemd160Core as core::default::Default>::default();
++crate::<Ripemd160Core as core::default::Default>::default();
++<Ripemd160Core>::default();
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd160Core
++p0.reset();
++<Ripemd160Core as digest::Reset>::reset(p0);
++crate::<Ripemd160Core as digest::Reset>::reset(p0);
++<Ripemd160Core>::reset(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Ripemd160Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Ripemd160Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Ripemd160Core>::write_alg_name(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd160Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd160Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Ripemd160Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Ripemd160Core as core::fmt::Debug>::fmt(p0, p1);
++<Ripemd160Core>::fmt(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd256Core
++p0.clone();
++<Ripemd256Core as core::clone::Clone>::clone(p0);
++crate::<Ripemd256Core as core::clone::Clone>::clone(p0);
++<Ripemd256Core>::clone(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Ripemd256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Ripemd256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Ripemd256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Ripemd256Core>::update_blocks(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Ripemd256Core as digest::core_api::BlockSizeUser>::BlockSize, <Ripemd256Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Ripemd256Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Ripemd256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Ripemd256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Ripemd256Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Ripemd256Core as core::default::Default>::default();
++crate::<Ripemd256Core as core::default::Default>::default();
++<Ripemd256Core>::default();
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd256Core
++p0.reset();
++<Ripemd256Core as digest::Reset>::reset(p0);
++crate::<Ripemd256Core as digest::Reset>::reset(p0);
++<Ripemd256Core>::reset(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Ripemd256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Ripemd256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Ripemd256Core>::write_alg_name(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd256Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Ripemd256Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Ripemd256Core as core::fmt::Debug>::fmt(p0, p1);
++<Ripemd256Core>::fmt(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd320Core
++p0.clone();
++<Ripemd320Core as core::clone::Clone>::clone(p0);
++crate::<Ripemd320Core as core::clone::Clone>::clone(p0);
++<Ripemd320Core>::clone(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd320Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Ripemd320Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Ripemd320Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Ripemd320Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Ripemd320Core>::update_blocks(p0, p1);
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd320Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Ripemd320Core as digest::core_api::BlockSizeUser>::BlockSize, <Ripemd320Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Ripemd320Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Ripemd320Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Ripemd320Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Ripemd320Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Ripemd320Core as core::default::Default>::default();
++crate::<Ripemd320Core as core::default::Default>::default();
++<Ripemd320Core>::default();
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ripemd320Core
++p0.reset();
++<Ripemd320Core as digest::Reset>::reset(p0);
++crate::<Ripemd320Core as digest::Reset>::reset(p0);
++<Ripemd320Core>::reset(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Ripemd320Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Ripemd320Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Ripemd320Core>::write_alg_name(p0);
+-----------------
+ripemd/src/lib.rs <Ripemd320Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ripemd320Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Ripemd320Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Ripemd320Core as core::fmt::Debug>::fmt(p0, p1);
++<Ripemd320Core>::fmt(p0, p1);

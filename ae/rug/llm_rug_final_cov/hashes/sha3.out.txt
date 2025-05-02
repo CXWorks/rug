@@ -1,0 +1,1143 @@
+-----------------
+sha3/src/lib.rs left_encode
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = &mut [0u8;1]; // None+[u8; 9]
++left_encode(p0, p1);
++crate::left_encode(p0, p1);
++crate::left_encode(p0, p1);
+-----------------
+sha3/src/state.rs <state::Sha3State as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // state::Sha3State
++p0.clone();
++<state::Sha3State as std::clone::Clone>::clone(p0);
++crate::<state::Sha3State as std::clone::Clone>::clone(p0);
++<state::Sha3State>::clone(p0);
+-----------------
+sha3/src/state.rs <state::Sha3State as std::default::Default>::default
+deps:{}
+candidates:{}
++<state::Sha3State as std::default::Default>::default();
++crate::<state::Sha3State as std::default::Default>::default();
++<state::Sha3State>::default();
+-----------------
+sha3/src/state.rs state::Sha3State::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++state::Sha3State::new(p0);
++crate::state::Sha3State::new(p0);
++<state::Sha3State>::new(p0);
+-----------------
+sha3/src/state.rs state::Sha3State::absorb_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // state::Sha3State
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.absorb_block(p1);
++state::Sha3State::absorb_block(p0, p1);
++crate::state::Sha3State::absorb_block(p0, p1);
++<state::Sha3State>::absorb_block(p0, p1);
+-----------------
+sha3/src/state.rs state::Sha3State::as_bytes
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // state::Sha3State
+let mut p1 = &mut [0u8].as_mut_slice(); // None+[u8]
++p0.as_bytes(p1);
++state::Sha3State::as_bytes(p0, p1);
++crate::state::Sha3State::as_bytes(p0, p1);
++<state::Sha3State>::as_bytes(p0, p1);
+-----------------
+sha3/src/state.rs state::Sha3State::permute
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // state::Sha3State
++p0.permute();
++state::Sha3State::permute(p0);
++crate::state::Sha3State::permute(p0);
++<state::Sha3State>::permute(p0);
+-----------------
+sha3/src/macros.rs <Keccak224Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak224Core
++p0.clone();
++<Keccak224Core as std::clone::Clone>::clone(p0);
++crate::<Keccak224Core as std::clone::Clone>::clone(p0);
++<Keccak224Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Keccak224Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak224Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Keccak224Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Keccak224Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Keccak224Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Keccak224Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak224Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Keccak224Core as digest::core_api::BlockSizeUser>::BlockSize, <Keccak224Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Keccak224Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Keccak224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Keccak224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Keccak224Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Keccak224Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Keccak224Core as std::default::Default>::default();
++crate::<Keccak224Core as std::default::Default>::default();
++<Keccak224Core>::default();
+-----------------
+sha3/src/macros.rs <Keccak224Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak224Core
++p0.reset();
++<Keccak224Core as digest::Reset>::reset(p0);
++crate::<Keccak224Core as digest::Reset>::reset(p0);
++<Keccak224Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Keccak224Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Keccak224Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Keccak224Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Keccak224Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Keccak224Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak224Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Keccak224Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Keccak224Core as std::fmt::Debug>::fmt(p0, p1);
++<Keccak224Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak256Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak256Core
++p0.clone();
++<Keccak256Core as std::clone::Clone>::clone(p0);
++crate::<Keccak256Core as std::clone::Clone>::clone(p0);
++<Keccak256Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Keccak256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Keccak256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Keccak256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Keccak256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Keccak256Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Keccak256Core as digest::core_api::BlockSizeUser>::BlockSize, <Keccak256Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Keccak256Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Keccak256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Keccak256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Keccak256Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Keccak256Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Keccak256Core as std::default::Default>::default();
++crate::<Keccak256Core as std::default::Default>::default();
++<Keccak256Core>::default();
+-----------------
+sha3/src/macros.rs <Keccak256Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak256Core
++p0.reset();
++<Keccak256Core as digest::Reset>::reset(p0);
++crate::<Keccak256Core as digest::Reset>::reset(p0);
++<Keccak256Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Keccak256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Keccak256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Keccak256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Keccak256Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Keccak256Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Keccak256Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Keccak256Core as std::fmt::Debug>::fmt(p0, p1);
++<Keccak256Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak384Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak384Core
++p0.clone();
++<Keccak384Core as std::clone::Clone>::clone(p0);
++crate::<Keccak384Core as std::clone::Clone>::clone(p0);
++<Keccak384Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Keccak384Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak384Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Keccak384Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Keccak384Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Keccak384Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Keccak384Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak384Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Keccak384Core as digest::core_api::BlockSizeUser>::BlockSize, <Keccak384Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Keccak384Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Keccak384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Keccak384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Keccak384Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Keccak384Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Keccak384Core as std::default::Default>::default();
++crate::<Keccak384Core as std::default::Default>::default();
++<Keccak384Core>::default();
+-----------------
+sha3/src/macros.rs <Keccak384Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak384Core
++p0.reset();
++<Keccak384Core as digest::Reset>::reset(p0);
++crate::<Keccak384Core as digest::Reset>::reset(p0);
++<Keccak384Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Keccak384Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Keccak384Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Keccak384Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Keccak384Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Keccak384Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak384Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Keccak384Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Keccak384Core as std::fmt::Debug>::fmt(p0, p1);
++<Keccak384Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak512Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak512Core
++p0.clone();
++<Keccak512Core as std::clone::Clone>::clone(p0);
++crate::<Keccak512Core as std::clone::Clone>::clone(p0);
++<Keccak512Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Keccak512Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak512Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Keccak512Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Keccak512Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Keccak512Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Keccak512Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak512Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Keccak512Core as digest::core_api::BlockSizeUser>::BlockSize, <Keccak512Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Keccak512Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Keccak512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Keccak512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Keccak512Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Keccak512Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Keccak512Core as std::default::Default>::default();
++crate::<Keccak512Core as std::default::Default>::default();
++<Keccak512Core>::default();
+-----------------
+sha3/src/macros.rs <Keccak512Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak512Core
++p0.reset();
++<Keccak512Core as digest::Reset>::reset(p0);
++crate::<Keccak512Core as digest::Reset>::reset(p0);
++<Keccak512Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Keccak512Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Keccak512Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Keccak512Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Keccak512Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Keccak512Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak512Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Keccak512Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Keccak512Core as std::fmt::Debug>::fmt(p0, p1);
++<Keccak512Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak256FullCore
++p0.clone();
++<Keccak256FullCore as std::clone::Clone>::clone(p0);
++crate::<Keccak256FullCore as std::clone::Clone>::clone(p0);
++<Keccak256FullCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak256FullCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Keccak256FullCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Keccak256FullCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Keccak256FullCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Keccak256FullCore>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak256FullCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Keccak256FullCore as digest::core_api::BlockSizeUser>::BlockSize, <Keccak256FullCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Keccak256FullCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Keccak256FullCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Keccak256FullCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Keccak256FullCore>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as std::default::Default>::default
+deps:{}
+candidates:{}
++<Keccak256FullCore as std::default::Default>::default();
++crate::<Keccak256FullCore as std::default::Default>::default();
++<Keccak256FullCore>::default();
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Keccak256FullCore
++p0.reset();
++<Keccak256FullCore as digest::Reset>::reset(p0);
++crate::<Keccak256FullCore as digest::Reset>::reset(p0);
++<Keccak256FullCore>::reset(p0);
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Keccak256FullCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Keccak256FullCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Keccak256FullCore>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Keccak256FullCore as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Keccak256FullCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Keccak256FullCore as std::fmt::Debug>::fmt(p0, p1);
++crate::<Keccak256FullCore as std::fmt::Debug>::fmt(p0, p1);
++<Keccak256FullCore>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_224Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_224Core
++p0.clone();
++<Sha3_224Core as std::clone::Clone>::clone(p0);
++crate::<Sha3_224Core as std::clone::Clone>::clone(p0);
++<Sha3_224Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Sha3_224Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_224Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sha3_224Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Sha3_224Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Sha3_224Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Sha3_224Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_224Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Sha3_224Core as digest::core_api::BlockSizeUser>::BlockSize, <Sha3_224Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Sha3_224Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Sha3_224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Sha3_224Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Sha3_224Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Sha3_224Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Sha3_224Core as std::default::Default>::default();
++crate::<Sha3_224Core as std::default::Default>::default();
++<Sha3_224Core>::default();
+-----------------
+sha3/src/macros.rs <Sha3_224Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_224Core
++p0.reset();
++<Sha3_224Core as digest::Reset>::reset(p0);
++crate::<Sha3_224Core as digest::Reset>::reset(p0);
++<Sha3_224Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Sha3_224Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Sha3_224Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Sha3_224Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Sha3_224Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Sha3_224Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_224Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sha3_224Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sha3_224Core as std::fmt::Debug>::fmt(p0, p1);
++<Sha3_224Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_256Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_256Core
++p0.clone();
++<Sha3_256Core as std::clone::Clone>::clone(p0);
++crate::<Sha3_256Core as std::clone::Clone>::clone(p0);
++<Sha3_256Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Sha3_256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sha3_256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Sha3_256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Sha3_256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Sha3_256Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Sha3_256Core as digest::core_api::BlockSizeUser>::BlockSize, <Sha3_256Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Sha3_256Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Sha3_256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Sha3_256Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Sha3_256Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Sha3_256Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Sha3_256Core as std::default::Default>::default();
++crate::<Sha3_256Core as std::default::Default>::default();
++<Sha3_256Core>::default();
+-----------------
+sha3/src/macros.rs <Sha3_256Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_256Core
++p0.reset();
++<Sha3_256Core as digest::Reset>::reset(p0);
++crate::<Sha3_256Core as digest::Reset>::reset(p0);
++<Sha3_256Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Sha3_256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Sha3_256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Sha3_256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Sha3_256Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Sha3_256Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sha3_256Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sha3_256Core as std::fmt::Debug>::fmt(p0, p1);
++<Sha3_256Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_384Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_384Core
++p0.clone();
++<Sha3_384Core as std::clone::Clone>::clone(p0);
++crate::<Sha3_384Core as std::clone::Clone>::clone(p0);
++<Sha3_384Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Sha3_384Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_384Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sha3_384Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Sha3_384Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Sha3_384Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Sha3_384Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_384Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Sha3_384Core as digest::core_api::BlockSizeUser>::BlockSize, <Sha3_384Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Sha3_384Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Sha3_384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Sha3_384Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Sha3_384Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Sha3_384Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Sha3_384Core as std::default::Default>::default();
++crate::<Sha3_384Core as std::default::Default>::default();
++<Sha3_384Core>::default();
+-----------------
+sha3/src/macros.rs <Sha3_384Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_384Core
++p0.reset();
++<Sha3_384Core as digest::Reset>::reset(p0);
++crate::<Sha3_384Core as digest::Reset>::reset(p0);
++<Sha3_384Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Sha3_384Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Sha3_384Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Sha3_384Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Sha3_384Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Sha3_384Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_384Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sha3_384Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sha3_384Core as std::fmt::Debug>::fmt(p0, p1);
++<Sha3_384Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_512Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_512Core
++p0.clone();
++<Sha3_512Core as std::clone::Clone>::clone(p0);
++crate::<Sha3_512Core as std::clone::Clone>::clone(p0);
++<Sha3_512Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Sha3_512Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_512Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sha3_512Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Sha3_512Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Sha3_512Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Sha3_512Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Sha3_512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_512Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Sha3_512Core as digest::core_api::BlockSizeUser>::BlockSize, <Sha3_512Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Sha3_512Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Sha3_512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Sha3_512Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Sha3_512Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sha3/src/macros.rs <Sha3_512Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Sha3_512Core as std::default::Default>::default();
++crate::<Sha3_512Core as std::default::Default>::default();
++<Sha3_512Core>::default();
+-----------------
+sha3/src/macros.rs <Sha3_512Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sha3_512Core
++p0.reset();
++<Sha3_512Core as digest::Reset>::reset(p0);
++crate::<Sha3_512Core as digest::Reset>::reset(p0);
++<Sha3_512Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Sha3_512Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Sha3_512Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Sha3_512Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Sha3_512Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Sha3_512Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sha3_512Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sha3_512Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sha3_512Core as std::fmt::Debug>::fmt(p0, p1);
++<Sha3_512Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake128Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Shake128Core
++p0.clone();
++<Shake128Core as std::clone::Clone>::clone(p0);
++crate::<Shake128Core as std::clone::Clone>::clone(p0);
++<Shake128Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Shake128Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake128Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Shake128Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Shake128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Shake128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Shake128Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Shake128Core as digest::core_api::BlockSizeUser>::BlockSize, <Shake128Core as digest::core_api::BufferKindUser>::BufferKind>
++p0.finalize_xof_core(p1);
++<Shake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++crate::<Shake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++<Shake128Core>::finalize_xof_core(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake128Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Shake128Core as std::default::Default>::default();
++crate::<Shake128Core as std::default::Default>::default();
++<Shake128Core>::default();
+-----------------
+sha3/src/macros.rs <Shake128Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake128Core
++p0.reset();
++<Shake128Core as digest::Reset>::reset(p0);
++crate::<Shake128Core as digest::Reset>::reset(p0);
++<Shake128Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Shake128Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Shake128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Shake128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Shake128Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Shake128Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Shake128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Shake128Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Shake128Core as std::fmt::Debug>::fmt(p0, p1);
++<Shake128Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake128ReaderCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Shake128ReaderCore
++p0.clone();
++<Shake128ReaderCore as std::clone::Clone>::clone(p0);
++crate::<Shake128ReaderCore as std::clone::Clone>::clone(p0);
++<Shake128ReaderCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <Shake128ReaderCore as digest::core_api::XofReaderCore>::read_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake128ReaderCore
++p0.read_block();
++<Shake128ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++crate::<Shake128ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++<Shake128ReaderCore>::read_block(p0);
+-----------------
+sha3/src/macros.rs <Shake256Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Shake256Core
++p0.clone();
++<Shake256Core as std::clone::Clone>::clone(p0);
++crate::<Shake256Core as std::clone::Clone>::clone(p0);
++<Shake256Core>::clone(p0);
+-----------------
+sha3/src/macros.rs <Shake256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Shake256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Shake256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Shake256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Shake256Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Shake256Core as digest::core_api::BlockSizeUser>::BlockSize, <Shake256Core as digest::core_api::BufferKindUser>::BufferKind>
++p0.finalize_xof_core(p1);
++<Shake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++crate::<Shake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++<Shake256Core>::finalize_xof_core(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake256Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Shake256Core as std::default::Default>::default();
++crate::<Shake256Core as std::default::Default>::default();
++<Shake256Core>::default();
+-----------------
+sha3/src/macros.rs <Shake256Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake256Core
++p0.reset();
++<Shake256Core as digest::Reset>::reset(p0);
++crate::<Shake256Core as digest::Reset>::reset(p0);
++<Shake256Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <Shake256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Shake256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Shake256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Shake256Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <Shake256Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Shake256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Shake256Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Shake256Core as std::fmt::Debug>::fmt(p0, p1);
++<Shake256Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <Shake256ReaderCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Shake256ReaderCore
++p0.clone();
++<Shake256ReaderCore as std::clone::Clone>::clone(p0);
++crate::<Shake256ReaderCore as std::clone::Clone>::clone(p0);
++<Shake256ReaderCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <Shake256ReaderCore as digest::core_api::XofReaderCore>::read_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Shake256ReaderCore
++p0.read_block();
++<Shake256ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++crate::<Shake256ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++<Shake256ReaderCore>::read_block(p0);
+-----------------
+sha3/src/macros.rs <TurboShake128Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TurboShake128Core
++p0.clone();
++<TurboShake128Core as std::clone::Clone>::clone(p0);
++crate::<TurboShake128Core as std::clone::Clone>::clone(p0);
++<TurboShake128Core>::clone(p0);
+-----------------
+sha3/src/macros.rs TurboShake128Core::new
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++TurboShake128Core::new(p0);
++crate::TurboShake128Core::new(p0);
++<TurboShake128Core>::new(p0);
+-----------------
+sha3/src/macros.rs <TurboShake128Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake128Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <TurboShake128Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<TurboShake128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<TurboShake128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<TurboShake128Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <TurboShake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<TurboShake128Core as digest::core_api::BlockSizeUser>::BlockSize, <TurboShake128Core as digest::core_api::BufferKindUser>::BufferKind>
++p0.finalize_xof_core(p1);
++<TurboShake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++crate::<TurboShake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++<TurboShake128Core>::finalize_xof_core(p0, p1);
+-----------------
+sha3/src/macros.rs <TurboShake128Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake128Core
++p0.reset();
++<TurboShake128Core as digest::Reset>::reset(p0);
++crate::<TurboShake128Core as digest::Reset>::reset(p0);
++<TurboShake128Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <TurboShake128Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<TurboShake128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<TurboShake128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<TurboShake128Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <TurboShake128Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TurboShake128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<TurboShake128Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<TurboShake128Core as std::fmt::Debug>::fmt(p0, p1);
++<TurboShake128Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <TurboShake128ReaderCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TurboShake128ReaderCore
++p0.clone();
++<TurboShake128ReaderCore as std::clone::Clone>::clone(p0);
++crate::<TurboShake128ReaderCore as std::clone::Clone>::clone(p0);
++<TurboShake128ReaderCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <TurboShake128ReaderCore as digest::core_api::XofReaderCore>::read_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake128ReaderCore
++p0.read_block();
++<TurboShake128ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++crate::<TurboShake128ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++<TurboShake128ReaderCore>::read_block(p0);
+-----------------
+sha3/src/macros.rs <TurboShake256Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TurboShake256Core
++p0.clone();
++<TurboShake256Core as std::clone::Clone>::clone(p0);
++crate::<TurboShake256Core as std::clone::Clone>::clone(p0);
++<TurboShake256Core>::clone(p0);
+-----------------
+sha3/src/macros.rs TurboShake256Core::new
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++TurboShake256Core::new(p0);
++crate::TurboShake256Core::new(p0);
++<TurboShake256Core>::new(p0);
+-----------------
+sha3/src/macros.rs <TurboShake256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <TurboShake256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<TurboShake256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<TurboShake256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<TurboShake256Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <TurboShake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<TurboShake256Core as digest::core_api::BlockSizeUser>::BlockSize, <TurboShake256Core as digest::core_api::BufferKindUser>::BufferKind>
++p0.finalize_xof_core(p1);
++<TurboShake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++crate::<TurboShake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++<TurboShake256Core>::finalize_xof_core(p0, p1);
+-----------------
+sha3/src/macros.rs <TurboShake256Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake256Core
++p0.reset();
++<TurboShake256Core as digest::Reset>::reset(p0);
++crate::<TurboShake256Core as digest::Reset>::reset(p0);
++<TurboShake256Core>::reset(p0);
+-----------------
+sha3/src/macros.rs <TurboShake256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<TurboShake256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<TurboShake256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<TurboShake256Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <TurboShake256Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TurboShake256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<TurboShake256Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<TurboShake256Core as std::fmt::Debug>::fmt(p0, p1);
++<TurboShake256Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <TurboShake256ReaderCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TurboShake256ReaderCore
++p0.clone();
++<TurboShake256ReaderCore as std::clone::Clone>::clone(p0);
++crate::<TurboShake256ReaderCore as std::clone::Clone>::clone(p0);
++<TurboShake256ReaderCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <TurboShake256ReaderCore as digest::core_api::XofReaderCore>::read_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TurboShake256ReaderCore
++p0.read_block();
++<TurboShake256ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++crate::<TurboShake256ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++<TurboShake256ReaderCore>::read_block(p0);
+-----------------
+sha3/src/macros.rs <CShake128Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CShake128Core
++p0.clone();
++<CShake128Core as std::clone::Clone>::clone(p0);
++crate::<CShake128Core as std::clone::Clone>::clone(p0);
++<CShake128Core>::clone(p0);
+-----------------
+sha3/src/macros.rs CShake128Core::new
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++CShake128Core::new(p0);
++crate::CShake128Core::new(p0);
++<CShake128Core>::new(p0);
+-----------------
+sha3/src/macros.rs CShake128Core::new_with_function_name
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++CShake128Core::new_with_function_name(p0, p1);
++crate::CShake128Core::new_with_function_name(p0, p1);
++<CShake128Core>::new_with_function_name(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake128Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // CShake128Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <CShake128Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<CShake128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<CShake128Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<CShake128Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // CShake128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<CShake128Core as digest::core_api::BlockSizeUser>::BlockSize, <CShake128Core as digest::core_api::BufferKindUser>::BufferKind>
++p0.finalize_xof_core(p1);
++<CShake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++crate::<CShake128Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++<CShake128Core>::finalize_xof_core(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake128Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<CShake128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<CShake128Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<CShake128Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <CShake128Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CShake128Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<CShake128Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<CShake128Core as std::fmt::Debug>::fmt(p0, p1);
++<CShake128Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake128ReaderCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CShake128ReaderCore
++p0.clone();
++<CShake128ReaderCore as std::clone::Clone>::clone(p0);
++crate::<CShake128ReaderCore as std::clone::Clone>::clone(p0);
++<CShake128ReaderCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <CShake128ReaderCore as digest::core_api::XofReaderCore>::read_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // CShake128ReaderCore
++p0.read_block();
++<CShake128ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++crate::<CShake128ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++<CShake128ReaderCore>::read_block(p0);
+-----------------
+sha3/src/macros.rs <CShake256Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CShake256Core
++p0.clone();
++<CShake256Core as std::clone::Clone>::clone(p0);
++crate::<CShake256Core as std::clone::Clone>::clone(p0);
++<CShake256Core>::clone(p0);
+-----------------
+sha3/src/macros.rs CShake256Core::new
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++CShake256Core::new(p0);
++crate::CShake256Core::new(p0);
++<CShake256Core>::new(p0);
+-----------------
+sha3/src/macros.rs CShake256Core::new_with_function_name
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++CShake256Core::new_with_function_name(p0, p1);
++crate::CShake256Core::new_with_function_name(p0, p1);
++<CShake256Core>::new_with_function_name(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake256Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // CShake256Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <CShake256Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<CShake256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<CShake256Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<CShake256Core>::update_blocks(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // CShake256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<CShake256Core as digest::core_api::BlockSizeUser>::BlockSize, <CShake256Core as digest::core_api::BufferKindUser>::BufferKind>
++p0.finalize_xof_core(p1);
++<CShake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++crate::<CShake256Core as digest::core_api::ExtendableOutputCore>::finalize_xof_core(p0, p1);
++<CShake256Core>::finalize_xof_core(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake256Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<CShake256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<CShake256Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<CShake256Core>::write_alg_name(p0);
+-----------------
+sha3/src/macros.rs <CShake256Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CShake256Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<CShake256Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<CShake256Core as std::fmt::Debug>::fmt(p0, p1);
++<CShake256Core>::fmt(p0, p1);
+-----------------
+sha3/src/macros.rs <CShake256ReaderCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CShake256ReaderCore
++p0.clone();
++<CShake256ReaderCore as std::clone::Clone>::clone(p0);
++crate::<CShake256ReaderCore as std::clone::Clone>::clone(p0);
++<CShake256ReaderCore>::clone(p0);
+-----------------
+sha3/src/macros.rs <CShake256ReaderCore as digest::core_api::XofReaderCore>::read_block
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // CShake256ReaderCore
++p0.read_block();
++<CShake256ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++crate::<CShake256ReaderCore as digest::core_api::XofReaderCore>::read_block(p0);
++<CShake256ReaderCore>::read_block(p0);

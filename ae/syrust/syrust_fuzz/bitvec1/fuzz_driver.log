@@ -1,0 +1,75 @@
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/index.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/array/ops.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/array/traits.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/pointer.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/domain.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/field.rs
+err tests_rug_3 test_rug
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling bitvec v0.18.0 (/mnt/sda/xiang/syrust/syrust/bitvec1)
+error: lifetime may not live long enough
+   --> src/field.rs:823:17
+    |
+820 |         .for_each(|rug_data| {
+    |                    -------- has type `&'1 [u8]`
+...
+823 |         let p0: &'static str = rug_fuzz_0;
+    |                 ^^^^^^^^^^^^ type annotation requires that `'1` must outlive `'static`
+
+error: could not compile `bitvec` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/ops.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/api.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/traits.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/iter.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec/tests.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/ops.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/api.rs
+err tests_rug_138 test_align_to
+   Compiling bitvec v0.18.0 (/mnt/sda/xiang/syrust/syrust/bitvec1)
+error[E0416]: identifier `rug_fuzz_7` is bound more than once in the same pattern
+    --> src/slice/api.rs:3541:188
+     |
+3541 | ..._fuzz_7, mut rug_fuzz_8, mut rug_fuzz_9, mut rug_fuzz_7, mut rug_fuzz_8)) = <(u8, u8, u8, u8, u8, u8, u8, i32, i32, &str, usize, usize...
+     |                                                 ^^^^^^^^^^ used in a pattern more than once
+
+error[E0416]: identifier `rug_fuzz_8` is bound more than once in the same pattern
+    --> src/slice/api.rs:3541:204
+     |
+3541 | ..._fuzz_8, mut rug_fuzz_9, mut rug_fuzz_7, mut rug_fuzz_8)) = <(u8, u8, u8, u8, u8, u8, u8, i32, i32, &str, usize, usize) as arbitrary::...
+     |                                                 ^^^^^^^^^^ used in a pattern more than once
+
+For more information about this error, try `rustc --explain E0416`.
+error: could not compile `bitvec` due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/traits.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/iter.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/tests.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/slice/proxy.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/access.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/macros.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/field/io.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/field/permutation_tests.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/field/tests.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/serdes.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/devel.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/order.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/array.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/mem.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/vec.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/store.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/macros/internal.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/prelude.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/boxed/ops.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/boxed/api.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/boxed/traits.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/boxed/tests.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/lib.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/view.rs
+/mnt/sda/xiang/syrust/syrust/bitvec1/./src/boxed.rs
+done

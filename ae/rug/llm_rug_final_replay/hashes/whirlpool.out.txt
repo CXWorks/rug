@@ -1,0 +1,110 @@
+-----------------
+whirlpool/src/compress.rs compress::compress_block
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [0u8;1]; // None+[u8; _]
++compress::compress_block(p0, p1);
++crate::compress::compress_block(p0, p1);
++crate::compress::compress_block(p0, p1);
+-----------------
+whirlpool/src/compress.rs compress::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; _]]
++compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
+-----------------
+whirlpool/src/lib.rs adc
+deps:{}
+candidates:{}
+let mut p0 = &mut 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
+let mut p2 = &mut 0u64; // None+u64
++adc(p0, p1, p2);
++crate::adc(p0, p1, p2);
++crate::adc(p0, p1, p2);
+-----------------
+whirlpool/src/lib.rs convert
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <WhirlpoolCore as digest::core_api::BlockSizeUser>::BlockSize>]
++convert(p0);
++crate::convert(p0);
++crate::convert(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // WhirlpoolCore
++p0.clone();
++<WhirlpoolCore as core::clone::Clone>::clone(p0);
++crate::<WhirlpoolCore as core::clone::Clone>::clone(p0);
++<WhirlpoolCore>::clone(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <WhirlpoolCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<WhirlpoolCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<WhirlpoolCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<WhirlpoolCore>::update_blocks(p0, p1);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<WhirlpoolCore as digest::core_api::BlockSizeUser>::BlockSize, <WhirlpoolCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <WhirlpoolCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<WhirlpoolCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<WhirlpoolCore as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<WhirlpoolCore>::finalize_fixed_core(p0, p1, p2);
+-----------------
+whirlpool/src/lib.rs WhirlpoolCore::update_len
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = 0u64; // None+u64
++p0.update_len(p1);
++WhirlpoolCore::update_len(p0, p1);
++crate::WhirlpoolCore::update_len(p0, p1);
++<WhirlpoolCore>::update_len(p0, p1);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as core::default::Default>::default
+deps:{}
+candidates:{}
++<WhirlpoolCore as core::default::Default>::default();
++crate::<WhirlpoolCore as core::default::Default>::default();
++<WhirlpoolCore>::default();
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // WhirlpoolCore
++p0.reset();
++<WhirlpoolCore as digest::Reset>::reset(p0);
++crate::<WhirlpoolCore as digest::Reset>::reset(p0);
++<WhirlpoolCore>::reset(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<WhirlpoolCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<WhirlpoolCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<WhirlpoolCore>::write_alg_name(p0);
+-----------------
+whirlpool/src/lib.rs <WhirlpoolCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // WhirlpoolCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<WhirlpoolCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<WhirlpoolCore as core::fmt::Debug>::fmt(p0, p1);
++<WhirlpoolCore>::fmt(p0, p1);

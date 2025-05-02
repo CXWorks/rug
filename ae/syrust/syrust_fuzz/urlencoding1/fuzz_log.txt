@@ -1,0 +1,2 @@
+urlencoding1 urlencoding {'tests_rug_1::test_rug': 'tests_rug_1__test_rug', 'tests_rug_2::test_rug': 'tests_rug_2__test_rug', 'tests_rug_4::test_to_hex_digit': 'tests_rug_4__test_to_hex_digit', 'tests_rug_3::test_from_hex_digit': 'tests_rug_3__test_from_hex_digit', 'tests_rug_5::test_decode': 'tests_rug_5__test_decode'}
+urlencoding1 done

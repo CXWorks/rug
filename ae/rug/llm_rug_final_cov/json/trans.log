@@ -1,0 +1,7 @@
+err json /mnt/sda/xiang/rug/llm_rug_final/json/./src/value/de.rs tests_rug_296
+err tests_rug_351 sample rug_fuzz_0 true {'sample': {'rug_fuzz_0': 'true', 'rug_fuzz_1': '42', 'rug_fuzz_2': '"sample"'}}
+err tests_rug_351 sample rug_fuzz_1 42 {'sample': {'rug_fuzz_0': 'true', 'rug_fuzz_1': '42', 'rug_fuzz_2': '"sample"'}}
+err tests_rug_351 sample rug_fuzz_2 "sample" {'sample': {'rug_fuzz_0': 'true', 'rug_fuzz_1': '42', 'rug_fuzz_2': '"sample"'}}
+err in scan file /mnt/sda/xiang/rug/llm_rug_final/json/./src/features_check/error.rs
+err tests_rug_619 sample rug_fuzz_0 "sample string" {'sample': {'rug_fuzz_0': '"sample string"'}}
+serde_json . 273 274 0

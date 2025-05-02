@@ -1,0 +1,930 @@
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::shl
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = 0u32; // None+u32
++sha256::soft::shl(p0, p1);
++crate::sha256::soft::shl(p0, p1);
++crate::sha256::soft::shl(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::shr
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = 0u32; // None+u32
++sha256::soft::shr(p0, p1);
++crate::sha256::soft::shr(p0, p1);
++crate::sha256::soft::shr(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::or
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++sha256::soft::or(p0, p1);
++crate::sha256::soft::or(p0, p1);
++crate::sha256::soft::or(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::xor
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++sha256::soft::xor(p0, p1);
++crate::sha256::soft::xor(p0, p1);
++crate::sha256::soft::xor(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::add
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++sha256::soft::add(p0, p1);
++crate::sha256::soft::add(p0, p1);
++crate::sha256::soft::add(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256load
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++sha256::soft::sha256load(p0, p1);
++crate::sha256::soft::sha256load(p0, p1);
++crate::sha256::soft::sha256load(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256swap
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
++sha256::soft::sha256swap(p0);
++crate::sha256::soft::sha256swap(p0);
++crate::sha256::soft::sha256swap(p0);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256msg1
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++sha256::soft::sha256msg1(p0, p1);
++crate::sha256::soft::sha256msg1(p0, p1);
++crate::sha256::soft::sha256msg1(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256msg1::sigma0x4
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
++sha256::soft::sha256msg1::sigma0x4(p0);
++crate::sha256::soft::sha256msg1::sigma0x4(p0);
++crate::sha256::soft::sha256msg1::sigma0x4(p0);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256msg2
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
++sha256::soft::sha256msg2(p0, p1);
++crate::sha256::soft::sha256msg2(p0, p1);
++crate::sha256::soft::sha256msg2(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256_digest_round_x2
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
+let mut p2 = [0u32;1]; // None+[u32; 4]
++sha256::soft::sha256_digest_round_x2(p0, p1, p2);
++crate::sha256::soft::sha256_digest_round_x2(p0, p1, p2);
++crate::sha256::soft::sha256_digest_round_x2(p0, p1, p2);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::schedule
+deps:{}
+candidates:{}
+let mut p0 = [0u32;1]; // None+[u32; 4]
+let mut p1 = [0u32;1]; // None+[u32; 4]
+let mut p2 = [0u32;1]; // None+[u32; 4]
+let mut p3 = [0u32;1]; // None+[u32; 4]
++sha256::soft::schedule(p0, p1, p2, p3);
++crate::sha256::soft::schedule(p0, p1, p2, p3);
++crate::sha256::soft::schedule(p0, p1, p2, p3);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::sha256_digest_block_u32
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & [0u32;1]; // None+[u32; 16]
++sha256::soft::sha256_digest_block_u32(p0, p1);
++crate::sha256::soft::sha256_digest_block_u32(p0, p1);
++crate::sha256::soft::sha256_digest_block_u32(p0, p1);
+-----------------
+sha2/src/sha256/soft.rs sha256::soft::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 64]]
++sha256::soft::compress(p0, p1);
++crate::sha256::soft::compress(p0, p1);
++crate::sha256::soft::compress(p0, p1);
+-----------------
+sha2/src/sha256/x86.rs sha256::x86::schedule
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
+let mut p3 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
++sha256::x86::schedule(p0, p1, p2, p3);
++crate::sha256::x86::schedule(p0, p1, p2, p3);
++crate::sha256::x86::schedule(p0, p1, p2, p3);
+-----------------
+sha2/src/sha256/x86.rs sha256::x86::digest_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 64]]
++sha256::x86::digest_blocks(p0, p1);
++crate::sha256::x86::digest_blocks(p0, p1);
++crate::sha256::x86::digest_blocks(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha256::x86::shani_cpuid::init_get
+deps:{}
+candidates:{}
++sha256::x86::shani_cpuid::init_get();
++crate::sha256::x86::shani_cpuid::init_get();
++crate::sha256::x86::shani_cpuid::init_get();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/x86.rs sha256::x86::shani_cpuid::init_get::cpuid
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++sha256::x86::shani_cpuid::init_get::cpuid(p0);
++crate::sha256::x86::shani_cpuid::init_get::cpuid(p0);
++crate::sha256::x86::shani_cpuid::init_get::cpuid(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/x86.rs sha256::x86::shani_cpuid::init_get::cpuid_count
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
++sha256::x86::shani_cpuid::init_get::cpuid_count(p0, p1);
++crate::sha256::x86::shani_cpuid::init_get::cpuid_count(p0, p1);
++crate::sha256::x86::shani_cpuid::init_get::cpuid_count(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha256::x86::shani_cpuid::init
+deps:{}
+candidates:{}
++sha256::x86::shani_cpuid::init();
++crate::sha256::x86::shani_cpuid::init();
++crate::sha256::x86::shani_cpuid::init();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha256::x86::shani_cpuid::get
+deps:{}
+candidates:{}
++sha256::x86::shani_cpuid::get();
++crate::sha256::x86::shani_cpuid::get();
++crate::sha256::x86::shani_cpuid::get();
+-----------------
+sha2/src/sha256/x86.rs sha256::x86::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 64]]
++sha256::x86::compress(p0, p1);
++crate::sha256::x86::compress(p0, p1);
++crate::sha256::x86::compress(p0, p1);
+-----------------
+sha2/src/sha256.rs sha256::compress256
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>]
++sha256::compress256(p0, p1);
++crate::sha256::compress256(p0, p1);
++crate::sha256::compress256(p0, p1);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::add
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; 2]
+let mut p1 = [0u64;1]; // None+[u64; 2]
++sha512::soft::add(p0, p1);
++crate::sha512::soft::add(p0, p1);
++crate::sha512::soft::add(p0, p1);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::sha512load
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; 2]
+let mut p1 = [0u64;1]; // None+[u64; 2]
++sha512::soft::sha512load(p0, p1);
++crate::sha512::soft::sha512load(p0, p1);
++crate::sha512::soft::sha512load(p0, p1);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::sha512_schedule_x2
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; 2]
+let mut p1 = [0u64;1]; // None+[u64; 2]
+let mut p2 = [0u64;1]; // None+[u64; 2]
+let mut p3 = [0u64;1]; // None+[u64; 2]
++sha512::soft::sha512_schedule_x2(p0, p1, p2, p3);
++crate::sha512::soft::sha512_schedule_x2(p0, p1, p2, p3);
++crate::sha512::soft::sha512_schedule_x2(p0, p1, p2, p3);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::sha512_schedule_x2::sigma0
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++sha512::soft::sha512_schedule_x2::sigma0(p0);
++crate::sha512::soft::sha512_schedule_x2::sigma0(p0);
++crate::sha512::soft::sha512_schedule_x2::sigma0(p0);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::sha512_schedule_x2::sigma1
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++sha512::soft::sha512_schedule_x2::sigma1(p0);
++crate::sha512::soft::sha512_schedule_x2::sigma1(p0);
++crate::sha512::soft::sha512_schedule_x2::sigma1(p0);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::sha512_digest_round
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; 2]
+let mut p1 = [0u64;1]; // None+[u64; 2]
+let mut p2 = [0u64;1]; // None+[u64; 2]
+let mut p3 = [0u64;1]; // None+[u64; 2]
+let mut p4 = 0u64; // None+u64
++sha512::soft::sha512_digest_round(p0, p1, p2, p3, p4);
++crate::sha512::soft::sha512_digest_round(p0, p1, p2, p3, p4);
++crate::sha512::soft::sha512_digest_round(p0, p1, p2, p3, p4);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::sha512_digest_block_u64
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [0u64;1]; // None+[u64; 16]
++sha512::soft::sha512_digest_block_u64(p0, p1);
++crate::sha512::soft::sha512_digest_block_u64(p0, p1);
++crate::sha512::soft::sha512_digest_block_u64(p0, p1);
+-----------------
+sha2/src/sha512/soft.rs sha512::soft::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 128]]
++sha512::soft::compress(p0, p1);
++crate::sha512::soft::compress(p0, p1);
++crate::sha512::soft::compress(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha512::x86::avx2_cpuid::init_get
+deps:{}
+candidates:{}
++sha512::x86::avx2_cpuid::init_get();
++crate::sha512::x86::avx2_cpuid::init_get();
++crate::sha512::x86::avx2_cpuid::init_get();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/x86.rs sha512::x86::avx2_cpuid::init_get::cpuid
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++sha512::x86::avx2_cpuid::init_get::cpuid(p0);
++crate::sha512::x86::avx2_cpuid::init_get::cpuid(p0);
++crate::sha512::x86::avx2_cpuid::init_get::cpuid(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/x86.rs sha512::x86::avx2_cpuid::init_get::cpuid_count
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
++sha512::x86::avx2_cpuid::init_get::cpuid_count(p0, p1);
++crate::sha512::x86::avx2_cpuid::init_get::cpuid_count(p0, p1);
++crate::sha512::x86::avx2_cpuid::init_get::cpuid_count(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha512::x86::avx2_cpuid::init
+deps:{}
+candidates:{}
++sha512::x86::avx2_cpuid::init();
++crate::sha512::x86::avx2_cpuid::init();
++crate::sha512::x86::avx2_cpuid::init();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha512::x86::avx2_cpuid::get
+deps:{}
+candidates:{}
++sha512::x86::avx2_cpuid::get();
++crate::sha512::x86::avx2_cpuid::get();
++crate::sha512::x86::avx2_cpuid::get();
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 128]]
++sha512::x86::compress(p0, p1);
++crate::sha512::x86::compress(p0, p1);
++crate::sha512::x86::compress(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::sha512_compress_x86_64_avx2
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 128]]
++sha512::x86::sha512_compress_x86_64_avx2(p0, p1);
++crate::sha512::x86::sha512_compress_x86_64_avx2(p0, p1);
++crate::sha512::x86::sha512_compress_x86_64_avx2(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::sha512_compress_x86_64_avx
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & [0u8;1]; // None+[u8; 128]
++sha512::x86::sha512_compress_x86_64_avx(p0, p1);
++crate::sha512::x86::sha512_compress_x86_64_avx(p0, p1);
++crate::sha512::x86::sha512_compress_x86_64_avx(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::load_data_avx
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; 8]
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
+let mut p2 = MaybeUninit::uninit().assume_init(); // *const std::arch::x86_64::__m128i
++sha512::x86::load_data_avx(p0, p1, p2);
++crate::sha512::x86::load_data_avx(p0, p1, p2);
++crate::sha512::x86::load_data_avx(p0, p1, p2);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::load_data_avx2
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m256i; 8]
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
+let mut p3 = MaybeUninit::uninit().assume_init(); // *const std::arch::x86_64::__m128i
++sha512::x86::load_data_avx2(p0, p1, p2, p3);
++crate::sha512::x86::load_data_avx2(p0, p1, p2, p3);
++crate::sha512::x86::load_data_avx2(p0, p1, p2, p3);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::rounds_0_63_avx
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; 8]
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
++sha512::x86::rounds_0_63_avx(p0, p1, p2);
++crate::sha512::x86::rounds_0_63_avx(p0, p1, p2);
++crate::sha512::x86::rounds_0_63_avx(p0, p1, p2);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::rounds_0_63_avx2
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m256i; 8]
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
+let mut p3 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
++sha512::x86::rounds_0_63_avx2(p0, p1, p2, p3);
++crate::sha512::x86::rounds_0_63_avx2(p0, p1, p2, p3);
++crate::sha512::x86::rounds_0_63_avx2(p0, p1, p2, p3);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::rounds_64_79
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
++sha512::x86::rounds_64_79(p0, p1);
++crate::sha512::x86::rounds_64_79(p0, p1);
++crate::sha512::x86::rounds_64_79(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::process_second_block
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
++sha512::x86::process_second_block(p0, p1);
++crate::sha512::x86::process_second_block(p0, p1);
++crate::sha512::x86::process_second_block(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::sha_round
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = 0u64; // None+u64
++sha512::x86::sha_round(p0, p1);
++crate::sha512::x86::sha_round(p0, p1);
++crate::sha512::x86::sha_round(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::accumulate_state
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = & [0u64;1]; // None+[u64; _]
++sha512::x86::accumulate_state(p0, p1);
++crate::sha512::x86::accumulate_state(p0, p1);
++crate::sha512::x86::accumulate_state(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::sha512_update_x_avx
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; 8]
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
++sha512::x86::sha512_update_x_avx(p0, p1);
++crate::sha512::x86::sha512_update_x_avx(p0, p1);
++crate::sha512::x86::sha512_update_x_avx(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::sha512_update_x_avx2
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m256i; 8]
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m256i
++sha512::x86::sha512_update_x_avx2(p0, p1);
++crate::sha512::x86::sha512_update_x_avx2(p0, p1);
++crate::sha512::x86::sha512_update_x_avx2(p0, p1);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::cast_ms
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
++sha512::x86::cast_ms(p0);
++crate::sha512::x86::cast_ms(p0);
++crate::sha512::x86::cast_ms(p0);
+-----------------
+sha2/src/sha512/x86.rs sha512::x86::cast_rs
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [std::arch::x86_64::__m128i; _]
++sha512::x86::cast_rs(p0);
++crate::sha512::x86::cast_rs(p0);
++crate::sha512::x86::cast_rs(p0);
+-----------------
+sha2/src/sha512.rs sha512::compress512
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; 8]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>]
++sha512::compress512(p0, p1);
++crate::sha512::compress512(p0, p1);
++crate::sha512::compress512(p0, p1);
+-----------------
+sha2/src/core_api.rs <core_api::Sha256VarCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::Sha256VarCore
++p0.clone();
++<core_api::Sha256VarCore as std::clone::Clone>::clone(p0);
++crate::<core_api::Sha256VarCore as std::clone::Clone>::clone(p0);
++<core_api::Sha256VarCore>::clone(p0);
+-----------------
+sha2/src/core_api.rs <core_api::Sha256VarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::Sha256VarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <core_api::Sha256VarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<core_api::Sha256VarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<core_api::Sha256VarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<core_api::Sha256VarCore>::update_blocks(p0, p1);
+-----------------
+sha2/src/core_api.rs <core_api::Sha256VarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<core_api::Sha256VarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<core_api::Sha256VarCore as digest::core_api::VariableOutputCore>::new(p0);
++<core_api::Sha256VarCore>::new(p0);
+-----------------
+sha2/src/core_api.rs <core_api::Sha256VarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::Sha256VarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<core_api::Sha256VarCore as digest::core_api::BlockSizeUser>::BlockSize, <core_api::Sha256VarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <core_api::Sha256VarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<core_api::Sha256VarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<core_api::Sha256VarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<core_api::Sha256VarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+sha2/src/core_api.rs <core_api::Sha256VarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<core_api::Sha256VarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<core_api::Sha256VarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<core_api::Sha256VarCore>::write_alg_name(p0);
+-----------------
+sha2/src/core_api.rs <core_api::Sha256VarCore as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::Sha256VarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<core_api::Sha256VarCore as std::fmt::Debug>::fmt(p0, p1);
++crate::<core_api::Sha256VarCore as std::fmt::Debug>::fmt(p0, p1);
++<core_api::Sha256VarCore>::fmt(p0, p1);
+-----------------
+sha2/src/core_api.rs <core_api::Sha512VarCore as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::Sha512VarCore
++p0.clone();
++<core_api::Sha512VarCore as std::clone::Clone>::clone(p0);
++crate::<core_api::Sha512VarCore as std::clone::Clone>::clone(p0);
++<core_api::Sha512VarCore>::clone(p0);
+-----------------
+sha2/src/core_api.rs <core_api::Sha512VarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::Sha512VarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <core_api::Sha512VarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<core_api::Sha512VarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<core_api::Sha512VarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<core_api::Sha512VarCore>::update_blocks(p0, p1);
+-----------------
+sha2/src/core_api.rs <core_api::Sha512VarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<core_api::Sha512VarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<core_api::Sha512VarCore as digest::core_api::VariableOutputCore>::new(p0);
++<core_api::Sha512VarCore>::new(p0);
+-----------------
+sha2/src/core_api.rs <core_api::Sha512VarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core_api::Sha512VarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<core_api::Sha512VarCore as digest::core_api::BlockSizeUser>::BlockSize, <core_api::Sha512VarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <core_api::Sha512VarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<core_api::Sha512VarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<core_api::Sha512VarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<core_api::Sha512VarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+sha2/src/core_api.rs <core_api::Sha512VarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<core_api::Sha512VarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<core_api::Sha512VarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<core_api::Sha512VarCore>::write_alg_name(p0);
+-----------------
+sha2/src/core_api.rs <core_api::Sha512VarCore as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core_api::Sha512VarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<core_api::Sha512VarCore as std::fmt::Debug>::fmt(p0, p1);
++crate::<core_api::Sha512VarCore as std::fmt::Debug>::fmt(p0, p1);
++<core_api::Sha512VarCore>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs <sha256::x86::shani_cpuid::InitToken as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sha256::x86::shani_cpuid::InitToken
++p0.clone();
++<sha256::x86::shani_cpuid::InitToken as std::clone::Clone>::clone(p0);
++crate::<sha256::x86::shani_cpuid::InitToken as std::clone::Clone>::clone(p0);
++<sha256::x86::shani_cpuid::InitToken>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs <sha256::x86::shani_cpuid::InitToken as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sha256::x86::shani_cpuid::InitToken
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<sha256::x86::shani_cpuid::InitToken as std::fmt::Debug>::fmt(p0, p1);
++crate::<sha256::x86::shani_cpuid::InitToken as std::fmt::Debug>::fmt(p0, p1);
++<sha256::x86::shani_cpuid::InitToken>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha256::x86::shani_cpuid::InitToken::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sha256::x86::shani_cpuid::InitToken
++p0.get();
++sha256::x86::shani_cpuid::InitToken::get(p0);
++crate::sha256::x86::shani_cpuid::InitToken::get(p0);
++<sha256::x86::shani_cpuid::InitToken>::get(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs <sha512::x86::avx2_cpuid::InitToken as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sha512::x86::avx2_cpuid::InitToken
++p0.clone();
++<sha512::x86::avx2_cpuid::InitToken as std::clone::Clone>::clone(p0);
++crate::<sha512::x86::avx2_cpuid::InitToken as std::clone::Clone>::clone(p0);
++<sha512::x86::avx2_cpuid::InitToken>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs <sha512::x86::avx2_cpuid::InitToken as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sha512::x86::avx2_cpuid::InitToken
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<sha512::x86::avx2_cpuid::InitToken as std::fmt::Debug>::fmt(p0, p1);
++crate::<sha512::x86::avx2_cpuid::InitToken as std::fmt::Debug>::fmt(p0, p1);
++<sha512::x86::avx2_cpuid::InitToken>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/cpufeatures-0.2.8/src/lib.rs sha512::x86::avx2_cpuid::InitToken::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sha512::x86::avx2_cpuid::InitToken
++p0.get();
++sha512::x86::avx2_cpuid::InitToken::get(p0);
++crate::sha512::x86::avx2_cpuid::InitToken::get(p0);
++<sha512::x86::avx2_cpuid::InitToken>::get(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha256 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha256
++p0.clone();
++<OidSha256 as std::clone::Clone>::clone(p0);
++crate::<OidSha256 as std::clone::Clone>::clone(p0);
++<OidSha256>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha256 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha256
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<OidSha256 as std::fmt::Debug>::fmt(p0, p1);
++crate::<OidSha256 as std::fmt::Debug>::fmt(p0, p1);
++<OidSha256>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha256 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha256
++p0.assert_receiver_is_total_eq();
++<OidSha256 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<OidSha256 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<OidSha256>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha256 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha256
+let mut p1 = & MaybeUninit::uninit().assume_init(); // OidSha256
++p0.eq(p1);
++<OidSha256 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<OidSha256 as std::cmp::PartialEq>::eq(p0, p1);
++<OidSha256>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha256 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<OidSha256 as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<OidSha256 as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher13","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha256
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<OidSha256 as std::hash::Hash>::hash(p0, p1);
++crate::<OidSha256 as std::hash::Hash>::hash(p0, p1);
++<OidSha256>::hash(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha384 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha384
++p0.clone();
++<OidSha384 as std::clone::Clone>::clone(p0);
++crate::<OidSha384 as std::clone::Clone>::clone(p0);
++<OidSha384>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha384 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha384
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<OidSha384 as std::fmt::Debug>::fmt(p0, p1);
++crate::<OidSha384 as std::fmt::Debug>::fmt(p0, p1);
++<OidSha384>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha384 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha384
++p0.assert_receiver_is_total_eq();
++<OidSha384 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<OidSha384 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<OidSha384>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha384 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha384
+let mut p1 = & MaybeUninit::uninit().assume_init(); // OidSha384
++p0.eq(p1);
++<OidSha384 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<OidSha384 as std::cmp::PartialEq>::eq(p0, p1);
++<OidSha384>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha384 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<OidSha384 as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<OidSha384 as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha384
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<OidSha384 as std::hash::Hash>::hash(p0, p1);
++crate::<OidSha384 as std::hash::Hash>::hash(p0, p1);
++<OidSha384>::hash(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512
++p0.clone();
++<OidSha512 as std::clone::Clone>::clone(p0);
++crate::<OidSha512 as std::clone::Clone>::clone(p0);
++<OidSha512>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<OidSha512 as std::fmt::Debug>::fmt(p0, p1);
++crate::<OidSha512 as std::fmt::Debug>::fmt(p0, p1);
++<OidSha512>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512
++p0.assert_receiver_is_total_eq();
++<OidSha512 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<OidSha512 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<OidSha512>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512
+let mut p1 = & MaybeUninit::uninit().assume_init(); // OidSha512
++p0.eq(p1);
++<OidSha512 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<OidSha512 as std::cmp::PartialEq>::eq(p0, p1);
++<OidSha512>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<OidSha512 as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<OidSha512 as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","std::hash::SipHasher13","std::hash::sip::Hasher<S>","<&mut H as std::hash::Hasher>","std::hash::SipHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<OidSha512 as std::hash::Hash>::hash(p0, p1);
++crate::<OidSha512 as std::hash::Hash>::hash(p0, p1);
++<OidSha512>::hash(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha224 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha224
++p0.clone();
++<OidSha224 as std::clone::Clone>::clone(p0);
++crate::<OidSha224 as std::clone::Clone>::clone(p0);
++<OidSha224>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha224 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha224
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<OidSha224 as std::fmt::Debug>::fmt(p0, p1);
++crate::<OidSha224 as std::fmt::Debug>::fmt(p0, p1);
++<OidSha224>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha224 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha224
++p0.assert_receiver_is_total_eq();
++<OidSha224 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<OidSha224 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<OidSha224>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha224 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha224
+let mut p1 = & MaybeUninit::uninit().assume_init(); // OidSha224
++p0.eq(p1);
++<OidSha224 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<OidSha224 as std::cmp::PartialEq>::eq(p0, p1);
++<OidSha224>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha224 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<OidSha224 as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<OidSha224 as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher","std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha224
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<OidSha224 as std::hash::Hash>::hash(p0, p1);
++crate::<OidSha224 as std::hash::Hash>::hash(p0, p1);
++<OidSha224>::hash(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_224 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_224
++p0.clone();
++<OidSha512_224 as std::clone::Clone>::clone(p0);
++crate::<OidSha512_224 as std::clone::Clone>::clone(p0);
++<OidSha512_224>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_224 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_224
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<OidSha512_224 as std::fmt::Debug>::fmt(p0, p1);
++crate::<OidSha512_224 as std::fmt::Debug>::fmt(p0, p1);
++<OidSha512_224>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_224 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_224
++p0.assert_receiver_is_total_eq();
++<OidSha512_224 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<OidSha512_224 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<OidSha512_224>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_224 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_224
+let mut p1 = & MaybeUninit::uninit().assume_init(); // OidSha512_224
++p0.eq(p1);
++<OidSha512_224 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<OidSha512_224 as std::cmp::PartialEq>::eq(p0, p1);
++<OidSha512_224>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_224 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<OidSha512_224 as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<OidSha512_224 as std::hash::Hash>::hash":{"__H":["std::hash::sip::Hasher<S>","std::hash::SipHasher","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::SipHasher13"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_224
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<OidSha512_224 as std::hash::Hash>::hash(p0, p1);
++crate::<OidSha512_224 as std::hash::Hash>::hash(p0, p1);
++<OidSha512_224>::hash(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_256 as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_256
++p0.clone();
++<OidSha512_256 as std::clone::Clone>::clone(p0);
++crate::<OidSha512_256 as std::clone::Clone>::clone(p0);
++<OidSha512_256>::clone(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_256 as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_256
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<OidSha512_256 as std::fmt::Debug>::fmt(p0, p1);
++crate::<OidSha512_256 as std::fmt::Debug>::fmt(p0, p1);
++<OidSha512_256>::fmt(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_256 as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_256
++p0.assert_receiver_is_total_eq();
++<OidSha512_256 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<OidSha512_256 as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<OidSha512_256>::assert_receiver_is_total_eq(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_256 as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_256
+let mut p1 = & MaybeUninit::uninit().assume_init(); // OidSha512_256
++p0.eq(p1);
++<OidSha512_256 as std::cmp::PartialEq>::eq(p0, p1);
++crate::<OidSha512_256 as std::cmp::PartialEq>::eq(p0, p1);
++<OidSha512_256>::eq(p0, p1);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.10.7/src/core_api/ct_variable.rs <OidSha512_256 as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<OidSha512_256 as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<OidSha512_256 as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::hash::SipHasher","std::hash::SipHasher13"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // OidSha512_256
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<OidSha512_256 as std::hash::Hash>::hash(p0, p1);
++crate::<OidSha512_256 as std::hash::Hash>::hash(p0, p1);
++<OidSha512_256>::hash(p0, p1);

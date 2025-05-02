@@ -1,0 +1,42 @@
+[package]
+name = "crossbeam-skiplist"
+version = "0.0.0"
+authors = [ "The Crossbeam Project Developers",]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/crossbeam-rs/crossbeam"
+homepage = "https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-skiplist"
+documentation = "https://docs.rs/crossbeam-skiplist"
+description = "A concurrent skip list"
+keywords = [ "map", "set", "skiplist", "lock-free",]
+categories = [ "algorithms", "concurrency", "data-structures", "no-std",]
+
+[features]
+default = [ "std",]
+std = [ "alloc", "crossbeam-epoch/std", "crossbeam-utils/std",]
+alloc = [ "crossbeam-epoch/alloc",]
+nightly = [ "crossbeam-epoch/nightly", "crossbeam-utils/nightly",]
+
+[dependencies]
+cfg-if = "0.1.10"
+bolero = "0.8.0"
+arbitrary = "1.3.2"
+
+[dev-dependencies]
+rand = "0.7.3"
+
+[dependencies.crossbeam-epoch]
+version = "0.8"
+path = "../crossbeam-epoch"
+default-features = false
+optional = true
+
+[dependencies.crossbeam-utils]
+version = "0.7"
+path = "../crossbeam-utils"
+default-features = false
+
+[dependencies.scopeguard]
+version = "1.1.0"
+default-features = false

@@ -1,0 +1,10 @@
+-----------------
+miniz-sys/lib.rs mz_deflateInit2
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // *mut mz_stream
+let mut p1 = 0i32; // None+i32
+let mut p2 = 0i32; // None+i32
+let mut p3 = 0i32; // None+i32
+let mut p4 = 0i32; // None+i32
+let mut p5 = 0i32; // None+i32

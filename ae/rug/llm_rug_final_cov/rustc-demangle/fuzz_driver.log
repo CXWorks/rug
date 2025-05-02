@@ -1,0 +1,3 @@
+rustc-demangle rustc-demangle . ['/mnt/sda/xiang/rug/llm_rug_final/rustc-demangle/./src/legacy.rs', '/mnt/sda/xiang/rug/llm_rug_final/rustc-demangle/./src/v0.rs', '/mnt/sda/xiang/rug/llm_rug_final/rustc-demangle/./src/lib.rs']
+rustc-demangle rustc-demangle-capi crates/capi ['/mnt/sda/xiang/rug/llm_rug_final/rustc-demangle/crates/capi/src/lib.rs']
+err1 toml rustc-demangle rustc-demangle-capi crates/capi

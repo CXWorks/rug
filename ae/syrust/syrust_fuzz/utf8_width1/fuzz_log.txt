@@ -1,0 +1,2 @@
+utf8_width1 utf8-width {'tests_rug_3::test_rug': 'tests_rug_3__test_rug', 'tests_rug_2::test_is_width_2': 'tests_rug_2__test_is_width_2', 'tests_rug_1::test_rug': 'tests_rug_1__test_rug', 'tests_rug_5::test_is_width_0': 'tests_rug_5__test_is_width_0', 'tests_rug_7::test_get_width_assume_valid': 'tests_rug_7__test_get_width_assume_valid', 'tests_rug_6::test_get_width': 'tests_rug_6__test_get_width', 'tests_rug_4::test_rug': 'tests_rug_4__test_rug'}
+utf8_width1 done

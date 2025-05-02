@@ -1,0 +1,200 @@
+-----------------
+groestl/src/compress1024.rs compress1024::column
+deps:{}
+candidates:{}
+let mut p0 = & [0u64;1]; // None+[u64; _]
+let mut p1 = [0usize;1]; // None+[usize; 8]
++compress1024::column(p0, p1);
++crate::compress1024::column(p0, p1);
++crate::compress1024::column(p0, p1);
+-----------------
+groestl/src/compress1024.rs compress1024::rndq
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; _]
+let mut p1 = 0u64; // None+u64
++compress1024::rndq(p0, p1);
++crate::compress1024::rndq(p0, p1);
++crate::compress1024::rndq(p0, p1);
+-----------------
+groestl/src/compress1024.rs compress1024::rndp
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; _]
+let mut p1 = 0u64; // None+u64
++compress1024::rndp(p0, p1);
++crate::compress1024::rndp(p0, p1);
++crate::compress1024::rndp(p0, p1);
+-----------------
+groestl/src/compress1024.rs compress1024::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = & [0u8;1]; // None+[u8; 128]
++compress1024::compress(p0, p1);
++crate::compress1024::compress(p0, p1);
++crate::compress1024::compress(p0, p1);
+-----------------
+groestl/src/compress1024.rs compress1024::p
+deps:{}
+candidates:{}
+let mut p0 = & [0u64;1]; // None+[u64; _]
++compress1024::p(p0);
++crate::compress1024::p(p0);
++crate::compress1024::p(p0);
+-----------------
+groestl/src/compress512.rs compress512::column
+deps:{}
+candidates:{}
+let mut p0 = & [0u64;1]; // None+[u64; _]
+let mut p1 = [0usize;1]; // None+[usize; 8]
++compress512::column(p0, p1);
++crate::compress512::column(p0, p1);
++crate::compress512::column(p0, p1);
+-----------------
+groestl/src/compress512.rs compress512::rndq
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; _]
+let mut p1 = 0u64; // None+u64
++compress512::rndq(p0, p1);
++crate::compress512::rndq(p0, p1);
++crate::compress512::rndq(p0, p1);
+-----------------
+groestl/src/compress512.rs compress512::rndp
+deps:{}
+candidates:{}
+let mut p0 = [0u64;1]; // None+[u64; _]
+let mut p1 = 0u64; // None+u64
++compress512::rndp(p0, p1);
++crate::compress512::rndp(p0, p1);
++crate::compress512::rndp(p0, p1);
+-----------------
+groestl/src/compress512.rs compress512::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u64;1]; // None+[u64; _]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++compress512::compress(p0, p1);
++crate::compress512::compress(p0, p1);
++crate::compress512::compress(p0, p1);
+-----------------
+groestl/src/compress512.rs compress512::p
+deps:{}
+candidates:{}
+let mut p0 = & [0u64;1]; // None+[u64; _]
++compress512::p(p0);
++crate::compress512::p(p0);
++crate::compress512::p(p0);
+-----------------
+groestl/src/lib.rs <GroestlShortVarCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // GroestlShortVarCore
++p0.clone();
++<GroestlShortVarCore as core::clone::Clone>::clone(p0);
++crate::<GroestlShortVarCore as core::clone::Clone>::clone(p0);
++<GroestlShortVarCore>::clone(p0);
+-----------------
+groestl/src/lib.rs <GroestlShortVarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // GroestlShortVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <GroestlShortVarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<GroestlShortVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<GroestlShortVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<GroestlShortVarCore>::update_blocks(p0, p1);
+-----------------
+groestl/src/lib.rs <GroestlShortVarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<GroestlShortVarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<GroestlShortVarCore as digest::core_api::VariableOutputCore>::new(p0);
++<GroestlShortVarCore>::new(p0);
+-----------------
+groestl/src/lib.rs <GroestlShortVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // GroestlShortVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<GroestlShortVarCore as digest::core_api::BlockSizeUser>::BlockSize, <GroestlShortVarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <GroestlShortVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<GroestlShortVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<GroestlShortVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<GroestlShortVarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+groestl/src/lib.rs <GroestlShortVarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<GroestlShortVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<GroestlShortVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<GroestlShortVarCore>::write_alg_name(p0);
+-----------------
+groestl/src/lib.rs <GroestlShortVarCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // GroestlShortVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<GroestlShortVarCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<GroestlShortVarCore as core::fmt::Debug>::fmt(p0, p1);
++<GroestlShortVarCore>::fmt(p0, p1);
+-----------------
+groestl/src/lib.rs <GroestlLongVarCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // GroestlLongVarCore
++p0.clone();
++<GroestlLongVarCore as core::clone::Clone>::clone(p0);
++crate::<GroestlLongVarCore as core::clone::Clone>::clone(p0);
++<GroestlLongVarCore>::clone(p0);
+-----------------
+groestl/src/lib.rs <GroestlLongVarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // GroestlLongVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <GroestlLongVarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<GroestlLongVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<GroestlLongVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<GroestlLongVarCore>::update_blocks(p0, p1);
+-----------------
+groestl/src/lib.rs <GroestlLongVarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<GroestlLongVarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<GroestlLongVarCore as digest::core_api::VariableOutputCore>::new(p0);
++<GroestlLongVarCore>::new(p0);
+-----------------
+groestl/src/lib.rs <GroestlLongVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // GroestlLongVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<GroestlLongVarCore as digest::core_api::BlockSizeUser>::BlockSize, <GroestlLongVarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <GroestlLongVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<GroestlLongVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<GroestlLongVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<GroestlLongVarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+groestl/src/lib.rs <GroestlLongVarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<GroestlLongVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<GroestlLongVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<GroestlLongVarCore>::write_alg_name(p0);
+-----------------
+groestl/src/lib.rs <GroestlLongVarCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // GroestlLongVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<GroestlLongVarCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<GroestlLongVarCore as core::fmt::Debug>::fmt(p0, p1);
++<GroestlLongVarCore>::fmt(p0, p1);

@@ -1,0 +1,4 @@
+err proc-macro2 /mnt/sda/xiang/rulf/rulf_hybrid/proc-macro2/./src/detection.rs tests_rug_35
+err proc-macro2 /mnt/sda/xiang/rulf/rulf_hybrid/proc-macro2/./src/wrapper.rs tests_rug_103
+err proc-macro2 /mnt/sda/xiang/rulf/rulf_hybrid/proc-macro2/./src/parse.rs tests_rug_11
+proc-macro2 . 214 217 0

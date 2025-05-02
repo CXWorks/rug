@@ -1,0 +1,4217 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+    
+    #[test]
+    fn test_into_iter() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+
+        let mut iter = deque.into_iter();
+
+        assert_eq!(iter.next(), Some(1));
+        assert_eq!(iter.next(), Some(2));
+        assert_eq!(iter.next(), Some(3));
+        assert_eq!(iter.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+    use std::iter::FromIterator;
+
+    #[test]
+    fn test_into_iter() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+
+        let mut iter = deque.into_iter();
+        assert_eq!(iter.next(), Some(1));
+        assert_eq!(iter.next(), Some(2));
+        assert_eq!(iter.next(), Some(3));
+        assert_eq!(iter.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_arr_eq() {
+        let vec: Vec<String> = vec!["hello".to_string(), "world".to_string()];
+        let arr: [&'static str; 2] = ["hello", "world"];
+
+        assert!(vec.arr_eq(&arr));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    use serde::de::Error;
+    use std::fmt::{Write, Formatter};
+
+    #[test]
+    fn test_expecting() {
+        let mut formatter = Formatter::new(Vec::new());
+
+        let categories_t_visitor = CategoriesTVisitor;
+        let result = categories_t_visitor.expecting(&mut formatter);
+
+        assert!(result.is_ok());
+    }
+}
+False
+========================================
+    extern crate xi_trace;
+    use serde::de::Error;
+    use serde::de::Visitor;
+    use xi_trace::trace::CategoriesT;
+    
+    #[test]
+    fn test_visit_str() {
+        let visitor = CategoriesTVisitor::new();
+        let result = visitor.visit_str("category1,category2,category3");
+        
+        assert_eq!(
+            result,
+            Ok(CategoriesT::DynamicArray(vec![
+                String::from("category1"),
+                String::from("category2"),
+                String::from("category3"),
+            ]))
+        );
+    }
+    
+    struct CategoriesTVisitor;
+    
+    impl<'de> Visitor<'de> for CategoriesTVisitor {
+        type Value = CategoriesT;
+    
+        fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+            formatter.write_str("comma-separated strings")
+        }
+    
+        fn visit_borrowed_str<E>(self, v: &'de str) -> Result<Self::Value, E>
+        where
+            E: Error,
+        {
+            let categories = v.split(',').map(ToString::to_string).collect();
+            Ok(CategoriesT::DynamicArray(categories))
+        }
+    }
+}
+False
+========================================
+    use serde::de::DeserializeOwned;
+    use serde_json;
+    use serde::Deserialize;
+    use std::fmt;
+    use std::error::Error;
+
+    #[derive(Debug, PartialEq)]
+    enum CategoriesT {
+        DynamicArray(Vec<String>),
+    }
+
+    impl<'de> Deserialize<'de> for CategoriesT {
+        fn deserialize<D>(deserializer: D) -> Result<CategoriesT, D::Error>
+        where
+            D: serde::de::Deserializer<'de>,
+        {
+            use serde::de::Visitor;
+
+            struct CategoriesTVisitor;
+
+            impl<'de> Visitor<'de> for CategoriesTVisitor {
+                type Value = CategoriesT;
+
+                fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                    formatter.write_str("comma-separated strings")
+                }
+
+                fn visit_str<E>(self, v: &str) -> Result<CategoriesT, E>
+                where
+                    E: serde::de::Error,
+                {
+                    let categories = v.split(',').map(ToString::to_string).collect();
+                    Ok(CategoriesT::DynamicArray(categories))
+                }
+
+                fn visit_string<E>(self, v: String) -> Result<CategoriesT, E>
+                where
+                    E: serde::de::Error,
+                {
+                    let categories = v.split(',').map(ToString::to_string).collect();
+                    Ok(CategoriesT::DynamicArray(categories))
+                }
+            }
+
+            deserializer.deserialize_str(CategoriesTVisitor)
+        }
+    }
+
+    fn assert_deserialize<'de, T>(input: &'de str, expected: T)
+    where
+        T: PartialEq + DeserializeOwned + fmt::Debug,
+    {
+        let deserialized: T = serde_json::from_str(input).unwrap();
+        assert_eq!(deserialized, expected);
+    }
+
+    #[test]
+    fn test_deserialize_dynamic_array() {
+        let input = r#" "category1,category2,category3" "#;
+        let expected = CategoriesT::DynamicArray(vec![
+            "category1".to_string(),
+            "category2".to_string(),
+            "category3".to_string(),
+        ]);
+        assert_deserialize(input, expected);
+    }
+}
+True
+========================================
+    use serde_json;
+    use serde_test::{assert_tokens, Token};
+
+    use super::*;
+
+use crate::*;
+
+    use std::iter::FromIterator;
+
+    #[test]
+    fn test_serialize_static_array() {
+        let categories = CategoriesT::from(&["foo", "bar", "baz"]);
+        let serialized = serde_json::to_string(&categories).unwrap();
+        assert_eq!(serialized, r#""foo,bar,baz""#);
+    }
+
+    #[test]
+    fn test_serialize_dynamic_array() {
+        let categories = CategoriesT::from(vec!["foo", "bar", "baz"]);
+        let serialized = serde_json::to_string(&categories).unwrap();
+        assert_eq!(serialized, r#""foo,bar,baz""#);
+    }
+
+    #[test]
+    fn test_serialize_string_array_eq() {
+        let vec1: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string()];
+        let vec2: &[&str] = &["foo", "bar", "baz"];
+        assert_eq!(vec1.arr_eq(vec2), true);
+    }
+
+    #[test]
+    fn test_serialize_tokens_static_array() {
+        let categories = CategoriesT::from(&["foo", "bar", "baz"]);
+        assert_tokens(
+            &categories.serialize(&mut serde_json::Serializer::new(Vec::new())).unwrap(),
+            &[Token::Str("foo,bar,baz")],
+        );
+    }
+
+    #[test]
+    fn test_serialize_tokens_dynamic_array() {
+        let categories = CategoriesT::from(vec!["foo", "bar", "baz"]);
+        assert_tokens(
+            &categories.serialize(&mut serde_json::Serializer::new(Vec::new())).unwrap(),
+            &[Token::Str("foo,bar,baz")],
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+    use std::iter::FromIterator;
+
+    #[test]
+    fn test_eq_static_static() {
+        let arr1: [&'static str; 3] = ["abc", "def", "ghi"];
+        let arr2: [&'static str; 3] = ["abc", "def", "ghi"];
+        let ct1 = CategoriesT::StaticArray(&arr1);
+        let ct2 = CategoriesT::StaticArray(&arr2);
+        assert_eq!(ct1.eq(&ct2), true);
+    }
+    
+    #[test]
+    fn test_eq_static_dynamic() {
+        let arr1: [&'static str; 3] = ["abc", "def", "ghi"];
+        let vec2: Vec<String> = vec!["abc".to_string(), "def".to_string(), "ghi".to_string()];
+        let ct1 = CategoriesT::StaticArray(&arr1);
+        let ct2 = CategoriesT::DynamicArray(vec2);
+        assert_eq!(ct1.eq(&ct2), true);
+    }
+    
+    #[test]
+    fn test_eq_dynamic_static() {
+        let vec1: Vec<String> = vec!["abc".to_string(), "def".to_string(), "ghi".to_string()];
+        let arr2: [&'static str; 3] = ["abc", "def", "ghi"];
+        let ct1 = CategoriesT::DynamicArray(vec1);
+        let ct2 = CategoriesT::StaticArray(&arr2);
+        assert_eq!(ct1.eq(&ct2), true);
+    }
+    
+    #[test]
+    fn test_eq_dynamic_dynamic() {
+        let vec1: Vec<String> = vec!["abc".to_string(), "def".to_string(), "ghi".to_string()];
+        let vec2: Vec<String> = vec!["abc".to_string(), "def".to_string(), "ghi".to_string()];
+        let ct1 = CategoriesT::DynamicArray(vec1);
+        let ct2 = CategoriesT::DynamicArray(vec2);
+        assert_eq!(ct1.eq(&ct2), true);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_from_static_array_to_categories_t() {
+        let arr: &[&'static str; 0] = &[];
+        let result: CategoriesT = <CategoriesT as std::convert::From<_>>::from(arr);
+
+        match result {
+            CategoriesT::StaticArray(c) => assert_eq!(c.len(), 0),
+            _ => panic!("Expected StaticArray variant"),
+        }
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json;
+    use std::error::Error;
+
+    #[test]
+    fn test_from() {
+        let arr: [&'static str; 10] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+        let categories: CategoriesT = From::from(&arr);
+        match categories {
+            CategoriesT::StaticArray(ref arr) => assert_eq!(*arr, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]),
+            _ => panic!("Expected CategoriesT::StaticArray, found DynamicArray"),
+        }
+
+        let vec: Vec<String> = vec!["1".to_string(), "2".to_string(), "3".to_string(), "4".to_string(), "5".to_string(), "6".to_string(), "7".to_string(), "8".to_string(), "9".to_string(), "10".to_string()];
+        let categories: CategoriesT = From::from(vec);
+        match categories {
+            CategoriesT::DynamicArray(ref vec) => assert_eq!(*vec, vec!["1".to_string(), "2".to_string(), "3".to_string(), "4".to_string(), "5".to_string(), "6".to_string(), "7".to_string(), "8".to_string(), "9".to_string(), "10".to_string()]),
+            _ => panic!("Expected CategoriesT::DynamicArray, found StaticArray"),
+        }
+    }
+
+    #[test]
+    fn test_serialize() {
+        let vec: Vec<String> = vec!["1".to_string(), "2".to_string(), "3".to_string()];
+        let categories: CategoriesT = From::from(vec);
+        let json = serde_json::to_string(&categories).unwrap();
+        assert_eq!(json, "\"1,2,3\"");
+
+        let arr: [&'static str; 3] = ["1", "2", "3"];
+        let categories: CategoriesT = From::from(&arr);
+        let json = serde_json::to_string(&categories).unwrap();
+        assert_eq!(json, "\"1,2,3\"");
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let json = "\"1,2,3\"";
+        let categories: CategoriesT = serde_json::from_str(json).unwrap();
+        match categories {
+            CategoriesT::DynamicArray(ref vec) => assert_eq!(*vec, vec!["1".to_string(), "2".to_string(), "3".to_string()]),
+            _ => panic!("Expected CategoriesT::DynamicArray, found StaticArray"),
+        }
+    }
+
+    #[test]
+    fn test_join() {
+        let arr: [&'static str; 3] = ["1", "2", "3"];
+        let categories: CategoriesT = From::from(&arr);
+        let joined = categories.join(",");
+        assert_eq!(joined, "1,2,3");
+
+        let vec: Vec<String> = vec!["1".to_string(), "2".to_string(), "3".to_string()];
+        let categories: CategoriesT = From::from(vec);
+        let joined = categories.join(",");
+        assert_eq!(joined, "1,2,3");
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::error::Error;
+    use std::iter::FromIterator;
+    use std::collections::VecDeque;
+    use crate::fixed_lifo_deque::*;
+
+    #[test]
+    fn test_from_static_array() {
+        let arr: [&'static str; 1] = ["category"];
+        let result: CategoriesT = CategoriesT::from(&arr);
+        assert_eq!(result, CategoriesT::StaticArray(&arr));
+    }
+    
+    #[test]
+    fn test_from_dynamic_array() {
+        let arr: Vec<String> = vec!["category1".to_string(), "category2".to_string()];
+        let result: CategoriesT = CategoriesT::from(arr.clone());
+        assert_eq!(result, CategoriesT::DynamicArray(arr));
+    }
+    
+    #[test]
+    fn test_eq_static_array() {
+        let arr1: [&'static str; 2] = ["category1", "category2"];
+        let arr2: [&'static str; 2] = ["category1", "category2"];
+        let categories1: CategoriesT = CategoriesT::from(&arr1);
+        let categories2: CategoriesT = CategoriesT::from(&arr2);
+        assert_eq!(categories1, categories2);
+    }
+    
+    #[test]
+    fn test_eq_dynamic_array() {
+        let arr1: Vec<String> = vec!["category1".to_string(), "category2".to_string()];
+        let arr2: Vec<String> = vec!["category1".to_string(), "category2".to_string()];
+        let categories1: CategoriesT = CategoriesT::from(arr1.clone());
+        let categories2: CategoriesT = CategoriesT::from(arr2.clone());
+        assert_eq!(categories1, categories2);
+    }
+    
+    #[test]
+    fn test_join_static_array() {
+        let arr: [&'static str; 3] = ["category1", "category2", "category3"];
+        let categories: CategoriesT = CategoriesT::from(&arr);
+        assert_eq!(categories.join(","), "category1,category2,category3");
+    }
+    
+    #[test]
+    fn test_join_dynamic_array() {
+        let arr: Vec<String> = vec!["category1".to_string(), "category2".to_string(), "category3".to_string()];
+        let categories: CategoriesT = CategoriesT::from(arr.clone());
+        assert_eq!(categories.join(","), "category1,category2,category3");
+    }
+    
+    #[test]
+    fn test_serialize_static_array() {
+        let arr: [&'static str; 2] = ["category1", "category2"];
+        let categories: CategoriesT = CategoriesT::from(&arr);
+        let result = serde_json::to_string(&categories).unwrap();
+        assert_eq!(result, "\"category1,category2\"");
+    }
+    
+    #[test]
+    fn test_serialize_dynamic_array() {
+        let arr: Vec<String> = vec!["category1".to_string(), "category2".to_string()];
+        let categories: CategoriesT = CategoriesT::from(arr.clone());
+        let result = serde_json::to_string(&categories).unwrap();
+        assert_eq!(result, "\"category1,category2\"");
+    }
+    
+    #[test]
+    fn test_deserialize() {
+        let result: CategoriesT = serde_json::from_str("\"category1,category2,category3\"").unwrap();
+        let expected: CategoriesT = CategoriesT::from(vec!["category1".to_string(), "category2".to_string(), "category3".to_string()]);
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use serde_json;
+
+    #[test]
+    fn test_from() {
+        let input: [&'static str; 2] = ["hello", "world"];
+        let expected = CategoriesT::StaticArray(&["hello", "world"]);
+        let result = CategoriesT::from(&input);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_serialize() {
+        let input = CategoriesT::StaticArray(&["hello", "world"]);
+        let expected = "\"hello,world\"";
+        let result = serde_json::to_string(&input).unwrap();
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let input = "\"hello,world\"";
+        let expected = CategoriesT::StaticArray(&["hello", "world"]);
+        let result = serde_json::from_str::<CategoriesT>(&input).unwrap();
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_join() {
+        let input = CategoriesT::StaticArray(&["hello", "world"]);
+        let expected = "hello world".to_string();
+        let result = input.join(" ");
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_eq_static_array() {
+        let input1 = CategoriesT::StaticArray(&["hello", "world"]);
+        let input2 = CategoriesT::StaticArray(&["hello", "world"]);
+        assert_eq!(input1, input2);
+    }
+
+    #[test]
+    fn test_eq_dynamic_array() {
+        let input1 = CategoriesT::DynamicArray(vec!["hello".to_string(), "world".to_string()]);
+        let input2 = CategoriesT::DynamicArray(vec!["hello".to_string(), "world".to_string()]);
+        assert_eq!(input1, input2);
+    }
+
+    #[test]
+    fn test_ne_static_array() {
+        let input1 = CategoriesT::StaticArray(&["hello", "world"]);
+        let input2 = CategoriesT::StaticArray(&["hello", "there"]);
+        assert_ne!(input1, input2);
+    }
+
+    #[test]
+    fn test_ne_dynamic_array() {
+        let input1 = CategoriesT::DynamicArray(vec!["hello".to_string(), "world".to_string()]);
+        let input2 = CategoriesT::DynamicArray(vec!["hello".to_string(), "there".to_string()]);
+        assert_ne!(input1, input2);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json;
+
+    #[test]
+    fn test_from() {
+        let args = ["arg1", "arg2", "arg3"];
+        let categories: CategoriesT = CategoriesT::from(&args);
+        match categories {
+            CategoriesT::StaticArray(arr) => {
+                assert_eq!(arr.len(), 3);
+                assert_eq!(arr[0], "arg1");
+                assert_eq!(arr[1], "arg2");
+                assert_eq!(arr[2], "arg3");
+            }
+            _ => panic!("Incorrect variant of CategoriesT"),
+        }
+    }
+
+    #[test]
+    fn test_join() {
+        let arr = ["c1", "c2", "c3"];
+        let categories = CategoriesT::StaticArray(&arr);
+        assert_eq!(categories.join(","), "c1,c2,c3");
+
+        let vec = vec!["c1", "c2", "c3"];
+        let categories = CategoriesT::DynamicArray(vec.into_iter().map(String::from).collect());
+        assert_eq!(categories.join(","), "c1,c2,c3");
+    }
+
+    #[test]
+    fn test_eq() {
+        let arr1 = ["arg1", "arg2", "arg3"];
+        let arr2 = ["arg1", "arg2", "arg3"];
+        let arr3 = ["arg1", "arg2", "arg4"];
+        let categories1: CategoriesT = CategoriesT::from(&arr1);
+        let categories2: CategoriesT = CategoriesT::from(&arr2);
+        let categories3: CategoriesT = CategoriesT::from(&arr3);
+        assert_eq!(categories1, categories2);
+        assert_ne!(categories1, categories3);
+    }
+
+    #[test]
+    fn test_serialize() {
+        let arr = ["arg1", "arg2", "arg3"];
+        let categories: CategoriesT = CategoriesT::from(&arr);
+        let serialized = serde_json::to_string(&categories).unwrap();
+        assert_eq!(serialized, "\"arg1,arg2,arg3\"");
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let serialized = "\"arg1,arg2,arg3\"";
+        let categories: CategoriesT = serde_json::from_str(&serialized).unwrap();
+        match categories {
+            CategoriesT::DynamicArray(vec) => {
+                assert_eq!(vec.len(), 3);
+                assert_eq!(vec[0], "arg1");
+                assert_eq!(vec[1], "arg2");
+                assert_eq!(vec[2], "arg3");
+            }
+            _ => panic!("Incorrect variant of CategoriesT"),
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json;
+
+    #[test]
+    fn test_from_static_array() {
+        let arr: &'static [&'static str; 4] = &["foo", "bar", "baz", "qux"];
+        let categories: CategoriesT = CategoriesT::from(arr);
+        assert_eq!(categories, CategoriesT::StaticArray(arr));
+    }
+
+    #[test]
+    fn test_from_dynamic_array() {
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string(), "qux".to_string()];
+        let categories: CategoriesT = CategoriesT::from(vec.clone());
+        assert_eq!(categories, CategoriesT::DynamicArray(vec));
+    }
+
+    #[test]
+    fn test_join_static_array() {
+        let arr: &'static [&'static str; 4] = &["foo", "bar", "baz", "qux"];
+        let categories: CategoriesT = CategoriesT::StaticArray(arr);
+        assert_eq!(categories.join(","), "foo,bar,baz,qux");
+    }
+
+    #[test]
+    fn test_join_dynamic_array() {
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string(), "qux".to_string()];
+        let categories: CategoriesT = CategoriesT::DynamicArray(vec);
+        assert_eq!(categories.join(","), "foo,bar,baz,qux");
+    }
+
+    #[test]
+    fn test_serialize_static_array() {
+        let arr: &'static [&'static str; 4] = &["foo", "bar", "baz", "qux"];
+        let categories: CategoriesT = CategoriesT::StaticArray(arr);
+        let json = serde_json::to_string(&categories).unwrap();
+        assert_eq!(json, "\"foo,bar,baz,qux\"");
+    }
+
+    #[test]
+    fn test_serialize_dynamic_array() {
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string(), "qux".to_string()];
+        let categories: CategoriesT = CategoriesT::DynamicArray(vec);
+        let json = serde_json::to_string(&categories).unwrap();
+        assert_eq!(json, "\"foo,bar,baz,qux\"");
+    }
+
+    #[test]
+    fn test_deserialize_static_array() {
+        let json = "\"foo,bar,baz,qux\"";
+        let categories: CategoriesT = serde_json::from_str(json).unwrap();
+        let arr: &'static [&'static str; 4] = &["foo", "bar", "baz", "qux"];
+        assert_eq!(categories, CategoriesT::StaticArray(arr));
+    }
+
+    #[test]
+    fn test_deserialize_dynamic_array() {
+        let json = "\"foo,bar,baz,qux\"";
+        let categories: CategoriesT = serde_json::from_str(json).unwrap();
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string(), "qux".to_string()];
+        assert_eq!(categories, CategoriesT::DynamicArray(vec));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json;
+
+    #[test]
+    fn test_from() {
+        let arr: [&'static str; 5] = ["one", "two", "three", "four", "five"];
+        let categories: CategoriesT = CategoriesT::StaticArray(&arr);
+        assert_eq!(categories, CategoriesT::from(&arr));
+    }
+
+    #[test]
+    fn test_from_deserialize_str() {
+        let categories: CategoriesT = serde_json::from_str("\"one,two,three,four,five\"")
+            .expect("Failed to deserialize");
+        assert_eq!(
+            categories,
+            CategoriesT::DynamicArray(vec![
+                "one".to_string(),
+                "two".to_string(),
+                "three".to_string(),
+                "four".to_string(),
+                "five".to_string()
+            ])
+        );
+    }
+
+    #[test]
+    fn test_serialize() {
+        let arr: [&'static str; 5] = ["one", "two", "three", "four", "five"];
+        let categories: CategoriesT = CategoriesT::StaticArray(&arr);
+        let serialized = serde_json::to_string(&categories).expect("Failed to serialize");
+        assert_eq!(serialized, "\"one,two,three,four,five\"");
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let serialized = "\"one,two,three,four,five\"";
+        let categories: CategoriesT = serde_json::from_str(serialized).expect("Failed to deserialize");
+        let arr: [&'static str; 5] = ["one", "two", "three", "four", "five"];
+        assert_eq!(categories, CategoriesT::StaticArray(&arr));
+    }
+
+    #[test]
+    fn test_eq() {
+        let arr1: [&'static str; 5] = ["one", "two", "three", "four", "five"];
+        let arr2: [&'static str; 5] = ["one", "two", "three", "four", "five"];
+        let categories1: CategoriesT = CategoriesT::StaticArray(&arr1);
+        let categories2: CategoriesT = CategoriesT::StaticArray(&arr2);
+        assert_eq!(categories1, categories2);
+
+        let vec1: Vec<String> = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let vec2: Vec<String> = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories3: CategoriesT = CategoriesT::DynamicArray(vec1);
+        let categories4: CategoriesT = CategoriesT::DynamicArray(vec2);
+        assert_eq!(categories3, categories4);
+    }
+
+    #[test]
+    fn test_neq() {
+        let arr1: [&'static str; 5] = ["one", "two", "three", "four", "five"];
+        let arr2: [&'static str; 4] = ["one", "two", "three", "four"];
+        let categories1: CategoriesT = CategoriesT::StaticArray(&arr1);
+        let categories2: CategoriesT = CategoriesT::StaticArray(&arr2);
+        assert_ne!(categories1, categories2);
+
+        let vec1: Vec<String> = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let vec2: Vec<String> = vec!["one".to_string(), "two".to_string()];
+        let categories3: CategoriesT = CategoriesT::DynamicArray(vec1);
+        let categories4: CategoriesT = CategoriesT::DynamicArray(vec2);
+        assert_ne!(categories3, categories4);
+    }
+
+    #[test]
+    fn test_join_static_array() {
+        let arr: [&'static str; 3] = ["one", "two", "three"];
+        let categories: CategoriesT = CategoriesT::StaticArray(&arr);
+        assert_eq!(categories.join(", "), "one, two, three");
+    }
+
+    #[test]
+    fn test_join_dynamic_array() {
+        let vec: Vec<String> = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories: CategoriesT = CategoriesT::DynamicArray(vec);
+        assert_eq!(categories.join(", "), "one, two, three");
+    }
+
+    #[test]
+    fn test_arr_eq_true() {
+        let vec: Vec<String> = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let arr: [&'static str; 3] = ["one", "two", "three"];
+        assert!(vec.arr_eq(&arr));
+    }
+
+    #[test]
+    fn test_arr_eq_false() {
+        let vec: Vec<String> = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let arr: [&'static str; 2] = ["one", "two"];
+        assert!(!vec.arr_eq(&arr));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_from() {
+        let arr: [&'static str; 6] = ["a", "b", "c", "d", "e", "f"];
+        let expected = CategoriesT::StaticArray(&arr);
+        let result: CategoriesT = <CategoriesT as std::convert::From<&'static [&'static str; 6]>>::from(&arr);
+        assert_eq!(expected, result);
+    }
+
+    #[test]
+    fn test_serialize() {
+        let arr: [&'static str; 6] = ["a", "b", "c", "d", "e", "f"];
+        let categories = CategoriesT::StaticArray(&arr);
+        let expected = "a,b,c,d,e,f";
+        assert_tokens(&categories, &[serde_test::Token::Str(expected)]);
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let input = "a,b,c,d,e,f";
+        let expected: CategoriesT = CategoriesT::DynamicArray(vec!["a", "b", "c", "d", "e", "f"].iter().map(|x| x.to_string()).collect());
+        assert_tokens(&input, &[serde_test::Token::Str(&expected)]);
+    }
+}
+False
+========================================
+    use crate::CategoriesT;
+
+    #[test]
+    fn test_from() {
+        let c: &'static [&'static str; 7] = &["foo", "bar", "baz", "qux", "quux", "corge", "grault"];
+        let result: CategoriesT = <CategoriesT as std::convert::From<&'static [&'static str; 7]>>::from(c);
+
+        assert_eq!(result, CategoriesT::StaticArray(c));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json;
+
+    #[test]
+    fn test_from_static_array() {
+        let arr = &["one", "two", "three"];
+        let categories: CategoriesT = <CategoriesT as std::convert::From<&'static [&'static str; 3]>>::from(arr);
+        assert_eq!(categories, CategoriesT::StaticArray(arr));
+    }
+
+    #[test]
+    fn test_from_dynamic_array() {
+        let vec = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories: CategoriesT = <CategoriesT as std::convert::From<Vec<String>>>::from(vec.clone());
+        assert_eq!(categories, CategoriesT::DynamicArray(vec));
+    }
+
+    #[test]
+    fn test_join_static_array() {
+        let arr = &["one", "two", "three"];
+        let categories = CategoriesT::StaticArray(arr);
+        assert_eq!(categories.join("-"), "one-two-three");
+    }
+
+    #[test]
+    fn test_join_dynamic_array() {
+        let vec = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories = CategoriesT::DynamicArray(vec);
+        assert_eq!(categories.join("-"), "one-two-three");
+    }
+
+    #[test]
+    fn test_eq_static_array() {
+        let arr1 = &["one", "two", "three"];
+        let categories1 = CategoriesT::StaticArray(arr1);
+        let arr2 = &["one", "two", "three"];
+        let categories2 = CategoriesT::StaticArray(arr2);
+
+        assert_eq!(categories1, categories2);
+    }
+
+    #[test]
+    fn test_eq_dynamic_array() {
+        let vec1 = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories1 = CategoriesT::DynamicArray(vec1);
+        let vec2 = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories2 = CategoriesT::DynamicArray(vec2);
+
+        assert_eq!(categories1, categories2);
+    }
+
+    #[test]
+    fn test_serialize_static_array() {
+        let arr = &["one", "two", "three"];
+        let categories = CategoriesT::StaticArray(arr);
+        let serialized = serde_json::to_string(&categories).unwrap();
+        assert_eq!(serialized, "\"one,two,three\"");
+    }
+
+    #[test]
+    fn test_serialize_dynamic_array() {
+        let vec = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories = CategoriesT::DynamicArray(vec);
+        let serialized = serde_json::to_string(&categories).unwrap();
+        assert_eq!(serialized, "\"one,two,three\"");
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let deserialized: CategoriesT = serde_json::from_str("\"one,two,three\"").unwrap();
+        let vec = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+        let categories = CategoriesT::DynamicArray(vec);
+        assert_eq!(deserialized, categories);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json;
+
+    #[test]
+    fn test_from_static_array() {
+        let arr: [&'static str; 9] = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+        let categories: CategoriesT = CategoriesT::from(&arr);
+
+        let expected = CategoriesT::StaticArray(&arr);
+        assert_eq!(categories, expected);
+    }
+
+    #[test]
+    fn test_from_dynamic_array() {
+        let arr: Vec<String> = vec!["a".to_string(), "b".to_string(), "c".to_string()];
+        let categories: CategoriesT = CategoriesT::from(arr.clone());
+
+        let expected = CategoriesT::DynamicArray(arr);
+        assert_eq!(categories, expected);
+    }
+
+    #[test]
+    fn test_serialize() {
+        let categories: CategoriesT = CategoriesT::StaticArray(&["a", "b", "c"]);
+        let serialized = serde_json::to_string(&categories).unwrap();
+
+        let expected = "a,b,c".to_string();
+        assert_eq!(serialized, expected);
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let deserialized: CategoriesT = serde_json::from_str("a,b,c").unwrap();
+
+        let expected = CategoriesT::DynamicArray(vec!["a".to_string(), "b".to_string(), "c".to_string()]);
+        assert_eq!(deserialized, expected);
+    }
+
+    #[test]
+    fn test_join_static_array() {
+        let categories: CategoriesT = CategoriesT::StaticArray(&["a", "b", "c"]);
+        let joined = categories.join(",");
+
+        let expected = "a,b,c".to_string();
+        assert_eq!(joined, expected);
+    }
+
+    #[test]
+    fn test_join_dynamic_array() {
+        let categories: CategoriesT = CategoriesT::DynamicArray(vec!["a".to_string(), "b".to_string(), "c".to_string()]);
+        let joined = categories.join(",");
+
+        let expected = "a,b,c".to_string();
+        assert_eq!(joined, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_trace::CategoriesT;
+    use serde_json;
+    use serde_json::json;
+    
+    #[test]
+    fn test_from_static_array() {
+        let arr: [&str; 3] = ["foo", "bar", "baz"];
+        let categories: CategoriesT = CategoriesT::from(&arr[..]);
+        let expected: CategoriesT = CategoriesT::StaticArray(&["foo", "bar", "baz"]);
+
+        assert_eq!(categories, expected);
+    }
+    
+    #[test]
+    fn test_from_dynamic_array() {
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string()];
+        let categories: CategoriesT = CategoriesT::from(vec.clone());
+        let expected: CategoriesT = CategoriesT::DynamicArray(vec);
+
+        assert_eq!(categories, expected);
+    }
+    
+    #[test]
+    fn test_join_static_array() {
+        let arr: [&str; 3] = ["foo", "bar", "baz"];
+        let categories: CategoriesT = CategoriesT::from(&arr[..]);
+        let joined = categories.join(",");
+
+        assert_eq!(joined, "foo,bar,baz");
+    }
+    
+    #[test]
+    fn test_join_dynamic_array() {
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string()];
+        let categories: CategoriesT = CategoriesT::from(vec.clone());
+        let joined = categories.join(",");
+
+        assert_eq!(joined, "foo,bar,baz");
+    }
+    
+    #[test]
+    fn test_serialize_dynamic_array() {
+        let vec: Vec<String> = vec!["foo".to_string(), "bar".to_string(), "baz".to_string()];
+        let categories: CategoriesT = CategoriesT::from(vec.clone());
+        let serialized = serde_json::to_string(&categories).unwrap();
+        let expected = json!("foo,bar,baz").to_string();
+
+        assert_eq!(serialized, expected);
+    }
+    
+    #[test]
+    fn test_deserialize_dynamic_array() {
+        let serialized = json!("foo,bar,baz").to_string();
+        let expected: CategoriesT = CategoriesT::DynamicArray(vec!["foo".to_string(), "bar".to_string(), "baz".to_string()]);
+        let deserialized: CategoriesT = serde_json::from_str(&serialized).unwrap();
+
+        assert_eq!(deserialized, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::cmp::Ordering;
+
+    #[derive(Default)]
+    struct Sample {
+        timestamp_us: u64,
+    }
+
+    #[test]
+    fn test_cmp() {
+        let sample1 = Sample {
+            timestamp_us: 100,
+        };
+        let sample2 = Sample {
+            timestamp_us: 200,
+        };
+        let sample3 = Sample {
+            timestamp_us: 100,
+        };
+        assert_eq!(sample1.cmp(&sample2), Ordering::Less);
+        assert_eq!(sample2.cmp(&sample1), Ordering::Greater);
+        assert_eq!(sample1.cmp(&sample3), Ordering::Equal);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::lib::Sample;
+    use crate::lib::SampleEventType;
+
+    #[test]
+    fn test_eq() {
+        let sample1 = Sample {
+            name: StrCow::Owned(String::from("event1")),
+            categories: Some(CategoriesT::Owned(String::from("cat1"))),
+            timestamp_us: 1000,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 1,
+            tid: 1,
+            thread_name: None,
+            args: None,
+        };
+        let sample2 = Sample {
+            name: StrCow::Owned(String::from("event1")),
+            categories: Some(CategoriesT::Owned(String::from("cat1"))),
+            timestamp_us: 1000,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 1,
+            tid: 1,
+            thread_name: None,
+            args: None,
+        };
+        let sample3 = Sample {
+            name: StrCow::Owned(String::from("event2")),
+            categories: Some(CategoriesT::Owned(String::from("cat1"))),
+            timestamp_us: 1000,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 1,
+            tid: 1,
+            thread_name: None,
+            args: None,
+        };
+
+        assert_eq!(sample1.eq(&sample2), true);
+        assert_eq!(sample1.eq(&sample3), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_partial_cmp() {
+        let sample1 = Sample {
+            name: "sample1".into(),
+            categories: None,
+            timestamp_us: 0,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 1,
+            tid: 1,
+            thread_name: None,
+            args: None,
+        };
+
+        let sample2 = Sample {
+            name: "sample2".into(),
+            categories: None,
+            timestamp_us: 1,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 2,
+            tid: 2,
+            thread_name: None,
+            args: None,
+        };
+
+        let sample3 = Sample {
+            name: "sample3".into(),
+            categories: None,
+            timestamp_us: 2,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 3,
+            tid: 3,
+            thread_name: None,
+            args: None,
+        };
+
+        assert_eq!(sample1.partial_cmp(&sample1), Some(cmp::Ordering::Equal));
+        assert_eq!(sample1.partial_cmp(&sample2), Some(cmp::Ordering::Less));
+        assert_eq!(sample2.partial_cmp(&sample1), Some(cmp::Ordering::Greater));
+        assert_eq!(sample2.partial_cmp(&sample3), Some(cmp::Ordering::Less));
+        assert_eq!(sample3.partial_cmp(&sample2), Some(cmp::Ordering::Greater));
+    }
+}
+True
+========================================
+  use std::hash::{Hash, Hasher};
+  use std::sync::Mutex;
+  use xi_trace::metadata;
+  use xi_trace::sampling::{Sample, Sampler, SamplerBuilder, SamplingData, SamplingDecision};
+  use xi_trace::TraceHasher;
+
+  #[test]
+  fn test_hash() {
+      let mut hasher = TraceHasher::new();
+      let pid = 1;
+      let timestamp_us = 123456789;
+      let sample = Sample {
+          pid,
+          timestamp_us,
+          ..Default::default()
+      };
+
+      sample.hash(&mut hasher);
+
+      let expected_hash = TraceHasher::hash(&(&pid, &timestamp_us));
+
+      assert_eq!(hasher.finish(), expected_hash);
+  }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::time::precise_time_ns;
+
+    #[test]
+    fn test_drop() {
+        let mut trace = Trace::new();
+        let sample = Sample::new_duration_marker(
+            "test_sample",
+            CategoriesT::default(),
+            None,
+            SampleEventType::DurationBegin,
+        );
+        let mut sample_guard = SampleGuard {
+            sample: Some(sample.clone()),
+            trace: Some(&trace),
+        };
+        
+        let before_drop = trace.clone();
+        sample_guard.drop();
+        
+        assert_ne!(trace, before_drop);
+        assert_eq!(trace.samples.len(), 1);
+        assert_eq!(trace.samples[0], sample);
+    }
+}
+False
+========================================
+    use serde_json::Error as JsonError;
+    use xi_trace::trace::chrome_trace_dump::Error;
+    use std::io::Error as IOError;
+    use std::io::ErrorKind;
+
+    #[test]
+    fn test_from() {
+        let json_error = JsonError::new(JsonError::Syntax, "Invalid syntax at line 1");
+        let expected_error = Error::Json(json_error);
+
+        let result = Error::from(json_error);
+
+        assert_eq!(result, expected_error);
+    }
+}
+False
+========================================
+    use crate::chrome_trace_dump::Error;
+    use std::io::Error as IOError;
+    use std::io::ErrorKind;
+    use std::convert::From;
+
+    #[test]
+    fn test_from() {
+        let io_error = IOError::new(ErrorKind::Other, "Some IO error");
+        let error = Error::from(io_error);
+        assert_eq!(error, Error::Io(io_error));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_from_string() {
+        let error_string = String::from("test error");
+        let error = Error::from(error_string);
+
+        match error {
+            Error::DecodingFormat(e) => assert_eq!(e, "test error"),
+            _ => panic!("Expected Error::DecodingFormat"),
+        }
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+    
+    #[test]
+    fn test_cmp() {
+        let mut deque1: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        let mut deque2: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque1.push_back(1);
+        deque1.push_back(2);
+        deque2.push_back(1);
+        deque2.push_back(2);
+        assert_eq!(deque1.cmp(&deque2), Ordering::Equal);
+        deque1.push_back(3);
+        deque2.push_back(4);
+        assert_eq!(deque1.cmp(&deque2), Ordering::Less);
+        assert_eq!(deque2.cmp(&deque1), Ordering::Greater);
+        deque1.push_back(5);
+        deque2.push_back(5);
+        assert_eq!(deque1.cmp(&deque2), Ordering::Equal);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_eq() {
+        let deque1: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        let deque2: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        assert_eq!(deque1.eq(&deque2), true);
+
+        let deque3 = FixedLifoDeque {
+            storage: VecDeque::from(vec![1, 2, 3]),
+            limit: 3,
+        };
+        let deque4 = FixedLifoDeque {
+            storage: VecDeque::from(vec![1, 2, 3]),
+            limit: 3,
+        };
+        assert_eq!(deque3.eq(&deque4), true);
+
+        let deque5 = FixedLifoDeque {
+            storage: VecDeque::from(vec![1, 2, 3]),
+            limit: 3,
+        };
+        let deque6 = FixedLifoDeque {
+            storage: VecDeque::from(vec![4, 5, 6]),
+            limit: 3,
+        };
+        assert_eq!(deque5.eq(&deque6), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_partial_cmp() {
+        let deque1: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        let deque2: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        assert_eq!(deque1.partial_cmp(&deque2), Some(Ordering::Equal));
+        
+        let mut deque3: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque3.push_back(1);
+        assert_eq!(deque1.partial_cmp(&deque3), Some(Ordering::Less));
+        assert_eq!(deque3.partial_cmp(&deque1), Some(Ordering::Greater));
+        
+        let mut deque4: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque4.push_back(1);
+        assert_eq!(deque3.partial_cmp(&deque4), Some(Ordering::Equal));
+        
+        let mut deque5: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque5.push_back(1);
+        deque5.push_back(2);
+        deque5.push_back(3);
+        let mut deque6: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque6.push_back(1);
+        deque6.push_back(2);
+        deque6.push_back(4);
+        assert_eq!(deque5.partial_cmp(&deque6), Some(Ordering::Less));
+        assert_eq!(deque6.partial_cmp(&deque5), Some(Ordering::Greater));
+        
+        let mut deque7: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque7.push_back(1);
+        deque7.push_back(2);
+        deque7.push_back(3);
+        let mut deque8: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque8.push_back(1);
+        deque8.push_back(2);
+        deque8.push_back(3);
+        assert_eq!(deque7.partial_cmp(&deque8), Some(Ordering::Equal));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
+
+    #[test]
+    fn test_hash() {
+        let mut deque = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        
+        let mut hasher = DefaultHasher::new();
+        deque.hash(&mut hasher);
+        let hash1 = hasher.finish();
+
+        let mut deque2 = FixedLifoDeque::new();
+        deque2.push_back(1);
+        deque2.push_back(2);
+        deque2.push_back(3);
+        
+        let mut hasher2 = DefaultHasher::new();
+        deque2.hash(&mut hasher2);
+        let hash2 = hasher2.finish();
+
+        assert_eq!(hash1, hash2);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_extend() {
+        let mut deque = FixedLifoDeque::new();
+        deque.extend(vec![1, 2, 3]);
+        assert_eq!(deque.len(), 3);
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 2);
+        assert_eq!(deque[2], 3);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_index() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque {
+            storage: VecDeque::new(),
+            limit: 4,
+        };
+        
+        deque.push_back(10);
+        deque.push_back(20);
+        deque.push_back(30);
+        deque.push_back(40);
+        
+        let index1 = deque.index(1);
+        let index2 = deque.index(2);
+        let index3 = deque.index(3);
+        
+        assert_eq!(*index1, 20);
+        assert_eq!(*index2, 30);
+        assert_eq!(*index3, 40);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ops::IndexMut;
+
+    #[test]
+    fn test_index_mut() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+
+        *deque.index_mut(1) = 5;
+
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 5);
+        assert_eq!(deque[2], 3);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_extend() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.extend(&vec![1, 2, 3]);
+
+        let expected: VecDeque<i32> = vec![1, 2, 3].into_iter().collect::<VecDeque<_>>();
+        assert_eq!(deque.storage, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_into_iter() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+    
+        let mut iter = deque.into_iter();
+        assert_eq!(iter.next(), Some(1));
+        assert_eq!(iter.next(), Some(2));
+        assert_eq!(iter.next(), Some(3));
+        assert_eq!(iter.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    struct MockStringArray {}
+
+    impl StringArrayEq<[&'static str]> for MockStringArray {
+        fn arr_eq(&self, other: &[&'static str]) -> bool {
+            unimplemented!()
+        }
+    }
+
+    #[test]
+    fn test_arr_eq_should_return_true_for_equal_arrays() {
+        let arr1: Vec<String> = vec!["hello".to_string(), "world".to_string()];
+        let arr2: Vec<&'static str> = vec!["hello", "world"];
+
+        let mock = MockStringArray {};
+        assert_eq!(arr1.arr_eq(&arr2), mock.arr_eq(&arr2));
+    }
+
+    #[test]
+    fn test_arr_eq_should_return_false_for_arrays_with_different_lengths() {
+        let arr1: Vec<String> = vec!["hello".to_string(), "world".to_string()];
+        let arr2: Vec<&'static str> = vec!["hello"];
+
+        let mock = MockStringArray {};
+        assert_eq!(arr1.arr_eq(&arr2), mock.arr_eq(&arr2));
+    }
+
+    #[test]
+    fn test_arr_eq_should_return_false_for_arrays_with_different_elements() {
+        let arr1: Vec<String> = vec!["hello".to_string(), "world".to_string()];
+        let arr2: Vec<&'static str> = vec!["hello", "universe"];
+
+        let mock = MockStringArray {};
+        assert_eq!(arr1.arr_eq(&arr2), mock.arr_eq(&arr2));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    use serde_json;
+    
+    #[test]
+    fn test_join_static_array() {
+        let categories = CategoriesT::StaticArray(&["apple", "banana", "orange"]);
+        assert_eq!(categories.join(","), "apple,banana,orange");
+    }
+
+    #[test]
+    fn test_join_dynamic_array() {
+        let categories = CategoriesT::DynamicArray(vec!["apple".to_string(), "banana".to_string(), "orange".to_string()]);
+        assert_eq!(categories.join(","), "apple,banana,orange");
+    }
+
+    #[test]
+    fn test_join_with_empty_string() {
+        let categories = CategoriesT::StaticArray(&["apple", "banana", "orange"]);
+        assert_eq!(categories.join(""), "applebananaorange");
+    }
+
+    #[test]
+    fn test_join_with_whitespace() {
+        let categories = CategoriesT::StaticArray(&["apple", "banana", "orange"]);
+        assert_eq!(categories.join(" "), "apple banana orange");
+    }
+
+    #[test]
+    fn test_serialize_static_array() {
+        let categories = CategoriesT::StaticArray(&["apple", "banana", "orange"]);
+        let json = serde_json::to_string(&categories).unwrap();
+        assert_eq!(json, "\"apple,banana,orange\"");
+    }
+
+    #[test]
+    fn test_serialize_dynamic_array() {
+        let categories = CategoriesT::DynamicArray(vec!["apple".to_string(), "banana".to_string(), "orange".to_string()]);
+        let json = serde_json::to_string(&categories).unwrap();
+        assert_eq!(json, "\"apple,banana,orange\"");
+    }
+
+    #[test]
+    fn test_deserialize() {
+        let json = "\"apple,banana,orange\"";
+        let categories: CategoriesT = serde_json::from_str(json).unwrap();
+        assert_eq!(categories, CategoriesT::DynamicArray(vec!["apple".to_string(), "banana".to_string(), "orange".to_string()]));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_default() {
+        let config = Config::default();
+        assert_eq!(config.sample_limit_count, 1 * 1024 * 1024 / std::mem::size_of::<Sample>());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_max_samples() {
+        let config = Config::with_limit_count(100);
+        assert_eq!(config.max_samples(), 100);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::mem::size_of;
+
+    #[test]
+    fn test_max_size_in_bytes() {
+        let config = Config::with_limit_bytes(1 * 1024 * 1024);
+        let expected = config.sample_limit_count * size_of::<Sample>();
+        assert_eq!(config.max_size_in_bytes(), expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_with_limit_bytes() {
+        let size = 1024;
+        let config = Config::with_limit_bytes(size);
+        assert_eq!(config.sample_limit_count, size / size_of::<Sample>());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_with_limit_count() {
+        let limit = 100;
+        let config = Config::with_limit_count(limit);
+        assert_eq!(config.sample_limit_count, limit);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_consume_process_name() {
+        let metadata_type = MetadataType::ProcessName {
+            name: "test_name".to_string(),
+        };
+        let (name, sort_index) = metadata_type.consume();
+        assert_eq!(name, Some("test_name".to_string()));
+        assert_eq!(sort_index, None);
+    }
+
+    #[test]
+    fn test_consume_thread_name() {
+        let metadata_type = MetadataType::ThreadName {
+            name: "test_name".to_string(),
+        };
+        let (name, sort_index) = metadata_type.consume();
+        assert_eq!(name, Some("test_name".to_string()));
+        assert_eq!(sort_index, None);
+    }
+
+    #[test]
+    fn test_consume_process_sort_index() {
+        let metadata_type = MetadataType::ProcessSortIndex {
+            sort_index: 10,
+        };
+        let (name, sort_index) = metadata_type.consume();
+        assert_eq!(name, None);
+        assert_eq!(sort_index, Some(10));
+    }
+
+    #[test]
+    fn test_consume_thread_sort_index() {
+        let metadata_type = MetadataType::ThreadSortIndex {
+            sort_index: 10,
+        };
+        let (name, sort_index) = metadata_type.consume();
+        assert_eq!(name, None);
+        assert_eq!(sort_index, Some(10));
+    }
+
+    #[test]
+    fn test_consume_process_labels() {
+        let metadata_type = MetadataType::ProcessLabels {
+            labels: "test_labels".to_string(),
+        };
+        let (name, sort_index) = metadata_type.consume();
+        assert_eq!(name, None);
+        assert_eq!(sort_index, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_sample_name_process_name() {
+        let metadata_type = MetadataType::ProcessName {
+            name: String::from("test_process"),
+        };
+        assert_eq!(metadata_type.sample_name(), "process_name");
+    }
+
+    #[test]
+    fn test_sample_name_process_labels() {
+        let metadata_type = MetadataType::ProcessLabels {
+            labels: String::from("test_labels"),
+        };
+        assert_eq!(metadata_type.sample_name(), "process_labels");
+    }
+
+    #[test]
+    fn test_sample_name_process_sort_index() {
+        let metadata_type = MetadataType::ProcessSortIndex {
+            sort_index: 123,
+        };
+        assert_eq!(metadata_type.sample_name(), "process_sort_index");
+    }
+
+    #[test]
+    fn test_sample_name_thread_name() {
+        let metadata_type = MetadataType::ThreadName {
+            name: String::from("test_thread"),
+        };
+        assert_eq!(metadata_type.sample_name(), "thread_name");
+    }
+
+    #[test]
+    fn test_sample_name_thread_sort_index() {
+        let metadata_type = MetadataType::ThreadSortIndex {
+            sort_index: 456,
+        };
+        assert_eq!(metadata_type.sample_name(), "thread_sort_index");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+
+    #[test]
+    fn test_new_duration() {
+        let name: &str = "test_duration";
+        let categories: Vec<&str> = vec!["cat1", "cat2"];
+        let payload: Option<TracePayloadT> = Some(json!({"key": "value"}));
+        let start_ns: u64 = 1000000000;
+        let duration_ns: u64 = 5000000000;
+
+        let sample = Sample::new_duration(
+            name.into(),
+            categories.into(),
+            payload,
+            start_ns,
+            duration_ns,
+        );
+
+        assert_eq!(sample.name, name.into());
+        assert_eq!(sample.categories, Some(categories.into()));
+        assert_eq!(sample.timestamp_us, ns_to_us(start_ns));
+        assert_eq!(sample.event_type, SampleEventType::CompleteDuration);
+        assert_eq!(sample.duration_us, Some(ns_to_us(duration_ns)));
+        assert_eq!(sample.tid, sys_tid::current_tid().unwrap());
+        assert_eq!(sample.thread_name, Sample::thread_name());
+        assert_eq!(sample.pid, sys_pid::current_pid());
+        assert_eq!(
+            sample.args,
+            Some(SampleArgs {
+                payload,
+                metadata_name: None,
+                metadata_sort_index: None,
+            })
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::thread;
+
+    #[test]
+    fn test_new_duration_marker() {
+        let name: &'static str = "test_name";
+        let categories: &'static [&'static str; 1] = &["test_category"];
+        let payload = Some(TracePayloadT::Str("test_payload".to_string()));
+        let event_type = SampleEventType::DurationBegin;
+
+        let sample = Sample::new_duration_marker(name, categories, payload, event_type);
+
+        assert_eq!(sample.name, name);
+        assert_eq!(sample.categories, Some(CategoriesT::Ref(&["test_category"])));
+        assert_eq!(sample.timestamp_us, ns_to_us(time::precise_time_ns()));
+        assert_eq!(sample.event_type, event_type);
+        assert_eq!(sample.duration_us, None);
+        assert_eq!(sample.tid, sys_tid::current_tid().unwrap());
+        assert_eq!(sample.thread_name, Sample::thread_name());
+        assert_eq!(sample.pid, sys_pid::current_pid());
+        assert_eq!(
+            sample.args,
+            Some(SampleArgs {
+                payload,
+                metadata_name: None,
+                metadata_sort_index: None,
+            })
+        );
+    }
+
+    #[test]
+    fn test_thread_name() {
+        let expected = std::thread::current().name().map(|s| to_cow_str(s.to_string()));
+        let actual = Sample::thread_name();
+
+        assert_eq!(actual, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::trace::trace_payload::TracePayload;
+
+    #[test]
+    fn test_new_instant() {
+        let name = "sample name";
+        let categories = vec![&"category1", &"category2"];
+        let payload = Some(TracePayload::Str("sample payload".to_string()));
+        let sample = Sample::new_instant(name, categories, payload);
+
+        assert_eq!(sample.name, name);
+        assert_eq!(sample.categories, Some(categories.into()));
+        assert_eq!(sample.timestamp_us, ns_to_us(time::precise_time_ns()));
+        assert_eq!(sample.event_type, SampleEventType::Instant);
+        assert_eq!(sample.duration_us, None);
+        assert!(sample.tid > 0);
+        assert_eq!(sample.thread_name, Sample::thread_name());
+        assert_eq!(sample.pid, sys_pid::current_pid());
+
+        assert_eq!(
+            sample.args,
+            Some(SampleArgs {
+                payload,
+                metadata_name: None,
+                metadata_sort_index: None
+            })
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use sys_pid;
+    use sys_tid;
+
+    #[test]
+    fn test_new_metadata() {
+        let timestamp_ns = 0;
+        let meta = MetadataType::ProcessName {
+            name: "test".to_string(),
+        };
+        let tid = 0;
+        let sample = Sample::new_metadata(timestamp_ns, meta, tid);
+
+        assert_eq!(sample.name, "process_name");
+        assert_eq!(sample.categories, None);
+        assert_eq!(sample.timestamp_us, 0);
+        assert_eq!(sample.event_type, SampleEventType::Metadata);
+        assert_eq!(sample.duration_us, None);
+        assert_eq!(sample.tid, 0);
+        assert_eq!(sample.thread_name, None);
+        assert_eq!(sample.pid, sys_pid::current_pid());
+        assert_eq!(sample.args.as_ref().unwrap().payload, None);
+        assert_eq!(
+            sample.args.as_ref().unwrap().metadata_name.as_ref().unwrap().to_string(),
+            "test"
+        );
+        assert_eq!(sample.args.as_ref().unwrap().metadata_sort_index, None);
+    }
+}
+True
+========================================
+    use crate::Sample::thread_name; // Update import path
+    use xi_trace::trace::StrCow;
+    use std::thread::Builder;
+
+    #[test]
+    fn test_thread_name() {
+        // Create a builder for a new thread
+        let builder = Builder::new();
+
+        // Spawn a new thread using the builder
+        let thread = builder.spawn(|| {
+            assert_eq!(thread_name().unwrap().as_str(), "new_thread");
+        }).unwrap();
+
+        // Wait for the thread to finish executing
+        thread.join().unwrap();
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_from_chrome_id() {
+        assert_eq!(SampleEventType::from_chrome_id('B'), SampleEventType::DurationBegin);
+        assert_eq!(SampleEventType::from_chrome_id('E'), SampleEventType::DurationEnd);
+        assert_eq!(SampleEventType::from_chrome_id('X'), SampleEventType::CompleteDuration);
+        assert_eq!(SampleEventType::from_chrome_id('i'), SampleEventType::Instant);
+        assert_eq!(SampleEventType::from_chrome_id('b'), SampleEventType::AsyncStart);
+        assert_eq!(SampleEventType::from_chrome_id('n'), SampleEventType::AsyncInstant);
+        assert_eq!(SampleEventType::from_chrome_id('e'), SampleEventType::AsyncEnd);
+        assert_eq!(SampleEventType::from_chrome_id('s'), SampleEventType::FlowStart);
+        assert_eq!(SampleEventType::from_chrome_id('t'), SampleEventType::FlowInstant);
+        assert_eq!(SampleEventType::from_chrome_id('f'), SampleEventType::FlowEnd);
+        assert_eq!(SampleEventType::from_chrome_id('N'), SampleEventType::ObjectCreated);
+        assert_eq!(SampleEventType::from_chrome_id('O'), SampleEventType::ObjectSnapshot);
+        assert_eq!(SampleEventType::from_chrome_id('D'), SampleEventType::ObjectDestroyed);
+        assert_eq!(SampleEventType::from_chrome_id('M'), SampleEventType::Metadata);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_into_chrome_id() {
+        assert_eq!(SampleEventType::DurationBegin.into_chrome_id(), 'B');
+        assert_eq!(SampleEventType::DurationEnd.into_chrome_id(), 'E');
+        assert_eq!(SampleEventType::CompleteDuration.into_chrome_id(), 'X');
+        assert_eq!(SampleEventType::Instant.into_chrome_id(), 'i');
+        assert_eq!(SampleEventType::AsyncStart.into_chrome_id(), 'b');
+        assert_eq!(SampleEventType::AsyncInstant.into_chrome_id(), 'n');
+        assert_eq!(SampleEventType::AsyncEnd.into_chrome_id(), 'e');
+        assert_eq!(SampleEventType::FlowStart.into_chrome_id(), 's');
+        assert_eq!(SampleEventType::FlowInstant.into_chrome_id(), 't');
+        assert_eq!(SampleEventType::FlowEnd.into_chrome_id(), 'f');
+        assert_eq!(SampleEventType::ObjectCreated.into_chrome_id(), 'N');
+        assert_eq!(SampleEventType::ObjectSnapshot.into_chrome_id(), 'O');
+        assert_eq!(SampleEventType::ObjectDestroyed.into_chrome_id(), 'D');
+        assert_eq!(SampleEventType::Metadata.into_chrome_id(), 'M');
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_new() {
+        let trace = Trace::disabled();
+        let name: StrCow = "sample_name".into();
+        let categories: CategoriesT = CategoriesT::DynamicArray(vec!["category1".into(), "category2".into()]);
+        let payload: Option<TracePayloadT> = Some("sample_payload".into());
+
+        let sample = Sample::new_duration_marker(
+            name.clone(),
+            categories.clone(),
+            payload.clone(),
+            SampleEventType::DurationBegin,
+        );
+
+        let guard = SampleGuard::new(&trace, name, categories, payload);
+
+        let locked_samples = trace.samples.lock().unwrap();
+        assert_eq!(locked_samples.len(), 1);
+        assert_eq!(locked_samples.front().unwrap(), &sample);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::mem;
+
+    #[test]
+    fn test_new_disabled() {
+        let guard: SampleGuard = SampleGuard::new_disabled();
+        assert_eq!(mem::size_of::<SampleGuard>(), 2 * mem::size_of::<usize>());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::Arc;
+
+    #[test]
+    fn test_block_disabled() {
+        let trace = Trace::disabled();
+        let result = trace.block("test", &["category1", "category2"]);
+        assert!(result.sample.is_none());
+        assert!(result.trace.is_none());
+    }
+
+    #[test]
+    fn test_block_enabled() {
+        let trace = Trace::disabled();
+        trace.enable();
+        let result = trace.block("test", &["category1", "category2"]);
+        assert!(result.sample.is_some());
+        assert!(result.trace.is_some());
+        assert!(trace.is_enabled());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::{Arc, Mutex};
+    use std::sync::atomic::{AtomicBool, AtomicOrdering};
+
+    struct MockTrace {
+        samples: Arc<Mutex<Vec<Sample>>>,
+        enabled: AtomicBool,
+    }
+
+    impl MockTrace {
+        fn new(samples: Arc<Mutex<Vec<Sample>>>) -> Self {
+            Self {
+                samples,
+                enabled: AtomicBool::new(true),
+            }
+        }
+    }
+
+    impl Trace for MockTrace {
+        fn is_enabled(&self) -> bool {
+            self.enabled.load(AtomicOrdering::Relaxed)
+        }
+
+        fn record(&self, sample: Sample) {
+            self.samples.lock().unwrap().push(sample);
+        }
+    }
+
+    #[test]
+    fn test_block_payload_disabled() {
+        let samples = Arc::new(Mutex::new(vec![]));
+        let trace = MockTrace::new(samples.clone());
+
+        let name = "test_name";
+        let categories = vec!["category"];
+        let payload = "test_payload";
+
+        let guard = trace.block_payload(name, categories, payload);
+
+        drop(guard);
+
+        assert_eq!(samples.lock().unwrap().len(), 0);
+    }
+
+    #[test]
+    fn test_block_payload_enabled() {
+        let samples = Arc::new(Mutex::new(vec![]));
+        let trace = MockTrace::new(samples.clone());
+
+        let name = "test_name";
+        let categories = vec!["category"];
+        let payload = "test_payload";
+
+        trace.enable();
+
+        let guard = trace.block_payload(name, categories, payload);
+
+        drop(guard);
+
+        let samples = samples.lock().unwrap();
+
+        assert_eq!(samples.len(), 2);
+        assert_eq!(samples[0].event_type, SampleEventType::DurationBegin);
+        assert_eq!(samples[1].event_type, SampleEventType::DurationEnd);
+        assert_eq!(samples[1].payload, Some(payload.into()));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::Path;
+    use xi_trace::fixed_lifo_deque::FixedLifoDeque;
+    use xi_trace::chrome_trace_dump;
+    use chrono::Utc;
+    use std::collections::HashMap;
+    use std::fs;
+    use std::time;
+    use sys_tid::current_tid;
+    use xi_trace::Sample;
+    use xi_trace::SampleGuard;
+    use xi_trace::Trace;
+    use xi_trace::TracePayloadT;
+    use xi_trace::StrCow;
+    use xi_trace::CategoriesT;
+    use xi_trace::MetadataType;
+    use xi_trace::Config;
+    use xi_trace::samples_cloned_unsorted;
+    use xi_trace::samples_cloned_sorted;
+    use xi_trace::save;
+    use chrome_trace_dump::Error;
+
+    #[test]
+    fn test_closure() {
+        let trace = Trace::disabled();
+        let name = "test_name".to_string();
+        let categories = vec!["test_categories".to_string()];
+        let closure = || {
+            // closure body
+        };
+        let result = trace.closure(name, categories, closure);
+        // assert result
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::time::Duration;
+
+    #[test]
+    fn test_closure_payload() {
+        let trace = Trace::disabled();
+        let name = "test_name";
+        let categories = CategoriesT::default();
+        let payload = TracePayloadT::default();
+        let closure = || 42;
+
+        let result = trace.closure_payload(name, categories, closure, payload);
+
+        assert_eq!(result, 42);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_disable() {
+        let trace = Trace::disabled();
+        trace.disable();
+        assert_eq!(trace.is_enabled(), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_disabled() {
+        let trace = Trace::disabled();
+        assert_eq!(trace.is_enabled(), false);
+        assert_eq!(trace.get_samples_count(), 0);
+        assert_eq!(trace.get_samples_limit(), 0);
+    }
+}
+True
+========================================
+    use std::sync::{Arc, Mutex};
+    use crate::Trace;
+
+    #[test]
+    fn test_enable() {
+        let trace = Arc::new(Trace::disabled());
+
+        trace.enable();
+
+        assert_eq!(trace.is_enabled(), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    use std::mem::size_of;
+
+    #[test]
+    fn test_enable_config() {
+        let trace = Trace::disabled();
+        let config = Config::with_limit_count(100);
+
+        trace.enable_config(config);
+
+        let samples_count = trace.get_samples_count();
+        let samples_limit = trace.get_samples_limit();
+
+        let expected_count = config.max_samples();
+        let expected_limit = config.max_samples() * size_of::<Sample>();
+
+        assert_eq!(samples_count, expected_count);
+        assert_eq!(samples_limit, expected_limit);
+        assert_eq!(trace.is_enabled(), true);
+    }
+}
+True
+========================================
+    use std::sync::atomic::{AtomicBool, AtomicOrdering};
+    use std::sync::{Arc, Mutex};
+    use std::mem::size_of;
+    use std::path::Path;
+    use chrome_trace_dump::Error;
+
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_enabled() {
+        let config = Config::with_limit_count(10);
+        let trace = Trace::enabled(config);
+
+        assert_eq!(trace.enabled.load(AtomicOrdering::Relaxed), true);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.limit(), 10);
+    }
+
+    #[test]
+    fn test_enabled_default() {
+        let trace = Trace::enabled(Config::default());
+
+        assert_eq!(trace.enabled.load(AtomicOrdering::Relaxed), true);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.limit(), 1048576 / size_of::<Sample>());
+    }
+
+    #[test]
+    fn test_disabled() {
+        let trace = Trace::disabled();
+
+        assert_eq!(trace.enabled.load(AtomicOrdering::Relaxed), false);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.limit(), 0);
+    }
+
+    #[test]
+    fn test_disable() {
+        let trace = Trace::enabled(Config::default());
+
+        trace.disable();
+
+        assert_eq!(trace.enabled.load(AtomicOrdering::Relaxed), false);
+    }
+
+    #[test]
+    fn test_enable() {
+        let trace = Trace::disabled();
+
+        trace.enable();
+
+        assert_eq!(trace.enabled.load(AtomicOrdering::Relaxed), true);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.limit(), 1048576 / size_of::<Sample>());
+    }
+
+    #[test]
+    fn test_enable_config() {
+        let trace = Trace::disabled();
+        let config = Config::with_limit_count(10);
+
+        trace.enable_config(config);
+
+        assert_eq!(trace.enabled.load(AtomicOrdering::Relaxed), true);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.limit(), 10);
+    }
+
+    #[test]
+    fn test_get_samples_count() {
+        let trace = Trace::disabled();
+
+        let samples_count = trace.get_samples_count();
+
+        assert_eq!(samples_count, 0);
+    }
+
+    #[test]
+    fn test_get_samples_limit() {
+        let trace = Trace::disabled();
+
+        let samples_limit = trace.get_samples_limit();
+
+        assert_eq!(samples_limit, 0);
+    }
+
+    #[test]
+    fn test_record() {
+        let trace = Trace::disabled();
+        let sample = Sample::new_instant("test", CategoriesT::default(), None);
+
+        trace.record(sample);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.len(), 1);
+        assert_eq!(samples.front(), Some(sample));
+    }
+
+    #[test]
+    fn test_is_enabled() {
+        let trace = Trace::enabled(Config::default());
+
+        assert_eq!(trace.is_enabled(), true);
+    }
+
+    #[test]
+    fn test_instant() {
+        let trace = Trace::disabled();
+
+        trace.instant("test", CategoriesT::default());
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.len(), 0);
+    }
+
+    #[test]
+    fn test_instant_payload() {
+        let trace = Trace::disabled();
+        let payload = TracePayloadT::default();
+
+        trace.instant_payload("test", CategoriesT::default(), payload);
+
+        let samples = trace.samples.lock().unwrap();
+        assert_eq!(samples.len(), 0);
+    }
+
+    #[test]
+    fn test_block() {
+        let trace = Trace::disabled();
+
+        let guard = trace.block("test", CategoriesT::default());
+
+        assert_eq!(guard.disabled(), true);
+    }
+
+    #[test]
+    fn test_block_payload() {
+        let trace = Trace::disabled();
+        let payload = TracePayloadT::default();
+
+        let guard = trace.block_payload("test", CategoriesT::default(), payload);
+
+        assert_eq!(guard.disabled(), true);
+    }
+
+    #[test]
+    fn test_closure() {
+        let trace = Trace::enabled(Config::default());
+
+        let result = trace.closure("test", CategoriesT::default(), || {
+            assert_eq!(trace.samples.lock().unwrap().len(), 1);
+            42
+        });
+
+        assert_eq!(trace.samples.lock().unwrap().len(), 2);
+        assert_eq!(result, 42);
+    }
+
+    #[test]
+    fn test_closure_payload() {
+        let trace = Trace::enabled(Config::default());
+        let payload = TracePayloadT::default();
+
+        let result = trace.closure_payload("test", CategoriesT::default(), || {
+            assert_eq!(trace.samples.lock().unwrap().len(), 1);
+            42
+        }, payload);
+
+        assert_eq!(trace.samples.lock().unwrap().len(), 2);
+        assert_eq!(result, 42);
+    }
+
+    #[test]
+    fn test_samples_cloned_unsorted() {
+        let trace = Trace::disabled();
+
+        let samples = trace.samples_cloned_unsorted();
+
+        assert_eq!(samples.len(), 0);
+    }
+
+    #[test]
+    fn test_samples_cloned_sorted() {
+        let trace = Trace::disabled();
+
+        let samples = trace.samples_cloned_sorted();
+
+        assert_eq!(samples.len(), 0);
+    }
+
+    #[test]
+    fn test_save() {
+        let trace = Trace::disabled();
+        let path = "test.trace";
+
+        let result = trace.save(path, true);
+
+        assert_eq!(result, Err(Error::already_exists()));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[derive(Default)]
+    struct CategoriesT;
+    
+    #[derive(Default)]
+    struct TracePayloadT;
+    
+    #[derive(Default)]
+    struct Config {
+        sample_limit: usize
+    }
+    
+    impl Config {
+        fn max_samples(&self) -> usize {
+            self.sample_limit
+        }
+    }
+    
+    #[test]
+    fn test_get_samples_count() {
+        let trace = Trace::disabled();
+        assert_eq!(trace.get_samples_count(), 0);
+        
+        let trace = Trace::enabled(Config::default());
+        assert_eq!(trace.get_samples_count(), 0);
+        
+        trace.instant("sample", CategoriesT::default());
+        assert_eq!(trace.get_samples_count(), 1);
+        
+        trace.instant_payload("sample", CategoriesT::default(), TracePayloadT::default());
+        assert_eq!(trace.get_samples_count(), 2);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::{Mutex, Arc};
+
+    #[test]
+    fn test_get_samples_limit() {
+        let trace = Arc::new(Trace::disabled());
+        let samples = Arc::new(Mutex::new(FixedLifoDeque::new()));
+        samples.lock().unwrap().set_limit(100);
+
+        let samples_mutex = Arc::new(Mutex::new(samples));
+
+        let samples_ref = samples_mutex.lock().unwrap();
+
+        let samples_limit = samples_ref.limit();
+
+        trace.samples = samples_mutex.clone();
+
+        let result = trace.get_samples_limit();
+
+        assert_eq!(result, samples_limit);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::Path;
+
+    #[test]
+    fn test_instant() {
+        let trace = Trace::disabled();
+        trace.enable();
+
+        trace.instant("test", &[]);
+
+        assert_eq!(trace.get_samples_count(), 1);
+        assert_eq!(trace.get_samples_limit(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_instant_payload() {
+        let trace = Trace::disabled();
+        let name = "test".to_string();
+        let categories = vec!["category".to_string()];
+        let payload = "payload".to_string();
+        trace.instant_payload(name, categories, payload);
+        assert_eq!(trace.get_samples_count(), 1);
+        assert_eq!(trace.get_samples_limit(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_is_enabled() {
+        let trace = Trace::disabled();
+        assert_eq!(trace.is_enabled(), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_record() {
+        let trace = Trace::disabled();
+        let sample = Sample {
+            name: StrCow::Borrowed("test"),
+            categories: None,
+            timestamp_us: 0,
+            event_type: SampleEventType::Instant,
+            duration_us: None,
+            pid: 0,
+            tid: 0,
+            thread_name: None,
+            args: None,
+        };
+        trace.record(sample);
+        assert_eq!(trace.get_samples_count(), 1);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::Path;
+    use std::fs;
+    use chrome_trace_dump::Error;
+
+    #[test]
+    fn test_samples_cloned_sorted() {
+        let trace = Trace::disabled();
+        let samples = trace.samples_cloned_sorted();
+        let expected: Vec<Sample> = Vec::new();
+        assert_eq!(samples, expected);
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_samples_cloned_unsorted_panic() {
+        let trace = Trace::disabled();
+        let _samples = trace.samples_cloned_unsorted();
+    }
+
+    #[test]
+    fn test_save() {
+        let trace = Trace::disabled();
+        let path = Path::new("sample_trace.json");
+
+        let result = trace.save(&path, true);
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), Error::already_exists());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::trace::{Sample, Trace};
+    use std::collections::HashMap;
+    use std::sync::{Arc, Mutex};
+    use std::sync::atomic::{AtomicBool, AtomicOrdering};
+    use std::path::Path;
+
+    #[derive(Clone)]
+    struct StrCow;
+
+    impl StrCow {
+        fn new(_: &str) -> Self {
+            StrCow
+        }
+        fn to_string(&self) -> String {
+            String::new()
+        }
+    }
+
+    #[derive(Clone)]
+    struct MetadataType;
+
+    enum CategoriesT {}
+
+    struct Config;
+
+    impl Config {
+        fn default() -> Self {
+            Config
+        }
+        fn max_samples(&self) -> usize {
+            10
+        }
+    }
+
+    struct Sample {
+        timestamp_us: i64,
+        tid: i64,
+        thread_name: Option<StrCow>,
+    }
+
+    impl Sample {
+        fn new(timestamp_us: i64, tid: i64, thread_name: Option<StrCow>) -> Self {
+            Sample {
+                timestamp_us,
+                tid,
+                thread_name,
+            }
+        }
+    }
+
+    fn exe_name() -> Option<String> {
+        Some(String::new())
+    }
+
+    #[test]
+    fn test_samples_cloned_unsorted() {
+        // Create a sample vector with sample data
+        let sample_vector = vec![
+            Sample::new(1, 2, None),
+            Sample::new(3, 4, None),
+            Sample::new(5, 6, None),
+        ];
+
+        // Create a trace with the sample vector
+        let trace = {
+            let samples = Mutex::new(sample_vector);
+            let trace = Arc::new(Trace {
+                enabled: AtomicBool::new(true),
+                samples,
+            });
+            trace
+        };
+
+        // Call the samples_cloned_unsorted function
+        let result = trace.samples_cloned_unsorted();
+
+        // Verify the result
+        assert_eq!(
+            result,
+            vec![
+                Sample::new(1, 2, None),
+                Sample::new(3, 4, None),
+                Sample::new(5, 6, None),
+            ]
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::PathBuf;
+    use std::path::Path;
+    use chrome_trace_dump::Error;
+
+    fn create_trace() -> Trace {
+        Trace::disabled()
+    }
+
+    #[test]
+    fn test_save() {
+        let trace = create_trace();
+        let path = PathBuf::from("test_trace.json");
+        let sort = true;
+        let result = trace.save(path, sort);
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_save_already_exists() {
+        let trace = create_trace();
+        let path = PathBuf::from("test_trace.json");
+        let sort = true;
+
+        std::fs::File::create(&path).unwrap();
+
+        let result = trace.save(path, sort);
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), Error::already_exists());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::{Error as IOError, ErrorKind as IOErrorKind};
+
+    #[test]
+    fn test_already_exists() {
+        let error = Error::already_exists();
+        match error {
+            Error::Io(inner_error) => {
+                assert_eq!(inner_error.kind(), IOErrorKind::AlreadyExists);
+            }
+            _ => {
+                panic!("Expected Error::Io, but got a different variant");
+            }
+        }
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+
+    #[test]
+    fn test_decode() {
+        let samples = json!({"key": "value"});
+        let result = decode(samples);
+        assert!(result.is_ok());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::Read;
+    
+    #[test]
+    fn test_deserialize() {
+        let input: &[u8] = b"[{\"name\":\"sample\",\"ph\":\"B\",\"ts\":123456}]";
+        let result = deserialize(input);
+        assert_eq!(result, Ok(vec![Sample {
+            name: "sample".into(),
+            categories: None,
+            timestamp_us: 123456,
+            event_type: None,
+            duration_us: None,
+            id: None,
+            bind_id: None,
+            args: None,
+            stack_id: None,
+            parent_id: None,
+            scope: None,
+            workers: None,
+        }]));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::Cursor;
+
+    #[test]
+    fn test_serialize() {
+        let samples: Vec<Sample> = vec![
+            // define your sample values here
+        ];
+
+        let mut output = Cursor::new(Vec::new());
+        let result = serialize(&samples, &mut output);
+
+        assert!(result.is_ok());
+        assert_eq!(output.into_inner(), vec![
+            // define the expected serialized output ([u8]) here
+        ]);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+    use std::error::Error;
+    
+    #[test]
+    fn test_to_value() {
+        let samples: Vec<Sample> = vec![/* add test sample data here */];
+        let expected_result = json!(samples);
+
+        let result = to_value(&samples).unwrap();
+        assert_eq!(result, expected_result);
+    }
+}
+True
+========================================
+    use serde::Deserialize;
+    use serde_json::Value;
+    use xi_trace;
+    use xi_trace::SampleEventType;
+    use xi_trace::deserialize_event_type;
+
+    #[test]
+    fn test_deserialize_event_type() {
+        let event_type: SampleEventType = deserialize_event_type(&Value::Null).unwrap();
+
+        // Add assertions here
+
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_trace::Trace;
+    
+    #[test]
+    fn test_disable_tracing() {
+        // Assert if tracing is enabled
+        assert!(TRACE.enabled());
+
+        disable_tracing();
+
+        // Assert if tracing is disabled
+        assert!(!TRACE.enabled());
+    }
+}
+False
+========================================
+    use crate::enable_tracing;
+
+    #[test]
+    fn test_enable_tracing() {
+        enable_tracing();
+        // Add assertions here if needed
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::mem::size_of;
+
+    #[test]
+    fn test_enable_tracing_with_config() {
+        // Create a Config with limit count of 100
+        let config = Config::with_limit_count(100);
+        
+        // Call enable_tracing_with_config with the config
+        enable_tracing_with_config(config);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_exe_name_returns_exe_name_if_possible() {
+        assert_eq!(exe_name().unwrap(), "<insert expected value here>");
+    }
+
+    #[test]
+    fn test_exe_name_returns_full_path_if_name_unavailable() {
+        assert_eq!(exe_name().unwrap(), "<insert expected value here>");
+    }
+
+    #[test]
+    fn test_exe_name_returns_none_if_error_occurs() {
+        assert_eq!(exe_name(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_append() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        let mut other: VecDeque<i32> = VecDeque::new();
+        other.push_back(1);
+        other.push_back(2);
+        other.push_back(3);
+
+        deque.append(&mut other);
+
+        assert_eq!(deque.len(), 3);
+        assert_eq!(deque.get(0), Some(&1));
+        assert_eq!(deque.get(1), Some(&2));
+        assert_eq!(deque.get(2), Some(&3));
+    }
+}
+True
+========================================
+extern crate xi_trace;
+
+use std::collections::VecDeque;
+
+use xi_trace::fixed_lifo_deque::FixedLifoDeque;
+
+#[test]
+fn test_fixed_lifo_deque_as_mut_slices() {
+    let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+    deque.push_back(1);
+    deque.push_back(2);
+    deque.push_back(3);
+    deque.push_back(4);
+    
+    let (slice1, slice2): (&mut [u32], &mut [u32]) = deque.as_mut_slices();
+    assert_eq!(slice1, &mut [1, 2, 3, 4][..]);
+    assert_eq!(slice2, &mut [][..]);
+    
+    deque.push_back(5);
+    
+    let (slice1, slice2): (&mut [u32], &mut [u32]) = deque.as_mut_slices();
+    assert_eq!(slice1, &mut [2, 3, 4, 5][..]);
+    assert_eq!(slice2, &mut [][..]);
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::cmp::Ordering;
+
+    #[test]
+    fn test_as_slices() {
+        let deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[][..], &[][..]));
+
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[1, 2, 3][..], &[][..]));
+
+        deque.push_back(4);
+        deque.push_back(5);
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[3, 4, 5][..], &[][..]));
+
+        deque.push_back(6);
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[4, 5, 6][..], &[][..]));
+
+        deque.push_back(7);
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[5, 6, 7][..], &[][..]));
+
+        deque.pop_front();
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[6, 7][..], &[][..]));
+
+        deque.push_back(8);
+        deque.push_back(9);
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[6, 7, 8][..], &[9][..]));
+
+        deque.pop_front();
+        deque.pop_front();
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[8][..], &[9][..]));
+
+        deque.push_back(10);
+        deque.push_back(11);
+        deque.push_back(12);
+        deque.push_back(13);
+        deque.push_back(14);
+        let slices = deque.as_slices();
+        assert_eq!(slices, (&[8, 9, 10][..], &[11, 12, 13, 14][..]));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_back_empty() {
+        let deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        assert_eq!(deque.back(), None);
+    }
+    
+    #[test]
+    fn test_back_one_element() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(5);
+        assert_eq!(deque.back(), Some(&5));
+    }
+    
+    #[test]
+    fn test_back_multiple_elements() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.back(), Some(&3));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_back_mut() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        
+        let mut back = deque.back_mut().unwrap();
+        *back = 4;
+        
+        assert_eq!(*deque.back().unwrap(), 4);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_capacity() {
+        let deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(5);
+        assert_eq!(deque.capacity(), 5);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_clear() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        
+        deque.clear();
+        
+        assert!(deque.is_empty());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::vec::Vec;
+
+    #[test]
+    fn test_contains() {
+        let deque: FixedLifoDeque<CategoriesT> = FixedLifoDeque::new();
+        assert_eq!(deque.contains(&CategoriesT::StaticArray(&[])), false);
+        assert_eq!(deque.contains(&CategoriesT::DynamicArray(Vec::new())), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_drain() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+        
+        let result: Vec<u32> = deque.drain(1..4).collect();
+        assert_eq!(result, vec![2, 3, 4]);
+        assert_eq!(deque.len(), 2);
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 5);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_drop_excess_for_inserting() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.drop_excess_for_inserting(2);
+        assert_eq!(deque.storage, VecDeque::from(vec![2, 3]));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_front_returns_some_value_when_storage_is_not_empty() {
+        let mut deque = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+
+        assert_eq!(deque.front(), Some(&1));
+    }
+
+    #[test]
+    fn test_front_returns_none_when_storage_is_empty() {
+        let deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+
+        assert_eq!(deque.front(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_front_mut_empty() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        assert_eq!(deque.front_mut(), None);
+    }
+    
+    #[test]
+    fn test_front_mut_single() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        assert_eq!(deque.front_mut().as_mut(), Some(&mut 1));
+    }
+    
+    #[test]
+    fn test_front_mut_multiple() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.front_mut().as_mut(), Some(&mut 1));
+    }
+    
+    #[test]
+    fn test_front_mut_mutability() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        let front_mut_ref = deque.front_mut();
+        assert_eq!(front_mut_ref.as_mut().unwrap(), &mut 1);
+        *front_mut_ref.as_mut().unwrap() = 2;
+        assert_eq!(front_mut_ref.as_mut().unwrap(), &mut 2);
+        assert_eq!(deque.front_mut().as_mut(), Some(&mut 2));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_get_index_less_than_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        let result = deque.get(1);
+        assert_eq!(result, Some(&2));
+    }
+
+    #[test]
+    fn test_get_index_equal_to_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        let result = deque.get(3);
+        assert_eq!(result, Some(&1));
+    }
+
+    #[test]
+    fn test_get_index_greater_than_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        let result = deque.get(4);
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_get_mut_returns_mut_ref() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        let mut_ref = deque.get_mut(1).unwrap();
+        *mut_ref = 20;
+        assert_eq!(deque[1], 20);
+        assert_eq!(deque.get_mut(1), Some(&mut 20));
+    }
+    
+    #[test]
+    fn test_get_mut_returns_none() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert!(deque.get_mut(3).is_none());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_is_empty_empty_queue() {
+        let queue: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        assert!(queue.is_empty());
+    }
+    
+    #[test]
+    fn test_is_empty_non_empty_queue() {
+        let mut queue = FixedLifoDeque::new();
+        queue.push_back(1);
+        assert!(!queue.is_empty());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_iter() {
+        let mut deque = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        
+        let mut iter = deque.iter();
+        
+        assert_eq!(iter.next(), Some(&1));
+        assert_eq!(iter.next(), Some(&2));
+        assert_eq!(iter.next(), Some(&3));
+        assert_eq!(iter.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_iter_mut() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+
+        let mut iter = deque.iter_mut();
+        assert_eq!(iter.next(), Some(&mut 1));
+        assert_eq!(iter.next(), Some(&mut 2));
+        assert_eq!(iter.next_back(), Some(&mut 3));
+        assert_eq!(iter.next(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_len_empty() {
+        let deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        assert_eq!(deque.len(), 0);
+    }
+    
+    #[test]
+    fn test_len_non_empty() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_len_resize() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.resize(2, 0);
+        assert_eq!(deque.len(), 2);
+    }
+    
+    #[test]
+    fn test_len_resize_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.resize(4, 0);
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_len_push_back_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_len_append() {
+        let mut deque1: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque1.push_back(1);
+        deque1.push_back(2);
+        deque1.push_back(3);
+        
+        let mut deque2: VecDeque<u32> = vec![4, 5, 6].into_iter().collect();
+        
+        deque1.append(&mut deque2);
+        assert_eq!(deque1.len(), 6);
+        assert_eq!(deque2.len(), 0);
+    }
+    
+    #[test]
+    fn test_len_extend() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.extend(&[1, 2, 3, 4, 5]);
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_len_drop_front() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.pop_front();
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_len_pop_back() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.pop_back();
+        assert_eq!(deque.len(), 3);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::cmp::Ordering;
+    
+    #[test]
+    fn test_limit() {
+        let deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        assert_eq!(deque.limit(), 3);
+    }
+    
+    #[test]
+    fn test_limit_after_resize() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.resize(5, 0);
+        assert_eq!(deque.limit(), 3);
+    }
+    
+    #[test]
+    fn test_limit_after_reset_limit() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.reset_limit(5);
+        assert_eq!(deque.limit(), 5);
+    }
+    
+    #[derive(Debug, PartialEq, Eq)]
+    struct Dummy;
+    
+    #[test]
+    fn test_fixed_lifo_deque_eq() {
+        let deque1: FixedLifoDeque<Dummy> = FixedLifoDeque::new();
+        let deque2: FixedLifoDeque<Dummy> = FixedLifoDeque::new();
+        assert_eq!(deque1, deque2);
+        
+        let deque3: FixedLifoDeque<Dummy> = FixedLifoDeque::with_limit(3);
+        assert_ne!(deque1, deque3);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_cmp() {
+        let deque1: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        let deque2: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        assert_eq!(deque1.cmp(&deque2), Ordering::Equal);
+        
+        let deque3: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        assert_eq!(deque1.cmp(&deque3), Ordering::Less);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_extend() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.extend(&[1, 2, 3]);
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_resize() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.resize(5, 0);
+        assert_eq!(deque.len(), 3);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_push_back() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        assert_eq!(deque.len(), 3);
+        assert_eq!(deque[0], 2);
+        assert_eq!(deque[1], 3);
+        assert_eq!(deque[2], 4);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_pop_back() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.pop_back(), Some(3));
+        assert_eq!(deque.pop_back(), Some(2));
+        assert_eq!(deque.pop_back(), Some(1));
+        assert_eq!(deque.pop_back(), None);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_pop_front() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.pop_front(), Some(1));
+        assert_eq!(deque.pop_front(), None);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_append() {
+        let mut deque1: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque1.push_back(1);
+        let mut deque2: VecDeque<i32> = VecDeque::new();
+        deque2.push_back(2);
+        deque2.push_back(3);
+        deque1.append(&mut deque2);
+        assert_eq!(deque1.len(), 3);
+        assert_eq!(deque1[0], 1);
+        assert_eq!(deque1[1], 2);
+        assert_eq!(deque1[2], 3);
+        assert_eq!(deque2.len(), 0);
+    }
+    
+    #[test]
+    fn test_fixed_lifo_deque_remove() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.remove(1), Some(2));
+        assert_eq!(deque.remove(0), Some(1));
+        assert_eq!(deque.len(), 1);
+        assert_eq!(deque[0], 3);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_new() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        assert_eq!(deque.limit(), 0);
+        assert_eq!(deque.len(), 0);
+        assert_eq!(deque.capacity(), 0);
+        assert!(deque.is_empty());
+        assert_eq!(deque.iter().count(), 0);
+        assert_eq!(deque.as_slices().0.len(), 0);
+        assert_eq!(deque.as_slices().1.len(), 0);
+        assert_eq!(deque.front(), None);
+        assert_eq!(deque.front_mut(), None);
+        assert_eq!(deque.back(), None);
+        assert_eq!(deque.back_mut(), None);
+        assert_eq!(deque.pop_front(), None);
+        assert_eq!(deque.pop_back(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_pop_back() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        
+        assert_eq!(deque.pop_back(), Some(3));
+        assert_eq!(deque.pop_back(), Some(2));
+        assert_eq!(deque.pop_back(), Some(1));
+        assert_eq!(deque.pop_back(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_pop_front_empty() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        assert_eq!(deque.pop_front(), None);
+    }
+    
+    #[test]
+    fn test_pop_front_single_element() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        assert_eq!(deque.pop_front(), Some(1));
+        assert_eq!(deque.len(), 0);
+    }
+    
+    #[test]
+    fn test_pop_front_multiple_elements() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.pop_front(), Some(1));
+        assert_eq!(deque.pop_front(), Some(2));
+        assert_eq!(deque.pop_front(), Some(3));
+        assert_eq!(deque.len(), 0);
+    }
+    
+    #[test]
+    fn test_pop_front_over_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(2);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.pop_front(), Some(2));
+        assert_eq!(deque.pop_front(), Some(3));
+        assert_eq!(deque.len(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_push_back() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+        
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque.front(), Some(&1));
+        assert_eq!(deque.back(), Some(&5));
+        
+        deque.push_back(6);
+        
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque.front(), Some(&2));
+        assert_eq!(deque.back(), Some(&6));
+        
+        deque.push_back(7);
+        
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque.front(), Some(&3));
+        assert_eq!(deque.back(), Some(&7));
+        
+        deque.push_back(8);
+        
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque.front(), Some(&4));
+        assert_eq!(deque.back(), Some(&8));
+        
+        deque.push_back(9);
+        
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque.front(), Some(&5));
+        assert_eq!(deque.back(), Some(&9));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_remove() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+
+        assert_eq!(deque.remove(2), Some(3));
+        assert_eq!(deque.remove(0), Some(1));
+        assert_eq!(deque.remove(3), Some(5));
+        assert_eq!(deque.remove(2), None);
+
+        assert_eq!(deque.len(), 1);
+        assert_eq!(deque.front(), Some(&4));
+        assert_eq!(deque.back(), Some(&4));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_reset_limit() {
+        let mut deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        assert_eq!(deque.len(), 3);
+        deque.reset_limit(2);
+        assert_eq!(deque.len(), 2);
+        assert_eq!(deque.get(0), Some(&1));
+        assert_eq!(deque.get(1), Some(&2));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+      
+    #[test]
+    fn test_resize_smaller() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+      
+        // Resize to a smaller length
+        deque.resize(3, 0);
+      
+        assert_eq!(deque.len(), 3);
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 2);
+        assert_eq!(deque[2], 3);
+    }
+      
+    #[test]
+    fn test_resize_same() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+      
+        // Resize to the same length
+        deque.resize(5, 0);
+      
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 2);
+        assert_eq!(deque[2], 3);
+        assert_eq!(deque[3], 4);
+        assert_eq!(deque[4], 5);
+    }
+      
+    #[test]
+    fn test_resize_larger_within_limit() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+      
+        // Resize to a larger length within the limit
+        deque.resize(7, 0);
+      
+        assert_eq!(deque.len(), 7);
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 2);
+        assert_eq!(deque[2], 3);
+        assert_eq!(deque[3], 4);
+        assert_eq!(deque[4], 5);
+        assert_eq!(deque[5], 0);
+        assert_eq!(deque[6], 0);
+    }
+      
+    #[test]
+    fn test_resize_larger_exceed_limit() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+      
+        // Resize to a larger length exceeding the limit
+        deque.resize(7, 0);
+      
+        assert_eq!(deque.len(), 5);
+        assert_eq!(deque[0], 3);
+        assert_eq!(deque[1], 4);
+        assert_eq!(deque[2], 5);
+        assert_eq!(deque[3], 0);
+        assert_eq!(deque[4], 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_retain() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+        
+        deque.retain(|x| x % 2 == 0);
+        
+        assert_eq!(deque.len(), 2);
+        assert_eq!(*deque.get(0).unwrap(), 2);
+        assert_eq!(*deque.get(1).unwrap(), 4);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_split_off() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque {
+            storage: VecDeque::from(vec![1, 2, 3, 4, 5]),
+            limit: 5,
+        };
+        let split_off = deque.split_off(2);
+        assert_eq!(deque.len(), 2);
+        assert_eq!(deque[0], 1);
+        assert_eq!(deque[1], 2);
+        assert_eq!(split_off.len(), 3);
+        assert_eq!(split_off[0], 3);
+        assert_eq!(split_off[1], 4);
+        assert_eq!(split_off[2], 5);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_swap() {
+        let mut deque = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.swap(0, 2);
+        assert_eq!(deque[0], 3);
+        assert_eq!(deque[2], 1);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_swap_remove_back() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::new();
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        
+        assert_eq!(Some(3), deque.swap_remove_back(2));
+        assert_eq!(vec![1, 2], deque.into_iter().collect::<Vec<_>>());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::VecDeque;
+
+    #[test]
+    fn test_swap_remove_front() {
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(5);
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        deque.push_back(5);
+
+        assert_eq!(deque.swap_remove_front(2), Some(3));
+        assert_eq!(deque.swap_remove_front(3), Some(5));
+        assert_eq!(deque.swap_remove_front(0), Some(1));
+        assert_eq!(deque.swap_remove_front(1), Some(4));
+
+        assert_eq!(deque.len(), 0);
+
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(3);
+        deque.push_back(1);
+        deque.push_back(2);
+
+        assert_eq!(deque.swap_remove_front(0), Some(1));
+        assert_eq!(deque.swap_remove_front(0), Some(2));
+
+        assert_eq!(deque.len(), 0);
+
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(2);
+        deque.push_back(1);
+        deque.push_back(2);
+
+        assert_eq!(deque.swap_remove_front(0), Some(1));
+        assert_eq!(deque.swap_remove_front(0), Some(2));
+
+        assert_eq!(deque.len(), 0);
+
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(1);
+        deque.push_back(1);
+
+        assert_eq!(deque.swap_remove_front(0), Some(1));
+
+        assert_eq!(deque.len(), 0);
+
+        let mut deque: FixedLifoDeque<i32> = FixedLifoDeque::with_limit(0);
+
+        assert_eq!(deque.swap_remove_front(0), None);
+        assert_eq!(deque.swap_remove_front(1), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_with_limit() {
+        let deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(4);
+        assert_eq!(deque.len(), 0);
+        assert_eq!(deque.limit(), 4);
+        
+        let deque: FixedLifoDeque<u32> = FixedLifoDeque::with_limit(0);
+        assert_eq!(deque.len(), 0);
+        assert_eq!(deque.limit(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_is_enabled() {
+        assert!(is_enabled());
+    }
+}
+True
+========================================
+    use crate::ns_to_us;
+
+    #[test]
+    fn test_ns_to_us() {
+        assert_eq!(ns_to_us(0), 0);
+        assert_eq!(ns_to_us(1000), 1);
+        assert_eq!(ns_to_us(1500), 1);
+        assert_eq!(ns_to_us(999), 0);
+        assert_eq!(ns_to_us(1001), 1);
+        assert_eq!(ns_to_us(1999), 1);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_samples_cloned_sorted() {
+        // mock trace samples
+        let mut trace_samples = Vec::new();
+        // add samples to the trace_samples
+        // ...
+      
+        // set the TRACE.samples to trace_samples
+        let arc_mutex_samples = Arc::new(Mutex::new(FixedLifoDeque::new()));
+        *TRACE.samples.lock().unwrap() = arc_mutex_samples;
+
+        // call the target function
+        let result = samples_cloned_sorted();
+
+        // assert the result
+        // ...
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_samples_cloned_unsorted() {
+        assert_eq!(samples_cloned_unsorted(), TRACE.samples_cloned_unsorted());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_samples_len() {
+        assert_eq!(samples_len(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::PathBuf;
+    
+    #[test]
+    fn test_save() {
+        // Arrange
+        let path: PathBuf = "trace.json".into();
+        let sort = true;
+        
+        // Act
+        let result = save(path, sort);
+        
+        // Assert
+        assert!(result.is_ok());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde::Serialize;
+    use serde_json::ser::to_string as serde_to_string;
+
+    #[derive(Serialize)]
+    pub enum SampleEventType {
+        DurationBegin,
+        DurationEnd,
+        CompleteDuration,
+        Instant,
+        AsyncStart,
+        AsyncInstant,
+        AsyncEnd,
+        FlowStart,
+        FlowInstant,
+        FlowEnd,
+        ObjectCreated,
+        ObjectSnapshot,
+        ObjectDestroyed,
+        Metadata,
+    }
+
+    #[test]
+    fn test_serialize_event_type() {
+        let ph = SampleEventType::DurationBegin;
+        let expected = "\"B\"";
+
+        let result = serde_to_string(&ph).unwrap();
+
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_current_pid() {
+        assert!(current_pid() != 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::os::raw::c_int;
+
+    #[test]
+    fn test_current_tid() {
+        let tid = current_tid().unwrap();
+        assert!(tid > 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::borrow::Cow;
+
+    #[test]
+    fn test_to_cow_str() {
+        assert_eq!(to_cow_str("hello"), Cow::Borrowed("hello"));
+        assert_eq!(to_cow_str(String::from("world")), Cow::Borrowed("world"));
+        assert_eq!(to_cow_str(Cow::Borrowed("foo")), Cow::Borrowed("foo"));
+        assert_eq!(to_cow_str(Cow::Owned(String::from("bar"))), Cow::Borrowed("bar"));
+    }
+}
+True
+========================================
+    use crate::trace;
+
+    #[test]
+    fn test_trace() {
+        let name = "something happened";
+        let categories = &["rpc", "response"];
+        trace(name, categories);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::time::Duration;
+    use std::thread;
+
+    struct MockTrace;
+
+    impl Trace for MockTrace {
+        fn record(&self, sample: Sample) {
+            // Mock implementation of record method
+            // Do nothing
+        }
+    }
+
+    #[test]
+    fn test_trace_block() {
+        let trace = MockTrace;
+        let name = "test";
+        let categories = &["cat1", "cat2"];
+        let guard = trace_block(name, categories);
+        thread::sleep(Duration::from_secs(1));
+        drop(guard);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_trace::{Trace, Time};
+
+    struct MockTrace;
+
+    impl Trace for MockTrace {
+        fn record(&mut self, sample: Sample) {
+            println!("Record: {:?}", sample);
+        }
+    }
+
+    #[test]
+    fn test_trace_block_payload() {
+        let trace = MockTrace;
+        let name = "test_block";
+        let categories = CategoriesT::empty();
+        let payload: TracePayloadT = Some(TracePayloadT::new_payload(vec![1, 2, 3]));
+
+        let result = trace_block_payload(name, categories, payload)(&trace, || {
+            println!("Executing block...");
+            Time::from_micros(100)
+        });
+
+        assert_eq!(result.as_micros(), 100);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_trace::trace_closure;
+
+    #[test]
+    fn test_trace_closure() {
+        let result = trace_closure("something_expensive", &["rpc", "request"], || {
+            0
+        });
+
+        trace_closure("something_else_expensive", &["rpc", "response"], || {
+            let _ = result;
+        });
+
+        // add assertions here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_trace_closure_payload() {
+        let result: u32 = trace_closure_payload::<_, _, _, _, u32>(
+            "test_closure".to_owned().into(),
+            Some(vec!["cat1", "cat2"]).into(),
+            || {
+                // closure body
+                42 // returning a value for the closure
+            },
+            "payload".to_owned().into(),
+        );
+        assert_eq!(result, 42);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    #[should_panic]
+    fn test_trace_payload() {
+        trace_payload("test", &["category1", "category2"], "payload");
+    }
+}
+True
+xi-editor xi-trace 88 131

@@ -1,0 +1,101 @@
+/mnt/sda/xiang/syrust/syrust/sval1/./src/test.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/value/owned.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/value/impls.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/value/mod.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/stream/stack.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/stream/owned.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/stream/mod.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/error.rs
+err tests_rug_111 test_msg
+   Compiling sval v0.5.2 (/mnt/sda/xiang/syrust/syrust/sval1)
+error: lifetime may not live long enough
+   --> src/error.rs:206:17
+    |
+203 |         .for_each(|rug_data| {
+    |                    -------- has type `&'1 [u8]`
+...
+206 |         let p0: &'static str = rug_fuzz_0;
+    |                 ^^^^^^^^^^^^ type annotation requires that `'1` must outlive `'static`
+
+error: could not compile `sval` due to previous error
+
+err tests_rug_112 test_rug
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling sval v0.5.2 (/mnt/sda/xiang/syrust/syrust/sval1)
+error[E0521]: borrowed data escapes outside of closure
+   --> src/error.rs:220:22
+    |
+216 |         .for_each(|rug_data| {
+    |                    --------
+    |                    |
+    |                    `rug_data` is a reference that is only valid in the closure body
+    |                    has type `&'1 [u8]`
+...
+220 |         let result = Error::unsupported(&operation);
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |                      |
+    |                      `rug_data` escapes the closure body here
+    |                      argument requires that `'1` must outlive `'static`
+
+For more information about this error, try `rustc --explain E0521`.
+error: could not compile `sval` due to previous error
+
+err tests_rug_113 test_rug
+   Compiling sval v0.5.2 (/mnt/sda/xiang/syrust/syrust/sval1)
+error[E0521]: borrowed data escapes outside of closure
+   --> src/error.rs:232:18
+    |
+229 |         .for_each(|rug_data| {
+    |                    --------
+    |                    |
+    |                    `rug_data` is a reference that is only valid in the closure body
+    |                    has type `&'1 [u8]`
+...
+232 |         let p0 = Error::unsupported(rug_fuzz_0);
+    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |                  |
+    |                  `rug_data` escapes the closure body here
+    |                  argument requires that `'1` must outlive `'static`
+
+For more information about this error, try `rustc --explain E0521`.
+error: could not compile `sval` due to previous error
+
+err tests_rug_114 test_rug
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling sval v0.5.2 (/mnt/sda/xiang/syrust/syrust/sval1)
+error: lifetime may not live long enough
+   --> src/error.rs:246:21
+    |
+242 |         .for_each(|rug_data| {
+    |                    -------- has type `&'1 [u8]`
+...
+246 |         let mut p0: &'static str = operation;
+    |                     ^^^^^^^^^^^^ type annotation requires that `'1` must outlive `'static`
+
+error: could not compile `sval` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/sval1/./src/serde/to_value.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/serde/error.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/serde/to_serialize.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/serde/mod.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/derive.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/collect/value.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/collect/owned.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/collect/mod.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/lib.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/fmt/to_debug.rs
+/mnt/sda/xiang/syrust/syrust/sval1/./src/fmt/mod.rs
+done
+/mnt/sda/xiang/syrust/syrust/sval1/derive/src/value.rs
+/mnt/sda/xiang/syrust/syrust/sval1/derive/src/attr.rs
+/mnt/sda/xiang/syrust/syrust/sval1/derive/src/bound.rs
+/mnt/sda/xiang/syrust/syrust/sval1/derive/src/lib.rs
+done
+/mnt/sda/xiang/syrust/syrust/sval1/json/src/std_support.rs
+/mnt/sda/xiang/syrust/syrust/sval1/json/src/lib.rs
+/mnt/sda/xiang/syrust/syrust/sval1/json/src/fmt.rs
+done

@@ -1,0 +1,12 @@
+serde_spanned crates/serde_spanned 0 0 0
+serde_toml crates/serde_toml 0 0 0
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml/src/map.rs tests_rug_350
+toml crates/toml 87 88 0
+toml_datetime crates/toml_datetime 91 92 0
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml_edit/src/item.rs tests_rug_547
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml_edit/src/item.rs tests_rug_556
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml_edit/src/table.rs tests_rug_782
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml_edit/src/visit_mut.rs tests_rug_835
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml_edit/src/parser/errors.rs tests_rug_628
+err toml /mnt/sda/xiang/rug/tmp/toml/crates/toml_edit/src/visit.rs tests_rug_793
+toml_edit crates/toml_edit 432 439 0

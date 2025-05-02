@@ -1,0 +1,7 @@
+err chrono /mnt/sda/xiang/rug/llm_rug_final/chrono/./src/naive/datetime/mod.rs tests_rug_514
+err chrono /mnt/sda/xiang/rug/llm_rug_final/chrono/./src/format/scan.rs tests_rug_244
+err tests_rug_98 test_rug rug_fuzz_0 0 {'test_rug': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err tests_rug_98 test_rug rug_fuzz_1 0 {'test_rug': {'rug_fuzz_0': '0', 'rug_fuzz_1': '0'}}
+err chrono /mnt/sda/xiang/rug/llm_rug_final/chrono/./src/time_delta.rs tests_rug_16
+err chrono /mnt/sda/xiang/rug/llm_rug_final/chrono/./src/offset/local/tz_info/parser.rs tests_rug_434
+chrono . 493 497 0

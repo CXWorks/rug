@@ -1,0 +1,3380 @@
+-----------------
+src/parse.rs parse::skip_whitespace
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::skip_whitespace(p0);
++crate::parse::skip_whitespace(p0);
++crate::parse::skip_whitespace(p0);
+-----------------
+src/parse.rs parse::block_comment
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::block_comment(p0);
++crate::parse::block_comment(p0);
++crate::parse::block_comment(p0);
+-----------------
+src/parse.rs parse::is_whitespace
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++parse::is_whitespace(p0);
++crate::parse::is_whitespace(p0);
++crate::parse::is_whitespace(p0);
+-----------------
+src/parse.rs parse::word_break
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::word_break(p0);
++crate::parse::word_break(p0);
++crate::parse::word_break(p0);
+-----------------
+src/parse.rs parse::token_stream
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::token_stream(p0);
++crate::parse::token_stream(p0);
++crate::parse::token_stream(p0);
+-----------------
+src/parse.rs parse::leaf_token
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::leaf_token(p0);
++crate::parse::leaf_token(p0);
++crate::parse::leaf_token(p0);
+-----------------
+src/parse.rs parse::ident
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::ident(p0);
++crate::parse::ident(p0);
++crate::parse::ident(p0);
+-----------------
+src/parse.rs parse::ident_any
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::ident_any(p0);
++crate::parse::ident_any(p0);
++crate::parse::ident_any(p0);
+-----------------
+src/parse.rs parse::ident_not_raw
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::ident_not_raw(p0);
++crate::parse::ident_not_raw(p0);
++crate::parse::ident_not_raw(p0);
+-----------------
+src/parse.rs parse::literal
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::literal(p0);
++crate::parse::literal(p0);
++crate::parse::literal(p0);
+-----------------
+src/parse.rs parse::literal_nocapture
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::literal_nocapture(p0);
++crate::parse::literal_nocapture(p0);
++crate::parse::literal_nocapture(p0);
+-----------------
+src/parse.rs parse::literal_suffix
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::literal_suffix(p0);
++crate::parse::literal_suffix(p0);
++crate::parse::literal_suffix(p0);
+-----------------
+src/parse.rs parse::string
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::string(p0);
++crate::parse::string(p0);
++crate::parse::string(p0);
+-----------------
+src/parse.rs parse::cooked_string
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::cooked_string(p0);
++crate::parse::cooked_string(p0);
++crate::parse::cooked_string(p0);
+-----------------
+src/parse.rs parse::byte_string
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::byte_string(p0);
++crate::parse::byte_string(p0);
++crate::parse::byte_string(p0);
+-----------------
+src/parse.rs parse::cooked_byte_string
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::cooked_byte_string(p0);
++crate::parse::cooked_byte_string(p0);
++crate::parse::cooked_byte_string(p0);
+-----------------
+src/parse.rs parse::raw_string
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::raw_string(p0);
++crate::parse::raw_string(p0);
++crate::parse::raw_string(p0);
+-----------------
+src/parse.rs parse::byte
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::byte(p0);
++crate::parse::byte(p0);
++crate::parse::byte(p0);
+-----------------
+src/parse.rs parse::character
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::character(p0);
++crate::parse::character(p0);
++crate::parse::character(p0);
+-----------------
+src/parse.rs parse::backslash_x_char
+deps:{"<&mut I as std::iter::Iterator>":{},"parse::backslash_x_char":{"I":["std::iter::Iterator","std::marker::Sized"]}}
+candidates:{"<&mut I as std::iter::Iterator>":{},"parse::backslash_x_char":{"I":["imp::TokenTreeIter","token_stream::IntoIter","<&mut I as std::iter::Iterator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // I
++parse::backslash_x_char(p0);
++crate::parse::backslash_x_char(p0);
++crate::parse::backslash_x_char(p0);
+-----------------
+src/parse.rs parse::backslash_x_byte
+deps:{"<&mut I as std::iter::Iterator>":{},"parse::backslash_x_byte":{"I":["std::marker::Sized","std::iter::Iterator"]}}
+candidates:{"<&mut I as std::iter::Iterator>":{},"parse::backslash_x_byte":{"I":["imp::TokenTreeIter","token_stream::IntoIter","<&mut I as std::iter::Iterator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // I
++parse::backslash_x_byte(p0);
++crate::parse::backslash_x_byte(p0);
++crate::parse::backslash_x_byte(p0);
+-----------------
+src/parse.rs parse::backslash_u
+deps:{"<&mut I as std::iter::Iterator>":{},"parse::backslash_u":{"I":["std::iter::Iterator","std::marker::Sized"]}}
+candidates:{"<&mut I as std::iter::Iterator>":{},"parse::backslash_u":{"I":["imp::TokenTreeIter","<&mut I as std::iter::Iterator>","token_stream::IntoIter"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // I
++parse::backslash_u(p0);
++crate::parse::backslash_u(p0);
++crate::parse::backslash_u(p0);
+-----------------
+src/parse.rs parse::float
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::float(p0);
++crate::parse::float(p0);
++crate::parse::float(p0);
+-----------------
+src/parse.rs parse::float_digits
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::float_digits(p0);
++crate::parse::float_digits(p0);
++crate::parse::float_digits(p0);
+-----------------
+src/parse.rs parse::int
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::int(p0);
++crate::parse::int(p0);
++crate::parse::int(p0);
+-----------------
+src/parse.rs parse::digits
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::digits(p0);
++crate::parse::digits(p0);
++crate::parse::digits(p0);
+-----------------
+src/parse.rs parse::punct
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::punct(p0);
++crate::parse::punct(p0);
++crate::parse::punct(p0);
+-----------------
+src/parse.rs parse::punct_char
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::punct_char(p0);
++crate::parse::punct_char(p0);
++crate::parse::punct_char(p0);
+-----------------
+src/parse.rs parse::doc_comment
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::doc_comment(p0);
++crate::parse::doc_comment(p0);
++crate::parse::doc_comment(p0);
+-----------------
+src/parse.rs parse::doc_comment_contents
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::doc_comment_contents(p0);
++crate::parse::doc_comment_contents(p0);
++crate::parse::doc_comment_contents(p0);
+-----------------
+src/parse.rs parse::take_until_newline_or_eof
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // parse::Cursor<'_>
++parse::take_until_newline_or_eof(p0);
++crate::parse::take_until_newline_or_eof(p0);
++crate::parse::take_until_newline_or_eof(p0);
+-----------------
+src/detection.rs detection::inside_proc_macro
+deps:{}
+candidates:{}
++detection::inside_proc_macro();
++crate::detection::inside_proc_macro();
++crate::detection::inside_proc_macro();
+-----------------
+src/detection.rs detection::force_fallback
+deps:{}
+candidates:{}
++detection::force_fallback();
++crate::detection::force_fallback();
++crate::detection::force_fallback();
+-----------------
+src/detection.rs detection::unforce_fallback
+deps:{}
+candidates:{}
++detection::unforce_fallback();
++crate::detection::unforce_fallback();
++crate::detection::unforce_fallback();
+-----------------
+src/detection.rs detection::initialize
+deps:{}
+candidates:{}
++detection::initialize();
++crate::detection::initialize();
++crate::detection::initialize();
+-----------------
+src/fallback.rs fallback::force
+deps:{}
+candidates:{}
++fallback::force();
++crate::fallback::force();
++crate::fallback::force();
+-----------------
+src/fallback.rs fallback::unforce
+deps:{}
+candidates:{}
++fallback::unforce();
++crate::fallback::unforce();
++crate::fallback::unforce();
+-----------------
+src/fallback.rs fallback::TokenStream::push_token::push_negative_literal
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Literal
++fallback::TokenStream::push_token::push_negative_literal(p0, p1);
++crate::fallback::TokenStream::push_token::push_negative_literal(p0, p1);
++<fallback::TokenStream>::push_token::push_negative_literal(p0, p1);
+-----------------
+src/fallback.rs fallback::get_cursor
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++fallback::get_cursor(&p0);
++crate::fallback::get_cursor(&p0);
++crate::fallback::get_cursor(&p0);
+-----------------
+src/fallback.rs fallback::debug_span_field_if_nontrivial
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::DebugStruct<'_, '_>
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++fallback::debug_span_field_if_nontrivial(p0, p1);
++crate::fallback::debug_span_field_if_nontrivial(p0, p1);
++crate::fallback::debug_span_field_if_nontrivial(p0, p1);
+-----------------
+src/fallback.rs fallback::is_ident_start
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++fallback::is_ident_start(p0);
++crate::fallback::is_ident_start(p0);
++crate::fallback::is_ident_start(p0);
+-----------------
+src/fallback.rs fallback::is_ident_continue
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++fallback::is_ident_continue(p0);
++crate::fallback::is_ident_continue(p0);
++crate::fallback::is_ident_continue(p0);
+-----------------
+src/fallback.rs fallback::validate_ident
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++fallback::validate_ident(&p0);
++crate::fallback::validate_ident(&p0);
++crate::fallback::validate_ident(&p0);
+-----------------
+src/fallback.rs fallback::validate_ident::ident_ok
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++fallback::validate_ident::ident_ok(&p0);
++crate::fallback::validate_ident::ident_ok(&p0);
++crate::fallback::validate_ident::ident_ok(&p0);
+-----------------
+src/wrapper.rs imp::mismatch
+deps:{}
+candidates:{}
++imp::mismatch();
++crate::imp::mismatch();
++crate::imp::mismatch();
+-----------------
+src/wrapper.rs imp::proc_macro_parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++imp::proc_macro_parse(&p0);
++crate::imp::proc_macro_parse(&p0);
++crate::imp::proc_macro_parse(&p0);
+-----------------
+src/wrapper.rs imp::into_compiler_token
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // TokenTree
++imp::into_compiler_token(p0);
++crate::imp::into_compiler_token(p0);
++crate::imp::into_compiler_token(p0);
+-----------------
+src/wrapper.rs imp::debug_span_field_if_nontrivial
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::DebugStruct<'_, '_>
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++imp::debug_span_field_if_nontrivial(p0, p1);
++crate::imp::debug_span_field_if_nontrivial(p0, p1);
++crate::imp::debug_span_field_if_nontrivial(p0, p1);
+-----------------
+src/parse.rs <parse::Cursor<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.clone();
++<parse::Cursor<'a> as std::clone::Clone>::clone(p0);
++crate::<parse::Cursor<'a> as std::clone::Clone>::clone(p0);
++<parse::Cursor<'a>>::clone(p0);
+-----------------
+src/parse.rs <parse::Cursor<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.assert_receiver_is_total_eq();
++<parse::Cursor<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<parse::Cursor<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<parse::Cursor<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/parse.rs <parse::Cursor<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.eq(p1);
++<parse::Cursor<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<parse::Cursor<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<parse::Cursor<'a>>::eq(p0, p1);
+-----------------
+src/parse.rs parse::Cursor::<'a>::advance
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
+let mut p1 = 0usize; // None+usize
++p0.advance(p1);
++parse::Cursor::<'a>::advance(p0, p1);
++crate::parse::Cursor::<'a>::advance(p0, p1);
++<parse::Cursor<'a>>::advance(p0, p1);
+-----------------
+src/parse.rs parse::Cursor::<'a>::starts_with
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
+let mut p1 = "sample"; // None+&str
++p0.starts_with(&p1);
++parse::Cursor::<'a>::starts_with(p0, &p1);
++crate::parse::Cursor::<'a>::starts_with(p0, &p1);
++<parse::Cursor<'a>>::starts_with(p0, &p1);
+-----------------
+src/parse.rs parse::Cursor::<'a>::is_empty
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.is_empty();
++parse::Cursor::<'a>::is_empty(p0);
++crate::parse::Cursor::<'a>::is_empty(p0);
++<parse::Cursor<'a>>::is_empty(p0);
+-----------------
+src/parse.rs parse::Cursor::<'a>::len
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.len();
++parse::Cursor::<'a>::len(p0);
++crate::parse::Cursor::<'a>::len(p0);
++<parse::Cursor<'a>>::len(p0);
+-----------------
+src/parse.rs parse::Cursor::<'a>::as_bytes
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.as_bytes();
++parse::Cursor::<'a>::as_bytes(p0);
++crate::parse::Cursor::<'a>::as_bytes(p0);
++<parse::Cursor<'a>>::as_bytes(p0);
+-----------------
+src/parse.rs parse::Cursor::<'a>::bytes
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.bytes();
++parse::Cursor::<'a>::bytes(p0);
++crate::parse::Cursor::<'a>::bytes(p0);
++<parse::Cursor<'a>>::bytes(p0);
+-----------------
+src/parse.rs parse::Cursor::<'a>::chars
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.chars();
++parse::Cursor::<'a>::chars(p0);
++crate::parse::Cursor::<'a>::chars(p0);
++<parse::Cursor<'a>>::chars(p0);
+-----------------
+src/parse.rs parse::Cursor::<'a>::char_indices
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
++p0.char_indices();
++parse::Cursor::<'a>::char_indices(p0);
++crate::parse::Cursor::<'a>::char_indices(p0);
++<parse::Cursor<'a>>::char_indices(p0);
+-----------------
+src/parse.rs parse::Cursor::<'a>::parse
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // parse::Cursor<'a>
+let mut p1 = "sample"; // None+&str
++p0.parse(&p1);
++parse::Cursor::<'a>::parse(p0, &p1);
++crate::parse::Cursor::<'a>::parse(p0, &p1);
++<parse::Cursor<'a>>::parse(p0, &p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++p0.clone();
++<fallback::TokenStream as std::clone::Clone>::clone(p0);
++crate::<fallback::TokenStream as std::clone::Clone>::clone(p0);
++<fallback::TokenStream>::clone(p0);
+-----------------
+src/fallback.rs <fallback::LexError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::LexError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::LexError as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::LexError as std::fmt::Debug>::fmt(p0, p1);
++<fallback::LexError>::fmt(p0, p1);
+-----------------
+src/fallback.rs fallback::TokenStream::new
+deps:{}
+candidates:{}
++fallback::TokenStream::new();
++crate::fallback::TokenStream::new();
++<fallback::TokenStream>::new();
+-----------------
+src/fallback.rs fallback::TokenStream::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++p0.is_empty();
++fallback::TokenStream::is_empty(p0);
++crate::fallback::TokenStream::is_empty(p0);
++<fallback::TokenStream>::is_empty(p0);
+-----------------
+src/fallback.rs fallback::TokenStream::take_inner
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++p0.take_inner();
++fallback::TokenStream::take_inner(p0);
++crate::fallback::TokenStream::take_inner(p0);
++<fallback::TokenStream>::take_inner(p0);
+-----------------
+src/fallback.rs fallback::TokenStream::push_token
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // TokenTree
++p0.push_token(p1);
++fallback::TokenStream::push_token(p0, p1);
++crate::fallback::TokenStream::push_token(p0, p1);
++<fallback::TokenStream>::push_token(p0, p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::ops::Drop>::drop
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++p0.drop();
++<fallback::TokenStream as std::ops::Drop>::drop(p0);
++crate::<fallback::TokenStream as std::ops::Drop>::drop(p0);
++<fallback::TokenStream>::drop(p0);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<fallback::TokenStream as std::str::FromStr>::from_str(&p0);
++crate::<fallback::TokenStream as std::str::FromStr>::from_str(&p0);
++<fallback::TokenStream>::from_str(&p0);
+-----------------
+src/fallback.rs <fallback::LexError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::LexError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fallback::LexError as std::fmt::Display>::fmt(p0, p1);
++crate::<fallback::LexError as std::fmt::Display>::fmt(p0, p1);
++<fallback::LexError>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::TokenStream
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fallback::TokenStream as std::fmt::Display>::fmt(p0, p1);
++crate::<fallback::TokenStream as std::fmt::Display>::fmt(p0, p1);
++<fallback::TokenStream>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::TokenStream
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::TokenStream as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::TokenStream as std::fmt::Debug>::fmt(p0, p1);
++<fallback::TokenStream>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::convert::From<proc_macro::TokenStream>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // proc_macro::TokenStream
++<fallback::TokenStream as std::convert::From<proc_macro::TokenStream>>::from(p0);
++crate::<fallback::TokenStream as std::convert::From<proc_macro::TokenStream>>::from(p0);
++<fallback::TokenStream>::from(p0);
+-----------------
+src/fallback.rs fallback::<impl std::convert::From<fallback::TokenStream> for proc_macro::TokenStream>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++fallback::<impl std::convert::From<fallback::TokenStream> for proc_macro::TokenStream>::from(p0);
++crate::fallback::<impl std::convert::From<fallback::TokenStream> for proc_macro::TokenStream>::from(p0);
++<proc_macro::TokenStream>::from(p0);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::convert::From<TokenTree>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // TokenTree
++<fallback::TokenStream as std::convert::From<TokenTree>>::from(p0);
++crate::<fallback::TokenStream as std::convert::From<TokenTree>>::from(p0);
++<fallback::TokenStream>::from(p0);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<fallback::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["imp::TokenTreeIter","token_stream::IntoIter","<&mut I as std::iter::Iterator>"]},"<fallback::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter":{"I":["<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>","fallback::TokenStream","<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>","imp::TokenStream","TokenStream"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++<fallback::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter(p0);
++crate::<fallback::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter(p0);
++<fallback::TokenStream>::from_iter(p0);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::iter::FromIterator<fallback::TokenStream>>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<fallback::TokenStream as std::iter::FromIterator<fallback::TokenStream>>::from_iter":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["imp::TokenTreeIter","token_stream::IntoIter","<&mut I as std::iter::Iterator>"]},"<fallback::TokenStream as std::iter::FromIterator<fallback::TokenStream>>::from_iter":{"I":["TokenStream","<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>","<&'a mut std::option::Option<T> as std::iter::IntoIterator>","imp::TokenStream","fallback::TokenStream"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++<fallback::TokenStream as std::iter::FromIterator<fallback::TokenStream>>::from_iter(p0);
++crate::<fallback::TokenStream as std::iter::FromIterator<fallback::TokenStream>>::from_iter(p0);
++<fallback::TokenStream>::from_iter(p0);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::iter::Extend<TokenTree>>::extend
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<fallback::TokenStream as std::iter::Extend<TokenTree>>::extend":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["<&mut I as std::iter::Iterator>","token_stream::IntoIter","imp::TokenTreeIter"]},"<fallback::TokenStream as std::iter::Extend<TokenTree>>::extend":{"I":["imp::TokenStream","fallback::TokenStream","TokenStream","<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>","<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<fallback::TokenStream as std::iter::Extend<TokenTree>>::extend(p0, p1);
++crate::<fallback::TokenStream as std::iter::Extend<TokenTree>>::extend(p0, p1);
++<fallback::TokenStream>::extend(p0, p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::iter::Extend<fallback::TokenStream>>::extend
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<fallback::TokenStream as std::iter::Extend<fallback::TokenStream>>::extend":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["imp::TokenTreeIter","token_stream::IntoIter","<&mut I as std::iter::Iterator>"]},"<fallback::TokenStream as std::iter::Extend<fallback::TokenStream>>::extend":{"I":["<&'a std::option::Option<T> as std::iter::IntoIterator>","<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>","imp::TokenStream","TokenStream","fallback::TokenStream"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<fallback::TokenStream as std::iter::Extend<fallback::TokenStream>>::extend(p0, p1);
++crate::<fallback::TokenStream as std::iter::Extend<fallback::TokenStream>>::extend(p0, p1);
++<fallback::TokenStream>::extend(p0, p1);
+-----------------
+src/fallback.rs <fallback::TokenStream as std::iter::IntoIterator>::into_iter
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++p0.into_iter();
++<fallback::TokenStream as std::iter::IntoIterator>::into_iter(p0);
++crate::<fallback::TokenStream as std::iter::IntoIterator>::into_iter(p0);
++<fallback::TokenStream>::into_iter(p0);
+-----------------
+src/fallback.rs <fallback::SourceFile as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
++p0.clone();
++<fallback::SourceFile as std::clone::Clone>::clone(p0);
++crate::<fallback::SourceFile as std::clone::Clone>::clone(p0);
++<fallback::SourceFile>::clone(p0);
+-----------------
+src/fallback.rs <fallback::SourceFile as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
++p0.eq(p1);
++<fallback::SourceFile as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fallback::SourceFile as std::cmp::PartialEq>::eq(p0, p1);
++<fallback::SourceFile>::eq(p0, p1);
+-----------------
+src/fallback.rs <fallback::SourceFile as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
++p0.assert_receiver_is_total_eq();
++<fallback::SourceFile as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fallback::SourceFile as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fallback::SourceFile>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fallback.rs fallback::SourceFile::path
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
++p0.path();
++fallback::SourceFile::path(p0);
++crate::fallback::SourceFile::path(p0);
++<fallback::SourceFile>::path(p0);
+-----------------
+src/fallback.rs fallback::SourceFile::is_real
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
++p0.is_real();
++fallback::SourceFile::is_real(p0);
++crate::fallback::SourceFile::is_real(p0);
++<fallback::SourceFile>::is_real(p0);
+-----------------
+src/fallback.rs <fallback::SourceFile as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::SourceFile
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::SourceFile as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::SourceFile as std::fmt::Debug>::fmt(p0, p1);
++<fallback::SourceFile>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::LineColumn as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::LineColumn
++p0.clone();
++<fallback::LineColumn as std::clone::Clone>::clone(p0);
++crate::<fallback::LineColumn as std::clone::Clone>::clone(p0);
++<fallback::LineColumn>::clone(p0);
+-----------------
+src/fallback.rs <fallback::LineColumn as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::LineColumn
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::LineColumn as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::LineColumn as std::fmt::Debug>::fmt(p0, p1);
++<fallback::LineColumn>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::LineColumn as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::LineColumn
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fallback::LineColumn
++p0.eq(p1);
++<fallback::LineColumn as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fallback::LineColumn as std::cmp::PartialEq>::eq(p0, p1);
++<fallback::LineColumn>::eq(p0, p1);
+-----------------
+src/fallback.rs <fallback::LineColumn as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::LineColumn
++p0.assert_receiver_is_total_eq();
++<fallback::LineColumn as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fallback::LineColumn as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fallback::LineColumn>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fallback.rs <fallback::Span as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.clone();
++<fallback::Span as std::clone::Clone>::clone(p0);
++crate::<fallback::Span as std::clone::Clone>::clone(p0);
++<fallback::Span>::clone(p0);
+-----------------
+src/fallback.rs <fallback::Span as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.eq(p1);
++<fallback::Span as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fallback::Span as std::cmp::PartialEq>::eq(p0, p1);
++<fallback::Span>::eq(p0, p1);
+-----------------
+src/fallback.rs <fallback::Span as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.assert_receiver_is_total_eq();
++<fallback::Span as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<fallback::Span as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<fallback::Span>::assert_receiver_is_total_eq(p0);
+-----------------
+src/fallback.rs fallback::Span::call_site
+deps:{}
+candidates:{}
++fallback::Span::call_site();
++crate::fallback::Span::call_site();
++<fallback::Span>::call_site();
+-----------------
+src/fallback.rs fallback::Span::mixed_site
+deps:{}
+candidates:{}
++fallback::Span::mixed_site();
++crate::fallback::Span::mixed_site();
++<fallback::Span>::mixed_site();
+-----------------
+src/fallback.rs fallback::Span::resolved_at
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.resolved_at(p1);
++fallback::Span::resolved_at(p0, p1);
++crate::fallback::Span::resolved_at(p0, p1);
++<fallback::Span>::resolved_at(p0, p1);
+-----------------
+src/fallback.rs fallback::Span::located_at
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.located_at(p1);
++fallback::Span::located_at(p0, p1);
++crate::fallback::Span::located_at(p0, p1);
++<fallback::Span>::located_at(p0, p1);
+-----------------
+src/fallback.rs fallback::Span::join
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.join(p1);
++fallback::Span::join(p0, p1);
++crate::fallback::Span::join(p0, p1);
++<fallback::Span>::join(p0, p1);
+-----------------
+src/fallback.rs fallback::Span::first_byte
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.first_byte();
++fallback::Span::first_byte(p0);
++crate::fallback::Span::first_byte(p0);
++<fallback::Span>::first_byte(p0);
+-----------------
+src/fallback.rs fallback::Span::last_byte
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.last_byte();
++fallback::Span::last_byte(p0);
++crate::fallback::Span::last_byte(p0);
++<fallback::Span>::last_byte(p0);
+-----------------
+src/fallback.rs <fallback::Span as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Span
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::Span as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::Span as std::fmt::Debug>::fmt(p0, p1);
++<fallback::Span>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::Group as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
++p0.clone();
++<fallback::Group as std::clone::Clone>::clone(p0);
++crate::<fallback::Group as std::clone::Clone>::clone(p0);
++<fallback::Group>::clone(p0);
+-----------------
+src/fallback.rs fallback::Group::new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Delimiter
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++fallback::Group::new(p0, p1);
++crate::fallback::Group::new(p0, p1);
++<fallback::Group>::new(p0, p1);
+-----------------
+src/fallback.rs fallback::Group::delimiter
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
++p0.delimiter();
++fallback::Group::delimiter(p0);
++crate::fallback::Group::delimiter(p0);
++<fallback::Group>::delimiter(p0);
+-----------------
+src/fallback.rs fallback::Group::stream
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
++p0.stream();
++fallback::Group::stream(p0);
++crate::fallback::Group::stream(p0);
++<fallback::Group>::stream(p0);
+-----------------
+src/fallback.rs fallback::Group::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
++p0.span();
++fallback::Group::span(p0);
++crate::fallback::Group::span(p0);
++<fallback::Group>::span(p0);
+-----------------
+src/fallback.rs fallback::Group::span_open
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
++p0.span_open();
++fallback::Group::span_open(p0);
++crate::fallback::Group::span_open(p0);
++<fallback::Group>::span_open(p0);
+-----------------
+src/fallback.rs fallback::Group::span_close
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
++p0.span_close();
++fallback::Group::span_close(p0);
++crate::fallback::Group::span_close(p0);
++<fallback::Group>::span_close(p0);
+-----------------
+src/fallback.rs fallback::Group::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::Group
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.set_span(p1);
++fallback::Group::set_span(p0, p1);
++crate::fallback::Group::set_span(p0, p1);
++<fallback::Group>::set_span(p0, p1);
+-----------------
+src/fallback.rs <fallback::Group as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fallback::Group as std::fmt::Display>::fmt(p0, p1);
++crate::<fallback::Group as std::fmt::Display>::fmt(p0, p1);
++<fallback::Group>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::Group as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Group
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::Group as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::Group as std::fmt::Debug>::fmt(p0, p1);
++<fallback::Group>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::Ident as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
++p0.clone();
++<fallback::Ident as std::clone::Clone>::clone(p0);
++crate::<fallback::Ident as std::clone::Clone>::clone(p0);
++<fallback::Ident>::clone(p0);
+-----------------
+src/fallback.rs fallback::Ident::_new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = true; // None+bool
+let mut p2 = MaybeUninit::uninit().assume_init(); // fallback::Span
++fallback::Ident::_new(&p0, p1, p2);
++crate::fallback::Ident::_new(&p0, p1, p2);
++<fallback::Ident>::_new(&p0, p1, p2);
+-----------------
+src/fallback.rs fallback::Ident::new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++fallback::Ident::new(&p0, p1);
++crate::fallback::Ident::new(&p0, p1);
++<fallback::Ident>::new(&p0, p1);
+-----------------
+src/fallback.rs fallback::Ident::new_raw
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++fallback::Ident::new_raw(&p0, p1);
++crate::fallback::Ident::new_raw(&p0, p1);
++<fallback::Ident>::new_raw(&p0, p1);
+-----------------
+src/fallback.rs fallback::Ident::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
++p0.span();
++fallback::Ident::span(p0);
++crate::fallback::Ident::span(p0);
++<fallback::Ident>::span(p0);
+-----------------
+src/fallback.rs fallback::Ident::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::Ident
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.set_span(p1);
++fallback::Ident::set_span(p0, p1);
++crate::fallback::Ident::set_span(p0, p1);
++<fallback::Ident>::set_span(p0, p1);
+-----------------
+src/fallback.rs <fallback::Ident as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
++p0.eq(p1);
++<fallback::Ident as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fallback::Ident as std::cmp::PartialEq>::eq(p0, p1);
++<fallback::Ident>::eq(p0, p1);
+-----------------
+src/fallback.rs <fallback::Ident as std::cmp::PartialEq<T>>::eq
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<fallback::Ident as std::cmp::PartialEq<T>>::eq":{"T":["std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<fallback::Ident as std::cmp::PartialEq<T>>::eq":{"T":["std::slice::Iter<'_, T>","std::ffi::CStr","std::vec::IntoIter<T, A>","std::vec::Drain<'a, T, A>","core::num::dec2flt::common::AsciiStr<'a>","std::slice::IterMut<'_, T>","std::ffi::CString","std::boxed::Box<T, A>","std::borrow::Cow<'_, std::ffi::OsStr>","std::sync::Arc<T>","<&T as std::convert::AsRef<U>>","std::rc::Rc<T>","std::borrow::Cow<'_, T>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // T
++p0.eq(p1);
++<fallback::Ident as std::cmp::PartialEq<T>>::eq(p0, p1);
++crate::<fallback::Ident as std::cmp::PartialEq<T>>::eq(p0, p1);
++<fallback::Ident>::eq(p0, p1);
+-----------------
+src/fallback.rs <fallback::Ident as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fallback::Ident as std::fmt::Display>::fmt(p0, p1);
++crate::<fallback::Ident as std::fmt::Display>::fmt(p0, p1);
++<fallback::Ident>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::Ident as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::Ident as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::Ident as std::fmt::Debug>::fmt(p0, p1);
++<fallback::Ident>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::Literal as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Literal
++p0.clone();
++<fallback::Literal as std::clone::Clone>::clone(p0);
++crate::<fallback::Literal as std::clone::Clone>::clone(p0);
++<fallback::Literal>::clone(p0);
+-----------------
+src/fallback.rs fallback::Literal::_new
+deps:{}
+candidates:{}
+let mut p0 = std::string::String::new(); // None+std::string::String
++fallback::Literal::_new(p0);
++crate::fallback::Literal::_new(p0);
++<fallback::Literal>::_new(p0);
+-----------------
+src/fallback.rs fallback::Literal::u8_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++fallback::Literal::u8_suffixed(p0);
++crate::fallback::Literal::u8_suffixed(p0);
++<fallback::Literal>::u8_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u16_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
++fallback::Literal::u16_suffixed(p0);
++crate::fallback::Literal::u16_suffixed(p0);
++<fallback::Literal>::u16_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++fallback::Literal::u32_suffixed(p0);
++crate::fallback::Literal::u32_suffixed(p0);
++<fallback::Literal>::u32_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++fallback::Literal::u64_suffixed(p0);
++crate::fallback::Literal::u64_suffixed(p0);
++<fallback::Literal>::u64_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u128_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++fallback::Literal::u128_suffixed(p0);
++crate::fallback::Literal::u128_suffixed(p0);
++<fallback::Literal>::u128_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::usize_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++fallback::Literal::usize_suffixed(p0);
++crate::fallback::Literal::usize_suffixed(p0);
++<fallback::Literal>::usize_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i8_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
++fallback::Literal::i8_suffixed(p0);
++crate::fallback::Literal::i8_suffixed(p0);
++<fallback::Literal>::i8_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i16_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
++fallback::Literal::i16_suffixed(p0);
++crate::fallback::Literal::i16_suffixed(p0);
++<fallback::Literal>::i16_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++fallback::Literal::i32_suffixed(p0);
++crate::fallback::Literal::i32_suffixed(p0);
++<fallback::Literal>::i32_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
++fallback::Literal::i64_suffixed(p0);
++crate::fallback::Literal::i64_suffixed(p0);
++<fallback::Literal>::i64_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i128_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
++fallback::Literal::i128_suffixed(p0);
++crate::fallback::Literal::i128_suffixed(p0);
++<fallback::Literal>::i128_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::isize_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
++fallback::Literal::isize_suffixed(p0);
++crate::fallback::Literal::isize_suffixed(p0);
++<fallback::Literal>::isize_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::f32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++fallback::Literal::f32_suffixed(p0);
++crate::fallback::Literal::f32_suffixed(p0);
++<fallback::Literal>::f32_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::f64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++fallback::Literal::f64_suffixed(p0);
++crate::fallback::Literal::f64_suffixed(p0);
++<fallback::Literal>::f64_suffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u8_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++fallback::Literal::u8_unsuffixed(p0);
++crate::fallback::Literal::u8_unsuffixed(p0);
++<fallback::Literal>::u8_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u16_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
++fallback::Literal::u16_unsuffixed(p0);
++crate::fallback::Literal::u16_unsuffixed(p0);
++<fallback::Literal>::u16_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++fallback::Literal::u32_unsuffixed(p0);
++crate::fallback::Literal::u32_unsuffixed(p0);
++<fallback::Literal>::u32_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++fallback::Literal::u64_unsuffixed(p0);
++crate::fallback::Literal::u64_unsuffixed(p0);
++<fallback::Literal>::u64_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::u128_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++fallback::Literal::u128_unsuffixed(p0);
++crate::fallback::Literal::u128_unsuffixed(p0);
++<fallback::Literal>::u128_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::usize_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++fallback::Literal::usize_unsuffixed(p0);
++crate::fallback::Literal::usize_unsuffixed(p0);
++<fallback::Literal>::usize_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i8_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
++fallback::Literal::i8_unsuffixed(p0);
++crate::fallback::Literal::i8_unsuffixed(p0);
++<fallback::Literal>::i8_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i16_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
++fallback::Literal::i16_unsuffixed(p0);
++crate::fallback::Literal::i16_unsuffixed(p0);
++<fallback::Literal>::i16_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++fallback::Literal::i32_unsuffixed(p0);
++crate::fallback::Literal::i32_unsuffixed(p0);
++<fallback::Literal>::i32_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
++fallback::Literal::i64_unsuffixed(p0);
++crate::fallback::Literal::i64_unsuffixed(p0);
++<fallback::Literal>::i64_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::i128_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
++fallback::Literal::i128_unsuffixed(p0);
++crate::fallback::Literal::i128_unsuffixed(p0);
++<fallback::Literal>::i128_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::isize_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
++fallback::Literal::isize_unsuffixed(p0);
++crate::fallback::Literal::isize_unsuffixed(p0);
++<fallback::Literal>::isize_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::f32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++fallback::Literal::f32_unsuffixed(p0);
++crate::fallback::Literal::f32_unsuffixed(p0);
++<fallback::Literal>::f32_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::f64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++fallback::Literal::f64_unsuffixed(p0);
++crate::fallback::Literal::f64_unsuffixed(p0);
++<fallback::Literal>::f64_unsuffixed(p0);
+-----------------
+src/fallback.rs fallback::Literal::string
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++fallback::Literal::string(&p0);
++crate::fallback::Literal::string(&p0);
++<fallback::Literal>::string(&p0);
+-----------------
+src/fallback.rs fallback::Literal::character
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++fallback::Literal::character(p0);
++crate::fallback::Literal::character(p0);
++<fallback::Literal>::character(p0);
+-----------------
+src/fallback.rs fallback::Literal::byte_string
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++fallback::Literal::byte_string(p0);
++crate::fallback::Literal::byte_string(p0);
++<fallback::Literal>::byte_string(p0);
+-----------------
+src/fallback.rs fallback::Literal::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Literal
++p0.span();
++fallback::Literal::span(p0);
++crate::fallback::Literal::span(p0);
++<fallback::Literal>::span(p0);
+-----------------
+src/fallback.rs fallback::Literal::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fallback::Literal
+let mut p1 = MaybeUninit::uninit().assume_init(); // fallback::Span
++p0.set_span(p1);
++fallback::Literal::set_span(p0, p1);
++crate::fallback::Literal::set_span(p0, p1);
++<fallback::Literal>::set_span(p0, p1);
+-----------------
+src/fallback.rs fallback::Literal::subspan
+deps:{"fallback::Literal::subspan":{"R":["std::marker::Sized","std::ops::RangeBounds"]}}
+candidates:{"fallback::Literal::subspan":{"R":["std::ops::RangeTo<T>","std::ops::RangeFull","std::ops::RangeInclusive<&T>","(std::collections::Bound<T>, std::collections::Bound<T>)","std::ops::RangeFrom<T>","std::ops::Range<T>","std::ops::RangeInclusive<T>","std::ops::RangeToInclusive<&T>","std::ops::RangeTo<&T>","std::ops::RangeToInclusive<T>","std::ops::RangeFrom<&T>","std::ops::Range<&T>","(std::collections::Bound<&'a T>, std::collections::Bound<&'a T>)"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Literal
+let mut p1 = MaybeUninit::uninit().assume_init(); // R
++p0.subspan(p1);
++fallback::Literal::subspan(p0, p1);
++crate::fallback::Literal::subspan(p0, p1);
++<fallback::Literal>::subspan(p0, p1);
+-----------------
+src/fallback.rs <fallback::Literal as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Literal
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<fallback::Literal as std::fmt::Display>::fmt(p0, p1);
++crate::<fallback::Literal as std::fmt::Display>::fmt(p0, p1);
++<fallback::Literal>::fmt(p0, p1);
+-----------------
+src/fallback.rs <fallback::Literal as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fallback::Literal
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fallback::Literal as std::fmt::Debug>::fmt(p0, p1);
++crate::<fallback::Literal as std::fmt::Debug>::fmt(p0, p1);
++<fallback::Literal>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenStream
++p0.clone();
++<imp::TokenStream as std::clone::Clone>::clone(p0);
++crate::<imp::TokenStream as std::clone::Clone>::clone(p0);
++<imp::TokenStream>::clone(p0);
+-----------------
+src/wrapper.rs <imp::DeferredTokenStream as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::DeferredTokenStream
++p0.clone();
++<imp::DeferredTokenStream as std::clone::Clone>::clone(p0);
++crate::<imp::DeferredTokenStream as std::clone::Clone>::clone(p0);
++<imp::DeferredTokenStream>::clone(p0);
+-----------------
+src/wrapper.rs imp::DeferredTokenStream::new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // proc_macro::TokenStream
++imp::DeferredTokenStream::new(p0);
++crate::imp::DeferredTokenStream::new(p0);
++<imp::DeferredTokenStream>::new(p0);
+-----------------
+src/wrapper.rs imp::DeferredTokenStream::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::DeferredTokenStream
++p0.is_empty();
++imp::DeferredTokenStream::is_empty(p0);
++crate::imp::DeferredTokenStream::is_empty(p0);
++<imp::DeferredTokenStream>::is_empty(p0);
+-----------------
+src/wrapper.rs imp::DeferredTokenStream::evaluate_now
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::DeferredTokenStream
++p0.evaluate_now();
++imp::DeferredTokenStream::evaluate_now(p0);
++crate::imp::DeferredTokenStream::evaluate_now(p0);
++<imp::DeferredTokenStream>::evaluate_now(p0);
+-----------------
+src/wrapper.rs imp::DeferredTokenStream::into_token_stream
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::DeferredTokenStream
++p0.into_token_stream();
++imp::DeferredTokenStream::into_token_stream(p0);
++crate::imp::DeferredTokenStream::into_token_stream(p0);
++<imp::DeferredTokenStream>::into_token_stream(p0);
+-----------------
+src/wrapper.rs imp::TokenStream::new
+deps:{}
+candidates:{}
++imp::TokenStream::new();
++crate::imp::TokenStream::new();
++<imp::TokenStream>::new();
+-----------------
+src/wrapper.rs imp::TokenStream::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenStream
++p0.is_empty();
++imp::TokenStream::is_empty(p0);
++crate::imp::TokenStream::is_empty(p0);
++<imp::TokenStream>::is_empty(p0);
+-----------------
+src/wrapper.rs imp::TokenStream::unwrap_nightly
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::TokenStream
++p0.unwrap_nightly();
++imp::TokenStream::unwrap_nightly(p0);
++crate::imp::TokenStream::unwrap_nightly(p0);
++<imp::TokenStream>::unwrap_nightly(p0);
+-----------------
+src/wrapper.rs imp::TokenStream::unwrap_stable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::TokenStream
++p0.unwrap_stable();
++imp::TokenStream::unwrap_stable(p0);
++crate::imp::TokenStream::unwrap_stable(p0);
++<imp::TokenStream>::unwrap_stable(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<imp::TokenStream as std::str::FromStr>::from_str(&p0);
++crate::<imp::TokenStream as std::str::FromStr>::from_str(&p0);
++<imp::TokenStream>::from_str(&p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenStream
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<imp::TokenStream as std::fmt::Display>::fmt(p0, p1);
++crate::<imp::TokenStream as std::fmt::Display>::fmt(p0, p1);
++<imp::TokenStream>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::convert::From<proc_macro::TokenStream>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // proc_macro::TokenStream
++<imp::TokenStream as std::convert::From<proc_macro::TokenStream>>::from(p0);
++crate::<imp::TokenStream as std::convert::From<proc_macro::TokenStream>>::from(p0);
++<imp::TokenStream>::from(p0);
+-----------------
+src/wrapper.rs imp::<impl std::convert::From<imp::TokenStream> for proc_macro::TokenStream>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::TokenStream
++imp::<impl std::convert::From<imp::TokenStream> for proc_macro::TokenStream>::from(p0);
++crate::imp::<impl std::convert::From<imp::TokenStream> for proc_macro::TokenStream>::from(p0);
++<proc_macro::TokenStream>::from(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::convert::From<fallback::TokenStream>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++<imp::TokenStream as std::convert::From<fallback::TokenStream>>::from(p0);
++crate::<imp::TokenStream as std::convert::From<fallback::TokenStream>>::from(p0);
++<imp::TokenStream>::from(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::convert::From<TokenTree>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // TokenTree
++<imp::TokenStream as std::convert::From<TokenTree>>::from(p0);
++crate::<imp::TokenStream as std::convert::From<TokenTree>>::from(p0);
++<imp::TokenStream>::from(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<imp::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["imp::TokenTreeIter","<&mut I as std::iter::Iterator>","token_stream::IntoIter"]},"<imp::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter":{"I":["imp::TokenStream","fallback::TokenStream","<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>","<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>","TokenStream"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++<imp::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter(p0);
++crate::<imp::TokenStream as std::iter::FromIterator<TokenTree>>::from_iter(p0);
++<imp::TokenStream>::from_iter(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::iter::FromIterator<imp::TokenStream>>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::Iterator","std::marker::Sized"]},"<imp::TokenStream as std::iter::FromIterator<imp::TokenStream>>::from_iter":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["<&mut I as std::iter::Iterator>","imp::TokenTreeIter","token_stream::IntoIter"]},"<imp::TokenStream as std::iter::FromIterator<imp::TokenStream>>::from_iter":{"I":["TokenStream","<&'a mut std::option::Option<T> as std::iter::IntoIterator>","imp::TokenStream","<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>","fallback::TokenStream"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++<imp::TokenStream as std::iter::FromIterator<imp::TokenStream>>::from_iter(p0);
++crate::<imp::TokenStream as std::iter::FromIterator<imp::TokenStream>>::from_iter(p0);
++<imp::TokenStream>::from_iter(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::iter::Extend<TokenTree>>::extend
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<imp::TokenStream as std::iter::Extend<TokenTree>>::extend":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["<&mut I as std::iter::Iterator>","token_stream::IntoIter","imp::TokenTreeIter"]},"<imp::TokenStream as std::iter::Extend<TokenTree>>::extend":{"I":["<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>","TokenStream","fallback::TokenStream","imp::TokenStream"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<imp::TokenStream as std::iter::Extend<TokenTree>>::extend(p0, p1);
++crate::<imp::TokenStream as std::iter::Extend<TokenTree>>::extend(p0, p1);
++<imp::TokenStream>::extend(p0, p1);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::iter::Extend<imp::TokenStream>>::extend
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::Iterator","std::marker::Sized"]},"<imp::TokenStream as std::iter::Extend<imp::TokenStream>>::extend":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["imp::TokenTreeIter","<&mut I as std::iter::Iterator>","token_stream::IntoIter"]},"<imp::TokenStream as std::iter::Extend<imp::TokenStream>>::extend":{"I":["imp::TokenStream","fallback::TokenStream","<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>","<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>","TokenStream"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<imp::TokenStream as std::iter::Extend<imp::TokenStream>>::extend(p0, p1);
++crate::<imp::TokenStream as std::iter::Extend<imp::TokenStream>>::extend(p0, p1);
++<imp::TokenStream>::extend(p0, p1);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenStream
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::TokenStream as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::TokenStream as std::fmt::Debug>::fmt(p0, p1);
++<imp::TokenStream>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::LexError as std::convert::From<proc_macro::LexError>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // proc_macro::LexError
++<imp::LexError as std::convert::From<proc_macro::LexError>>::from(p0);
++crate::<imp::LexError as std::convert::From<proc_macro::LexError>>::from(p0);
++<imp::LexError>::from(p0);
+-----------------
+src/wrapper.rs <imp::LexError as std::convert::From<fallback::LexError>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::LexError
++<imp::LexError as std::convert::From<fallback::LexError>>::from(p0);
++crate::<imp::LexError as std::convert::From<fallback::LexError>>::from(p0);
++<imp::LexError>::from(p0);
+-----------------
+src/wrapper.rs <imp::LexError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::LexError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::LexError as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::LexError as std::fmt::Debug>::fmt(p0, p1);
++<imp::LexError>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::LexError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::LexError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<imp::LexError as std::fmt::Display>::fmt(p0, p1);
++crate::<imp::LexError as std::fmt::Display>::fmt(p0, p1);
++<imp::LexError>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::TokenTreeIter as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenTreeIter
++p0.clone();
++<imp::TokenTreeIter as std::clone::Clone>::clone(p0);
++crate::<imp::TokenTreeIter as std::clone::Clone>::clone(p0);
++<imp::TokenTreeIter>::clone(p0);
+-----------------
+src/wrapper.rs <imp::TokenStream as std::iter::IntoIterator>::into_iter
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::TokenStream
++p0.into_iter();
++<imp::TokenStream as std::iter::IntoIterator>::into_iter(p0);
++crate::<imp::TokenStream as std::iter::IntoIterator>::into_iter(p0);
++<imp::TokenStream>::into_iter(p0);
+-----------------
+src/wrapper.rs <imp::TokenTreeIter as std::iter::Iterator>::next
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::TokenTreeIter
++p0.next();
++<imp::TokenTreeIter as std::iter::Iterator>::next(p0);
++crate::<imp::TokenTreeIter as std::iter::Iterator>::next(p0);
++<imp::TokenTreeIter>::next(p0);
+-----------------
+src/wrapper.rs <imp::TokenTreeIter as std::iter::Iterator>::size_hint
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenTreeIter
++p0.size_hint();
++<imp::TokenTreeIter as std::iter::Iterator>::size_hint(p0);
++crate::<imp::TokenTreeIter as std::iter::Iterator>::size_hint(p0);
++<imp::TokenTreeIter>::size_hint(p0);
+-----------------
+src/wrapper.rs <imp::TokenTreeIter as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::TokenTreeIter
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::TokenTreeIter as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::TokenTreeIter as std::fmt::Debug>::fmt(p0, p1);
++<imp::TokenTreeIter>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Span as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Span
++p0.clone();
++<imp::Span as std::clone::Clone>::clone(p0);
++crate::<imp::Span as std::clone::Clone>::clone(p0);
++<imp::Span>::clone(p0);
+-----------------
+src/wrapper.rs imp::Span::call_site
+deps:{}
+candidates:{}
++imp::Span::call_site();
++crate::imp::Span::call_site();
++<imp::Span>::call_site();
+-----------------
+src/wrapper.rs imp::Span::mixed_site
+deps:{}
+candidates:{}
++imp::Span::mixed_site();
++crate::imp::Span::mixed_site();
++<imp::Span>::mixed_site();
+-----------------
+src/wrapper.rs imp::Span::resolved_at
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.resolved_at(p1);
++imp::Span::resolved_at(p0, p1);
++crate::imp::Span::resolved_at(p0, p1);
++<imp::Span>::resolved_at(p0, p1);
+-----------------
+src/wrapper.rs imp::Span::located_at
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.located_at(p1);
++imp::Span::located_at(p0, p1);
++crate::imp::Span::located_at(p0, p1);
++<imp::Span>::located_at(p0, p1);
+-----------------
+src/wrapper.rs imp::Span::unwrap
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.unwrap();
++imp::Span::unwrap(p0);
++crate::imp::Span::unwrap(p0);
++<imp::Span>::unwrap(p0);
+-----------------
+src/wrapper.rs imp::Span::join
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.join(p1);
++imp::Span::join(p0, p1);
++crate::imp::Span::join(p0, p1);
++<imp::Span>::join(p0, p1);
+-----------------
+src/wrapper.rs imp::Span::unwrap_nightly
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.unwrap_nightly();
++imp::Span::unwrap_nightly(p0);
++crate::imp::Span::unwrap_nightly(p0);
++<imp::Span>::unwrap_nightly(p0);
+-----------------
+src/wrapper.rs imp::<impl std::convert::From<proc_macro::Span> for Span>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // proc_macro::Span
++imp::<impl std::convert::From<proc_macro::Span> for Span>::from(p0);
++crate::imp::<impl std::convert::From<proc_macro::Span> for Span>::from(p0);
++<Span>::from(p0);
+-----------------
+src/wrapper.rs <imp::Span as std::convert::From<fallback::Span>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Span
++<imp::Span as std::convert::From<fallback::Span>>::from(p0);
++crate::<imp::Span as std::convert::From<fallback::Span>>::from(p0);
++<imp::Span>::from(p0);
+-----------------
+src/wrapper.rs <imp::Span as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Span
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::Span as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::Span as std::fmt::Debug>::fmt(p0, p1);
++<imp::Span>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Group as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
++p0.clone();
++<imp::Group as std::clone::Clone>::clone(p0);
++crate::<imp::Group as std::clone::Clone>::clone(p0);
++<imp::Group>::clone(p0);
+-----------------
+src/wrapper.rs imp::Group::new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Delimiter
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::TokenStream
++imp::Group::new(p0, p1);
++crate::imp::Group::new(p0, p1);
++<imp::Group>::new(p0, p1);
+-----------------
+src/wrapper.rs imp::Group::delimiter
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
++p0.delimiter();
++imp::Group::delimiter(p0);
++crate::imp::Group::delimiter(p0);
++<imp::Group>::delimiter(p0);
+-----------------
+src/wrapper.rs imp::Group::stream
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
++p0.stream();
++imp::Group::stream(p0);
++crate::imp::Group::stream(p0);
++<imp::Group>::stream(p0);
+-----------------
+src/wrapper.rs imp::Group::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
++p0.span();
++imp::Group::span(p0);
++crate::imp::Group::span(p0);
++<imp::Group>::span(p0);
+-----------------
+src/wrapper.rs imp::Group::span_open
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
++p0.span_open();
++imp::Group::span_open(p0);
++crate::imp::Group::span_open(p0);
++<imp::Group>::span_open(p0);
+-----------------
+src/wrapper.rs imp::Group::span_close
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
++p0.span_close();
++imp::Group::span_close(p0);
++crate::imp::Group::span_close(p0);
++<imp::Group>::span_close(p0);
+-----------------
+src/wrapper.rs imp::Group::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::Group
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.set_span(p1);
++imp::Group::set_span(p0, p1);
++crate::imp::Group::set_span(p0, p1);
++<imp::Group>::set_span(p0, p1);
+-----------------
+src/wrapper.rs imp::Group::unwrap_nightly
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Group
++p0.unwrap_nightly();
++imp::Group::unwrap_nightly(p0);
++crate::imp::Group::unwrap_nightly(p0);
++<imp::Group>::unwrap_nightly(p0);
+-----------------
+src/wrapper.rs <imp::Group as std::convert::From<fallback::Group>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Group
++<imp::Group as std::convert::From<fallback::Group>>::from(p0);
++crate::<imp::Group as std::convert::From<fallback::Group>>::from(p0);
++<imp::Group>::from(p0);
+-----------------
+src/wrapper.rs <imp::Group as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<imp::Group as std::fmt::Display>::fmt(p0, p1);
++crate::<imp::Group as std::fmt::Display>::fmt(p0, p1);
++<imp::Group>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Group as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Group
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::Group as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::Group as std::fmt::Debug>::fmt(p0, p1);
++<imp::Group>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Ident as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Ident
++p0.clone();
++<imp::Ident as std::clone::Clone>::clone(p0);
++crate::<imp::Ident as std::clone::Clone>::clone(p0);
++<imp::Ident>::clone(p0);
+-----------------
+src/wrapper.rs imp::Ident::new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++imp::Ident::new(&p0, p1);
++crate::imp::Ident::new(&p0, p1);
++<imp::Ident>::new(&p0, p1);
+-----------------
+src/wrapper.rs imp::Ident::new_raw
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++imp::Ident::new_raw(&p0, p1);
++crate::imp::Ident::new_raw(&p0, p1);
++<imp::Ident>::new_raw(&p0, p1);
+-----------------
+src/wrapper.rs imp::Ident::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Ident
++p0.span();
++imp::Ident::span(p0);
++crate::imp::Ident::span(p0);
++<imp::Ident>::span(p0);
+-----------------
+src/wrapper.rs imp::Ident::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::Ident
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.set_span(p1);
++imp::Ident::set_span(p0, p1);
++crate::imp::Ident::set_span(p0, p1);
++<imp::Ident>::set_span(p0, p1);
+-----------------
+src/wrapper.rs imp::Ident::unwrap_nightly
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Ident
++p0.unwrap_nightly();
++imp::Ident::unwrap_nightly(p0);
++crate::imp::Ident::unwrap_nightly(p0);
++<imp::Ident>::unwrap_nightly(p0);
+-----------------
+src/wrapper.rs <imp::Ident as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // imp::Ident
++p0.eq(p1);
++<imp::Ident as std::cmp::PartialEq>::eq(p0, p1);
++crate::<imp::Ident as std::cmp::PartialEq>::eq(p0, p1);
++<imp::Ident>::eq(p0, p1);
+-----------------
+src/wrapper.rs <imp::Ident as std::cmp::PartialEq<T>>::eq
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<imp::Ident as std::cmp::PartialEq<T>>::eq":{"T":["std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<imp::Ident as std::cmp::PartialEq<T>>::eq":{"T":["std::ffi::CStr","std::vec::IntoIter<T, A>","<&mut T as std::convert::AsRef<U>>","std::vec::Drain<'a, T, A>","std::slice::IterMut<'_, T>","std::ffi::CString","std::borrow::Cow<'_, T>","std::sync::Arc<T>","core::num::dec2flt::common::AsciiStr<'a>","std::rc::Rc<T>","std::slice::Iter<'_, T>","std::boxed::Box<T, A>","std::borrow::Cow<'_, std::ffi::OsStr>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // T
++p0.eq(p1);
++<imp::Ident as std::cmp::PartialEq<T>>::eq(p0, p1);
++crate::<imp::Ident as std::cmp::PartialEq<T>>::eq(p0, p1);
++<imp::Ident>::eq(p0, p1);
+-----------------
+src/wrapper.rs <imp::Ident as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<imp::Ident as std::fmt::Display>::fmt(p0, p1);
++crate::<imp::Ident as std::fmt::Display>::fmt(p0, p1);
++<imp::Ident>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Ident as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::Ident as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::Ident as std::fmt::Debug>::fmt(p0, p1);
++<imp::Ident>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Literal as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Literal
++p0.clone();
++<imp::Literal as std::clone::Clone>::clone(p0);
++crate::<imp::Literal as std::clone::Clone>::clone(p0);
++<imp::Literal>::clone(p0);
+-----------------
+src/wrapper.rs imp::Literal::u8_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++imp::Literal::u8_suffixed(p0);
++crate::imp::Literal::u8_suffixed(p0);
++<imp::Literal>::u8_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u16_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
++imp::Literal::u16_suffixed(p0);
++crate::imp::Literal::u16_suffixed(p0);
++<imp::Literal>::u16_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++imp::Literal::u32_suffixed(p0);
++crate::imp::Literal::u32_suffixed(p0);
++<imp::Literal>::u32_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++imp::Literal::u64_suffixed(p0);
++crate::imp::Literal::u64_suffixed(p0);
++<imp::Literal>::u64_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u128_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++imp::Literal::u128_suffixed(p0);
++crate::imp::Literal::u128_suffixed(p0);
++<imp::Literal>::u128_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::usize_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++imp::Literal::usize_suffixed(p0);
++crate::imp::Literal::usize_suffixed(p0);
++<imp::Literal>::usize_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i8_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
++imp::Literal::i8_suffixed(p0);
++crate::imp::Literal::i8_suffixed(p0);
++<imp::Literal>::i8_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i16_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
++imp::Literal::i16_suffixed(p0);
++crate::imp::Literal::i16_suffixed(p0);
++<imp::Literal>::i16_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++imp::Literal::i32_suffixed(p0);
++crate::imp::Literal::i32_suffixed(p0);
++<imp::Literal>::i32_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
++imp::Literal::i64_suffixed(p0);
++crate::imp::Literal::i64_suffixed(p0);
++<imp::Literal>::i64_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i128_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
++imp::Literal::i128_suffixed(p0);
++crate::imp::Literal::i128_suffixed(p0);
++<imp::Literal>::i128_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::isize_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
++imp::Literal::isize_suffixed(p0);
++crate::imp::Literal::isize_suffixed(p0);
++<imp::Literal>::isize_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::f32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++imp::Literal::f32_suffixed(p0);
++crate::imp::Literal::f32_suffixed(p0);
++<imp::Literal>::f32_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::f64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++imp::Literal::f64_suffixed(p0);
++crate::imp::Literal::f64_suffixed(p0);
++<imp::Literal>::f64_suffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u8_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++imp::Literal::u8_unsuffixed(p0);
++crate::imp::Literal::u8_unsuffixed(p0);
++<imp::Literal>::u8_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u16_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
++imp::Literal::u16_unsuffixed(p0);
++crate::imp::Literal::u16_unsuffixed(p0);
++<imp::Literal>::u16_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++imp::Literal::u32_unsuffixed(p0);
++crate::imp::Literal::u32_unsuffixed(p0);
++<imp::Literal>::u32_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++imp::Literal::u64_unsuffixed(p0);
++crate::imp::Literal::u64_unsuffixed(p0);
++<imp::Literal>::u64_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::u128_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++imp::Literal::u128_unsuffixed(p0);
++crate::imp::Literal::u128_unsuffixed(p0);
++<imp::Literal>::u128_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::usize_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++imp::Literal::usize_unsuffixed(p0);
++crate::imp::Literal::usize_unsuffixed(p0);
++<imp::Literal>::usize_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i8_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
++imp::Literal::i8_unsuffixed(p0);
++crate::imp::Literal::i8_unsuffixed(p0);
++<imp::Literal>::i8_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i16_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
++imp::Literal::i16_unsuffixed(p0);
++crate::imp::Literal::i16_unsuffixed(p0);
++<imp::Literal>::i16_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++imp::Literal::i32_unsuffixed(p0);
++crate::imp::Literal::i32_unsuffixed(p0);
++<imp::Literal>::i32_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
++imp::Literal::i64_unsuffixed(p0);
++crate::imp::Literal::i64_unsuffixed(p0);
++<imp::Literal>::i64_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::i128_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
++imp::Literal::i128_unsuffixed(p0);
++crate::imp::Literal::i128_unsuffixed(p0);
++<imp::Literal>::i128_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::isize_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
++imp::Literal::isize_unsuffixed(p0);
++crate::imp::Literal::isize_unsuffixed(p0);
++<imp::Literal>::isize_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::f32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++imp::Literal::f32_unsuffixed(p0);
++crate::imp::Literal::f32_unsuffixed(p0);
++<imp::Literal>::f32_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::f64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++imp::Literal::f64_unsuffixed(p0);
++crate::imp::Literal::f64_unsuffixed(p0);
++<imp::Literal>::f64_unsuffixed(p0);
+-----------------
+src/wrapper.rs imp::Literal::string
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++imp::Literal::string(&p0);
++crate::imp::Literal::string(&p0);
++<imp::Literal>::string(&p0);
+-----------------
+src/wrapper.rs imp::Literal::character
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++imp::Literal::character(p0);
++crate::imp::Literal::character(p0);
++<imp::Literal>::character(p0);
+-----------------
+src/wrapper.rs imp::Literal::byte_string
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++imp::Literal::byte_string(p0);
++crate::imp::Literal::byte_string(p0);
++<imp::Literal>::byte_string(p0);
+-----------------
+src/wrapper.rs imp::Literal::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Literal
++p0.span();
++imp::Literal::span(p0);
++crate::imp::Literal::span(p0);
++<imp::Literal>::span(p0);
+-----------------
+src/wrapper.rs imp::Literal::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // imp::Literal
+let mut p1 = MaybeUninit::uninit().assume_init(); // imp::Span
++p0.set_span(p1);
++imp::Literal::set_span(p0, p1);
++crate::imp::Literal::set_span(p0, p1);
++<imp::Literal>::set_span(p0, p1);
+-----------------
+src/wrapper.rs imp::Literal::subspan
+deps:{"imp::Literal::subspan":{"R":["std::marker::Sized","std::ops::RangeBounds"]}}
+candidates:{"imp::Literal::subspan":{"R":["std::ops::RangeFrom<&T>","std::ops::RangeFrom<T>","std::ops::RangeToInclusive<T>","std::ops::RangeInclusive<&T>","std::ops::Range<&T>","std::ops::RangeTo<&T>","std::ops::RangeFull","std::ops::RangeInclusive<T>","std::ops::RangeToInclusive<&T>","(std::collections::Bound<T>, std::collections::Bound<T>)","std::ops::RangeTo<T>","(std::collections::Bound<&'a T>, std::collections::Bound<&'a T>)","std::ops::Range<T>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Literal
+let mut p1 = MaybeUninit::uninit().assume_init(); // R
++p0.subspan(p1);
++imp::Literal::subspan(p0, p1);
++crate::imp::Literal::subspan(p0, p1);
++<imp::Literal>::subspan(p0, p1);
+-----------------
+src/wrapper.rs imp::Literal::unwrap_nightly
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Literal
++p0.unwrap_nightly();
++imp::Literal::unwrap_nightly(p0);
++crate::imp::Literal::unwrap_nightly(p0);
++<imp::Literal>::unwrap_nightly(p0);
+-----------------
+src/wrapper.rs <imp::Literal as std::convert::From<fallback::Literal>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Literal
++<imp::Literal as std::convert::From<fallback::Literal>>::from(p0);
++crate::<imp::Literal as std::convert::From<fallback::Literal>>::from(p0);
++<imp::Literal>::from(p0);
+-----------------
+src/wrapper.rs <imp::Literal as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Literal
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<imp::Literal as std::fmt::Display>::fmt(p0, p1);
++crate::<imp::Literal as std::fmt::Display>::fmt(p0, p1);
++<imp::Literal>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <imp::Literal as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // imp::Literal
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<imp::Literal as std::fmt::Debug>::fmt(p0, p1);
++crate::<imp::Literal as std::fmt::Debug>::fmt(p0, p1);
++<imp::Literal>::fmt(p0, p1);
+-----------------
+src/lib.rs <TokenStream as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenStream
++p0.clone();
++<TokenStream as std::clone::Clone>::clone(p0);
++crate::<TokenStream as std::clone::Clone>::clone(p0);
++<TokenStream>::clone(p0);
+-----------------
+src/lib.rs TokenStream::_new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::TokenStream
++TokenStream::_new(p0);
++crate::TokenStream::_new(p0);
++<TokenStream>::_new(p0);
+-----------------
+src/lib.rs TokenStream::_new_stable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::TokenStream
++TokenStream::_new_stable(p0);
++crate::TokenStream::_new_stable(p0);
++<TokenStream>::_new_stable(p0);
+-----------------
+src/lib.rs TokenStream::new
+deps:{}
+candidates:{}
++TokenStream::new();
++crate::TokenStream::new();
++<TokenStream>::new();
+-----------------
+src/lib.rs TokenStream::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenStream
++p0.is_empty();
++TokenStream::is_empty(p0);
++crate::TokenStream::is_empty(p0);
++<TokenStream>::is_empty(p0);
+-----------------
+src/lib.rs <TokenStream as std::default::Default>::default
+deps:{}
+candidates:{}
++<TokenStream as std::default::Default>::default();
++crate::<TokenStream as std::default::Default>::default();
++<TokenStream>::default();
+-----------------
+src/lib.rs <TokenStream as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<TokenStream as std::str::FromStr>::from_str(&p0);
++crate::<TokenStream as std::str::FromStr>::from_str(&p0);
++<TokenStream>::from_str(&p0);
+-----------------
+src/lib.rs <TokenStream as std::convert::From<proc_macro::TokenStream>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // proc_macro::TokenStream
++<TokenStream as std::convert::From<proc_macro::TokenStream>>::from(p0);
++crate::<TokenStream as std::convert::From<proc_macro::TokenStream>>::from(p0);
++<TokenStream>::from(p0);
+-----------------
+src/lib.rs <impl std::convert::From<TokenStream> for proc_macro::TokenStream>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // TokenStream
++<impl std::convert::From<TokenStream> for proc_macro::TokenStream>::from(p0);
++crate::<impl std::convert::From<TokenStream> for proc_macro::TokenStream>::from(p0);
++<proc_macro::TokenStream>::from(p0);
+-----------------
+src/lib.rs <TokenStream as std::convert::From<TokenTree>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // TokenTree
++<TokenStream as std::convert::From<TokenTree>>::from(p0);
++crate::<TokenStream as std::convert::From<TokenTree>>::from(p0);
++<TokenStream>::from(p0);
+-----------------
+src/lib.rs <TokenStream as std::iter::Extend<TokenTree>>::extend
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::Iterator","std::marker::Sized"]},"<TokenStream as std::iter::Extend<TokenTree>>::extend":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["imp::TokenTreeIter","<&mut I as std::iter::Iterator>","token_stream::IntoIter"]},"<TokenStream as std::iter::Extend<TokenTree>>::extend":{"I":["TokenStream","imp::TokenStream","fallback::TokenStream","<&'a mut std::option::Option<T> as std::iter::IntoIterator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<TokenStream as std::iter::Extend<TokenTree>>::extend(p0, p1);
++crate::<TokenStream as std::iter::Extend<TokenTree>>::extend(p0, p1);
++<TokenStream>::extend(p0, p1);
+-----------------
+src/lib.rs <TokenStream as std::iter::Extend<TokenStream>>::extend
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<TokenStream as std::iter::Extend<TokenStream>>::extend":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["token_stream::IntoIter","<&mut I as std::iter::Iterator>","imp::TokenTreeIter"]},"<TokenStream as std::iter::Extend<TokenStream>>::extend":{"I":["<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>","imp::TokenStream","TokenStream","fallback::TokenStream","<I as std::iter::IntoIterator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TokenStream
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<TokenStream as std::iter::Extend<TokenStream>>::extend(p0, p1);
++crate::<TokenStream as std::iter::Extend<TokenStream>>::extend(p0, p1);
++<TokenStream>::extend(p0, p1);
+-----------------
+src/lib.rs <TokenStream as std::iter::FromIterator<TokenTree>>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<TokenStream as std::iter::FromIterator<TokenTree>>::from_iter":{"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["token_stream::IntoIter","<&mut I as std::iter::Iterator>","imp::TokenTreeIter"]},"<TokenStream as std::iter::FromIterator<TokenTree>>::from_iter":{"I":["<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>","imp::TokenStream","<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>","fallback::TokenStream","TokenStream"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++<TokenStream as std::iter::FromIterator<TokenTree>>::from_iter(p0);
++crate::<TokenStream as std::iter::FromIterator<TokenTree>>::from_iter(p0);
++<TokenStream>::from_iter(p0);
+-----------------
+src/lib.rs <TokenStream as std::iter::FromIterator<TokenStream>>::from_iter
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::Iterator","std::marker::Sized"]},"<TokenStream as std::iter::FromIterator<TokenStream>>::from_iter":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["token_stream::IntoIter","<&mut I as std::iter::Iterator>","imp::TokenTreeIter"]},"<TokenStream as std::iter::FromIterator<TokenStream>>::from_iter":{"I":["fallback::TokenStream","imp::TokenStream","TokenStream","<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>","<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
++<TokenStream as std::iter::FromIterator<TokenStream>>::from_iter(p0);
++crate::<TokenStream as std::iter::FromIterator<TokenStream>>::from_iter(p0);
++<TokenStream>::from_iter(p0);
+-----------------
+src/lib.rs <TokenStream as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenStream
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<TokenStream as std::fmt::Display>::fmt(p0, p1);
++crate::<TokenStream as std::fmt::Display>::fmt(p0, p1);
++<TokenStream>::fmt(p0, p1);
+-----------------
+src/lib.rs <TokenStream as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenStream
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<TokenStream as std::fmt::Debug>::fmt(p0, p1);
++crate::<TokenStream as std::fmt::Debug>::fmt(p0, p1);
++<TokenStream>::fmt(p0, p1);
+-----------------
+src/lib.rs <LexError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // LexError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<LexError as std::fmt::Debug>::fmt(p0, p1);
++crate::<LexError as std::fmt::Debug>::fmt(p0, p1);
++<LexError>::fmt(p0, p1);
+-----------------
+src/lib.rs <LexError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // LexError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<LexError as std::fmt::Display>::fmt(p0, p1);
++crate::<LexError as std::fmt::Display>::fmt(p0, p1);
++<LexError>::fmt(p0, p1);
+-----------------
+src/lib.rs <Span as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Span
++p0.clone();
++<Span as std::clone::Clone>::clone(p0);
++crate::<Span as std::clone::Clone>::clone(p0);
++<Span>::clone(p0);
+-----------------
+src/lib.rs Span::_new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Span
++Span::_new(p0);
++crate::Span::_new(p0);
++<Span>::_new(p0);
+-----------------
+src/lib.rs Span::_new_stable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Span
++Span::_new_stable(p0);
++crate::Span::_new_stable(p0);
++<Span>::_new_stable(p0);
+-----------------
+src/lib.rs Span::call_site
+deps:{}
+candidates:{}
++Span::call_site();
++crate::Span::call_site();
++<Span>::call_site();
+-----------------
+src/lib.rs Span::mixed_site
+deps:{}
+candidates:{}
++Span::mixed_site();
++crate::Span::mixed_site();
++<Span>::mixed_site();
+-----------------
+src/lib.rs Span::resolved_at
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.resolved_at(p1);
++Span::resolved_at(p0, p1);
++crate::Span::resolved_at(p0, p1);
++<Span>::resolved_at(p0, p1);
+-----------------
+src/lib.rs Span::located_at
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.located_at(p1);
++Span::located_at(p0, p1);
++crate::Span::located_at(p0, p1);
++<Span>::located_at(p0, p1);
+-----------------
+src/lib.rs Span::unwrap
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Span
++p0.unwrap();
++Span::unwrap(p0);
++crate::Span::unwrap(p0);
++<Span>::unwrap(p0);
+-----------------
+src/lib.rs Span::unstable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Span
++p0.unstable();
++Span::unstable(p0);
++crate::Span::unstable(p0);
++<Span>::unstable(p0);
+-----------------
+src/lib.rs Span::join
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Span
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.join(p1);
++Span::join(p0, p1);
++crate::Span::join(p0, p1);
++<Span>::join(p0, p1);
+-----------------
+src/lib.rs <Span as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Span
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Span as std::fmt::Debug>::fmt(p0, p1);
++crate::<Span as std::fmt::Debug>::fmt(p0, p1);
++<Span>::fmt(p0, p1);
+-----------------
+src/lib.rs <TokenTree as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenTree
++p0.clone();
++<TokenTree as std::clone::Clone>::clone(p0);
++crate::<TokenTree as std::clone::Clone>::clone(p0);
++<TokenTree>::clone(p0);
+-----------------
+src/lib.rs TokenTree::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenTree
++p0.span();
++TokenTree::span(p0);
++crate::TokenTree::span(p0);
++<TokenTree>::span(p0);
+-----------------
+src/lib.rs TokenTree::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // TokenTree
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.set_span(p1);
++TokenTree::set_span(p0, p1);
++crate::TokenTree::set_span(p0, p1);
++<TokenTree>::set_span(p0, p1);
+-----------------
+src/lib.rs <TokenTree as std::convert::From<Group>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Group
++<TokenTree as std::convert::From<Group>>::from(p0);
++crate::<TokenTree as std::convert::From<Group>>::from(p0);
++<TokenTree>::from(p0);
+-----------------
+src/lib.rs <TokenTree as std::convert::From<Ident>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Ident
++<TokenTree as std::convert::From<Ident>>::from(p0);
++crate::<TokenTree as std::convert::From<Ident>>::from(p0);
++<TokenTree>::from(p0);
+-----------------
+src/lib.rs <TokenTree as std::convert::From<Punct>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Punct
++<TokenTree as std::convert::From<Punct>>::from(p0);
++crate::<TokenTree as std::convert::From<Punct>>::from(p0);
++<TokenTree>::from(p0);
+-----------------
+src/lib.rs <TokenTree as std::convert::From<Literal>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Literal
++<TokenTree as std::convert::From<Literal>>::from(p0);
++crate::<TokenTree as std::convert::From<Literal>>::from(p0);
++<TokenTree>::from(p0);
+-----------------
+src/lib.rs <TokenTree as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenTree
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<TokenTree as std::fmt::Display>::fmt(p0, p1);
++crate::<TokenTree as std::fmt::Display>::fmt(p0, p1);
++<TokenTree>::fmt(p0, p1);
+-----------------
+src/lib.rs <TokenTree as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TokenTree
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<TokenTree as std::fmt::Debug>::fmt(p0, p1);
++crate::<TokenTree as std::fmt::Debug>::fmt(p0, p1);
++<TokenTree>::fmt(p0, p1);
+-----------------
+src/lib.rs <Group as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
++p0.clone();
++<Group as std::clone::Clone>::clone(p0);
++crate::<Group as std::clone::Clone>::clone(p0);
++<Group>::clone(p0);
+-----------------
+src/lib.rs <Delimiter as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Delimiter
++p0.clone();
++<Delimiter as std::clone::Clone>::clone(p0);
++crate::<Delimiter as std::clone::Clone>::clone(p0);
++<Delimiter>::clone(p0);
+-----------------
+src/lib.rs <Delimiter as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Delimiter
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Delimiter as std::fmt::Debug>::fmt(p0, p1);
++crate::<Delimiter as std::fmt::Debug>::fmt(p0, p1);
++<Delimiter>::fmt(p0, p1);
+-----------------
+src/lib.rs <Delimiter as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Delimiter
++p0.assert_receiver_is_total_eq();
++<Delimiter as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Delimiter as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Delimiter>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Delimiter as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Delimiter
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Delimiter
++p0.eq(p1);
++<Delimiter as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Delimiter as std::cmp::PartialEq>::eq(p0, p1);
++<Delimiter>::eq(p0, p1);
+-----------------
+src/lib.rs Group::_new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Group
++Group::_new(p0);
++crate::Group::_new(p0);
++<Group>::_new(p0);
+-----------------
+src/lib.rs Group::_new_stable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Group
++Group::_new_stable(p0);
++crate::Group::_new_stable(p0);
++<Group>::_new_stable(p0);
+-----------------
+src/lib.rs Group::new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Delimiter
+let mut p1 = MaybeUninit::uninit().assume_init(); // TokenStream
++Group::new(p0, p1);
++crate::Group::new(p0, p1);
++<Group>::new(p0, p1);
+-----------------
+src/lib.rs Group::delimiter
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
++p0.delimiter();
++Group::delimiter(p0);
++crate::Group::delimiter(p0);
++<Group>::delimiter(p0);
+-----------------
+src/lib.rs Group::stream
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
++p0.stream();
++Group::stream(p0);
++crate::Group::stream(p0);
++<Group>::stream(p0);
+-----------------
+src/lib.rs Group::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
++p0.span();
++Group::span(p0);
++crate::Group::span(p0);
++<Group>::span(p0);
+-----------------
+src/lib.rs Group::span_open
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
++p0.span_open();
++Group::span_open(p0);
++crate::Group::span_open(p0);
++<Group>::span_open(p0);
+-----------------
+src/lib.rs Group::span_close
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
++p0.span_close();
++Group::span_close(p0);
++crate::Group::span_close(p0);
++<Group>::span_close(p0);
+-----------------
+src/lib.rs Group::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Group
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.set_span(p1);
++Group::set_span(p0, p1);
++crate::Group::set_span(p0, p1);
++<Group>::set_span(p0, p1);
+-----------------
+src/lib.rs <Group as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<Group as std::fmt::Display>::fmt(p0, p1);
++crate::<Group as std::fmt::Display>::fmt(p0, p1);
++<Group>::fmt(p0, p1);
+-----------------
+src/lib.rs <Group as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Group
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Group as std::fmt::Debug>::fmt(p0, p1);
++crate::<Group as std::fmt::Debug>::fmt(p0, p1);
++<Group>::fmt(p0, p1);
+-----------------
+src/lib.rs <Punct as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Punct
++p0.clone();
++<Punct as std::clone::Clone>::clone(p0);
++crate::<Punct as std::clone::Clone>::clone(p0);
++<Punct>::clone(p0);
+-----------------
+src/lib.rs <Spacing as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Spacing
++p0.clone();
++<Spacing as std::clone::Clone>::clone(p0);
++crate::<Spacing as std::clone::Clone>::clone(p0);
++<Spacing>::clone(p0);
+-----------------
+src/lib.rs <Spacing as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Spacing
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Spacing as std::fmt::Debug>::fmt(p0, p1);
++crate::<Spacing as std::fmt::Debug>::fmt(p0, p1);
++<Spacing>::fmt(p0, p1);
+-----------------
+src/lib.rs <Spacing as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Spacing
++p0.assert_receiver_is_total_eq();
++<Spacing as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<Spacing as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<Spacing>::assert_receiver_is_total_eq(p0);
+-----------------
+src/lib.rs <Spacing as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Spacing
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Spacing
++p0.eq(p1);
++<Spacing as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Spacing as std::cmp::PartialEq>::eq(p0, p1);
++<Spacing>::eq(p0, p1);
+-----------------
+src/lib.rs Punct::new
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
+let mut p1 = MaybeUninit::uninit().assume_init(); // Spacing
++Punct::new(p0, p1);
++crate::Punct::new(p0, p1);
++<Punct>::new(p0, p1);
+-----------------
+src/lib.rs Punct::as_char
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Punct
++p0.as_char();
++Punct::as_char(p0);
++crate::Punct::as_char(p0);
++<Punct>::as_char(p0);
+-----------------
+src/lib.rs Punct::spacing
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Punct
++p0.spacing();
++Punct::spacing(p0);
++crate::Punct::spacing(p0);
++<Punct>::spacing(p0);
+-----------------
+src/lib.rs Punct::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Punct
++p0.span();
++Punct::span(p0);
++crate::Punct::span(p0);
++<Punct>::span(p0);
+-----------------
+src/lib.rs Punct::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Punct
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.set_span(p1);
++Punct::set_span(p0, p1);
++crate::Punct::set_span(p0, p1);
++<Punct>::set_span(p0, p1);
+-----------------
+src/lib.rs <Punct as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Punct
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<Punct as std::fmt::Display>::fmt(p0, p1);
++crate::<Punct as std::fmt::Display>::fmt(p0, p1);
++<Punct>::fmt(p0, p1);
+-----------------
+src/lib.rs <Punct as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Punct
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Punct as std::fmt::Debug>::fmt(p0, p1);
++crate::<Punct as std::fmt::Debug>::fmt(p0, p1);
++<Punct>::fmt(p0, p1);
+-----------------
+src/lib.rs <Ident as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
++p0.clone();
++<Ident as std::clone::Clone>::clone(p0);
++crate::<Ident as std::clone::Clone>::clone(p0);
++<Ident>::clone(p0);
+-----------------
+src/lib.rs Ident::_new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Ident
++Ident::_new(p0);
++crate::Ident::_new(p0);
++<Ident>::_new(p0);
+-----------------
+src/lib.rs Ident::new
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++Ident::new(&p0, p1);
++crate::Ident::new(&p0, p1);
++<Ident>::new(&p0, p1);
+-----------------
+src/lib.rs Ident::_new_raw
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++Ident::_new_raw(&p0, p1);
++crate::Ident::_new_raw(&p0, p1);
++<Ident>::_new_raw(&p0, p1);
+-----------------
+src/lib.rs Ident::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
++p0.span();
++Ident::span(p0);
++crate::Ident::span(p0);
++<Ident>::span(p0);
+-----------------
+src/lib.rs Ident::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.set_span(p1);
++Ident::set_span(p0, p1);
++crate::Ident::set_span(p0, p1);
++<Ident>::set_span(p0, p1);
+-----------------
+src/lib.rs <Ident as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Ident
++p0.eq(p1);
++<Ident as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Ident as std::cmp::PartialEq>::eq(p0, p1);
++<Ident>::eq(p0, p1);
+-----------------
+src/lib.rs <Ident as std::cmp::PartialEq<T>>::eq
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<Ident as std::cmp::PartialEq<T>>::eq":{"T":["std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<Ident as std::cmp::PartialEq<T>>::eq":{"T":["std::ffi::CString","<&T as std::convert::AsRef<U>>","std::vec::IntoIter<T, A>","std::rc::Rc<T>","std::slice::IterMut<'_, T>","core::num::dec2flt::common::AsciiStr<'a>","std::sync::Arc<T>","std::boxed::Box<T, A>","std::slice::Iter<'_, T>","std::borrow::Cow<'_, std::ffi::OsStr>","std::ffi::CStr","std::vec::Drain<'a, T, A>","std::borrow::Cow<'_, T>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // T
++p0.eq(p1);
++<Ident as std::cmp::PartialEq<T>>::eq(p0, p1);
++crate::<Ident as std::cmp::PartialEq<T>>::eq(p0, p1);
++<Ident>::eq(p0, p1);
+-----------------
+src/lib.rs <Ident as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Ident
++p0.partial_cmp(p1);
++<Ident as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<Ident as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<Ident>::partial_cmp(p0, p1);
+-----------------
+src/lib.rs <Ident as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Ident
++p0.cmp(p1);
++<Ident as std::cmp::Ord>::cmp(p0, p1);
++crate::<Ident as std::cmp::Ord>::cmp(p0, p1);
++<Ident>::cmp(p0, p1);
+-----------------
+src/lib.rs <Ident as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Ident as std::hash::Hash>::hash":{"H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Ident as std::hash::Hash>::hash":{"H":["std::hash::SipHasher","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // H
++p0.hash(p1);
++<Ident as std::hash::Hash>::hash(p0, p1);
++crate::<Ident as std::hash::Hash>::hash(p0, p1);
++<Ident>::hash(p0, p1);
+-----------------
+src/lib.rs <Ident as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<Ident as std::fmt::Display>::fmt(p0, p1);
++crate::<Ident as std::fmt::Display>::fmt(p0, p1);
++<Ident>::fmt(p0, p1);
+-----------------
+src/lib.rs <Ident as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Ident
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Ident as std::fmt::Debug>::fmt(p0, p1);
++crate::<Ident as std::fmt::Debug>::fmt(p0, p1);
++<Ident>::fmt(p0, p1);
+-----------------
+src/lib.rs <Literal as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Literal
++p0.clone();
++<Literal as std::clone::Clone>::clone(p0);
++crate::<Literal as std::clone::Clone>::clone(p0);
++<Literal>::clone(p0);
+-----------------
+src/lib.rs Literal::_new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // imp::Literal
++Literal::_new(p0);
++crate::Literal::_new(p0);
++<Literal>::_new(p0);
+-----------------
+src/lib.rs Literal::_new_stable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fallback::Literal
++Literal::_new_stable(p0);
++crate::Literal::_new_stable(p0);
++<Literal>::_new_stable(p0);
+-----------------
+src/lib.rs Literal::u8_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++Literal::u8_suffixed(p0);
++crate::Literal::u8_suffixed(p0);
++<Literal>::u8_suffixed(p0);
+-----------------
+src/lib.rs Literal::u16_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
++Literal::u16_suffixed(p0);
++crate::Literal::u16_suffixed(p0);
++<Literal>::u16_suffixed(p0);
+-----------------
+src/lib.rs Literal::u32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++Literal::u32_suffixed(p0);
++crate::Literal::u32_suffixed(p0);
++<Literal>::u32_suffixed(p0);
+-----------------
+src/lib.rs Literal::u64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++Literal::u64_suffixed(p0);
++crate::Literal::u64_suffixed(p0);
++<Literal>::u64_suffixed(p0);
+-----------------
+src/lib.rs Literal::u128_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++Literal::u128_suffixed(p0);
++crate::Literal::u128_suffixed(p0);
++<Literal>::u128_suffixed(p0);
+-----------------
+src/lib.rs Literal::usize_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Literal::usize_suffixed(p0);
++crate::Literal::usize_suffixed(p0);
++<Literal>::usize_suffixed(p0);
+-----------------
+src/lib.rs Literal::i8_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
++Literal::i8_suffixed(p0);
++crate::Literal::i8_suffixed(p0);
++<Literal>::i8_suffixed(p0);
+-----------------
+src/lib.rs Literal::i16_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
++Literal::i16_suffixed(p0);
++crate::Literal::i16_suffixed(p0);
++<Literal>::i16_suffixed(p0);
+-----------------
+src/lib.rs Literal::i32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++Literal::i32_suffixed(p0);
++crate::Literal::i32_suffixed(p0);
++<Literal>::i32_suffixed(p0);
+-----------------
+src/lib.rs Literal::i64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
++Literal::i64_suffixed(p0);
++crate::Literal::i64_suffixed(p0);
++<Literal>::i64_suffixed(p0);
+-----------------
+src/lib.rs Literal::i128_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
++Literal::i128_suffixed(p0);
++crate::Literal::i128_suffixed(p0);
++<Literal>::i128_suffixed(p0);
+-----------------
+src/lib.rs Literal::isize_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
++Literal::isize_suffixed(p0);
++crate::Literal::isize_suffixed(p0);
++<Literal>::isize_suffixed(p0);
+-----------------
+src/lib.rs Literal::u8_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++Literal::u8_unsuffixed(p0);
++crate::Literal::u8_unsuffixed(p0);
++<Literal>::u8_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::u16_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u16; // None+u16
++Literal::u16_unsuffixed(p0);
++crate::Literal::u16_unsuffixed(p0);
++<Literal>::u16_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::u32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++Literal::u32_unsuffixed(p0);
++crate::Literal::u32_unsuffixed(p0);
++<Literal>::u32_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::u64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++Literal::u64_unsuffixed(p0);
++crate::Literal::u64_unsuffixed(p0);
++<Literal>::u64_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::u128_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0u128; // None+u128
++Literal::u128_unsuffixed(p0);
++crate::Literal::u128_unsuffixed(p0);
++<Literal>::u128_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::usize_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Literal::usize_unsuffixed(p0);
++crate::Literal::usize_unsuffixed(p0);
++<Literal>::usize_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::i8_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i8; // None+i8
++Literal::i8_unsuffixed(p0);
++crate::Literal::i8_unsuffixed(p0);
++<Literal>::i8_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::i16_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i16; // None+i16
++Literal::i16_unsuffixed(p0);
++crate::Literal::i16_unsuffixed(p0);
++<Literal>::i16_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::i32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++Literal::i32_unsuffixed(p0);
++crate::Literal::i32_unsuffixed(p0);
++<Literal>::i32_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::i64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i64; // None+i64
++Literal::i64_unsuffixed(p0);
++crate::Literal::i64_unsuffixed(p0);
++<Literal>::i64_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::i128_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0i128; // None+i128
++Literal::i128_unsuffixed(p0);
++crate::Literal::i128_unsuffixed(p0);
++<Literal>::i128_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::isize_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
++Literal::isize_unsuffixed(p0);
++crate::Literal::isize_unsuffixed(p0);
++<Literal>::isize_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::f64_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++Literal::f64_unsuffixed(p0);
++crate::Literal::f64_unsuffixed(p0);
++<Literal>::f64_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::f64_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++Literal::f64_suffixed(p0);
++crate::Literal::f64_suffixed(p0);
++<Literal>::f64_suffixed(p0);
+-----------------
+src/lib.rs Literal::f32_unsuffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++Literal::f32_unsuffixed(p0);
++crate::Literal::f32_unsuffixed(p0);
++<Literal>::f32_unsuffixed(p0);
+-----------------
+src/lib.rs Literal::f32_suffixed
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++Literal::f32_suffixed(p0);
++crate::Literal::f32_suffixed(p0);
++<Literal>::f32_suffixed(p0);
+-----------------
+src/lib.rs Literal::string
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++Literal::string(&p0);
++crate::Literal::string(&p0);
++<Literal>::string(&p0);
+-----------------
+src/lib.rs Literal::character
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++Literal::character(p0);
++crate::Literal::character(p0);
++<Literal>::character(p0);
+-----------------
+src/lib.rs Literal::byte_string
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++Literal::byte_string(p0);
++crate::Literal::byte_string(p0);
++<Literal>::byte_string(p0);
+-----------------
+src/lib.rs Literal::span
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Literal
++p0.span();
++Literal::span(p0);
++crate::Literal::span(p0);
++<Literal>::span(p0);
+-----------------
+src/lib.rs Literal::set_span
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Literal
+let mut p1 = MaybeUninit::uninit().assume_init(); // Span
++p0.set_span(p1);
++Literal::set_span(p0, p1);
++crate::Literal::set_span(p0, p1);
++<Literal>::set_span(p0, p1);
+-----------------
+src/lib.rs Literal::subspan
+deps:{"Literal::subspan":{"R":["std::marker::Sized","std::ops::RangeBounds"]}}
+candidates:{"Literal::subspan":{"R":["std::ops::RangeToInclusive<T>","std::ops::RangeFrom<&T>","std::ops::RangeTo<T>","(std::collections::Bound<T>, std::collections::Bound<T>)","(std::collections::Bound<&'a T>, std::collections::Bound<&'a T>)","std::ops::RangeInclusive<&T>","std::ops::RangeFull","std::ops::Range<T>","std::ops::RangeTo<&T>","std::ops::RangeToInclusive<&T>","std::ops::Range<&T>","std::ops::RangeInclusive<T>","std::ops::RangeFrom<T>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Literal
+let mut p1 = MaybeUninit::uninit().assume_init(); // R
++p0.subspan(p1);
++Literal::subspan(p0, p1);
++crate::Literal::subspan(p0, p1);
++<Literal>::subspan(p0, p1);
+-----------------
+src/lib.rs <Literal as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Literal
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Literal as std::fmt::Debug>::fmt(p0, p1);
++crate::<Literal as std::fmt::Debug>::fmt(p0, p1);
++<Literal>::fmt(p0, p1);
+-----------------
+src/lib.rs <Literal as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Literal
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<Literal as std::fmt::Display>::fmt(p0, p1);
++crate::<Literal as std::fmt::Display>::fmt(p0, p1);
++<Literal>::fmt(p0, p1);
+-----------------
+src/lib.rs <token_stream::IntoIter as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token_stream::IntoIter
++p0.clone();
++<token_stream::IntoIter as std::clone::Clone>::clone(p0);
++crate::<token_stream::IntoIter as std::clone::Clone>::clone(p0);
++<token_stream::IntoIter>::clone(p0);
+-----------------
+src/lib.rs <token_stream::IntoIter as std::iter::Iterator>::next
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // token_stream::IntoIter
++p0.next();
++<token_stream::IntoIter as std::iter::Iterator>::next(p0);
++crate::<token_stream::IntoIter as std::iter::Iterator>::next(p0);
++<token_stream::IntoIter>::next(p0);
+-----------------
+src/lib.rs <token_stream::IntoIter as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token_stream::IntoIter
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<token_stream::IntoIter as std::fmt::Debug>::fmt(p0, p1);
++crate::<token_stream::IntoIter as std::fmt::Debug>::fmt(p0, p1);
++<token_stream::IntoIter>::fmt(p0, p1);
+-----------------
+src/lib.rs token_stream::<impl std::iter::IntoIterator for TokenStream>::into_iter
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // TokenStream
++p0.into_iter();
++token_stream::<impl std::iter::IntoIterator for TokenStream>::into_iter(p0);
++crate::token_stream::<impl std::iter::IntoIterator for TokenStream>::into_iter(p0);
++<TokenStream>::into_iter(p0);

@@ -1,0 +1,2856 @@
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_p_with_matching_prefix() {
+        let peg: &[u8] = b"abc";
+        let s: &[u8] = b"abcdef";
+        let result = peg.p(s);
+        assert_eq!(result, Some(3));
+    }
+
+    #[test]
+    fn test_p_with_non_matching_prefix() {
+        let peg: &[u8] = b"abc";
+        let s: &[u8] = b"def";
+        let result = peg.p(s);
+        assert_eq!(result, None);
+    }
+
+    #[test]
+    fn test_p_with_empty_string() {
+        let peg: &[u8] = b"abc";
+        let s: &[u8] = b"";
+        let result = peg.p(s);
+        assert_eq!(result, None);
+    }
+
+    #[test]
+    fn test_p_with_short_string() {
+        let peg: &[u8] = b"abc";
+        let s: &[u8] = b"ab";
+        let result = peg.p(s);
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::peg::Peg;
+    use crate::peg::MockPeg;
+    use mockall::predicate::eq;
+
+    #[test]
+    fn test_p() {
+        let input = b"input string";
+        let result = "expected result";
+        let peg = "peg";
+        let mut peg_mock = MockPeg::default();
+
+        peg_mock.expect_as_bytes()
+            .with(eq(peg))
+            .times(1)
+            .returning(|_| peg.as_bytes());
+
+        let mut peg_mock_ref = <dyn peg::Peg>::MockRef::new(peg_mock);
+
+        let output = peg_mock_ref.p(input);
+
+        assert_eq!(output, Some(result.len()));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use peg::Peg;
+
+    #[test]
+    fn test_p() {
+        struct P1;
+        struct P2;
+        impl Peg for P1 {
+            fn p(&self, s: &[u8]) -> Option<usize> {
+                // TODO: Implement the desired logic for P1
+                unimplemented!()
+            }
+        }
+        impl Peg for P2 {
+            fn p(&self, s: &[u8]) -> Option<usize> {
+                // TODO: Implement the desired logic for P2
+                unimplemented!()
+            }
+        }
+
+        let p1 = P1;
+        let p2 = P2;
+        let p: &dyn Peg = &(p1, p2);
+        let s = &[0u8; 10];
+
+        let result = p.p(s);
+
+        // TODO: Specify the expected result
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+// Import necessary modules
+use crate::peg::{Peg, P1, P2, P3};
+
+#[test]
+fn test_p() {
+    // Create test input
+    let s: &[u8] = b"test input";
+    
+    // Create an instance of P1, P2, P3
+    let p1 = P1;
+    let p2 = P2;
+    let p3 = P3;
+    
+    // Create instances of p1, p2, p3 as trait objects
+    let p1: &dyn Peg = &p1;
+    let p2: &dyn Peg = &p2;
+    let p3: &dyn Peg = &p3;
+    
+    // Create an instance of p as tuple
+    let p = (p1, p2, p3);
+    
+    // Call the p function
+    let result = Peg::p(&p, s);
+    
+    // Assert the result is as expected
+    assert_eq!(result, Some(11));
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    struct P1;
+    struct P2;
+    struct P3;
+    struct P4;
+    impl P1 {
+        #[inline(always)]
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // Implement the logic for P1.p
+            // ...
+            None
+        }
+    }
+    impl P2 {
+        #[inline(always)]
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // Implement the logic for P2.p
+            // ...
+            None
+        }
+    }
+    impl P3 {
+        #[inline(always)]
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // Implement the logic for P3.p
+            // ...
+            None
+        }
+    }
+    impl P4 {
+        #[inline(always)]
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // Implement the logic for P4.p
+            // ...
+            None
+        }
+    }
+
+    trait Peg {
+        fn p(&self, s: &[u8]) -> Option<usize>;
+    }
+    impl Peg for (P1, P2, P3, P4) {
+        #[inline(always)]
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            let (p1, p2, p3, p4) = self;
+            let mut i = 0;
+            if let Some(len) = p1.p(&s[i..]) {
+                i += len;
+            } else {
+                return None;
+            }
+            if let Some(len) = p2.p(&s[i..]) {
+                i += len;
+            } else {
+                return None;
+            }
+            if let Some(len) = p3.p(&s[i..]) {
+                i += len;
+            } else {
+                return None;
+            }
+            if let Some(len) = p4.p(&s[i..]) {
+                i += len;
+            } else {
+                return None;
+            }
+            Some(i)
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        let p1 = P1;
+        let p2 = P2;
+        let p3 = P3;
+        let p4 = P4;
+        let input = b"example input";
+
+        let peg = (p1, p2, p3, p4);
+        let result = peg.p(input);
+        assert_eq!(result, Some(input.len()));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::F;
+
+    #[test]
+    fn test_p() {
+        let f: F = /* initialize F */;
+        let s: &[u8] = /* initialize s */;
+        let result = f.p(s);
+        /* assert result using assert_eq, assert_ne, or other assert macros */
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use std::collections::HashMap;
+    use xi_plugin_lib::Plugin;
+    use xi_plugin_lib::View;
+    use xi_rope::delta::DeltaBuilder;
+    use std::path::Path;
+
+    struct MockCache;
+
+    struct MockViewState;
+
+    impl MockViewState {
+        fn new() -> MockViewState {
+            MockViewState
+        }
+
+        fn do_highlighting(&mut self, view: &mut View<MockCache>) {
+            // implementation for do_highlighting
+        }
+
+        fn highlight_one_line(&mut self, view: &mut View<MockCache>) -> bool {
+            // implementation for highlight_one_line
+            true
+        }
+
+        fn flush_spans(&mut self, view: &mut View<MockCache>) {
+            // implementation for flush_spans
+        }
+    }
+
+    struct MockPlugin {
+        view_states: HashMap<u64, MockViewState>,
+    }
+
+    impl MockPlugin {
+        fn new() -> MockPlugin {
+            MockPlugin {
+                view_states: HashMap::new(),
+            }
+        }
+    }
+
+    impl Plugin for MockPlugin {
+        type Cache = MockCache;
+
+        fn update(&mut self, view: &mut View<Self::Cache>, delta: Option<&RopeDelta>, edit_type: String, author: String) {
+            view.schedule_idle();
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, old_path: Option<&Path>) {
+            // implementation for did_save
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            // implementation for did_close
+        }
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            let mut view_state = MockViewState::new();
+
+            view_state.do_highlighting(view);
+            self.view_states.insert(view_id, view_state);
+        }
+
+        fn config_changed(&mut self, view: &mut View<Self::Cache>, changes: &ConfigTable) {
+            // implementation for config_changed
+        }
+
+        fn language_changed(&mut self, view: &mut View<Self::Cache>, old_lang: LanguageId) {
+            // implementation for language_changed
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                for _ in 0..LINES_PER_RPC {
+                    if !view_state.highlight_one_line(view) {
+                        view_state.flush_spans(view);
+                        return;
+                    }
+
+                    if view.request_is_pending() {
+                        trace!("yielding for request", &["experimental-lang"]);
+                        break;
+                    }
+                }
+
+                view_state.flush_spans(view);
+                view.schedule_idle();
+            }
+        }
+    }
+
+    #[test]
+    fn test_config_changed() {
+        let mut view = View::new(Box::new(MockCache));
+        let mut plugin = MockPlugin::new();
+        let changes = ConfigTable::new();
+
+        plugin.config_changed(&mut view, &changes);
+        // add assertions
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use xi_plugin_lib::{Plugin, View, ViewId};
+
+    struct LangPlugin {
+        view_states: HashMap<ViewId, ViewState>,
+    }
+
+    struct ViewState {
+        // Define the structure of ViewState here
+    }
+
+    struct State;
+
+    struct StateCache<S> {
+        state: S,
+    }
+
+    struct RopeDelta;
+
+    struct View<C: StateCache<State>> {
+        // Define the structure of View here
+    }
+
+    type Path = std::path::Path;
+    type ConfigTable = std::collections::HashMap<String, String>;
+    type LanguageId = String;
+    const LINES_PER_RPC: usize = 1;
+
+    #[test]
+    fn test_did_close() {
+        let mut plugin = LangPlugin::new();
+        let mut view = View::new();
+        let view_id = view.get_id();
+        plugin.did_close(&view);
+        assert_eq!(false, plugin.view_states.contains_key(&view_id));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    use std::path::Path;
+    use xi_plugin_lib::{RopeDelta, Plugin, View, ViewId, PluginBufferInfo, StateCache, PluginPid, ConfigTable, LanguageId, RpcPeer};
+
+    struct State;
+    struct ViewState;
+
+    impl ViewState {
+        fn new() -> Self {
+            ViewState
+        }
+        
+        fn do_highlighting(&mut self, view: &mut View<StateCache<State>>) {
+            // implementation for do_highlighting
+        }
+        
+        fn highlight_one_line(&mut self, view: &mut View<StateCache<State>>) -> bool {
+            // implementation for highlight_one_line
+            true
+        }
+        
+        fn flush_spans(&mut self, view: &mut View<StateCache<State>>) {
+            // implementation for flush_spans
+        }
+    }
+    
+    struct LangPlugin {
+        view_states: HashMap<ViewId, ViewState>,
+    }
+
+    impl LangPlugin {
+        fn new() -> Self {
+            LangPlugin { view_states: HashMap::new() }
+        }
+    }
+
+    impl Plugin for LangPlugin {
+        type Cache = StateCache<State>;
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        ) {
+            view.schedule_idle();
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old_path: Option<&Path>) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            let view_id = view.get_id();
+            self.view_states.remove(&view_id);
+        }
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            let mut view_state = ViewState::new();
+
+            view_state.do_highlighting(view);
+            self.view_states.insert(view_id, view_state);
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+
+        fn language_changed(
+            &mut self,
+            view: &mut View<<Self as Plugin>::Cache>,
+            _old_lang: LanguageId,
+        ) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                for _ in 0..LINES_PER_RPC {
+                    if !view_state.highlight_one_line(view) {
+                        view_state.flush_spans(view);
+                        return;
+                    }
+
+                    if view.request_is_pending() {
+                        trace("yielding for request", &["experimental-lang"]);
+                        break;
+                    }
+                }
+
+                view_state.flush_spans(view);
+                view.schedule_idle();
+            }
+        }
+    }
+
+    #[test]
+    fn test_did_save() {
+        let mut view_states: HashMap<ViewId, ViewState> = HashMap::new();
+        let mut view = View::new(Box::new(MockRpcPeer {}), PluginPid::new(), PluginBufferInfo::new());
+        let mut lang_plugin = LangPlugin {
+            view_states: view_states,
+        };
+        let old_path = Some(Path::new("old/path/to/file"));
+
+        lang_plugin.did_save(&mut view, old_path.copied());
+
+        // assertion goes here
+    }
+}
+
+struct MockRpcPeer;
+
+impl xi_rpc::RpcPeer for MockRpcPeer {
+    fn send_rpc(&mut self, _: &str) -> Result<(), xi_rpc::RpcError> {
+        unimplemented!()
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_plugin_lib::View;
+    use xi_plugin_lib::{Plugin, StateCache, RopeDelta, LanguageId, ConfigTable};
+    use std::collections::HashMap;
+
+    #[derive(Default)]
+    struct State;
+
+    #[derive(Default)]
+    struct ViewState {
+        // Define fields here
+    }
+
+    struct LangPlugin {
+        view_states: HashMap<u64, ViewState>,
+    }
+
+    impl LangPlugin {
+        fn new() -> LangPlugin {
+            LangPlugin {
+                view_states: HashMap::new(),
+            }
+        }
+    }
+
+    impl Plugin for LangPlugin {
+        type Cache = StateCache<State>;
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        ) {
+            view.schedule_idle();
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old_path: Option<&Path>) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            let view_id = view.get_id();
+            self.view_states.remove(&view_id);
+        }
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            let mut view_state = ViewState::new();
+
+            view_state.do_highlighting(view);
+            self.view_states.insert(view_id, view_state);
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+
+        fn language_changed(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _old_lang: LanguageId,
+        ) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            const LINES_PER_RPC: u64 = 10;
+
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                for _ in 0..LINES_PER_RPC {
+                    if !view_state.highlight_one_line(view) {
+                        view_state.flush_spans(view);
+                        return;
+                    }
+
+                    if view.request_is_pending() {
+                        trace!("yielding for request", &["experimental-lang"]);
+                        break;
+                    }
+                }
+
+                view_state.flush_spans(view);
+                view.schedule_idle();
+            }
+        }
+    }
+
+    #[test]
+    fn test_idle() {
+        // Add test case here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_plugin_lib::{Plugin, View, StateCache, LanguageId};
+    use std::collections::HashMap;
+
+    #[derive(Default)]
+    struct State;
+
+    struct StateCache<T> {
+        states: Vec<T>,
+    }
+
+    #[derive(Default)]
+    struct ViewState;
+
+    #[derive(Default)]
+    struct View<T> {
+        states: Vec<T>,
+        view_id: u64,
+    }
+
+    #[derive(Default)]
+    struct LangPlugin {
+        view_states: HashMap<u64, ViewState>,
+    }
+
+    impl LangPlugin {
+        fn new() -> LangPlugin {
+            LangPlugin { view_states: HashMap::new() }
+        }
+    }
+
+    impl Plugin for LangPlugin {
+        type Cache = StateCache<State>;
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        ) {
+            view.schedule_idle();
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old_path: Option<&Path>) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            let view_id = view.get_id();
+            self.view_states.remove(&view_id);
+        }
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            let mut view_state = ViewState::new();
+
+            view_state.do_highlighting(view);
+            self.view_states.insert(view_id, view_state);
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+
+        fn language_changed(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _old_lang: LanguageId,
+        ) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                for _ in 0..LINES_PER_RPC {
+                    if !view_state.highlight_one_line(view) {
+                        view_state.flush_spans(view);
+                        return;
+                    }
+
+                    if view.request_is_pending() {
+                        trace("yielding for request", &["experimental-lang"]);
+                        break;
+                    }
+                }
+                view_state.flush_spans(view);
+                view.schedule_idle();
+            }
+        }
+    }
+
+    #[test]
+    fn test_language_changed() {
+        let mut plugin = LangPlugin::new();
+        let mut view = View::<StateCache<State>>::new();
+        let old_lang = LanguageId::new("old_lang");
+
+        plugin.language_changed(&mut view, old_lang);
+        // add assertions here
+    }
+}
+False
+========================================
+    use std::collections::HashMap;
+    use xi_plugin_lib::{Plugin, View, ViewId, StateCache, RopeDelta};
+    use xi_rope::rope::Rope;
+    use xi_core_lib::plugin_base::ConfigTable;
+    use xi_core_lib::language::LanguageId;
+    use xi_core_lib::plugin_base::language::Language;
+    use xi_core_lib::plugin_base::Style;
+    use xi_core_lib::plugin_base::Highlight;
+    use xi_core_lib::plugin_base::Span;
+    use xi_core_lib::plugin_base::Region;
+    use xi_core_lib::plugin_base::StyleModifier;
+    use std::path::Path;
+
+    #[derive(Default)]
+    struct StateCache(Vec<State>);
+
+    #[derive(Default)]
+    struct State {
+        pub styles: Vec<Style>,
+        pub highlight: Highlight,
+    }
+
+    struct LangPlugin {
+        view_states: HashMap<ViewId, State>,
+    }
+
+    struct ViewMetadata {
+        view_id: ViewId,
+    }
+
+    struct ViewCache;
+
+    struct Rope;
+
+    struct RopeDelta;
+
+    trait Plugin {
+        type Cache;
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        );
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old_path: Option<&Path>);
+
+        fn did_close(&mut self, view: &View<Self::Cache>);
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>);
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable);
+
+        fn language_changed(
+            &mut self,
+            view: &mut View<<Self as Plugin>::Cache>,
+            _old_lang: LanguageId,
+        );
+
+        fn idle(&mut self, view: &mut View<Self::Cache>);
+    }
+
+    struct View<T: StateCache> {
+        cache: T,
+        view_id: ViewId,
+    }
+
+    impl<T: StateCache> View<T> {
+        fn get_id(&self) -> &ViewId {
+            &self.view_id
+        }
+
+        fn schedule_idle(&self) {
+            // TODO: Implement
+        }
+
+        fn request_is_pending(&self) -> bool {
+            // TODO: Implement
+            false
+        }
+
+        fn flush_spans(&self, view: &View<T>) {
+            // TODO: Implement
+        }
+
+        fn highlight_one_line(&self, view: &View<T>) -> bool {
+            // TODO: Implement
+            false
+        }
+    }
+
+    struct LanguageId;
+
+    struct ViewState {
+        styles: Vec<Style>,
+        highlight: Highlight,
+    }
+
+    impl ViewState {
+        fn new() -> Self {
+            ViewState {
+                styles: Vec::new(),
+                highlight: Highlight::new(),
+            }
+        }
+
+        fn do_highlighting(&mut self, view: &View<ViewCache>) {
+            // TODO: Implement
+        }
+
+        fn flush_spans(&mut self, view: &View<ViewCache>) {
+            // TODO: Implement
+        }
+
+        fn highlight_one_line(&mut self, view: &View<ViewCache>) -> bool {
+            // TODO: Implement
+            false
+        }
+    }
+
+    impl LangPlugin {
+        fn new() -> Self {
+            LangPlugin {
+                view_states: HashMap::new(),
+            }
+        }
+    }
+
+    impl Plugin for LangPlugin {
+        type Cache = StateCache;
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id().clone();
+            let mut view_state = ViewState::new();
+
+            view_state.do_highlighting(view);
+            self.view_states.insert(view_id, view_state);
+        }
+    }
+
+    #[test]
+    fn test_new_view() {
+        let view_id = ViewId(1);
+        let mut plugin = LangPlugin::new();
+        let mut view = View {
+            cache: StateCache::default(),
+            view_id,
+        };
+
+        plugin.new_view(&mut view);
+        assert!(plugin.view_states.contains_key(&view_id));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_plugin_lib::{Plugin, View, LanguageId};
+    use xi_core_lib::ConfigTable;
+    use xi_rope::RopeDelta;
+    use std::collections::HashMap;
+    use std::path::Path;
+    
+    struct MockCache;
+    
+    struct MockViewState;
+    
+    impl MockViewState {
+        fn new() -> MockViewState {
+            MockViewState {}
+        }
+    
+        fn do_highlighting(&mut self, _view: &mut View<MockCache>) {}
+    
+        fn highlight_one_line(&mut self, _view: &mut View<MockCache>) -> bool {
+            true
+        }
+    
+        fn flush_spans(&mut self, _view: &mut View<MockCache>) {}
+    
+        fn request_is_pending(&self) -> bool {
+            false
+        }
+    }
+    
+    struct MockPlugin {
+        view_states: HashMap<ViewId, MockViewState>,
+    }
+    
+    impl MockPlugin {
+        fn new() -> MockPlugin {
+            MockPlugin {
+                view_states: HashMap::new(),
+            }
+        }
+    }
+    
+    impl Plugin for MockPlugin {
+        type Cache = MockCache;
+    
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        ) {
+            view.schedule_idle();
+        }
+    
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old_path: Option<&Path>) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+    
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            let view_id = view.get_id();
+            self.view_states.remove(&view_id);
+        }
+    
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+            let mut view_state = MockViewState::new();
+    
+            view_state.do_highlighting(view);
+            self.view_states.insert(view_id, view_state);
+        }
+    
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+    
+        fn language_changed(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            _old_lang: LanguageId,
+        ) {
+            let view_id = view.get_id();
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                view_state.do_highlighting(view);
+            }
+        }
+    
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            let view_id = view.get_id();
+    
+            if let Some(view_state) = self.view_states.get_mut(&view_id) {
+                for _ in 0..LINES_PER_RPC {
+                    if !view_state.highlight_one_line(view) {
+                        view_state.flush_spans(view);
+                        return;
+                    }
+    
+                    if view.request_is_pending() {
+                        trace("yielding for request", &["experimental-lang"]);
+                        break;
+                    }
+                }
+    
+                view_state.flush_spans(view);
+                view.schedule_idle();
+            }
+        }
+    }
+    
+    #[test]
+    fn test_update() {
+        let mut plugin = MockPlugin::new();
+        let mut view = View::new(Box::new(MockCache));
+        plugin.update(&mut view, None, "type".to_owned(), "author".to_owned());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_p_with_ascii_character() {
+        let c = 'a';
+        let s = b"abc";
+        assert_eq!(c.p(s), Some(1));
+    }
+    
+    #[test]
+    fn test_p_with_non_ascii_character() {
+        let c = 'é';
+        let s = b"abc";
+        assert_eq!(c.p(s), Some(0));
+    }
+    
+    #[test]
+    fn test_p_with_empty_input() {
+        let c = 'a';
+        let s = b"";
+        assert_eq!(c.p(s), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::language::plaintext::PlaintextParser;
+    use crate::parser::Parser;
+    use crate::statestack::State;
+
+    const PLAINTEXT_SOURCE_SCOPE: &[&str] = &["source.plaintext"];
+
+    #[test]
+    fn test_get_all_scopes() {
+        let parser = PlaintextParser::new();
+        let result = parser.get_all_scopes();
+        let expected: Vec<Vec<String>> = vec![PLAINTEXT_SOURCE_SCOPE.iter().map(|&it| it.to_string()).collect()];
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::statestack::State;
+
+    #[test]
+    fn test_get_scope_id_for_state() {
+        let mut parser = PlaintextParser::new();
+        parser.set_scope_offset(123);
+
+        let state = State(1);
+        let result = parser.get_scope_id_for_state(state);
+
+        assert_eq!(result, 123u32);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::language::plaintext::PlaintextParser;
+    use crate::parser::Parser;
+
+    #[test]
+    fn test_has_offset() {
+        let mut parser: PlaintextParser = PlaintextParser::new();
+        assert_eq!(parser.has_offset(), false);
+
+        parser.set_scope_offset(10);
+        assert_eq!(parser.has_offset(), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    use std::default::Default;
+    use std::fmt::Debug;
+    use std::hash::Hash;
+    use std::marker::{Copy, StructuralEq, StructuralPartialEq};
+    use statestack::Context;
+    use statestack::State;
+    use language::parser::{Parser, ScopeId};
+
+    #[cfg(feature = "plaintext")]
+    const PLAINTEXT_SOURCE_SCOPE: &[&str] = &["text.plain"];
+
+    #[test]
+    fn test_parse() {
+        let mut parser = PlaintextParser::new();
+        let text = "Hello, world!";
+        let state = State(0);
+        let result = parser.parse(text, state);
+
+        // Assert the result
+        let expected = (0, parser.ctx.push(state, ()), text.as_bytes().len(), state);
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use parser::Parser;
+    use statestack::State;
+    
+    #[test]
+    fn test_set_scope_offset() {
+        let mut parser = PlaintextParser::new();
+        parser.set_scope_offset(10);
+        assert_eq!(parser.get_scope_id_for_state(State(0)), 10);
+    }
+}
+False
+========================================
+    use crate::language::rust::{OneOrMoreWithSep, Peg};
+
+    #[test]
+    fn test_p() {
+        let p = OneOrMoreWithSep(/* p */, /* sep */);
+
+        // test cases
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::Parser;
+
+    #[test]
+    fn test_get_all_scopes() {
+        let rust_parser = RustParser::new();
+        let all_scopes = rust_parser.get_all_scopes();
+        let expected_scopes: Vec<Vec<String>> = vec![vec!["scope1".to_string(), "scope2".to_string()], vec!["scope3".to_string(), "scope4".to_string()]];
+        assert_eq!(all_scopes, expected_scopes);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{Context, Entry, Parser};
+    use std::collections::HashMap;
+    use crate::StateEl;
+
+    #[derive(Clone, Debug, Eq, PartialEq)]
+    struct StateEl;
+
+    #[derive(Clone, Debug, Eq, PartialEq, Default, Hash)]
+    struct State;
+
+    struct Entry<T> {
+        tos: T,
+        prev: State,
+    }
+
+    #[derive(Clone, Debug, Eq, PartialEq)]
+    struct ScopeId(u32);
+
+    struct Context<T> {
+        entries: Vec<Entry<T>>,
+        next: HashMap<(State, T), State>,
+    }
+
+    impl<T: Clone + Hash + Eq> Context<T> {
+        fn new() -> Context<T> {
+            Context {
+                entries: Vec::new(),
+                next: HashMap::new(),
+            }
+        }
+
+        fn entry(&self, s: State) -> Option<&Entry<T>> {
+            if s.0 == 0 {
+                None
+            } else {
+                Some(&self.entries[s.0 - 1])
+            }
+        }
+
+        fn tos(&self, s: State) -> Option<T> {
+            self.entry(s).map(|entry| entry.tos.clone())
+        }
+
+        fn pop(&self, s: State) -> Option<State> {
+            self.entry(s).map(|entry| entry.prev)
+        }
+
+        fn push(&mut self, s: State, el: T) -> State {
+            let entries = &mut self.entries;
+            *self.next.entry((s, el.clone())).or_insert_with(|| {
+                entries.push(Entry { tos: el, prev: s });
+                State(entries.len())
+            })
+        }
+    }
+
+    #[derive(Clone, Debug, Eq, PartialEq)]
+    struct RustParser {
+        scope_offset: Option<u32>,
+        ctx: Context<StateEl>,
+    }
+
+    impl RustParser {
+        fn new() -> RustParser {
+            RustParser {
+                scope_offset: None,
+                ctx: Context::new(),
+            }
+        }
+
+        fn quoted_str(&mut self, t: &[u8], state: State) -> (usize, State, usize, State) {
+            let mut i = 0;
+            while i < t.len() {
+                let b = t[i];
+                if b == b'"' {
+                    return (0, state, i + 1, self.ctx.pop(state).unwrap());
+                } else if b == b'\\' {
+                    if let Some(len) = escape.p(&t[i..]) {
+                        return (i, self.ctx.push(state, StateEl::CharConst), len, state);
+                    } else if let Some(len) = (FailIf(OneOf(b"\r\nbu")), OneChar(|_| true)).p(&t[i + 1..]) {
+                        return (i + 1, self.ctx.push(state, StateEl::Invalid), len, state);
+                    }
+                }
+                i += 1;
+            }
+            (0, state, i, state)
+        }
+    }
+
+    impl Parser for RustParser {
+        fn has_offset(&mut self) -> bool {
+            self.scope_offset.is_some()
+        }
+
+        fn set_scope_offset(&mut self, offset: u32) {
+            if !self.has_offset() {
+                self.scope_offset = Some(offset)
+            }
+        }
+
+        fn get_all_scopes(&self) -> Vec<Vec<String>> {
+            ALL_SCOPES
+                .iter()
+                .map(|stack| stack.iter().map(|s| (*s).to_string()).collect::<Vec<_>>())
+                .collect()
+        }
+
+        fn get_scope_id_for_state(&self, state: State) -> ScopeId {
+            let offset = self.scope_offset.unwrap_or_default();
+
+            if let Some(element) = self.ctx.tos(state) {
+                element.scope_id() + offset
+            } else {
+                offset
+            }
+        }
+
+        fn parse(&mut self, text: &str, mut state: State) -> (usize, State, usize, State) {
+            let t = text.as_bytes();
+            match self.ctx.tos(state) {
+                Some(StateEl::Comment) => {
+                    for i in 0..t.len() {
+                        if let Some(len) = "/*".p(&t[i..]) {
+                            state = self.ctx.push(state, StateEl::Comment);
+                            return (i, state, len, state);
+                        } else if let Some(len) = "*/".p(&t[i..]) {
+                            return (0, state, i + len, self.ctx.pop(state).unwrap());
+                        }
+                    }
+                    return (0, state, t.len(), state);
+                }
+                Some(StateEl::StrQuote) => return self.quoted_str(t, state),
+                _ => (),
+            }
+            let mut i = 0;
+            while i < t.len() {
+                let b = t[i];
+                if let Some(len) = "/*".p(&t[i..]) {
+                    state = self.ctx.push(state, StateEl::Comment);
+                    return (i, state, len, state);
+                } else if "//".p(&t[i..]).is_some() {
+                    return (i, self.ctx.push(state, StateEl::Comment), t.len(), state);
+                } else if let Some(len) = numeric_literal.p(&t[i..]) {
+                    return (i, self.ctx.push(state, StateEl::NumericLiteral), len, state);
+                } else if b == b'"' {
+                    state = self.ctx.push(state, StateEl::StrQuote);
+                    return (i, state, 1, state);
+                } else if let Some(len) = char_literal.p(&t[i..]) {
+                    return (i, self.ctx.push(state, StateEl::CharQuote), len, state);
+                } else if let Some(len) = OneOf(RUST_OPERATORS).p(&t[i..]) {
+                    return (i, self.ctx.push(state, StateEl::Operator), len, state);
+                } else if let Some(len) = ident.p(&t[i..]) {
+                    if RUST_KEYWORDS.binary_search(&&t[i..i + len]).is_ok() {
+                        return (i, self.ctx.push(state, StateEl::Keyword), len, state);
+                    } else if RUST_PRIM_TYPES.binary_search(&&t[i..i + len]).is_ok() {
+                        return (i, self.ctx.push(state, StateEl::PrimType), len, state);
+                    } else {
+                        i += len;
+                        continue;
+                    }
+                } else if let Some(len) = whitespace.p(&t[i..]) {
+                    return (i, self.ctx.push(state, StateEl::Source), len, state);
+                }
+
+                i += 1;
+            }
+
+            (0, self.ctx.push(state, StateEl::Source), t.len(), state)
+        }
+    }
+
+    #[test]
+    fn test_get_scope_id_for_state() {
+        let mut parser = RustParser::new();
+        parser.ctx.push(State, StateEl);
+        parser.scope_offset = Some(1);
+
+        let state = State(1);
+        let result = parser.get_scope_id_for_state(state);
+        let expected = ScopeId(1);
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use language::rust::RustParser;
+    use parser::Parser;
+
+    #[test]
+    fn test_has_offset() {
+        let mut parser = RustParser::new();
+        assert_eq!(parser.has_offset(), false);
+
+        parser.set_scope_offset(10);
+        assert_eq!(parser.has_offset(), true);
+    }
+}
+True
+========================================
+    use crate::language::rust::RustParser;
+    use crate::language::rust::State;
+    use crate::language::rust::StateEl;
+    use crate::language::rust::Context;
+
+    #[test]
+    fn test_parse() {
+        let mut rust_parser = RustParser::new();
+        let text = "test";
+        let state = State(0);
+        let expected_parse_result = (0, state, 0, state);
+        assert_eq!(expected_parse_result, rust_parser.parse(text, state));
+    }
+
+    #[test]
+    fn test_parse_state_el_string() {
+        let state_el = StateEl::StrQuote;
+        let expected_string = "StrQuote";
+        assert_eq!(expected_string, state_el.to_string());
+    }
+
+    #[test]
+    fn test_parse_context_push() {
+        let mut context = Context::new();
+        let state = State(0);
+        let state_el = StateEl::StrQuote;
+        let expected_state = State(0);
+        assert_eq!(expected_state, context.push(state, state_el));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::language::rust::RustParser;
+    use crate::language::rust::parser::Parser;
+
+    #[test]
+    fn test_set_scope_offset() {
+        // Setup
+        let mut parser = RustParser::new();
+
+        // Test without existing scope_offset
+        parser.set_scope_offset(10);
+        assert_eq!(parser.scope_offset, Some(10));
+
+        // Test with existing scope_offset
+        parser.set_scope_offset(20);
+        assert_eq!(parser.scope_offset, Some(10));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    struct MockP1 {}
+    impl Peg for MockP1 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            None
+        }
+    }
+
+    struct MockP2 {}
+    impl Peg for MockP2 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            None
+        }
+    }
+
+    struct MockP3 {}
+    impl Peg for MockP3 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            None
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        #[allow(dead_code)]
+        let alt = Alt3(MockP1 {}, MockP2 {}, MockP3 {});
+        let s: &[u8] = &[1, 2, 3];
+        let result = alt.p(s);
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::peg::Peg;
+
+    struct P1;
+    struct P2;
+    
+    impl Peg for P1 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // implementation for P1
+            unimplemented!()
+        }
+    }
+    
+    impl Peg for P2 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // implementation for P2
+            unimplemented!()
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        let alt = Alt(P1, P2);
+
+        let s: &[u8] = &[]; // initialize s with test data
+        let expected: Option<usize> = None; // expected result
+
+        let result = alt.p(s);
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_p() {
+        let peg = FailIf::<P>::new(P {});
+        assert_eq!(peg.p(b"test"), Some(0));
+        assert_eq!(peg.p(b""), None);
+    }
+}
+False
+========================================
+    use crate::peg::{Peg, Inclusive, OneByte};
+
+    #[test]
+    fn test_p() {
+        let inclusive = Inclusive::<std::ops::Range<u8>>(std::ops::RangeInclusive::new(b'a', b'z'));
+
+        let input = b"hello world";
+        let expected = Some(0);
+        let result = inclusive.p(input);
+        assert_eq!(result, expected);
+
+        let input = b"goodbye";
+        let expected = Some(0);
+        let result = inclusive.p(input);
+        assert_eq!(result, expected);
+
+        let input = b"NOTHING";
+        let expected = None;
+        let result = inclusive.p(input);
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_p_empty_string() {
+        let one_byte = OneByte(|_c: u8| true);
+        let s: [u8; 0] = [];
+        assert_eq!(one_byte.p(&s), None);
+    }
+    
+    #[test]
+    fn test_p_incorrect_char() {
+        let one_byte = OneByte(|_c: u8| true);
+        let s: [u8; 1] = [65];
+        assert_eq!(one_byte.p(&s), None);
+    }
+    
+    #[test]
+    fn test_p_correct_char() {
+        let one_byte = OneByte(|_c: u8| true);
+        let s: [u8; 1] = [97];
+        assert_eq!(one_byte.p(&s), Some(1));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_p_returns_some() {
+        let char_predicate = |c: char| c.is_alphabetic();
+        let one_char = OneChar(char_predicate);
+        let input = "abc".as_bytes();
+        let result = one_char.p(input);
+        assert_eq!(result, Some(1));
+    }
+    
+    #[test]
+    fn test_p_returns_none() {
+        let char_predicate = |c: char| c.is_alphabetic();
+        let one_char = OneChar(char_predicate);
+        let input = "123".as_bytes();
+        let result = one_char.p(input);
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    struct Parser;
+
+    impl Peg for Parser {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // Implementation of Parser here
+            None
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        // Create instances of Parsers
+        let parser1 = Parser;
+        let parser2 = Parser;
+        let parser3 = Parser;
+
+        // Create an instance of OneOf
+        let input = &[1, 2, 3];
+        let one_of = OneOf(&[&parser1, &parser2, &parser3]);
+
+        // Call the p function and assert the result
+        assert_eq!(<OneOf<Parser> as Peg>::p(&one_of, input), None);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_p() {
+        let peg = OneOrMore(0); // Replace 0 with appropriate value
+        let s = &[0, 1, 2, 0, 1, 2]; // Replace with appropriate test data
+        let result = peg.p(s);
+        assert_eq!(result, Some(0)); // Replace 0 with expected result
+    }
+}
+True
+========================================
+    use crate::peg::Peg;
+    use crate::peg::Optional;
+
+    #[test]
+    fn test_p_returns_some() {
+        let peg = Optional(SomePeg);
+        let s = "hello".as_bytes();
+        let result = peg.p(&s);
+        assert_eq!(result, Some(5));
+    }
+
+    #[test]
+    fn test_p_returns_none() {
+        let peg = Optional(NonePeg);
+        let s = "hello".as_bytes();
+        let result = peg.p(&s);
+        assert_eq!(result, Some(0));
+    }
+
+    struct SomePeg;
+
+    impl Peg for SomePeg {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            Some(s.len())
+        }
+    }
+
+    struct NonePeg;
+
+    impl Peg for NonePeg {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            None
+        }
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_p() {
+        let p: Ref<TestPeg> = Ref(&TestPeg);
+        let s: &[u8] = b"test_string";
+        let result = p.p(s);
+        assert_eq!(result, Some(11));
+    }
+}
+
+struct TestPeg;
+
+impl Peg for TestPeg {
+    fn p(&self, s: &[u8]) -> Option<usize> {
+        // Implement your test logic here
+        Some(s.len())
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::ops::Range;
+
+    struct MockP;
+
+    impl Peg for MockP {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            Some(s.len())
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        let p = Repeat(MockP, Range { start: 1, end: 4 });
+
+        let s = b"abcde";
+        assert_eq!(p.p(s), Some(3));
+
+        let s = b"ab";
+        assert_eq!(p.p(s), Some(2));
+
+        let s = b"a";
+        assert_eq!(p.p(s), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_p() {
+        let r = Repeat(0..5, 0..10);
+        let s = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+        let result = r.p(&s);
+        assert_eq!(result, Some(10));
+
+        let r = Repeat(0..5, 0..10);
+        let s = [1, 2, 3, 4, 1, 2, 3, 4, 5];
+        let result = r.p(&s);
+        assert_eq!(result, Some(8));
+
+        let r = Repeat(0..5, 0..10);
+        let s = [1, 2, 3, 4, 1, 2, 3, 4];
+        let result = r.p(&s);
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use peg::Peg;
+    use std::ops;
+
+    struct Repeat<P, R>(P, R);
+
+    impl<P: Peg> Peg for Repeat<P, ops::RangeFull> {
+        #[inline]
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            ZeroOrMore(Ref(&self.0)).p(s)
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        let repeat: Repeat<_, ops::RangeFull> = Repeat(Vec::<u8>::new(), ops::RangeFull);
+        let input = &[b'a', b'b'];
+        let expected = Some(0);
+        let result = repeat.p(input);
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::peg::*;
+    use std::ops;
+
+    #[test]
+    fn test_p() {
+        let repeat = <<peg::Repeat<_, ops::RangeTo<usize>> as Peg>::p>::p;
+
+        // Test case 1
+        let result = repeat(Repeat(peg::Ref(&Peg1), ops::RangeTo { end: 5 }), &[]);
+        assert_eq!(result, Some(0));
+
+        // Test case 2
+        let result = repeat(Repeat(peg::Ref(&Peg2), ops::RangeTo { end: 5 }), b"abcde");
+        assert_eq!(result, Some(5));
+    }
+
+    // Define test peg for testing
+    struct Peg1;
+    impl Peg for Peg1 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // TODO: Define test logic
+            unimplemented!()
+        }
+    }
+
+    struct Peg2;
+    impl Peg for Peg2 {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            // TODO: Define test logic
+            unimplemented!()
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::peg::{Peg, Repeat};
+    use std::ops;
+
+    #[test]
+    fn test_p() {
+        let p: Repeat<_, usize> = Repeat(/* put test values here */, 0); // Fill in the test values for the Repeat struct
+        let s: &[u8] = /* put test values here */; // Fill in the test values for the input slice
+        let result = p.p(s);
+        // add assertions here
+        assert_eq!(result, /* expected result */); // Fill in the expected result
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    struct MockParser;
+
+    impl Peg for MockParser {
+        fn p(&self, s: &[u8]) -> Option<usize> {
+            Some(s.len())
+        }
+    }
+
+    #[test]
+    fn test_p() {
+        let parser = ZeroOrMore(MockParser);
+        let s: &[u8] = b"abcde";
+        let result = parser.p(s);
+        assert_eq!(result, Some(5));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use peg::Peg;
+
+    #[test]
+    fn test_p() {
+        let range = std::ops::Range {
+            start: 0,
+            end: 10,
+        };
+        let input = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        assert_eq!(range.p(&input), Some(0));
+    }
+}
+True
+========================================
+    use crate::peg::Peg;
+
+    #[test]
+    fn test_p() {
+        struct OneByte(u8);
+
+        impl Peg for OneByte {
+            fn p(&self, s: &[u8]) -> Option<usize> {
+                Some(0)
+            }
+        }
+
+        let p = <u8 as Peg>::p;
+        let result = p(&OneByte(0), &[0u8]);
+
+        assert_eq!(result, Some(0));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    use xi_plugin_lib::{Plugin, View, LanguageId, StateCache, ViewId};
+    use xi_plugin_lib::backends::scroll::ScrollPlugin;
+    use xi_plugin_lib::backends::scroll::scroll::*;
+    use crate::ScrollPlugin as superScrollPlugin;
+
+    struct State;
+    struct ViewState;
+
+    impl ViewState {
+        fn new() -> Self {
+            Self
+        }
+
+        fn do_highlighting(&mut self, view: &mut View<StateCache<State>>) {
+            // implement your test for do_highlighting here
+        }
+
+        fn highlight_one_line(&mut self, view: &mut View<StateCache<State>>) -> bool {
+            // implement your test for highlight_one_line here
+            false
+        }
+
+        fn flush_spans(&mut self, view: &mut View<StateCache<State>>) {
+            // implement your test for flush_spans here
+        }
+    }
+
+    #[test]
+    fn test_new() {
+        let plugin = ScrollPlugin::new();
+        // implement your test for new method here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::statestack::State;
+    
+    fn create_view_state() -> ViewState {
+        ViewState::new()
+    }
+    
+    #[test]
+    fn test_compute_syntax() {
+        let line = "test line";
+        let mut view_state = create_view_state();
+        let result_state = view_state.compute_syntax(line);
+        assert_eq!(result_state, State(0));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::statestack::StateCache;
+
+    #[test]
+    fn test_do_highlighting() {
+        let mut view = View::<StateCache<State>>::new(RpcPeer::fake().start());
+        let mut state = ViewState::new();
+        state.do_highlighting(&mut view);
+        // assert statements
+        // ...
+    }
+
+    #[test]
+    fn test_highlight_one_line() {
+        let mut view = View::<StateCache<State>>::new(RpcPeer::fake().start());
+        let mut state = ViewState::new();
+        state.highlight_one_line(&mut view);
+        // assert statements
+        // ...
+    }
+
+    #[test]
+    fn test_compute_syntax() {
+        let mut state = ViewState::new();
+        let line = "example line";
+        let result = state.compute_syntax(line);
+        // assert statements
+        // ...
+    }
+
+    #[test]
+    fn test_flush_spans() {
+        let mut view = View::<StateCache<State>>::new(RpcPeer::fake().start());
+        let mut state = ViewState::new();
+        state.flush_spans(&mut view);
+        // assert statements
+        // ...
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::statestack::State;
+
+    #[test]
+    fn test_flush_spans() {
+        let mut view_state = crate::experimental::lang::ViewState::new();
+        let mut state_cache = crate::experimental::lang::StateCache::new();
+        let mut view = crate::experimental::lang::View::new(Box::new(&mut state_cache), Box::new(&mut view_state));
+        
+        // Call the `do_highlighting` method to set up the initial state
+        view_state.do_highlighting(Box::new(&mut view));
+
+        // Add some mock spans
+        view_state.spans.push(crate::experimental::lang::ScopeSpan {
+            start: 0,
+            end: 5,
+            scope_id: 0,
+        });
+        view_state.spans.push(crate::experimental::lang::ScopeSpan {
+            start: 6,
+            end: 10,
+            scope_id: 1,
+        });
+
+        // Set the spans start to a different value than the offset
+        view_state.spans_start = 3;
+
+        // Call the `flush_spans` method
+        view_state.flush_spans(Box::new(&mut view));
+
+        // Perform assertions to check if the spans are cleared and `update_spans` is called
+        assert_eq!(view_state.spans_start, view_state.offset);
+        assert_eq!(view_state.spans.len(), 0);
+
+        // TODO: Mock the `update_spans` method and check if it's called with the correct parameters
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use statestack::State;
+    use crate::View;
+    use crate::statestack::StateCache;
+
+    #[test]
+    fn test_highlight_one_line() {
+        let mut view = View::<StateCache<State>>::new(/* Box<(dyn xi_rpc::Peer + 'static)> */, /* PluginPid */, /* PluginBufferInfo */); // Replace with actual View initialization
+        let mut state = ViewState::new(); // Replace with actual ViewState initialization
+
+        // Replace the following lines with your test logic
+        let result = state.highlight_one_line(&mut view);
+        assert_eq!(result, false);
+    }
+}
+False
+========================================
+    use crate::experimental::lang::main::ViewState;
+    use crate::experimental::lang::parser::LanguageId;
+    use crate::experimental::lang::statestack::State;
+
+    #[test]
+    fn test_viewstate_new() {
+        let view_state = ViewState::new();
+        assert_eq!(view_state.current_language, LanguageId::from("Plain Text"));
+        assert_eq!(view_state.offset, 0);
+        assert_eq!(view_state.initial_state, State::default());
+        assert_eq!(view_state.spans_start, 0);
+        assert_eq!(view_state.spans.len(), 0);
+        assert_eq!(view_state.scope_offset, 0);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::language::plaintext::PlaintextParser;
+    use crate::statestack::Context;
+    use crate::statestack::Entry;
+    use crate::statestack::State;
+    use std::collections::HashMap;
+
+    #[derive(Debug)]
+    struct Dummy;
+
+    #[test]
+    fn test_new() {
+        let parser = PlaintextParser::new();
+        assert_eq!(parser.scope_offset, None);
+        assert_eq!(parser.ctx.entries, Vec::<Entry<Dummy>>::new());
+        assert_eq!(parser.ctx.next, HashMap::<(State, Dummy), State>::new());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::statestack::State;
+
+    #[test]
+    fn test_new() {
+        let parser = RustParser::new();
+
+        // Assert that scope_offset is None
+        assert_eq!(parser.scope_offset, None);
+
+        // Assert that ctx is a Context with no entries
+        assert_eq!(parser.ctx.entry_count(), 0);
+        assert_eq!(parser.ctx.next.len(), 0);
+    }
+
+    #[test]
+    fn test_has_offset() {
+        let mut parser = RustParser::new();
+
+        // Assert that has_offset returns false when scope_offset is None
+        assert_eq!(parser.has_offset(), false);
+
+        // Set scope_offset to a value
+        parser.set_scope_offset(10);
+
+        // Assert that has_offset returns true when scope_offset is Some
+        assert_eq!(parser.has_offset(), true);
+    }
+
+    #[test]
+    fn test_set_scope_offset() {
+        let mut parser = RustParser::new();
+
+        // Assert that scope_offset is None initially
+        assert_eq!(parser.scope_offset, None);
+
+        // Set scope_offset to a value
+        parser.set_scope_offset(10);
+
+        // Assert that scope_offset is set to the specified value
+        assert_eq!(parser.scope_offset, Some(10));
+
+        // Set scope_offset again
+        parser.set_scope_offset(20);
+
+        // Assert that scope_offset is not modified when called again
+        assert_eq!(parser.scope_offset, Some(10));
+    }
+
+    #[test]
+    fn test_get_all_scopes() {
+        let parser = RustParser::new();
+
+        // Retrieve all scopes
+        let scopes = parser.get_all_scopes();
+
+        // Assert that scopes is not empty
+        assert!(!scopes.is_empty());
+    }
+
+    #[test]
+    fn test_get_scope_id_for_state() {
+        let mut parser = RustParser::new();
+
+        // Assert that get_scope_id_for_state returns 0 when scope_offset is None and ctx is empty
+        assert_eq!(parser.get_scope_id_for_state(State(0)), 0);
+
+        // Set scope_offset to a value
+        parser.set_scope_offset(10);
+
+        // Assert that get_scope_id_for_state returns scope_offset when ctx is empty
+        assert_eq!(parser.get_scope_id_for_state(State(0)), 10);
+
+        // Push an element to ctx
+        parser.ctx.push(State(0), StateEl::Source);
+
+        // Assert that get_scope_id_for_state returns scope_offset + 1 when ctx has an entry
+        assert_eq!(parser.get_scope_id_for_state(State(0)), 11);
+    }
+
+    #[test]
+    fn test_parse() {
+        let mut parser = RustParser::new();
+
+        // Test case 1: text = "", state = State(0)
+        let (start1, state1, len1, end1) = parser.parse("", State(0));
+
+        // Assert that start, state, len, and end are all 0 when text is empty
+        assert_eq!(start1, 0);
+        assert_eq!(state1, State(0));
+        assert_eq!(len1, 0);
+        assert_eq!(end1, State(1));
+
+        // Test case 2: text = "/* comment */", state = State(0)
+        let (start2, state2, len2, end2) = parser.parse("/* comment */", State(0));
+
+        // Assert that start is 0, state is updated, len is the length of the comment, and end is the previous state
+        assert_eq!(start2, 0);
+        assert_ne!(state2, State(0));
+        assert_eq!(len2, 14);
+        assert_eq!(end2, State(0));
+
+        // Test case 3: text = "str", state = State(0)
+        let (start3, state3, len3, end3) = parser.parse("str", State(0));
+
+        // Assert that start is 0, state is updated, len is the length of the keyword, and end is the previous state
+        assert_eq!(start3, 0);
+        assert_ne!(state3, State(0));
+        assert_eq!(len3, 3);
+        assert_eq!(end3, State(0));
+    }
+
+    #[test]
+    fn test_quoted_str() {
+        let mut parser = RustParser::new();
+
+        // Test case 1: t = b"\"str\"", state = State(0)
+        let (start1, state1, len1, end1) = parser.quoted_str(b"\"str\"", State(0));
+
+        // Assert that start is 0, state is updated, len is the length of the string, and end is the previous state
+        assert_eq!(start1, 0);
+        assert_ne!(state1, State(0));
+        assert_eq!(len1, 5);
+        assert_eq!(end1, State(0));
+
+        // Test case 2: t = b"str\"", state = State(0)
+        let (start2, state2, len2, end2) = parser.quoted_str(b"str\"", State(0));
+
+        // Assert that start is 0, state is updated, len is the length of the string, and end is the previous state
+        assert_eq!(start2, 0);
+        assert_ne!(state2, State(0));
+        assert_eq!(len2, 4);
+        assert_eq!(end2, State(0));
+
+        // Test case 3: t = b"\"str", state = State(0)
+        let (start3, state3, len3, end3) = parser.quoted_str(b"\"str", State(0));
+
+        // Assert that start is 0, state is updated, len is the length of the string, and end is the previous state
+        assert_eq!(start3, 0);
+        assert_ne!(state3, State(0));
+        assert_eq!(len3, 4);
+        assert_eq!(end3, State(0));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use statestack::{Context, State, State as StateStruct};
+
+    fn parse_input(input: &str) -> (usize, State, usize, State) {
+        let mut parser = RustParser::new();
+        parser.parse(input, StateStruct(0))
+    }
+
+    #[test]
+    fn test_quoted_str() {
+        let mut parser = RustParser::new();
+        let t: &[u8] = &[b'"', b't', b'e', b's', b't', b'"'];
+        let state = StateStruct(0);
+
+        let (offset, state, len, new_state) = parser.quoted_str(t, state);
+
+        assert_eq!(offset, 0);
+        assert_eq!(state, state);
+        assert_eq!(len, 6);
+        assert_eq!(new_state, StateStruct(0));
+    }
+
+    #[test]
+    fn test_quoted_str_with_escape() {
+        let mut parser = RustParser::new();
+        let t: &[u8] = &[b't', b'e', b's', b't', b'\\', b'"'];
+        let state = StateStruct(0);
+
+        let (offset, state, len, new_state) = parser.quoted_str(t, state);
+
+        assert_eq!(offset, 4);
+        assert_eq!(state, StateStruct(1));
+        assert_eq!(len, 2);
+        assert_eq!(new_state, state);
+    }
+
+    #[test]
+    fn test_quoted_str_with_invalid_escape() {
+        let mut parser = RustParser::new();
+        let t: &[u8] = &[b't', b'e', b's', b't', b'\\', b'r'];
+        let state = StateStruct(0);
+
+        let (offset, state, len, new_state) = parser.quoted_str(t, state);
+
+        assert_eq!(offset, 5);
+        assert_eq!(state, StateStruct(2));
+        assert_eq!(len, 1);
+        assert_eq!(new_state, state);
+    }
+
+    #[test]
+    fn test_parse_input() {
+        let input = r#"test"#;
+        let (offset, state, len, new_state) = parse_input(input);
+
+        assert_eq!(offset, 0);
+        assert_eq!(state, StateStruct(0));
+        assert_eq!(len, 4);
+        assert_eq!(new_state, StateStruct(0));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_scope_id() {
+        assert_eq!(StateEl::Source.scope_id(), 0);
+        assert_eq!(StateEl::StrQuote.scope_id(), 1);
+        assert_eq!(StateEl::CharQuote.scope_id(), 2);
+        assert_eq!(StateEl::Comment.scope_id(), 3);
+        assert_eq!(StateEl::CharConst.scope_id(), 4);
+        assert_eq!(StateEl::NumericLiteral.scope_id(), 5);
+        assert_eq!(StateEl::Invalid.scope_id(), 6);
+        assert_eq!(StateEl::Keyword.scope_id(), 7);
+        assert_eq!(StateEl::Operator.scope_id(), 8);
+        assert_eq!(StateEl::PrimType.scope_id(), 9);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_char_literal() {
+        assert_eq!(char_literal(b"'A'"), Some(3));
+        assert_eq!(char_literal(b"'\\'"), Some(4));
+        assert_eq!(char_literal(b"'\\n'"), Some(4));
+        assert_eq!(char_literal(b"'\\u{1F600}'"), Some(12));
+        assert_eq!(char_literal(b"'\\u{1F600"), None);
+        assert_eq!(char_literal(b"'"), None);
+        assert_eq!(char_literal(b"A'"), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_escape() {
+        assert_eq!(escape(b"test"), Some(4));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::language::rust::is_ident_start;
+    use crate::language::rust::is_ident_continue;
+
+    #[test]
+    fn test_ident() {
+        assert_eq!(ident(b"string"), Some(6));
+        assert_eq!(ident(b"ident_123"), Some(9));
+        assert_eq!(ident(b"123"), None);
+        assert_eq!(ident(b"_underscore"), Some(10));
+        assert_eq!(ident(b""), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_int_suffix() {
+        let input1: &[u8] = &[b'u', b'8'];
+        assert_eq!(int_suffix(input1), Some(2));
+
+        let input2: &[u8] = &[b'u', b'1', b'6'];
+        assert_eq!(int_suffix(input2), Some(3));
+
+        let input3: &[u8] = &[b'u', b'3', b'2'];
+        assert_eq!(int_suffix(input3), Some(3));
+
+        let input4: &[u8] = &[b'u', b'6', b'4'];
+        assert_eq!(int_suffix(input4), Some(3));
+
+        let input5: &[u8] = &[b'u', b'1', b'2', b'8'];
+        assert_eq!(int_suffix(input5), Some(4));
+
+        let input6: &[u8] = &[b'u', b's', b'i', b'z', b'e'];
+        assert_eq!(int_suffix(input6), Some(5));
+
+        let input7: &[u8] = &[b'u', b's', b'i'];
+        assert_eq!(int_suffix(input7), None);
+
+        let input8: &[u8] = &[b'u', b's'];
+        assert_eq!(int_suffix(input8), None);
+    }
+}
+True
+========================================
+#[test]
+fn test_is_digit() {
+    assert!(crate::language::rust::is_digit(b'0'));
+    assert!(crate::language::rust::is_digit(b'9'));
+    assert!(!crate::language::rust::is_digit(b'A'));
+    assert!(!crate::language::rust::is_digit(b'Z'));
+}
+True
+========================================
+    use crate::language::rust::is_hex_digit;
+
+    #[test]
+    fn test_is_hex_digit() {
+        assert_eq!(is_hex_digit(b'0'), true);
+        assert_eq!(is_hex_digit(b'9'), true);
+        assert_eq!(is_hex_digit(b'a'), true);
+        assert_eq!(is_hex_digit(b'f'), true);
+        assert_eq!(is_hex_digit(b'A'), true);
+        assert_eq!(is_hex_digit(b'F'), true);
+
+        assert_eq!(is_hex_digit(b'g'), false);
+        assert_eq!(is_hex_digit(b'G'), false);
+        assert_eq!(is_hex_digit(b' '), false);
+        assert_eq!(is_hex_digit(b'!'), false);
+        assert_eq!(is_hex_digit(b'@'), false);
+    }
+}
+
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_is_ident_continue() {
+        assert_eq!(is_ident_continue(b'a'), true);
+        assert_eq!(is_ident_continue(b'5'), true);
+        assert_eq!(is_ident_continue(b'#'), false);
+        assert_eq!(is_ident_continue(b'_'), true);
+        assert_eq!(is_ident_continue(b' '), false);
+        assert_eq!(is_ident_continue(255), false);
+        assert_eq!(is_ident_continue(0), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_is_ident_start() {
+        assert_eq!(is_ident_start(b'A'), true);
+        assert_eq!(is_ident_start(b'Z'), true);
+        assert_eq!(is_ident_start(b'a'), true);
+        assert_eq!(is_ident_start(b'z'), true);
+        assert_eq!(is_ident_start(b'_'), true);
+        assert_eq!(is_ident_start(b'0'), false);
+        assert_eq!(is_ident_start(b'9'), false);
+        assert_eq!(is_ident_start(b'$'), false);
+        assert_eq!(is_ident_start(b' '), false);
+        assert_eq!(is_ident_start(b'\n'), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parsing::p;
+
+    #[test]
+    fn test_numeric_literal() {
+        let s: &[u8] = b"12345";
+        assert_eq!(numeric_literal(s), Some(5));
+        
+        let s: &[u8] = b"-67890";
+        assert_eq!(numeric_literal(s), Some(7));
+        
+        let s: &[u8] = b"12.34";
+        assert_eq!(numeric_literal(s), Some(5));
+        
+        let s: &[u8] = b"-56.78";
+        assert_eq!(numeric_literal(s), Some(7));
+        
+        let s: &[u8] = b"34e5";
+        assert_eq!(numeric_literal(s), Some(4));
+        
+        let s: &[u8] = b"-67e8";
+        assert_eq!(numeric_literal(s), Some(6));
+        
+        let s: &[u8] = b"90E12";
+        assert_eq!(numeric_literal(s), Some(5));
+        
+        let s: &[u8] = b"-123E45";
+        assert_eq!(numeric_literal(s), Some(8));
+        
+        let s: &[u8] = b"abc";
+        assert_eq!(numeric_literal(s), None);
+    }
+}
+False
+========================================
+    use crate::language::rust::positive_decimal;
+
+    #[test]
+    fn test_positive_decimal() {
+        let input: &[u8] = b"3.14159";
+        let expected_output: Option<usize> = Some(8);
+        assert_eq!(positive_decimal(input), expected_output);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_positive_nondecimal() {
+        let test_cases = [
+            (b"0x123_456", Some(8)),
+            (b"0o123_456", Some(8)),
+            (b"0b1010_1010", Some(10)),
+            (b"123_456", None),
+            (b"0", Some(1)),
+            (b"0x", None),
+            (b"0o", None),
+            (b"0b", None),
+            (b"0x123_456_", None),
+            (b"0x_123_456", None),
+            (b"0o123_456_", None),
+            (b"0o_123_456", None),
+            (b"0b1010_1010_", None),
+            (b"0b_1010_1010", None),
+            (b"0xGHI_JKL", None),
+            (b"0oXYZ_ABC", None),
+            (b"0b10201", None),
+        ];
+        
+        for &(input, expected_output) in &test_cases {
+            assert_eq!(positive_nondecimal(input), expected_output);
+        }
+    }
+}
+False
+========================================
+#[test]
+fn test_raw_numeric() {
+    assert_eq!(raw_numeric(b"12345"), Some(5));
+    assert_eq!(raw_numeric(b"0"), Some(1));
+    assert_eq!(raw_numeric(b"123_456"), Some(7));
+    assert_eq!(raw_numeric(b"abc"), None);
+    assert_eq!(raw_numeric(b"_"), None);
+    assert_eq!(raw_numeric(b"123.45"), None);
+    assert_eq!(raw_numeric(b"12_3"), None);
+    assert_eq!(raw_numeric(b"1_2_3"), None);
+    assert_eq!(raw_numeric(b"12_"), None);
+}
+True
+========================================
+    use std::io::stdin;
+    use std::io::Read;
+    use crate::language::rust::{RustParser, State, test};
+
+    #[test]
+    fn test_function() {
+        let input = "test input string";
+        let mut input_bytes = Vec::new();
+        stdin().read_to_end(&mut input_bytes).unwrap();
+        let mut input_str = String::new();
+        input_str.push_str(std::str::from_utf8(&input_bytes).unwrap());
+        stdin().read_to_string(&mut input_str).unwrap();
+        test();
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_whitespace() {
+        assert_eq!(whitespace(b" "), Some(1));
+        assert_eq!(whitespace(b"\t"), Some(1));
+        assert_eq!(whitespace(b"\n"), Some(1));
+        assert_eq!(whitespace(b"\r"), Some(1));
+        assert_eq!(whitespace(&[0x0B]), Some(1));
+        assert_eq!(whitespace(&[0x0C]), Some(1));
+        assert_eq!(whitespace(b""), None);
+        assert_eq!(whitespace(b"abc"), None);
+        assert_eq!(whitespace(b"12 "), None);
+        assert_eq!(whitespace(b"test\t"), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::LangPlugin;
+    use crate::language::rust::test;
+    use std::env;
+
+    #[test]
+    fn test_main() {
+        let args = vec!["test".to_owned()];
+
+        env::args().set_args(args);
+
+        main();
+        
+        // Add your assertions here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_char_helper() {
+        let s = "hello world".as_bytes();
+        let c = 'l';
+        let result = char_helper(s, c);
+        assert_eq!(result, Some(2));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_decode_utf8_empty() {
+        let s: &[u8] = &[];
+        assert_eq!(decode_utf8(s), None);
+    }
+
+    #[test]
+    fn test_decode_utf8_single_byte() {
+        let s: &[u8] = &[0x41]; // 'A' in ASCII
+        assert_eq!(decode_utf8(s), Some(('A', 1)));
+    }
+
+    #[test]
+    fn test_decode_utf8_2_bytes() {
+        let s: &[u8] = &[0xc3, 0xa9]; // 'é' in UTF-8
+        assert_eq!(decode_utf8(s), Some(('é', 2)));
+    }
+
+    #[test]
+    fn test_decode_utf8_3_bytes() {
+        let s: &[u8] = &[0xe2, 0x82, 0xac]; // '€' in UTF-8
+        assert_eq!(decode_utf8(s), Some(('€', 3)));
+    }
+
+    #[test]
+    fn test_decode_utf8_4_bytes() {
+        let s: &[u8] = &[0xf0, 0x9f, 0x8d, 0x80]; // '🍀' in UTF-8
+        assert_eq!(decode_utf8(s), Some(('🍀', 4)));
+    }
+
+    #[test]
+    fn test_decode_utf8_invalid_2_bytes() {
+        let s: &[u8] = &[0xc3, 0x41]; // Invalid UTF-8
+        assert_eq!(decode_utf8(s), None);
+    }
+
+    #[test]
+    fn test_decode_utf8_invalid_3_bytes() {
+        let s: &[u8] = &[0xe2, 0x82, 0x41]; // Invalid UTF-8
+        assert_eq!(decode_utf8(s), None);
+    }
+
+    #[test]
+    fn test_decode_utf8_invalid_4_bytes() {
+        let s: &[u8] = &[0xf0, 0x41, 0x8d, 0x80]; // Invalid UTF-8
+        assert_eq!(decode_utf8(s), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+
+    #[derive(Clone, PartialEq, Debug)]
+    struct MyEntry {
+        tos: i32,
+        prev: State,
+    }
+
+    #[derive(Clone, PartialEq, Debug, Default, Eq, Hash, PartialEq)]
+    struct State(usize);
+
+    #[test]
+    fn test_entry() {
+        let mut entries: Vec<MyEntry> = Vec::new();
+        let next: HashMap<(State, i32), State> = HashMap::new();
+        let mut context = Context {
+            entries: entries,
+            next: next,
+        };
+
+        let state_1 = State(1);
+        let state_2 = State(2);
+        let state_3 = State(3);
+
+        let entry_1 = MyEntry {
+            tos: 10,
+            prev: state_1.clone(),
+        };
+        let entry_2 = MyEntry {
+            tos: 20,
+            prev: state_2.clone(),
+        };
+        let entry_3 = MyEntry {
+            tos: 30,
+            prev: state_3.clone(),
+        };
+
+        context.entries = vec![entry_1.clone(), entry_2.clone(), entry_3.clone()];
+
+        assert_eq!(context.entry(State(0)), None);
+        assert_eq!(context.entry(State(1)), Some(&entry_1));
+        assert_eq!(context.entry(State(2)), Some(&entry_2));
+        assert_eq!(context.entry(State(3)), Some(&entry_3));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_new_context() {
+        let context: Context<i32> = Context::new();
+
+        assert_eq!(context.entries.len(), 0);
+        assert_eq!(context.next.len(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+
+    #[derive(Clone, Hash, Eq, PartialEq, Debug)]
+    struct Entry<T> {
+        prev: State,
+        tos: T,
+    }
+
+    #[derive(Clone, Debug, Hash, Eq, PartialEq, Default)]
+    struct State(usize);
+
+    struct Context<T> {
+        entries: Vec<Entry<T>>,
+        next: HashMap<(State, T), State>,
+    }
+
+    impl<T: Clone + Hash + Eq> Context<T> {
+        fn new() -> Context<T> {
+            Context {
+                entries: Vec::new(),
+                next: HashMap::new(),
+            }
+        }
+
+        fn entry(&self, s: State) -> Option<&Entry<T>> {
+            if s.0 == 0 {
+                None
+            } else {
+                Some(&self.entries[s.0 - 1])
+            }
+        }
+
+        fn tos(&self, s: State) -> Option<T> {
+            self.entry(s).map(|entry| entry.tos.clone())
+        }
+
+        fn pop(&self, s: State) -> Option<State> {
+            Some(self.entry(s)?.prev.clone())
+        }
+
+        fn push(&mut self, s: State, el: T) -> State {
+            let entries = &mut self.entries;
+
+            *self
+                .next
+                .entry((s, el.clone()))
+                .or_insert_with(|| {
+                    entries.push(Entry {
+                        tos: el,
+                        prev: s,
+                    });
+                    State(entries.len())
+                })
+        }
+    }
+
+    #[test]
+    fn test_pop() {
+        let mut context: Context<i32> = Context::new();
+        let state = State(1);
+
+        let result = context.pop(state);
+
+        assert_eq!(result, Some(State(0)));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[derive(Clone, Eq, PartialEq, Debug, Hash, Default)]
+    struct Dummy {}
+
+    #[test]
+    fn test_push() {
+        let mut context: Context<Dummy> = Context::new();
+        let s = State(1);
+
+        let el = Dummy {};
+
+        let result = context.push(s, el);
+
+        assert_eq!(result, State(1));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_tos() {
+        let mut context: Context<usize> = Context::new();
+        
+        // Add some entries to the context
+        let state1 = context.push(State(1), 10);
+        let state2 = context.push(State(2), 20);
+        let state3 = context.push(State(1), 30);
+        
+        // Test tos() for each state
+        assert_eq!(context.tos(State(1)), Some(30));
+        assert_eq!(context.tos(State(2)), Some(20));
+        assert_eq!(context.tos(State(3)), None);
+        
+        // Modify state2
+        context.push(State(2), 40);
+        
+        // Test tos() for state2 again
+        assert_eq!(context.tos(State(2)), Some(40));
+    }
+}
+True
+xi-editor xi-lang 37 75

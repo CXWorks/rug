@@ -1,0 +1,78 @@
+/mnt/sda/xiang/syrust/syrust/crossbeam/./src/lib.rs
+done
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/counter.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/context.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/select_macro.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/channel.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/err.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/waker.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/lib.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/utils.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/zero.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/tick.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/list.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/array.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/after.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/mod.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/flavors/never.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-channel/src/select.rs
+done
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-deque/src/deque.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-deque/src/lib.rs
+done
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/atomic.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/epoch.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/deferred.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/guard.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/default.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/sync/queue.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/sync/list.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/sync/mod.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/internal.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/collector.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-epoch/src/lib.rs
+done
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-queue/src/array_queue.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-queue/src/seg_queue.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-queue/src/err.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-queue/src/lib.rs
+done
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-skiplist/src/set.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-skiplist/src/map.rs
+err tests_rug_621 test_next
+   Compiling crossbeam-skiplist v0.0.0 (/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-skiplist)
+error[E0521]: borrowed data escapes outside of closure
+   --> crossbeam-skiplist/src/map.rs:704:113
+    |
+703 | ...h(|rug_data| {
+    |       --------
+    |       |
+    |       `rug_data` is a reference that is only valid in the closure body
+    |       has type `&'1 [u8]`
+704 | ...et Ok((mut rug_fuzz_0, mut rug_fuzz_1)) = <(i32, &str) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+    |                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |                                                                                                    |
+    |                                                                                                    `rug_data` escapes the closure body here
+    |                                                                                                    argument requires that `'1` must outlive `'static`
+
+For more information about this error, try `rustc --explain E0521`.
+error: could not compile `crossbeam-skiplist` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-skiplist/src/lib.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-skiplist/src/base.rs
+done
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/cache_padded.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/atomic/seq_lock_wide.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/atomic/consume.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/atomic/atomic_cell.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/atomic/seq_lock.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/atomic/mod.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/sync/sharded_lock.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/sync/parker.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/sync/wait_group.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/sync/mod.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/thread.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/backoff.rs
+/mnt/sda/xiang/syrust/syrust/crossbeam/crossbeam-utils/src/lib.rs
+done

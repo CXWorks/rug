@@ -1,0 +1,789 @@
+-----------------
+src/core.rs core::skip_ansi_escape_sequence
+deps:{"<&mut I as std::iter::Iterator>":{},"core::skip_ansi_escape_sequence":{"I":["std::iter::Iterator","std::marker::Sized"]}}
+candidates:{"<&mut I as std::iter::Iterator>":{},"core::skip_ansi_escape_sequence":{"I":["line_ending::NonEmptyLines","<&mut I as std::iter::Iterator>"]}}
+let mut p0 = 'a'; // None+char
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // I
++core::skip_ansi_escape_sequence(p0, p1);
++crate::core::skip_ansi_escape_sequence(p0, p1);
++crate::core::skip_ansi_escape_sequence(p0, p1);
+-----------------
+src/core.rs core::ch_width
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++core::ch_width(p0);
++crate::core::ch_width(p0);
++crate::core::ch_width(p0);
+-----------------
+src/core.rs core::display_width
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++core::display_width(&p0);
++crate::core::display_width(&p0);
++crate::core::display_width(&p0);
+-----------------
+src/core.rs core::break_words
+'a
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"core::break_words":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["line_ending::NonEmptyLines","<&mut I as std::iter::Iterator>"]},"core::break_words":{"I":["std::sync::mpsc::Receiver<T>","std::collections::BTreeMap<K, V, A>","&'a std::path::PathBuf","std::collections::HashSet<T, S>","<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>","<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>","std::collections::LinkedList<T>","std::collections::HashMap<K, V, S>","std::collections::BinaryHeap<T>","std::option::Option<T>","std::collections::VecDeque<T, A>","std::collections::BTreeSet<T, A>","&'a std::os::unix::net::UnixListener","std::result::Result<T, E>","&'a std::path::Path","std::vec::Vec<T, A>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
+let mut p1 = 0usize; // None+usize
++core::break_words(p0, p1);
++crate::core::break_words(p0, p1);
++crate::core::break_words(p0, p1);
+-----------------
+src/word_splitters.rs word_splitters::split_words
+'a
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"word_splitters::split_words":{"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["line_ending::NonEmptyLines","<&mut I as std::iter::Iterator>"]},"word_splitters::split_words":{"I":["std::collections::HashSet<T, S>","&'a std::path::Path","std::result::Result<T, E>","std::collections::HashMap<K, V, S>","std::collections::BTreeMap<K, V, A>","std::collections::BTreeSet<T, A>","&'a std::os::unix::net::UnixListener","std::collections::VecDeque<T, A>","std::collections::LinkedList<T>","std::vec::Vec<T, A>","<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>","std::collections::BinaryHeap<T>","<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>","std::sync::mpsc::Receiver<T>","std::option::Option<T>","&'a std::path::PathBuf"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
+let mut p1 = & MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
++word_splitters::split_words(p0, p1);
++crate::word_splitters::split_words(p0, p1);
++crate::word_splitters::split_words(p0, p1);
+-----------------
+src/wrap_algorithms/optimal_fit.rs wrap_algorithms::optimal_fit::wrap_optimal_fit
+deps:{"wrap_algorithms::optimal_fit::wrap_optimal_fit":{"T":["core::Fragment","std::marker::Sized"]}}
+candidates:{"wrap_algorithms::optimal_fit::wrap_optimal_fit":{"T":["core::Word"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [T]
+let mut p1 = & [0f64].as_mut_slice(); // None+[f64]
+let mut p2 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::Penalties
++wrap_algorithms::optimal_fit::wrap_optimal_fit(p0, p1, p2);
++crate::wrap_algorithms::optimal_fit::wrap_optimal_fit(p0, p1, p2);
++crate::wrap_algorithms::optimal_fit::wrap_optimal_fit(p0, p1, p2);
+-----------------
+src/wrap_algorithms.rs wrap_algorithms::wrap_first_fit
+deps:{"wrap_algorithms::wrap_first_fit":{"T":["core::Fragment","std::marker::Sized"]}}
+candidates:{"wrap_algorithms::wrap_first_fit":{"T":["core::Word"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [T]
+let mut p1 = & [0f64].as_mut_slice(); // None+[f64]
++wrap_algorithms::wrap_first_fit(p0, p1);
++crate::wrap_algorithms::wrap_first_fit(p0, p1);
++crate::wrap_algorithms::wrap_first_fit(p0, p1);
+-----------------
+src/columns.rs columns::wrap_columns
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"columns::wrap_columns":{"Opt":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"columns::wrap_columns":{"Opt":["std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = "sample"; // None+&str
+let mut p1 = 0usize; // None+usize
+let mut p2 = MaybeUninit::uninit().assume_init(); // Opt
+let mut p3 = "sample"; // None+&str
+let mut p4 = "sample"; // None+&str
+let mut p5 = "sample"; // None+&str
++columns::wrap_columns(&p0, p1, p2, &p3, &p4, &p5);
++crate::columns::wrap_columns(&p0, p1, p2, &p3, &p4, &p5);
++crate::columns::wrap_columns(&p0, p1, p2, &p3, &p4, &p5);
+-----------------
+src/fill.rs fill::fill
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"fill::fill":{"Opt":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"fill::fill":{"Opt":["<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"]}}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // Opt
++fill::fill(&p0, p1);
++crate::fill::fill(&p0, p1);
++crate::fill::fill(&p0, p1);
+-----------------
+src/fill.rs fill::fill_slow_path
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // options::Options<'_>
++fill::fill_slow_path(&p0, p1);
++crate::fill::fill_slow_path(&p0, p1);
++crate::fill::fill_slow_path(&p0, p1);
+-----------------
+src/fill.rs fill::fill_inplace
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+std::string::String
+let mut p1 = 0usize; // None+usize
++fill::fill_inplace(p0, p1);
++crate::fill::fill_inplace(p0, p1);
++crate::fill::fill_inplace(p0, p1);
+-----------------
+src/indentation.rs indentation::indent
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = "sample"; // None+&str
++indentation::indent(&p0, &p1);
++crate::indentation::indent(&p0, &p1);
++crate::indentation::indent(&p0, &p1);
+-----------------
+src/indentation.rs indentation::dedent
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++indentation::dedent(&p0);
++crate::indentation::dedent(&p0);
++crate::indentation::dedent(&p0);
+-----------------
+src/refill.rs refill::unfill
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++refill::unfill(&p0);
++crate::refill::unfill(&p0);
++crate::refill::unfill(&p0);
+-----------------
+src/refill.rs refill::refill
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"refill::refill":{"Opt":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"refill::refill":{"Opt":["std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected","std::process::ExitStatusError","<T as std::convert::Into<U>>"]}}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // Opt
++refill::refill(&p0, p1);
++crate::refill::refill(&p0, p1);
++crate::refill::refill(&p0, p1);
+-----------------
+src/word_separators.rs word_separators::find_words_ascii_space
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++word_separators::find_words_ascii_space(&p0);
++crate::word_separators::find_words_ascii_space(&p0);
++crate::word_separators::find_words_ascii_space(&p0);
+-----------------
+src/word_separators.rs word_separators::strip_ansi_escape_sequences
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++word_separators::strip_ansi_escape_sequences(&p0);
++crate::word_separators::strip_ansi_escape_sequences(&p0);
++crate::word_separators::strip_ansi_escape_sequences(&p0);
+-----------------
+src/word_separators.rs word_separators::find_words_unicode_break_properties
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++word_separators::find_words_unicode_break_properties(&p0);
++crate::word_separators::find_words_unicode_break_properties(&p0);
++crate::word_separators::find_words_unicode_break_properties(&p0);
+-----------------
+src/wrap.rs wrap::wrap
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"wrap::wrap":{"Opt":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"wrap::wrap":{"Opt":["std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"]}}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // Opt
++wrap::wrap(&p0, p1);
++crate::wrap::wrap(&p0, p1);
++crate::wrap::wrap(&p0, p1);
+-----------------
+src/wrap.rs wrap::wrap_single_line
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = & MaybeUninit::uninit().assume_init(); // options::Options<'_>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<std::borrow::Cow<'a, str>>
++wrap::wrap_single_line(&p0, p1, p2);
++crate::wrap::wrap_single_line(&p0, p1, p2);
++crate::wrap::wrap_single_line(&p0, p1, p2);
+-----------------
+src/wrap.rs wrap::wrap_single_line_slow_path
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = & MaybeUninit::uninit().assume_init(); // options::Options<'_>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<std::borrow::Cow<'a, str>>
++wrap::wrap_single_line_slow_path(&p0, p1, p2);
++crate::wrap::wrap_single_line_slow_path(&p0, p1, p2);
++crate::wrap::wrap_single_line_slow_path(&p0, p1, p2);
+-----------------
+src/core.rs core::Fragment::width
+deps:{"core::Fragment::width":{"Self":["core::Fragment","std::fmt::Debug"]}}
+candidates:{"core::Fragment::width":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Self
++p0.width();
++core::Fragment::width(p0);
++crate::core::Fragment::width(p0);
++crate::core::Fragment::width(p0);
+-----------------
+src/core.rs core::Fragment::whitespace_width
+deps:{"core::Fragment::whitespace_width":{"Self":["std::fmt::Debug","core::Fragment"]}}
+candidates:{"core::Fragment::whitespace_width":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Self
++p0.whitespace_width();
++core::Fragment::whitespace_width(p0);
++crate::core::Fragment::whitespace_width(p0);
++crate::core::Fragment::whitespace_width(p0);
+-----------------
+src/core.rs core::Fragment::penalty_width
+deps:{"core::Fragment::penalty_width":{"Self":["core::Fragment","std::fmt::Debug"]}}
+candidates:{"core::Fragment::penalty_width":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Self
++p0.penalty_width();
++core::Fragment::penalty_width(p0);
++crate::core::Fragment::penalty_width(p0);
++crate::core::Fragment::penalty_width(p0);
+-----------------
+src/core.rs <core::Word<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<core::Word<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<core::Word<'a> as std::fmt::Debug>::fmt(p0, p1);
++<core::Word<'a>>::fmt(p0, p1);
+-----------------
+src/core.rs <core::Word<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'a>
++p0.clone();
++<core::Word<'a> as std::clone::Clone>::clone(p0);
++crate::<core::Word<'a> as std::clone::Clone>::clone(p0);
++<core::Word<'a>>::clone(p0);
+-----------------
+src/core.rs <core::Word<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // core::Word<'a>
++p0.eq(p1);
++<core::Word<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<core::Word<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<core::Word<'a>>::eq(p0, p1);
+-----------------
+src/core.rs <core::Word<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'a>
++p0.assert_receiver_is_total_eq();
++<core::Word<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<core::Word<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<core::Word<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/core.rs <core::Word<'_> as std::ops::Deref>::deref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'_>
++p0.deref();
++<core::Word<'_> as std::ops::Deref>::deref(p0);
++crate::<core::Word<'_> as std::ops::Deref>::deref(p0);
++<core::Word<'_>>::deref(p0);
+-----------------
+src/core.rs core::Word::<'a>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++core::Word::<'a>::from(&p0);
++crate::core::Word::<'a>::from(&p0);
++<core::Word<'a>>::from(&p0);
+-----------------
+src/core.rs core::Word::<'a>::break_apart
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'a>
+let mut p1 = 0usize; // None+usize
++p0.break_apart(p1);
++core::Word::<'a>::break_apart(p0, p1);
++crate::core::Word::<'a>::break_apart(p0, p1);
++<core::Word<'a>>::break_apart(p0, p1);
+-----------------
+src/core.rs <core::Word<'_> as core::Fragment>::width
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'_>
++p0.width();
++<core::Word<'_> as core::Fragment>::width(p0);
++crate::<core::Word<'_> as core::Fragment>::width(p0);
++<core::Word<'_>>::width(p0);
+-----------------
+src/core.rs <core::Word<'_> as core::Fragment>::whitespace_width
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'_>
++p0.whitespace_width();
++<core::Word<'_> as core::Fragment>::whitespace_width(p0);
++crate::<core::Word<'_> as core::Fragment>::whitespace_width(p0);
++<core::Word<'_>>::whitespace_width(p0);
+-----------------
+src/core.rs <core::Word<'_> as core::Fragment>::penalty_width
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // core::Word<'_>
++p0.penalty_width();
++<core::Word<'_> as core::Fragment>::penalty_width(p0);
++crate::<core::Word<'_> as core::Fragment>::penalty_width(p0);
++<core::Word<'_>>::penalty_width(p0);
+-----------------
+src/word_splitters.rs <word_splitters::WordSplitter as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
++p0.clone();
++<word_splitters::WordSplitter as std::clone::Clone>::clone(p0);
++crate::<word_splitters::WordSplitter as std::clone::Clone>::clone(p0);
++<word_splitters::WordSplitter>::clone(p0);
+-----------------
+src/word_splitters.rs <word_splitters::WordSplitter as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<word_splitters::WordSplitter as std::fmt::Debug>::fmt(p0, p1);
++crate::<word_splitters::WordSplitter as std::fmt::Debug>::fmt(p0, p1);
++<word_splitters::WordSplitter>::fmt(p0, p1);
+-----------------
+src/word_splitters.rs <word_splitters::WordSplitter as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
+let mut p1 = & MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
++p0.eq(p1);
++<word_splitters::WordSplitter as std::cmp::PartialEq>::eq(p0, p1);
++crate::<word_splitters::WordSplitter as std::cmp::PartialEq>::eq(p0, p1);
++<word_splitters::WordSplitter>::eq(p0, p1);
+-----------------
+src/word_splitters.rs word_splitters::WordSplitter::split_points
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
+let mut p1 = "sample"; // None+&str
++p0.split_points(&p1);
++word_splitters::WordSplitter::split_points(p0, &p1);
++crate::word_splitters::WordSplitter::split_points(p0, &p1);
++<word_splitters::WordSplitter>::split_points(p0, &p1);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::Penalties as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::Penalties
++p0.clone();
++<wrap_algorithms::optimal_fit::Penalties as std::clone::Clone>::clone(p0);
++crate::<wrap_algorithms::optimal_fit::Penalties as std::clone::Clone>::clone(p0);
++<wrap_algorithms::optimal_fit::Penalties>::clone(p0);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::Penalties as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::Penalties
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<wrap_algorithms::optimal_fit::Penalties as std::fmt::Debug>::fmt(p0, p1);
++crate::<wrap_algorithms::optimal_fit::Penalties as std::fmt::Debug>::fmt(p0, p1);
++<wrap_algorithms::optimal_fit::Penalties>::fmt(p0, p1);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::Penalties as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::Penalties
+let mut p1 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::Penalties
++p0.eq(p1);
++<wrap_algorithms::optimal_fit::Penalties as std::cmp::PartialEq>::eq(p0, p1);
++crate::<wrap_algorithms::optimal_fit::Penalties as std::cmp::PartialEq>::eq(p0, p1);
++<wrap_algorithms::optimal_fit::Penalties>::eq(p0, p1);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::Penalties as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::Penalties
++p0.assert_receiver_is_total_eq();
++<wrap_algorithms::optimal_fit::Penalties as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<wrap_algorithms::optimal_fit::Penalties as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<wrap_algorithms::optimal_fit::Penalties>::assert_receiver_is_total_eq(p0);
+-----------------
+src/wrap_algorithms/optimal_fit.rs wrap_algorithms::optimal_fit::Penalties::new
+deps:{}
+candidates:{}
++wrap_algorithms::optimal_fit::Penalties::new();
++crate::wrap_algorithms::optimal_fit::Penalties::new();
++<wrap_algorithms::optimal_fit::Penalties>::new();
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::Penalties as std::default::Default>::default
+deps:{}
+candidates:{}
++<wrap_algorithms::optimal_fit::Penalties as std::default::Default>::default();
++crate::<wrap_algorithms::optimal_fit::Penalties as std::default::Default>::default();
++<wrap_algorithms::optimal_fit::Penalties>::default();
+-----------------
+src/wrap_algorithms/optimal_fit.rs wrap_algorithms::optimal_fit::LineNumbers::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++wrap_algorithms::optimal_fit::LineNumbers::new(p0);
++crate::wrap_algorithms::optimal_fit::LineNumbers::new(p0);
++<wrap_algorithms::optimal_fit::LineNumbers>::new(p0);
+-----------------
+src/wrap_algorithms/optimal_fit.rs wrap_algorithms::optimal_fit::LineNumbers::get
+deps:{"wrap_algorithms::optimal_fit::LineNumbers::get":{"T":["std::marker::Sized"]}}
+candidates:{"wrap_algorithms::optimal_fit::LineNumbers::get":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::LineNumbers
+let mut p1 = 0usize; // None+usize
+let mut p2 = & MaybeUninit::uninit().assume_init(); // [(usize, T)]
++p0.get(p1, p2);
++wrap_algorithms::optimal_fit::LineNumbers::get(p0, p1, p2);
++crate::wrap_algorithms::optimal_fit::LineNumbers::get(p0, p1, p2);
++<wrap_algorithms::optimal_fit::LineNumbers>::get(p0, p1, p2);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::OverflowError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::OverflowError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<wrap_algorithms::optimal_fit::OverflowError as std::fmt::Debug>::fmt(p0, p1);
++crate::<wrap_algorithms::optimal_fit::OverflowError as std::fmt::Debug>::fmt(p0, p1);
++<wrap_algorithms::optimal_fit::OverflowError>::fmt(p0, p1);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::OverflowError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::OverflowError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::OverflowError
++p0.eq(p1);
++<wrap_algorithms::optimal_fit::OverflowError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<wrap_algorithms::optimal_fit::OverflowError as std::cmp::PartialEq>::eq(p0, p1);
++<wrap_algorithms::optimal_fit::OverflowError>::eq(p0, p1);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::OverflowError as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::OverflowError
++p0.assert_receiver_is_total_eq();
++<wrap_algorithms::optimal_fit::OverflowError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<wrap_algorithms::optimal_fit::OverflowError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<wrap_algorithms::optimal_fit::OverflowError>::assert_receiver_is_total_eq(p0);
+-----------------
+src/wrap_algorithms/optimal_fit.rs <wrap_algorithms::optimal_fit::OverflowError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::optimal_fit::OverflowError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<wrap_algorithms::optimal_fit::OverflowError as std::fmt::Display>::fmt(p0, p1);
++crate::<wrap_algorithms::optimal_fit::OverflowError as std::fmt::Display>::fmt(p0, p1);
++<wrap_algorithms::optimal_fit::OverflowError>::fmt(p0, p1);
+-----------------
+src/wrap_algorithms.rs <wrap_algorithms::WrapAlgorithm as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::WrapAlgorithm
++p0.clone();
++<wrap_algorithms::WrapAlgorithm as std::clone::Clone>::clone(p0);
++crate::<wrap_algorithms::WrapAlgorithm as std::clone::Clone>::clone(p0);
++<wrap_algorithms::WrapAlgorithm>::clone(p0);
+-----------------
+src/wrap_algorithms.rs <wrap_algorithms::WrapAlgorithm as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::WrapAlgorithm
+let mut p1 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::WrapAlgorithm
++p0.eq(p1);
++<wrap_algorithms::WrapAlgorithm as std::cmp::PartialEq>::eq(p0, p1);
++crate::<wrap_algorithms::WrapAlgorithm as std::cmp::PartialEq>::eq(p0, p1);
++<wrap_algorithms::WrapAlgorithm>::eq(p0, p1);
+-----------------
+src/wrap_algorithms.rs <wrap_algorithms::WrapAlgorithm as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::WrapAlgorithm
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<wrap_algorithms::WrapAlgorithm as std::fmt::Debug>::fmt(p0, p1);
++crate::<wrap_algorithms::WrapAlgorithm as std::fmt::Debug>::fmt(p0, p1);
++<wrap_algorithms::WrapAlgorithm>::fmt(p0, p1);
+-----------------
+src/wrap_algorithms.rs wrap_algorithms::WrapAlgorithm::new
+deps:{}
+candidates:{}
++wrap_algorithms::WrapAlgorithm::new();
++crate::wrap_algorithms::WrapAlgorithm::new();
++<wrap_algorithms::WrapAlgorithm>::new();
+-----------------
+src/wrap_algorithms.rs wrap_algorithms::WrapAlgorithm::new_optimal_fit
+deps:{}
+candidates:{}
++wrap_algorithms::WrapAlgorithm::new_optimal_fit();
++crate::wrap_algorithms::WrapAlgorithm::new_optimal_fit();
++<wrap_algorithms::WrapAlgorithm>::new_optimal_fit();
+-----------------
+src/wrap_algorithms.rs wrap_algorithms::WrapAlgorithm::wrap
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrap_algorithms::WrapAlgorithm
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [core::Word<'a>]
+let mut p2 = & [0usize].as_mut_slice(); // None+[usize]
++p0.wrap(p1, p2);
++wrap_algorithms::WrapAlgorithm::wrap(p0, p1, p2);
++crate::wrap_algorithms::WrapAlgorithm::wrap(p0, p1, p2);
++<wrap_algorithms::WrapAlgorithm>::wrap(p0, p1, p2);
+-----------------
+src/wrap_algorithms.rs <wrap_algorithms::WrapAlgorithm as std::default::Default>::default
+deps:{}
+candidates:{}
++<wrap_algorithms::WrapAlgorithm as std::default::Default>::default();
++crate::<wrap_algorithms::WrapAlgorithm as std::default::Default>::default();
++<wrap_algorithms::WrapAlgorithm>::default();
+-----------------
+src/line_ending.rs <line_ending::LineEnding as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
++p0.clone();
++<line_ending::LineEnding as std::clone::Clone>::clone(p0);
++crate::<line_ending::LineEnding as std::clone::Clone>::clone(p0);
++<line_ending::LineEnding>::clone(p0);
+-----------------
+src/line_ending.rs <line_ending::LineEnding as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<line_ending::LineEnding as std::fmt::Debug>::fmt(p0, p1);
++crate::<line_ending::LineEnding as std::fmt::Debug>::fmt(p0, p1);
++<line_ending::LineEnding>::fmt(p0, p1);
+-----------------
+src/line_ending.rs <line_ending::LineEnding as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
+let mut p1 = & MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
++p0.eq(p1);
++<line_ending::LineEnding as std::cmp::PartialEq>::eq(p0, p1);
++crate::<line_ending::LineEnding as std::cmp::PartialEq>::eq(p0, p1);
++<line_ending::LineEnding>::eq(p0, p1);
+-----------------
+src/line_ending.rs <line_ending::LineEnding as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
++p0.assert_receiver_is_total_eq();
++<line_ending::LineEnding as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<line_ending::LineEnding as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<line_ending::LineEnding>::assert_receiver_is_total_eq(p0);
+-----------------
+src/line_ending.rs line_ending::LineEnding::as_str
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
++p0.as_str();
++line_ending::LineEnding::as_str(p0);
++crate::line_ending::LineEnding::as_str(p0);
++<line_ending::LineEnding>::as_str(p0);
+-----------------
+src/line_ending.rs <line_ending::NonEmptyLines<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::NonEmptyLines<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<line_ending::NonEmptyLines<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<line_ending::NonEmptyLines<'a> as std::fmt::Debug>::fmt(p0, p1);
++<line_ending::NonEmptyLines<'a>>::fmt(p0, p1);
+-----------------
+src/line_ending.rs <line_ending::NonEmptyLines<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // line_ending::NonEmptyLines<'a>
++p0.clone();
++<line_ending::NonEmptyLines<'a> as std::clone::Clone>::clone(p0);
++crate::<line_ending::NonEmptyLines<'a> as std::clone::Clone>::clone(p0);
++<line_ending::NonEmptyLines<'a>>::clone(p0);
+-----------------
+src/line_ending.rs <line_ending::NonEmptyLines<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // line_ending::NonEmptyLines<'a>
++p0.next();
++<line_ending::NonEmptyLines<'a> as std::iter::Iterator>::next(p0);
++crate::<line_ending::NonEmptyLines<'a> as std::iter::Iterator>::next(p0);
++<line_ending::NonEmptyLines<'a>>::next(p0);
+-----------------
+src/options.rs <options::Options<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<options::Options<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<options::Options<'a> as std::fmt::Debug>::fmt(p0, p1);
++<options::Options<'a>>::fmt(p0, p1);
+-----------------
+src/options.rs <options::Options<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // options::Options<'a>
++p0.clone();
++<options::Options<'a> as std::clone::Clone>::clone(p0);
++crate::<options::Options<'a> as std::clone::Clone>::clone(p0);
++<options::Options<'a>>::clone(p0);
+-----------------
+src/options.rs <options::Options<'a> as std::convert::From<&'a options::Options<'a>>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // options::Options<'a>
++<options::Options<'a> as std::convert::From<&'a options::Options<'a>>>::from(p0);
++crate::<options::Options<'a> as std::convert::From<&'a options::Options<'a>>>::from(p0);
++<options::Options<'a>>::from(p0);
+-----------------
+src/options.rs <options::Options<'a> as std::convert::From<usize>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<options::Options<'a> as std::convert::From<usize>>::from(p0);
++crate::<options::Options<'a> as std::convert::From<usize>>::from(p0);
++<options::Options<'a>>::from(p0);
+-----------------
+src/options.rs options::Options::<'a>::new
+'a
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++options::Options::<'a>::new(p0);
++crate::options::Options::<'a>::new(p0);
++<options::Options<'a>>::new(p0);
+-----------------
+src/options.rs options::Options::<'a>::line_ending
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // line_ending::LineEnding
++p0.line_ending(p1);
++options::Options::<'a>::line_ending(p0, p1);
++crate::options::Options::<'a>::line_ending(p0, p1);
++<options::Options<'a>>::line_ending(p0, p1);
+-----------------
+src/options.rs options::Options::<'a>::initial_indent
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = "sample"; // None+&str
++p0.initial_indent(&p1);
++options::Options::<'a>::initial_indent(p0, &p1);
++crate::options::Options::<'a>::initial_indent(p0, &p1);
++<options::Options<'a>>::initial_indent(p0, &p1);
+-----------------
+src/options.rs options::Options::<'a>::subsequent_indent
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = "sample"; // None+&str
++p0.subsequent_indent(&p1);
++options::Options::<'a>::subsequent_indent(p0, &p1);
++crate::options::Options::<'a>::subsequent_indent(p0, &p1);
++<options::Options<'a>>::subsequent_indent(p0, &p1);
+-----------------
+src/options.rs options::Options::<'a>::break_words
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = true; // None+bool
++p0.break_words(p1);
++options::Options::<'a>::break_words(p0, p1);
++crate::options::Options::<'a>::break_words(p0, p1);
++<options::Options<'a>>::break_words(p0, p1);
+-----------------
+src/options.rs options::Options::<'a>::word_separator
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // word_separators::WordSeparator
++p0.word_separator(p1);
++options::Options::<'a>::word_separator(p0, p1);
++crate::options::Options::<'a>::word_separator(p0, p1);
++<options::Options<'a>>::word_separator(p0, p1);
+-----------------
+src/options.rs options::Options::<'a>::wrap_algorithm
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // wrap_algorithms::WrapAlgorithm
++p0.wrap_algorithm(p1);
++options::Options::<'a>::wrap_algorithm(p0, p1);
++crate::options::Options::<'a>::wrap_algorithm(p0, p1);
++<options::Options<'a>>::wrap_algorithm(p0, p1);
+-----------------
+src/options.rs options::Options::<'a>::word_splitter
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // options::Options<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // word_splitters::WordSplitter
++p0.word_splitter(p1);
++options::Options::<'a>::word_splitter(p0, p1);
++crate::options::Options::<'a>::word_splitter(p0, p1);
++<options::Options<'a>>::word_splitter(p0, p1);
+-----------------
+src/word_separators.rs <word_separators::WordSeparator as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_separators::WordSeparator
++p0.clone();
++<word_separators::WordSeparator as std::clone::Clone>::clone(p0);
++crate::<word_separators::WordSeparator as std::clone::Clone>::clone(p0);
++<word_separators::WordSeparator>::clone(p0);
+-----------------
+src/word_separators.rs <word_separators::WordSeparator as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_separators::WordSeparator
+let mut p1 = & MaybeUninit::uninit().assume_init(); // word_separators::WordSeparator
++p0.eq(p1);
++<word_separators::WordSeparator as std::cmp::PartialEq>::eq(p0, p1);
++crate::<word_separators::WordSeparator as std::cmp::PartialEq>::eq(p0, p1);
++<word_separators::WordSeparator>::eq(p0, p1);
+-----------------
+src/word_separators.rs <word_separators::WordSeparator as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_separators::WordSeparator
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<word_separators::WordSeparator as std::fmt::Debug>::fmt(p0, p1);
++crate::<word_separators::WordSeparator as std::fmt::Debug>::fmt(p0, p1);
++<word_separators::WordSeparator>::fmt(p0, p1);
+-----------------
+src/word_separators.rs word_separators::WordSeparator::new
+deps:{}
+candidates:{}
++word_separators::WordSeparator::new();
++crate::word_separators::WordSeparator::new();
++<word_separators::WordSeparator>::new();
+-----------------
+src/word_separators.rs word_separators::WordSeparator::find_words
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // word_separators::WordSeparator
+let mut p1 = "sample"; // None+&str
++p0.find_words(&p1);
++word_separators::WordSeparator::find_words(p0, &p1);
++crate::word_separators::WordSeparator::find_words(p0, &p1);
++<word_separators::WordSeparator>::find_words(p0, &p1);

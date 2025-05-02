@@ -1,0 +1,5 @@
+rm: cannot remove '*.profraw': No such file or directory
+84 204
+84 204
+error: cov/*: No such file or directory
+error: cov/*: No such file or directory

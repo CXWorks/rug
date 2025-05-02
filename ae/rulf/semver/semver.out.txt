@@ -1,0 +1,859 @@
+-----------------
+src/version.rs <version::Identifier as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.clone();
++<version::Identifier as std::clone::Clone>::clone(p0);
++crate::<version::Identifier as std::clone::Clone>::clone(p0);
++<version::Identifier>::clone(p0);
+-----------------
+src/version.rs <version::Identifier as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.eq(p1);
++<version::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version::Identifier as std::cmp::PartialEq>::eq(p0, p1);
++<version::Identifier>::eq(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.assert_receiver_is_total_eq();
++<version::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version::Identifier as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version::Identifier>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version.rs <version::Identifier as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.partial_cmp(p1);
++<version::Identifier as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version::Identifier as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version::Identifier>::partial_cmp(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Identifier
++p0.cmp(p1);
++<version::Identifier as std::cmp::Ord>::cmp(p0, p1);
++crate::<version::Identifier as std::cmp::Ord>::cmp(p0, p1);
++<version::Identifier>::cmp(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version::Identifier as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version::Identifier as std::hash::Hash>::hash":{"__H":["std::collections::hash_map::DefaultHasher","<&mut H as std::hash::Hasher>","std::hash::SipHasher13","std::boxed::Box<T, A>","std::hash::SipHasher","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version::Identifier as std::hash::Hash>::hash(p0, p1);
++crate::<version::Identifier as std::hash::Hash>::hash(p0, p1);
++<version::Identifier>::hash(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version::Identifier as std::fmt::Debug>::fmt(p0, p1);
++crate::<version::Identifier as std::fmt::Debug>::fmt(p0, p1);
++<version::Identifier>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Identifier as std::convert::From<semver_parser::version::Identifier>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::version::Identifier
++<version::Identifier as std::convert::From<semver_parser::version::Identifier>>::from(p0);
++crate::<version::Identifier as std::convert::From<semver_parser::version::Identifier>>::from(p0);
++<version::Identifier>::from(p0);
+-----------------
+src/version.rs <version::Identifier as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Identifier
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version::Identifier as std::fmt::Display>::fmt(p0, p1);
++crate::<version::Identifier as std::fmt::Display>::fmt(p0, p1);
++<version::Identifier>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Version as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.clone();
++<version::Version as std::clone::Clone>::clone(p0);
++crate::<version::Version as std::clone::Clone>::clone(p0);
++<version::Version>::clone(p0);
+-----------------
+src/version.rs <version::Version as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.assert_receiver_is_total_eq();
++<version::Version as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version::Version as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version::Version>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version.rs <version::Version as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version::Version as std::fmt::Debug>::fmt(p0, p1);
++crate::<version::Version as std::fmt::Debug>::fmt(p0, p1);
++<version::Version>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Version as std::convert::From<semver_parser::version::Version>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::version::Version
++<version::Version as std::convert::From<semver_parser::version::Version>>::from(p0);
++crate::<version::Version as std::convert::From<semver_parser::version::Version>>::from(p0);
++<version::Version>::from(p0);
+-----------------
+src/version.rs <version::SemVerError as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
++p0.clone();
++<version::SemVerError as std::clone::Clone>::clone(p0);
++crate::<version::SemVerError as std::clone::Clone>::clone(p0);
++<version::SemVerError>::clone(p0);
+-----------------
+src/version.rs <version::SemVerError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
++p0.eq(p1);
++<version::SemVerError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version::SemVerError as std::cmp::PartialEq>::eq(p0, p1);
++<version::SemVerError>::eq(p0, p1);
+-----------------
+src/version.rs <version::SemVerError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version::SemVerError as std::fmt::Debug>::fmt(p0, p1);
++crate::<version::SemVerError as std::fmt::Debug>::fmt(p0, p1);
++<version::SemVerError>::fmt(p0, p1);
+-----------------
+src/version.rs <version::SemVerError as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
++p0.partial_cmp(p1);
++<version::SemVerError as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version::SemVerError as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version::SemVerError>::partial_cmp(p0, p1);
+-----------------
+src/version.rs <version::SemVerError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::SemVerError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version::SemVerError as std::fmt::Display>::fmt(p0, p1);
++crate::<version::SemVerError as std::fmt::Display>::fmt(p0, p1);
++<version::SemVerError>::fmt(p0, p1);
+-----------------
+src/version.rs version::Version::new
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0u64; // None+u64
++version::Version::new(p0, p1, p2);
++crate::version::Version::new(p0, p1, p2);
++<version::Version>::new(p0, p1, p2);
+-----------------
+src/version.rs version::Version::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++version::Version::parse(&p0);
++crate::version::Version::parse(&p0);
++<version::Version>::parse(&p0);
+-----------------
+src/version.rs version::Version::clear_metadata
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // version::Version
++p0.clear_metadata();
++version::Version::clear_metadata(p0);
++crate::version::Version::clear_metadata(p0);
++<version::Version>::clear_metadata(p0);
+-----------------
+src/version.rs version::Version::increment_patch
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // version::Version
++p0.increment_patch();
++version::Version::increment_patch(p0);
++crate::version::Version::increment_patch(p0);
++<version::Version>::increment_patch(p0);
+-----------------
+src/version.rs version::Version::increment_minor
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // version::Version
++p0.increment_minor();
++version::Version::increment_minor(p0);
++crate::version::Version::increment_minor(p0);
++<version::Version>::increment_minor(p0);
+-----------------
+src/version.rs version::Version::increment_major
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // version::Version
++p0.increment_major();
++version::Version::increment_major(p0);
++crate::version::Version::increment_major(p0);
++<version::Version>::increment_major(p0);
+-----------------
+src/version.rs version::Version::is_prerelease
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.is_prerelease();
++version::Version::is_prerelease(p0);
++crate::version::Version::is_prerelease(p0);
++<version::Version>::is_prerelease(p0);
+-----------------
+src/version.rs <version::Version as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<version::Version as std::str::FromStr>::from_str(&p0);
++crate::<version::Version as std::str::FromStr>::from_str(&p0);
++<version::Version>::from_str(&p0);
+-----------------
+src/version.rs <version::Version as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version::Version as std::fmt::Display>::fmt(p0, p1);
++crate::<version::Version as std::fmt::Display>::fmt(p0, p1);
++<version::Version>::fmt(p0, p1);
+-----------------
+src/version.rs <version::Version as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.eq(p1);
++<version::Version as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version::Version as std::cmp::PartialEq>::eq(p0, p1);
++<version::Version>::eq(p0, p1);
+-----------------
+src/version.rs <version::Version as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.partial_cmp(p1);
++<version::Version as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version::Version as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version::Version>::partial_cmp(p0, p1);
+-----------------
+src/version.rs <version::Version as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.cmp(p1);
++<version::Version as std::cmp::Ord>::cmp(p0, p1);
++crate::<version::Version as std::cmp::Ord>::cmp(p0, p1);
++<version::Version>::cmp(p0, p1);
+-----------------
+src/version.rs <version::Version as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version::Version as std::hash::Hash>::hash":{"H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version::Version as std::hash::Hash>::hash":{"H":["std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // H
++p0.hash(p1);
++<version::Version as std::hash::Hash>::hash(p0, p1);
++crate::<version::Version as std::hash::Hash>::hash(p0, p1);
++<version::Version>::hash(p0, p1);
+-----------------
+src/version.rs <version::Version as std::convert::From<(u64, u64, u64)>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // (u64, u64, u64)
++<version::Version as std::convert::From<(u64, u64, u64)>>::from(p0);
++crate::<version::Version as std::convert::From<(u64, u64, u64)>>::from(p0);
++<version::Version>::from(p0);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
++p0.clone();
++<version_req::VersionReq as std::clone::Clone>::clone(p0);
++crate::<version_req::VersionReq as std::clone::Clone>::clone(p0);
++<version_req::VersionReq>::clone(p0);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
++p0.eq(p1);
++<version_req::VersionReq as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version_req::VersionReq as std::cmp::PartialEq>::eq(p0, p1);
++<version_req::VersionReq>::eq(p0, p1);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
++p0.assert_receiver_is_total_eq();
++<version_req::VersionReq as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version_req::VersionReq as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version_req::VersionReq>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
++p0.partial_cmp(p1);
++<version_req::VersionReq as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version_req::VersionReq as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version_req::VersionReq>::partial_cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
++p0.cmp(p1);
++<version_req::VersionReq as std::cmp::Ord>::cmp(p0, p1);
++crate::<version_req::VersionReq as std::cmp::Ord>::cmp(p0, p1);
++<version_req::VersionReq>::cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version_req::VersionReq as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version_req::VersionReq as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","std::hash::SipHasher","<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version_req::VersionReq as std::hash::Hash>::hash(p0, p1);
++crate::<version_req::VersionReq as std::hash::Hash>::hash(p0, p1);
++<version_req::VersionReq>::hash(p0, p1);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version_req::VersionReq as std::fmt::Debug>::fmt(p0, p1);
++crate::<version_req::VersionReq as std::fmt::Debug>::fmt(p0, p1);
++<version_req::VersionReq>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::convert::From<semver_parser::RangeSet>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::RangeSet
++<version_req::VersionReq as std::convert::From<semver_parser::RangeSet>>::from(p0);
++crate::<version_req::VersionReq as std::convert::From<semver_parser::RangeSet>>::from(p0);
++<version_req::VersionReq>::from(p0);
+-----------------
+src/version_req.rs <version_req::Op as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
++p0.clone();
++<version_req::Op as std::clone::Clone>::clone(p0);
++crate::<version_req::Op as std::clone::Clone>::clone(p0);
++<version_req::Op>::clone(p0);
+-----------------
+src/version_req.rs <version_req::Op as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Op
++p0.eq(p1);
++<version_req::Op as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version_req::Op as std::cmp::PartialEq>::eq(p0, p1);
++<version_req::Op>::eq(p0, p1);
+-----------------
+src/version_req.rs <version_req::Op as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
++p0.assert_receiver_is_total_eq();
++<version_req::Op as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version_req::Op as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version_req::Op>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version_req.rs <version_req::Op as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Op
++p0.partial_cmp(p1);
++<version_req::Op as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version_req::Op as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version_req::Op>::partial_cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::Op as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Op
++p0.cmp(p1);
++<version_req::Op as std::cmp::Ord>::cmp(p0, p1);
++crate::<version_req::Op as std::cmp::Ord>::cmp(p0, p1);
++<version_req::Op>::cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::Op as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version_req::Op as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version_req::Op as std::hash::Hash>::hash":{"__H":["<&mut H as std::hash::Hasher>","std::hash::SipHasher","std::collections::hash_map::DefaultHasher","std::hash::SipHasher13","std::boxed::Box<T, A>","std::hash::sip::Hasher<S>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version_req::Op as std::hash::Hash>::hash(p0, p1);
++crate::<version_req::Op as std::hash::Hash>::hash(p0, p1);
++<version_req::Op>::hash(p0, p1);
+-----------------
+src/version_req.rs <version_req::Op as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version_req::Op as std::fmt::Debug>::fmt(p0, p1);
++crate::<version_req::Op as std::fmt::Debug>::fmt(p0, p1);
++<version_req::Op>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::Op as std::convert::From<semver_parser::Op>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::Op
++<version_req::Op as std::convert::From<semver_parser::Op>>::from(p0);
++crate::<version_req::Op as std::convert::From<semver_parser::Op>>::from(p0);
++<version_req::Op>::from(p0);
+-----------------
+src/version_req.rs <version_req::Range as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
++p0.clone();
++<version_req::Range as std::clone::Clone>::clone(p0);
++crate::<version_req::Range as std::clone::Clone>::clone(p0);
++<version_req::Range>::clone(p0);
+-----------------
+src/version_req.rs <version_req::Range as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Range
++p0.eq(p1);
++<version_req::Range as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version_req::Range as std::cmp::PartialEq>::eq(p0, p1);
++<version_req::Range>::eq(p0, p1);
+-----------------
+src/version_req.rs <version_req::Range as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
++p0.assert_receiver_is_total_eq();
++<version_req::Range as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version_req::Range as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version_req::Range>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version_req.rs <version_req::Range as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Range
++p0.partial_cmp(p1);
++<version_req::Range as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version_req::Range as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version_req::Range>::partial_cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::Range as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Range
++p0.cmp(p1);
++<version_req::Range as std::cmp::Ord>::cmp(p0, p1);
++crate::<version_req::Range as std::cmp::Ord>::cmp(p0, p1);
++<version_req::Range>::cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::Range as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version_req::Range as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version_req::Range as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","std::hash::SipHasher","std::hash::sip::Hasher<S>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::boxed::Box<T, A>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version_req::Range as std::hash::Hash>::hash(p0, p1);
++crate::<version_req::Range as std::hash::Hash>::hash(p0, p1);
++<version_req::Range>::hash(p0, p1);
+-----------------
+src/version_req.rs <version_req::Range as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version_req::Range as std::fmt::Debug>::fmt(p0, p1);
++crate::<version_req::Range as std::fmt::Debug>::fmt(p0, p1);
++<version_req::Range>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::Range as std::convert::From<semver_parser::Range>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::Range
++<version_req::Range as std::convert::From<semver_parser::Range>>::from(p0);
++crate::<version_req::Range as std::convert::From<semver_parser::Range>>::from(p0);
++<version_req::Range>::from(p0);
+-----------------
+src/version_req.rs <version_req::Predicate as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
++p0.clone();
++<version_req::Predicate as std::clone::Clone>::clone(p0);
++crate::<version_req::Predicate as std::clone::Clone>::clone(p0);
++<version_req::Predicate>::clone(p0);
+-----------------
+src/version_req.rs <version_req::Predicate as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
++p0.eq(p1);
++<version_req::Predicate as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version_req::Predicate as std::cmp::PartialEq>::eq(p0, p1);
++<version_req::Predicate>::eq(p0, p1);
+-----------------
+src/version_req.rs <version_req::Predicate as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
++p0.assert_receiver_is_total_eq();
++<version_req::Predicate as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<version_req::Predicate as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<version_req::Predicate>::assert_receiver_is_total_eq(p0);
+-----------------
+src/version_req.rs <version_req::Predicate as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
++p0.partial_cmp(p1);
++<version_req::Predicate as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<version_req::Predicate as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<version_req::Predicate>::partial_cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::Predicate as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
++p0.cmp(p1);
++<version_req::Predicate as std::cmp::Ord>::cmp(p0, p1);
++crate::<version_req::Predicate as std::cmp::Ord>::cmp(p0, p1);
++<version_req::Predicate>::cmp(p0, p1);
+-----------------
+src/version_req.rs <version_req::Predicate as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<version_req::Predicate as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<version_req::Predicate as std::hash::Hash>::hash":{"__H":["std::boxed::Box<T, A>","std::hash::SipHasher13","std::hash::SipHasher","std::hash::sip::Hasher<S>","<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<version_req::Predicate as std::hash::Hash>::hash(p0, p1);
++crate::<version_req::Predicate as std::hash::Hash>::hash(p0, p1);
++<version_req::Predicate>::hash(p0, p1);
+-----------------
+src/version_req.rs <version_req::Predicate as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version_req::Predicate as std::fmt::Debug>::fmt(p0, p1);
++crate::<version_req::Predicate as std::fmt::Debug>::fmt(p0, p1);
++<version_req::Predicate>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::Predicate as std::convert::From<semver_parser::Comparator>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::Comparator
++<version_req::Predicate as std::convert::From<semver_parser::Comparator>>::from(p0);
++crate::<version_req::Predicate as std::convert::From<semver_parser::Comparator>>::from(p0);
++<version_req::Predicate>::from(p0);
+-----------------
+src/version_req.rs version_req::<impl std::convert::From<semver_parser::Identifier> for version::Identifier>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // semver_parser::Identifier
++version_req::<impl std::convert::From<semver_parser::Identifier> for version::Identifier>::from(p0);
++crate::version_req::<impl std::convert::From<semver_parser::Identifier> for version::Identifier>::from(p0);
++<version::Identifier>::from(p0);
+-----------------
+src/version_req.rs <version_req::ReqParseError as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::ReqParseError
++p0.clone();
++<version_req::ReqParseError as std::clone::Clone>::clone(p0);
++crate::<version_req::ReqParseError as std::clone::Clone>::clone(p0);
++<version_req::ReqParseError>::clone(p0);
+-----------------
+src/version_req.rs <version_req::ReqParseError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::ReqParseError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<version_req::ReqParseError as std::fmt::Debug>::fmt(p0, p1);
++crate::<version_req::ReqParseError as std::fmt::Debug>::fmt(p0, p1);
++<version_req::ReqParseError>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::ReqParseError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::ReqParseError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version_req::ReqParseError
++p0.eq(p1);
++<version_req::ReqParseError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<version_req::ReqParseError as std::cmp::PartialEq>::eq(p0, p1);
++<version_req::ReqParseError>::eq(p0, p1);
+-----------------
+src/version_req.rs <version_req::ReqParseError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::ReqParseError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version_req::ReqParseError as std::fmt::Display>::fmt(p0, p1);
++crate::<version_req::ReqParseError as std::fmt::Display>::fmt(p0, p1);
++<version_req::ReqParseError>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::ReqParseError as std::convert::From<std::string::String>>::from
+deps:{}
+candidates:{}
+let mut p0 = std::string::String::new(); // None+std::string::String
++<version_req::ReqParseError as std::convert::From<std::string::String>>::from(p0);
++crate::<version_req::ReqParseError as std::convert::From<std::string::String>>::from(p0);
++<version_req::ReqParseError>::from(p0);
+-----------------
+src/version_req.rs version_req::VersionReq::any
+deps:{}
+candidates:{}
++version_req::VersionReq::any();
++crate::version_req::VersionReq::any();
++<version_req::VersionReq>::any();
+-----------------
+src/version_req.rs version_req::VersionReq::parse
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++version_req::VersionReq::parse(&p0);
++crate::version_req::VersionReq::parse(&p0);
++<version_req::VersionReq>::parse(&p0);
+-----------------
+src/version_req.rs version_req::VersionReq::parse_compat
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // semver_parser::Compat
++version_req::VersionReq::parse_compat(&p0, p1);
++crate::version_req::VersionReq::parse_compat(&p0, p1);
++<version_req::VersionReq>::parse_compat(&p0, p1);
+-----------------
+src/version_req.rs version_req::VersionReq::parse_deprecated
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++version_req::VersionReq::parse_deprecated(&p0);
++crate::version_req::VersionReq::parse_deprecated(&p0);
++<version_req::VersionReq>::parse_deprecated(&p0);
+-----------------
+src/version_req.rs version_req::VersionReq::exact
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++version_req::VersionReq::exact(p0);
++crate::version_req::VersionReq::exact(p0);
++<version_req::VersionReq>::exact(p0);
+-----------------
+src/version_req.rs version_req::VersionReq::matches
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.matches(p1);
++version_req::VersionReq::matches(p0, p1);
++crate::version_req::VersionReq::matches(p0, p1);
++<version_req::VersionReq>::matches(p0, p1);
+-----------------
+src/version_req.rs version_req::VersionReq::is_exact
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
++p0.is_exact();
++version_req::VersionReq::is_exact(p0);
++crate::version_req::VersionReq::is_exact(p0);
++<version_req::VersionReq>::is_exact(p0);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<version_req::VersionReq as std::str::FromStr>::from_str(&p0);
++crate::<version_req::VersionReq as std::str::FromStr>::from_str(&p0);
++<version_req::VersionReq>::from_str(&p0);
+-----------------
+src/version_req.rs version_req::Range::matches
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.matches(p1);
++version_req::Range::matches(p0, p1);
++crate::version_req::Range::matches(p0, p1);
++<version_req::Range>::matches(p0, p1);
+-----------------
+src/version_req.rs version_req::Range::pre_tag_is_compatible
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.pre_tag_is_compatible(p1);
++version_req::Range::pre_tag_is_compatible(p0, p1);
++crate::version_req::Range::pre_tag_is_compatible(p0, p1);
++<version_req::Range>::pre_tag_is_compatible(p0, p1);
+-----------------
+src/version_req.rs version_req::Predicate::exact
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version::Version
++version_req::Predicate::exact(p0);
++crate::version_req::Predicate::exact(p0);
++<version_req::Predicate>::exact(p0);
+-----------------
+src/version_req.rs version_req::Predicate::matches
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.matches(p1);
++version_req::Predicate::matches(p0, p1);
++crate::version_req::Predicate::matches(p0, p1);
++<version_req::Predicate>::matches(p0, p1);
+-----------------
+src/version_req.rs version_req::Predicate::matches_exact
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.matches_exact(p1);
++version_req::Predicate::matches_exact(p0, p1);
++crate::version_req::Predicate::matches_exact(p0, p1);
++<version_req::Predicate>::matches_exact(p0, p1);
+-----------------
+src/version_req.rs version_req::Predicate::pre_tag_is_compatible
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.pre_tag_is_compatible(p1);
++version_req::Predicate::pre_tag_is_compatible(p0, p1);
++crate::version_req::Predicate::pre_tag_is_compatible(p0, p1);
++<version_req::Predicate>::pre_tag_is_compatible(p0, p1);
+-----------------
+src/version_req.rs version_req::Predicate::matches_greater
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = & MaybeUninit::uninit().assume_init(); // version::Version
++p0.matches_greater(p1);
++version_req::Predicate::matches_greater(p0, p1);
++crate::version_req::Predicate::matches_greater(p0, p1);
++<version_req::Predicate>::matches_greater(p0, p1);
+-----------------
+src/version_req.rs version_req::Predicate::has_exactly_one_match
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
++p0.has_exactly_one_match();
++version_req::Predicate::has_exactly_one_match(p0);
++crate::version_req::Predicate::has_exactly_one_match(p0);
++<version_req::Predicate>::has_exactly_one_match(p0);
+-----------------
+src/version_req.rs <version_req::VersionReq as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::VersionReq
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version_req::VersionReq as std::fmt::Display>::fmt(p0, p1);
++crate::<version_req::VersionReq as std::fmt::Display>::fmt(p0, p1);
++<version_req::VersionReq>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::Range as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Range
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version_req::Range as std::fmt::Display>::fmt(p0, p1);
++crate::<version_req::Range as std::fmt::Display>::fmt(p0, p1);
++<version_req::Range>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::Predicate as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Predicate
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version_req::Predicate as std::fmt::Display>::fmt(p0, p1);
++crate::<version_req::Predicate as std::fmt::Display>::fmt(p0, p1);
++<version_req::Predicate>::fmt(p0, p1);
+-----------------
+src/version_req.rs <version_req::Op as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // version_req::Op
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<version_req::Op as std::fmt::Display>::fmt(p0, p1);
++crate::<version_req::Op as std::fmt::Display>::fmt(p0, p1);
++<version_req::Op>::fmt(p0, p1);

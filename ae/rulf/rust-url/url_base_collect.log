@@ -1,0 +1,2834 @@
+========================================
+    use crate::Pattern;
+    use crate::parser::{Input, SyntaxViolation};
+
+    fn assert_split_prefix<'a, P: Pattern + Clone>(
+        input: &'a str,
+        pattern: P,
+        expected_result: bool,
+        expected_remaining: &'a str,
+    ) {
+        let mut input = Input::new(input);
+        let result = pattern.split_prefix(&mut input);
+        assert_eq!(result, expected_result);
+        assert_eq!(input.chars.as_str(), expected_remaining);
+    }
+
+    #[test]
+    fn test_split_prefix() {
+        assert_split_prefix("hello", "hello", true, "");
+        assert_split_prefix("hello", "world", false, "hello");
+        assert_split_prefix("hello", "hell", true, "o");
+        assert_split_prefix("hello", "helloo", false, "hello");
+        assert_split_prefix("hello", "", true, "hello");
+        assert_split_prefix("hello", "h", true, "ello");
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::Pattern;
+
+    #[test]
+    fn test_split_prefix() {
+        let mut input = Input::new("example");
+        let pattern = // specify pattern here;
+
+        let result = pattern.split_prefix(&mut input);
+
+        assert_eq!( // specify expected assertion here );
+    }
+}
+False
+<Url as std::cmp::Ord>::cmp exceed
+<Url as std::cmp::PartialEq>::eq exceed
+<Url as std::cmp::PartialOrd>::partial_cmp exceed
+<Url as std::convert::AsRef<str>>::as_ref exceed
+========================================
+    use std::convert::TryFrom;
+    use crate::Url;
+
+    #[test]
+    fn test_try_from() {
+        let url_str = "https://www.example.com";
+        let url = Url::try_from(url_str).unwrap();
+
+        assert_eq!(url.as_str(), url_str);
+    }
+}
+True
+<Url as std::hash::Hash>::hash exceed
+========================================
+    use crate::Url;
+    use std::str::FromStr;
+    use crate::ParseError;
+
+    #[test]
+    fn test_from_str() {
+        let input = "https://example.com";
+        let url = Url::from_str(input).unwrap();
+        assert_eq!(url.as_str(), input);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::crate::Url;
+
+    #[test]
+    fn test_as_mut_string() {
+        let mut url = Url::parse("http://example.com/path?foo=bar").unwrap();
+        let mut url_query = crate::crate::UrlQuery {
+            url: Some(&mut url),
+            fragment: Some("fragment".to_owned()),
+        };
+
+        let result = url_query.as_mut_string();
+
+        assert_eq!(result, &mut url.serialization);
+    }
+}
+False
+<UrlQuery<'a> as form_urlencoded::Target>::finish exceed
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_drop() {
+        let mut url = Url::parse("https://example.com/path?param1=value1&param2=value2#fragment").unwrap();
+        {
+            let mut url_query = url.query_pairs_mut();
+            // perform some operations on url_query
+        } // url_query will be dropped here
+
+        // perform assertions on url after url_query has been dropped
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use parser::{Pattern, Input};
+
+    #[test]
+    fn test_split_prefix() {
+        let mut input = Input::new("test");
+        assert_eq!(input.split_prefix('t'), Some(Input::new("est")));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::net::{Ipv4Addr, Ipv6Addr};
+
+    #[test]
+    fn test_from_none() {
+        let host = Host::Domain(String::new());
+        let expected = HostInternal::None;
+        let result = <host::HostInternal as std::convert::From<host::Host<String>>>::from(host);
+        assert_eq!(expected, result);
+    }
+
+    #[test]
+    fn test_from_domain() {
+        let domain = String::from("example.com");
+        let host = Host::Domain(domain);
+        let expected = HostInternal::Domain;
+        let result = <host::HostInternal as std::convert::From<host::Host<String>>>::from(host);
+        assert_eq!(expected, result);
+    }
+
+    #[test]
+    fn test_from_ipv4() {
+        let address = Ipv4Addr::new(127, 0, 0, 1);
+        let host = Host::Ipv4(address);
+        let expected = HostInternal::Ipv4(address);
+        let result = <host::HostInternal as std::convert::From<host::Host<String>>>::from(host);
+        assert_eq!(expected, result);
+    }
+
+    #[test]
+    fn test_from_ipv6() {
+        let address = Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1);
+        let host = Host::Ipv6(address);
+        let expected = HostInternal::Ipv6(address);
+        let result = <host::HostInternal as std::convert::From<host::Host<String>>>::from(host);
+        assert_eq!(expected, result);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{Input, SyntaxViolation};
+
+    #[test]
+    fn test_next() {
+        let mut input = Input::new("  \t\n\rabc");
+        assert_eq!(input.next(), Some('a'));
+
+        let mut input = Input::new("  \t\n\r");
+        assert_eq!(input.next(), None);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use idna::Errors;
+    
+    #[test]
+    fn test_parse_error_from_idna_error() {
+        let idna_error = Errors {};
+        let parse_error: ParseError = From::from(idna_error);
+        assert_eq!(parse_error, ParseError::IdnaError);
+    }
+}
+False
+<path_segments::PathSegmentsMut<'a> as std::ops::Drop>::drop exceed
+========================================
+    use std::ops::Range;
+    use crate::RangeArg;
+
+    #[test]
+    fn test_slice_of() {
+        let range = Range { start: 2, end: 5 };
+        let s = "Hello, world!";
+        let result = range.slice_of(s);
+        assert_eq!(result, "llo");
+    }
+}
+True
+========================================
+    use std::ops::RangeFrom;
+    use crate::RangeArg;
+
+    #[test]
+    fn test_slice_of() {
+        let range = RangeFrom::<u32> { start: 5 };
+        let s = "1234567890";
+        let result = range.slice_of(s);
+        assert_eq!(result, "67890");
+    }
+}
+True
+========================================
+    use std::ops::RangeTo;
+    use std::error::Error;
+    use crate::RangeArg;
+    use crate::slice_of;
+   
+    #[test]
+    fn test_slice_of() -> Result<(), Box<dyn Error>> {
+        let s = "hello world";
+        let range = RangeTo::<u32> { end: 5 };
+        let result = range.slice_of(&s);
+        assert_eq!(result, "hello");
+        Ok(())
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_base_url() {
+        let mut options = ParseOptions::<'static> {
+            base_url: None,
+            encoding_override: EncodingOverride::None,
+            violation_fn: None,
+        };
+
+        let new_url = Url::parse("https://example.com").unwrap();
+        options = options.base_url(Some(&new_url));
+
+        assert_eq!(options.base_url, Some(&new_url));
+    }
+
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::Url;
+    use crate::parser::Parse options;
+    use crate::Url;
+    use crate::EncodingOverride;
+    use crate::ParseError;
+
+    #[test]
+    fn test_encoding_override() -> Result<(), ParseError> {
+        let url = Url::parse("https://www.example.com")?;
+
+        let parse_options = ParseOptions {
+            base_url: Some(&url),
+            encoding_override: EncodingOverride::LegacyEncoding,
+            violation_fn: None,
+        };
+
+        let result = parse_options.encoding_override(EncodingOverride::UnicodeEncoding);
+
+        assert_eq!(result.encoding_override, Some(EncodingOverride::UnicodeEncoding));
+
+        Ok(())
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{Url, SyntaxViolation};
+
+    #[test]
+    fn test_parse() {
+        let options = ParseOptions {
+            base_url: None,
+            encoding_override: EncodingOverride::Legacy,
+            violation_fn: None,
+        };
+
+        let result = options.parse("https://example.com");
+
+        let expected = Ok(Url {
+            serialization: String::from("https://example.com"),
+            scheme_end: 4,
+            username_end: None,
+            host_start: 8,
+            host_end: 22,
+            fragments: None,
+            cannot_be_a_base: false,
+            username: None,
+            password: None,
+            host: HostInternal::Domain("example.com"),
+            scheme_data: None,
+            port: None,
+            port_start: None,
+            port_end: None,
+            path_query_start: None,
+            query_end: None,
+            username_start: None,
+            password_start: None,
+            path_start: None,
+            path_end: None,
+            scheme_start: None,
+        });
+
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use crate::{Url, SyntaxViolation};
+    use std::cell::RefCell;
+
+    #[test]
+    fn test_syntax_violation_callback() {
+        let violations = RefCell::new(Vec::new());
+        let url = Url::options()
+            .syntax_violation_callback(Some(&|v| violations.borrow_mut().push(v)))
+            .parse("https:////example.com")
+            .unwrap();
+        assert_eq!(url.as_str(), "https://example.com/");
+        assert_eq!(
+            violations.into_inner(),
+            vec![SyntaxViolation::ExpectedDoubleSlash]
+        );
+    }
+}
+True
+Url::as_str exceed
+Url::byte_at exceed
+Url::cannot_be_a_base exceed
+Url::check_invariants exceed
+Url::domain exceed
+Url::fragment exceed
+Url::from_directory_path exceed
+Url::from_file_path exceed
+Url::has_authority exceed
+Url::has_host exceed
+Url::host exceed
+Url::host_str exceed
+Url::into_string exceed
+Url::join exceed
+Url::mutate exceed
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_options() {
+        let options = Url::options();
+        let api = Url::parse("https://api.example.com").unwrap();
+        let base_url = options.base_url(Some(&api));
+        let version_url = base_url.parse("version.json").unwrap();
+        assert_eq!(version_url.as_str(), "https://api.example.com/version.json");
+    }
+}
+True
+Url::origin exceed
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::crate::Url;
+    use crate::ParseError;
+    use crate::percent_encoding::percent_decode;
+
+    #[test]
+    fn test_parse() {
+        let result = Url::parse("https://example.net");
+        assert_eq!(result, Ok(Url::parse("https://example.net").unwrap()));
+    }
+}
+False
+Url::parse_with_params exceed
+Url::password exceed
+Url::path exceed
+Url::path_segments exceed
+Url::path_segments_mut exceed
+Url::port exceed
+Url::port_or_known_default exceed
+Url::query exceed
+Url::query_pairs exceed
+Url::query_pairs_mut exceed
+Url::restore_after_path exceed
+Url::restore_already_parsed_fragment exceed
+Url::scheme exceed
+Url::set_fragment exceed
+Url::set_host exceed
+Url::set_host_internal exceed
+Url::set_ip_host exceed
+Url::set_password exceed
+Url::set_path exceed
+Url::set_port exceed
+Url::set_port_internal exceed
+Url::set_query exceed
+Url::set_scheme exceed
+Url::set_username exceed
+Url::slice exceed
+Url::socket_addrs exceed
+========================================
+    // Import the necessary modules
+    use super::*;
+
+use crate::*;
+    use std::io;
+
+    #[test]
+    fn test_io_result_some() {
+        // Inline the function definition here
+        fn io_result<T>(opt: Option<T>, message: &str) -> io::Result<T> {
+            opt.ok_or_else(|| io::Error::new(io::ErrorKind::InvalidData, message))
+        }
+
+        // Test the function
+        let result: io::Result<u32> = io_result(Some(42), "Some error message");
+        assert_eq!(result.unwrap(), 42);
+    }
+
+    #[test]
+    fn test_io_result_none() {
+        // Inline the function definition here
+        fn io_result<T>(opt: Option<T>, message: &str) -> io::Result<T> {
+            opt.ok_or_else(|| io::Error::new(io::ErrorKind::InvalidData, message))
+        }
+
+        // Test the function
+        let result: io::Result<u32> = io_result(None, "Some error message");
+
+        assert_eq!(result.is_err(), true);
+        assert_eq!(result.unwrap_err().kind(), io::ErrorKind::InvalidData);
+        assert_eq!(result.unwrap_err().to_string(), "Some error message");
+    }
+}
+False
+Url::take_after_path exceed
+Url::take_fragment exceed
+Url::to_file_path exceed
+Url::username exceed
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    #[cfg(any(unix, target_os = "redox"))]
+    fn test_file_url_segments_to_pathbuf() {
+        let result = file_url_segments_to_pathbuf(None, "path/to/file".split('/'));
+        assert_eq!(result, Ok(PathBuf::from("file:/path/to/file")));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::PathBuf;
+
+    #[test]
+    fn test_file_url_segments_to_pathbuf_windows() {
+        let host = Some("example.com");
+        let segments = "A%3A%41\\path\\to\\file".split('\\');
+
+        let result = file_url_segments_to_pathbuf_windows(host, segments);
+
+        let expected = PathBuf::from(r"\\example.com\A:\path\to\file");
+        assert_eq!(result, Ok(expected));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::net::{Ipv4Addr, Ipv6Addr};
+
+    #[test]
+    fn test_to_owned() {
+        let domain: Host<&str> = Host::Domain("example.com");
+        let domain_owned: Host<String> = Host::Domain("example.com".to_owned());
+        assert_eq!(domain.to_owned(), domain_owned);
+
+        let ipv4: Host<&str> = Host::Ipv4(Ipv4Addr::new(127, 0, 0, 1));
+        let ipv4_owned: Host<String> = Host::Ipv4(Ipv4Addr::new(127, 0, 0, 1));
+        assert_eq!(ipv4.to_owned(), ipv4_owned);
+
+        let ipv6: Host<&str> = Host::Ipv6(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1));
+        let ipv6_owned: Host<String> = Host::Ipv6(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1));
+        assert_eq!(ipv6.to_owned(), ipv6_owned);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::net::{Ipv6Addr, Ipv4Addr};
+
+    #[test]
+    fn test_parse() {
+        // Test case 1
+        assert_eq!(
+            host::Host::parse("[::1]"),
+            Ok(host::Host::Ipv6(Ipv6Addr::new(0,0,0,0,0,0,0,1)))
+        );
+        
+        // Test case 2
+        assert_eq!(
+            host::Host::parse("[2001:db8::1]"),
+            Ok(host::Host::Ipv6(Ipv6Addr::new(0x2001,0x0db8,0x0000,0x0000,0x0000,0x0000,0x0000,0x0001)))
+        );
+        
+        // Test case 3
+        assert_eq!(
+            host::Host::parse("[::1"),
+            Err(host::ParseError::InvalidIpv6Address)
+        );
+        
+        // Test case 4
+        assert_eq!(
+            host::Host::parse("example.com"),
+            Ok(host::Host::Domain("example.com".to_string()))
+        );
+        
+        // Test case 5
+        assert_eq!(
+            host::Host::parse("::1"),
+            Ok(host::Host::Ipv6(Ipv6Addr::new(0,0,0,0,0,0,0,1)))
+        );
+        
+        // Test case 6
+        assert_eq!(
+            host::Host::parse("127.0.0.1"),
+            Ok(host::Host::Ipv4(Ipv4Addr::new(127,0,0,1)))
+        );
+        
+        // Test case 7
+        assert_eq!(
+            host::Host::parse("example.com#"),
+            Err(host::ParseError::InvalidDomainCharacter)
+        );
+        
+        // Test case 8
+        assert_eq!(
+            host::Host::parse(""),
+            Err(host::ParseError::EmptyHost)
+        );
+        
+        // Test case 9
+        assert_eq!(
+            host::Host::parse("[:::"),
+            Err(host::ParseError::InvalidIpv6Address)
+        );
+        
+        // Test case 10
+        assert_eq!(
+            host::Host::parse("[::1]:8080"),
+            Ok(host::Host::Ipv6(Ipv6Addr::new(0,0,0,0,0,0,0,1)))
+        );
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::host::Host;
+    use crate::host::parse_ipv6addr;
+    use crate::host::ParseError;
+    use std::borrow::Cow;
+
+    const CONTROLS: &percent_encoding::AsciiSet = &percent_encoding::CONTROLS;
+
+    #[test]
+    fn test_parse_opaque_valid_ipv6() {
+        assert_eq!(
+            Host::parse_opaque("[::1]").unwrap(),
+            Host::Ipv6(parse_ipv6addr("::1").unwrap())
+        );
+    }
+
+    #[test]
+    fn test_parse_opaque_invalid_ipv6() {
+        assert_eq!(
+            Host::parse_opaque("[::1]").unwrap_err(),
+            ParseError::InvalidIpv6Address
+        );
+        assert_eq!(
+            Host::parse_opaque("[::1:2]").unwrap_err(),
+            ParseError::InvalidIpv6Address
+        );
+    }
+
+    #[test]
+    fn test_parse_opaque_valid_domain() {
+        assert_eq!(
+            Host::parse_opaque("example.com").unwrap(),
+            Host::Domain(Cow::Borrowed("example.com".to_string()))
+        );
+    }
+
+    #[test]
+    fn test_parse_opaque_invalid_domain() {
+        assert_eq!(
+            Host::parse_opaque("example!com").unwrap_err(),
+            ParseError::InvalidDomainCharacter
+        );
+        assert_eq!(
+            Host::parse_opaque("example.com:80").unwrap_err(),
+            ParseError::InvalidDomainCharacter
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_longest_zero_sequence() {
+        let pieces: [u16; 8] = [1, 0, 0, 0, 0, 1, 0, 1];
+        let result = longest_zero_sequence(&pieces);
+        assert_eq!(result, (1, 5));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::host::parse_ipv4addr;
+
+    #[test]
+    fn test_parse_ipv4addr_empty() {
+        assert_eq!(parse_ipv4addr(""), Ok(None));
+    }
+
+    #[test]
+    fn test_parse_ipv4addr_valid() {
+        assert_eq!(parse_ipv4addr("127.0.0.1"), Ok(Some(Ipv4Addr::new(127, 0, 0, 1))));
+        assert_eq!(parse_ipv4addr("192.168.0.1"), Ok(Some(Ipv4Addr::new(192, 168, 0, 1))));
+    }
+
+    #[test]
+    fn test_parse_ipv4addr_invalid() {
+        assert_eq!(parse_ipv4addr("1234.0.0.1"), Ok(None));
+        assert_eq!(parse_ipv4addr("256.0.0.1"), Ok(None));
+        assert_eq!(parse_ipv4addr("127.0.0"), Ok(None));
+        assert_eq!(parse_ipv4addr("127.0.0.1.0"), Ok(None));
+        assert_eq!(parse_ipv4addr("127.0.0.a"), Ok(None));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_ipv4number_valid_decimal() {
+        let input = "123";
+        let expected = Ok(Some(123));
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+
+    #[test]
+    fn test_parse_ipv4number_valid_octal() {
+        let input = "0o123";
+        let expected = Ok(Some(83));
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+
+    #[test]
+    fn test_parse_ipv4number_valid_hexadecimal() {
+        let input = "0xabc";
+        let expected = Ok(Some(2748));
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+
+    #[test]
+    fn test_parse_ipv4number_invalid_number() {
+        let input = "123z";
+        let expected = Ok(None);
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+
+    #[test]
+    fn test_parse_ipv4number_empty_input() {
+        let input = "";
+        let expected = Ok(Some(0));
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+
+    #[test]
+    fn test_parse_ipv4number_start_with_plus() {
+        let input = "+123";
+        let expected = Ok(None);
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+
+    #[test]
+    fn test_parse_ipv4number_parse_error() {
+        let input = "123a";
+        let expected: Result<Option<u32>, ()> = Err(());
+        assert_eq!(parse_ipv4number(input), expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_ipv6addr_valid() {
+        assert_eq!(
+            parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334"),
+            Ok(Ipv6Addr::new(0x2001, 0x0db8, 0x85a3, 0x0000, 0x0000, 0x8a2e, 0x0370, 0x7334))
+        );
+        assert_eq!(
+            parse_ipv6addr("2001:0db8::8a2e:0370:7334"),
+            Ok(Ipv6Addr::new(0x2001, 0x0db8, 0x0000, 0x0000, 0x8a2e, 0x0370, 0x7334, 0x0000))
+        );
+        assert_eq!(
+            parse_ipv6addr("::"),
+            Ok(Ipv6Addr::new(0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000))
+        );
+        assert_eq!(
+            parse_ipv6addr("::1"),
+            Ok(Ipv6Addr::new(0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001))
+        );
+    }
+
+    #[test]
+    fn test_parse_ipv6addr_invalid() {
+        assert_eq!(parse_ipv6addr(""), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr(":::"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr(":1:"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("::fffff"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("::1:"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr(":1::1"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("::1::"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:db8::8a2e::7334"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("::2001:0db8:85a3::8a2e:0370:7334"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:::8a2e:0370:7334"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("::2001:0db8:85a3:0000:0000:8a2e:0370:7334:"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("::2001:0db8:85a3:0000:0000:8a2e:0370:7334::"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334:"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334::"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0gb8:85a3:0000:0000:8a2e:0370:7334"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3::8a2e::0370:7334"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e::0370:7334"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334:"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334::"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334:0000"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("127.0.0.1"), Err(ParseError::InvalidIpv6Address));
+        assert_eq!(parse_ipv6addr("2001:0db8:85a3:0000:0000:8a2e:0370:7334:1"), Err(ParseError::InvalidIpv6Address));
+    }
+}
+True
+========================================
+    use std::fmt::{self, Formatter};
+    use std::net::Ipv6Addr;
+
+    fn write_ipv6(addr: &Ipv6Addr, f: &mut Formatter<'_>) -> fmt::Result {
+        let segments = addr.segments();
+        let (compress_start, compress_end) = longest_zero_sequence(&segments);
+        let mut i = 0;
+        while i < 8 {
+            if i == compress_start {
+                f.write_str(":")?;
+                if i == 0 {
+                    f.write_str(":")?;
+                }
+                if compress_end < 8 {
+                    i = compress_end;
+                } else {
+                    break;
+                }
+            }
+            write!(f, "{:x}", segments[i as usize])?;
+            if i < 7 {
+                f.write_str(":")?;
+            }
+            i += 1;
+        }
+        Ok(())
+    }
+
+    fn longest_zero_sequence(segments: &[u16; 8]) -> (usize, usize) {
+        let mut max_start = 0;
+        let mut max_end = 0;
+        let mut current_start = 0;
+        let mut current_end = 0;
+
+        for (i, &segment) in segments.iter().enumerate() {
+            if segment == 0 {
+                current_end = i;
+                if current_end - current_start > max_end - max_start {
+                    max_start = current_start;
+                    max_end = current_end;
+                }
+                current_start = i + 1;
+            }
+        }
+
+        (max_start, max_end)
+    }
+    
+    #[test]
+    fn test_write_ipv6() {
+        let addr1 = Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 0);
+        let addr2 = Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1);
+        let addr3 = Ipv6Addr::new(0, 0, 0, 0, 0, 0, 1, 0);
+        let addr4 = Ipv6Addr::new(0, 0, 0, 0, 0, 1, 0, 0);
+        let addr5 = Ipv6Addr::new(0, 0, 0, 0, 1, 0, 0, 0);
+        let addr6 = Ipv6Addr::new(0, 0, 0, 1, 0, 0, 0, 0);
+        let addr7 = Ipv6Addr::new(0, 0, 1, 0, 0, 0, 0, 0);
+        let addr8 = Ipv6Addr::new(0, 1, 0, 0, 0, 0, 0, 0);
+        let addr9 = Ipv6Addr::new(1, 0, 0, 0, 0, 0, 0, 0);
+        let addr10 = Ipv6Addr::new(1, 2, 3, 4, 5, 6, 7, 8);
+        
+        let mut output = String::new();
+        let mut formatter = Formatter::new(&mut output);
+        write_ipv6(&addr1, &mut formatter).unwrap();
+        assert_eq!(&output, "::");
+
+        output.clear();
+        write_ipv6(&addr2, &mut formatter).unwrap();
+        assert_eq!(&output, "::1");
+
+        // Add more test cases...
+
+        // Ensure the function does not panic
+        let _ = write_ipv6(&addr10, &mut formatter);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::net::Ipv4Addr;
+    
+    #[test]
+    fn test_ascii_serialization_opaque() {
+        let origin = Origin::Opaque(OpaqueOrigin(0));
+        assert_eq!(origin.ascii_serialization(), "null");
+    }
+    
+    #[test]
+    fn test_ascii_serialization_tuple() {
+        let scheme = "http".to_owned();
+        let host = Host::Domain("example.com".to_owned());
+        let port = 80;
+        let origin = Origin::Tuple(scheme, host, port);
+        assert_eq!(origin.ascii_serialization(), "http://example.com");
+    }
+    
+    #[test]
+    fn test_ascii_serialization_tuple_with_port() {
+        let scheme = "http".to_owned();
+        let host = Host::Domain("example.com".to_owned());
+        let port = 8080;
+        let origin = Origin::Tuple(scheme, host, port);
+        assert_eq!(origin.ascii_serialization(), "http://example.com:8080");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::host::Host;
+
+    #[test]
+    fn test_is_tuple() {
+        let origin_tuple = Origin::Tuple("http".to_string(), Host::Domain("example.com".to_string()), 80);
+        let origin_opaque = Origin::Opaque(OpaqueOrigin(0));
+
+        assert_eq!(origin_tuple.is_tuple(), true);
+        assert_eq!(origin_opaque.is_tuple(), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
+
+    #[test]
+    fn test_new_opaque() {
+        let origin1 = Origin::new_opaque();
+        let origin2 = Origin::new_opaque();
+        assert_eq!(origin1.is_tuple(), false);
+        assert_eq!(origin2.is_tuple(), false);
+        assert_eq!(origin1, origin1);
+        assert_eq!(origin2, origin2);
+        assert_ne!(origin1, origin2);
+
+        let mut hasher1 = DefaultHasher::new();
+        let mut hasher2 = DefaultHasher::new();
+        origin1.hash(&mut hasher1);
+        origin2.hash(&mut hasher2);
+        assert_ne!(hasher1.finish(), hasher2.finish());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::host::Host;
+    use crate::origin::{Origin, OpaqueOrigin};
+
+    #[test]
+    fn test_unicode_serialization_opaque_origin() {
+        let origin = Origin::Opaque(OpaqueOrigin(0));
+        let result = origin.unicode_serialization();
+        assert_eq!(result, "null");
+    }
+
+    #[test]
+    fn test_unicode_serialization_tuple_origin_with_default_port() {
+        let scheme = "http";
+        let host = Host::Domain("example.com".to_owned());
+        let port = 80;
+        let origin = Origin::Tuple(scheme.to_owned(), host, port);
+        let result = origin.unicode_serialization();
+        assert_eq!(result, "http://example.com");
+    }
+
+    #[test]
+    fn test_unicode_serialization_tuple_origin_with_custom_port() {
+        let scheme = "http";
+        let host = Host::Domain("example.com".to_owned());
+        let port = 8080;
+        let origin = Origin::Tuple(scheme.to_owned(), host, port);
+        let result = origin.unicode_serialization();
+        assert_eq!(result, "http://example.com:8080");
+    }
+}
+True
+origin::url_origin exceed
+========================================
+    use crate::parser::Input;
+
+    #[test]
+    fn test_count_matching() {
+        let input = Input::new("Hello, World!");
+        let f = |c: char| c.is_ascii_alphabetic();
+        let (count, remaining) = input.count_matching(f);
+        assert_eq!(count, 5);
+        assert_eq!(remaining.collect::<String>(), ", World!");
+
+        let input = Input::new("12345");
+        let f = |c: char| c.is_numeric();
+        let (count, remaining) = input.count_matching(f);
+        assert_eq!(count, 5);
+        assert_eq!(remaining.collect::<String>(), "");
+
+        let input = Input::new("^^^abc");
+        let f = |c: char| c.is_ascii_punctuation();
+        let (count, remaining) = input.count_matching(f);
+        assert_eq!(count, 3);
+        assert_eq!(remaining.collect::<String>(), "abc");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_is_empty_with_empty_input() {
+        let input = Input::new("");
+        assert_eq!(input.is_empty(), true);
+    }
+
+    #[test]
+    fn test_is_empty_with_non_empty_input() {
+        let input = Input::new("https://example.com");
+        assert_eq!(input.is_empty(), false);
+    }
+
+    #[test]
+    fn test_is_empty_with_input_only_containing_spaces() {
+        let input = Input::new("    ");
+        assert_eq!(input.is_empty(), true);
+    }
+
+    #[test]
+    fn test_is_empty_with_input_containing_tabs_and_newlines() {
+        let input = Input::new("\t\n");
+        assert_eq!(input.is_empty(), true);
+    }
+
+    #[test]
+    fn test_is_empty_with_input_containing_tabs_and_newlines_and_text() {
+        let input = Input::new("\t\nHello, World!\n\n");
+        assert_eq!(input.is_empty(), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_new() {
+        let input = "http://example.com";
+        let parser_input = Input::new(input);
+        assert_eq!(parser_input.chars.as_str(), input);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    #[test]
+    fn test_next_utf8() {
+        let input_str = "Hello, 世界";
+        let mut input = Input::new(input_str);
+        assert_eq!(input.next_utf8(), Some(('H', "H")));
+        assert_eq!(input.next_utf8(), Some(('e', "e")));
+        assert_eq!(input.next_utf8(), Some(('l', "l")));
+        assert_eq!(input.next_utf8(), Some(('l', "l")));
+        assert_eq!(input.next_utf8(), Some(('o', "o")));
+        assert_eq!(input.next_utf8(), Some((',', ",")));
+        assert_eq!(input.next_utf8(), Some((' ', " ")));
+        assert_eq!(input.next_utf8(), Some(('世', "世")));
+        assert_eq!(input.next_utf8(), Some(('界', "界")));
+        assert_eq!(input.next_utf8(), None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use parser::Input;
+
+    #[test]
+    fn test_no_trim() {
+        let input = "   example   ";
+        let result = Input::no_trim(input);
+        let expected_chars: Vec<char> = input.trim().chars().collect();
+        let result_chars: Vec<char> = result.collect();
+        assert_eq!(result_chars, expected_chars);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_split_first_with_empty_input() {
+        let input = Input::new("");
+        let (first, remaining) = input.split_first();
+        assert_eq!(first, None);
+        assert_eq!(remaining.to_string(), "");
+    }
+
+    #[test]
+    fn test_split_first_with_non_empty_input() {
+        let input = Input::new("test");
+        let (first, remaining) = input.split_first();
+        assert_eq!(first, Some('t'));
+        assert_eq!(remaining.clone().collect::<String>(), "est");
+    }
+
+    #[test]
+    fn test_split_first_with_empty_input_after_trim() {
+        let input = Input::trim_tab_and_newlines("\t\r\n", None);
+        let (first, remaining) = input.split_first();
+        assert_eq!(first, None);
+        assert_eq!(remaining.to_string(), "");
+    }
+
+    #[test]
+    fn test_split_first_with_non_empty_input_after_trim() {
+        let input = Input::trim_tab_and_newlines("testing\t\r\n", None);
+        let (first, remaining) = input.split_first();
+        assert_eq!(first, Some('t'));
+        assert_eq!(remaining.clone().collect::<String>(), "esting\t\r\n");
+    }
+
+    #[test]
+    fn test_split_first_with_empty_input_after_trim_and_log() {
+        let input = Input::with_log("\t\r\n", None);
+        let (first, remaining) = input.split_first();
+        assert_eq!(first, None);
+        assert_eq!(remaining.to_string(), "");
+    }
+
+    #[test]
+    fn test_split_first_with_non_empty_input_after_trim_and_log() {
+        let input = Input::with_log("testing\t\r\n", None);
+        let (first, remaining) = input.split_first();
+        assert_eq!(first, Some('t'));
+        assert_eq!(remaining.clone().collect::<String>(), "esting\t\r\n");
+    }
+}
+False
+========================================
+    use crate::super::*;
+
+    #[test]
+    fn test_split_prefix() {
+        let input = Input::new("example");
+        let pattern = |c: char| c.is_alphabetic();
+        let result = input.split_prefix(pattern);
+
+        assert_eq!(result, Some(Input::new("xample")));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_starts_with() {
+        let input = Input::new("Hello World");
+        let pattern = |c: char| c.is_alphabetic();
+        assert_eq!(input.starts_with(pattern), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::SyntaxViolation;
+
+    #[test]
+    fn test_trim_tab_and_newlines() {
+        let input = " \t\n\rTest\t\n\r ";
+        let expected_chars: Vec<char> = "Test".chars().collect();
+        let expected_input = Input {
+            chars: expected_chars.iter().cloned(),
+        };
+
+        let vfn = |sv: SyntaxViolation| {
+            panic!("SyntaxViolation: {:?}", sv);
+        };
+
+        let trim_result = Input::trim_tab_and_newlines(input, None);
+        assert_eq!(
+            trim_result.chars.collect::<Vec<char>>(),
+            expected_input.chars.collect::<Vec<char>>()
+        );
+
+        let trim_result_with_vfn = Input::trim_tab_and_newlines(input, Some(&vfn));
+        assert_eq!(
+            trim_result_with_vfn.chars.collect::<Vec<char>>(),
+            expected_input.chars.collect::<Vec<char>>()
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::SyntaxViolation;
+
+    #[test]
+    fn test_with_log() {
+        let original_input = "  Hello\tWorld  \n";
+        let mut violations = Vec::new();
+        
+        let vfn = |violation: SyntaxViolation| {
+            violations.push(violation);
+        };
+        
+        let input = parser::Input::<'static>::with_log(original_input, Some(&vfn));
+        
+        assert_eq!(input.clone().collect::<String>(), "Hello\tWorld");
+
+        assert_eq!(violations.len(), 2);
+        assert_eq!(violations[0], SyntaxViolation::C0SpaceIgnored);
+        assert_eq!(violations[1], SyntaxViolation::TabOrNewlineIgnored);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_after_double_slash() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: parser::Context::UrlParser,
+        };
+        
+        let input = parser::Input::new("example.com/path?query#fragment");
+        let scheme_type = parser::SchemeType::SpecialNotFile;
+        let scheme_end = 7;
+        
+        let result = parser.after_double_slash(input, scheme_type, scheme_end);
+        
+        assert_eq!(result.is_ok(), true);
+    }
+}
+True
+========================================
+
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::Input;
+
+    #[test]
+    fn test_file_host() {
+        let input = Input::new("example.com/test/file.txt");
+        assert_eq!(
+            parser::Parser::<'static>::file_host(input),
+            Ok((true, "example.com".to_string(), Input::new("/test/file.txt")))
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_for_setter() {
+        let serialization = "test".to_string();
+        let parser = Parser::<'_>::for_setter(serialization);
+
+        assert_eq!(parser.serialization, "test");
+        assert_eq!(parser.base_url, None);
+        assert_eq!(parser.query_encoding_override, None);
+        assert_eq!(parser.violation_fn, None);
+        assert_eq!(parser.context, Context::Setter);
+    }
+}
+False
+parser::Parser::<'a>::fragment_only exceed
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_get_file_host() {
+        let input = Input::new("example.com/test");
+        let expected = (Host::parse("example.com").unwrap(), Input::new("/test"));
+        let result = Parser::<'static>::get_file_host(input);
+        assert_eq!(result, Ok(expected));
+    }
+}
+use super::*;
+
+use crate::*;
+
+#[test]
+fn test_get_file_host() {
+    let input = Input::new("example.com/test");
+    let expected = (Host::parse("example.com").unwrap(), Input::new("/test"));
+    let result = Parser::<'static>::get_file_host(input);
+    assert_eq!(result, Ok(expected));
+}
+False
+========================================
+#[cfg(test)]
+mod parser_tests {
+    use crate::last_slash_can_be_removed;
+
+    #[test]
+    fn test_last_slash_can_be_removed() {
+        assert_eq!(last_slash_can_be_removed("", 0), false);
+        assert_eq!(last_slash_can_be_removed("/", 0), false);
+        assert_eq!(last_slash_can_be_removed("/", 1), false);
+        assert_eq!(last_slash_can_be_removed("/path/", 0), false);
+        assert_eq!(last_slash_can_be_removed("/path/", 1), false);
+        assert_eq!(last_slash_can_be_removed("/path/", 6), true);
+        assert_eq!(last_slash_can_be_removed("/path/", 7), true);
+        assert_eq!(last_slash_can_be_removed("http://example.com/", 0), false);
+        assert_eq!(last_slash_can_be_removed("http://example.com/", 18), true);
+        assert_eq!(last_slash_can_be_removed("http://example.com/path/", 18), true);
+        assert_eq!(last_slash_can_be_removed("http://example.com/path/", 22), true);
+        assert_eq!(last_slash_can_be_removed("http://example.com/path/", 23), false);
+        assert_eq!(last_slash_can_be_removed("http://example.com/path/", 24), false);
+        assert_eq!(last_slash_can_be_removed("http://example.com/path", 23), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::SyntaxViolation;
+    
+    #[test]
+    fn test_log_violation() {
+        let violation: SyntaxViolation = SyntaxViolation::NonUrlCodePoint;
+        let mut parser = Parser::<'static> {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        parser.log_violation(violation);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::rc::Rc;
+
+    #[test]
+    fn test_log_violation_if() {
+        let violation_fn: Option<&dyn Fn(SyntaxViolation)> = Some(&|v| {
+            println!("Violation: {}", v);
+        });
+        let parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn,
+            context: Context::UrlParser,
+        };
+        parser.log_violation_if(
+            SyntaxViolation::NonUrlCodePoint,
+            || true,
+        );
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    use crate::parser::Context;
+    use crate::parser::Input;
+    use std::fmt;
+
+    impl<'i> PartialEq for Input<'i> {
+        fn eq(&self, other: &Self) -> bool {
+            self.chars.as_str() == other.chars.as_str()
+        }
+    }
+
+    impl<'i> fmt::Debug for Input<'i> {
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+            f.debug_struct("Input")
+                .field("chars", &self.chars.as_str())
+                .finish()
+        }
+    }
+
+    #[test]
+    fn test_parse_cannot_be_a_base_path() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("?#");
+        let expected = Input::new("?");
+        let result = parser.parse_cannot_be_a_base_path(input);
+
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_file() {
+        let mut parser = Parser::<'static> {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let input: Input<'static> = Input::new("");
+        let scheme_type = SchemeType::File;
+        let base_file_url: Option<&Url> = None;
+        let result = parser.parse_file(input, scheme_type, base_file_url);
+        assert!(result.is_err());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{Context, HostInternal, Input, Parser};
+
+    #[test]
+    fn test_parse_file_host() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("localhost.com");
+        let result = parser.parse_file_host(input);
+        let expected = Ok((true, HostInternal::Domain("localhost.com".into()), Input::new("")));
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_file_host_empty() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("");
+        let result = parser.parse_file_host(input);
+        let expected = Ok((false, HostInternal::None, Input::new("")));
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_file_host_localhost() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("localhost");
+        let result = parser.parse_file_host(input);
+        let expected = Ok((false, HostInternal::None, Input::new("")));
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_file_host_write() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("example.com");
+        let result = parser.parse_file_host(input);
+        let expected = Ok((true, HostInternal::Domain("example.com".into()), Input::new("")));
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "example.com");
+    }
+
+    #[test]
+    fn test_parse_file_host_localhost_write() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("localhost");
+        let result = parser.parse_file_host(input);
+        let expected = Ok((false, HostInternal::None, Input::new("")));
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "");
+    }
+
+    #[test]
+    fn test_parse_file_host_localhost_write_2() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("localhost.com");
+        let result = parser.parse_file_host(input);
+        let expected = Ok((true, HostInternal::Domain("localhost.com".into()), Input::new("")));
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "localhost.com");
+    }
+
+    #[test]
+    fn test_parse_scheme() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("https://example.com");
+        let result = parser.parse_scheme(input);
+        let expected = Ok(input);
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "https");
+    }
+
+    #[test]
+    fn test_parse_scheme_no_input() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("");
+        let result = parser.parse_scheme(input);
+        let expected = Err(());
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "");
+    }
+
+    #[test]
+    fn test_parse_scheme_invalid_input() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("1https://example.com");
+        let result = parser.parse_scheme(input);
+        let expected = Err(());
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "1https");
+    }
+
+    #[test]
+    fn test_parse_scheme_empty_input() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::Setter,
+        };
+
+        let input = Input::new("");
+        let result = parser.parse_scheme(input);
+        let expected = Ok(input);
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "");
+    }
+
+    #[test]
+    fn test_parse_scheme_empty_input_setter() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::Setter,
+        };
+
+        let input = Input::new("");
+        let result = parser.parse_scheme(input);
+        let expected = Ok(input);
+        assert_eq!(result, expected);
+        assert_eq!(parser.serialization, "");
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::Context;
+    
+    #[test]
+    fn test_parse_fragment() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let input = Input::new("test#fragment");
+        parser.parse_fragment(input);
+        assert_eq!(parser.serialization, "fragment");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::{Host, ParseResult, ParseError};
+
+    #[test]
+    fn test_parse_host_file_scheme_type() {
+        let input = Input::new("example.com");
+        let scheme_type = SchemeType::File;
+        let expected = Ok((Host::Domain("example.com".to_string()), Input::new("")));
+        let result = Parser::parse_host(input, scheme_type);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_host_not_file_scheme_type() {
+        let input = Input::new("example.com");
+        let scheme_type = SchemeType::NotSpecial;
+        let expected = Ok((Host::parse_opaque("example.com").unwrap(), Input::new("")));
+        let result = Parser::parse_host(input, scheme_type);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_host_special_not_file_scheme_type() {
+        let input = Input::new("example.com");
+        let scheme_type = SchemeType::SpecialNotFile;
+        let expected = Ok((Host::parse("example.com").unwrap(), Input::new("")));
+        let result = Parser::parse_host(input, scheme_type);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_host_empty_host() {
+        let input = Input::new("");
+        let scheme_type = SchemeType::NotSpecial;
+        let expected = Err(ParseError::EmptyHost);
+        let result = Parser::parse_host(input, scheme_type);
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::{Context, Input, SchemeType, HostInternal};
+    
+    #[test]
+    fn test_parse_host_and_port() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let input = Input::new("localhost:8080");
+        let scheme_end = 0;
+        let scheme_type = SchemeType::NotSpecial;
+        let result = parser.parse_host_and_port(input, scheme_end, scheme_type);
+        let expected: ParseResult<(u32, HostInternal, Option<u16>, Input)> = Ok((10, HostInternal::Domain("localhost".to_string()), Some(8080), Input::new("")));
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_non_special() {
+        let input = Input::new("http://example.com/path");
+        let scheme_type = SchemeType::SpecialNotFile;
+        let scheme_end = 4;
+        let parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let result = parser.parse_non_special(input, scheme_type, scheme_end);
+        assert!(result.is_ok());
+    }
+}
+
+True
+========================================
+    use crate::parser::{Context, Input, Parser, SchemeType};
+    use crate::{Host, HostInternal, Url};
+
+    #[test]
+    fn test_parse_path() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let mut has_host = false;
+        let path_start = 0;
+        let input = Input::new("/path/to/file");
+        let result = parser.parse_path(
+            SchemeType::SpecialNotFile,
+            &mut has_host,
+            path_start,
+            input,
+        );
+
+        let expected = Input::new("");
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_path_start() {
+        let mut parser = parser::Parser::for_setter(String::from("http://example.com/"));
+        let mut has_host = true;
+        let input = parser::Input::new("example.com/");
+        let result = parser.parse_path_start(parser::SchemeType::SpecialNotFile, &mut has_host, input.clone());
+        assert_eq!(result, input);
+        assert_eq!(parser.serialization, "http://example.com/");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::{Context, Input};
+
+    #[test]
+    fn test_parse_port_valid_input() {
+        let input = Input::new("8080");
+        let default_port = || Some(80);
+        let context = Context::UrlParser;
+        let expected = Ok((Some(8080), Input::new("")));
+        let result = Parser::parse_port(input, default_port, context);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_port_invalid_input() {
+        let input = Input::new("abc");
+        let default_port = || Some(80);
+        let context = Context::UrlParser;
+        let expected = Err(ParseError::InvalidPort);
+        let result = Parser::parse_port(input, default_port, context);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_parse_port_empty_input() {
+        let input = Input::new("");
+        let default_port = || Some(80);
+        let context = Context::UrlParser;
+        let expected = Ok((None, Input::new("")));
+        let result = Parser::parse_port(input, default_port, context);
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::*;
+
+    #[test]
+    fn parse_query_returns_some_remaining_input_when_input_starts_with_valid_query() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let scheme_type = SchemeType::NotSpecial;
+        let scheme_end = 0;
+        let input = Input::new("?key=value&param=true#fragment");
+        let expected_remaining = Some(Input::new("key=value&param=true#fragment"));
+        let actual_remaining = parser.parse_query(scheme_type, scheme_end, input);
+        assert_eq!(expected_remaining, actual_remaining);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_query_and_fragment() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let mut input = Input::new("?query#fragment");
+
+        let result = parser.parse_query_and_fragment(SchemeType::NotSpecial, 0, input);
+        assert_eq!(result, Ok((Some(0), Some(7))));
+    }
+}
+True
+parser::Parser::<'a>::parse_relative exceed
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_scheme() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let input = Input::new("http:");
+        assert_eq!(
+            parser.parse_scheme(input),
+            Ok(Input { chars: "".chars() })
+        );
+
+        let input = Input::new("htt_p:");
+        assert_eq!(
+            parser.parse_scheme(input),
+            Err(())
+        );
+
+        let input = Input::new("");
+        assert_eq!(
+            parser.parse_scheme(input),
+            Err(())
+        );
+
+        let input = Input::new("http");
+        assert_eq!(
+            parser.parse_scheme(input),
+            Err(())
+        );
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_parse_url() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+        let input = "https://example.com/path?param=value#fragment";
+        let expected = Ok(Url {
+            serialization: "https://example.com/path?param=value#fragment".to_string(),
+            scheme_end: 5,
+            username_end: 18,
+            host_start: 19,
+            host_end: 30,
+            host: HostInternal::Domain("example.com".to_string()),
+            port: None,
+            path_start: 31,
+            query_start: Some(35),
+            fragment_start: Some(44),
+        });
+        let result = parser.parse_url(input);
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::Input;
+
+    #[test]
+    fn test_parse_userinfo() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("username:password@example.com");
+        let scheme_type = SchemeType::SpecialNotFile;
+        let result = parser.parse_userinfo(input, scheme_type);
+        assert!(result.is_ok());
+        let (_, remaining) = result.unwrap();
+        assert_eq!(remaining.chars.as_str(), "example.com");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    use crate::Url;
+    use crate::host::HostInternal;
+    use crate::parser::SyntaxViolation;
+
+    // Unit test for parse_with_scheme function
+    #[test]
+    fn test_parse_with_scheme() {
+        let mut parser = Parser {
+            serialization: String::new(),
+            base_url: None,
+            query_encoding_override: None,
+            violation_fn: None,
+            context: Context::UrlParser,
+        };
+
+        let input = Input::new("https://example.com/path?query#fragment");
+
+        let expected_url = Url {
+            serialization: String::from("https://example.com/path?query#fragment"),
+            scheme_end: 5,
+            username_end: 8,
+            host_start: 8,
+            host_end: 22,
+            host: HostInternal::Domain(HostInternal::Domain::from("example.com")),
+            port: None,
+            path_start: 22,
+            query_start: Some(28),
+            fragment_start: Some(35),
+        };
+
+        let actual_result = parser.parse_with_scheme(input);
+
+        assert_eq!(actual_result.unwrap(), expected_url);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_pop_path() {
+        let mut parser = Parser::for_setter(String::new());
+        let scheme_type = SchemeType::File;
+        let path_start = 0;
+        let path = "path/to/file";
+        parser.serialization.push_str(path);
+        let expected_result = path_start;
+        parser.pop_path(scheme_type, path_start);
+        let actual_result = parser.serialization.len();
+        assert_eq!(expected_result, actual_result);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_shorten_path_empty() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("test.com");
+        let scheme_type = SchemeType::NotSpecial;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("test.com"));
+    }
+    
+    #[test]
+    fn test_shorten_path_file_drive_letter() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("file://C:/");
+        let scheme_type = SchemeType::File;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("file:/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_file_drive_letter_special() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("file://C:/");
+        let scheme_type = SchemeType::NotSpecial;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("file://C:/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_file_drive_letter_not_normalized() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("file://c:/"); // not normalized
+        let scheme_type = SchemeType::File;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("file://c:/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_file_drive_letter_not_special() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("file://c:/"); // not normalized
+        let scheme_type = SchemeType::NotSpecial;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("file://c:/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_file_no_drive_letter() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("file://test.com/");
+        let scheme_type = SchemeType::File;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("file://test.com/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_file_no_drive_letter_special() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("file://test.com/");
+        let scheme_type = SchemeType::NotSpecial;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("file://test.com/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_relative_empty() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("test.com/");
+        let scheme_type = SchemeType::NotSpecial;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("test.com/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_relative() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("test.com/path/to/something/");
+        let scheme_type = SchemeType::NotSpecial;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("test.com/path/to/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_relative_special() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("test.com/path/to/something/");
+        let scheme_type = SchemeType::SpecialNotFile;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("test.com/path/to/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_relative_special_encoded() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("test.com/path/to%2E%2E/");
+        let scheme_type = SchemeType::SpecialNotFile;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("test.com/path/to%2E%2E/"));
+    }
+    
+    #[test]
+    fn test_shorten_path_relative_special_not_normalized() {
+        let mut parser = Parser::new();
+        parser.serialization = String::from("test.com/path/to/./");
+        let scheme_type = SchemeType::SpecialNotFile;
+        let path_start = parser.serialization.len();
+        parser.shorten_path(scheme_type, path_start);
+        assert_eq!(parser.serialization, String::from("test.com/path/to/./"));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::net::{Ipv4Addr, Ipv6Addr};
+
+    #[test]
+    fn test_with_query_and_fragment() {
+        let mut parser = Parser::<'_>::<'_>::new();
+        let input = parser::Input::new("http://example.com/path?query#fragment");
+        let result = parser.with_query_and_fragment(
+            SchemeType::SpecialNotFile,
+            4,
+            11,
+            14,
+            14,
+            HostInternal::Domain,
+            None,
+            19,
+            input,
+        );
+        assert_eq!(
+            result,
+            Ok(Url {
+                serialization: String::from("http://example.com/path?query#fragment"),
+                scheme_end: 4,
+                username_end: 11,
+                host_start: 14,
+                host_end: 14,
+                host: HostInternal::Domain,
+                port: None,
+                path_start: 19,
+                query_start: Some(19),
+                fragment_start: Some(25),
+            })
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::SchemeType;
+
+    #[test]
+    fn test_scheme_type_from() {
+        assert_eq!(SchemeType::from("http"), SchemeType::SpecialNotFile);
+        assert_eq!(SchemeType::from("https"), SchemeType::SpecialNotFile);
+        assert_eq!(SchemeType::from("ws"), SchemeType::SpecialNotFile);
+        assert_eq!(SchemeType::from("wss"), SchemeType::SpecialNotFile);
+        assert_eq!(SchemeType::from("ftp"), SchemeType::SpecialNotFile);
+        assert_eq!(SchemeType::from("file"), SchemeType::File);
+        assert_eq!(SchemeType::from("test"), SchemeType::NotSpecial);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use parser::SchemeType;
+
+    #[test]
+    fn test_is_file() {
+        let scheme_file = SchemeType::File;
+        let scheme_not_file = SchemeType::SpecialNotFile;
+        let scheme_not_special = SchemeType::NotSpecial;
+
+        assert!(scheme_file.is_file());
+        assert!(!scheme_not_file.is_file());
+        assert!(!scheme_not_special.is_file());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use parser::SchemeType;
+
+    #[test]
+    fn test_is_special() {
+        let scheme_type: SchemeType = SchemeType::SpecialNotFile;
+        assert_eq!(scheme_type.is_special(), true);
+        
+        let scheme_type: SchemeType = SchemeType::File;
+        assert_eq!(scheme_type.is_special(), true);
+        
+        let scheme_type: SchemeType = SchemeType::NotSpecial;
+        assert_eq!(scheme_type.is_special(), false);
+    }
+}
+True
+========================================
+    use crate::parser::SyntaxViolation;
+
+    #[test]
+    fn test_description() {
+        // given
+        let violation = SyntaxViolation::__NonExhaustive;
+
+        // when
+        let description = violation.description();
+
+        // then
+        assert_eq!(description, "Non-exhaustive syntax violation");
+    }
+}
+False
+========================================
+    use crate::parser::ascii_alpha;
+
+    #[test]
+    fn test_ascii_alpha_true() {
+        assert_eq!(ascii_alpha('a'), true);
+        assert_eq!(ascii_alpha('A'), true);
+        assert_eq!(ascii_alpha('z'), true);
+        assert_eq!(ascii_alpha('Z'), true);
+    }
+
+    #[test]
+    fn test_ascii_alpha_false() {
+        assert_eq!(ascii_alpha('0'), false);
+        assert_eq!(ascii_alpha('9'), false);
+        assert_eq!(ascii_alpha(' '), false);
+        assert_eq!(ascii_alpha('_'), false);
+        assert_eq!(ascii_alpha('!'), false);
+        assert_eq!(ascii_alpha('.'), false);
+    }
+}
+True
+========================================
+    use crate::parser::ascii_tab_or_new_line;
+
+    #[test]
+    fn test_ascii_tab_or_new_line() {
+        assert_eq!(ascii_tab_or_new_line('\t'), true);
+        assert_eq!(ascii_tab_or_new_line('\r'), true);
+        assert_eq!(ascii_tab_or_new_line('\n'), true);
+        assert_eq!(ascii_tab_or_new_line(' '), false);
+        assert_eq!(ascii_tab_or_new_line('a'), false);
+        assert_eq!(ascii_tab_or_new_line('0'), false);
+    }
+}
+True
+========================================
+    use crate::parser::c0_control_or_space;
+
+    #[test]
+    fn test_c0_control_or_space() {
+        assert_eq!(c0_control_or_space('\u{0000}'), true);
+        assert_eq!(c0_control_or_space('\u{0001}'), true);
+        assert_eq!(c0_control_or_space('\u{001F}'), true);
+        assert_eq!(c0_control_or_space(' '), true);
+        assert_eq!(c0_control_or_space('A'), false);
+        assert_eq!(c0_control_or_space('z'), false);
+        assert_eq!(c0_control_or_space('\u{0021}'), false);
+        assert_eq!(c0_control_or_space('\u{00A0}'), false);
+        assert_eq!(c0_control_or_space('\u{FFFF}'), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_default_port() {
+        assert_eq!(default_port("http"), Some(80));
+    		assert_eq!(default_port("ws"), Some(80));
+    
+        assert_eq!(default_port("https"), Some(443));
+        assert_eq!(default_port("wss"), Some(443));
+    
+        assert_eq!(default_port("ftp"), Some(21));
+    
+        assert_eq!(default_port("invalid_scheme"), None);
+    }
+}
+True
+========================================
+    use crate::super::super::parser::is_ascii_hex_digit;
+
+    #[test]
+    fn test_is_ascii_hex_digit() {
+        assert_eq!(is_ascii_hex_digit('0'), true);
+        assert_eq!(is_ascii_hex_digit('1'), true);
+        assert_eq!(is_ascii_hex_digit('2'), true);
+        assert_eq!(is_ascii_hex_digit('3'), true);
+        assert_eq!(is_ascii_hex_digit('4'), true);
+        assert_eq!(is_ascii_hex_digit('5'), true);
+        assert_eq!(is_ascii_hex_digit('6'), true);
+        assert_eq!(is_ascii_hex_digit('7'), true);
+        assert_eq!(is_ascii_hex_digit('8'), true);
+        assert_eq!(is_ascii_hex_digit('9'), true);
+        assert_eq!(is_ascii_hex_digit('a'), true);
+        assert_eq!(is_ascii_hex_digit('b'), true);
+        assert_eq!(is_ascii_hex_digit('c'), true);
+        assert_eq!(is_ascii_hex_digit('d'), true);
+        assert_eq!(is_ascii_hex_digit('e'), true);
+        assert_eq!(is_ascii_hex_digit('f'), true);
+        assert_eq!(is_ascii_hex_digit('A'), true);
+        assert_eq!(is_ascii_hex_digit('B'), true);
+        assert_eq!(is_ascii_hex_digit('C'), true);
+        assert_eq!(is_ascii_hex_digit('D'), true);
+        assert_eq!(is_ascii_hex_digit('E'), true);
+        assert_eq!(is_ascii_hex_digit('F'), true);
+        assert_eq!(is_ascii_hex_digit('g'), false);
+        assert_eq!(is_ascii_hex_digit('h'), false);
+        assert_eq!(is_ascii_hex_digit('i'), false);
+        assert_eq!(is_ascii_hex_digit('j'), false);
+        assert_eq!(is_ascii_hex_digit('k'), false);
+        assert_eq!(is_ascii_hex_digit('l'), false);
+        assert_eq!(is_ascii_hex_digit('m'), false);
+        assert_eq!(is_ascii_hex_digit('n'), false);
+        assert_eq!(is_ascii_hex_digit('o'), false);
+        assert_eq!(is_ascii_hex_digit('p'), false);
+        assert_eq!(is_ascii_hex_digit('q'), false);
+        assert_eq!(is_ascii_hex_digit('r'), false);
+        assert_eq!(is_ascii_hex_digit('s'), false);
+        assert_eq!(is_ascii_hex_digit('t'), false);
+        assert_eq!(is_ascii_hex_digit('u'), false);
+        assert_eq!(is_ascii_hex_digit('v'), false);
+        assert_eq!(is_ascii_hex_digit('w'), false);
+        assert_eq!(is_ascii_hex_digit('x'), false);
+        assert_eq!(is_ascii_hex_digit('y'), false);
+        assert_eq!(is_ascii_hex_digit('z'), false);
+        assert_eq!(is_ascii_hex_digit('A'), true);
+        assert_eq!(is_ascii_hex_digit('B'), true);
+        assert_eq!(is_ascii_hex_digit('C'), true);
+        assert_eq!(is_ascii_hex_digit('D'), true);
+        assert_eq!(is_ascii_hex_digit('E'), true);
+        assert_eq!(is_ascii_hex_digit('F'), true);
+        assert_eq!(is_ascii_hex_digit('G'), false);
+        assert_eq!(is_ascii_hex_digit('H'), false);
+        assert_eq!(is_ascii_hex_digit('I'), false);
+        assert_eq!(is_ascii_hex_digit('J'), false);
+        assert_eq!(is_ascii_hex_digit('K'), false);
+        assert_eq!(is_ascii_hex_digit('L'), false);
+        assert_eq!(is_ascii_hex_digit('M'), false);
+        assert_eq!(is_ascii_hex_digit('N'), false);
+        assert_eq!(is_ascii_hex_digit('O'), false);
+        assert_eq!(is_ascii_hex_digit('P'), false);
+        assert_eq!(is_ascii_hex_digit('Q'), false);
+        assert_eq!(is_ascii_hex_digit('R'), false);
+        assert_eq!(is_ascii_hex_digit('S'), false);
+        assert_eq!(is_ascii_hex_digit('T'), false);
+        assert_eq!(is_ascii_hex_digit('U'), false);
+        assert_eq!(is_ascii_hex_digit('V'), false);
+        assert_eq!(is_ascii_hex_digit('W'), false);
+        assert_eq!(is_ascii_hex_digit('X'), false);
+        assert_eq!(is_ascii_hex_digit('Y'), false);
+        assert_eq!(is_ascii_hex_digit('Z'), false);
+        assert_eq!(is_ascii_hex_digit('!'), false);
+        assert_eq!(is_ascii_hex_digit('@'), false);
+        assert_eq!(is_ascii_hex_digit('#'), false);
+        assert_eq!(is_ascii_hex_digit('$'), false);
+        assert_eq!(is_ascii_hex_digit('%'), false);
+        assert_eq!(is_ascii_hex_digit('^'), false);
+        assert_eq!(is_ascii_hex_digit('&'), false);
+        assert_eq!(is_ascii_hex_digit('*'), false);
+        assert_eq!(is_ascii_hex_digit('('), false);
+        assert_eq!(is_ascii_hex_digit(')'), false);
+        assert_eq!(is_ascii_hex_digit('-'), false);
+        assert_eq!(is_ascii_hex_digit('_'), false);
+        assert_eq!(is_ascii_hex_digit('+'), false);
+        assert_eq!(is_ascii_hex_digit('='), false);
+        assert_eq!(is_ascii_hex_digit('['), false);
+        assert_eq!(is_ascii_hex_digit(']'), false);
+        assert_eq!(is_ascii_hex_digit('{'), false);
+        assert_eq!(is_ascii_hex_digit('}'), false);
+        assert_eq!(is_ascii_hex_digit(';'), false);
+        assert_eq!(is_ascii_hex_digit(':'), false);
+        assert_eq!(is_ascii_hex_digit(','), false);
+        assert_eq!(is_ascii_hex_digit('.'), false);
+        assert_eq!(is_ascii_hex_digit('<'), false);
+        assert_eq!(is_ascii_hex_digit('>'), false);
+        assert_eq!(is_ascii_hex_digit('/'), false);
+        assert_eq!(is_ascii_hex_digit('?'), false);
+        assert_eq!(is_ascii_hex_digit('|'), false);
+        assert_eq!(is_ascii_hex_digit('`'), false);
+        assert_eq!(is_ascii_hex_digit('~'), false);
+        assert_eq!(is_ascii_hex_digit(' '), false);
+        assert_eq!(is_ascii_hex_digit('\t'), false);
+        assert_eq!(is_ascii_hex_digit('\n'), false);
+        assert_eq!(is_ascii_hex_digit('\r'), false);
+        assert_eq!(is_ascii_hex_digit('\x00'), false);
+        assert_eq!(is_ascii_hex_digit('\x1F'), false);
+        assert_eq!(is_ascii_hex_digit('\x7F'), false);
+        assert_eq!(is_ascii_hex_digit('\x80'), false);
+        assert_eq!(is_ascii_hex_digit('\x9F'), false);
+        assert_eq!(is_ascii_hex_digit('\xFF'), false);
+        assert_eq!(is_ascii_hex_digit('\u{0100}'), false);
+        assert_eq!(is_ascii_hex_digit('\u{1F600}'), false);
+        assert_eq!(is_ascii_hex_digit('\u{1FFFF}'), false);
+    }
+}
+False
+========================================
+    use crate::parser::is_normalized_windows_drive_letter;
+
+    #[test]
+    fn test_is_normalized_windows_drive_letter() {
+        assert_eq!(is_normalized_windows_drive_letter("C:"), true);
+        assert_eq!(is_normalized_windows_drive_letter("d:"), true);
+        assert_eq!(is_normalized_windows_drive_letter("X:"), true);
+        assert_eq!(is_normalized_windows_drive_letter("C"), false);
+        assert_eq!(is_normalized_windows_drive_letter("C::"), false);
+        assert_eq!(is_normalized_windows_drive_letter("C:"), true);
+        assert_eq!(is_normalized_windows_drive_letter("C:.txt"), false);
+        assert_eq!(is_normalized_windows_drive_letter("C:/"), false);
+        assert_eq!(is_normalized_windows_drive_letter("C:/test"), false);
+        assert_eq!(is_normalized_windows_drive_letter("C:/test/"), false);
+    }
+}
+True
+========================================
+    use crate::parser::is_url_code_point;
+
+    #[test]
+    fn test_is_url_code_point() {
+        assert!(is_url_code_point('a'));
+        assert!(is_url_code_point('Z'));
+        assert!(is_url_code_point('0'));
+        assert!(is_url_code_point('!'));
+        assert!(is_url_code_point('$'));
+        assert!(is_url_code_point('&'));
+        assert!(is_url_code_point('\''));
+        assert!(is_url_code_point('('));
+        assert!(is_url_code_point(')'));
+        assert!(is_url_code_point('*'));
+        assert!(is_url_code_point('+'));
+        assert!(is_url_code_point(','));
+        assert!(is_url_code_point('-'));
+        assert!(is_url_code_point('.'));
+        assert!(is_url_code_point('/'));
+        assert!(is_url_code_point(':'));
+        assert!(is_url_code_point(';'));
+        assert!(is_url_code_point('='));
+        assert!(is_url_code_point('?'));
+        assert!(is_url_code_point('@'));
+        assert!(is_url_code_point('_'));
+        assert!(is_url_code_point('~'));
+        assert!(is_url_code_point('\u{A0}'));
+        assert!(is_url_code_point('\u{D7FF}'));
+        assert!(is_url_code_point('\u{E000}'));
+        assert!(is_url_code_point('\u{FDCF}'));
+        assert!(is_url_code_point('\u{FDF0}'));
+        assert!(is_url_code_point('\u{FFFD}'));
+        assert!(is_url_code_point('\u{10000}'));
+        assert!(is_url_code_point('\u{1FFFD}'));
+        assert!(is_url_code_point('\u{20000}'));
+        assert!(is_url_code_point('\u{2FFFD}'));
+        assert!(is_url_code_point('\u{30000}'));
+        assert!(is_url_code_point('\u{3FFFD}'));
+        assert!(is_url_code_point('\u{40000}'));
+        assert!(is_url_code_point('\u{4FFFD}'));
+        assert!(is_url_code_point('\u{50000}'));
+        assert!(is_url_code_point('\u{5FFFD}'));
+        assert!(is_url_code_point('\u{60000}'));
+        assert!(is_url_code_point('\u{6FFFD}'));
+        assert!(is_url_code_point('\u{70000}'));
+        assert!(is_url_code_point('\u{7FFFD}'));
+        assert!(is_url_code_point('\u{80000}'));
+        assert!(is_url_code_point('\u{8FFFD}'));
+        assert!(is_url_code_point('\u{90000}'));
+        assert!(is_url_code_point('\u{9FFFD}'));
+        assert!(is_url_code_point('\u{A0000}'));
+        assert!(is_url_code_point('\u{AFFFD}'));
+        assert!(is_url_code_point('\u{B0000}'));
+        assert!(is_url_code_point('\u{BFFFD}'));
+        assert!(is_url_code_point('\u{C0000}'));
+        assert!(is_url_code_point('\u{CFFFD}'));
+        assert!(is_url_code_point('\u{D0000}'));
+        assert!(is_url_code_point('\u{DFFFD}'));
+        assert!(is_url_code_point('\u{E1000}'));
+        assert!(is_url_code_point('\u{EFFFD}'));
+        assert!(is_url_code_point('\u{F0000}'));
+        assert!(is_url_code_point('\u{FFFFD}'));
+        assert!(is_url_code_point('\u{100000}'));
+        assert!(is_url_code_point('\u{10FFFD}'));
+        assert!(!is_url_code_point(' '));
+        assert!(!is_url_code_point('\n'));
+        assert!(!is_url_code_point('\r'));
+        assert!(!is_url_code_point('\t'));
+    }
+}
+True
+========================================
+    use crate::is_windows_drive_letter;
+    
+    #[test]
+    fn test_is_windows_drive_letter_with_drive_letter() {
+        assert_eq!(is_windows_drive_letter("C:"), true);
+        assert_eq!(is_windows_drive_letter("Z:"), true);
+    }
+    
+    #[test]
+    fn test_is_windows_drive_letter_with_not_drive_letter() {
+        assert_eq!(is_windows_drive_letter("C:/"), false);
+        assert_eq!(is_windows_drive_letter("C:/path"), false);
+        assert_eq!(is_windows_drive_letter("C:\\path"), false);
+        assert_eq!(is_windows_drive_letter("http://example.com"), false);
+        assert_eq!(is_windows_drive_letter(":C"), false);
+        assert_eq!(is_windows_drive_letter("C"), false);
+        assert_eq!(is_windows_drive_letter(""), false);
+        assert_eq!(is_windows_drive_letter(" "), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_path_starts_with_windows_drive_letter() {
+        assert_eq!(path_starts_with_windows_drive_letter("/c:"), true);
+        assert_eq!(path_starts_with_windows_drive_letter("/c:/"), true);
+        assert_eq!(path_starts_with_windows_drive_letter("/a:/"), true);
+        assert_eq!(path_starts_with_windows_drive_letter("/b:"), true);
+        assert_eq!(path_starts_with_windows_drive_letter("/b:/"), true);
+        assert_eq!(path_starts_with_windows_drive_letter("/"), false);
+        assert_eq!(path_starts_with_windows_drive_letter(""), false);
+        assert_eq!(path_starts_with_windows_drive_letter("c:"), false);
+        assert_eq!(path_starts_with_windows_drive_letter("c:/"), false);
+        assert_eq!(path_starts_with_windows_drive_letter("a:/"), false);
+        assert_eq!(path_starts_with_windows_drive_letter("b:"), false);
+        assert_eq!(path_starts_with_windows_drive_letter("b:/"), false);
+        assert_eq!(path_starts_with_windows_drive_letter("c:/path"), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::ascii_alpha;
+
+    #[test]
+    fn test_starts_with_windows_drive_letter() {
+        assert_eq!(starts_with_windows_drive_letter("C:"), true);
+        assert_eq!(starts_with_windows_drive_letter("C|"), true);
+        assert_eq!(starts_with_windows_drive_letter("C:/"), true);
+        assert_eq!(starts_with_windows_drive_letter("C:\\"), true);
+        assert_eq!(starts_with_windows_drive_letter("C:?"), true);
+        assert_eq!(starts_with_windows_drive_letter("C:#"), true);
+        assert_eq!(starts_with_windows_drive_letter("::"), false);
+        assert_eq!(starts_with_windows_drive_letter("C"), false);
+        assert_eq!(starts_with_windows_drive_letter("D:"), false);
+        assert_eq!(starts_with_windows_drive_letter("1:"), false);
+        assert_eq!(starts_with_windows_drive_letter("C:/test"), false);
+        assert_eq!(starts_with_windows_drive_letter("C|/test"), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parser::Input;
+
+    #[test]
+    fn test_starts_with_windows_drive_letter_segment() {
+        let input = Input::new("C:foo/bar");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("D|baz");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("E:qux");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("C");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("D");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("E");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("C:foo?");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("D|bar/");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("E:baz#");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("C:foo\\");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("D|baz\\");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("E:qux\\");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("D|");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("E:");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), true);
+
+        let input = Input::new("A:foo/bar");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), false);
+
+        let input = Input::new("B|baz");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), false);
+
+        let input = Input::new("F:qux");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), false);
+
+        let input = Input::new("foobar");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), false);
+
+        let input = Input::new("");
+        assert_eq!(starts_with_windows_drive_letter_segment(&input), false);
+    }
+}
+True
+========================================
+    use crate::parser::to_u32;
+    use crate::parser::ParseResult;
+    use crate::parser::ParseError;
+
+    #[test]
+    fn test_to_u32_with_valid_input() {
+        let input = 42;
+        let expected = Ok(42u32);
+        let actual = to_u32(input);
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn test_to_u32_with_maximum_value() {
+        let input = std::u32::MAX as usize;
+        let expected = Ok(std::u32::MAX);
+        let actual = to_u32(input);
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn test_to_u32_with_overflow() {
+        let input = std::u32::MAX as usize + 1;
+        let expected = Err(ParseError::Overflow);
+        let actual = to_u32(input);
+        assert_eq!(expected, actual);
+    }
+}
+True
+path_segments::PathSegmentsMut::<'a>::clear exceed
+path_segments::PathSegmentsMut::<'a>::extend exceed
+path_segments::PathSegmentsMut::<'a>::pop exceed
+path_segments::PathSegmentsMut::<'a>::pop_if_empty exceed
+path_segments::PathSegmentsMut::<'a>::push exceed
+path_segments::new exceed
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_path_to_file_url_segments_absolute_path() {
+        let mut serialization = String::new();
+        let path = Path::new("/path/to/file.txt");
+        let result = path_to_file_url_segments(path, &mut serialization);
+        assert!(result.is_ok());
+        assert_eq!(serialization, "/path/to/file.txt");
+    }
+
+    #[test]
+    fn test_path_to_file_url_segments_relative_path() {
+        let mut serialization = String::new();
+        let path = Path::new("path/to/file.txt");
+        let result = path_to_file_url_segments(path, &mut serialization);
+        assert!(result.is_err());
+        assert_eq!(serialization, "");
+    }
+}
+True
+========================================
+   use std::path::Path;
+   use crate::{path_to_file_url_segments_windows, Host, HostInternal, parser::is_windows_drive_letter, parser::percent_encode};
+
+   #[test]
+   fn test_path_to_file_url_segments_windows() {
+       let path = Path::new("C:/path/to/some/file.jpg");
+       let mut serialization = String::new();
+       let result = path_to_file_url_segments_windows(&path, &mut serialization);
+       assert!(result.is_ok());
+       let (host_end, host_internal) = result.unwrap();
+       assert_eq!(host_end, 3);
+       assert_eq!(host_internal, HostInternal::None);
+       assert_eq!(serialization, "/C:/path/to/some/file.jpg");
+
+       serialization.clear();
+       let path = Path::new("\\\\server\\share\\path\\to\\some\\file.jpg");
+       let result = path_to_file_url_segments_windows(&path, &mut serialization);
+       assert!(result.is_ok());
+       let (host_end, host_internal) = result.unwrap();
+       assert_eq!(host_end, 20);
+       assert_eq!(host_internal, HostInternal::Domain("server".to_owned()));
+       assert_eq!(serialization, "//server/share/path/to/some/file.jpg");
+   }
+}
+False
+========================================
+    use crate::domain_to_ascii;
+    use crate::Host;
+
+    #[test]
+    fn test_domain_to_ascii() {
+        assert_eq!(domain_to_ascii("example.com"), "example.com");
+        assert_eq!(domain_to_ascii("günter.com"), "xn--gnter-kva.com");
+        assert_eq!(domain_to_ascii("πexample.com"), "xn--example-jzi.com");
+        assert_eq!(domain_to_ascii("xn--gnter-kva.com"), "xn--gnter-kva.com");
+        assert_eq!(domain_to_ascii("🌐example.com"), "🌐example.com");
+        assert_eq!(domain_to_ascii("xn--example-jzi.com"), "xn--example-jzi.com");
+        assert_eq!(domain_to_ascii("günter.com\u{2000}"), "xn--gnter-kva.com");
+        assert_eq!(domain_to_ascii(""), "");
+    }
+}
+False
+========================================
+    use crate::quirks::domain_to_unicode;
+
+    #[test]
+    fn test_domain_to_unicode() {
+        assert_eq!(domain_to_unicode("example.com"), "example.com");
+        assert_eq!(domain_to_unicode("xn--85x722f.com"), "栗林.com");
+        assert_eq!(domain_to_unicode("foo-bar"), "");
+        assert_eq!(domain_to_unicode("127.0.0.1"), "");
+    }
+}
+True
+quirks::hash exceed
+quirks::host exceed
+quirks::hostname exceed
+quirks::href exceed
+quirks::origin exceed
+quirks::password exceed
+quirks::pathname exceed
+quirks::port exceed
+quirks::protocol exceed
+quirks::search exceed
+quirks::set_hash exceed
+quirks::set_host exceed
+quirks::set_hostname exceed
+quirks::set_href exceed
+quirks::set_password exceed
+quirks::set_pathname exceed
+quirks::set_port exceed
+quirks::set_protocol exceed
+quirks::set_search exceed
+quirks::set_username exceed
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_trim() {
+        assert_eq!(trim(""), "");
+        assert_eq!(trim("a"), "");
+        assert_eq!(trim("ab"), "ab");
+        assert_eq!(trim("abc"), "abc");
+    }
+}
+True
+quirks::username exceed
+slicing::<impl Url>::index exceed
+slicing::<impl std::ops::Index<std::ops::Range<slicing::Position>> for Url>::index exceed
+slicing::<impl std::ops::Index<std::ops::RangeFrom<slicing::Position>> for Url>::index exceed
+slicing::<impl std::ops::Index<std::ops::RangeFull> for Url>::index exceed
+slicing::<impl std::ops::Index<std::ops::RangeTo<slicing::Position>> for Url>::index exceed
+rust-url url 59 92

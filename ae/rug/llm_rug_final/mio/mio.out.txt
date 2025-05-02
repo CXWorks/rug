@@ -1,0 +1,845 @@
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::token
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::token(p0);
++crate::sys::shell::selector::event::token(p0);
++crate::sys::shell::selector::event::token(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_readable
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_readable(p0);
++crate::sys::shell::selector::event::is_readable(p0);
++crate::sys::shell::selector::event::is_readable(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_writable
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_writable(p0);
++crate::sys::shell::selector::event::is_writable(p0);
++crate::sys::shell::selector::event::is_writable(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_error
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_error(p0);
++crate::sys::shell::selector::event::is_error(p0);
++crate::sys::shell::selector::event::is_error(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_read_closed
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_read_closed(p0);
++crate::sys::shell::selector::event::is_read_closed(p0);
++crate::sys::shell::selector::event::is_read_closed(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_write_closed
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_write_closed(p0);
++crate::sys::shell::selector::event::is_write_closed(p0);
++crate::sys::shell::selector::event::is_write_closed(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_priority
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_priority(p0);
++crate::sys::shell::selector::event::is_priority(p0);
++crate::sys::shell::selector::event::is_priority(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_aio
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_aio(p0);
++crate::sys::shell::selector::event::is_aio(p0);
++crate::sys::shell::selector::event::is_aio(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::is_lio
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++sys::shell::selector::event::is_lio(p0);
++crate::sys::shell::selector::event::is_lio(p0);
++crate::sys::shell::selector::event::is_lio(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::event::debug_details
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
+let mut p1 = & 0usize; // None+usize
++sys::shell::selector::event::debug_details(p0, p1);
++crate::sys::shell::selector::event::debug_details(p0, p1);
++crate::sys::shell::selector::event::debug_details(p0, p1);
+-----------------
+src/event/source.rs event::source::Source::register
+deps:{"<&A as std::alloc::Allocator>":{},"event::source::Source::register":{"Self":["event::source::Source"]},"std::boxed::Box":{"A":["std::alloc::Allocator","std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"event::source::Source::register":{"Self":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::System","std::alloc::Global","<&A as std::alloc::Allocator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p2 = MaybeUninit::uninit().assume_init(); // token::Token
+let mut p3 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.register(p1, p2, p3);
++event::source::Source::register(p0, p1, p2, p3);
++crate::event::source::Source::register(p0, p1, p2, p3);
++crate::event::source::Source::register(p0, p1, p2, p3);
+-----------------
+src/event/source.rs event::source::Source::reregister
+deps:{"<&A as std::alloc::Allocator>":{},"event::source::Source::reregister":{"Self":["event::source::Source"]},"std::boxed::Box":{"A":["std::alloc::Allocator","std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"event::source::Source::reregister":{"Self":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::System","<&A as std::alloc::Allocator>","std::alloc::Global"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p2 = MaybeUninit::uninit().assume_init(); // token::Token
+let mut p3 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.reregister(p1, p2, p3);
++event::source::Source::reregister(p0, p1, p2, p3);
++crate::event::source::Source::reregister(p0, p1, p2, p3);
++crate::event::source::Source::reregister(p0, p1, p2, p3);
+-----------------
+src/event/source.rs event::source::Source::deregister
+deps:{"<&A as std::alloc::Allocator>":{},"event::source::Source::deregister":{"Self":["event::source::Source"]},"std::boxed::Box":{"A":["std::marker::Sized","std::alloc::Allocator"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"event::source::Source::deregister":{"Self":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::Global","<&A as std::alloc::Allocator>","std::alloc::System"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = & MaybeUninit::uninit().assume_init(); // poll::Registry
++p0.deregister(p1);
++event::source::Source::deregister(p0, p1);
++crate::event::source::Source::deregister(p0, p1);
++crate::event::source::Source::deregister(p0, p1);
+-----------------
+src/interest.rs <interest::Interest as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = & MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.eq(p1);
++<interest::Interest as std::cmp::PartialEq>::eq(p0, p1);
++crate::<interest::Interest as std::cmp::PartialEq>::eq(p0, p1);
++<interest::Interest>::eq(p0, p1);
+-----------------
+src/interest.rs <interest::Interest as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.assert_receiver_is_total_eq();
++<interest::Interest as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<interest::Interest as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<interest::Interest>::assert_receiver_is_total_eq(p0);
+-----------------
+src/interest.rs <interest::Interest as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.clone();
++<interest::Interest as std::clone::Clone>::clone(p0);
++crate::<interest::Interest as std::clone::Clone>::clone(p0);
++<interest::Interest>::clone(p0);
+-----------------
+src/interest.rs <interest::Interest as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = & MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.partial_cmp(p1);
++<interest::Interest as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<interest::Interest as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<interest::Interest>::partial_cmp(p0, p1);
+-----------------
+src/interest.rs <interest::Interest as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = & MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.cmp(p1);
++<interest::Interest as std::cmp::Ord>::cmp(p0, p1);
++crate::<interest::Interest as std::cmp::Ord>::cmp(p0, p1);
++<interest::Interest>::cmp(p0, p1);
+-----------------
+src/interest.rs interest::Interest::add
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.add(p1);
++interest::Interest::add(p0, p1);
++crate::interest::Interest::add(p0, p1);
++<interest::Interest>::add(p0, p1);
+-----------------
+src/interest.rs interest::Interest::remove
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.remove(p1);
++interest::Interest::remove(p0, p1);
++crate::interest::Interest::remove(p0, p1);
++<interest::Interest>::remove(p0, p1);
+-----------------
+src/interest.rs interest::Interest::is_readable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.is_readable();
++interest::Interest::is_readable(p0);
++crate::interest::Interest::is_readable(p0);
++<interest::Interest>::is_readable(p0);
+-----------------
+src/interest.rs interest::Interest::is_writable
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.is_writable();
++interest::Interest::is_writable(p0);
++crate::interest::Interest::is_writable(p0);
++<interest::Interest>::is_writable(p0);
+-----------------
+src/interest.rs interest::Interest::is_aio
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.is_aio();
++interest::Interest::is_aio(p0);
++crate::interest::Interest::is_aio(p0);
++<interest::Interest>::is_aio(p0);
+-----------------
+src/interest.rs interest::Interest::is_lio
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.is_lio();
++interest::Interest::is_lio(p0);
++crate::interest::Interest::is_lio(p0);
++<interest::Interest>::is_lio(p0);
+-----------------
+src/interest.rs interest::Interest::is_priority
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.is_priority();
++interest::Interest::is_priority(p0);
++crate::interest::Interest::is_priority(p0);
++<interest::Interest>::is_priority(p0);
+-----------------
+src/interest.rs <interest::Interest as std::ops::BitOr>::bitor
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.bitor(p1);
++<interest::Interest as std::ops::BitOr>::bitor(p0, p1);
++crate::<interest::Interest as std::ops::BitOr>::bitor(p0, p1);
++<interest::Interest>::bitor(p0, p1);
+-----------------
+src/interest.rs <interest::Interest as std::ops::BitOrAssign>::bitor_assign
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.bitor_assign(p1);
++<interest::Interest as std::ops::BitOrAssign>::bitor_assign(p0, p1);
++crate::<interest::Interest as std::ops::BitOrAssign>::bitor_assign(p0, p1);
++<interest::Interest>::bitor_assign(p0, p1);
+-----------------
+src/interest.rs <interest::Interest as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // interest::Interest
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<interest::Interest as std::fmt::Debug>::fmt(p0, p1);
++crate::<interest::Interest as std::fmt::Debug>::fmt(p0, p1);
++<interest::Interest>::fmt(p0, p1);
+-----------------
+src/poll.rs poll::Poll::registry
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Poll
++p0.registry();
++poll::Poll::registry(p0);
++crate::poll::Poll::registry(p0);
++<poll::Poll>::registry(p0);
+-----------------
+src/poll.rs poll::Poll::poll
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // poll::Poll
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // event::events::Events
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<std::time::Duration>
++p0.poll(p1, p2);
++poll::Poll::poll(p0, p1, p2);
++crate::poll::Poll::poll(p0, p1, p2);
++<poll::Poll>::poll(p0, p1, p2);
+-----------------
+src/poll.rs <poll::Poll as std::os::fd::AsRawFd>::as_raw_fd
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Poll
++p0.as_raw_fd();
++<poll::Poll as std::os::fd::AsRawFd>::as_raw_fd(p0);
++crate::<poll::Poll as std::os::fd::AsRawFd>::as_raw_fd(p0);
++<poll::Poll>::as_raw_fd(p0);
+-----------------
+src/poll.rs <poll::Poll as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Poll
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<poll::Poll as std::fmt::Debug>::fmt(p0, p1);
++crate::<poll::Poll as std::fmt::Debug>::fmt(p0, p1);
++<poll::Poll>::fmt(p0, p1);
+-----------------
+src/poll.rs poll::Registry::register
+deps:{"<&A as std::alloc::Allocator>":{},"poll::Registry::register":{"S":["event::source::Source"]},"std::boxed::Box":{"A":["std::alloc::Allocator","std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"poll::Registry::register":{"S":["std::boxed::Box"]},"std::boxed::Box":{"A":["<&A as std::alloc::Allocator>","std::alloc::Global","std::alloc::System"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // token::Token
+let mut p3 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.register(p1, p2, p3);
++poll::Registry::register(p0, p1, p2, p3);
++crate::poll::Registry::register(p0, p1, p2, p3);
++<poll::Registry>::register(p0, p1, p2, p3);
+-----------------
+src/poll.rs poll::Registry::reregister
+deps:{"<&A as std::alloc::Allocator>":{},"poll::Registry::reregister":{"S":["event::source::Source"]},"std::boxed::Box":{"A":["std::alloc::Allocator","std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"poll::Registry::reregister":{"S":["std::boxed::Box"]},"std::boxed::Box":{"A":["<&A as std::alloc::Allocator>","std::alloc::System","std::alloc::Global"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // token::Token
+let mut p3 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.reregister(p1, p2, p3);
++poll::Registry::reregister(p0, p1, p2, p3);
++crate::poll::Registry::reregister(p0, p1, p2, p3);
++<poll::Registry>::reregister(p0, p1, p2, p3);
+-----------------
+src/poll.rs poll::Registry::deregister
+deps:{"<&A as std::alloc::Allocator>":{},"poll::Registry::deregister":{"S":["event::source::Source"]},"std::boxed::Box":{"A":["std::marker::Sized","std::alloc::Allocator"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"poll::Registry::deregister":{"S":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::Global","std::alloc::System","<&A as std::alloc::Allocator>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // S
++p0.deregister(p1);
++poll::Registry::deregister(p0, p1);
++crate::poll::Registry::deregister(p0, p1);
++<poll::Registry>::deregister(p0, p1);
+-----------------
+src/poll.rs poll::Registry::try_clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
++p0.try_clone();
++poll::Registry::try_clone(p0);
++crate::poll::Registry::try_clone(p0);
++<poll::Registry>::try_clone(p0);
+-----------------
+src/poll.rs poll::Registry::register_waker
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
++p0.register_waker();
++poll::Registry::register_waker(p0);
++crate::poll::Registry::register_waker(p0);
++<poll::Registry>::register_waker(p0);
+-----------------
+src/poll.rs poll::Registry::selector
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
++p0.selector();
++poll::Registry::selector(p0);
++crate::poll::Registry::selector(p0);
++<poll::Registry>::selector(p0);
+-----------------
+src/poll.rs <poll::Registry as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<poll::Registry as std::fmt::Debug>::fmt(p0, p1);
++crate::<poll::Registry as std::fmt::Debug>::fmt(p0, p1);
++<poll::Registry>::fmt(p0, p1);
+-----------------
+src/poll.rs <poll::Registry as std::os::fd::AsRawFd>::as_raw_fd
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
++p0.as_raw_fd();
++<poll::Registry as std::os::fd::AsRawFd>::as_raw_fd(p0);
++crate::<poll::Registry as std::os::fd::AsRawFd>::as_raw_fd(p0);
++<poll::Registry>::as_raw_fd(p0);
+-----------------
+src/sys/shell/selector.rs <sys::shell::selector::Selector as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::selector::Selector
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<sys::shell::selector::Selector as std::fmt::Debug>::fmt(p0, p1);
++crate::<sys::shell::selector::Selector as std::fmt::Debug>::fmt(p0, p1);
++<sys::shell::selector::Selector>::fmt(p0, p1);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::Selector::try_clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::selector::Selector
++p0.try_clone();
++sys::shell::selector::Selector::try_clone(p0);
++crate::sys::shell::selector::Selector::try_clone(p0);
++<sys::shell::selector::Selector>::try_clone(p0);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::Selector::select
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::selector::Selector
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<usize>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<std::time::Duration>
++p0.select(p1, p2);
++sys::shell::selector::Selector::select(p0, p1, p2);
++crate::sys::shell::selector::Selector::select(p0, p1, p2);
++<sys::shell::selector::Selector>::select(p0, p1, p2);
+-----------------
+src/sys/shell/selector.rs sys::shell::selector::Selector::register_waker
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::selector::Selector
++p0.register_waker();
++sys::shell::selector::Selector::register_waker(p0);
++crate::sys::shell::selector::Selector::register_waker(p0);
++<sys::shell::selector::Selector>::register_waker(p0);
+-----------------
+src/sys/shell/selector.rs <sys::shell::selector::Selector as std::os::fd::AsRawFd>::as_raw_fd
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::selector::Selector
++p0.as_raw_fd();
++<sys::shell::selector::Selector as std::os::fd::AsRawFd>::as_raw_fd(p0);
++crate::<sys::shell::selector::Selector as std::os::fd::AsRawFd>::as_raw_fd(p0);
++<sys::shell::selector::Selector>::as_raw_fd(p0);
+-----------------
+src/sys/shell/waker.rs <sys::shell::waker::Waker as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::waker::Waker
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<sys::shell::waker::Waker as std::fmt::Debug>::fmt(p0, p1);
++crate::<sys::shell::waker::Waker as std::fmt::Debug>::fmt(p0, p1);
++<sys::shell::waker::Waker>::fmt(p0, p1);
+-----------------
+src/sys/shell/waker.rs sys::shell::waker::Waker::new
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::selector::Selector
+let mut p1 = MaybeUninit::uninit().assume_init(); // token::Token
++sys::shell::waker::Waker::new(p0, p1);
++crate::sys::shell::waker::Waker::new(p0, p1);
++<sys::shell::waker::Waker>::new(p0, p1);
+-----------------
+src/sys/shell/waker.rs sys::shell::waker::Waker::wake
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // sys::shell::waker::Waker
++p0.wake();
++sys::shell::waker::Waker::wake(p0);
++crate::sys::shell::waker::Waker::wake(p0);
++<sys::shell::waker::Waker>::wake(p0);
+-----------------
+src/token.rs <token::Token as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
++p0.clone();
++<token::Token as std::clone::Clone>::clone(p0);
++crate::<token::Token as std::clone::Clone>::clone(p0);
++<token::Token>::clone(p0);
+-----------------
+src/token.rs <token::Token as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<token::Token as std::fmt::Debug>::fmt(p0, p1);
++crate::<token::Token as std::fmt::Debug>::fmt(p0, p1);
++<token::Token>::fmt(p0, p1);
+-----------------
+src/token.rs <token::Token as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
+let mut p1 = & MaybeUninit::uninit().assume_init(); // token::Token
++p0.eq(p1);
++<token::Token as std::cmp::PartialEq>::eq(p0, p1);
++crate::<token::Token as std::cmp::PartialEq>::eq(p0, p1);
++<token::Token>::eq(p0, p1);
+-----------------
+src/token.rs <token::Token as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
++p0.assert_receiver_is_total_eq();
++<token::Token as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<token::Token as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<token::Token>::assert_receiver_is_total_eq(p0);
+-----------------
+src/token.rs <token::Token as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
+let mut p1 = & MaybeUninit::uninit().assume_init(); // token::Token
++p0.partial_cmp(p1);
++<token::Token as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<token::Token as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<token::Token>::partial_cmp(p0, p1);
+-----------------
+src/token.rs <token::Token as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
+let mut p1 = & MaybeUninit::uninit().assume_init(); // token::Token
++p0.cmp(p1);
++<token::Token as std::cmp::Ord>::cmp(p0, p1);
++crate::<token::Token as std::cmp::Ord>::cmp(p0, p1);
++<token::Token>::cmp(p0, p1);
+-----------------
+src/token.rs <token::Token as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<token::Token as std::hash::Hash>::hash":{"__H":["std::marker::Sized","std::hash::Hasher"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<token::Token as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","std::hash::SipHasher13","<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // token::Token
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<token::Token as std::hash::Hash>::hash(p0, p1);
++crate::<token::Token as std::hash::Hash>::hash(p0, p1);
++<token::Token>::hash(p0, p1);
+-----------------
+src/token.rs token::<impl std::convert::From<token::Token> for usize>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // token::Token
++token::<impl std::convert::From<token::Token> for usize>::from(p0);
++crate::token::<impl std::convert::From<token::Token> for usize>::from(p0);
++<usize>::from(p0);
+-----------------
+src/waker.rs <waker::Waker as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // waker::Waker
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<waker::Waker as std::fmt::Debug>::fmt(p0, p1);
++crate::<waker::Waker as std::fmt::Debug>::fmt(p0, p1);
++<waker::Waker>::fmt(p0, p1);
+-----------------
+src/waker.rs waker::Waker::new
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p1 = MaybeUninit::uninit().assume_init(); // token::Token
++waker::Waker::new(p0, p1);
++crate::waker::Waker::new(p0, p1);
++<waker::Waker>::new(p0, p1);
+-----------------
+src/waker.rs waker::Waker::wake
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // waker::Waker
++p0.wake();
++waker::Waker::wake(p0);
++crate::waker::Waker::wake(p0);
++<waker::Waker>::wake(p0);
+-----------------
+src/event/event.rs <event::event::Event as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.clone();
++<event::event::Event as std::clone::Clone>::clone(p0);
++crate::<event::event::Event as std::clone::Clone>::clone(p0);
++<event::event::Event>::clone(p0);
+-----------------
+src/event/event.rs event::event::Event::token
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.token();
++event::event::Event::token(p0);
++crate::event::event::Event::token(p0);
++<event::event::Event>::token(p0);
+-----------------
+src/event/event.rs event::event::Event::is_readable
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_readable();
++event::event::Event::is_readable(p0);
++crate::event::event::Event::is_readable(p0);
++<event::event::Event>::is_readable(p0);
+-----------------
+src/event/event.rs event::event::Event::is_writable
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_writable();
++event::event::Event::is_writable(p0);
++crate::event::event::Event::is_writable(p0);
++<event::event::Event>::is_writable(p0);
+-----------------
+src/event/event.rs event::event::Event::is_error
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_error();
++event::event::Event::is_error(p0);
++crate::event::event::Event::is_error(p0);
++<event::event::Event>::is_error(p0);
+-----------------
+src/event/event.rs event::event::Event::is_read_closed
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_read_closed();
++event::event::Event::is_read_closed(p0);
++crate::event::event::Event::is_read_closed(p0);
++<event::event::Event>::is_read_closed(p0);
+-----------------
+src/event/event.rs event::event::Event::is_write_closed
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_write_closed();
++event::event::Event::is_write_closed(p0);
++crate::event::event::Event::is_write_closed(p0);
++<event::event::Event>::is_write_closed(p0);
+-----------------
+src/event/event.rs event::event::Event::is_priority
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_priority();
++event::event::Event::is_priority(p0);
++crate::event::event::Event::is_priority(p0);
++<event::event::Event>::is_priority(p0);
+-----------------
+src/event/event.rs event::event::Event::is_aio
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_aio();
++event::event::Event::is_aio(p0);
++crate::event::event::Event::is_aio(p0);
++<event::event::Event>::is_aio(p0);
+-----------------
+src/event/event.rs event::event::Event::is_lio
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
++p0.is_lio();
++event::event::Event::is_lio(p0);
++crate::event::event::Event::is_lio(p0);
++<event::event::Event>::is_lio(p0);
+-----------------
+src/event/event.rs event::event::Event::from_sys_event_ref
+deps:{}
+candidates:{}
+let mut p0 = & 0usize; // None+usize
++event::event::Event::from_sys_event_ref(p0);
++crate::event::event::Event::from_sys_event_ref(p0);
++<event::event::Event>::from_sys_event_ref(p0);
+-----------------
+src/event/event.rs <event::event::Event as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::event::Event
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<event::event::Event as std::fmt::Debug>::fmt(p0, p1);
++crate::<event::event::Event as std::fmt::Debug>::fmt(p0, p1);
++<event::event::Event>::fmt(p0, p1);
+-----------------
+src/event/event.rs <<event::event::Event as std::fmt::Debug>::fmt::EventDetails<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // <event::event::Event as std::fmt::Debug>::fmt::EventDetails<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<<event::event::Event as std::fmt::Debug>::fmt::EventDetails<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<<event::event::Event as std::fmt::Debug>::fmt::EventDetails<'a> as std::fmt::Debug>::fmt(p0, p1);
++<<event::event::Event as std::fmt::Debug>::fmt::EventDetails<'a>>::fmt(p0, p1);
+-----------------
+src/event/events.rs <event::events::Iter<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Iter<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<event::events::Iter<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<event::events::Iter<'a> as std::fmt::Debug>::fmt(p0, p1);
++<event::events::Iter<'a>>::fmt(p0, p1);
+-----------------
+src/event/events.rs <event::events::Iter<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Iter<'a>
++p0.clone();
++<event::events::Iter<'a> as std::clone::Clone>::clone(p0);
++crate::<event::events::Iter<'a> as std::clone::Clone>::clone(p0);
++<event::events::Iter<'a>>::clone(p0);
+-----------------
+src/event/events.rs event::events::Events::with_capacity
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++event::events::Events::with_capacity(p0);
++crate::event::events::Events::with_capacity(p0);
++<event::events::Events>::with_capacity(p0);
+-----------------
+src/event/events.rs event::events::Events::capacity
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Events
++p0.capacity();
++event::events::Events::capacity(p0);
++crate::event::events::Events::capacity(p0);
++<event::events::Events>::capacity(p0);
+-----------------
+src/event/events.rs event::events::Events::is_empty
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Events
++p0.is_empty();
++event::events::Events::is_empty(p0);
++crate::event::events::Events::is_empty(p0);
++<event::events::Events>::is_empty(p0);
+-----------------
+src/event/events.rs event::events::Events::iter
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Events
++p0.iter();
++event::events::Events::iter(p0);
++crate::event::events::Events::iter(p0);
++<event::events::Events>::iter(p0);
+-----------------
+src/event/events.rs event::events::Events::clear
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // event::events::Events
++p0.clear();
++event::events::Events::clear(p0);
++crate::event::events::Events::clear(p0);
++<event::events::Events>::clear(p0);
+-----------------
+src/event/events.rs event::events::Events::sys
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // event::events::Events
++p0.sys();
++event::events::Events::sys(p0);
++crate::event::events::Events::sys(p0);
++<event::events::Events>::sys(p0);
+-----------------
+src/event/events.rs <&'a event::events::Events as std::iter::IntoIterator>::into_iter
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Events
++p0.into_iter();
++<&'a event::events::Events as std::iter::IntoIterator>::into_iter(p0);
++crate::<&'a event::events::Events as std::iter::IntoIterator>::into_iter(p0);
++<&'a event::events::Events>::into_iter(p0);
+-----------------
+src/event/events.rs <event::events::Iter<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // event::events::Iter<'a>
++p0.next();
++<event::events::Iter<'a> as std::iter::Iterator>::next(p0);
++crate::<event::events::Iter<'a> as std::iter::Iterator>::next(p0);
++<event::events::Iter<'a>>::next(p0);
+-----------------
+src/event/events.rs <event::events::Iter<'a> as std::iter::Iterator>::size_hint
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Iter<'a>
++p0.size_hint();
++<event::events::Iter<'a> as std::iter::Iterator>::size_hint(p0);
++crate::<event::events::Iter<'a> as std::iter::Iterator>::size_hint(p0);
++<event::events::Iter<'a>>::size_hint(p0);
+-----------------
+src/event/events.rs <event::events::Iter<'a> as std::iter::Iterator>::count
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // event::events::Iter<'a>
++p0.count();
++<event::events::Iter<'a> as std::iter::Iterator>::count(p0);
++crate::<event::events::Iter<'a> as std::iter::Iterator>::count(p0);
++<event::events::Iter<'a>>::count(p0);
+-----------------
+src/event/events.rs <event::events::Events as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // event::events::Events
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<event::events::Events as std::fmt::Debug>::fmt(p0, p1);
++crate::<event::events::Events as std::fmt::Debug>::fmt(p0, p1);
++<event::events::Events>::fmt(p0, p1);
+-----------------
+src/event/source.rs <std::boxed::Box<T> as event::source::Source>::register
+deps:{"<&A as std::alloc::Allocator>":{},"<std::boxed::Box<T> as event::source::Source>::register":{"T":["event::source::Source"]},"std::boxed::Box":{"A":["std::alloc::Allocator","std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"<std::boxed::Box<T> as event::source::Source>::register":{"T":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::System","std::alloc::Global","<&A as std::alloc::Allocator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::boxed::Box<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p2 = MaybeUninit::uninit().assume_init(); // token::Token
+let mut p3 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.register(p1, p2, p3);
++<std::boxed::Box<T> as event::source::Source>::register(p0, p1, p2, p3);
++crate::<std::boxed::Box<T> as event::source::Source>::register(p0, p1, p2, p3);
++<std::boxed::Box<T>>::register(p0, p1, p2, p3);
+-----------------
+src/event/source.rs <std::boxed::Box<T> as event::source::Source>::reregister
+deps:{"<&A as std::alloc::Allocator>":{},"<std::boxed::Box<T> as event::source::Source>::reregister":{"T":["event::source::Source"]},"std::boxed::Box":{"A":["std::marker::Sized","std::alloc::Allocator"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"<std::boxed::Box<T> as event::source::Source>::reregister":{"T":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::Global","std::alloc::System","<&A as std::alloc::Allocator>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::boxed::Box<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // poll::Registry
+let mut p2 = MaybeUninit::uninit().assume_init(); // token::Token
+let mut p3 = MaybeUninit::uninit().assume_init(); // interest::Interest
++p0.reregister(p1, p2, p3);
++<std::boxed::Box<T> as event::source::Source>::reregister(p0, p1, p2, p3);
++crate::<std::boxed::Box<T> as event::source::Source>::reregister(p0, p1, p2, p3);
++<std::boxed::Box<T>>::reregister(p0, p1, p2, p3);
+-----------------
+src/event/source.rs <std::boxed::Box<T> as event::source::Source>::deregister
+deps:{"<&A as std::alloc::Allocator>":{},"<std::boxed::Box<T> as event::source::Source>::deregister":{"T":["event::source::Source"]},"std::boxed::Box":{"A":["std::alloc::Allocator","std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"<std::boxed::Box<T> as event::source::Source>::deregister":{"T":["std::boxed::Box"]},"std::boxed::Box":{"A":["std::alloc::Global","<&A as std::alloc::Allocator>","std::alloc::System"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::boxed::Box<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // poll::Registry
++p0.deregister(p1);
++<std::boxed::Box<T> as event::source::Source>::deregister(p0, p1);
++crate::<std::boxed::Box<T> as event::source::Source>::deregister(p0, p1);
++<std::boxed::Box<T>>::deregister(p0, p1);

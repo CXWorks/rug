@@ -1,0 +1,32 @@
+[package]
+name = "crossbeam-queue"
+version = "0.2.2"
+authors = [ "The Crossbeam Project Developers",]
+edition = "2018"
+license = "MIT AND BSD-2-Clause OR Apache-2.0 AND BSD-2-Clause"
+readme = "README.md"
+repository = "https://github.com/crossbeam-rs/crossbeam"
+homepage = "https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils"
+documentation = "https://docs.rs/crossbeam-queue"
+description = "Concurrent queues"
+keywords = [ "queue", "mpmc", "lock-free", "producer", "consumer",]
+categories = [ "concurrency", "data-structures",]
+
+[features]
+default = [ "std",]
+std = [ "alloc", "crossbeam-utils/std",]
+alloc = []
+nightly = [ "crossbeam-utils/nightly",]
+
+[dependencies]
+cfg-if = "0.1.10"
+bolero = "0.8.0"
+arbitrary = "1.3.2"
+
+[dev-dependencies]
+rand = "0.7.3"
+
+[dependencies.crossbeam-utils]
+version = "0.7"
+path = "../crossbeam-utils"
+default-features = false

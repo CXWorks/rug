@@ -1,0 +1,146 @@
+-----------------
+md5/src/compress.rs compress::op_f
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
+let mut p6 = 0u32; // None+u32
++compress::op_f(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_f(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_f(p0, p1, p2, p3, p4, p5, p6);
+-----------------
+md5/src/compress.rs compress::op_g
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
+let mut p6 = 0u32; // None+u32
++compress::op_g(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_g(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_g(p0, p1, p2, p3, p4, p5, p6);
+-----------------
+md5/src/compress.rs compress::op_h
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
+let mut p6 = 0u32; // None+u32
++compress::op_h(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_h(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_h(p0, p1, p2, p3, p4, p5, p6);
+-----------------
+md5/src/compress.rs compress::op_i
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
+let mut p6 = 0u32; // None+u32
++compress::op_i(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_i(p0, p1, p2, p3, p4, p5, p6);
++crate::compress::op_i(p0, p1, p2, p3, p4, p5, p6);
+-----------------
+md5/src/compress.rs compress::compress_block
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 4]
+let mut p1 = & [0u8;1]; // None+[u8; 64]
++compress::compress_block(p0, p1);
++crate::compress::compress_block(p0, p1);
++crate::compress::compress_block(p0, p1);
+-----------------
+md5/src/compress.rs compress::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 4]
+let mut p1 = & [[0u8;1]].as_mut_slice(); // None+[[u8; 64]]
++compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
+-----------------
+md5/src/lib.rs convert
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Md5Core as digest::core_api::BlockSizeUser>::BlockSize>]
++convert(p0);
++crate::convert(p0);
++crate::convert(p0);
+-----------------
+md5/src/lib.rs <Md5Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Md5Core
++p0.clone();
++<Md5Core as core::clone::Clone>::clone(p0);
++crate::<Md5Core as core::clone::Clone>::clone(p0);
++<Md5Core>::clone(p0);
+-----------------
+md5/src/lib.rs <Md5Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md5Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Md5Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Md5Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Md5Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Md5Core>::update_blocks(p0, p1);
+-----------------
+md5/src/lib.rs <Md5Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md5Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Md5Core as digest::core_api::BlockSizeUser>::BlockSize, <Md5Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Md5Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Md5Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Md5Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Md5Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+md5/src/lib.rs <Md5Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Md5Core as core::default::Default>::default();
++crate::<Md5Core as core::default::Default>::default();
++<Md5Core>::default();
+-----------------
+md5/src/lib.rs <Md5Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md5Core
++p0.reset();
++<Md5Core as digest::Reset>::reset(p0);
++crate::<Md5Core as digest::Reset>::reset(p0);
++<Md5Core>::reset(p0);
+-----------------
+md5/src/lib.rs <Md5Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Md5Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Md5Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Md5Core>::write_alg_name(p0);
+-----------------
+md5/src/lib.rs <Md5Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Md5Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Md5Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Md5Core as core::fmt::Debug>::fmt(p0, p1);
++<Md5Core>::fmt(p0, p1);

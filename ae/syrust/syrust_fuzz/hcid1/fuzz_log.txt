@@ -1,0 +1,4 @@
+hcid1 hcid {'error::tests_rug_10::test_rug': 'error__tests_rug_10__test_rug', 'error::tests_rug_11::test_rug': 'error__tests_rug_11__test_rug', 'tests_rug_14::test_hcid_encoding_config_new': 'tests_rug_14__test_hcid_encoding_config_new', 'tests_rug_15::test_hcid_encoding_new': 'tests_rug_15__test_hcid_encoding_new', 'tests_rug_16::test_with_kind': 'tests_rug_16__test_with_kind', 'util::tests_rug_3::test_rug': 'util__tests_rug_3__test_rug', 'util::tests_rug_5::test_char_lower': 'util__tests_rug_5__test_char_lower', 'util::tests_rug_6::test_char_upper': 'util__tests_rug_6__test_char_upper', 'util::tests_rug_7::test_rug': 'util__tests_rug_7__test_rug'}
+hcid1 hcid_js {}
+empty  hcid1/hcid-js/rust
+hcid1 done

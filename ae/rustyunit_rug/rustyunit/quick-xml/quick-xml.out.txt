@@ -1,0 +1,2683 @@
+-----------------
+src/escapei.rs escapei::to_escape
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++escapei::to_escape(p0);
++crate::escapei::to_escape(p0);
++crate::escapei::to_escape(p0);
+-----------------
+src/escapei.rs escapei::escape
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++escapei::escape(p0);
++crate::escapei::escape(p0);
++crate::escapei::escape(p0);
+-----------------
+src/escapei.rs escapei::to_partial_escape
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++escapei::to_partial_escape(p0);
++crate::escapei::to_partial_escape(p0);
++crate::escapei::to_partial_escape(p0);
+-----------------
+src/escapei.rs escapei::partial_escape
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++escapei::partial_escape(p0);
++crate::escapei::partial_escape(p0);
++crate::escapei::partial_escape(p0);
+-----------------
+src/escapei.rs escapei::_escape
+deps:{"escapei::_escape":{"F":["std::marker::Sized","std::ops::Fn"]},"std::ops::function::impls::<impl std::ops::Fn<A> for &F>":{}}
+candidates:{"escapei::_escape":{"F":["core::str::UnsafeBytesToStr","core::str::IsWhitespace","std::ops::function::impls::<impl std::ops::Fn<A> for &F>","core::str::CharEscapeDebugContinue","core::str::IsAsciiWhitespace","core::str::CharEscapeUnicode","core::str::CharEscapeDefault","core::slice::ascii::EscapeByte","core::str::LinesAnyMap","core::str::BytesIsNotEmpty","core::str::IsNotEmpty","std::boxed::Box<F, A>"]},"std::ops::function::impls::<impl std::ops::Fn<A> for &F>":{}}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++escapei::_escape(p0, p1);
++crate::escapei::_escape(p0, p1);
++crate::escapei::_escape(p0, p1);
+-----------------
+src/escapei.rs escapei::unescape
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++escapei::unescape(p0);
++crate::escapei::unescape(p0);
++crate::escapei::unescape(p0);
+-----------------
+src/escapei.rs escapei::unescape_with
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++escapei::unescape_with(p0, p1);
++crate::escapei::unescape_with(p0, p1);
++crate::escapei::unescape_with(p0, p1);
+-----------------
+src/escapei.rs escapei::do_unescape
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++escapei::do_unescape(p0, p1);
++crate::escapei::do_unescape(p0, p1);
++crate::escapei::do_unescape(p0, p1);
+-----------------
+src/escapei.rs escapei::named_entity
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++escapei::named_entity(p0);
++crate::escapei::named_entity(p0);
++crate::escapei::named_entity(p0);
+-----------------
+src/escapei.rs escapei::push_utf8
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
+let mut p1 = 'a'; // None+char
++escapei::push_utf8(p0, p1);
++crate::escapei::push_utf8(p0, p1);
++crate::escapei::push_utf8(p0, p1);
+-----------------
+src/escapei.rs escapei::parse_number
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
++escapei::parse_number(p0, p1);
++crate::escapei::parse_number(p0, p1);
++crate::escapei::parse_number(p0, p1);
+-----------------
+src/escapei.rs escapei::parse_hexadecimal
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++escapei::parse_hexadecimal(p0);
++crate::escapei::parse_hexadecimal(p0);
++crate::escapei::parse_hexadecimal(p0);
+-----------------
+src/escapei.rs escapei::parse_decimal
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++escapei::parse_decimal(p0);
++crate::escapei::parse_decimal(p0);
++crate::escapei::parse_decimal(p0);
+-----------------
+src/reader.rs reader::is_whitespace
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++reader::is_whitespace(p0);
++crate::reader::is_whitespace(p0);
++crate::reader::is_whitespace(p0);
+-----------------
+src/utils.rs utils::write_cow_string
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // std::borrow::Cow<'_, [u8]>
++utils::write_cow_string(p0, p1);
++crate::utils::write_cow_string(p0, p1);
++crate::utils::write_cow_string(p0, p1);
+-----------------
+src/utils.rs utils::write_byte_string
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++utils::write_byte_string(p0, p1);
++crate::utils::write_byte_string(p0, p1);
++crate::utils::write_byte_string(p0, p1);
+-----------------
+src/reader.rs reader::XmlSource::read_bytes_until
+'r
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::BufRead","std::marker::Sized"]},"reader::XmlSource::read_bytes_until":{"B":["std::marker::Sized"],"Self":["reader::XmlSource"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Cursor<T>","std::io::BufReader<R>","std::io::StdinLock<'_>","std::io::Empty","std::boxed::Box<B>","std::io::Take<T>"]},"reader::XmlSource::read_bytes_until":{"B":["RUG_ANY"],"Self":["<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = 0u8; // None+u8
+let mut p2 = MaybeUninit::uninit().assume_init(); // B
+let mut p3 = &mut 0usize; // None+usize
++p0.read_bytes_until(p1, p2, p3);
++reader::XmlSource::read_bytes_until(p0, p1, p2, p3);
++crate::reader::XmlSource::read_bytes_until(p0, p1, p2, p3);
++crate::reader::XmlSource::read_bytes_until(p0, p1, p2, p3);
+-----------------
+src/reader.rs reader::XmlSource::read_bang_element
+'r
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::BufRead","std::marker::Sized"]},"reader::XmlSource::read_bang_element":{"B":["std::marker::Sized"],"Self":["reader::XmlSource"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::Cursor<T>","std::io::BufReader<R>","std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::boxed::Box<B>","std::io::Take<T>","std::io::Empty"]},"reader::XmlSource::read_bang_element":{"B":["RUG_ANY"],"Self":["<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = MaybeUninit::uninit().assume_init(); // B
+let mut p2 = &mut 0usize; // None+usize
++p0.read_bang_element(p1, p2);
++reader::XmlSource::read_bang_element(p0, p1, p2);
++crate::reader::XmlSource::read_bang_element(p0, p1, p2);
++crate::reader::XmlSource::read_bang_element(p0, p1, p2);
+-----------------
+src/reader.rs reader::XmlSource::read_element
+'r
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::marker::Sized","std::io::BufRead"]},"reader::XmlSource::read_element":{"B":["std::marker::Sized"],"Self":["reader::XmlSource"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::Empty","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Take<T>","std::io::Chain<T, U>","std::io::BufReader<R>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::Cursor<T>"]},"reader::XmlSource::read_element":{"B":["RUG_ANY"],"Self":["<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = MaybeUninit::uninit().assume_init(); // B
+let mut p2 = &mut 0usize; // None+usize
++p0.read_element(p1, p2);
++reader::XmlSource::read_element(p0, p1, p2);
++crate::reader::XmlSource::read_element(p0, p1, p2);
++crate::reader::XmlSource::read_element(p0, p1, p2);
+-----------------
+src/reader.rs reader::XmlSource::skip_whitespace
+'r
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::marker::Sized","std::io::BufRead"]},"reader::XmlSource::skip_whitespace":{"B":["std::marker::Sized"],"Self":["reader::XmlSource"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::Cursor<T>","std::io::Empty","std::io::BufReader<R>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::io::Take<T>","std::boxed::Box<B>","std::io::StdinLock<'_>"]},"reader::XmlSource::skip_whitespace":{"B":["RUG_ANY"],"Self":["<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = &mut 0usize; // None+usize
++p0.skip_whitespace(p1);
++reader::XmlSource::skip_whitespace(p0, p1);
++crate::reader::XmlSource::skip_whitespace(p0, p1);
++crate::reader::XmlSource::skip_whitespace(p0, p1);
+-----------------
+src/reader.rs reader::XmlSource::skip_one
+'r
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::BufRead","std::marker::Sized"]},"reader::XmlSource::skip_one":{"B":["std::marker::Sized"],"Self":["reader::XmlSource"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::io::Take<T>","std::boxed::Box<B>","std::io::StdinLock<'_>","std::io::Cursor<T>","std::io::BufReader<R>","std::io::Chain<T, U>"]},"reader::XmlSource::skip_one":{"B":["RUG_ANY"],"Self":["<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = 0u8; // None+u8
+let mut p2 = &mut 0usize; // None+usize
++p0.skip_one(p1, p2);
++reader::XmlSource::skip_one(p0, p1, p2);
++crate::reader::XmlSource::skip_one(p0, p1, p2);
++crate::reader::XmlSource::skip_one(p0, p1, p2);
+-----------------
+src/reader.rs reader::XmlSource::peek_one
+'r
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::BufRead","std::marker::Sized"]},"reader::XmlSource::peek_one":{"B":["std::marker::Sized"],"Self":["reader::XmlSource"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>":{"R":["std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::io::Chain<T, U>","std::boxed::Box<B>","std::io::Take<T>","std::io::BufReader<R>","std::io::Cursor<T>"]},"reader::XmlSource::peek_one":{"B":["RUG_ANY"],"Self":["<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
++p0.peek_one();
++reader::XmlSource::peek_one(p0);
++crate::reader::XmlSource::peek_one(p0);
++crate::reader::XmlSource::peek_one(p0);
+-----------------
+src/errors.rs <errors::Error as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // errors::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<errors::Error as std::fmt::Debug>::fmt(p0, p1);
++crate::<errors::Error as std::fmt::Debug>::fmt(p0, p1);
++<errors::Error>::fmt(p0, p1);
+-----------------
+src/errors.rs <errors::Error as std::convert::From<std::io::Error>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::io::Error
++<errors::Error as std::convert::From<std::io::Error>>::from(p0);
++crate::<errors::Error as std::convert::From<std::io::Error>>::from(p0);
++<errors::Error>::from(p0);
+-----------------
+src/errors.rs <errors::Error as std::convert::From<std::str::Utf8Error>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::str::Utf8Error
++<errors::Error as std::convert::From<std::str::Utf8Error>>::from(p0);
++crate::<errors::Error as std::convert::From<std::str::Utf8Error>>::from(p0);
++<errors::Error>::from(p0);
+-----------------
+src/errors.rs <errors::Error as std::convert::From<escapei::EscapeError>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // escapei::EscapeError
++<errors::Error as std::convert::From<escapei::EscapeError>>::from(p0);
++crate::<errors::Error as std::convert::From<escapei::EscapeError>>::from(p0);
++<errors::Error>::from(p0);
+-----------------
+src/errors.rs <errors::Error as std::convert::From<events::attributes::AttrError>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::attributes::AttrError
++<errors::Error as std::convert::From<events::attributes::AttrError>>::from(p0);
++crate::<errors::Error as std::convert::From<events::attributes::AttrError>>::from(p0);
++<errors::Error>::from(p0);
+-----------------
+src/errors.rs <errors::Error as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // errors::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<errors::Error as std::fmt::Display>::fmt(p0, p1);
++crate::<errors::Error as std::fmt::Display>::fmt(p0, p1);
++<errors::Error>::fmt(p0, p1);
+-----------------
+src/errors.rs <errors::Error as std::error::Error>::source
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // errors::Error
++p0.source();
++<errors::Error as std::error::Error>::source(p0);
++crate::<errors::Error as std::error::Error>::source(p0);
++<errors::Error>::source(p0);
+-----------------
+src/escapei.rs <escapei::EscapeError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // escapei::EscapeError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<escapei::EscapeError as std::fmt::Debug>::fmt(p0, p1);
++crate::<escapei::EscapeError as std::fmt::Debug>::fmt(p0, p1);
++<escapei::EscapeError>::fmt(p0, p1);
+-----------------
+src/escapei.rs <escapei::EscapeError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // escapei::EscapeError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<escapei::EscapeError as std::fmt::Display>::fmt(p0, p1);
++crate::<escapei::EscapeError as std::fmt::Display>::fmt(p0, p1);
++<escapei::EscapeError>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attribute<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
++p0.clone();
++<events::attributes::Attribute<'a> as std::clone::Clone>::clone(p0);
++crate::<events::attributes::Attribute<'a> as std::clone::Clone>::clone(p0);
++<events::attributes::Attribute<'a>>::clone(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attribute<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
++p0.eq(p1);
++<events::attributes::Attribute<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::attributes::Attribute<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::attributes::Attribute<'a>>::eq(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::unescaped_value
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
++p0.unescaped_value();
++events::attributes::Attribute::<'a>::unescaped_value(p0);
++crate::events::attributes::Attribute::<'a>::unescaped_value(p0);
++<events::attributes::Attribute<'a>>::unescaped_value(p0);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::unescaped_value_with_custom_entities
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescaped_value_with_custom_entities(p1);
++events::attributes::Attribute::<'a>::unescaped_value_with_custom_entities(p0, p1);
++crate::events::attributes::Attribute::<'a>::unescaped_value_with_custom_entities(p0, p1);
++<events::attributes::Attribute<'a>>::unescaped_value_with_custom_entities(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::make_unescaped_value
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.make_unescaped_value(p1);
++events::attributes::Attribute::<'a>::make_unescaped_value(p0, p1);
++crate::events::attributes::Attribute::<'a>::make_unescaped_value(p0, p1);
++<events::attributes::Attribute<'a>>::make_unescaped_value(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::unescape_and_decode_value
+'a
+deps:{"events::attributes::Attribute::<'a>::unescape_and_decode_value":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::attributes::Attribute::<'a>::unescape_and_decode_value":{"B":["std::io::BufReader<R>","std::io::Cursor<T>","std::io::Take<T>","std::boxed::Box<B>","std::io::StdinLock<'_>","std::io::Empty","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
++p0.unescape_and_decode_value(p1);
++events::attributes::Attribute::<'a>::unescape_and_decode_value(p0, p1);
++crate::events::attributes::Attribute::<'a>::unescape_and_decode_value(p0, p1);
++<events::attributes::Attribute<'a>>::unescape_and_decode_value(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::unescape_and_decode_value_with_custom_entities
+'a
+deps:{"events::attributes::Attribute::<'a>::unescape_and_decode_value_with_custom_entities":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::attributes::Attribute::<'a>::unescape_and_decode_value_with_custom_entities":{"B":["std::io::Take<T>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>","std::io::BufReader<R>","std::io::Empty","std::io::Cursor<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescape_and_decode_value_with_custom_entities(p1, p2);
++events::attributes::Attribute::<'a>::unescape_and_decode_value_with_custom_entities(p0, p1, p2);
++crate::events::attributes::Attribute::<'a>::unescape_and_decode_value_with_custom_entities(p0, p1, p2);
++<events::attributes::Attribute<'a>>::unescape_and_decode_value_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::do_unescape_and_decode_value
+'a
+deps:{"events::attributes::Attribute::<'a>::do_unescape_and_decode_value":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::attributes::Attribute::<'a>::do_unescape_and_decode_value":{"B":["std::boxed::Box<B>","std::io::Empty","std::io::BufReader<R>","std::io::Take<T>","std::io::Chain<T, U>","std::io::Cursor<T>","std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.do_unescape_and_decode_value(p1, p2);
++events::attributes::Attribute::<'a>::do_unescape_and_decode_value(p0, p1, p2);
++crate::events::attributes::Attribute::<'a>::do_unescape_and_decode_value(p0, p1, p2);
++<events::attributes::Attribute<'a>>::do_unescape_and_decode_value(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::unescape_and_decode_without_bom
+'a
+deps:{"events::attributes::Attribute::<'a>::unescape_and_decode_without_bom":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::attributes::Attribute::<'a>::unescape_and_decode_without_bom":{"B":["std::io::Take<T>","std::io::BufReader<R>","std::io::Empty","std::io::Cursor<T>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::boxed::Box<B>","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
++p0.unescape_and_decode_without_bom(p1);
++events::attributes::Attribute::<'a>::unescape_and_decode_without_bom(p0, p1);
++crate::events::attributes::Attribute::<'a>::unescape_and_decode_without_bom(p0, p1);
++<events::attributes::Attribute<'a>>::unescape_and_decode_without_bom(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::unescape_and_decode_without_bom_with_custom_entities
+'a
+deps:{"events::attributes::Attribute::<'a>::unescape_and_decode_without_bom_with_custom_entities":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::attributes::Attribute::<'a>::unescape_and_decode_without_bom_with_custom_entities":{"B":["std::io::impls::<impl std::io::BufRead for &mut B>","std::io::BufReader<R>","std::io::Empty","std::io::StdinLock<'_>","std::io::Cursor<T>","std::io::Take<T>","std::boxed::Box<B>","std::io::Chain<T, U>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescape_and_decode_without_bom_with_custom_entities(p1, p2);
++events::attributes::Attribute::<'a>::unescape_and_decode_without_bom_with_custom_entities(p0, p1, p2);
++crate::events::attributes::Attribute::<'a>::unescape_and_decode_without_bom_with_custom_entities(p0, p1, p2);
++<events::attributes::Attribute<'a>>::unescape_and_decode_without_bom_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::Attribute::<'a>::do_unescape_and_decode_without_bom
+'a
+deps:{"events::attributes::Attribute::<'a>::do_unescape_and_decode_without_bom":{"B":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::attributes::Attribute::<'a>::do_unescape_and_decode_without_bom":{"B":["std::io::BufReader<R>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::Empty","std::io::Cursor<T>","std::io::Take<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.do_unescape_and_decode_without_bom(p1, p2);
++events::attributes::Attribute::<'a>::do_unescape_and_decode_without_bom(p0, p1, p2);
++crate::events::attributes::Attribute::<'a>::do_unescape_and_decode_without_bom(p0, p1, p2);
++<events::attributes::Attribute<'a>>::do_unescape_and_decode_without_bom(p0, p1, p2);
+-----------------
+src/events/attributes.rs <events::attributes::Attribute<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attribute<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::attributes::Attribute<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::attributes::Attribute<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::attributes::Attribute<'a>>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attribute<'a> as std::convert::From<(&'a [u8], &'a [u8])>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // (&'a [u8], &'a [u8])
++<events::attributes::Attribute<'a> as std::convert::From<(&'a [u8], &'a [u8])>>::from(p0);
++crate::<events::attributes::Attribute<'a> as std::convert::From<(&'a [u8], &'a [u8])>>::from(p0);
++<events::attributes::Attribute<'a>>::from(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attribute<'a> as std::convert::From<(&'a str, &'a str)>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // (&'a str, &'a str)
++<events::attributes::Attribute<'a> as std::convert::From<(&'a str, &'a str)>>::from(p0);
++crate::<events::attributes::Attribute<'a> as std::convert::From<(&'a str, &'a str)>>::from(p0);
++<events::attributes::Attribute<'a>>::from(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attribute<'a> as std::convert::From<events::attributes::Attr<&'a [u8]>>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::attributes::Attr<&'a [u8]>
++<events::attributes::Attribute<'a> as std::convert::From<events::attributes::Attr<&'a [u8]>>>::from(p0);
++crate::<events::attributes::Attribute<'a> as std::convert::From<events::attributes::Attr<&'a [u8]>>>::from(p0);
++<events::attributes::Attribute<'a>>::from(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attributes<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attributes<'a>
++p0.clone();
++<events::attributes::Attributes<'a> as std::clone::Clone>::clone(p0);
++crate::<events::attributes::Attributes<'a> as std::clone::Clone>::clone(p0);
++<events::attributes::Attributes<'a>>::clone(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attributes<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attributes<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::attributes::Attributes<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::attributes::Attributes<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::attributes::Attributes<'a>>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attributes::<'a>::new
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = 0usize; // None+usize
++events::attributes::Attributes::<'a>::new(p0, p1);
++crate::events::attributes::Attributes::<'a>::new(p0, p1);
++<events::attributes::Attributes<'a>>::new(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attributes::<'a>::html
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = 0usize; // None+usize
++events::attributes::Attributes::<'a>::html(p0, p1);
++crate::events::attributes::Attributes::<'a>::html(p0, p1);
++<events::attributes::Attributes<'a>>::html(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attributes::<'a>::with_checks
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::Attributes<'a>
+let mut p1 = true; // None+bool
++p0.with_checks(p1);
++events::attributes::Attributes::<'a>::with_checks(p0, p1);
++crate::events::attributes::Attributes::<'a>::with_checks(p0, p1);
++<events::attributes::Attributes<'a>>::with_checks(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attributes<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::Attributes<'a>
++p0.next();
++<events::attributes::Attributes<'a> as std::iter::Iterator>::next(p0);
++crate::<events::attributes::Attributes<'a> as std::iter::Iterator>::next(p0);
++<events::attributes::Attributes<'a>>::next(p0);
+-----------------
+src/events/attributes.rs <events::attributes::AttrError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::AttrError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::attributes::AttrError as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::attributes::AttrError as std::fmt::Debug>::fmt(p0, p1);
++<events::attributes::AttrError>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::AttrError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::AttrError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::attributes::AttrError
++p0.eq(p1);
++<events::attributes::AttrError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::attributes::AttrError as std::cmp::PartialEq>::eq(p0, p1);
++<events::attributes::AttrError>::eq(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::AttrError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::AttrError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<events::attributes::AttrError as std::fmt::Display>::fmt(p0, p1);
++crate::<events::attributes::AttrError as std::fmt::Display>::fmt(p0, p1);
++<events::attributes::AttrError>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::clone::Clone>::clone
+deps:{"<events::attributes::Attr<T> as std::clone::Clone>::clone":{"T":["std::clone::Clone","std::marker::Sized"]},"events::attributes::Attr":{"T":["std::marker::Sized","std::cmp::PartialOrd","std::cmp::PartialEq","std::clone::Clone","std::cmp::Ord","std::hash::Hash","std::convert::AsRef","std::cmp::Eq"]},"reader::Reader":{"R":["std::clone::Clone","std::marker::Sized","std::io::BufRead"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"writer::Writer":{"W":["std::clone::Clone","std::marker::Sized","std::io::Write"]}}
+candidates:{"<events::attributes::Attr<T> as std::clone::Clone>::clone":{"T":["reader::Decoder","reader::TagState","events::attributes::Attribute","std::clone::impls::<impl std::clone::Clone for *mut T>","events::BytesStart","std::clone::impls::<impl std::clone::Clone for *const T>","writer::Writer","reader::NamespaceResolver","events::BytesText","events::attributes::Attributes","events::BytesDecl","events::Event","events::BytesCData","reader::NamespaceEntry","events::attributes::Attr","writer::Indentation","reader::ReadElementState","events::BytesEnd","reader::Reader","events::attributes::IterState","events::attributes::State"]},"events::attributes::Attr":{"T":["std::sync::Arc<T>","std::boxed::Box<T, A>","std::ffi::CString","std::rc::Rc<T>"]},"reader::Reader":{"R":["std::io::Empty","std::io::Cursor<T>"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"writer::Writer":{"W":["std::io::Sink"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
++p0.clone();
++<events::attributes::Attr<T> as std::clone::Clone>::clone(p0);
++crate::<events::attributes::Attr<T> as std::clone::Clone>::clone(p0);
++<events::attributes::Attr<T>>::clone(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::cmp::PartialEq>::eq
+deps:{"<events::attributes::Attr<T> as std::cmp::PartialEq>::eq":{"T":["std::cmp::PartialEq","std::marker::Sized"]},"events::attributes::Attr":{"T":["std::cmp::Eq","std::cmp::PartialOrd","std::cmp::Ord","std::convert::AsRef","std::cmp::PartialEq","std::clone::Clone","std::marker::Sized","std::hash::Hash"]},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+candidates:{"<events::attributes::Attr<T> as std::cmp::PartialEq>::eq":{"T":["std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>","events::attributes::AttrError","events::Event","std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>","utils::Bytes","events::BytesText","utils::ByteBuf","events::BytesDecl","events::attributes::Attr","reader::BangType","events::BytesStart","events::BytesCData","events::BytesEnd","events::attributes::Attribute"]},"events::attributes::Attr":{"T":["std::sync::Arc<T>","std::rc::Rc<T>","std::boxed::Box<T, A>","std::ffi::CString"]},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
++p0.eq(p1);
++<events::attributes::Attr<T> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::attributes::Attr<T> as std::cmp::PartialEq>::eq(p0, p1);
++<events::attributes::Attr<T>>::eq(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{"<events::attributes::Attr<T> as std::cmp::Eq>::assert_receiver_is_total_eq":{"T":["std::marker::Sized","std::cmp::Eq"]},"events::attributes::Attr":{"T":["std::marker::Sized","std::cmp::Ord","std::cmp::PartialEq","std::cmp::Eq","std::hash::Hash","std::convert::AsRef","std::cmp::PartialOrd","std::clone::Clone"]},"std::cmp::impls::<impl std::cmp::Eq for &A>":{},"std::cmp::impls::<impl std::cmp::Eq for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::Eq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>":{}}
+candidates:{"<events::attributes::Attr<T> as std::cmp::Eq>::assert_receiver_is_total_eq":{"T":["events::Event","events::attributes::Attr","std::cmp::impls::<impl std::cmp::Eq for &mut A>","events::BytesText","events::BytesDecl","events::BytesCData","events::BytesEnd","events::BytesStart"]},"events::attributes::Attr":{"T":["std::sync::Arc<T>","std::boxed::Box<T, A>","std::ffi::CString","std::rc::Rc<T>"]},"std::cmp::impls::<impl std::cmp::Eq for &A>":{},"std::cmp::impls::<impl std::cmp::Eq for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::Eq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Eq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
++p0.assert_receiver_is_total_eq();
++<events::attributes::Attr<T> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::attributes::Attr<T> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::attributes::Attr<T>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::cmp::PartialOrd>::partial_cmp
+deps:{"<events::attributes::Attr<T> as std::cmp::PartialOrd>::partial_cmp":{"T":["std::marker::Sized","std::cmp::PartialOrd"]},"events::attributes::Attr":{"T":["std::hash::Hash","std::clone::Clone","std::convert::AsRef","std::cmp::PartialEq","std::cmp::Eq","std::cmp::Ord","std::cmp::PartialOrd","std::marker::Sized"]},"std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>":{}}
+candidates:{"<events::attributes::Attr<T> as std::cmp::PartialOrd>::partial_cmp":{"T":["std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>","events::attributes::Attr","std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>"]},"events::attributes::Attr":{"T":["std::boxed::Box<T, A>","std::ffi::CString","std::rc::Rc<T>","std::sync::Arc<T>"]},"std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
++p0.partial_cmp(p1);
++<events::attributes::Attr<T> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<events::attributes::Attr<T> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<events::attributes::Attr<T>>::partial_cmp(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::cmp::Ord>::cmp
+deps:{"<events::attributes::Attr<T> as std::cmp::Ord>::cmp":{"T":["std::marker::Sized","std::cmp::Ord"]},"events::attributes::Attr":{"T":["std::cmp::Eq","std::marker::Sized","std::hash::Hash","std::convert::AsRef","std::cmp::Ord","std::cmp::PartialEq","std::clone::Clone","std::cmp::PartialOrd"]},"std::cmp::impls::<impl std::cmp::Ord for &A>":{},"std::cmp::impls::<impl std::cmp::Ord for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{}}
+candidates:{"<events::attributes::Attr<T> as std::cmp::Ord>::cmp":{"T":["events::attributes::Attr","std::cmp::impls::<impl std::cmp::Ord for &mut A>","std::ptr::const_ptr::<impl std::cmp::Ord for *const T>"]},"events::attributes::Attr":{"T":["std::rc::Rc<T>","std::ffi::CString","std::sync::Arc<T>","std::boxed::Box<T, A>"]},"std::cmp::impls::<impl std::cmp::Ord for &A>":{},"std::cmp::impls::<impl std::cmp::Ord for &mut A>":{},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
++p0.cmp(p1);
++<events::attributes::Attr<T> as std::cmp::Ord>::cmp(p0, p1);
++crate::<events::attributes::Attr<T> as std::cmp::Ord>::cmp(p0, p1);
++<events::attributes::Attr<T>>::cmp(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<events::attributes::Attr<T> as std::hash::Hash>::hash":{"T":["std::marker::Sized","std::hash::Hash"],"__H":["std::marker::Sized","std::hash::Hasher"]},"events::attributes::Attr":{"T":["std::convert::AsRef","std::cmp::PartialOrd","std::clone::Clone","std::marker::Sized","std::cmp::Eq","std::cmp::Ord","std::cmp::PartialEq","std::hash::Hash"]},"std::hash::impls::<impl std::hash::Hash for &T>":{},"std::hash::impls::<impl std::hash::Hash for &mut T>":{},"std::hash::impls::<impl std::hash::Hash for *const T>":{},"std::hash::impls::<impl std::hash::Hash for *mut T>":{}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<events::attributes::Attr<T> as std::hash::Hash>::hash":{"T":["std::hash::impls::<impl std::hash::Hash for &T>","std::hash::impls::<impl std::hash::Hash for *mut T>","events::attributes::Attr"],"__H":["<&mut H as std::hash::Hasher>","std::collections::hash_map::DefaultHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","std::hash::SipHasher13","std::hash::SipHasher"]},"events::attributes::Attr":{"T":["std::boxed::Box<T, A>","std::ffi::CString","std::sync::Arc<T>","std::rc::Rc<T>"]},"std::hash::impls::<impl std::hash::Hash for &T>":{},"std::hash::impls::<impl std::hash::Hash for &mut T>":{},"std::hash::impls::<impl std::hash::Hash for *const T>":{},"std::hash::impls::<impl std::hash::Hash for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<events::attributes::Attr<T> as std::hash::Hash>::hash(p0, p1);
++crate::<events::attributes::Attr<T> as std::hash::Hash>::hash(p0, p1);
++<events::attributes::Attr<T>>::hash(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attr::<T>::map
+deps:{"events::attributes::Attr::<T>::map":{"F":["std::marker::Sized","std::ops::FnMut"],"T":["std::marker::Sized"],"U":["std::marker::Sized"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"events::attributes::Attr::<T>::map":{"F":["core::str::IsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>","core::str::LinesAnyMap","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::str::CharEscapeDefault","core::str::UnsafeBytesToStr","core::str::IsWhitespace","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::CharEscapeDebugContinue","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::slice::ascii::EscapeByte","core::str::BytesIsNotEmpty","core::str::IsAsciiWhitespace","std::boxed::Box<F, A>"],"T":["RUG_ANY"],"U":["RUG_ANY"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++p0.map(p1);
++events::attributes::Attr::<T>::map(p0, p1);
++crate::events::attributes::Attr::<T>::map(p0, p1);
++<events::attributes::Attr<T>>::map(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::Attr::<&'a [u8]>::key
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<&'a [u8]>
++p0.key();
++events::attributes::Attr::<&'a [u8]>::key(p0);
++crate::events::attributes::Attr::<&'a [u8]>::key(p0);
++<events::attributes::Attr<&'a [u8]>>::key(p0);
+-----------------
+src/events/attributes.rs events::attributes::Attr::<&'a [u8]>::value
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<&'a [u8]>
++p0.value();
++events::attributes::Attr::<&'a [u8]>::value(p0);
++crate::events::attributes::Attr::<&'a [u8]>::value(p0);
++<events::attributes::Attr<&'a [u8]>>::value(p0);
+-----------------
+src/events/attributes.rs <events::attributes::Attr<T> as std::fmt::Debug>::fmt
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<events::attributes::Attr<T> as std::fmt::Debug>::fmt":{"T":["std::marker::Sized","std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<events::attributes::Attr<T> as std::fmt::Debug>::fmt":{"T":["<&T as std::convert::AsRef<U>>","events::Event"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::attributes::Attr<T> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::attributes::Attr<T> as std::fmt::Debug>::fmt(p0, p1);
++<events::attributes::Attr<T>>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::<impl std::convert::From<events::attributes::Attr<T>> for (T, std::option::Option<T>)>::from
+deps:{"events::attributes::<impl std::convert::From<events::attributes::Attr<T>> for (T, std::option::Option<T>)>::from":{"T":["std::marker::Sized"]}}
+candidates:{"events::attributes::<impl std::convert::From<events::attributes::Attr<T>> for (T, std::option::Option<T>)>::from":{"T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::attributes::Attr<T>
++events::attributes::<impl std::convert::From<events::attributes::Attr<T>> for (T, std::option::Option<T>)>::from(p0);
++crate::events::attributes::<impl std::convert::From<events::attributes::Attr<T>> for (T, std::option::Option<T>)>::from(p0);
++<(T, std::option::Option<T>)>::from(p0);
+-----------------
+src/events/attributes.rs <events::attributes::State as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::State
++p0.clone();
++<events::attributes::State as std::clone::Clone>::clone(p0);
++crate::<events::attributes::State as std::clone::Clone>::clone(p0);
++<events::attributes::State>::clone(p0);
+-----------------
+src/events/attributes.rs <events::attributes::State as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::State
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::attributes::State as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::attributes::State as std::fmt::Debug>::fmt(p0, p1);
++<events::attributes::State>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs <events::attributes::IterState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::IterState
++p0.clone();
++<events::attributes::IterState as std::clone::Clone>::clone(p0);
++crate::<events::attributes::IterState as std::clone::Clone>::clone(p0);
++<events::attributes::IterState>::clone(p0);
+-----------------
+src/events/attributes.rs <events::attributes::IterState as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::attributes::IterState as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::attributes::IterState as std::fmt::Debug>::fmt(p0, p1);
++<events::attributes::IterState>::fmt(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::IterState::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
+let mut p1 = true; // None+bool
++events::attributes::IterState::new(p0, p1);
++crate::events::attributes::IterState::new(p0, p1);
++<events::attributes::IterState>::new(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::IterState::recover
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.recover(p1);
++events::attributes::IterState::recover(p0, p1);
++crate::events::attributes::IterState::recover(p0, p1);
++<events::attributes::IterState>::recover(p0, p1);
+-----------------
+src/events/attributes.rs events::attributes::IterState::skip_value
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = 0usize; // None+usize
++p0.skip_value(p1, p2);
++events::attributes::IterState::skip_value(p0, p1, p2);
++crate::events::attributes::IterState::skip_value(p0, p1, p2);
++<events::attributes::IterState>::skip_value(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::IterState::skip_eq_value
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = 0usize; // None+usize
++p0.skip_eq_value(p1, p2);
++events::attributes::IterState::skip_eq_value(p0, p1, p2);
++crate::events::attributes::IterState::skip_eq_value(p0, p1, p2);
++<events::attributes::IterState>::skip_eq_value(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::IterState::check_for_duplicates
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
++p0.check_for_duplicates(p1, p2);
++events::attributes::IterState::check_for_duplicates(p0, p1, p2);
++crate::events::attributes::IterState::check_for_duplicates(p0, p1, p2);
++<events::attributes::IterState>::check_for_duplicates(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::IterState::key_only
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
+let mut p3 = 0usize; // None+usize
++p0.key_only(p1, p2, p3);
++events::attributes::IterState::key_only(p0, p1, p2, p3);
++crate::events::attributes::IterState::key_only(p0, p1, p2, p3);
++<events::attributes::IterState>::key_only(p0, p1, p2, p3);
+-----------------
+src/events/attributes.rs events::attributes::IterState::double_q
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
++p0.double_q(p1, p2);
++events::attributes::IterState::double_q(p0, p1, p2);
++crate::events::attributes::IterState::double_q(p0, p1, p2);
++<events::attributes::IterState>::double_q(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::IterState::single_q
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::ops::Range<usize>
++p0.single_q(p1, p2);
++events::attributes::IterState::single_q(p0, p1, p2);
++crate::events::attributes::IterState::single_q(p0, p1, p2);
++<events::attributes::IterState>::single_q(p0, p1, p2);
+-----------------
+src/events/attributes.rs events::attributes::IterState::next
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::attributes::IterState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.next(p1);
++events::attributes::IterState::next(p0, p1);
++crate::events::attributes::IterState::next(p0, p1);
++<events::attributes::IterState>::next(p0, p1);
+-----------------
+src/events/mod.rs <events::BytesStart<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.clone();
++<events::BytesStart<'a> as std::clone::Clone>::clone(p0);
++crate::<events::BytesStart<'a> as std::clone::Clone>::clone(p0);
++<events::BytesStart<'a>>::clone(p0);
+-----------------
+src/events/mod.rs <events::BytesStart<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.assert_receiver_is_total_eq();
++<events::BytesStart<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::BytesStart<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::BytesStart<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/mod.rs <events::BytesStart<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.eq(p1);
++<events::BytesStart<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::BytesStart<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::BytesStart<'a>>::eq(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::borrowed
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = 0usize; // None+usize
++events::BytesStart::<'a>::borrowed(p0, p1);
++crate::events::BytesStart::<'a>::borrowed(p0, p1);
++<events::BytesStart<'a>>::borrowed(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::borrowed_name
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++events::BytesStart::<'a>::borrowed_name(p0);
++crate::events::BytesStart::<'a>::borrowed_name(p0);
++<events::BytesStart<'a>>::borrowed_name(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::owned
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesStart::<'a>::owned":{"C":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesStart::<'a>::owned":{"C":["std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // C
+let mut p1 = 0usize; // None+usize
++events::BytesStart::<'a>::owned(p0, p1);
++crate::events::BytesStart::<'a>::owned(p0, p1);
++<events::BytesStart<'a>>::owned(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::owned_name
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesStart::<'a>::owned_name":{"C":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesStart::<'a>::owned_name":{"C":["std::sync::mpmc::select::Selected","std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // C
++events::BytesStart::<'a>::owned_name(p0);
++crate::events::BytesStart::<'a>::owned_name(p0);
++<events::BytesStart<'a>>::owned_name(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.into_owned();
++events::BytesStart::<'a>::into_owned(p0);
++crate::events::BytesStart::<'a>::into_owned(p0);
++<events::BytesStart<'a>>::into_owned(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::to_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.to_owned();
++events::BytesStart::<'a>::to_owned(p0);
++crate::events::BytesStart::<'a>::to_owned(p0);
++<events::BytesStart<'a>>::to_owned(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::to_borrowed
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.to_borrowed();
++events::BytesStart::<'a>::to_borrowed(p0);
++crate::events::BytesStart::<'a>::to_borrowed(p0);
++<events::BytesStart<'a>>::to_borrowed(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::to_end
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.to_end();
++events::BytesStart::<'a>::to_end(p0);
++crate::events::BytesStart::<'a>::to_end(p0);
++<events::BytesStart<'a>>::to_end(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::name
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.name();
++events::BytesStart::<'a>::name(p0);
++crate::events::BytesStart::<'a>::name(p0);
++<events::BytesStart<'a>>::name(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::local_name
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.local_name();
++events::BytesStart::<'a>::local_name(p0);
++crate::events::BytesStart::<'a>::local_name(p0);
++<events::BytesStart<'a>>::local_name(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::unescaped
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.unescaped();
++events::BytesStart::<'a>::unescaped(p0);
++crate::events::BytesStart::<'a>::unescaped(p0);
++<events::BytesStart<'a>>::unescaped(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::unescaped_with_custom_entities
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescaped_with_custom_entities(p1);
++events::BytesStart::<'a>::unescaped_with_custom_entities(p0, p1);
++crate::events::BytesStart::<'a>::unescaped_with_custom_entities(p0, p1);
++<events::BytesStart<'a>>::unescaped_with_custom_entities(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::make_unescaped
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.make_unescaped(p1);
++events::BytesStart::<'a>::make_unescaped(p0, p1);
++crate::events::BytesStart::<'a>::make_unescaped(p0, p1);
++<events::BytesStart<'a>>::make_unescaped(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::unescape_and_decode
+'a
+deps:{"events::BytesStart::<'a>::unescape_and_decode":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesStart::<'a>::unescape_and_decode":{"B":["std::io::Cursor<T>","std::boxed::Box<B>","std::io::Empty","std::io::Take<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
++p0.unescape_and_decode(p1);
++events::BytesStart::<'a>::unescape_and_decode(p0, p1);
++crate::events::BytesStart::<'a>::unescape_and_decode(p0, p1);
++<events::BytesStart<'a>>::unescape_and_decode(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::unescape_and_decode_with_custom_entities
+'a
+deps:{"events::BytesStart::<'a>::unescape_and_decode_with_custom_entities":{"B":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesStart::<'a>::unescape_and_decode_with_custom_entities":{"B":["std::io::BufReader<R>","std::io::Take<T>","std::io::Empty","std::boxed::Box<B>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::Cursor<T>","std::io::Chain<T, U>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescape_and_decode_with_custom_entities(p1, p2);
++events::BytesStart::<'a>::unescape_and_decode_with_custom_entities(p0, p1, p2);
++crate::events::BytesStart::<'a>::unescape_and_decode_with_custom_entities(p0, p1, p2);
++<events::BytesStart<'a>>::unescape_and_decode_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::do_unescape_and_decode_with_custom_entities
+'a
+deps:{"events::BytesStart::<'a>::do_unescape_and_decode_with_custom_entities":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesStart::<'a>::do_unescape_and_decode_with_custom_entities":{"B":["std::io::Take<T>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::BufReader<R>","std::io::Empty","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::io::Cursor<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.do_unescape_and_decode_with_custom_entities(p1, p2);
++events::BytesStart::<'a>::do_unescape_and_decode_with_custom_entities(p0, p1, p2);
++crate::events::BytesStart::<'a>::do_unescape_and_decode_with_custom_entities(p0, p1, p2);
++<events::BytesStart<'a>>::do_unescape_and_decode_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::set_name
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.set_name(p1);
++events::BytesStart::<'a>::set_name(p0, p1);
++crate::events::BytesStart::<'a>::set_name(p0, p1);
++<events::BytesStart<'a>>::set_name(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::with_attributes
+'a,'b
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesStart::<'a>::with_attributes":{"<I as std::iter::IntoIterator>::Item":["std::convert::Into"],"I":["std::marker::Sized","std::iter::IntoIterator"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["<&mut I as std::iter::Iterator>","events::attributes::Attributes"]},"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesStart::<'a>::with_attributes":{"<I as std::iter::IntoIterator>::Item":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"],"I":["<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>","std::result::Result<T, E>","std::collections::BTreeMap<K, V, A>","std::vec::Vec<T, A>","&'a std::path::Path","std::sync::mpsc::Receiver<T>","&'a std::os::unix::net::UnixListener","std::collections::HashMap<K, V, S>","&'a std::path::PathBuf","std::collections::BinaryHeap<T>","std::collections::HashSet<T, S>","std::collections::VecDeque<T, A>","std::collections::BTreeSet<T, A>","std::collections::LinkedList<T>","std::option::Option<T>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.with_attributes(p1);
++events::BytesStart::<'a>::with_attributes(p0, p1);
++crate::events::BytesStart::<'a>::with_attributes(p0, p1);
++<events::BytesStart<'a>>::with_attributes(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::extend_attributes
+'a,'b
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesStart::<'a>::extend_attributes":{"<I as std::iter::IntoIterator>::Item":["std::convert::Into"],"I":["std::iter::IntoIterator","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["events::attributes::Attributes","<&mut I as std::iter::Iterator>"]},"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesStart::<'a>::extend_attributes":{"<I as std::iter::IntoIterator>::Item":["std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>"],"I":["std::sync::mpsc::Receiver<T>","std::collections::LinkedList<T>","std::collections::VecDeque<T, A>","std::result::Result<T, E>","<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>","std::collections::BinaryHeap<T>","std::collections::BTreeSet<T, A>","std::vec::Vec<T, A>","std::collections::HashSet<T, S>","&'a std::os::unix::net::UnixListener","std::option::Option<T>","&'a std::path::PathBuf","<&'a std::option::Option<T> as std::iter::IntoIterator>","&'a std::path::Path","std::collections::BTreeMap<K, V, A>","std::collections::HashMap<K, V, S>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend_attributes(p1);
++events::BytesStart::<'a>::extend_attributes(p0, p1);
++crate::events::BytesStart::<'a>::extend_attributes(p0, p1);
++<events::BytesStart<'a>>::extend_attributes(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::push_attribute
+'a,'b
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesStart::<'a>::push_attribute":{"A":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesStart::<'a>::push_attribute":{"A":["std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // A
++p0.push_attribute(p1);
++events::BytesStart::<'a>::push_attribute(p0, p1);
++crate::events::BytesStart::<'a>::push_attribute(p0, p1);
++<events::BytesStart<'a>>::push_attribute(p0, p1);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::clear_attributes
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.clear_attributes();
++events::BytesStart::<'a>::clear_attributes(p0);
++crate::events::BytesStart::<'a>::clear_attributes(p0);
++<events::BytesStart<'a>>::clear_attributes(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::attributes
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.attributes();
++events::BytesStart::<'a>::attributes(p0);
++crate::events::BytesStart::<'a>::attributes(p0);
++<events::BytesStart<'a>>::attributes(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::html_attributes
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.html_attributes();
++events::BytesStart::<'a>::html_attributes(p0);
++crate::events::BytesStart::<'a>::html_attributes(p0);
++<events::BytesStart<'a>>::html_attributes(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::attributes_raw
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.attributes_raw();
++events::BytesStart::<'a>::attributes_raw(p0);
++crate::events::BytesStart::<'a>::attributes_raw(p0);
++<events::BytesStart<'a>>::attributes_raw(p0);
+-----------------
+src/events/mod.rs events::BytesStart::<'a>::try_get_attribute
+'a
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"events::BytesStart::<'a>::try_get_attribute":{"N":["std::marker::Sized","std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"events::BytesStart::<'a>::try_get_attribute":{"N":["events::Event","<&mut T as std::convert::AsRef<U>>","<&T as std::convert::AsRef<U>>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // N
++p0.try_get_attribute(p1);
++events::BytesStart::<'a>::try_get_attribute(p0, p1);
++crate::events::BytesStart::<'a>::try_get_attribute(p0, p1);
++<events::BytesStart<'a>>::try_get_attribute(p0, p1);
+-----------------
+src/events/mod.rs <events::BytesStart<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::BytesStart<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::BytesStart<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::BytesStart<'a>>::fmt(p0, p1);
+-----------------
+src/events/mod.rs <events::BytesDecl<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.clone();
++<events::BytesDecl<'a> as std::clone::Clone>::clone(p0);
++crate::<events::BytesDecl<'a> as std::clone::Clone>::clone(p0);
++<events::BytesDecl<'a>>::clone(p0);
+-----------------
+src/events/mod.rs <events::BytesDecl<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::BytesDecl<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::BytesDecl<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::BytesDecl<'a>>::fmt(p0, p1);
+-----------------
+src/events/mod.rs <events::BytesDecl<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.assert_receiver_is_total_eq();
++<events::BytesDecl<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::BytesDecl<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::BytesDecl<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/mod.rs <events::BytesDecl<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.eq(p1);
++<events::BytesDecl<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::BytesDecl<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::BytesDecl<'a>>::eq(p0, p1);
+-----------------
+src/events/mod.rs events::BytesDecl::<'a>::from_start
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++events::BytesDecl::<'a>::from_start(p0);
++crate::events::BytesDecl::<'a>::from_start(p0);
++<events::BytesDecl<'a>>::from_start(p0);
+-----------------
+src/events/mod.rs events::BytesDecl::<'a>::version
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.version();
++events::BytesDecl::<'a>::version(p0);
++crate::events::BytesDecl::<'a>::version(p0);
++<events::BytesDecl<'a>>::version(p0);
+-----------------
+src/events/mod.rs events::BytesDecl::<'a>::encoding
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.encoding();
++events::BytesDecl::<'a>::encoding(p0);
++crate::events::BytesDecl::<'a>::encoding(p0);
++<events::BytesDecl<'a>>::encoding(p0);
+-----------------
+src/events/mod.rs events::BytesDecl::<'a>::standalone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.standalone();
++events::BytesDecl::<'a>::standalone(p0);
++crate::events::BytesDecl::<'a>::standalone(p0);
++<events::BytesDecl<'a>>::standalone(p0);
+-----------------
+src/events/mod.rs events::BytesDecl::<'a>::new
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::option::Option<&[u8]>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&[u8]>
++events::BytesDecl::<'a>::new(p0, p1, p2);
++crate::events::BytesDecl::<'a>::new(p0, p1, p2);
++<events::BytesDecl<'a>>::new(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesDecl::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.into_owned();
++events::BytesDecl::<'a>::into_owned(p0);
++crate::events::BytesDecl::<'a>::into_owned(p0);
++<events::BytesDecl<'a>>::into_owned(p0);
+-----------------
+src/events/mod.rs <events::BytesEnd<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.clone();
++<events::BytesEnd<'a> as std::clone::Clone>::clone(p0);
++crate::<events::BytesEnd<'a> as std::clone::Clone>::clone(p0);
++<events::BytesEnd<'a>>::clone(p0);
+-----------------
+src/events/mod.rs <events::BytesEnd<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.assert_receiver_is_total_eq();
++<events::BytesEnd<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::BytesEnd<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::BytesEnd<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/mod.rs <events::BytesEnd<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.eq(p1);
++<events::BytesEnd<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::BytesEnd<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::BytesEnd<'a>>::eq(p0, p1);
+-----------------
+src/events/mod.rs events::BytesEnd::<'a>::borrowed
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++events::BytesEnd::<'a>::borrowed(p0);
++crate::events::BytesEnd::<'a>::borrowed(p0);
++<events::BytesEnd<'a>>::borrowed(p0);
+-----------------
+src/events/mod.rs events::BytesEnd::<'a>::owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++events::BytesEnd::<'a>::owned(p0);
++crate::events::BytesEnd::<'a>::owned(p0);
++<events::BytesEnd<'a>>::owned(p0);
+-----------------
+src/events/mod.rs events::BytesEnd::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.into_owned();
++events::BytesEnd::<'a>::into_owned(p0);
++crate::events::BytesEnd::<'a>::into_owned(p0);
++<events::BytesEnd<'a>>::into_owned(p0);
+-----------------
+src/events/mod.rs events::BytesEnd::<'a>::name
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.name();
++events::BytesEnd::<'a>::name(p0);
++crate::events::BytesEnd::<'a>::name(p0);
++<events::BytesEnd<'a>>::name(p0);
+-----------------
+src/events/mod.rs events::BytesEnd::<'a>::local_name
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.local_name();
++events::BytesEnd::<'a>::local_name(p0);
++crate::events::BytesEnd::<'a>::local_name(p0);
++<events::BytesEnd<'a>>::local_name(p0);
+-----------------
+src/events/mod.rs <events::BytesEnd<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::BytesEnd<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::BytesEnd<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::BytesEnd<'a>>::fmt(p0, p1);
+-----------------
+src/events/mod.rs <events::BytesText<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.clone();
++<events::BytesText<'a> as std::clone::Clone>::clone(p0);
++crate::<events::BytesText<'a> as std::clone::Clone>::clone(p0);
++<events::BytesText<'a>>::clone(p0);
+-----------------
+src/events/mod.rs <events::BytesText<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.assert_receiver_is_total_eq();
++<events::BytesText<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::BytesText<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::BytesText<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/mod.rs <events::BytesText<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.eq(p1);
++<events::BytesText<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::BytesText<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::BytesText<'a>>::eq(p0, p1);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::from_escaped
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesText::<'a>::from_escaped":{"C":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesText::<'a>::from_escaped":{"C":["std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // C
++events::BytesText::<'a>::from_escaped(p0);
++crate::events::BytesText::<'a>::from_escaped(p0);
++<events::BytesText<'a>>::from_escaped(p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::from_plain
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++events::BytesText::<'a>::from_plain(p0);
++crate::events::BytesText::<'a>::from_plain(p0);
++<events::BytesText<'a>>::from_plain(p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::from_escaped_str
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesText::<'a>::from_escaped_str":{"C":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesText::<'a>::from_escaped_str":{"C":["std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // C
++events::BytesText::<'a>::from_escaped_str(p0);
++crate::events::BytesText::<'a>::from_escaped_str(p0);
++<events::BytesText<'a>>::from_escaped_str(p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::from_plain_str
+'a
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++events::BytesText::<'a>::from_plain_str(&p0);
++crate::events::BytesText::<'a>::from_plain_str(&p0);
++<events::BytesText<'a>>::from_plain_str(&p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.into_owned();
++events::BytesText::<'a>::into_owned(p0);
++crate::events::BytesText::<'a>::into_owned(p0);
++<events::BytesText<'a>>::into_owned(p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::into_inner
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.into_inner();
++events::BytesText::<'a>::into_inner(p0);
++crate::events::BytesText::<'a>::into_inner(p0);
++<events::BytesText<'a>>::into_inner(p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::unescaped
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.unescaped();
++events::BytesText::<'a>::unescaped(p0);
++crate::events::BytesText::<'a>::unescaped(p0);
++<events::BytesText<'a>>::unescaped(p0);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::unescaped_with_custom_entities
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescaped_with_custom_entities(p1);
++events::BytesText::<'a>::unescaped_with_custom_entities(p0, p1);
++crate::events::BytesText::<'a>::unescaped_with_custom_entities(p0, p1);
++<events::BytesText<'a>>::unescaped_with_custom_entities(p0, p1);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::make_unescaped
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.make_unescaped(p1);
++events::BytesText::<'a>::make_unescaped(p0, p1);
++crate::events::BytesText::<'a>::make_unescaped(p0, p1);
++<events::BytesText<'a>>::make_unescaped(p0, p1);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::unescape_and_decode_without_bom
+'a
+deps:{"events::BytesText::<'a>::unescape_and_decode_without_bom":{"B":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesText::<'a>::unescape_and_decode_without_bom":{"B":["std::io::Take<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::BufReader<R>","std::io::Cursor<T>","std::io::Empty"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
++p0.unescape_and_decode_without_bom(p1);
++events::BytesText::<'a>::unescape_and_decode_without_bom(p0, p1);
++crate::events::BytesText::<'a>::unescape_and_decode_without_bom(p0, p1);
++<events::BytesText<'a>>::unescape_and_decode_without_bom(p0, p1);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::unescape_and_decode_without_bom_with_custom_entities
+'a
+deps:{"events::BytesText::<'a>::unescape_and_decode_without_bom_with_custom_entities":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesText::<'a>::unescape_and_decode_without_bom_with_custom_entities":{"B":["std::io::StdinLock<'_>","std::io::BufReader<R>","std::io::Empty","std::boxed::Box<B>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::io::Cursor<T>","std::io::Take<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescape_and_decode_without_bom_with_custom_entities(p1, p2);
++events::BytesText::<'a>::unescape_and_decode_without_bom_with_custom_entities(p0, p1, p2);
++crate::events::BytesText::<'a>::unescape_and_decode_without_bom_with_custom_entities(p0, p1, p2);
++<events::BytesText<'a>>::unescape_and_decode_without_bom_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::do_unescape_and_decode_without_bom
+'a
+deps:{"events::BytesText::<'a>::do_unescape_and_decode_without_bom":{"B":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesText::<'a>::do_unescape_and_decode_without_bom":{"B":["std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::Cursor<T>","std::io::Take<T>","std::io::Empty","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.do_unescape_and_decode_without_bom(p1, p2);
++events::BytesText::<'a>::do_unescape_and_decode_without_bom(p0, p1, p2);
++crate::events::BytesText::<'a>::do_unescape_and_decode_without_bom(p0, p1, p2);
++<events::BytesText<'a>>::do_unescape_and_decode_without_bom(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::unescape_and_decode
+'a
+deps:{"events::BytesText::<'a>::unescape_and_decode":{"B":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesText::<'a>::unescape_and_decode":{"B":["std::io::Cursor<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::Empty","std::io::Take<T>","std::io::BufReader<R>","std::io::Chain<T, U>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
++p0.unescape_and_decode(p1);
++events::BytesText::<'a>::unescape_and_decode(p0, p1);
++crate::events::BytesText::<'a>::unescape_and_decode(p0, p1);
++<events::BytesText<'a>>::unescape_and_decode(p0, p1);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::unescape_and_decode_with_custom_entities
+'a
+deps:{"events::BytesText::<'a>::unescape_and_decode_with_custom_entities":{"B":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesText::<'a>::unescape_and_decode_with_custom_entities":{"B":["std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Cursor<T>","std::io::Take<T>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::Empty","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = & MaybeUninit::uninit().assume_init(); // std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>
++p0.unescape_and_decode_with_custom_entities(p1, p2);
++events::BytesText::<'a>::unescape_and_decode_with_custom_entities(p0, p1, p2);
++crate::events::BytesText::<'a>::unescape_and_decode_with_custom_entities(p0, p1, p2);
++<events::BytesText<'a>>::unescape_and_decode_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::do_unescape_and_decode_with_custom_entities
+'a
+deps:{"events::BytesText::<'a>::do_unescape_and_decode_with_custom_entities":{"B":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"events::BytesText::<'a>::do_unescape_and_decode_with_custom_entities":{"B":["std::boxed::Box<B>","std::io::Empty","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::BufReader<R>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::Take<T>","std::io::Cursor<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::Reader<B>
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&std::collections::HashMap<std::vec::Vec<u8>, std::vec::Vec<u8>>>
++p0.do_unescape_and_decode_with_custom_entities(p1, p2);
++events::BytesText::<'a>::do_unescape_and_decode_with_custom_entities(p0, p1, p2);
++crate::events::BytesText::<'a>::do_unescape_and_decode_with_custom_entities(p0, p1, p2);
++<events::BytesText<'a>>::do_unescape_and_decode_with_custom_entities(p0, p1, p2);
+-----------------
+src/events/mod.rs events::BytesText::<'a>::escaped
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.escaped();
++events::BytesText::<'a>::escaped(p0);
++crate::events::BytesText::<'a>::escaped(p0);
++<events::BytesText<'a>>::escaped(p0);
+-----------------
+src/events/mod.rs <events::BytesText<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::BytesText<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::BytesText<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::BytesText<'a>>::fmt(p0, p1);
+-----------------
+src/events/mod.rs <events::BytesCData<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.clone();
++<events::BytesCData<'a> as std::clone::Clone>::clone(p0);
++crate::<events::BytesCData<'a> as std::clone::Clone>::clone(p0);
++<events::BytesCData<'a>>::clone(p0);
+-----------------
+src/events/mod.rs <events::BytesCData<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.assert_receiver_is_total_eq();
++<events::BytesCData<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::BytesCData<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::BytesCData<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/mod.rs <events::BytesCData<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.eq(p1);
++<events::BytesCData<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::BytesCData<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::BytesCData<'a>>::eq(p0, p1);
+-----------------
+src/events/mod.rs events::BytesCData::<'a>::new
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"events::BytesCData::<'a>::new":{"C":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"events::BytesCData::<'a>::new":{"C":["<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected","std::process::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // C
++events::BytesCData::<'a>::new(p0);
++crate::events::BytesCData::<'a>::new(p0);
++<events::BytesCData<'a>>::new(p0);
+-----------------
+src/events/mod.rs events::BytesCData::<'a>::from_str
+'a
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++events::BytesCData::<'a>::from_str(&p0);
++crate::events::BytesCData::<'a>::from_str(&p0);
++<events::BytesCData<'a>>::from_str(&p0);
+-----------------
+src/events/mod.rs events::BytesCData::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.into_owned();
++events::BytesCData::<'a>::into_owned(p0);
++crate::events::BytesCData::<'a>::into_owned(p0);
++<events::BytesCData<'a>>::into_owned(p0);
+-----------------
+src/events/mod.rs events::BytesCData::<'a>::into_inner
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.into_inner();
++events::BytesCData::<'a>::into_inner(p0);
++crate::events::BytesCData::<'a>::into_inner(p0);
++<events::BytesCData<'a>>::into_inner(p0);
+-----------------
+src/events/mod.rs events::BytesCData::<'a>::escape
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.escape();
++events::BytesCData::<'a>::escape(p0);
++crate::events::BytesCData::<'a>::escape(p0);
++<events::BytesCData<'a>>::escape(p0);
+-----------------
+src/events/mod.rs events::BytesCData::<'a>::partial_escape
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.partial_escape();
++events::BytesCData::<'a>::partial_escape(p0);
++crate::events::BytesCData::<'a>::partial_escape(p0);
++<events::BytesCData<'a>>::partial_escape(p0);
+-----------------
+src/events/mod.rs <events::BytesCData<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::BytesCData<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::BytesCData<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::BytesCData<'a>>::fmt(p0, p1);
+-----------------
+src/events/mod.rs <events::Event<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
++p0.clone();
++<events::Event<'a> as std::clone::Clone>::clone(p0);
++crate::<events::Event<'a> as std::clone::Clone>::clone(p0);
++<events::Event<'a>>::clone(p0);
+-----------------
+src/events/mod.rs <events::Event<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<events::Event<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<events::Event<'a> as std::fmt::Debug>::fmt(p0, p1);
++<events::Event<'a>>::fmt(p0, p1);
+-----------------
+src/events/mod.rs <events::Event<'a> as std::cmp::Eq>::assert_receiver_is_total_eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
++p0.assert_receiver_is_total_eq();
++<events::Event<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<events::Event<'a> as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<events::Event<'a>>::assert_receiver_is_total_eq(p0);
+-----------------
+src/events/mod.rs <events::Event<'a> as std::cmp::PartialEq>::eq
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
++p0.eq(p1);
++<events::Event<'a> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<events::Event<'a> as std::cmp::PartialEq>::eq(p0, p1);
++<events::Event<'a>>::eq(p0, p1);
+-----------------
+src/events/mod.rs events::Event::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // events::Event<'a>
++p0.into_owned();
++events::Event::<'a>::into_owned(p0);
++crate::events::Event::<'a>::into_owned(p0);
++<events::Event<'a>>::into_owned(p0);
+-----------------
+src/events/mod.rs <events::BytesStart<'a> as std::ops::Deref>::deref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'a>
++p0.deref();
++<events::BytesStart<'a> as std::ops::Deref>::deref(p0);
++crate::<events::BytesStart<'a> as std::ops::Deref>::deref(p0);
++<events::BytesStart<'a>>::deref(p0);
+-----------------
+src/events/mod.rs <events::BytesDecl<'a> as std::ops::Deref>::deref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesDecl<'a>
++p0.deref();
++<events::BytesDecl<'a> as std::ops::Deref>::deref(p0);
++crate::<events::BytesDecl<'a> as std::ops::Deref>::deref(p0);
++<events::BytesDecl<'a>>::deref(p0);
+-----------------
+src/events/mod.rs <events::BytesEnd<'a> as std::ops::Deref>::deref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesEnd<'a>
++p0.deref();
++<events::BytesEnd<'a> as std::ops::Deref>::deref(p0);
++crate::<events::BytesEnd<'a> as std::ops::Deref>::deref(p0);
++<events::BytesEnd<'a>>::deref(p0);
+-----------------
+src/events/mod.rs <events::BytesText<'a> as std::ops::Deref>::deref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesText<'a>
++p0.deref();
++<events::BytesText<'a> as std::ops::Deref>::deref(p0);
++crate::<events::BytesText<'a> as std::ops::Deref>::deref(p0);
++<events::BytesText<'a>>::deref(p0);
+-----------------
+src/events/mod.rs <events::BytesCData<'a> as std::ops::Deref>::deref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::BytesCData<'a>
++p0.deref();
++<events::BytesCData<'a> as std::ops::Deref>::deref(p0);
++crate::<events::BytesCData<'a> as std::ops::Deref>::deref(p0);
++<events::BytesCData<'a>>::deref(p0);
+-----------------
+src/events/mod.rs <events::Event<'a> as std::ops::Deref>::deref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
++p0.deref();
++<events::Event<'a> as std::ops::Deref>::deref(p0);
++crate::<events::Event<'a> as std::ops::Deref>::deref(p0);
++<events::Event<'a>>::deref(p0);
+-----------------
+src/events/mod.rs <events::Event<'a> as std::convert::AsRef<events::Event<'a>>>::as_ref
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // events::Event<'a>
++p0.as_ref();
++<events::Event<'a> as std::convert::AsRef<events::Event<'a>>>::as_ref(p0);
++crate::<events::Event<'a> as std::convert::AsRef<events::Event<'a>>>::as_ref(p0);
++<events::Event<'a>>::as_ref(p0);
+-----------------
+src/reader.rs <reader::TagState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::TagState
++p0.clone();
++<reader::TagState as std::clone::Clone>::clone(p0);
++crate::<reader::TagState as std::clone::Clone>::clone(p0);
++<reader::TagState>::clone(p0);
+-----------------
+src/reader.rs <reader::Reader<R> as std::clone::Clone>::clone
+deps:{"<reader::Reader<R> as std::clone::Clone>::clone":{"R":["std::clone::Clone","std::io::BufRead","std::marker::Sized"]}}
+candidates:{"<reader::Reader<R> as std::clone::Clone>::clone":{"R":["std::io::Empty","std::io::Cursor<T>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.clone();
++<reader::Reader<R> as std::clone::Clone>::clone(p0);
++crate::<reader::Reader<R> as std::clone::Clone>::clone(p0);
++<reader::Reader<R>>::clone(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::from_reader
+deps:{"reader::Reader::<R>::from_reader":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::from_reader":{"R":["std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>","std::io::Take<T>","std::io::BufReader<R>","std::io::Empty","std::io::Cursor<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // R
++reader::Reader::<R>::from_reader(p0);
++crate::reader::Reader::<R>::from_reader(p0);
++<reader::Reader<R>>::from_reader(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::expand_empty_elements
+deps:{"reader::Reader::<R>::expand_empty_elements":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::expand_empty_elements":{"R":["std::io::Cursor<T>","std::io::Empty","std::io::BufReader<R>","std::boxed::Box<B>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::Take<T>","std::io::Chain<T, U>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = true; // None+bool
++p0.expand_empty_elements(p1);
++reader::Reader::<R>::expand_empty_elements(p0, p1);
++crate::reader::Reader::<R>::expand_empty_elements(p0, p1);
++<reader::Reader<R>>::expand_empty_elements(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::trim_text
+deps:{"reader::Reader::<R>::trim_text":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::trim_text":{"R":["std::boxed::Box<B>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::Take<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Cursor<T>","std::io::BufReader<R>","std::io::Empty"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = true; // None+bool
++p0.trim_text(p1);
++reader::Reader::<R>::trim_text(p0, p1);
++crate::reader::Reader::<R>::trim_text(p0, p1);
++<reader::Reader<R>>::trim_text(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::trim_text_end
+deps:{"reader::Reader::<R>::trim_text_end":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::trim_text_end":{"R":["std::io::Empty","std::io::Take<T>","std::boxed::Box<B>","std::io::Cursor<T>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::BufReader<R>","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = true; // None+bool
++p0.trim_text_end(p1);
++reader::Reader::<R>::trim_text_end(p0, p1);
++crate::reader::Reader::<R>::trim_text_end(p0, p1);
++<reader::Reader<R>>::trim_text_end(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::trim_markup_names_in_closing_tags
+deps:{"reader::Reader::<R>::trim_markup_names_in_closing_tags":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::trim_markup_names_in_closing_tags":{"R":["std::io::Take<T>","std::io::Cursor<T>","std::io::BufReader<R>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = true; // None+bool
++p0.trim_markup_names_in_closing_tags(p1);
++reader::Reader::<R>::trim_markup_names_in_closing_tags(p0, p1);
++crate::reader::Reader::<R>::trim_markup_names_in_closing_tags(p0, p1);
++<reader::Reader<R>>::trim_markup_names_in_closing_tags(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::check_end_names
+deps:{"reader::Reader::<R>::check_end_names":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::check_end_names":{"R":["std::io::Empty","std::io::BufReader<R>","std::io::Take<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>","std::io::Chain<T, U>","std::io::Cursor<T>","std::io::StdinLock<'_>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = true; // None+bool
++p0.check_end_names(p1);
++reader::Reader::<R>::check_end_names(p0, p1);
++crate::reader::Reader::<R>::check_end_names(p0, p1);
++<reader::Reader<R>>::check_end_names(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::check_comments
+deps:{"reader::Reader::<R>::check_comments":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::check_comments":{"R":["std::io::BufReader<R>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Cursor<T>","std::io::Take<T>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::Empty","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = true; // None+bool
++p0.check_comments(p1);
++reader::Reader::<R>::check_comments(p0, p1);
++crate::reader::Reader::<R>::check_comments(p0, p1);
++<reader::Reader<R>>::check_comments(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::buffer_position
+deps:{"reader::Reader::<R>::buffer_position":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::buffer_position":{"R":["std::io::BufReader<R>","std::boxed::Box<B>","std::io::Take<T>","std::io::StdinLock<'_>","std::io::Cursor<T>","std::io::Chain<T, U>","std::io::Empty","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.buffer_position();
++reader::Reader::<R>::buffer_position(p0);
++crate::reader::Reader::<R>::buffer_position(p0);
++<reader::Reader<R>>::buffer_position(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::read_until_open
+'i
+deps:{"reader::Reader::<R>::read_until_open":{"B":["std::marker::Sized"],"R":["std::io::BufRead","reader::XmlSource","std::marker::Sized"]}}
+candidates:{"reader::Reader::<R>::read_until_open":{"B":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = MaybeUninit::uninit().assume_init(); // B
++p0.read_until_open(p1);
++reader::Reader::<R>::read_until_open(p0, p1);
++crate::reader::Reader::<R>::read_until_open(p0, p1);
++<reader::Reader<R>>::read_until_open(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::read_until_close
+'i
+deps:{"reader::Reader::<R>::read_until_close":{"B":["std::marker::Sized"],"R":["reader::XmlSource","std::io::BufRead","std::marker::Sized"]}}
+candidates:{"reader::Reader::<R>::read_until_close":{"B":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = MaybeUninit::uninit().assume_init(); // B
++p0.read_until_close(p1);
++reader::Reader::<R>::read_until_close(p0, p1);
++crate::reader::Reader::<R>::read_until_close(p0, p1);
++<reader::Reader<R>>::read_until_close(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::read_end
+deps:{"reader::Reader::<R>::read_end":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::read_end":{"R":["std::io::Chain<T, U>","std::boxed::Box<B>","std::io::Take<T>","std::io::BufReader<R>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Cursor<T>","std::io::Empty","std::io::StdinLock<'_>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.read_end(p1);
++reader::Reader::<R>::read_end(p0, p1);
++crate::reader::Reader::<R>::read_end(p0, p1);
++<reader::Reader<R>>::read_end(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::read_bang
+deps:{"reader::Reader::<R>::read_bang":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::read_bang":{"R":["std::io::Cursor<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Take<T>","std::io::BufReader<R>","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::io::Empty","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = MaybeUninit::uninit().assume_init(); // reader::BangType
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.read_bang(p1, p2);
++reader::Reader::<R>::read_bang(p0, p1, p2);
++crate::reader::Reader::<R>::read_bang(p0, p1, p2);
++<reader::Reader<R>>::read_bang(p0, p1, p2);
+-----------------
+src/reader.rs reader::Reader::<R>::read_question_mark
+deps:{"reader::Reader::<R>::read_question_mark":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::read_question_mark":{"R":["std::io::Take<T>","std::io::BufReader<R>","std::io::Cursor<T>","std::boxed::Box<B>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::Empty"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.read_question_mark(p1);
++reader::Reader::<R>::read_question_mark(p0, p1);
++crate::reader::Reader::<R>::read_question_mark(p0, p1);
++<reader::Reader<R>>::read_question_mark(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::close_expanded_empty
+deps:{"reader::Reader::<R>::close_expanded_empty":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::close_expanded_empty":{"R":["std::io::StdinLock<'_>","std::io::BufReader<R>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::boxed::Box<B>","std::io::Chain<T, U>","std::io::Cursor<T>","std::io::Take<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.close_expanded_empty();
++reader::Reader::<R>::close_expanded_empty(p0);
++crate::reader::Reader::<R>::close_expanded_empty(p0);
++<reader::Reader<R>>::close_expanded_empty(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::read_start
+deps:{"reader::Reader::<R>::read_start":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::read_start":{"R":["std::boxed::Box<B>","std::io::Take<T>","std::io::Cursor<T>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::BufReader<R>","std::io::Empty"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.read_start(p1);
++reader::Reader::<R>::read_start(p0, p1);
++crate::reader::Reader::<R>::read_start(p0, p1);
++<reader::Reader<R>>::read_start(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::read_event
+deps:{"reader::Reader::<R>::read_event":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::read_event":{"R":["std::io::Chain<T, U>","std::io::Empty","std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>","std::io::BufReader<R>","std::io::Take<T>","std::io::Cursor<T>","std::io::StdinLock<'_>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.read_event(p1);
++reader::Reader::<R>::read_event(p0, p1);
++crate::reader::Reader::<R>::read_event(p0, p1);
++<reader::Reader<R>>::read_event(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::read_event_buffered
+'i
+deps:{"reader::Reader::<R>::read_event_buffered":{"B":["std::marker::Sized"],"R":["std::marker::Sized","std::io::BufRead","reader::XmlSource"]}}
+candidates:{"reader::Reader::<R>::read_event_buffered":{"B":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = MaybeUninit::uninit().assume_init(); // B
++p0.read_event_buffered(p1);
++reader::Reader::<R>::read_event_buffered(p0, p1);
++crate::reader::Reader::<R>::read_event_buffered(p0, p1);
++<reader::Reader<R>>::read_event_buffered(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::event_namespace
+deps:{"reader::Reader::<R>::event_namespace":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::event_namespace":{"R":["std::io::Chain<T, U>","std::boxed::Box<B>","std::io::Cursor<T>","std::io::Empty","std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Take<T>","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.event_namespace(p1, p2);
++reader::Reader::<R>::event_namespace(p0, p1, p2);
++crate::reader::Reader::<R>::event_namespace(p0, p1, p2);
++<reader::Reader<R>>::event_namespace(p0, p1, p2);
+-----------------
+src/reader.rs reader::Reader::<R>::attribute_namespace
+deps:{"reader::Reader::<R>::attribute_namespace":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::attribute_namespace":{"R":["std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::Take<T>","std::io::Empty","std::io::BufReader<R>","std::io::Cursor<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.attribute_namespace(p1, p2);
++reader::Reader::<R>::attribute_namespace(p0, p1, p2);
++crate::reader::Reader::<R>::attribute_namespace(p0, p1, p2);
++<reader::Reader<R>>::attribute_namespace(p0, p1, p2);
+-----------------
+src/reader.rs reader::Reader::<R>::read_namespaced_event
+deps:{"reader::Reader::<R>::read_namespaced_event":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::read_namespaced_event":{"R":["std::io::Empty","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::Cursor<T>","std::io::BufReader<R>","std::io::Take<T>","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.read_namespaced_event(p1, p2);
++reader::Reader::<R>::read_namespaced_event(p0, p1, p2);
++crate::reader::Reader::<R>::read_namespaced_event(p0, p1, p2);
++<reader::Reader<R>>::read_namespaced_event(p0, p1, p2);
+-----------------
+src/reader.rs reader::Reader::<R>::decode_without_bom
+deps:{"reader::Reader::<R>::decode_without_bom":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::decode_without_bom":{"R":["std::io::Chain<T, U>","std::io::BufReader<R>","std::io::Cursor<T>","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::io::Take<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.decode_without_bom(p1);
++reader::Reader::<R>::decode_without_bom(p0, p1);
++crate::reader::Reader::<R>::decode_without_bom(p0, p1);
++<reader::Reader<R>>::decode_without_bom(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::decode
+deps:{"reader::Reader::<R>::decode":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::decode":{"R":["std::io::Cursor<T>","std::io::BufReader<R>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::Take<T>","std::io::Empty","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.decode(p1);
++reader::Reader::<R>::decode(p0, p1);
++crate::reader::Reader::<R>::decode(p0, p1);
++<reader::Reader<R>>::decode(p0, p1);
+-----------------
+src/reader.rs reader::Reader::<R>::decoder
+deps:{"reader::Reader::<R>::decoder":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::decoder":{"R":["std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::io::Chain<T, U>","std::io::Cursor<T>","std::io::BufReader<R>","std::boxed::Box<B>","std::io::Take<T>","std::io::StdinLock<'_>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.decoder();
++reader::Reader::<R>::decoder(p0);
++crate::reader::Reader::<R>::decoder(p0);
++<reader::Reader<R>>::decoder(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::read_to_end
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<R>::read_to_end":{"K":["std::marker::Sized","std::convert::AsRef"],"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<R>::read_to_end":{"K":["<&mut T as std::convert::AsRef<U>>","events::Event"],"R":["std::io::Chain<T, U>","std::io::Cursor<T>","std::boxed::Box<B>","std::io::Take<T>","std::io::StdinLock<'_>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::BufReader<R>","std::io::Empty"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = MaybeUninit::uninit().assume_init(); // K
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.read_to_end(p1, p2);
++reader::Reader::<R>::read_to_end(p0, p1, p2);
++crate::reader::Reader::<R>::read_to_end(p0, p1, p2);
++<reader::Reader<R>>::read_to_end(p0, p1, p2);
+-----------------
+src/reader.rs reader::Reader::<R>::read_text
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<R>::read_text":{"K":["std::convert::AsRef","std::marker::Sized"],"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<R>::read_text":{"K":["events::Event","<&mut T as std::convert::AsRef<U>>"],"R":["std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>","std::io::BufReader<R>","std::io::StdinLock<'_>","std::io::Empty","std::io::Cursor<T>","std::io::Chain<T, U>","std::io::Take<T>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
+let mut p1 = MaybeUninit::uninit().assume_init(); // K
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.read_text(p1, p2);
++reader::Reader::<R>::read_text(p0, p1, p2);
++crate::reader::Reader::<R>::read_text(p0, p1, p2);
++<reader::Reader<R>>::read_text(p0, p1, p2);
+-----------------
+src/reader.rs reader::Reader::<R>::into_inner
+deps:{"reader::Reader::<R>::into_inner":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::into_inner":{"R":["std::io::BufReader<R>","std::io::Empty","std::io::Cursor<T>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::Take<T>","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.into_inner();
++reader::Reader::<R>::into_inner(p0);
++crate::reader::Reader::<R>::into_inner(p0);
++<reader::Reader<R>>::into_inner(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::get_ref
+deps:{"reader::Reader::<R>::get_ref":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::get_ref":{"R":["std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Empty","std::io::BufReader<R>","std::boxed::Box<B>","std::io::Cursor<T>","std::io::Take<T>","std::io::Chain<T, U>","std::io::StdinLock<'_>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.get_ref();
++reader::Reader::<R>::get_ref(p0);
++crate::reader::Reader::<R>::get_ref(p0);
++<reader::Reader<R>>::get_ref(p0);
+-----------------
+src/reader.rs reader::Reader::<R>::get_mut
+deps:{"reader::Reader::<R>::get_mut":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"reader::Reader::<R>::get_mut":{"R":["std::io::Empty","std::boxed::Box<B>","std::io::StdinLock<'_>","std::io::Take<T>","std::io::Cursor<T>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<R>
++p0.get_mut();
++reader::Reader::<R>::get_mut(p0);
++crate::reader::Reader::<R>::get_mut(p0);
++<reader::Reader<R>>::get_mut(p0);
+-----------------
+src/reader.rs reader::Reader::<std::io::BufReader<std::fs::File>>::from_file
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<std::io::BufReader<std::fs::File>>::from_file":{"P":["std::marker::Sized","std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<std::io::BufReader<std::fs::File>>::from_file":{"P":["<&mut T as std::convert::AsRef<U>>","events::Event"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // P
++reader::Reader::<std::io::BufReader<std::fs::File>>::from_file(p0);
++crate::reader::Reader::<std::io::BufReader<std::fs::File>>::from_file(p0);
++<reader::Reader<std::io::BufReader<std::fs::File>>>::from_file(p0);
+-----------------
+src/reader.rs reader::Reader::<&'a [u8]>::from_str
+'a
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++reader::Reader::<&'a [u8]>::from_str(&p0);
++crate::reader::Reader::<&'a [u8]>::from_str(&p0);
++<reader::Reader<&'a [u8]>>::from_str(&p0);
+-----------------
+src/reader.rs reader::Reader::<&'a [u8]>::from_bytes
+'a
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++reader::Reader::<&'a [u8]>::from_bytes(p0);
++crate::reader::Reader::<&'a [u8]>::from_bytes(p0);
++<reader::Reader<&'a [u8]>>::from_bytes(p0);
+-----------------
+src/reader.rs reader::Reader::<&'a [u8]>::read_event_unbuffered
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<&'a [u8]>
++p0.read_event_unbuffered();
++reader::Reader::<&'a [u8]>::read_event_unbuffered(p0);
++crate::reader::Reader::<&'a [u8]>::read_event_unbuffered(p0);
++<reader::Reader<&'a [u8]>>::read_event_unbuffered(p0);
+-----------------
+src/reader.rs reader::Reader::<&'a [u8]>::read_to_end_unbuffered
+'a
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<&'a [u8]>::read_to_end_unbuffered":{"K":["std::marker::Sized","std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"reader::Reader::<&'a [u8]>::read_to_end_unbuffered":{"K":["<&T as std::convert::AsRef<U>>","events::Event","<&mut T as std::convert::AsRef<U>>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::Reader<&'a [u8]>
+let mut p1 = MaybeUninit::uninit().assume_init(); // K
++p0.read_to_end_unbuffered(p1);
++reader::Reader::<&'a [u8]>::read_to_end_unbuffered(p0, p1);
++crate::reader::Reader::<&'a [u8]>::read_to_end_unbuffered(p0, p1);
++<reader::Reader<&'a [u8]>>::read_to_end_unbuffered(p0, p1);
+-----------------
+src/reader.rs <R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bytes_until
+'b
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bytes_until":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bytes_until":{"R":["std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Cursor<T>","std::io::Take<T>","std::io::Chain<T, U>","std::io::Empty","std::io::StdinLock<'_>","std::boxed::Box<B>","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // R
+let mut p1 = 0u8; // None+u8
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
+let mut p3 = &mut 0usize; // None+usize
++p0.read_bytes_until(p1, p2, p3);
++<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bytes_until(p0, p1, p2, p3);
++crate::<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bytes_until(p0, p1, p2, p3);
++<R>::read_bytes_until(p0, p1, p2, p3);
+-----------------
+src/reader.rs <R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bang_element
+'b
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bang_element":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bang_element":{"R":["std::io::Take<T>","std::io::Cursor<T>","std::io::Empty","std::io::StdinLock<'_>","std::io::Chain<T, U>","std::boxed::Box<B>","std::io::BufReader<R>","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // R
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
+let mut p2 = &mut 0usize; // None+usize
++p0.read_bang_element(p1, p2);
++<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bang_element(p0, p1, p2);
++crate::<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_bang_element(p0, p1, p2);
++<R>::read_bang_element(p0, p1, p2);
+-----------------
+src/reader.rs <R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_element
+'b
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_element":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_element":{"R":["std::io::StdinLock<'_>","std::io::BufReader<R>","std::io::Take<T>","std::io::Empty","std::io::Cursor<T>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::boxed::Box<B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // R
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
+let mut p2 = &mut 0usize; // None+usize
++p0.read_element(p1, p2);
++<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_element(p0, p1, p2);
++crate::<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::read_element(p0, p1, p2);
++<R>::read_element(p0, p1, p2);
+-----------------
+src/reader.rs <R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_whitespace
+'b
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_whitespace":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_whitespace":{"R":["std::io::Cursor<T>","std::io::Empty","std::io::BufReader<R>","std::io::Chain<T, U>","std::io::StdinLock<'_>","std::io::Take<T>","std::boxed::Box<B>","std::io::impls::<impl std::io::BufRead for &mut B>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // R
+let mut p1 = &mut 0usize; // None+usize
++p0.skip_whitespace(p1);
++<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_whitespace(p0, p1);
++crate::<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_whitespace(p0, p1);
++<R>::skip_whitespace(p0, p1);
+-----------------
+src/reader.rs <R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_one
+'b
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_one":{"R":["std::io::BufRead","std::marker::Sized"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_one":{"R":["std::io::Cursor<T>","std::boxed::Box<B>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::Take<T>","std::io::Empty","std::io::BufReader<R>","std::io::StdinLock<'_>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // R
+let mut p1 = 0u8; // None+u8
+let mut p2 = &mut 0usize; // None+usize
++p0.skip_one(p1, p2);
++<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_one(p0, p1, p2);
++crate::<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::skip_one(p0, p1, p2);
++<R>::skip_one(p0, p1, p2);
+-----------------
+src/reader.rs <R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::peek_one
+'b
+deps:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::peek_one":{"R":["std::marker::Sized","std::io::BufRead"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+candidates:{"<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::peek_one":{"R":["std::io::Take<T>","std::io::Cursor<T>","std::io::Chain<T, U>","std::io::impls::<impl std::io::BufRead for &mut B>","std::io::StdinLock<'_>","std::io::Empty","std::boxed::Box<B>","std::io::BufReader<R>"]},"std::io::impls::<impl std::io::BufRead for &mut B>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // R
++p0.peek_one();
++<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::peek_one(p0);
++crate::<R as reader::XmlSource<'b, &'b mut std::vec::Vec<u8>>>::peek_one(p0);
++<R>::peek_one(p0);
+-----------------
+src/reader.rs <&'a [u8] as reader::XmlSource<'a, ()>>::read_bytes_until
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&'a [u8]
+let mut p1 = 0u8; // None+u8
+let mut p2 = (); // None+()
+let mut p3 = &mut 0usize; // None+usize
++p0.read_bytes_until(p1, p2, p3);
++<&'a [u8] as reader::XmlSource<'a, ()>>::read_bytes_until(p0, p1, p2, p3);
++crate::<&'a [u8] as reader::XmlSource<'a, ()>>::read_bytes_until(p0, p1, p2, p3);
++<&'a [u8]>::read_bytes_until(p0, p1, p2, p3);
+-----------------
+src/reader.rs <&'a [u8] as reader::XmlSource<'a, ()>>::read_bang_element
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&'a [u8]
+let mut p1 = (); // None+()
+let mut p2 = &mut 0usize; // None+usize
++p0.read_bang_element(p1, p2);
++<&'a [u8] as reader::XmlSource<'a, ()>>::read_bang_element(p0, p1, p2);
++crate::<&'a [u8] as reader::XmlSource<'a, ()>>::read_bang_element(p0, p1, p2);
++<&'a [u8]>::read_bang_element(p0, p1, p2);
+-----------------
+src/reader.rs <&'a [u8] as reader::XmlSource<'a, ()>>::read_element
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&'a [u8]
+let mut p1 = (); // None+()
+let mut p2 = &mut 0usize; // None+usize
++p0.read_element(p1, p2);
++<&'a [u8] as reader::XmlSource<'a, ()>>::read_element(p0, p1, p2);
++crate::<&'a [u8] as reader::XmlSource<'a, ()>>::read_element(p0, p1, p2);
++<&'a [u8]>::read_element(p0, p1, p2);
+-----------------
+src/reader.rs <&'a [u8] as reader::XmlSource<'a, ()>>::skip_whitespace
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&'a [u8]
+let mut p1 = &mut 0usize; // None+usize
++p0.skip_whitespace(p1);
++<&'a [u8] as reader::XmlSource<'a, ()>>::skip_whitespace(p0, p1);
++crate::<&'a [u8] as reader::XmlSource<'a, ()>>::skip_whitespace(p0, p1);
++<&'a [u8]>::skip_whitespace(p0, p1);
+-----------------
+src/reader.rs <&'a [u8] as reader::XmlSource<'a, ()>>::skip_one
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&'a [u8]
+let mut p1 = 0u8; // None+u8
+let mut p2 = &mut 0usize; // None+usize
++p0.skip_one(p1, p2);
++<&'a [u8] as reader::XmlSource<'a, ()>>::skip_one(p0, p1, p2);
++crate::<&'a [u8] as reader::XmlSource<'a, ()>>::skip_one(p0, p1, p2);
++<&'a [u8]>::skip_one(p0, p1, p2);
+-----------------
+src/reader.rs <&'a [u8] as reader::XmlSource<'a, ()>>::peek_one
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&'a [u8]
++p0.peek_one();
++<&'a [u8] as reader::XmlSource<'a, ()>>::peek_one(p0);
++crate::<&'a [u8] as reader::XmlSource<'a, ()>>::peek_one(p0);
++<&'a [u8]>::peek_one(p0);
+-----------------
+src/reader.rs <reader::BangType as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::BangType
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reader::BangType as std::fmt::Debug>::fmt(p0, p1);
++crate::<reader::BangType as std::fmt::Debug>::fmt(p0, p1);
++<reader::BangType>::fmt(p0, p1);
+-----------------
+src/reader.rs <reader::BangType as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::BangType
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reader::BangType
++p0.eq(p1);
++<reader::BangType as std::cmp::PartialEq>::eq(p0, p1);
++crate::<reader::BangType as std::cmp::PartialEq>::eq(p0, p1);
++<reader::BangType>::eq(p0, p1);
+-----------------
+src/reader.rs reader::BangType::new
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::option::Option<u8>
++reader::BangType::new(p0);
++crate::reader::BangType::new(p0);
++<reader::BangType>::new(p0);
+-----------------
+src/reader.rs reader::BangType::parse
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::BangType
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = 0usize; // None+usize
++p0.parse(p1, p2);
++reader::BangType::parse(p0, p1, p2);
++crate::reader::BangType::parse(p0, p1, p2);
++<reader::BangType>::parse(p0, p1, p2);
+-----------------
+src/reader.rs reader::BangType::to_err
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reader::BangType
++p0.to_err();
++reader::BangType::to_err(p0);
++crate::reader::BangType::to_err(p0);
++<reader::BangType>::to_err(p0);
+-----------------
+src/reader.rs <reader::ReadElementState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::ReadElementState
++p0.clone();
++<reader::ReadElementState as std::clone::Clone>::clone(p0);
++crate::<reader::ReadElementState as std::clone::Clone>::clone(p0);
++<reader::ReadElementState>::clone(p0);
+-----------------
+src/reader.rs reader::ReadElementState::change
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::ReadElementState
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.change(p1);
++reader::ReadElementState::change(p0, p1);
++crate::reader::ReadElementState::change(p0, p1);
++<reader::ReadElementState>::change(p0, p1);
+-----------------
+src/reader.rs <reader::NamespaceEntry as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceEntry
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reader::NamespaceEntry as std::fmt::Debug>::fmt(p0, p1);
++crate::<reader::NamespaceEntry as std::fmt::Debug>::fmt(p0, p1);
++<reader::NamespaceEntry>::fmt(p0, p1);
+-----------------
+src/reader.rs <reader::NamespaceEntry as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceEntry
++p0.clone();
++<reader::NamespaceEntry as std::clone::Clone>::clone(p0);
++crate::<reader::NamespaceEntry as std::clone::Clone>::clone(p0);
++<reader::NamespaceEntry>::clone(p0);
+-----------------
+src/reader.rs reader::NamespaceEntry::namespace
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceEntry
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.namespace(p1);
++reader::NamespaceEntry::namespace(p0, p1);
++crate::reader::NamespaceEntry::namespace(p0, p1);
++<reader::NamespaceEntry>::namespace(p0, p1);
+-----------------
+src/reader.rs reader::NamespaceEntry::is_match
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceEntry
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.is_match(p1, p2);
++reader::NamespaceEntry::is_match(p0, p1, p2);
++crate::reader::NamespaceEntry::is_match(p0, p1, p2);
++<reader::NamespaceEntry>::is_match(p0, p1, p2);
+-----------------
+src/reader.rs <reader::NamespaceResolver as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceResolver
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reader::NamespaceResolver as std::fmt::Debug>::fmt(p0, p1);
++crate::<reader::NamespaceResolver as std::fmt::Debug>::fmt(p0, p1);
++<reader::NamespaceResolver>::fmt(p0, p1);
+-----------------
+src/reader.rs <reader::NamespaceResolver as std::default::Default>::default
+deps:{}
+candidates:{}
++<reader::NamespaceResolver as std::default::Default>::default();
++crate::<reader::NamespaceResolver as std::default::Default>::default();
++<reader::NamespaceResolver>::default();
+-----------------
+src/reader.rs <reader::NamespaceResolver as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceResolver
++p0.clone();
++<reader::NamespaceResolver as std::clone::Clone>::clone(p0);
++crate::<reader::NamespaceResolver as std::clone::Clone>::clone(p0);
++<reader::NamespaceResolver>::clone(p0);
+-----------------
+src/reader.rs reader::NamespaceResolver::find
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceResolver
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.find(p1, p2);
++reader::NamespaceResolver::find(p0, p1, p2);
++crate::reader::NamespaceResolver::find(p0, p1, p2);
++<reader::NamespaceResolver>::find(p0, p1, p2);
+-----------------
+src/reader.rs reader::NamespaceResolver::pop
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::NamespaceResolver
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.pop(p1);
++reader::NamespaceResolver::pop(p0, p1);
++crate::reader::NamespaceResolver::pop(p0, p1);
++<reader::NamespaceResolver>::pop(p0, p1);
+-----------------
+src/reader.rs reader::NamespaceResolver::push
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reader::NamespaceResolver
+let mut p1 = & MaybeUninit::uninit().assume_init(); // events::BytesStart<'_>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.push(p1, p2);
++reader::NamespaceResolver::push(p0, p1, p2);
++crate::reader::NamespaceResolver::push(p0, p1, p2);
++<reader::NamespaceResolver>::push(p0, p1, p2);
+-----------------
+src/reader.rs reader::NamespaceResolver::resolve
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::NamespaceResolver
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p3 = true; // None+bool
++p0.resolve(p1, p2, p3);
++reader::NamespaceResolver::resolve(p0, p1, p2, p3);
++crate::reader::NamespaceResolver::resolve(p0, p1, p2, p3);
++<reader::NamespaceResolver>::resolve(p0, p1, p2, p3);
+-----------------
+src/reader.rs <reader::Decoder as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Decoder
++p0.clone();
++<reader::Decoder as std::clone::Clone>::clone(p0);
++crate::<reader::Decoder as std::clone::Clone>::clone(p0);
++<reader::Decoder>::clone(p0);
+-----------------
+src/reader.rs <reader::Decoder as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Decoder
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reader::Decoder as std::fmt::Debug>::fmt(p0, p1);
++crate::<reader::Decoder as std::fmt::Debug>::fmt(p0, p1);
++<reader::Decoder>::fmt(p0, p1);
+-----------------
+src/reader.rs reader::Decoder::decode
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Decoder
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.decode(p1);
++reader::Decoder::decode(p0, p1);
++crate::reader::Decoder::decode(p0, p1);
++<reader::Decoder>::decode(p0, p1);
+-----------------
+src/reader.rs reader::Decoder::decode_owned
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reader::Decoder
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::vec::Vec<u8>
++p0.decode_owned(p1);
++reader::Decoder::decode_owned(p0, p1);
++crate::reader::Decoder::decode_owned(p0, p1);
++<reader::Decoder>::decode_owned(p0, p1);
+-----------------
+src/utils.rs <utils::ByteBuf as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // utils::ByteBuf
+let mut p1 = & MaybeUninit::uninit().assume_init(); // utils::ByteBuf
++p0.eq(p1);
++<utils::ByteBuf as std::cmp::PartialEq>::eq(p0, p1);
++crate::<utils::ByteBuf as std::cmp::PartialEq>::eq(p0, p1);
++<utils::ByteBuf>::eq(p0, p1);
+-----------------
+src/utils.rs <utils::ByteBuf as std::fmt::Debug>::fmt
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // utils::ByteBuf
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<utils::ByteBuf as std::fmt::Debug>::fmt(p0, p1);
++crate::<utils::ByteBuf as std::fmt::Debug>::fmt(p0, p1);
++<utils::ByteBuf>::fmt(p0, p1);
+-----------------
+src/utils.rs <utils::Bytes<'de> as std::cmp::PartialEq>::eq
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // utils::Bytes<'de>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // utils::Bytes<'de>
++p0.eq(p1);
++<utils::Bytes<'de> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<utils::Bytes<'de> as std::cmp::PartialEq>::eq(p0, p1);
++<utils::Bytes<'de>>::eq(p0, p1);
+-----------------
+src/utils.rs <utils::Bytes<'de> as std::fmt::Debug>::fmt
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // utils::Bytes<'de>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<utils::Bytes<'de> as std::fmt::Debug>::fmt(p0, p1);
++crate::<utils::Bytes<'de> as std::fmt::Debug>::fmt(p0, p1);
++<utils::Bytes<'de>>::fmt(p0, p1);
+-----------------
+src/writer.rs <writer::Writer<W> as std::clone::Clone>::clone
+deps:{"<writer::Writer<W> as std::clone::Clone>::clone":{"W":["std::clone::Clone","std::marker::Sized","std::io::Write"]}}
+candidates:{"<writer::Writer<W> as std::clone::Clone>::clone":{"W":["std::io::Sink"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // writer::Writer<W>
++p0.clone();
++<writer::Writer<W> as std::clone::Clone>::clone(p0);
++crate::<writer::Writer<W> as std::clone::Clone>::clone(p0);
++<writer::Writer<W>>::clone(p0);
+-----------------
+src/writer.rs writer::Writer::<W>::new
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::new":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::new":{"W":["std::io::LineWriter<W>","std::io::BorrowedCursor<'a>","std::collections::VecDeque<u8, A>","std::io::stdio::StdoutRaw","&std::net::TcpStream","std::os::unix::net::UnixStream","&std::io::Stdout","std::io::stdio::StderrRaw","std::io::BufWriter<W>","&std::fs::File","std::io::Cursor<[u8; N]>","std::io::Stdout","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::sys::unix::stdio::Stderr","&std::process::ChildStdin","std::io::StdoutLock<'_>","std::io::Stderr","std::process::ChildStdin","std::io::Cursor<std::boxed::Box<[u8], A>>","&'a std::os::unix::net::UnixStream","std::vec::Vec<u8, A>","std::fs::File","std::io::buffered::linewritershim::LineWriterShim<'a, W>","&std::io::Stderr","std::io::StderrLock<'_>","std::net::TcpStream","std::io::Cursor<&mut [u8]>","std::boxed::Box<W>","std::io::impls::<impl std::io::Write for &mut W>","&std::io::Sink","std::io::Sink","std::sys::unix::stdio::Stdout"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // W
++writer::Writer::<W>::new(p0);
++crate::writer::Writer::<W>::new(p0);
++<writer::Writer<W>>::new(p0);
+-----------------
+src/writer.rs writer::Writer::<W>::new_with_indent
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::new_with_indent":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::new_with_indent":{"W":["std::io::Stdout","std::io::LineWriter<W>","std::sys::unix::stdio::Stderr","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::StderrLock<'_>","std::io::Stderr","std::vec::Vec<u8, A>","std::io::Cursor<&mut [u8]>","&std::io::Stdout","&std::io::Stderr","std::io::Cursor<std::vec::Vec<u8, A>>","&std::io::Sink","std::fs::File","&std::process::ChildStdin","&std::fs::File","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::stdio::StdoutRaw","std::io::StdoutLock<'_>","&std::net::TcpStream","std::io::Cursor<std::boxed::Box<[u8], A>>","std::net::TcpStream","std::boxed::Box<W>","std::io::Cursor<[u8; N]>","&'a std::os::unix::net::UnixStream","std::process::ChildStdin","std::sys::unix::stdio::Stdout","std::os::unix::net::UnixStream","std::io::BorrowedCursor<'a>","std::io::Sink","std::collections::VecDeque<u8, A>","std::io::impls::<impl std::io::Write for &mut W>","std::io::BufWriter<W>","std::io::stdio::StderrRaw"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // W
+let mut p1 = 0u8; // None+u8
+let mut p2 = 0usize; // None+usize
++writer::Writer::<W>::new_with_indent(p0, p1, p2);
++crate::writer::Writer::<W>::new_with_indent(p0, p1, p2);
++<writer::Writer<W>>::new_with_indent(p0, p1, p2);
+-----------------
+src/writer.rs writer::Writer::<W>::into_inner
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::into_inner":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::into_inner":{"W":["std::collections::VecDeque<u8, A>","std::io::Stdout","&std::io::Stdout","std::io::Cursor<&mut [u8]>","std::io::StderrLock<'_>","std::io::Sink","&std::io::Sink","std::io::stdio::StdoutRaw","std::boxed::Box<W>","std::sys::unix::stdio::Stdout","std::io::LineWriter<W>","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::process::ChildStdin","std::io::Cursor<std::boxed::Box<[u8], A>>","&std::process::ChildStdin","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::stdio::StderrRaw","std::io::Stderr","std::fs::File","&'a std::os::unix::net::UnixStream","std::io::BorrowedCursor<'a>","std::io::StdoutLock<'_>","std::sys::unix::stdio::Stderr","&std::io::Stderr","std::vec::Vec<u8, A>","std::os::unix::net::UnixStream","std::io::impls::<impl std::io::Write for &mut W>","std::net::TcpStream","std::io::Cursor<[u8; N]>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","&std::fs::File","&std::net::TcpStream","std::io::BufWriter<W>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::Writer<W>
++p0.into_inner();
++writer::Writer::<W>::into_inner(p0);
++crate::writer::Writer::<W>::into_inner(p0);
++<writer::Writer<W>>::into_inner(p0);
+-----------------
+src/writer.rs writer::Writer::<W>::inner
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::inner":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::inner":{"W":["std::sys::unix::stdio::Stdout","std::io::BorrowedCursor<'a>","std::boxed::Box<W>","std::collections::VecDeque<u8, A>","std::io::stdio::StderrRaw","std::sys::unix::stdio::Stderr","std::io::Cursor<std::boxed::Box<[u8], A>>","&std::net::TcpStream","std::io::StderrLock<'_>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","&std::fs::File","std::io::Sink","&std::process::ChildStdin","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::StdoutLock<'_>","std::io::Cursor<&mut [u8]>","std::io::Stdout","std::io::impls::<impl std::io::Write for &mut W>","std::io::Cursor<[u8; N]>","&std::io::Stdout","std::io::stdio::StdoutRaw","&std::io::Sink","std::net::TcpStream","std::io::BufWriter<W>","std::io::LineWriter<W>","std::vec::Vec<u8, A>","&std::io::Stderr","&'a std::os::unix::net::UnixStream","std::os::unix::net::UnixStream","std::fs::File","std::process::ChildStdin","std::io::Stderr","std::io::buffered::linewritershim::LineWriterShim<'a, W>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Writer<W>
++p0.inner();
++writer::Writer::<W>::inner(p0);
++crate::writer::Writer::<W>::inner(p0);
++<writer::Writer<W>>::inner(p0);
+-----------------
+src/writer.rs writer::Writer::<W>::write_event
+'a
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write_event":{"E":["std::convert::AsRef","std::marker::Sized"],"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write_event":{"E":["<&T as std::convert::AsRef<U>>","<&mut T as std::convert::AsRef<U>>","events::Event"],"W":["&std::fs::File","&std::io::Sink","std::boxed::Box<W>","std::io::impls::<impl std::io::Write for &mut W>","std::io::StderrLock<'_>","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::Stdout","std::os::unix::net::UnixStream","std::io::StdoutLock<'_>","std::io::Sink","&'a std::os::unix::net::UnixStream","std::io::stdio::StderrRaw","std::collections::VecDeque<u8, A>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::BufWriter<W>","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::stdio::StdoutRaw","&std::net::TcpStream","std::io::Cursor<&mut [u8]>","std::process::ChildStdin","std::sys::unix::stdio::Stdout","std::io::Cursor<std::vec::Vec<u8, A>>","std::net::TcpStream","std::io::Cursor<[u8; N]>","std::fs::File","std::io::BorrowedCursor<'a>","std::io::LineWriter<W>","std::io::Stderr","std::vec::Vec<u8, A>","&std::io::Stdout","&std::process::ChildStdin","std::sys::unix::stdio::Stderr","&std::io::Stderr"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Writer<W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // E
++p0.write_event(p1);
++writer::Writer::<W>::write_event(p0, p1);
++crate::writer::Writer::<W>::write_event(p0, p1);
++<writer::Writer<W>>::write_event(p0, p1);
+-----------------
+src/writer.rs writer::Writer::<W>::write
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write":{"W":["std::sys::unix::stdio::Stdout","std::vec::Vec<u8, A>","std::io::stdio::StderrRaw","std::net::TcpStream","std::fs::File","&std::io::Sink","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::Cursor<std::boxed::Box<[u8], A>>","&'a std::os::unix::net::UnixStream","std::io::Sink","&std::fs::File","std::process::ChildStdin","std::io::Stdout","std::os::unix::net::UnixStream","&std::io::Stdout","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::BorrowedCursor<'a>","std::io::stdio::StdoutRaw","std::sys::unix::stdio::Stderr","&std::process::ChildStdin","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::StderrLock<'_>","&std::net::TcpStream","std::collections::VecDeque<u8, A>","&std::io::Stderr","std::boxed::Box<W>","std::io::Stderr","std::io::LineWriter<W>","std::io::BufWriter<W>","std::io::StdoutLock<'_>","std::io::Cursor<&mut [u8]>","std::io::Cursor<[u8; N]>","std::io::impls::<impl std::io::Write for &mut W>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Writer<W>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.write(p1);
++writer::Writer::<W>::write(p0, p1);
++crate::writer::Writer::<W>::write(p0, p1);
++<writer::Writer<W>>::write(p0, p1);
+-----------------
+src/writer.rs writer::Writer::<W>::write_wrapped
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write_wrapped":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write_wrapped":{"W":["std::fs::File","&std::process::ChildStdin","std::vec::Vec<u8, A>","std::process::ChildStdin","std::io::Cursor<[u8; N]>","std::io::BufWriter<W>","std::io::Stderr","std::io::StderrLock<'_>","std::io::Cursor<std::vec::Vec<u8, A>>","std::collections::VecDeque<u8, A>","std::io::StdoutLock<'_>","std::net::TcpStream","std::io::LineWriter<W>","std::io::stdio::StdoutRaw","&std::io::Stdout","&std::net::TcpStream","std::io::stdio::StderrRaw","std::io::buffered::linewritershim::LineWriterShim<'a, W>","&std::fs::File","std::io::Stdout","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::impls::<impl std::io::Write for &mut W>","std::io::BorrowedCursor<'a>","std::os::unix::net::UnixStream","std::sys::unix::stdio::Stdout","&std::io::Sink","std::boxed::Box<W>","&'a std::os::unix::net::UnixStream","std::io::Cursor<&mut [u8]>","&std::io::Stderr","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::Sink","std::sys::unix::stdio::Stderr"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Writer<W>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p3 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.write_wrapped(p1, p2, p3);
++writer::Writer::<W>::write_wrapped(p0, p1, p2, p3);
++crate::writer::Writer::<W>::write_wrapped(p0, p1, p2, p3);
++<writer::Writer<W>>::write_wrapped(p0, p1, p2, p3);
+-----------------
+src/writer.rs writer::Writer::<W>::write_indent
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write_indent":{"W":["std::io::Write","std::marker::Sized"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::write_indent":{"W":["&std::io::Sink","&std::process::ChildStdin","std::collections::VecDeque<u8, A>","std::boxed::Box<W>","std::io::BufWriter<W>","std::io::Cursor<&mut [u8]>","std::process::ChildStdin","&std::fs::File","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::StdoutLock<'_>","std::io::LineWriter<W>","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::stdio::StderrRaw","std::io::Stdout","std::io::impls::<impl std::io::Write for &mut W>","&'a std::os::unix::net::UnixStream","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::Cursor<[u8; N]>","std::vec::Vec<u8, A>","std::io::StderrLock<'_>","std::fs::File","std::os::unix::net::UnixStream","&std::io::Stderr","std::io::BorrowedCursor<'a>","std::net::TcpStream","&std::net::TcpStream","std::io::buffered::linewritershim::LineWriterShim<'a, W>","&std::io::Stdout","std::sys::unix::stdio::Stdout","std::io::stdio::StdoutRaw","std::io::Sink","std::sys::unix::stdio::Stderr","std::io::Stderr"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Writer<W>
++p0.write_indent();
++writer::Writer::<W>::write_indent(p0);
++crate::writer::Writer::<W>::write_indent(p0);
++<writer::Writer<W>>::write_indent(p0);
+-----------------
+src/writer.rs writer::Writer::<W>::create_element
+'a
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::create_element":{"N":["std::convert::AsRef"],"W":["std::io::Write","std::marker::Sized"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::Writer::<W>::create_element":{"N":["<&mut T as std::convert::AsRef<U>>","events::Event"],"W":["std::sys::unix::stdio::Stdout","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::LineWriter<W>","std::collections::VecDeque<u8, A>","std::io::Cursor<[u8; N]>","std::net::TcpStream","&std::fs::File","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::vec::Vec<u8, A>","std::os::unix::net::UnixStream","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::Stderr","std::boxed::Box<W>","std::io::BufWriter<W>","std::io::Cursor<&mut [u8]>","&std::net::TcpStream","&std::process::ChildStdin","std::io::StdoutLock<'_>","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::impls::<impl std::io::Write for &mut W>","&std::io::Stdout","std::io::Stdout","&'a std::os::unix::net::UnixStream","std::io::stdio::StderrRaw","std::io::StderrLock<'_>","std::sys::unix::stdio::Stderr","std::io::BorrowedCursor<'a>","&std::io::Stderr","std::process::ChildStdin","std::io::stdio::StdoutRaw","&std::io::Sink","std::fs::File","std::io::Sink"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Writer<W>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // N
++p0.create_element(p1);
++writer::Writer::<W>::create_element(p0, p1);
++crate::writer::Writer::<W>::create_element(p0, p1);
++<writer::Writer<W>>::create_element(p0, p1);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::with_attribute
+'a,'b
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::with_attribute":{"I":["std::marker::Sized","std::convert::Into"],"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::with_attribute":{"I":["<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError","std::sync::mpmc::select::Selected"],"W":["&std::io::Sink","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::BorrowedCursor<'a>","std::io::stdio::StdoutRaw","std::vec::Vec<u8, A>","std::io::Cursor<[u8; N]>","std::io::LineWriter<W>","std::process::ChildStdin","std::io::stdio::StderrRaw","std::io::Cursor<std::vec::Vec<u8, A>>","&std::fs::File","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::Cursor<std::boxed::Box<[u8], A>>","std::sys::unix::stdio::Stderr","std::fs::File","std::io::Cursor<&mut [u8]>","std::os::unix::net::UnixStream","std::io::impls::<impl std::io::Write for &mut W>","std::sys::unix::stdio::Stdout","std::io::Stdout","std::collections::VecDeque<u8, A>","std::io::StdoutLock<'_>","std::io::Stderr","&'a std::os::unix::net::UnixStream","&std::io::Stderr","std::io::Sink","std::boxed::Box<W>","&std::net::TcpStream","&std::io::Stdout","std::io::StderrLock<'_>","std::io::BufWriter<W>","&std::process::ChildStdin","std::net::TcpStream"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.with_attribute(p1);
++writer::ElementWriter::<'a, W>::with_attribute(p0, p1);
++crate::writer::ElementWriter::<'a, W>::with_attribute(p0, p1);
++<writer::ElementWriter<'a, W>>::with_attribute(p0, p1);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::with_attributes
+'a,'b
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::with_attributes":{"<I as std::iter::IntoIterator>::Item":["std::convert::Into"],"I":["std::iter::IntoIterator","std::marker::Sized"],"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["<&mut I as std::iter::Iterator>","events::attributes::Attributes"]},"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::with_attributes":{"<I as std::iter::IntoIterator>::Item":["std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError","<T as std::convert::Into<U>>"],"I":["std::option::Option<T>","std::collections::BTreeMap<K, V, A>","<&'a std::option::Option<T> as std::iter::IntoIterator>","<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>","std::collections::BinaryHeap<T>","std::collections::BTreeSet<T, A>","std::collections::HashMap<K, V, S>","std::sync::mpsc::Receiver<T>","&'a std::os::unix::net::UnixListener","&'a std::path::Path","std::result::Result<T, E>","std::collections::VecDeque<T, A>","&'a std::path::PathBuf","std::vec::Vec<T, A>","std::collections::LinkedList<T>","std::collections::HashSet<T, S>"],"W":["std::io::Stdout","&std::io::Sink","std::vec::Vec<u8, A>","&'a std::os::unix::net::UnixStream","std::os::unix::net::UnixStream","&std::process::ChildStdin","std::io::impls::<impl std::io::Write for &mut W>","std::io::Stderr","std::sys::unix::stdio::Stdout","std::process::ChildStdin","&std::fs::File","std::sys::unix::stdio::Stderr","std::io::Cursor<[u8; N]>","std::io::LineWriter<W>","std::io::Cursor<&mut [u8]>","std::io::BufWriter<W>","&std::io::Stdout","std::net::TcpStream","std::io::stdio::StdoutRaw","&std::net::TcpStream","std::io::StdoutLock<'_>","std::io::stdio::StderrRaw","std::io::BorrowedCursor<'a>","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::boxed::Box<W>","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::Cursor<std::vec::Vec<u8, A>>","std::fs::File","&std::io::Stderr","std::io::StderrLock<'_>","std::collections::VecDeque<u8, A>","std::io::Sink"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.with_attributes(p1);
++writer::ElementWriter::<'a, W>::with_attributes(p0, p1);
++crate::writer::ElementWriter::<'a, W>::with_attributes(p0, p1);
++<writer::ElementWriter<'a, W>>::with_attributes(p0, p1);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::write_text_content
+'a
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_text_content":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_text_content":{"W":["std::io::buffered::linewritershim::LineWriterShim<'a, W>","&std::net::TcpStream","std::process::ChildStdin","std::io::stdio::StderrRaw","std::sys::unix::stdio::Stdout","std::io::Cursor<std::boxed::Box<[u8], A>>","&'a std::os::unix::net::UnixStream","std::collections::VecDeque<u8, A>","std::io::Sink","std::io::BufWriter<W>","&std::io::Stdout","std::io::StdoutLock<'_>","std::boxed::Box<W>","std::net::TcpStream","std::io::Cursor<&mut [u8]>","std::io::impls::<impl std::io::Write for &mut W>","std::fs::File","std::sys::unix::stdio::Stderr","&std::process::ChildStdin","std::io::Cursor<[u8; N]>","&std::io::Stderr","&std::io::Sink","std::io::LineWriter<W>","std::io::Stdout","std::os::unix::net::UnixStream","std::io::Stderr","std::io::StderrLock<'_>","std::vec::Vec<u8, A>","std::io::BorrowedCursor<'a>","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::stdio::StdoutRaw","&std::fs::File"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // events::BytesText<'_>
++p0.write_text_content(p1);
++writer::ElementWriter::<'a, W>::write_text_content(p0, p1);
++crate::writer::ElementWriter::<'a, W>::write_text_content(p0, p1);
++<writer::ElementWriter<'a, W>>::write_text_content(p0, p1);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::write_cdata_content
+'a
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_cdata_content":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_cdata_content":{"W":["&std::fs::File","&'a std::os::unix::net::UnixStream","&std::io::Stdout","&std::io::Sink","std::io::Stdout","std::io::Sink","std::io::Stderr","std::collections::VecDeque<u8, A>","std::os::unix::net::UnixStream","std::process::ChildStdin","std::io::stdio::StderrRaw","std::sys::unix::stdio::Stderr","std::sys::unix::stdio::Stdout","std::io::Cursor<&mut [u8]>","std::io::StdoutLock<'_>","std::io::Cursor<[u8; N]>","std::io::impls::<impl std::io::Write for &mut W>","std::boxed::Box<W>","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::LineWriter<W>","&std::process::ChildStdin","&std::net::TcpStream","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","&std::io::Stderr","std::io::stdio::StdoutRaw","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::BorrowedCursor<'a>","std::io::StderrLock<'_>","std::net::TcpStream","std::fs::File","std::io::BufWriter<W>","std::vec::Vec<u8, A>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // events::BytesCData<'_>
++p0.write_cdata_content(p1);
++writer::ElementWriter::<'a, W>::write_cdata_content(p0, p1);
++crate::writer::ElementWriter::<'a, W>::write_cdata_content(p0, p1);
++<writer::ElementWriter<'a, W>>::write_cdata_content(p0, p1);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::write_pi_content
+'a
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_pi_content":{"W":["std::io::Write","std::marker::Sized"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_pi_content":{"W":["std::io::LineWriter<W>","std::io::Cursor<std::vec::Vec<u8, A>>","std::os::unix::net::UnixStream","std::io::Stdout","std::io::impls::<impl std::io::Write for &mut W>","std::sys::unix::stdio::Stderr","std::io::BorrowedCursor<'a>","&std::io::Sink","std::io::Cursor<[u8; N]>","std::process::ChildStdin","&std::net::TcpStream","std::io::Sink","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::collections::VecDeque<u8, A>","std::io::stdio::StdoutRaw","std::io::stdio::StderrRaw","std::io::StdoutLock<'_>","&std::io::Stderr","&std::fs::File","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::vec::Vec<u8, A>","std::io::Stderr","std::io::BufWriter<W>","&std::io::Stdout","std::io::Cursor<&mut [u8]>","&std::process::ChildStdin","std::net::TcpStream","std::boxed::Box<W>","&'a std::os::unix::net::UnixStream","std::sys::unix::stdio::Stdout","std::io::StderrLock<'_>","std::fs::File"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // events::BytesText<'_>
++p0.write_pi_content(p1);
++writer::ElementWriter::<'a, W>::write_pi_content(p0, p1);
++crate::writer::ElementWriter::<'a, W>::write_pi_content(p0, p1);
++<writer::ElementWriter<'a, W>>::write_pi_content(p0, p1);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::write_empty
+'a
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_empty":{"W":["std::marker::Sized","std::io::Write"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"writer::ElementWriter::<'a, W>::write_empty":{"W":["std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::Cursor<[u8; N]>","std::io::impls::<impl std::io::Write for &mut W>","std::net::TcpStream","&'a std::os::unix::net::UnixStream","std::io::StdoutLock<'_>","std::collections::VecDeque<u8, A>","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::BufWriter<W>","std::io::Cursor<std::boxed::Box<[u8], A>>","std::io::StderrLock<'_>","&std::process::ChildStdin","std::io::stdio::StderrRaw","&std::fs::File","std::io::Stdout","std::vec::Vec<u8, A>","&std::io::Stdout","std::fs::File","std::io::Cursor<&mut [u8]>","std::sys::unix::stdio::Stderr","std::io::LineWriter<W>","std::boxed::Box<W>","&std::io::Stderr","std::os::unix::net::UnixStream","std::io::stdio::StdoutRaw","std::sys::unix::stdio::Stdout","std::io::BorrowedCursor<'a>","std::io::Sink","std::process::ChildStdin","&std::net::TcpStream","std::io::Stderr","std::io::Cursor<std::vec::Vec<u8, A>>","&std::io::Sink"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
++p0.write_empty();
++writer::ElementWriter::<'a, W>::write_empty(p0);
++crate::writer::ElementWriter::<'a, W>::write_empty(p0);
++<writer::ElementWriter<'a, W>>::write_empty(p0);
+-----------------
+src/writer.rs writer::ElementWriter::<'a, W>::write_inner_content
+'a
+deps:{"std::io::impls::<impl std::io::Write for &mut W>":{},"std::ops::function::impls::<impl std::ops::Fn<A> for &F>":{},"writer::ElementWriter::<'a, W>::write_inner_content":{"F":["std::ops::Fn","std::marker::Sized"],"W":["std::io::Write","std::marker::Sized"]}}
+candidates:{"std::io::impls::<impl std::io::Write for &mut W>":{},"std::ops::function::impls::<impl std::ops::Fn<A> for &F>":{},"writer::ElementWriter::<'a, W>::write_inner_content":{"F":["std::boxed::Box<F, A>","core::str::CharEscapeUnicode","core::str::BytesIsNotEmpty","core::str::CharEscapeDefault","core::str::IsWhitespace","core::str::LinesAnyMap","core::slice::ascii::EscapeByte","core::str::IsAsciiWhitespace","core::str::IsNotEmpty","std::ops::function::impls::<impl std::ops::Fn<A> for &F>","core::str::UnsafeBytesToStr","core::str::CharEscapeDebugContinue"],"W":["std::io::BorrowedCursor<'a>","std::io::impls::<impl std::io::Write for &mut W>","std::io::Sink","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::StderrLock<'_>","std::io::Stderr","std::os::unix::net::UnixStream","std::sys::unix::stdio::Stderr","std::fs::File","std::net::TcpStream","std::io::StdoutLock<'_>","std::collections::VecDeque<u8, A>","&std::net::TcpStream","std::io::Cursor<std::vec::Vec<u8, A>>","std::io::Cursor<[u8; N]>","&std::io::Stdout","&std::io::Stderr","std::io::stdio::StdoutRaw","&'a std::os::unix::net::UnixStream","std::process::ChildStdin","std::io::BufWriter<W>","std::vec::Vec<u8, A>","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::io::stdio::StderrRaw","&std::process::ChildStdin","&std::io::Sink","std::io::Cursor<std::boxed::Box<[u8], A>>","std::sys::unix::stdio::Stdout","&std::fs::File","std::io::Stdout","std::io::Cursor<&mut [u8]>","std::boxed::Box<W>","std::io::LineWriter<W>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // writer::ElementWriter<'a, W>
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++p0.write_inner_content(p1);
++writer::ElementWriter::<'a, W>::write_inner_content(p0, p1);
++crate::writer::ElementWriter::<'a, W>::write_inner_content(p0, p1);
++<writer::ElementWriter<'a, W>>::write_inner_content(p0, p1);
+-----------------
+src/writer.rs <writer::Indentation as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // writer::Indentation
++p0.clone();
++<writer::Indentation as std::clone::Clone>::clone(p0);
++crate::<writer::Indentation as std::clone::Clone>::clone(p0);
++<writer::Indentation>::clone(p0);
+-----------------
+src/writer.rs writer::Indentation::new
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
+let mut p1 = 0usize; // None+usize
++writer::Indentation::new(p0, p1);
++crate::writer::Indentation::new(p0, p1);
++<writer::Indentation>::new(p0, p1);
+-----------------
+src/writer.rs writer::Indentation::grow
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Indentation
++p0.grow();
++writer::Indentation::grow(p0);
++crate::writer::Indentation::grow(p0);
++<writer::Indentation>::grow(p0);
+-----------------
+src/writer.rs writer::Indentation::shrink
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // writer::Indentation
++p0.shrink();
++writer::Indentation::shrink(p0);
++crate::writer::Indentation::shrink(p0);
++<writer::Indentation>::shrink(p0);

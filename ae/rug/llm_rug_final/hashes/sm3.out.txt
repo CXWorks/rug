@@ -1,0 +1,201 @@
+-----------------
+sm3/src/compress.rs compress::ff1
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::ff1(p0, p1, p2);
++crate::compress::ff1(p0, p1, p2);
++crate::compress::ff1(p0, p1, p2);
+-----------------
+sm3/src/compress.rs compress::ff2
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::ff2(p0, p1, p2);
++crate::compress::ff2(p0, p1, p2);
++crate::compress::ff2(p0, p1, p2);
+-----------------
+sm3/src/compress.rs compress::gg1
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::gg1(p0, p1, p2);
++crate::compress::gg1(p0, p1, p2);
++crate::compress::gg1(p0, p1, p2);
+-----------------
+sm3/src/compress.rs compress::gg2
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::gg2(p0, p1, p2);
++crate::compress::gg2(p0, p1, p2);
++crate::compress::gg2(p0, p1, p2);
+-----------------
+sm3/src/compress.rs compress::p0
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++compress::p0(p0);
++crate::compress::p0(p0);
++crate::compress::p0(p0);
+-----------------
+sm3/src/compress.rs compress::p1
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++compress::p1(p0);
++crate::compress::p1(p0);
++crate::compress::p1(p0);
+-----------------
+sm3/src/compress.rs compress::w1
+deps:{}
+candidates:{}
+let mut p0 = & [0u32;1]; // None+[u32; 16]
+let mut p1 = 0usize; // None+usize
++compress::w1(p0, p1);
++crate::compress::w1(p0, p1);
++crate::compress::w1(p0, p1);
+-----------------
+sm3/src/compress.rs compress::w2
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 16]
+let mut p1 = 0usize; // None+usize
++compress::w2(p0, p1);
++crate::compress::w2(p0, p1);
++crate::compress::w2(p0, p1);
+-----------------
+sm3/src/compress.rs compress::t
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++compress::t(p0);
++crate::compress::t(p0);
++crate::compress::t(p0);
+-----------------
+sm3/src/compress.rs compress::sm3_round1
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
+let mut p6 = 0u32; // None+u32
+let mut p7 = 0u32; // None+u32
+let mut p8 = 0u32; // None+u32
+let mut p9 = 0u32; // None+u32
+let mut p10 = 0u32; // None+u32
++compress::sm3_round1(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
++crate::compress::sm3_round1(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
++crate::compress::sm3_round1(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+-----------------
+sm3/src/compress.rs compress::sm3_round2
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
+let mut p6 = 0u32; // None+u32
+let mut p7 = 0u32; // None+u32
+let mut p8 = 0u32; // None+u32
+let mut p9 = 0u32; // None+u32
+let mut p10 = 0u32; // None+u32
++compress::sm3_round2(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
++crate::compress::sm3_round2(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
++crate::compress::sm3_round2(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+-----------------
+sm3/src/compress.rs compress::compress_u32
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & [0u32;1]; // None+[u32; 16]
++compress::compress_u32(p0, p1);
++crate::compress::compress_u32(p0, p1);
++crate::compress::compress_u32(p0, p1);
+-----------------
+sm3/src/compress.rs compress::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 8]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sm3Core as digest::core_api::BlockSizeUser>::BlockSize>]
++compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
++crate::compress::compress(p0, p1);
+-----------------
+sm3/src/lib.rs <Sm3Core as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sm3Core
++p0.clone();
++<Sm3Core as std::clone::Clone>::clone(p0);
++crate::<Sm3Core as std::clone::Clone>::clone(p0);
++<Sm3Core>::clone(p0);
+-----------------
+sm3/src/lib.rs <Sm3Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sm3Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Sm3Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Sm3Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Sm3Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Sm3Core>::update_blocks(p0, p1);
+-----------------
+sm3/src/lib.rs <Sm3Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sm3Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Sm3Core as digest::core_api::BlockSizeUser>::BlockSize, <Sm3Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Sm3Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Sm3Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Sm3Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Sm3Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+sm3/src/lib.rs <Sm3Core as std::default::Default>::default
+deps:{}
+candidates:{}
++<Sm3Core as std::default::Default>::default();
++crate::<Sm3Core as std::default::Default>::default();
++<Sm3Core>::default();
+-----------------
+sm3/src/lib.rs <Sm3Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Sm3Core
++p0.reset();
++<Sm3Core as digest::Reset>::reset(p0);
++crate::<Sm3Core as digest::Reset>::reset(p0);
++<Sm3Core>::reset(p0);
+-----------------
+sm3/src/lib.rs <Sm3Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++<Sm3Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Sm3Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Sm3Core>::write_alg_name(p0);
+-----------------
+sm3/src/lib.rs <Sm3Core as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sm3Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sm3Core as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sm3Core as std::fmt::Debug>::fmt(p0, p1);
++<Sm3Core>::fmt(p0, p1);

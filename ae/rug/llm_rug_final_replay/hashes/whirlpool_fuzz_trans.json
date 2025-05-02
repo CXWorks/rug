@@ -1,0 +1,1 @@
+{"tests_rug_425": {"test_compress_block": {"rug_fuzz_0": "0u64", "rug_fuzz_1": "0u8"}}, "tests_rug_426": {"test_compress": {"rug_fuzz_0": "0", "rug_fuzz_1": "0", "rug_fuzz_2": "1"}}, "tests_rug_427": {"test_rug": {"rug_fuzz_0": "123", "rug_fuzz_1": "456", "rug_fuzz_2": "789"}}, "tests_rug_431": {"test_update_len": {"rug_fuzz_0": "1234567890"}}}

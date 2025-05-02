@@ -1,0 +1,337 @@
+-----------------
+src/baseline.rs baseline::update_fast_16
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++baseline::update_fast_16(p0, p1);
++crate::baseline::update_fast_16(p0, p1);
++crate::baseline::update_fast_16(p0, p1);
+-----------------
+src/baseline.rs baseline::update_slow
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++baseline::update_slow(p0, p1);
++crate::baseline::update_slow(p0, p1);
++crate::baseline::update_slow(p0, p1);
+-----------------
+src/combine.rs combine::gf2_matrix_times
+deps:{}
+candidates:{}
+let mut p0 = & [0u32;1]; // None+[u32; _]
+let mut p1 = 0u32; // None+u32
++combine::gf2_matrix_times(p0, p1);
++crate::combine::gf2_matrix_times(p0, p1);
++crate::combine::gf2_matrix_times(p0, p1);
+-----------------
+src/combine.rs combine::gf2_matrix_square
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; _]
+let mut p1 = & [0u32;1]; // None+[u32; _]
++combine::gf2_matrix_square(p0, p1);
++crate::combine::gf2_matrix_square(p0, p1);
++crate::combine::gf2_matrix_square(p0, p1);
+-----------------
+src/combine.rs combine::combine
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u64; // None+u64
++combine::combine(p0, p1, p2);
++crate::combine::combine(p0, p1, p2);
++crate::combine::combine(p0, p1, p2);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::debug
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
++specialized::pclmulqdq::debug(&p0, p1);
++crate::specialized::pclmulqdq::debug(&p0, p1);
++crate::specialized::pclmulqdq::debug(&p0, p1);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::calculate
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++specialized::pclmulqdq::calculate(p0, p1);
++crate::specialized::pclmulqdq::calculate(p0, p1);
++crate::specialized::pclmulqdq::calculate(p0, p1);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::reduce128
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::arch::x86_64::__m128i
++specialized::pclmulqdq::reduce128(p0, p1, p2);
++crate::specialized::pclmulqdq::reduce128(p0, p1, p2);
++crate::specialized::pclmulqdq::reduce128(p0, p1, p2);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::get
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u8].as_mut_slice(); // None+&[u8]
++specialized::pclmulqdq::get(p0);
++crate::specialized::pclmulqdq::get(p0);
++crate::specialized::pclmulqdq::get(p0);
+-----------------
+src/lib.rs hash
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++hash(p0);
++crate::hash(p0);
++crate::hash(p0);
+-----------------
+src/baseline.rs <baseline::State as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // baseline::State
++p0.clone();
++<baseline::State as std::clone::Clone>::clone(p0);
++crate::<baseline::State as std::clone::Clone>::clone(p0);
++<baseline::State>::clone(p0);
+-----------------
+src/baseline.rs baseline::State::new
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++baseline::State::new(p0);
++crate::baseline::State::new(p0);
++<baseline::State>::new(p0);
+-----------------
+src/baseline.rs baseline::State::update
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // baseline::State
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.update(p1);
++baseline::State::update(p0, p1);
++crate::baseline::State::update(p0, p1);
++<baseline::State>::update(p0, p1);
+-----------------
+src/baseline.rs baseline::State::finalize
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // baseline::State
++p0.finalize();
++baseline::State::finalize(p0);
++crate::baseline::State::finalize(p0);
++<baseline::State>::finalize(p0);
+-----------------
+src/baseline.rs baseline::State::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // baseline::State
++p0.reset();
++baseline::State::reset(p0);
++crate::baseline::State::reset(p0);
++<baseline::State>::reset(p0);
+-----------------
+src/baseline.rs baseline::State::combine
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // baseline::State
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u64; // None+u64
++p0.combine(p1, p2);
++baseline::State::combine(p0, p1, p2);
++crate::baseline::State::combine(p0, p1, p2);
++<baseline::State>::combine(p0, p1, p2);
+-----------------
+src/specialized/pclmulqdq.rs <specialized::pclmulqdq::State as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // specialized::pclmulqdq::State
++p0.clone();
++<specialized::pclmulqdq::State as std::clone::Clone>::clone(p0);
++crate::<specialized::pclmulqdq::State as std::clone::Clone>::clone(p0);
++<specialized::pclmulqdq::State>::clone(p0);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::State::new
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++specialized::pclmulqdq::State::new(p0);
++crate::specialized::pclmulqdq::State::new(p0);
++<specialized::pclmulqdq::State>::new(p0);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::State::update
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // specialized::pclmulqdq::State
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.update(p1);
++specialized::pclmulqdq::State::update(p0, p1);
++crate::specialized::pclmulqdq::State::update(p0, p1);
++<specialized::pclmulqdq::State>::update(p0, p1);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::State::finalize
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // specialized::pclmulqdq::State
++p0.finalize();
++specialized::pclmulqdq::State::finalize(p0);
++crate::specialized::pclmulqdq::State::finalize(p0);
++<specialized::pclmulqdq::State>::finalize(p0);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::State::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // specialized::pclmulqdq::State
++p0.reset();
++specialized::pclmulqdq::State::reset(p0);
++crate::specialized::pclmulqdq::State::reset(p0);
++<specialized::pclmulqdq::State>::reset(p0);
+-----------------
+src/specialized/pclmulqdq.rs specialized::pclmulqdq::State::combine
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // specialized::pclmulqdq::State
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u64; // None+u64
++p0.combine(p1, p2);
++specialized::pclmulqdq::State::combine(p0, p1, p2);
++crate::specialized::pclmulqdq::State::combine(p0, p1, p2);
++<specialized::pclmulqdq::State>::combine(p0, p1, p2);
+-----------------
+src/lib.rs <State as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // State
++p0.clone();
++<State as std::clone::Clone>::clone(p0);
++crate::<State as std::clone::Clone>::clone(p0);
++<State>::clone(p0);
+-----------------
+src/lib.rs <Hasher as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Hasher
++p0.clone();
++<Hasher as std::clone::Clone>::clone(p0);
++crate::<Hasher as std::clone::Clone>::clone(p0);
++<Hasher>::clone(p0);
+-----------------
+src/lib.rs Hasher::new
+deps:{}
+candidates:{}
++Hasher::new();
++crate::Hasher::new();
++<Hasher>::new();
+-----------------
+src/lib.rs Hasher::new_with_initial
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++Hasher::new_with_initial(p0);
++crate::Hasher::new_with_initial(p0);
++<Hasher>::new_with_initial(p0);
+-----------------
+src/lib.rs Hasher::new_with_initial_len
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u64; // None+u64
++Hasher::new_with_initial_len(p0, p1);
++crate::Hasher::new_with_initial_len(p0, p1);
++<Hasher>::new_with_initial_len(p0, p1);
+-----------------
+src/lib.rs Hasher::internal_new_baseline
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u64; // None+u64
++Hasher::internal_new_baseline(p0, p1);
++crate::Hasher::internal_new_baseline(p0, p1);
++<Hasher>::internal_new_baseline(p0, p1);
+-----------------
+src/lib.rs Hasher::internal_new_specialized
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u64; // None+u64
++Hasher::internal_new_specialized(p0, p1);
++crate::Hasher::internal_new_specialized(p0, p1);
++<Hasher>::internal_new_specialized(p0, p1);
+-----------------
+src/lib.rs Hasher::update
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Hasher
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.update(p1);
++Hasher::update(p0, p1);
++crate::Hasher::update(p0, p1);
++<Hasher>::update(p0, p1);
+-----------------
+src/lib.rs Hasher::finalize
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Hasher
++p0.finalize();
++Hasher::finalize(p0);
++crate::Hasher::finalize(p0);
++<Hasher>::finalize(p0);
+-----------------
+src/lib.rs Hasher::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Hasher
++p0.reset();
++Hasher::reset(p0);
++crate::Hasher::reset(p0);
++<Hasher>::reset(p0);
+-----------------
+src/lib.rs Hasher::combine
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Hasher
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Hasher
++p0.combine(p1);
++Hasher::combine(p0, p1);
++crate::Hasher::combine(p0, p1);
++<Hasher>::combine(p0, p1);
+-----------------
+src/lib.rs <Hasher as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Hasher
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Hasher as std::fmt::Debug>::fmt(p0, p1);
++crate::<Hasher as std::fmt::Debug>::fmt(p0, p1);
++<Hasher>::fmt(p0, p1);
+-----------------
+src/lib.rs <Hasher as std::default::Default>::default
+deps:{}
+candidates:{}
++<Hasher as std::default::Default>::default();
++crate::<Hasher as std::default::Default>::default();
++<Hasher>::default();
+-----------------
+src/lib.rs <Hasher as std::hash::Hasher>::write
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Hasher
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.write(p1);
++<Hasher as std::hash::Hasher>::write(p0, p1);
++crate::<Hasher as std::hash::Hasher>::write(p0, p1);
++<Hasher>::write(p0, p1);
+-----------------
+src/lib.rs <Hasher as std::hash::Hasher>::finish
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Hasher
++p0.finish();
++<Hasher as std::hash::Hasher>::finish(p0);
++crate::<Hasher as std::hash::Hasher>::finish(p0);
++<Hasher>::finish(p0);

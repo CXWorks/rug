@@ -1,0 +1,3186 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use std::str::FromStr;
+
+    #[derive(Debug)]
+    pub enum EditType {
+        Insert,
+        Newline,
+        Other,
+    }
+
+    impl FromStr for EditType {
+        type Err = ();
+
+        fn from_str(s: &str) -> Result<EditType, ()> {
+            match s {
+                "insert" => Ok(EditType::Insert),
+                "newline" => Ok(EditType::Newline),
+                "other" => Ok(EditType::Other),
+                _ => Err(()),
+            }
+        }
+    }
+
+    #[test]
+    fn test_from_str_insert() {
+        let s = "insert";
+        let result = EditType::from_str(s);
+        assert_eq!(result, Ok(EditType::Insert));
+    }
+
+    #[test]
+    fn test_from_str_newline() {
+        let s = "newline";
+        let result = EditType::from_str(s);
+        assert_eq!(result, Ok(EditType::Newline));
+    }
+
+    #[test]
+    fn test_from_str_other() {
+        let s = "other";
+        let result = EditType::from_str(s);
+        assert_eq!(result, Ok(EditType::Other));
+    }
+
+    #[test]
+    fn test_from_str_invalid() {
+        let s = "invalid";
+        let result = EditType::from_str(s);
+        assert_eq!(result, Err(()));
+    }
+}
+False
+========================================
+    use crate::{
+        Config, ConfigTable, EditType, LanguageId, PluginState, StateCache, Style, Syntax,
+        SyntaxReference, SyntaxSet, View, ViewId,
+    };
+    use serde_json::Value;
+    use std::collections::HashMap;
+    use std::path::Path;
+    use xi_plugin_lib::Plugin;
+    use xi_rope::Delta;
+    use xi_rope::DeltaBuilder;
+    use xi_rope::Interval;
+    use xi_rope::IntervalBounds::{End, Start};
+    use xi_rope::IntervalDelta;
+    use xi_rope::Rope;
+    use xi_rope::cli::LinesMetric;
+    use xi_rope::interval::Interval as RopeInterval;
+    use xi_syntect_lib::parse::ParseState;
+    use xi_syntect_lib::parse::ScopeStack;
+    use xi_syntect_lib::state::LineState;
+    use xi_syntect_lib::syntax::SyntaxSet;
+
+    type MyView = View<StateCache<LineState>>;
+
+    #[test]
+    fn test_config_changed() {
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let mut syntect = Syntect::new(&syntax_set);
+
+        let mut view: View<StateCache<LineState>> = View::default();
+
+        let config_table: ConfigTable = get_default_config_table();
+
+        syntect.config_changed(&mut view, &config_table);
+    }
+
+    fn get_default_config_table() -> ConfigTable {
+        ConfigTable {}
+    }
+
+    #[derive(Default)]
+    struct ConfigTable {}
+
+    #[derive(Clone)]
+    struct Syntect<'a> {
+        view_state: HashMap<ViewId, PluginState>,
+        syntax_set: &'a SyntaxSet,
+    }
+
+    impl<'a> Plugin for Syntect<'a> {
+        type Cache = StateCache<LineState>;
+
+        fn new_view(&mut self, view: &mut MyView) {
+            let view_id = view.get_id();
+            let state = PluginState::new();
+            self.view_state.insert(view_id, state);
+            self.do_highlighting(view);
+        }
+
+        fn did_close(&mut self, view: &MyView) {
+            self.view_state.remove(&view.get_id());
+        }
+
+        fn did_save(&mut self, view: &mut MyView, _old: Option<&Path>) {
+            self.do_highlighting(view);
+        }
+
+        fn config_changed(&mut self, _view: &mut MyView, _changes: &ConfigTable) {}
+
+        fn language_changed(&mut self, view: &mut MyView, _old_lang: LanguageId) {
+            self.do_highlighting(view);
+        }
+
+        fn update(
+            &mut self,
+            _view: &mut MyView,
+            _delta: Option<&Delta<Rope>>,
+            _edit_type: String,
+            _author: String,
+        ) {
+        }
+
+        fn custom_command(
+            &mut self,
+            _view: &mut MyView,
+            _method: &str,
+            _params: Value,
+        ) {
+        }
+
+        fn idle(&mut self, _view: &mut MyView) {
+        }
+    }
+
+    impl<'a> Syntect<'a> {
+        fn new(syntax_set: &'a SyntaxSet) -> Self {
+            Syntect {
+                view_state: HashMap::new(),
+                syntax_set,
+            }
+        }
+
+        fn do_highlighting(&mut self, _view: &mut MyView) {
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{View, Plugin, PluginState, LineState, RopeDelta, EditType, LanguageId};
+    use xi_plugin_lib::{ViewId, ConfigTable, PluginPid};
+    use syntect::highlighting::SyntaxSet;
+    use std::collections::HashMap;
+    use serde_json::json;
+    use std::path::Path;
+    use xi_plugin_lib::rpc::RopeDelta;
+
+    struct MyView {
+        // implement necessary methods and fields for View
+    }
+
+    impl MyView {
+        fn get_language_id(&self) -> LanguageId {
+            // return appropriate LanguageId based on your implementation
+        }
+
+        fn get_id(&self) -> ViewId {
+            // return appropriate ViewId based on your implementation
+        }
+
+        fn get_cache(&self) -> LineState {
+            // return appropriate LineState based on your implementation
+        }
+
+        fn schedule_idle(&self) {
+            // implement appropriate logic for schedule_idle
+        }
+
+        fn request_is_pending(&self) -> bool {
+            // implement appropriate logic for request_is_pending
+        }
+
+        fn get_config(&self) -> Config {
+            // implement appropriate logic for get_config
+        }
+    }
+
+    struct Config {
+        auto_indent: bool, // this should match the type of auto_indent field in ConfigTable
+    }
+
+    impl Plugin for MyView {
+        type Cache = StateCache<LineState>;
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            // implement appropriate logic for new_view
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            // implement appropriate logic for did_close
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old: Option<&Path>) {
+            // implement appropriate logic for did_save
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {
+            // implement appropriate logic for config_changed
+        }
+
+        fn language_changed(&mut self, view: &mut View<Self::Cache>, _old_lang: LanguageId) {
+            // implement appropriate logic for language_changed
+        }
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            delta: Option<&RopeDelta>,
+            edit_type: String,
+            author: String,
+        ) {
+            // implement appropriate logic for update
+        }
+
+        fn custom_command(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            method: &str,
+            params: serde_json::Value,
+        ) {
+            // implement appropriate logic for custom_command
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            // implement appropriate logic for idle
+        }
+    }
+
+    struct Syntect<'a> {
+        view_state: HashMap<ViewId, PluginState>,
+        syntax_set: &'a SyntaxSet,
+    }
+
+    impl<'a> Syntect<'a> {
+        fn new(syntax_set: &'a SyntaxSet) -> Self {
+            Syntect {
+                view_state: HashMap::new(),
+                syntax_set,
+            }
+        }
+
+        fn do_highlighting(&mut self, view: &mut MyView) {
+            // implement appropriate logic for do_highlighting
+        }
+    }
+
+    #[test]
+    fn test_custom_command_toggle_comment() {
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let mut view = MyView::new(...); // provide necessary parameters for MyView
+        let mut plugin = Syntect::new(&syntax_set);
+        plugin.new_view(&mut view);
+        let lines = json!([[0, 0], [0, 1]]);
+        plugin.custom_command(&mut view, "toggle_comment", lines);
+        // perform assertions
+    }
+
+    #[test]
+    fn test_custom_command_reindent() {
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let mut view = MyView::new(...); // provide necessary parameters for MyView
+        let mut plugin = Syntect::new(&syntax_set);
+        plugin.new_view(&mut view);
+        let lines = json!([[0, 0], [0, 1]]);
+        plugin.custom_command(&mut view, "reindent", lines);
+        // perform assertions
+    }
+
+    #[test]
+    fn test_custom_command_unexpected() {
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let mut view = MyView::new(...); // provide necessary parameters for MyView
+        let mut plugin = Syntect::new(&syntax_set);
+        plugin.new_view(&mut view);
+        let unexpected = "unexpected_command";
+        let lines = json!([[0, 0], [0, 1]]);
+        plugin.custom_command(&mut view, unexpected, lines);
+        // perform assertions
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_rpc::peer::DummyPeer; // Import the necessary dependencies
+    use xi_rpc::RemotePeer;
+    use syntect::highlighting::ThemeSet;
+    use syntect::parsing::SyntaxSet;
+    
+    #[test]
+    fn test_did_close() {
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let theme_set = ThemeSet::load_defaults();
+        let mut syntect = Syntect {
+            view_state: HashMap::new(),
+            syntax_set: &syntax_set,
+        };
+        let view = View::new(
+            Box::new(DummyPeer), // Use DummyPeer as Box<dyn xi_rpc::Peer>
+            PluginPid(1), // Provide PluginPid
+            PluginBufferInfo {
+                rev: 0,
+                buf_size: 0,
+                nb_lines: 0,
+                metadata: HashMap::new(),
+            }, // Provide PluginBufferInfo
+            theme_set.themes["base16-ocean.dark"].clone(),
+            syntax_set,
+            HashMap::new(),
+            HashMap::new(),
+        );
+        
+        syntect.did_close(&view);
+        
+        // Add assertions here to check the state after calling `did_close` function
+        // e.g. assert_eq!(syntect.view_state.len(), 0);
+    }
+}
+False
+========================================
+    use std::collections::HashMap;
+    use std::path::Path;
+    use xi_plugin_lib::{Plugin, StateCache, View, LanguageId, ViewId, RopeDelta, EditType, ConfigTable, Cache};
+    use xi_trace::trace_block;
+    use syntect::parsing::{SyntaxSet, ParseState, ScopeStack, Scope};
+    use syntect::highlighting::ThemeSet;
+    use syntect::highlighting::HighlightState;
+    use xi_plugin_lib::rpc::SharedCore;
+
+    struct MyView {
+        id: ViewId,
+        cache: StateCache<LineState>,
+        language_id: LanguageId,
+        config: ConfigTable,
+    }
+
+    struct LineState {
+        syntax: ParseState,
+        highlights: ScopeStack,
+    }
+
+    pub struct PluginState {
+        initial_state: Option<(ParseState, ScopeStack)>,
+        spans: Vec<Scope>,
+        new_scopes: Vec<Scope>,
+        offset: usize,
+        spans_start: usize,
+    }
+
+    pub struct Syntect<'a> {
+        view_state: HashMap<ViewId, PluginState>,
+        syntax_set: &'a SyntaxSet,
+    }
+
+    impl<'a> Plugin for Syntect<'a> {
+        type Cache = StateCache<LineState>;
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            let _t = trace_block("Syntect::new_view", &["syntect"]);
+            let view_id = view.get_id();
+            let state = PluginState::new();
+            self.view_state.insert(view_id, state);
+            self.do_highlighting(view);
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            self.view_state.remove(&view.get_id());
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old: Option<&Path>) {
+            let _t = trace_block("Syntect::did_save", &["syntect"]);
+            self.do_highlighting(view);
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+
+        fn language_changed(&mut self, view: &mut View<Self::Cache>, _old_lang: LanguageId) {
+            self.do_highlighting(view);
+        }
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            delta: Option<&RopeDelta>,
+            edit_type: String,
+            author: String,
+        ) {
+            let _t = trace_block("Syntect::update", &["syntect"]);
+            view.schedule_idle();
+            let should_auto_indent = view.get_config().auto_indent;
+            let edit_type = edit_type.parse::<EditType>().ok();
+            if should_auto_indent
+                && author == "core"
+                && (edit_type == Some(EditType::Newline)
+                    || edit_type == Some(EditType::Insert)
+                    || edit_type == Some(EditType::Other))
+            {
+                if let Some(delta) = delta {
+                    let state = self.view_state.get_mut(&view.get_id()).unwrap();
+                    state.consider_indentation(view, delta, edit_type.unwrap());
+                }
+            }
+        }
+
+        fn custom_command(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            method: &str,
+            params: serde_json::Value,
+        ) {
+            match method {
+                "toggle_comment" => {
+                    let lines: Vec<(usize, usize)> = serde_json::from_value(params).unwrap();
+                    let state = self.view_state.get_mut(&view.get_id()).unwrap();
+                    state.toggle_comment(view, self.syntax_set, &lines);
+                }
+                "reindent" => {
+                    let lines: Vec<(usize, usize)> = serde_json::from_value(params).unwrap();
+                    let state = self.view_state.get_mut(&view.get_id()).unwrap();
+                    state.reindent(view, self.syntax_set, &lines);
+                }
+                other => eprintln!("syntect received unexpected command {}", other),
+            }
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            let state = self.view_state.get_mut(&view.get_id()).unwrap();
+            state.indent_lines(view, self.syntax_set);
+
+            for _ in 0..StateCache::<LineState>::LINES_PER_RPC {
+                if !state.highlight_one_line(view, self.syntax_set) {
+                    state.flush_spans(view);
+                    return;
+                }
+                if view.request_is_pending() {
+                    trace!("yielding for request", &["syntect"]);
+                    break;
+                }
+            }
+            state.flush_spans(view);
+            view.schedule_idle();
+        }
+    }
+
+    impl<'a> Syntect<'a> {
+        fn new(syntax_set: &'a SyntaxSet) -> Self {
+            Syntect { view_state: HashMap::new(), syntax_set }
+        }
+
+        fn do_highlighting(&mut self, view: &mut MyView) {
+            let initial_state = {
+                let language_id = view.get_language_id();
+                let syntax = self
+                    .syntax_set
+                    .find_syntax_by_name(language_id.as_ref())
+                    .unwrap_or_else(|| self.syntax_set.find_syntax_plain_text());
+                Some((ParseState::new(syntax), ScopeStack::new()))
+            };
+
+            let state = self.view_state.get_mut(&view.id).unwrap();
+            state.initial_state = initial_state;
+            state.spans = Vec::new();
+            state.new_scopes = Vec::new();
+            state.offset = 0;
+            state.spans_start = 0;
+            view.cache.clear();
+            view.schedule_idle();
+        }
+    }
+
+    #[test]
+    fn test_did_save(){
+        let syntax_set = SyntaxSet::new();
+        let mut view = MyView {
+            id: ViewId(0),
+            cache: StateCache::new(),
+            language_id: LanguageId::from("rust"),
+            config: ConfigTable::new(),
+        };
+        let mut plugin = Syntect::new(&syntax_set);
+        plugin.did_save(&mut view, None);
+        // add your assertions here
+    }
+}
+False
+========================================
+    use crate::main::{Syntect, Plugin};
+    use xi_plugin_lib::{View, Plugin, LineCache, LineCount, RopeDelta, ScrollTo};
+
+    #[test]
+    fn test_idle() {
+        let syntax_set = syntect::parsing::SyntaxSet::new();
+        let mut syntect = Syntect::new(&syntax_set);
+
+        let mut view = View::<LineCache>::new(1, LineCount(1), ScrollTo::Bottom, LineCache::default());
+        let initial_state = {
+            let syntax = syntax_set.find_syntax_by_name("rust").unwrap();
+            Some((syntect_lib::ParseState::new(syntax), syntect_lib::ScopeStack::new()))
+        };
+        syntect.did_open(&mut view, initial_state, LineCount(1), LineCount(1), ScrollTo::Bottom, None);
+
+        syntect.idle(&mut view);
+
+        // assert any conditions you want here
+        assert_eq!(view.get_cache().get_id(), view.get_id().get());
+    }
+}
+
+False
+========================================
+Sorry, there are too many compilation errors as there are many missing dependencies and unresolved imports. I won't be able to fix these in order to generate the correct unit test for you. I suggest you fix the missing dependencies and unresolved imports and try to compile the code again. Once the code compiles successfully, I can help you generate the unit test.
+False
+========================================
+    use std::collections::HashMap;
+    use syntect::highlighting::ThemeSet;
+    use syntect::parsing::SyntaxSet;
+    use xi_plugin_lib::{Plugin, EditType, LanguageId, PluginState, PluginView, PluginUpdate};
+    use xi_trace::trace_block;
+    use crate::Syntect;
+
+    #[test]
+    fn test_new_view() {
+        // create a dummy view
+        let mut view = PluginView::new();
+
+        // create a dummy syntect instance
+        let syntax_set = dummy_syntax_set();
+        let mut syntect = Syntect::new(&syntax_set);
+
+        // call the new_view function
+        syntect.new_view(&mut view);
+
+        // check the view state
+        let view_id = view.get_id();
+        assert!(syntect.view_state.get(&view_id).is_some());
+    }
+
+    fn dummy_syntax_set() -> SyntaxSet {
+        let mut syntax_set: SyntaxSet = SyntaxSet::new();
+        syntax_set.load_syntaxes().unwrap();
+        syntax_set
+    }
+
+    fn dummy_theme() -> ThemeSet {
+        ThemeSet::load_defaults()
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use xi_plugin_lib::plugin::{EditType, Plugin};
+
+    #[test]
+    fn test_update() {
+        let mut cache = StateCache::new();
+        let view_id = 0;
+        let mut view = View::new(Box::new(DummyPeer), PluginPid::new(0), PluginBufferInfo::new(0, 0));
+        let delta = None;
+        let edit_type = String::from("Newline");
+        let author = String::from("core");
+
+        let syntax_set = SyntaxSet::new();
+        let mut syntect = Syntect::new(&syntax_set);
+        syntect.new_view(&mut view);
+
+        syntect.update(&mut view, delta, edit_type, author);
+        // assert statements
+    }
+
+    struct DummyPeer;
+    impl xi_rpc::Peer for DummyPeer {
+        fn send_notification(&self, _method: &str, _params: &serde_json::Value) {}
+        fn send_request(
+            &self,
+            _method: &str,
+            _params: &serde_json::Value,
+        ) -> Box<dyn Future<Item = serde_json::Value, Error = xi_rpc::Error>> {
+            Box::new(future::ok(serde_json::Value::Null))
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use syntect::parsing::SyntaxSetBuilder;
+    use xi_rope::delta::DeltaBuilder;
+    use xi_core_lib::RopeInfo;
+
+    fn create_test_view() -> MyView {
+        // TODO: Create a test view
+        unimplemented!()
+    }
+
+    fn create_test_syntax_set() -> SyntaxSet {
+        let mut builder = SyntaxSetBuilder::new();
+        // TODO: Add test syntaxes to the builder
+        unimplemented!()
+    }
+
+    #[test]
+    fn test_autoindent_line() {
+        let mut plugin_state = PluginState::new();
+        let mut view = create_test_view();
+        let syntax_set = create_test_syntax_set();
+        let builder = &mut DeltaBuilder::<RopeInfo>::new(view.get_buf_size());
+        let line = 1;
+
+        let result = plugin_state.autoindent_line(&mut view, builder, &syntax_set, line);
+        assert!(result.is_ok());
+        // TODO: Add assertions for the expected behavior
+        unimplemented!()
+    }
+
+    // TODO: Add more tests for the remaining methods
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use rope::interval::Interval;
+    use rope::line_ending::LineEnding;
+    use rope::str_utils::strspn;
+    use rope::tree::Node;
+    use rope::*;
+
+    use syntect::highlighting::Scope;
+
+    use syntect::highlighting::ScopeRepo;
+    use syntect::parsing::SyntaxSet;
+    use syntect::highlighting::ThemeSet;
+
+    #[test]
+    fn test_bulk_autoindent() {
+        let mut plugin_state = PluginState::new();
+        let mut view = MyView::new();
+        #[allow(unused_mut)]
+        let mut builder = EditBuilder::new();
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let range = 0..10;
+
+        let result = plugin_state.bulk_autoindent(&mut view, &mut builder, &syntax_set, range);
+
+        assert!(result.is_ok());
+    }
+
+    struct MyView {
+    }
+
+    impl MyView {
+        fn new() -> Self {
+            MyView {
+            }
+        }
+
+        fn get_config(&self) -> &MyConfig {
+            unimplemented!()
+        }
+
+        fn get_buf_size(&self) -> usize {
+            unimplemented!()
+        }
+
+        fn get_line(&self, line: usize) -> Result<&str, Error> {
+            unimplemented!()
+        }
+
+        fn offset_of_line(&self, line: usize) -> Result<usize, Error> {
+            unimplemented!()
+        }
+
+        fn get_frontier(&self) -> Option<usize> {
+            unimplemented!()
+        }
+
+        fn get_prev(&self, line: usize) -> Option<(usize, usize, Option<LineState>)> {
+            unimplemented!()
+        }
+
+        fn get(&self, line: usize) -> Option<Option<LineState>> {
+            unimplemented!()
+        }
+
+        fn update_frontier(&mut self, line_num: usize) {
+            unimplemented!()
+        }
+
+        fn close_frontier(&mut self) {
+            unimplemented!()
+        }
+
+        fn line_of_offset(&mut self, offset: usize) -> Option<usize> {
+            unimplemented!()
+        }
+
+        fn edit(&mut self, delta: Delta<RopeInfo>, priority: usize, undo_group: bool, coalesce: bool, source: String) {
+            unimplemented!()
+        }
+    }
+
+    struct MyConfig {
+        tab_size: usize,
+        translate_tabs_to_spaces: bool,
+    }
+
+    struct EditBuilder {
+
+    }
+
+    impl EditBuilder {
+        fn new() -> Self {
+            EditBuilder {
+
+            }
+        }
+
+        fn is_empty(&self) -> bool {
+            unimplemented!()
+        }
+
+        fn build(&mut self) -> Delta<RopeInfo> {
+            unimplemented!()
+        }
+
+        fn replace(&mut self, interval: Interval, text: String) {
+            unimplemented!()
+        }
+
+        fn delete(&mut self, interval: Interval) {
+            unimplemented!()
+        }
+    }
+
+    struct Rope {
+
+    }
+
+    impl From<&str> for Rope {
+        fn from(s: &str) -> Self {
+            unimplemented!()
+        }
+    }
+
+    struct RopeInfo {
+
+    }
+
+    struct Delta<T> {
+
+    }
+
+    struct Interval {
+
+    }
+
+    impl Interval {
+        fn new(start: usize, end: usize) -> Self {
+            unimplemented!()
+        }
+    }
+
+    enum Error {
+
+    }
+
+    struct LineState {
+
+    }
+    
+    impl LineState {
+        fn parse_line(&self, line: &str, syntax_set: &SyntaxSet) -> (LineState, Scope) {
+            unimplemented!()
+        }
+    }
+
+    enum LookupResult {
+        Existing(u32),
+        New(u32),
+    }
+
+    struct StackMap {
+        scopes: Node,
+        next_id: u32,
+    }
+
+    impl Default for StackMap {
+        fn default() -> Self {
+            StackMap {
+                scopes: Node::default(),
+                next_id: 0,
+            }
+        }
+    }
+
+    impl StackMap {
+        fn get_value(&mut self, stack: &[Scope], next_id: u32) -> LookupResult {
+            unimplemented!()
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use syntect::highlighting::Style;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxReference;
+
+    #[derive(Debug)]
+    enum Error {
+        PeerDisconnect,
+    }
+
+    trait MyView {
+        fn get_line(&mut self, line: usize) -> Result<String, Error>;
+        fn get_config(&self) -> ViewConfig;
+    }
+
+    #[derive(Debug)]
+    struct ViewConfig {
+        tab_size: usize,
+        translate_tabs_to_spaces: bool,
+    }
+
+    struct MockView {
+        lines: Vec<String>,
+    }
+
+    impl MockView {
+        fn new(lines: Vec<String>) -> Self {
+            MockView { lines }
+        }
+    }
+
+    impl MyView for MockView {
+        fn get_line(&mut self, line: usize) -> Result<String, Error> {
+            match self.lines.get(line) {
+                Some(line) => Ok(line.clone()),
+                None => Err(Error::PeerDisconnect),
+            }
+        }
+
+        fn get_config(&self) -> ViewConfig {
+            ViewConfig {
+                tab_size: 4,
+                translate_tabs_to_spaces: true,
+            }
+        }
+    }
+
+    trait MySyntax {
+        fn highlight_line(&self, line: &str, style: &mut Style);
+    }
+
+    trait Syntax {
+        fn name(&self) -> &'static str;
+        fn scope(&self) -> &'static str;
+        fn style(&self) -> Style;
+    }
+
+    trait MySyntaxSet {
+        fn find_syntax_by_scope(&self, scope: &str) -> Option<&SyntaxReference>;
+    }
+
+    impl MySyntax for MockSyntax {
+        fn highlight_line(&self, _line: &str, _style: &mut Style) {
+            // Do nothing
+        }
+    }
+
+    struct MockSyntax;
+
+    impl MockSyntax {
+        fn new() -> Self {
+            MockSyntax
+        }
+    }
+
+    impl Syntax for MockSyntax {
+        fn name(&self) -> &'static str {
+            "mock_syntax"
+        }
+
+        fn scope(&self) -> &'static str {
+            "source.mock"
+        }
+
+        fn style(&self) -> Style {
+            Style::default()
+        }
+    }
+
+    impl MySyntaxSet for SyntaxSet {
+        fn find_syntax_by_scope(&self, scope: &str) -> Option<&SyntaxReference> {
+            let mock_syntax: SyntaxReference = SyntaxReference::new(MockSyntax::new());
+            Some(&mock_syntax)
+        }
+    }
+
+    fn create_syntax_set() -> SyntaxSet {
+        let mut ss = SyntaxSet::new();
+        let syntax: SyntaxReference = MockSyntax::new().into();
+        ss.add_syntax(syntax);
+        ss
+    }
+
+    #[test]
+    fn test_check_indent_active_edit() {
+        let mut view = MockView::new(vec![
+            "    line1".into(),
+            "    line2".into(),
+            "    line3".into(),
+        ]);
+        let mut builder = DeltaBuilder::new(20);
+        let syntax_set = create_syntax_set();
+        let line = 2;
+
+        PluginState::check_indent_active_edit(&mut view, &mut builder, &syntax_set, line).unwrap();
+
+        let expected = DeltaBuilder::new(20)
+            .retain(16)
+            .retain(16)
+            .replace("".into())
+            .build();
+
+        assert_eq!(builder.build(), expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use stackmap::{LookupResult, Node};
+    use stackmap::StackMap;
+
+    #[test]
+    fn test_compute_syntax() {
+        let mut plugin_state = PluginState::new();
+        let line = "test line";
+        let state = None;
+        let syntax_set = &SyntaxSet::new();
+        let accumulate_spans = true;
+        let result = plugin_state.compute_syntax(line, state, syntax_set, accumulate_spans);
+        assert_eq!(result, None);
+    }
+
+    #[test]
+    fn test_identifier_for_stack() {
+        let mut plugin_state = PluginState::new();
+        let stack: &[Stack] = &[Stack::default()];
+        let repo = LockedRepo::default();
+        let result = plugin_state.identifier_for_stack(stack, &repo);
+        assert_eq!(result, 1);
+    }
+
+    #[test]
+    fn test_highlight_one_line() {
+        let mut plugin_state = PluginState::new();
+        let mut ctx = MyView::new(Box::new(MockPeer::new()), PluginPid(0), PluginBufferInfo::new(0, 0));
+        let syntax_set = SyntaxSet::new();
+        let result = plugin_state.highlight_one_line(&mut ctx, &syntax_set);
+        assert_eq!(result, false);
+    }
+
+    #[test]
+    fn test_flush_spans() {
+        let mut plugin_state = PluginState::new();
+        let mut ctx = MyView::new(Box::new(MockPeer::new()), PluginPid(0), PluginBufferInfo::new(0, 0));
+        plugin_state.set_spans_start(2);
+        let result = plugin_state.flush_spans(&mut ctx);
+        assert_eq!(result, ());
+    }
+
+    #[test]
+    fn test_indent_lines() {
+        let mut plugin_state = PluginState::new();
+        let mut view = MyView::new(Box::new(MockPeer::new()), PluginPid(0), PluginBufferInfo::new(0, 0));
+        let syntax_set = SyntaxSet::new();
+        plugin_state.set_indentation_state(vec![
+            IndentationTask::Newline(1),
+            IndentationTask::Edit(2),
+            IndentationTask::Batch(Range::new(3, 4)),
+        ]);
+        plugin_state.indent_lines(&mut view, &syntax_set);
+        // Assert some condition here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use ropey::Rope;
+
+    // Helper function to create a MyView with a given text and initial state
+    fn create_view(text: &str, state: Option<(LineState, ScopeStack)>) -> MyView {
+        let mut view = MyView::new(Box::new(NullRpcPeer), PluginPid(0), PluginBufferInfo::new());
+        view.set_buf(Rope::from(text));
+        if let Some((mut parse, mut scope)) = state {
+            parse.set_line_count(view.get_line_count());
+            scope.set_line_count(view.get_line_count());
+            view.set_state(Some((parse, scope)));
+        }
+        view
+    }
+
+    // Test consider_indentation function
+    #[test]
+    fn test_consider_indentation() {
+        let mut state = PluginState::new();
+        let mut view = create_view("", None);
+
+        let delta = RopeDelta::new_simple(
+            Vec::new(),
+            vec![RopeDeltaRegion::new(
+                0..0,
+                Rope::from("test\nfoo\nbar"),
+                0..9,
+                9,
+                1,
+            )],
+        );
+
+        state.consider_indentation(&mut view, &delta, EditType::Newline);
+        assert_eq!(state.indentation_state.len(), 1);
+        assert_eq!(
+            state.indentation_state[0],
+            IndentationTask::Newline(1)
+        );
+
+        state.consider_indentation(&mut view, &delta, EditType::Insert);
+        assert_eq!(state.indentation_state.len(), 1);
+        assert_eq!(
+            state.indentation_state[0],
+            IndentationTask::Edit(0)
+        );
+
+        state.consider_indentation(&mut view, &delta, EditType::Other);
+        assert_eq!(state.indentation_state.len(), 1);
+        assert_eq!(
+            state.indentation_state[0],
+            IndentationTask::Batch(Range { start: 0, end: 2 })
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::MyView;
+
+    #[test]
+    fn test_flush_spans() {
+        let mut ctx = MyView::new("test".to_string());
+        let mut plugin_state = PluginState::new();
+        plugin_state.new_scopes.push(vec!["source".to_string(), "rust".to_string()]);
+        plugin_state.spans.push(ScopeSpan {
+            start: 0,
+            end: 5,
+            scope_id: 1,
+        });
+        plugin_state.spans_start = 0;
+        plugin_state.offset = 5;
+
+        plugin_state.flush_spans(&mut ctx);
+
+        assert!(plugin_state.new_scopes.is_empty());
+        assert!(plugin_state.spans.is_empty());
+        assert_eq!(plugin_state.spans_start, 5);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    struct MockView {
+        lines: Vec<String>,
+    }
+
+    impl MockView {
+        fn new() -> Self {
+            MockView { lines: Vec::new() }
+        }
+
+        fn add_line(&mut self, line: &str) {
+            self.lines.push(line.to_owned());
+        }
+
+        fn get_line(&self, line: usize) -> Result<&str, ()> {
+            self.lines.get(line).map(|s| s.as_str()).ok_or(())
+        }
+    }
+
+    struct MockSyntaxSet {}
+
+    impl MockSyntaxSet {
+        fn new() -> Self {
+            MockSyntaxSet {}
+        }
+
+        fn metadata(&self) -> syntect::parsing::Metadata {
+            syntect::parsing::Metadata::default() // Replace with your own implementation
+        }
+    }
+
+    #[test]
+    fn test_get_metadata() {
+        let mut view = MockView::new();
+        view.add_line("fn main() {");
+        view.add_line("    let x = 5;");
+        view.add_line("    println!(\"x = {}\", x);");
+        view.add_line("}");
+
+        let syntax_set = MockSyntaxSet::new();
+
+        let mut plugin_state = PluginState::new();
+
+        let metadata = plugin_state.get_metadata(&mut view, &syntax_set, 0);
+
+        // Replace with your own assertions
+        assert!(metadata.is_some());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use xi_plugin_lib::PluginBufferInfo;
+
+    #[test]
+    fn test_highlight_one_line() {
+        let peer: Box<dyn xi_rpc::RpcPeer> = Box::new(MyPee
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::MutexGuard;
+    use syntect::parsing::Scope;
+    use syntect::parsing::ScopeRepository;
+    use syntect::parsing::stackmap::Node;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::stackmap::LookupResult;
+    use syntect::parsing::ScopeStack;
+    
+    #[allow(unused_imports)]
+    use crate::*;
+
+    #[test]
+    fn test_identifier_for_stack_existing() {
+        let mut plugin_state = PluginState::new();
+        let lock = SCOPE_REPO.lock().unwrap();
+        let repo: MutexGuard<ScopeRepository> = lock.to_owned();
+        let mut stack = ScopeStack::new();
+        stack.push(Scope::new(1));
+        stack.push(Scope::new(2));
+        let result = plugin_state.identifier_for_stack(&stack, repo);
+        assert_eq!(result, 1);
+    }
+    
+    #[test]
+    fn test_identifier_for_stack_new() {
+        let mut plugin_state = PluginState::new();
+        let lock = SCOPE_REPO.lock().unwrap();
+        let repo: MutexGuard<ScopeRepository> = lock.to_owned();
+        let mut stack = ScopeStack::new();
+        stack.push(Scope::new(1));
+        stack.push(Scope::new(2));
+        stack.push(Scope::new(3));
+        let result = plugin_state.identifier_for_stack(&stack, repo);
+        assert_eq!(result, 0);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::stackmap::Node;
+    use crate::stackmap::StackMap;
+    use syntect::parsing::Scope;
+    use syntect::highlighting::Color;
+    use syntect::highlighting::ColorSettings;
+    use syntect::parsing::SyntaxSet;
+    use syntect::highlighting::ThemeSet;
+    use std::collections::HashMap;
+    use std::sync::Mutex;
+    use std::slice::SliceConcatExt;
+    use std::sync::Arc;
+    use std::sync::RwLock;
+    use xi_rope::delta::DeltaBuilder;
+    use xi_rope::delta::Interval;
+    use xi_rope::engine::rope::Rope;
+    use xi_rope::engine::rope::RopeDelta;
+    use xi_rope::engine::rope::RopeInfo;
+    use xi_rope::engine::rope::RopeTrait;
+    use xi_rope::engine::serde_json;
+    use xi_rope::engine::serde_json::json;
+    use xi_rope::engine::serde_json::Value;
+    use xi_rope::engine::serde_json::Map;
+    use xi_rope::interval::Interval as XiInterval;
+    use xi_rope::interval::IntervalTrait;
+
+    impl Default for MyView {
+        fn default() -> Self {
+            MyView {
+                config: Default::default(),
+                buf_size: Default::default(),
+                lines: vec![],
+                frontier: None,
+                line_states: HashMap::new(),
+                line_span: HashMap::new(),
+            }
+        }
+    }
+
+    fn create_test_view(text: &str) -> MyView {
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let theme_set = ThemeSet::load_defaults();
+        let theme = &theme_set.themes["base16-ocean.dark"];
+        let color_settings = ColorSettings::default();
+        let syntax = syntax_set.find_syntax_by_name("Rust").unwrap();
+        let buf_size = text.len();
+        let mut view = MyView::default();
+        view.lines = text.lines().map(|s| s.to_owned()).collect();
+        PluginState::highlight_one_line(&mut view, &syntax_set);
+        PluginState::indent_lines(&mut view, &syntax_set);
+        view
+    }
+
+    #[test]
+    fn test_indent_level_of_line() {
+        let text = "    let x = 42;";
+        let mut view = create_test_view(text);
+        let mut plugin_state = PluginState::new();
+        let result = plugin_state.indent_level_of_line(&mut view, 0);
+        assert_eq!(result, 4);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use stackmap::{Node, StackMap};
+
+    #[derive(Debug)]
+    struct MyView;
+
+    struct SyntaxSet;
+
+    #[derive(Debug)]
+    struct LineState;
+
+    #[derive(Debug)]
+    struct DeltaBuilder;
+
+    #[derive(Debug)]
+    struct ScopeSpan;
+
+    #[derive(Debug)]
+    struct IndentationTask;
+
+    #[derive(Debug)]
+    struct Error;
+
+    #[derive(Debug)]
+    struct LockedRepo;
+
+    #[derive(Debug)]
+    struct ScopeRepo;
+
+    struct MyConfig {
+        tab_size: usize,
+        translate_tabs_to_spaces: bool,
+    }
+
+    #[derive(Debug)]
+    struct EditBuilder;
+
+    #[derive(Debug)]
+    struct RopeDelta;
+
+    #[derive(Debug)]
+    struct Rope;
+
+    #[derive(Debug)]
+    struct RopeSlice<'a> {
+        bytes: &'a [u8],
+    }
+
+    #[derive(Debug)]
+    struct Interval;
+
+    #[derive(Debug)]
+    struct Range {
+        start: usize,
+        end: usize,
+    }
+
+    #[derive(Debug)]
+    struct LockedMetadata;
+
+    #[derive(Debug)]
+    struct LockedRepo;
+
+    #[derive(Debug)]
+    struct Metadata<'a> {
+        metadata_for_scope: &'a str,
+    }
+
+    struct PluginState {
+        stack_idents: StackMap,
+        offset: usize,
+        initial_state: LineState,
+        spans_start: usize,
+        spans: Vec<ScopeSpan>,
+        new_scopes: Vec<Vec<String>>,
+        indentation_state: Vec<IndentationTask>,
+    }
+
+    impl PluginState {
+        fn new() -> Self {
+            PluginState {
+                stack_idents: StackMap::default(),
+                offset: 0,
+                initial_state: LineState,
+                spans_start: 0,
+                spans: Vec::new(),
+                new_scopes: Vec::new(),
+                indentation_state: Vec::new(),
+            }
+        }
+
+        fn indent_lines(&mut self, view: &mut MyView, syntax_set: &SyntaxSet) {
+            let mut builder = DeltaBuilder::new();
+
+            for indentation_task in self.indentation_state.iter() {
+                match indentation_task {
+                    IndentationTask::Newline(line) => self
+                        .autoindent_line(view, &mut builder, syntax_set, *line)
+                        .expect("auto-indent error on newline"),
+                    IndentationTask::Edit(line) => self
+                        .check_indent_active_edit(view, &mut builder, syntax_set, *line)
+                        .expect("auto-indent error on insert"),
+                    IndentationTask::Batch(range) => self
+                        .bulk_autoindent(view, &mut builder, syntax_set, *range)
+                        .expect("auto-indent error on other"),
+                };
+            }
+
+            if !builder.is_empty() {
+                view.edit(builder.build(), false, false, String::from("syntect"));
+            }
+
+            self.indentation_state.clear();
+        }
+
+        fn autoindent_line(
+            &mut self,
+            view: &mut MyView,
+            builder: &mut DeltaBuilder,
+            _syntax_set: &SyntaxSet,
+            line: usize,
+        ) -> Result<(), Error> {
+            let _t = trace_block("Syntect::autoindent", &["syntect"]);
+            let tab_size = view.get_config().tab_size;
+            let use_spaces = view.get_config().translate_tabs_to_spaces;
+            let current_line_indent = self.indent_level_of_line(view, line);
+            let base_indent = if line > 0 {
+                self.previous_nonblank_line(view, line)?
+                    .map(|l| self.indent_level_of_line(view, l))
+                    .unwrap_or(0)
+            } else {
+                0
+            };
+
+            let increase_level = self.test_increase(view, _syntax_set, line)?;
+            let decrease_level = self.test_decrease(view, _syntax_set, line)?;
+            let increase = if increase_level { tab_size } else { 0 };
+            let decrease = if decrease_level { tab_size } else { 0 };
+            let final_level = base_indent + increase - decrease;
+
+            if final_level != current_line_indent {
+                let edit_start = view.offset_of_line(line)?;
+                let edit_len = {
+                    let line = view.get_line(line)?;
+                    line.bytes().iter().take_while(|b| **b == b' ' || **b == b'\t').count()
+                };
+
+                let indent_text =
+                    if use_spaces { n_spaces(final_level) } else { n_tabs(final_level / tab_size) };
+
+                let iv = Interval::new(edit_start, edit_start + edit_len);
+                builder.replace(iv, indent_text.into());
+            }
+
+            Ok(())
+        }
+
+        fn check_indent_active_edit(
+            &mut self,
+            view: &mut MyView,
+            builder: &mut DeltaBuilder,
+            _syntax_set: &SyntaxSet,
+            line: usize,
+        ) -> Result<(), Error> {
+            if line == 0 {
+                return Ok(());
+            }
+            let tab_size = view.get_config().tab_size;
+            let current_indent = self.indent_level_of_line(view, line);
+            if line == 0 || current_indent == 0 {
+                return Ok(());
+            }
+            let just_increased = self.test_increase(view, _syntax_set, line)?;
+            let decrease = self.test_decrease(view, _syntax_set, line)?;
+            let prev_line = self.previous_nonblank_line(view, line)?;
+            let mut indent_level = prev_line.map(|l| self.indent_level_of_line(view, l)).unwrap_or(0);
+            if decrease {
+                // the first line after an increase should just match the previous line
+                if !just_increased {
+                    indent_level = indent_level.saturating_sub(tab_size);
+                }
+                // we don't want to change indent level if this line doesn't
+                // match `test_decrease`, because the user could have changed
+                // it manually, and we respect that.
+                if indent_level != current_indent {
+                    return self.set_indent(view, builder, line, indent_level);
+                }
+            }
+            Ok(())
+        }
+
+        fn bulk_autoindent(
+            &mut self,
+            view: &mut MyView,
+            builder: &mut DeltaBuilder,
+            _syntax_set: &SyntaxSet,
+            range: Range<usize>,
+        ) -> Result<(), Error> {
+            let _t = trace_block("Syntect::bulk_autoindent", &["syntect"]);
+            let tab_size = view.get_config().tab_size;
+            let use_spaces = view.get_config().translate_tabs_to_spaces;
+
+            let mut base_indent = if range.start > 0 {
+                self.previous_nonblank_line(view, range.start)?
+                    .map(|l| self.indent_level_of_line(view, l))
+                    .unwrap_or(0)
+            } else {
+                0
+            };
+
+            for line in range.start..=range.end {
+                let current_line_indent = self.indent_level_of_line(view, line);
+
+                if line > 0 {
+                    let increase_level = self.test_increase(view, _syntax_set, line)?;
+                    let decrease_level = self.test_decrease(view, _syntax_set, line)?;
+                    let increase = if increase_level { tab_size } else { 0 };
+                    let decrease = if decrease_level { tab_size } else { 0 };
+                    let final_level = base_indent + increase - decrease;
+                    base_indent = final_level;
+                }
+
+                if base_indent != current_line_indent {
+                    let edit_start = view.offset_of_line(line)?;
+                    let edit_len = {
+                        let line = view.get_line(line)?;
+                        line.bytes().iter().take_while(|b| **b == b' ' || **b == b'\t').count()
+                    };
+
+                    let indent_text = if use_spaces {
+                        n_spaces(base_indent)
+                    } else {
+                        n_tabs(base_indent / tab_size)
+                    };
+
+                    let iv = Interval::new(edit_start, edit_start + edit_len);
+                    builder.replace(iv, indent_text.into());
+                }
+            }
+
+            Ok(())
+        }
+
+        fn indent_level_of_line(&self, _view: &mut MyView, _line: usize) -> usize {
+            // Replace with actual implementation
+            0
+        }
+
+        fn previous_nonblank_line(
+            &self,
+            _view: &mut MyView,
+            _line: usize,
+        ) -> Result<Option<usize>, Error> {
+            // Replace with actual implementation
+            Ok(None)
+        }
+
+        fn test_increase(
+            &mut self,
+            _view: &mut MyView,
+            _syntax_set: &SyntaxSet,
+            _line: usize,
+        ) -> Result<bool, Error> {
+            // Replace with actual implementation
+            Ok(false)
+        }
+
+        fn test_decrease(
+            &mut self,
+            _view: &mut MyView,
+            _syntax_set: &SyntaxSet,
+            _line: usize,
+        ) -> Result<bool, Error> {
+            // Replace with actual implementation
+            Ok(false)
+        }
+
+        fn set_indent(
+            &self,
+            _view: &mut MyView,
+            _builder: &mut DeltaBuilder,
+            _line: usize,
+            _level: usize,
+        ) -> Result<(), Error> {
+            // Replace with actual implementation
+            Ok(())
+        }
+    }
+
+    #[test]
+    fn test_indent_lines() {
+        let mut view = MyView;
+        let syntax_set = SyntaxSet;
+        let mut state = PluginState::new();
+
+        state.indent_lines(&mut view, &syntax_set);
+
+        // Replace with actual assertions
+    }
+}
+False
+========================================
+    use std::collections::HashMap;
+    use std::ops::Range;
+    use std::sync::Mutex;
+    use xi_rpc::ReadError;
+    use xi_rpc::ReadErrorKind;
+    use xi_rope::rope::Rope;
+    use xi_rope::rope::Interval;
+    use xi_rope::interval::IntervalBounds;
+    use xi_trace::trace_block;
+    use syntect::parsing::ScopeStack;
+    use syntect::highlighting::Style;
+    use syntect::highlighting::Scope;
+    use syntect::SyntaxSet;
+    use xi_core::View;
+    use xi_core_lib::Config;
+    use xi_syntect_plugin::StackMap;
+    use xi_syntect_plugin::syntect_plugin::PluginState;
+    use xi_syntect_plugin::syntect_plugin::LineState;
+    use xi_syntect_plugin::syntect_plugin::ScopeSpan;
+    use xi_syntect_plugin::syntect_plugin::IndentationTask;
+    use xi_syntect_plugin::syntect_plugin::n_spaces;
+    use xi_syntect_plugin::syntect_plugin::n_tabs;
+    use xi_syntect_plugin::syntect_plugin::INDENTATION_PRIORITY;
+    use xi_syntect_plugin::syntect_plugin::SCOPE_REPO;
+    use xi_syntect_plugin::syntect_plugin::Error;
+    use xi_syntect_plugin::syntect_plugin::MyView;
+    use xi_syntect_plugin::syntect_plugin::DeltaBuilder;
+    use xi_syntect_plugin::syntect_plugin::EditBuilder;
+    use xi_syntect_plugin::syntect_plugin::EditType;
+
+    struct MockView {
+        lines: Vec<String>,
+        frontier: Option<usize>,
+    }
+
+    impl MockView {
+        fn new(lines: Vec<String>) -> Self {
+            Self {
+                lines,
+                frontier: None,
+            }
+        }
+    }
+
+    impl View for MockView {
+        fn get_buf_size(&self) -> usize {
+            unimplemented!()
+        }
+
+        fn get_line(&self, line: usize) -> Result<String, ReadError> {
+            self.lines.get(line).map(|s| s.to_owned()).ok_or(ReadError::new(ReadErrorKind::UnexpectedEof, "End of file"))
+        }
+
+        // Implement other methods of View trait as required
+
+        fn get_config(&self) -> &Config {
+            unimplemented!()
+        }
+    }
+
+    #[test]
+    fn test_insert_comment_marker() {
+        let lines = vec![
+            String::from("fn hello() {"),
+            String::from("    println!(\"Hello, world!\");"),
+            String::from("    println!(\"Hello, Rust!\");"),
+            String::from("}"),
+        ];
+        let mut view = MockView::new(lines.clone());
+        let mut builder = EditBuilder::new(0, 0);
+        let mut plugin_state = PluginState::new();
+        let line_range = 1..3;
+        let comment_str = "//";
+
+        plugin_state.insert_comment_marker(
+            &mut view,
+            &mut builder,
+            line_range,
+            comment_str,
+        );
+
+        let expected_lines = vec![
+            String::from("fn hello() {"),
+            String::from("    //    println!(\"Hello, world!\");"),
+            String::from("    //    println!(\"Hello, Rust!\");"),
+            String::from("}"),
+        ];
+        assert_eq!(view.lines, expected_lines);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::stackmap::*;
+
+    #[test]
+    fn test_new() {
+        let plugin_state = PluginState::new();
+        assert_eq!(plugin_state.stack_idents, StackMap::default());
+        assert_eq!(plugin_state.offset, 0);
+        assert_eq!(plugin_state.initial_state, None);
+        assert_eq!(plugin_state.spans_start, 0);
+        assert_eq!(plugin_state.spans, Vec::new());
+        assert_eq!(plugin_state.new_scopes, Vec::new());
+        assert_eq!(plugin_state.indentation_state, Vec::new());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use stackmap::StackMap;
+    use stackmap::Node;
+    use std::collections::HashMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeState;
+    use std::panic::catch_unwind;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxReference;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use std::panic::catch_unwind;
+    use std::sync::Mutex;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::ScopeStackBuilder;
+    use syntect::StackMap;
+    use syntect::SyntaxSet;
+    use syntect::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::SyntaxReference;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::StackMap;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeState;
+    use syntect::SyntaxReference;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::Node;
+    use syntect::parsing::StackMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::Node;
+    use syntect::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeState;
+    use syntect::SyntaxReference;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::StackMap;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeState;
+    use syntect::SyntaxReference;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::StackMap;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeState;
+    use syntect::SyntaxReference;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeState;
+    use syntect::SyntaxReference;
+    use syntect::parsing::ParseState;
+    use syntect::parsing::ScopeStack;
+    use syntect::parsing::syntax::SyntaxSet;
+    use syntect::parsing::StackMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::Node;
+    use syntect::parsing::StackMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::StackMap;
+    use syntect::parsing::SyntaxSet;
+    use syntect::parsing::SyntaxSetBuilder;
+    use syntect::parsing::stackmap::Node;
+
+    #[test]
+    fn test_previous_nonblank_line() {
+        let mut view = MyView {};
+        let mut state = PluginState::new();
+        let line = 1;
+        let result = state.previous_nonblank_line(&mut view, line).unwrap();
+        assert_eq!(result, None);
+        let line = 2;
+        let result = state.previous_nonblank_line(&mut view, line).unwrap();
+        assert_eq!(result, Some(1));
+    }
+
+    #[test]
+    fn test_indent_level_of_line() {
+        let mut view = MyView {};
+        let mut state = PluginState::new();
+        let line = 1;
+        let result = state.indent_level_of_line(&mut view, line);
+        assert_eq!(result, 0);
+        let line = 2;
+        let result = state.indent_level_of_line(&mut view, line);
+        assert_eq!(result, 0);
+    }
+
+    #[test]
+    fn test_bulk_autoindent() {
+        let mut view = MyView {};
+        let mut state = PluginState::new();
+        let syntax_set = SyntaxSetBuilder::new().build();
+        let range = Range { start: 1, end: 2 };
+        let result = state.bulk_autoindent(&mut view, range);
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_autoindent_line() {
+        let mut view = MyView {};
+        let mut builder = EditBuilder {};
+        let mut state = PluginState::new();
+        let syntax_set = SyntaxSetBuilder::new().build();
+        let line = 1;
+        let result = state.autoindent_line(&mut view, &mut builder, &syntax_set, line);
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_check_indent_active_edit() {
+        let mut view = MyView {};
+        let mut builder = EditBuilder {};
+        let mut state = PluginState::new();
+        let syntax_set = SyntaxSetBuilder::new().build();
+        let line = 1;
+        let result = state.check_indent_active_edit(&mut view, &mut builder, &syntax_set, line);
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_test_increase() {
+        let mut view = MyView {};
+        let mut state = PluginState::new();
+        let syntax_set = SyntaxSetBuilder::new().build();
+        let line = 1;
+        let result = state.test_increase(&mut view, &syntax_set, line);
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_test_decrease() {
+        let mut view = MyView {};
+        let mut state = PluginState::new();
+        let syntax_set = SyntaxSetBuilder::new().build();
+        let line = 1;
+        let result = state.test_decrease(&mut view, &syntax_set, line);
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_set_indent() {
+        let mut view = MyView {};
+        let mut builder = EditBuilder {};
+        let mut state = PluginState::new();
+        let line = 1;
+        let indent_level = 2;
+        let result = state.set_indent(&mut view, &mut builder, line, indent_level);
+        assert!(result.is_ok());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    // Mock structs and traits
+
+    struct MyView;
+    struct SyntaxSet;
+    struct LineState;
+    struct ScopeSpan;
+    struct IndentationTask;
+    struct LockedRepo;
+    struct Interval;
+    struct Rope;
+    struct RopeDelta;
+    struct EditBuilder;
+    struct Error;
+    struct EditType;
+    struct Range<T> {
+        start: T,
+        end: T,
+    }
+
+    struct MyViewConfig {
+        tab_size: usize,
+        translate_tabs_to_spaces: bool,
+    }
+
+    struct ScopedMetadata;
+
+    enum LookupResult {
+        Existing(u32),
+        New(u32),
+    }
+
+    struct LockedRepoGuard;
+
+    struct StackMap {
+        next_id: u32,
+        scopes: Node,
+    }
+
+    struct Node {
+        value: Option<u32>,
+        children: HashMap<String, Node>,
+    }
+
+    // Helper methods
+
+    impl MyView {
+        fn get_buf_size(&self) -> usize {}
+        fn get_config(&self) -> MyViewConfig {}
+        fn get_prev(&self, line: usize) -> (usize, usize, Option<LineState>) {}
+        fn get_line(&self, line: usize) -> Option<String> {}
+        fn get(&self, line: usize) -> Option<Option<LineState>> {}
+        fn update(&self, frontier: u64, new_state: u64) {}
+        fn close_frontier(&self) {}
+        fn get_frontier(&self) -> Option<usize> {}
+        fn update_frontier(&self, frontier: usize) {}
+        fn edit(
+            &self,
+            builder: EditBuilder,
+            indentation_priority: usize,
+            b: bool,
+            b1: bool,
+            from: String,
+        ) {}
+        fn add_scopes(&self, new_scopes: &Vec<Vec<String>>) {}
+        fn update_spans(&self, spans_start: usize, i: usize, spans: &Vec<ScopeSpan>) {}
+        fn offset_of_line(&self, line: usize) -> Result<usize, Error> {}
+        fn get_region(&self, range: Range<usize>) -> Result<&[u8], Error> {}
+        fn get_metadata(&mut self, view: &mut MyView, syntax_set: &SyntaxSet, line: usize) -> Option<ScopedMetadata> {}
+        fn toggle_comment_line_range(
+            &mut self,
+            view: &mut MyView,
+            syntax_set: &SyntaxSet,
+            builder: &mut EditBuilder,
+            line_range: Range<usize>,
+        ) {}
+        fn consider_indentation(&mut self, view: &mut MyView, delta: &RopeDelta, edit_type: EditType) {}
+        fn set_indent(&self, view: &mut MyView, builder: &mut EditBuilder, line: usize, level: usize) -> Result<(), Error> {}
+        fn test_increase(&mut self, view: &mut MyView, syntax_set: &SyntaxSet, line: usize) -> Result<bool, Error> {}
+        fn test_decrease(&mut self, view: &mut MyView, syntax_set: &SyntaxSet, line: usize) -> Result<bool, Error> {}
+        fn bulk_autoindent(
+            &mut self,
+            view: &mut MyView,
+            builder: &mut EditBuilder,
+            syntax_set: &SyntaxSet,
+            range: Range<usize>,
+        ) -> Result<(), Error> {}
+        fn autoindent_line(
+            &mut self,
+            view: &mut MyView,
+            builder: &mut EditBuilder,
+            syntax_set: &SyntaxSet,
+            line: usize,
+        ) -> Result<(), Error> {}
+        fn check_indent_active_edit(
+            &mut self,
+            view: &mut MyView,
+            builder: &mut EditBuilder,
+            syntax_set: &SyntaxSet,
+            line: usize,
+        ) -> Result<(), Error> {}
+        fn previous_nonblank_line(&self, view: &mut MyView, line: usize) -> Result<Option<usize>, Error> {}
+        fn indent_level_of_line(&self, view: &mut MyView, line: usize) -> usize {}
+        fn flush_spans(&mut self, ctx: &mut MyView) {}
+        fn new() -> Self {}
+        fn identifier_for_stack(&mut self, stack: &ScopeStack, repo: &LockedRepo) -> u32 {}
+        fn compute_syntax(
+            &mut self,
+            line: &str,
+            state: LineState,
+            syntax_set: &SyntaxSet,
+            accumulate_spans: bool,
+        ) -> LineState {}
+        fn highlight_one_line(&mut self, ctx: &mut MyView, syntax_set: &SyntaxSet) -> bool {}
+    }
+
+    struct PluginState {
+        stack_idents: StackMap,
+        offset: usize,
+        initial_state: LineState,
+        spans_start: usize,
+        spans: Vec<ScopeSpan>,
+        new_scopes: Vec<Vec<String>>,
+        indentation_state: Vec<IndentationTask>,
+    }
+
+    impl PluginState {
+        fn new() -> Self {}
+        fn reindent(&mut self, view: &mut MyView, syntax_set: &SyntaxSet, lines: &[(usize, usize)]) {}
+        fn toggle_comment(&mut self, view: &mut MyView, syntax_set: &SyntaxSet, lines: &[(usize, usize)]) {}
+        fn indent_lines(&mut self, view: &mut MyView, syntax_set: &SyntaxSet) {}
+    }
+
+    // Implement unit tests
+
+    #[test]
+    fn test_reindent() {
+        // Implement test
+    }
+
+    #[test]
+    fn test_reindent() {
+        // Implement test
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use syntect::parsing::SyntaxSet;
+    use xi_rope::delta::Delta;
+
+    struct MyView;
+
+    impl MyView {
+        fn offset_of_line(&self, num: usize) -> Option<usize> {
+            unimplemented!()
+        }
+
+        fn get_line(&self, num: usize) -> Option<&str> {
+            unimplemented!()
+        }
+
+        fn edit(&self, _delta: Delta, _priority: usize, _undo_group: bool, _coalesce: bool, _source: String) {
+            unimplemented!()
+        }
+    }
+
+    #[test]
+    fn test_remove_comment_marker() {
+        let mut view = MyView;
+        let mut builder = xi_rust::delta::Builder::new(view.get_buf_size());
+
+        let lines = 1..=5;
+        let comment_str = "//";
+
+        PluginState::remove_comment_marker(& PluginState::new(), &mut view, &mut builder, lines, comment_str);
+
+        // assert expected behavior
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use syntect::highlighting::ScopeMetadata;
+    use syntect::highlighting::ScopeMetadata;
+
+    struct MyView;
+
+    impl MyView {
+        fn new() -> Self {
+            MyView
+        }
+
+        fn set_line(&mut self, line: usize, text: &str) -> Result<(), Error> {
+            // Implement set_line function
+            unimplemented!()
+        }
+
+        fn get_line(&self, line: usize) -> Result<String, Error> {
+            // Implement get_line function
+            unimplemented!()
+        }
+
+        fn get_config(&self) -> Config {
+            // Implement get_config function
+            unimplemented!()
+        }
+
+        fn set_config(&mut self, config: Config) {
+            // Implement set_config function
+            unimplemented!()
+        }
+    }
+
+    struct EditBuilder;
+
+    impl EditBuilder {
+        fn new() -> Self {
+            EditBuilder
+        }
+    }
+
+    struct Config {
+        tab_size: usize,
+        translate_tabs_to_spaces: bool,
+    }
+
+    impl PluginState {
+        // Implement function compute_syntax
+        fn compute_syntax(
+            &mut self,
+            line: &str,
+            state: Option<LineState>,
+            syntax_set: &SyntaxSet,
+            accumulate_spans: bool,
+        ) -> Option<LineState> {
+            unimplemented!()
+        }
+    }
+
+    fn n_spaces(n: usize) -> String {
+        // Implement n_spaces function
+        unimplemented!()
+    }
+
+    fn n_tabs(n: usize) -> String {
+        // Implement n_tabs function
+        unimplemented!()
+    }
+
+    #[test]
+    fn test_set_indent() {
+        let mut state = PluginState::new();
+        let mut view = MyView::new();
+        view.set_line(0, "    fn test() {").unwrap();
+        state
+            .set_indent(&mut view, &mut EditBuilder::new(), 0, 2)
+            .unwrap();
+        let expected = "  fn test() {";
+        assert_eq!(view.get_line(0).unwrap(), expected);
+    }
+
+    #[test]
+    fn test_set_indent_with_tabs() {
+        let mut state = PluginState::new();
+        let mut view = MyView::new();
+        view.set_line(0, "\tfn test() {").unwrap();
+        state
+            .set_indent(&mut view, &mut EditBuilder::new(), 0, 2)
+            .unwrap();
+        let expected = "\tfn test() {";
+        assert_eq!(view.get_line(0).unwrap(), expected);
+    }
+
+    #[test]
+    fn test_set_indent_with_tab_size_4() {
+        let mut state = PluginState::new();
+        let mut view = MyView::new();
+        view.set_line(0, "\tfn test() {").unwrap();
+        let config = Config {
+            tab_size: 4,
+            translate_tabs_to_spaces: true,
+        };
+        view.set_config(config);
+        state
+            .set_indent(&mut view, &mut EditBuilder::new(), 0, 2)
+            .unwrap();
+        let expected = "        fn test() {";
+        assert_eq!(view.get_line(0).unwrap(), expected);
+    }
+
+    #[test]
+    fn test_set_indent_with_tab_size_4_without_spaces() {
+        let mut state = PluginState::new();
+        let mut view = MyView::new();
+        view.set_line(0, "\tfn test() {").unwrap();
+        let config = Config {
+            tab_size: 4,
+            translate_tabs_to_spaces: false,
+        };
+        view.set_config(config);
+        state
+            .set_indent(&mut view, &mut EditBuilder::new(), 0, 2)
+            .unwrap();
+        let expected = "\t\tfn test() {";
+        assert_eq!(view.get_line(0).unwrap(), expected);
+    }
+
+    #[test]
+    fn test_set_indent_error() {
+        let mut state = PluginState::new();
+        let mut view = MyView::new();
+        view.set_line(0, "fn test() {").unwrap();
+        let result = state.set_indent(&mut view, &mut EditBuilder::new(), 0, 2);
+        assert!(result.is_err());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::PluginState;
+    use crate::MyView;
+    use crate::SyntaxSet;
+
+    #[test]
+    fn test_test_decrease() {
+        let mut view = MyView::new(/* fill in with actual parameters */);
+        let mut syntax_set = SyntaxSet::new(/* fill in with actual parameters */);
+        let mut state = PluginState::new();
+
+        let line = 0;
+        let result = state.test_decrease(&mut view, &mut syntax_set, line);
+        assert_eq!(result, Ok(false));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use stackmap::{StackMap, Node, LookupResult};
+    
+    struct MockView {}
+    
+    impl MockView {
+        fn get_line(&mut self, line: usize) -> Result<&str, String> {
+            // implement this
+            unimplemented!()
+        }
+        
+        fn offset_of_line(&mut self, line: usize) -> Result<usize, String> {
+            // implement this
+            unimplemented!()
+        }
+    }
+    
+    impl MyView for MockView {
+        fn get_line(&mut self, line: usize) -> Result<&str, String> {
+            unimplemented!()
+        }
+        
+        fn offset_of_line(&mut self, line: usize) -> Result<usize, String> {
+            unimplemented!()
+        }
+        
+        fn get_frontier(&mut self) -> Option<usize> {
+            unimplemented!()
+        }
+        
+        fn get_prev(&mut self, line: usize) -> Option<(usize, usize, LineState)> {
+            unimplemented!()
+        }
+        
+        fn get(&mut self, line: usize) -> Option<LineState> {
+            unimplemented!()
+        }
+        
+        fn set(&mut self, line: usize, state: LineState) {
+            unimplemented!()
+        }
+        
+        fn update_frontier(&mut self, line: usize) {
+            unimplemented!()
+        }
+        
+        fn close_frontier(&mut self) {
+            unimplemented!()
+        }
+        
+        fn get_line_of_offset(&mut self, offset: usize) -> Result<usize, String> {
+            unimplemented!()
+        }
+        
+        fn add_scopes(&mut self, scopes: &[Vec<String>]) {
+            unimplemented!()
+        }
+        
+        fn update_spans(&mut self, start: usize, len: usize, spans: &[ScopeSpan]) {
+            unimplemented!()
+        }
+        
+        fn edit(&mut self, edit: Edit, priority: usize, trusted: bool, is_undoable: bool, user_id: String) {
+            unimplemented!()
+        }
+        
+        fn get_config(&mut self) -> Config {
+            unimplemented!()
+        }
+        
+        fn get_buf_size(&mut self) -> usize {
+            unimplemented!()
+        }
+    }
+    
+    #[test]
+    fn test_increase() {
+        let mut view = MockView {};
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let line = 2;
+        let mut state = PluginState::new();
+        
+        let result = state.test_increase(&mut view, &syntax_set, line);
+        
+        // assert result
+        unimplemented!()
+    }
+    
+    #[test]
+    fn test_decrease() {
+        let mut view = MockView {};
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let line = 2;
+        let mut state = PluginState::new();
+        
+        let result = state.test_decrease(&mut view, &syntax_set, line);
+        
+        // assert result
+        unimplemented!()
+    }
+    
+    #[test]
+    fn test_indent_lines() {
+        let mut view = MockView {};
+        let syntax_set = SyntaxSet::load_defaults_newlines();
+        let mut state = PluginState::new();
+        
+        state.indent_lines(&mut view, &syntax_set);
+        
+        // assert result
+        unimplemented!()
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_rpc::Peer;
+
+    struct MockView {
+        // Implement the necessary methods for the view mock
+    }
+
+    impl MockView {
+        fn new() -> Self {
+            MockView {
+                // Initialize any necessary fields for the view mock
+            }
+        }
+    }
+
+    impl MyView for MockView {
+        // Implement the necessary methods from the MyView trait
+    }
+
+    struct MockSyntaxSet;
+
+    impl MockSyntaxSet {
+        fn load_defaults_newlines() -> Self {
+            MockSyntaxSet {
+                // Initialize any necessary fields for the syntax set mock
+            }
+        }
+
+        fn metadata(&self) -> MockSyntaxMetadata {
+            MockSyntaxMetadata {
+                // Implement the necessary methods for the syntax metadata mock
+            }
+        }
+    }
+
+    struct MockSyntaxMetadata;
+
+    impl MockSyntaxMetadata {
+        fn metadata_for_scope(&self, _scope: &[u8]) -> Option<ScopedMetadata> {
+            // Implement the necessary logic to return the metadata for a given scope
+            Some(ScopedMetadata {
+                // Initialize the necessary fields for the scoped metadata mock
+            })
+        }
+    }
+
+    struct MockPluginState;
+
+    impl MockPluginState {
+        fn new() -> Self {
+            MockPluginState {
+                // Initialize any necessary fields for the plugin state mock
+            }
+        }
+
+        fn toggle_comment(&mut self, view: &mut dyn MyView, syntax_set: &SyntaxSet, lines: &[(usize, usize)]) {
+            // Implement the necessary logic for the toggle_comment method
+        }
+    }
+
+    struct MockScopedMetadata;
+
+    impl MockScopedMetadata {
+        fn line_comment(&self) -> Option<&str> {
+            // Implement the necessary logic to return the line comment for the mock scoped metadata
+            Some("//")
+        }
+
+        fn increase_indent(&self, _line: &str) -> bool {
+            // Implement the necessary logic to determine if the line should increase indent
+            true
+        }
+
+        fn decrease_indent(&self, _line: &str) -> bool {
+            // Implement the necessary logic to determine if the line should decrease indent
+            false
+        }
+    }
+
+    impl MockView {
+        fn get_line(&self, _line_num: usize) -> Result<&str, Error> {
+            // Implement the necessary logic to return the line at the given line number
+            unimplemented!()
+        }
+
+        fn offset_of_line(&self, _line_num: usize) -> Result<usize, Error> {
+            // Implement the necessary logic to return the offset of the line at the given line number
+            unimplemented!()
+        }
+    }
+
+    impl MyView for MockView {
+        fn get_line(&self, _line_num: usize) -> Result<&str, Error> {
+            MockView::get_line(self, _line_num)
+        }
+
+        fn offset_of_line(&self, _line_num: usize) -> Result<usize, Error> {
+            MockView::offset_of_line(self, _line_num)
+        }
+    }
+
+    #[test]
+    fn test_toggle_comment() {
+        let mut view = MockView::new();
+        let syntax_set = MockSyntaxSet::load_defaults_newlines();
+        let lines = vec![(0, 10)];
+        let mut state = MockPluginState::new();
+        state.toggle_comment(&mut view, &syntax_set, &lines);
+
+        // Add your assertions here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::{
+        EditBuilder, Error, Interval, LineState, MyView, Range, Rope, RopeDelta, ScopedMetadata,
+        ScopeSpan, ScopeStack, ScopeStackOp, ScopeStackOpIter, ScopeStackOpIterKind,
+        ScopeStackOpIterMut, ScopeStackOpIterMutKind, ScopeStackOpKind, ScopeStackOpKindMut,
+    };
+
+    use oi::Error;
+    use skiplist::Iter as SkipListIterator;
+    use skiplist::{
+        Arena, Base, BaseBuilder, BaseDebug, LevelManager, LevelManagerBase, LevelManagerBuilder,
+        LevelManagerDebug, Node, NodeBuilder, NodeBuilderMut, NodeDebug, NodeMut,
+    };
+
+    use xi_rope::delta::{DeltaElement, DeltaElementList, DeltaList, RevisionInfo};
+    use xi_rope::engine_types::{
+        BaseEngine, BaseEngineBuilder, BaseEngineDebug, Delta, DeltaBase, DeltaBuilder,
+        DeltaElementBuilder, DeltaElementBuilderMut, DeltaElementListBuilder,
+        DeltaElementListIterator, DeltaElementListIteratorMut, DeltaIterator, DeltaIteratorMut,
+        RevisionManager, RevisionManagerBuilder,
+    };
+    use xi_rope::engine_types::{
+        RopeDeltaBase, RopeDeltaData, RopeDeltaList, RopeDeltaListBuilder, RopeDeltaListBuilderMut,
+    };
+    use xi_rope::multiset::{
+        CountMatcher, DeltaListList, DeltaListListBuilder, DeltaListListIterator,
+        DeltaListListIteratorMut, DeltaListListMut, DeltaListListNode, DeltaListListSingle,
+        DeltaListListSingleWhereBuilder, DeltaListListSingleWhereMultiple,
+        DeltaListListSingleWhereRangeBuilder, DeltaListListSingleWhereRangeTriple,
+        DeltaListListSingleWhereTriple, DeltaListListWhere, DeltaListListWhereBuilder,
+        DeltaListListWhereMultiple, DeltaListListWhereRangeBuilder, DeltaListListWhereRangeTriple,
+        DeltaListListWhereTriple, DeltaNode, DeltaNodeBuilder, DeltaNodeBuilderMut, DeltaNodeMut,
+        DeltaNodeWhere, DeltaNodeWhereBuilder, DeltaNodeWhereMut, DeltaNodeWhereMutMultiple,
+        DeltaNodeWhereMutRangeBuilder, DeltaNodeWhereRangeBuilder,
+        DeltaNodeWhereRangeBuilderMut, DeltaNodeWhereRangeTriple, DeltaNodeWhereTriple,
+        DeltaNodeWhereTripleMut, DeltaListSingle, DeltaListSingleMut, KeyedReader,
+        KeyedReaderPartial, KeyedReaderPartialMut, KeyedReaderPartialMutMultiple,
+        KeyedReaderPartialMutRangeTriple, KeyedReaderPartialMutTriple, KeyedReaderPartialTriple,
+        KeyedReaderTriple, AtomicRc, AtomicRcPar, AtomicRcParPartialMut, AtomicRcParPartialMutTriple,
+        AtomicRcPartial, AtomicRcPartialMut, AtomicRcPartialMutMultiple,
+        AtomicRcPartialMutRangeTriple, AtomicRcPartialMutTriple, AtomicRcPartialTriple,
+        AtomicRcTriple, ReadTransactional, ReadTransactionalPartialMut,
+        ReadTransactionalPartialMutRangeTriple, ReadTransactionalPartialMutTriple,
+        ReadTransactionalPartialTriple, ReadTransactionalTriple, ReadTransactionalTriplePar,
+        ReadTransactionalTripleParPartialMut, ReadTransactionalTriplePartial,
+        ReadTransactionalTriplePartialMut, ReadTransactionalTriplePartialMutRangeTriple,
+        ReadTransactionalTriplePartialMutTriple, ReadTransactionalTripleParTripleMut,
+        ReadTransactionalTripleParTripleMutRangeTriple, ReadTransactionalTripleParTripleMutTriple,
+        SkipList, SkipListBuilder, SkipListBuilderMut, StackMap, Transactional, TransactionalMut,
+        TransactionalMutRangeTriple, TransactionalMutTriple, TransactionalPartial,
+        TransactionalPartialMut, TransactionalPartialMutRangeTriple, TransactionalPartialMutTriple,
+        TransactionalPartialTriple, TransactionalTriple, TransactionalTripleMut,
+        TransactionalTripleMutRangeTriple, TransactionalTripleMutTriple,
+    };
+    use xi_rope::interval::Interval;
+    use xi_rope::join::JoinFunc;
+    use xi_rope::measure::prelude::*;
+    use xi_rope::rope::{
+        AnchoredLine, BaseMetric, BaseMetricLines, BaseMetricLinesBuilder, BaseMetricLinesMut,
+        BaseMetricLinesMutBuilder, BaseMetricMut, BaseMetricUtf16, BaseMetricUtf16Builder,
+        BaseMetricUtf16Mut, BaseMetricUtf8, BaseMetricUtf8Builder, BaseMetricUtf8Mut, CopyBaseMetric,
+        DeltaAvl, DeltaAvlBuilder, DeltaAvlBuilderMut, DeltaAvlMut, DeltaBaseMetric,
+        DeltaElementAvl, DeltaElementAvlMut, DeltaKeyedLine,
+        DeltaKeyedLineBuilderMutTriple, DeltaKeyedLineMultiset, DeltaKeyedLineMultisetMut,
+        DeltaKeyedLineMultisetMutMultiple, DeltaKeyedLineMultisetMutMultipleMut, DeltaKeyedLineMultisetMutRangeBuilder,
+        DeltaKeyedLineMultisetMutTriple, DeltaKeyedLineMultisetTemporary, DeltaKeyedLineMultisetTemporaryMut,
+        DeltaKeyedLineMultisetTemporaryMutMultiple, DeltaKeyedLineMultisetTemporaryMutMultipleMut,
+        DeltaKeyedLineMultisetTemporaryMutRangeBuilder, DeltaKeyedLineMultisetTemporaryMutTriple,
+        DeltaKeyedLineMultisetWhere, DeltaKeyedLineMultisetWhereMultiple,
+        DeltaKeyedLineMultisetWhereMultipleMut, DeltaKeyedLineMultisetWhereMultipleMutMultiple,
+        DeltaKeyedLineMultisetWhereMultipleMutMultipleMut, DeltaKeyedLineMultisetWhereMultipleMutRangeBuilder,
+        DeltaKeyedLineMultisetWhereMultipleMutTriple, DeltaKeyedLineMultisetWhereMultipleTriple,
+        DeltaKeyedLineMultisetWhereMultipleTripleMut, DeltaKeyedLineMultisetWhereRangeBuilder,
+        DeltaKeyedLineMultisetWhereTriple, DeltaKeyedLineMultisetWhereTripleMut, DeltaKeyedLineMultisetWhereTripleMutMultiple,
+        DeltaKeyedLineMultisetWhereTripleMutRangeBuilder, DeltaKeyedLineMultisetWhereTripleMutTriple,
+        DeltaKeyedLineMultisetWhereTripleMultipleMut, DeltaKeyedLineMultisetWhereTripleRangeBuilder,
+        DeltaKeyedLineMultisetWhereTripleTriple, DeltaKeyedLineMultisetWhereTripleTripleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleMutMultiple, DeltaKeyedLineMultisetWhereTripleTripleMutMultipleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleMutRangeBuilder, DeltaKeyedLineMultisetWhereTripleTripleMutTriple,
+        DeltaKeyedLineMultisetWhereTripleTripleTemporary, DeltaKeyedLineMultisetWhereTripleTripleTemporaryMut,
+        DeltaKeyedLineMultisetWhereTripleTemporary, DeltaKeyedLineMultisetWhereTripleTemporaryMut,
+        DeltaKeyedLineMultisetWhereTripleTemporaryMutMultiple, DeltaKeyedLineMultisetWhereTripleTemporaryMutMultipleMut,
+        DeltaKeyedLineMultisetWhereTripleTemporaryMutRangeBuilder, DeltaKeyedLineMultisetWhereTripleTemporaryMutTriple,
+        DeltaKeyedLineMultisetWhereTripleTemporaryTripleMut, DeltaKeyedLineMultisetWhereTripleTemporaryTripleMutTriple,
+        DeltaKeyedLineMultisetWhereTripleTemporaryTripleMutTripleMut, DeltaKeyedLineMultisetWhereTripleTemporaryTripleMutTripleTemporary,
+        DeltaKeyedLineMultisetWhereTripleTriple, DeltaKeyedLineMultisetWhereTripleTripleMultiple,
+        DeltaKeyedLineMultisetWhereTripleTripleMultipleMut, DeltaKeyedLineMultisetWhereTripleTripleMultipleMutMultiple,
+        DeltaKeyedLineMultisetWhereTripleTripleMultipleMutMultipleMut, DeltaKeyedLineMultisetWhereTripleTripleMultipleMutRangeBuilder,
+        DeltaKeyedLineMultisetWhereTripleTripleMultipleMutTriple, DeltaKeyedLineMultisetWhereTripleTripleMultipleTriple,
+        DeltaKeyedLineMultisetWhereTripleTripleMultipleTripleMut, DeltaKeyedLineMultisetWhereTripleTripleRangeBuilder,
+        DeltaKeyedLineMultisetWhereTripleTripleTriple, DeltaKeyedLineMultisetWhereTripleTripleTripleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleMutMultiple, DeltaKeyedLineMultisetWhereTripleTripleTripleMutMultipleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleMutMultipleRangeBuilder, DeltaKeyedLineMultisetWhereTripleTripleTripleMutTriple,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTriple, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTripleMutMultiple, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleMutMultipleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTripleMutRangeBuilder, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleMutTriple,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTriple, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleMut,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleMutBroadcast, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleMutMultiple,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleMutMultipleMut, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleMutRangeBuilder,
+        DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleMutTriple, DeltaKeyedLineMultisetWhereTripleTripleTripleTripleTripleTriple
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use xi_plugin_lib::Plugin;
+    use syntect::parsing::ParseState;
+    use syntect::highlighting::ScopeStack;
+
+    struct MyView {
+        id: ViewId,
+        language_id: LanguageId,
+        cache: StateCache<LineState>,
+    }
+
+    impl MyView {
+        fn new(id: ViewId, language_id: LanguageId, cache: StateCache<LineState>) -> Self {
+            MyView {
+                id,
+                language_id,
+                cache,
+            }
+        }
+
+        fn get_id(&self) -> &ViewId {
+            &self.id
+        }
+
+        fn get_language_id(&self) -> &LanguageId {
+            &self.language_id
+        }
+
+        fn get_cache(&mut self) -> &mut StateCache<LineState> {
+            &mut self.cache
+        }
+
+        fn schedule_idle(&self) {
+            // Implement schedule_idle functionality if needed
+        }
+    }
+
+    struct StateCache<T> {
+        // Implement StateCache functionality if needed
+    }
+
+    struct LineState {
+        // Implement LineState functionality if needed
+    }
+
+    struct ViewId {
+        // Implement ViewId functionality if needed
+    }
+
+    struct LanguageId {
+        // Implement LanguageId functionality if needed
+    }
+
+    struct SyntectPlugin {
+        syntax_set: SyntaxSet,
+        syntect: Syntect,
+    }
+
+    impl SyntectPlugin {
+        fn new(syntax_set: SyntaxSet) -> Self {
+            SyntectPlugin {
+                syntax_set,
+                syntect: Syntect::new(&syntax_set),
+            }
+        }
+    }
+
+    struct SyntaxSet {
+        // Implement SyntaxSet functionality if needed
+    }
+
+    impl SyntaxSet {
+        fn new() -> Self {
+            SyntaxSet {
+                // Initialize SyntaxSet fields if needed
+            }
+        }
+
+        fn find_syntax_by_name(&self, name: &str) -> Option<&Syntax> {
+            // Implement find_syntax_by_name functionality if needed
+            None
+        }
+
+        fn find_syntax_plain_text(&self) -> &Syntax {
+            // Implement find_syntax_plain_text functionality if needed
+            &Syntax::default()
+        }
+    }
+
+    struct Syntax {
+        // Implement Syntax functionality if needed
+    }
+
+    impl Default for Syntax {
+        fn default() -> Self {
+            Syntax {
+                // Initialize Syntax fields if needed
+            }
+        }
+    }
+
+    struct PluginState {
+        // Implement PluginState functionality if needed
+    }
+
+    impl PluginState {
+        fn new() -> Self {
+            PluginState {
+                // Initialize PluginState fields if needed
+            }
+        }
+    }
+
+    impl<'a> Plugin for SyntectPlugin {
+        type Cache = StateCache<LineState>;
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            self.syntect.new_view(view);
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            self.syntect.did_close(view);
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old: Option<&Path>) {
+            self.syntect.did_save(view, _old);
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {
+            self.syntect.config_changed(_view, _changes);
+        }
+
+        fn language_changed(&mut self, view: &mut View<Self::Cache>, _old_lang: LanguageId) {
+            self.syntect.language_changed(view, _old_lang);
+        }
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            delta: Option<&RopeDelta>,
+            edit_type: String,
+            author: String,
+        ) {
+            self.syntect.update(view, delta, edit_type, author);
+        }
+
+        fn custom_command(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            method: &str,
+            params: serde_json::Value,
+        ) {
+            self.syntect
+                .custom_command(view, method, params);
+        }
+
+        fn idle(&mut self, view: &mut View<Self::Cache>) {
+            self.syntect.idle(view);
+        }
+    }
+
+    #[test]
+    fn test_do_highlighting() {
+        let syntax_set = SyntaxSet::new();
+        let mut plugin = SyntectPlugin::new(syntax_set);
+        let view_id = ViewId { /* Initialize ViewId fields if needed */ };
+        let language_id = LanguageId { /* Initialize LanguageId fields if needed */ };
+        let cache = StateCache { /* Initialize StateCache fields if needed */ };
+        let mut view = MyView::new(view_id, language_id, cache);
+
+        plugin.syntect.do_highlighting(&mut view);
+        // Make assertions based on the do_highlighting method's implementation
+    }
+}
+False
+========================================
+    use std::collections::HashMap;
+    use xi_plugin_lib::Plugin;
+    use xi_rope::delta::RopeDelta;
+    use xi_rope::rope::Rope;
+    use xi_rope::delta::DeltaBuilder;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::cursor::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_unicode::LineBreakIterator;
+    use xi_unicode::breaks_with;
+    use xi_unicode::LineBreakLeafIter;
+    use xi_rope::breaks::BreaksMetric;
+    use xi_rope::breaks::BreaksInfo;
+    use xi_rope::spans::SpansBuilder;
+    use xi_rope::spans::Spans;
+    use xi_rope::spans::SpansInfo;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::rope::RopeInfo;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::delta::DeltaElement;
+    use xi_unicode::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use std::path::Path;
+    use xi_plugin_lib::PluginCtx;
+    use xi_plugin_lib::View;
+    use serde_json::json;
+    use serde_json::from_str;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+    use xi_rope::tree::Node;
+    use xi_rope::tree::Metric;
+    use xi_rope::tree::BaseMetric;
+    use xi_rope::tree::Cursor;
+    use xi_rope::tree::CursorResult;
+    use xi_rope::tree::cursor::CursorFlags;
+    use xi_rope::tree::cursor::CursorAt;
+    use xi_rope::tree::CursorMut;
+    use xi_rope::tree::Node;
+    use xi_rope::interval::IntervalBounds;
+    use xi_rope::interval::Interval;
+
+    #[test]
+    fn test_new() {
+        let syntax_set = SyntaxSet::new();
+        let _ = Syntect::new(&syntax_set);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use crate::parsing::{SyntaxSet, Metadata};
+    use crate::Syntect;
+    use std::fs::Metadata as FileMetadata;
+
+    #[test]
+    fn test_main() {
+        let syntax_set = SyntaxSet::from_binary(include_bytes!("../assets/default.packdump")).unwrap();
+        let metadata = Metadata::from_binary(include_bytes!("../assets/default_meta.packdump")).unwrap();
+        let mut syntax_set_builder = syntax_set.into_builder();
+        syntax_set_builder.set_metadata(metadata);
+        let syntax_set = syntax_set_builder.build();
+        let mut state = Syntect::new(&syntax_set);
+        mainloop(&mut state).unwrap();
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_n_spaces() {
+        assert_eq!(n_spaces(10), "          ");
+        assert_eq!(n_spaces(160), "                                                                                                                                                                                                                                                                                                                                                        ");
+        assert_eq!(n_spaces(200), "                                                                                                                                                                                                                                                                                                                                                        ");
+    }
+}
+True
+========================================
+    use crate::n_tabs;
+
+    #[test]
+    fn test_n_tabs() {
+        assert_eq!(n_tabs(0), "");
+        assert_eq!(n_tabs(10), "\t\t\t\t\t\t\t\t\t\t");
+        assert_eq!(n_tabs(50), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t");
+    }
+}
+True
+========================================
+    use crate::stackmap::LookupResult;
+
+    #[test]
+    fn test_is_new_existing() {
+        let result = LookupResult::Existing(123);
+        assert!(!result.is_new());
+    }
+
+    #[test]
+    fn test_is_new_new() {
+        let result = LookupResult::New(456);
+        assert!(result.is_new());
+    }
+
+    #[test]
+    fn test_is_new_nested_new() {
+        let result = LookupResult::New(789);
+        let nested_result = LookupResult::New(789);
+        assert!(result.is_new());
+        assert!(nested_result.is_new());
+    }
+
+    #[test]
+    fn test_is_new_nested_existing() {
+        let nested_result = LookupResult::Existing(789);
+        assert!(!nested_result.is_new());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    use stackmap::{Node, LookupResult, Scope};
+
+    #[test]
+    fn test_get_value() {
+        let mut node = Node {
+            value: Some(5),
+            children: HashMap::new(),
+        };
+        let stack = vec![Scope::A, Scope::B, Scope::C];
+        let next_id = 10;
+
+        let result = node.get_value(&stack, next_id);
+
+        assert_eq!(result, LookupResult::Existing(5));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_new() {
+        let node = Node::new(42);
+        assert_eq!(node.value, Some(42));
+        assert_eq!(node.children.len(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use stackmap::{Node, Scope, StackMap, LookupResult};
+    use std::collections::HashMap;
+
+    #[test]
+    fn test_get_value_new() {
+        let mut stackmap = StackMap {
+            next_id: 0,
+            scopes: Node::default(),
+        };
+        let stack: Vec<Scope> = vec![Scope::new("scope1"), Scope::new("scope2")];
+        let result = stackmap.get_value(&stack);
+        assert_eq!(result, LookupResult::New(0));
+    }
+
+    #[test]
+    fn test_get_value_existing() {
+        let mut stackmap = StackMap {
+            next_id: 0,
+            scopes: Node {
+                value: Some(1),
+                children: HashMap::new(),
+            },
+        };
+        let stack: Vec<Scope> = vec![Scope::new("scope1"), Scope::new("scope2")];
+        let result = stackmap.get_value(&stack);
+        assert_eq!(result, LookupResult::Existing(1));
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_get_value_empty_stack() {
+        let mut stackmap = StackMap {
+            next_id: 0,
+            scopes: Node::default(),
+        };
+        let stack: Vec<Scope> = vec![];
+        stackmap.get_value(&stack);
+    }
+}
+False
+xi-editor xi-syntect-plugin 4 39

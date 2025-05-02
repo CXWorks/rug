@@ -1,0 +1,7 @@
+error: cov/*: No such file or directory
+cov err ['target/debug/deps/crossbeam-179b4b5e49b8e468']
+612 1172
+252 588
+465 1190
+48 207
+322 440

@@ -1,0 +1,13 @@
+hcid1 hcid hcid ['/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/error.rs', '/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/util.rs', '/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/lib.rs', '/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/b32.rs']
+/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/error.rs
+/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/util.rs
+err tests_rug_4 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/lib.rs
+err tests_rug_17 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid/src/b32.rs
+err tests_rug_1 test_rug
+err tests_rug_2 test_decode
+done
+hcid1 hcid_js hcid-js/rust ['/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid-js/rust/src/lib.rs']
+/mnt/sda/xiang/syrust/syrust_replay/hcid1/hcid-js/rust/src/lib.rs
+done

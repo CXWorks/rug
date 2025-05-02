@@ -1,0 +1,43 @@
+csv_core1 csv . ['/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/reader.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/string_record.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/writer.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/serializer.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/deserializer.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/error.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/byte_record.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/tutorial.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/lib.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/cookbook.rs']
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/reader.rs
+err tests_rug_299 test_rug
+err tests_rug_300 test_rug
+err tests_rug_301 test_csv
+err tests_rug_302 test_rug
+err tests_rug_303 test_into_byte_records
+err tests_rug_304 test_rug
+err tests_rug_305 test_byte_headers
+err tests_rug_306 test_rug
+err tests_rug_307 test_rug
+err tests_rug_309 test_read_record
+err tests_rug_310 test_rug
+err tests_rug_312 test_position
+err tests_rug_313 test_rug
+err tests_rug_318 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/string_record.rs
+err tests_rug_356 test_rug
+err tests_rug_357 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/writer.rs
+err tests_rug_402 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/serializer.rs
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/deserializer.rs
+err tests_rug_25 test_rug
+err tests_rug_26 test_try_negative_integer64_bytes
+err tests_rug_27 test_try_positive_integer128_bytes
+err tests_rug_28 test_try_negative_integer128_bytes
+err tests_rug_29 test_try_float_bytes
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/error.rs
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/byte_record.rs
+err tests_rug_234 test_rug
+err tests_rug_251 test_rug
+err tests_rug_273 test_into_iter
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/tutorial.rs
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/lib.rs
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/./src/cookbook.rs
+done
+csv_core1 csv-core csv-core ['/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-core/src/reader.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-core/src/writer.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-core/src/lib.rs']
+err1 toml csv_core1 csv-core csv-core
+csv_core1 csv-index csv-index ['/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-index/src/simple.rs', '/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-index/src/lib.rs']
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-index/src/simple.rs
+/mnt/sda/xiang/syrust/syrust_replay/csv_core1/csv-index/src/lib.rs
+done

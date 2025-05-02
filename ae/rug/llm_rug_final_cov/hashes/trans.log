@@ -1,0 +1,21 @@
+blake2 blake2 11 11 0
+fsb fsb 38 38 0
+gost94 gost94 43 43 0
+groestl groestl 57 57 0
+md-5 md5 63 63 0
+md2 md2 65 65 0
+md4 md4 69 69 0
+err hashes /mnt/sda/xiang/rug/tmp/hashes/ripemd/src/c128.rs tests_rug_186
+err hashes /mnt/sda/xiang/rug/tmp/hashes/ripemd/src/c320.rs tests_rug_190
+err hashes /mnt/sda/xiang/rug/tmp/hashes/ripemd/src/c320.rs tests_rug_191
+err hashes /mnt/sda/xiang/rug/tmp/hashes/ripemd/src/c256.rs tests_rug_188
+err hashes /mnt/sda/xiang/rug/tmp/hashes/ripemd/src/c160.rs tests_rug_187
+ripemd ripemd 82 87 0
+sha1 sha1 100 105 0
+sha2 sha2 127 132 0
+sha3 sha3 154 159 0
+shabal shabal 156 161 0
+sm3 sm3 172 177 0
+streebog streebog 177 182 0
+tiger tiger 186 191 0
+whirlpool whirlpool 193 198 0

@@ -1,0 +1,334 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::Path;
+    use std::ffi::OsStr;
+
+    #[test]
+    fn test_create_log_directory() {
+        let path_with_file = Path::new("/some/directory/then/file");
+        assert_eq!(Some(OsStr::new("file")), path_with_file.file_name());
+        assert_eq!(create_log_directory(path_with_file).is_ok(), true);
+
+        let path_with_other_file = Path::new("/other_file");
+        assert_eq!(Some(OsStr::new("other_file")), path_with_other_file.file_name());
+        assert_eq!(create_log_directory(path_with_file).is_ok(), true);
+
+        // Path that is just the root or prefix:
+        let path_without_file = Path::new("/");
+        assert_eq!(None, path_without_file.file_name());
+        assert_eq!(create_log_directory(path_without_file).is_ok(), false);
+    }
+}
+True
+========================================
+    use std::collections::HashMap;
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_extract_env_or_flag_with_flag_value() {
+        // Arrange
+        let mut flags = HashMap::new();
+        flags.insert("flag".to_string(), Some("value".to_string()));
+        let conf = EnvFlagConfig {
+            env_name: "ENV_NAME",
+            flag_name: "flag",
+        };
+
+        // Act
+        let result = extract_env_or_flag(&flags, &conf);
+
+        // Assert
+        assert_eq!(result, Some("value".to_string()));
+    }
+    
+    #[test]
+    fn test_extract_env_or_flag_with_env_value() {
+        // Arrange
+        let mut flags = HashMap::new();
+        let conf = EnvFlagConfig {
+            env_name: "ENV_NAME",
+            flag_name: "flag",
+        };
+        std::env::set_var("ENV_NAME", "value");
+
+        // Act
+        let result = extract_env_or_flag(&flags, &conf);
+
+        // Assert
+        assert_eq!(result, Some("value".to_string()));
+    }
+    
+    #[test]
+    fn test_extract_env_or_flag_with_empty_values() {
+        // Arrange
+        let flags = HashMap::new();
+        let conf = EnvFlagConfig {
+            env_name: "ENV_NAME",
+            flag_name: "flag",
+        };
+        std::env::remove_var("ENV_NAME");
+
+        // Act
+        let result = extract_env_or_flag(&flags, &conf);
+
+        // Assert
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    use std::path::{PathBuf};
+
+    #[derive(Debug, PartialEq)]
+    struct LogfileConfig {
+        directory: Option<PathBuf>,
+        file: Option<PathBuf>,
+    }
+
+    struct EnvFlagConfig {
+        env_name: &'static str,
+        flag_name: &'static str,
+    }
+
+    fn extract_env_or_flag<'a>(flags: &'a HashMap<String, Option<String>>, env_flag: &'a EnvFlagConfig) -> Option<String> {
+        // Your implementation for `extract_env_or_flag` goes here
+        todo!()
+    }
+
+    fn generate_logfile_config(flags: &HashMap<String, Option<String>>) -> LogfileConfig {
+        // Your implementation for `generate_logfile_config` goes here
+        todo!()
+    }
+
+    #[test]
+    fn test_generate_logfile_config() {
+        let mut flags = HashMap::new();
+        flags.insert(String::from("log-dir"), Some(String::from("/path/to/logs")));
+        flags.insert(String::from("log-file"), Some(String::from("app.log")));
+
+        let expected = LogfileConfig {
+            directory: Some(PathBuf::from("/path/to/logs")),
+            file: Some(PathBuf::from("app.log")),
+        };
+
+        let result = generate_logfile_config(&flags);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_generate_logfile_config_without_flags() {
+        let flags = HashMap::new();
+        
+        let expected = LogfileConfig {
+            directory: None,
+            file: None,
+        };
+        
+        let result = generate_logfile_config(&flags);
+        
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::path::PathBuf;
+    use std::io;
+
+    const XI_LOG_DIR: &str = "logs";
+    const XI_LOG_FILE: &str = "output.log";
+
+    #[test]
+    fn test_generate_logging_path() {
+        let logfile_config = LogfileConfig {
+            directory: Some(PathBuf::from("logs")),
+            file: Some(PathBuf::from("output.log")),
+        };
+
+        let result = generate_logging_path(logfile_config);
+        let expected = Ok(PathBuf::from("logs/output.log"));
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_generate_logging_path_default_directory() {
+        let logfile_config = LogfileConfig {
+            directory: None,
+            file: Some(PathBuf::from("output.log")),
+        };
+
+        let result = generate_logging_path(logfile_config);
+        let expected = Ok(PathBuf::from(XI_LOG_DIR).join("output.log"));
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_generate_logging_path_default_file() {
+        let logfile_config = LogfileConfig {
+            directory: Some(PathBuf::from("logs")),
+            file: None,
+        };
+
+        let result = generate_logging_path(logfile_config);
+        let expected = Ok(PathBuf::from("logs/").join(XI_LOG_FILE));
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_generate_logging_path_blank_file_name() {
+        let logfile_config = LogfileConfig {
+            directory: Some(PathBuf::from("logs")),
+            file: Some(PathBuf::from("")),
+        };
+
+        let result = generate_logging_path(logfile_config);
+        let expected = Err(io::Error::new(io::ErrorKind::InvalidInput, "A blank file name was supplied"));
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    
+    #[test]
+    fn test_get_flags() {
+        let mut expected_flags: HashMap<String, Option<String>> = HashMap::new();
+        expected_flags.insert("a".to_string(), Some("value_a".to_string()));
+        expected_flags.insert("b".to_string(), Some("value_b".to_string()));
+        expected_flags.insert("c".to_string(), None);
+        expected_flags.insert("d".to_string(), Some("value_d".to_string()));
+        assert_eq!(get_flags(), expected_flags);
+    }
+}
+True
+========================================
+    use std::io;
+    use std::path::{Path, PathBuf};
+    use dirs;
+    use crate::get_logging_directory_path;
+    
+    #[test]
+    fn test_get_logging_directory_path_success() {
+        let result = get_logging_directory_path("logs");
+
+        assert!(result.is_ok());
+
+        let logging_directory_path = result.unwrap();
+        let expected_path: PathBuf = [dirs::data_local_dir().unwrap(), "logs".into()].iter().collect();
+
+        assert_eq!(logging_directory_path, expected_path);
+    }
+
+    #[test]
+    fn test_get_logging_directory_path_failure() {
+        let result = get_logging_directory_path("logs");
+
+        assert!(result.is_err());
+
+        let expected_error = io::Error::new(io::ErrorKind::NotFound, "No standard logging directory known for this platform");
+        assert_eq!(result.unwrap_err().kind(), expected_error.kind());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_core::{XiCore, RpcLoop};
+    use std::path::{Path, PathBuf};
+    use std::process;
+    use xi_core::config::ConfigManager;
+    use xi_core::config::Config;
+
+    #[test]
+    fn test_main() {
+        let mut state = XiCore::new();
+        let stdin = std::io::stdin();
+        let stdout = std::io::stdout();
+        let mut rpc_looper = RpcLoop::new(stdout);
+
+        let mut flags = Config::default();
+        flags.set("flags", "value");
+
+        let logfile_config = ConfigManager::generate_logfile_config(&flags);
+
+        let logging_path_result = ConfigManager::generate_logging_path(&flags, logfile_config);
+
+        let logging_path =
+            logging_path_result.as_ref().map(|p: &PathBuf| -> &Path { p.as_path() }).ok();
+
+        if let Err(e) = ConfigManager::setup_logging(logging_path) {
+            eprintln!("[ERROR] setup_logging returned error, logging not enabled: {:?}", e);
+        }
+
+        if let Err(e) = logging_path_result.as_ref() {
+            warn!("Unable to generate the logging path to pass to set up: {}", e);
+        }
+
+        let input = std::io::empty();
+        let input = std::io::BufReader::new(input);
+
+        let output = std::io::sink();
+        let output = std::io::BufWriter::new(output);
+
+        let mut rpc_looper_error = false;
+
+        match rpc_looper.mainloop(|| input, &mut state) {
+            Ok(_) => (),
+            Err(err) => {
+                rpc_looper_error = true;
+                error!("xi-core exited with error:\n{:?}", err);
+                process::exit(1);
+            }
+        }
+
+        assert!(!rpc_looper_error);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io;
+    use std::path::Path;
+    use fern;
+    use log::*;
+
+    #[test]
+    fn test_setup_logging() {
+        // Test case 1: logging path is None
+        assert!(setup_logging(None).is_ok());
+
+        // Test case 2: logging path is Some
+        assert!(setup_logging(Some(Path::new("path/to/logfile.log"))).is_ok());
+
+        // Test case 3: invalid log level
+        std::env::set_var("XI_LOG", "invalid_level");
+        assert!(setup_logging(None).is_ok());
+
+        // Test case 4: log level trace
+        std::env::set_var("XI_LOG", "trace");
+        assert!(setup_logging(None).is_ok());
+
+        // Test case 5: log level debug
+        std::env::set_var("XI_LOG", "debug");
+        assert!(setup_logging(None).is_ok());
+    }
+}
+True
+xi-editor xi-core 6 8

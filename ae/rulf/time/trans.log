@@ -1,0 +1,6 @@
+err time /mnt/sda/xiang/rulf/rulf_hybrid/time/./src/format/date.rs tests_llm_16_825_llm_16_824
+err time /mnt/sda/xiang/rulf/rulf_hybrid/time/./src/ext.rs tests_llm_16_306_llm_16_305
+err tests_rug_145 sample rug_fuzz_0 25 {'sample': {'rug_fuzz_0': '25'}}
+time . 413 415 0
+time-macros time-macros 413 415 0
+time-macros-impl time-macros-impl 413 415 0

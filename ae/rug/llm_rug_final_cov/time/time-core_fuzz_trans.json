@@ -1,0 +1,1 @@
+{"tests_rug_490": {"test_is_leap_year": {"rug_fuzz_0": "1900"}}, "tests_rug_491": {"test_days_in_year": {"rug_fuzz_0": "1900"}}, "tests_rug_492": {"test_weeks_in_year": {"rug_fuzz_0": "2019"}}}

@@ -1,0 +1,1 @@
+{"<SamplePlugin as xi_plugin_lib::Plugin>::config_changed": false, "<SamplePlugin as xi_plugin_lib::Plugin>::did_close": false, "<SamplePlugin as xi_plugin_lib::Plugin>::did_save": false, "<SamplePlugin as xi_plugin_lib::Plugin>::new_view": false, "<SamplePlugin as xi_plugin_lib::Plugin>::update": false, "SamplePlugin::capitalize_word": false, "main": true}

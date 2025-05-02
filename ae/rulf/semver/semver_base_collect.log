@@ -1,0 +1,1042 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::version::Identifier;
+
+    #[test]
+    fn test_from_numeric_identifier() {
+        let other = Identifier::Numeric(123);
+        let expected = Identifier::Numeric(123);
+        let result = <Identifier as std::convert::From<Identifier>>::from(other);
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_from_alphanumeric_identifier() {
+        let other = Identifier::AlphaNumeric(String::from("abc123"));
+        let expected = Identifier::AlphaNumeric(String::from("abc123"));
+        let result = <Identifier as std::convert::From<Identifier>>::from(other);
+        assert_eq!(result, expected);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::Version;
+    use std::cmp::Ordering;
+    use std::str::FromStr;
+
+    #[test]
+    fn test_cmp() {
+        let v1 = Version::new(1, 0, 0);
+        let v2 = Version::new(1, 0, 0);
+        assert_eq!(v1.cmp(&v2), Ordering::Equal);
+    }
+
+    // Add more test cases here
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::cmp::Ordering;
+
+    #[test]
+    fn test_eq() {
+        let v1 = Version::new(1, 0, 0);
+        let v2 = Version::new(1, 0, 0);
+        let v3 = Version::new(2, 0, 0);
+        let v4 = Version::new(1, 1, 0);
+        let v5 = Version::new(1, 0, 1);
+        let v6 = Version::new(1, 0, 0);
+        let v7 = Version::new(1, 0, 0);
+
+        assert_eq!(v1.eq(&v2), true);
+        assert_eq!(v1.eq(&v3), false);
+        assert_eq!(v2.eq(&v4), false);
+        assert_eq!(v2.eq(&v5), false);
+        assert_eq!(v1.eq(&v6), true);
+        assert_eq!(v6.eq(&v7), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::cmp::Ordering;
+
+    #[test]
+    fn test_partial_cmp() {
+        let version1 = Version::new(1, 0, 0);
+        let version2 = Version::new(1, 0, 1);
+        let version3 = Version::new(1, 1, 0);
+        let version4 = Version::new(1, 1, 0);
+        let version5 = Version::new(1, 1, 1);
+
+        assert_eq!(version1.partial_cmp(&version2), Some(Ordering::Less));
+        assert_eq!(version2.partial_cmp(&version1), Some(Ordering::Greater));
+        assert_eq!(version3.partial_cmp(&version4), Some(Ordering::Equal));
+        assert_eq!(version4.partial_cmp(&version3), Some(Ordering::Equal));
+        assert_eq!(version4.partial_cmp(&version5), Some(Ordering::Less));
+        assert_eq!(version5.partial_cmp(&version4), Some(Ordering::Greater));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::str::FromStr;
+
+    #[test]
+    fn test_from() {
+        let version = Version::from((1, 2, 3));
+        assert_eq!(version.major, 1);
+        assert_eq!(version.minor, 2);
+        assert_eq!(version.patch, 3);
+        assert_eq!(version.pre, vec![]);
+        assert_eq!(version.build, vec![]);
+    }
+}
+True
+========================================
+    use semver_parser::version::Version;
+    use semver_parser::version::Identifier;
+    
+    #[test]
+    fn test_from() {
+        let other = semver_parser::version::Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![
+                semver_parser::version::Identifier::Numeric(1),
+                semver_parser::version::Identifier::AlphaNumeric("alpha".to_string()),
+            ],
+            build: vec![
+                semver_parser::version::Identifier::AlphaNumeric("build".to_string()),
+            ],
+        };
+        
+        let result = Version::from(other);
+        
+        assert_eq!(result.major, 1);
+        assert_eq!(result.minor, 2);
+        assert_eq!(result.patch, 3);
+        assert_eq!(result.pre.len(), 2);
+        assert_eq!(result.pre[0], Identifier::Numeric(1));
+        assert_eq!(result.pre[1], Identifier::AlphaNumeric("alpha".to_string()));
+        assert_eq!(result.build.len(), 1);
+        assert_eq!(result.build[0], Identifier::AlphaNumeric("build".to_string()));
+    }
+}
+True
+========================================
+    use std::hash::{Hash, Hasher};
+    use version::{Version, Identifier};
+
+    #[test]
+    fn test_hash() {
+        let mut hasher = std::collections::hash_map::DefaultHasher::new();
+        let version = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![Identifier::Numeric(1)],
+            build: vec![Identifier::AlphaNumeric("test".to_string())],
+        };
+
+        version.hash(&mut hasher);
+        let hash_result = hasher.finish();
+
+        assert_eq!(hash_result, 16619063093792307336);
+    }
+}
+True
+========================================
+    use std::str::FromStr;
+    use crate::version::Version;
+    
+    #[test]
+    fn test_from_str() {
+        let input = "1.2.3";
+        let expected = Version::new(1, 2, 3);
+        let result = <Version as FromStr>::from_str(input);
+        assert_eq!(result, Ok(expected));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::Op;
+
+    #[test]
+    fn test_from_eq() {
+        let op = Op::Eq;
+        let result = Op::from(op);
+        assert_eq!(result, Op::Ex);
+    }
+    
+    #[test]
+    fn test_from_gt() {
+        let op = Op::Gt;
+        let result = Op::from(op);
+        assert_eq!(result, Op::Gt);
+    }
+    
+    #[test]
+    fn test_from_gte() {
+        let op = Op::Gte;
+        let result = Op::from(op);
+        assert_eq!(result, Op::GtEq);
+    }
+    
+    #[test]
+    fn test_from_lt() {
+        let op = Op::Lt;
+        let result = Op::from(op);
+        assert_eq!(result, Op::Lt);
+    }
+    
+    #[test]
+    fn test_from_lte() {
+        let op = Op::Lte;
+        let result = Op::from(op);
+        assert_eq!(result, Op::LtEq);
+    }
+}
+False
+========================================
+    use crate::version::Version;
+    use crate::version_req::from;
+    use semver_parser::Op;
+    use semver_parser::Comparator;
+    use semver_parser::Identifier;
+    use crate::version_req::Predicate;
+  
+    #[test]
+    fn test_from() {
+        let comparator = Comparator {
+            op: Op::GtEq,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![Identifier::Alpha],
+        };
+        let expected = Predicate {
+            op: crate::version_req::Op::GtEq,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![crate::version_req::Identifier::Alpha],
+        };
+        assert_eq!(from(comparator), expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::range;
+    use semver_parser::version::Version;
+
+    #[test]
+    fn test_from() {
+        let range = range(">=1.0.0").unwrap();
+        let expected = Range {
+            predicates: vec![Predicate {
+                op: version_req::Op::GreaterThanOrEqual,
+                major: Some(1),
+                minor: Some(0),
+                patch: Some(0),
+                pre: vec![],
+            }],
+            compat: version_req::Compat::Cargo,
+        };
+        assert_eq!(version_req::Range::from(range), expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_from() {
+        let error_str = String::from("Null is not a valid VersionReq");
+        let error = ReqParseError::InvalidVersionRequirement;
+        assert_eq!(
+            <version_req::ReqParseError as std::convert::From<std::string::String>>::from(error_str),
+            error
+        );
+        
+        let error_str = String::from("VersionReq did not parse properly.");
+        let error = ReqParseError::OpAlreadySet;
+        assert_eq!(
+            <version_req::ReqParseError as std::convert::From<std::string::String>>::from(error_str),
+            error
+        );
+        
+        let error_str = String::from("Some other error");
+        let error = ReqParseError::InvalidVersionRequirement;
+        assert_eq!(
+            <version_req::ReqParseError as std::convert::From<std::string::String>>::from(error_str),
+            error
+        );
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::version_req::{Predicate, Compat, Range, VersionReq, RangeSet, ReqParseError};
+
+    #[test]
+    fn test_from() {
+        let range_set = RangeSet {
+            ranges: vec![
+                Range {
+                    comparator_set: vec![
+                        Predicate {
+                            major: Some(1),
+                            minor: Some(0),
+                            patch: Some(0),
+                            pre: vec![],
+                            op: semver_parser::Op::Exact
+                        }
+                    ],
+                    compat: Compat::Npm
+                }
+            ],
+            compat: Compat::Npm
+        };
+
+        let version_req = VersionReq::from(range_set);
+
+        let expected_ranges: Vec<Range> = vec![
+            Range {
+                comparator_set: vec![
+                    Predicate {
+                        major: Some(1),
+                        minor: Some(0),
+                        patch: Some(0),
+                        pre: vec![],
+                        op: semver_parser::Op::Exact
+                    }
+                ],
+                compat: Compat::Npm
+            }
+        ];
+
+        let expected_compat = Compat::Npm;
+
+        assert_eq!(version_req.ranges, expected_ranges);
+        assert_eq!(version_req.compat, expected_compat);
+    }
+}
+False
+========================================
+    use crate::version_req::VersionReq;
+    use crate::version_req::ReqParseError;
+    use std::str::FromStr;
+
+    #[test]
+    fn test_from_str() {
+        assert_eq!(
+            VersionReq::from_str("1.2.3"),
+            Ok(VersionReq::parse("1.2.3"))
+        );
+
+        assert_eq!(
+            VersionReq::from_str("*"),
+            Ok(VersionReq::parse("*"))
+        );
+
+        assert_eq!(
+            VersionReq::from_str(">=1.2.3"),
+            Ok(VersionReq::parse(">=1.2.3"))
+        );
+
+        assert_eq!(
+            VersionReq::from_str("^1.2.3"),
+            Ok(VersionReq::parse("^1.2.3"))
+        );
+
+        assert_eq!(
+            VersionReq::from_str("1.2.3-beta.1"),
+            Ok(VersionReq::parse("1.2.3-beta.1"))
+        );
+
+        assert_eq!(
+            VersionReq::from_str("invalid"),
+            Err(ReqParseError::InvalidVersionReq("invalid".into()))
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_clear_metadata() {
+        let mut version = Version::new(1, 2, 3);
+        version.pre = vec![Identifier::AlphaNumeric(String::from("pre"))];
+        version.build = vec![Identifier::AlphaNumeric(String::from("build"))];
+        
+        version.clear_metadata();
+        
+        assert_eq!(version.pre.len(), 0);
+        assert_eq!(version.build.len(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_increment_major() {
+        let mut version = Version::new(1, 2, 3);
+        version.increment_major();
+        assert_eq!(version.major, 2);
+        assert_eq!(version.minor, 0);
+        assert_eq!(version.patch, 0);
+        assert_eq!(version.pre, Vec::new());
+        assert_eq!(version.build, Vec::new());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_increment_minor() {
+        let mut version = Version::new(1, 2, 3);
+        version.increment_minor();
+
+        assert_eq!(version.major, 1);
+        assert_eq!(version.minor, 3);
+        assert_eq!(version.patch, 0);
+        assert_eq!(version.pre, Vec::new());
+        assert_eq!(version.build, Vec::new());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_increment_patch() {
+        let mut version = Version::new(1, 2, 3);
+        version.increment_patch();
+        assert_eq!(version.patch, 4);
+        assert_eq!(version.pre.len(), 0);
+        assert_eq!(version.build.len(), 0);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_is_prerelease_empty_pre_returns_false() {
+        let version = Version::new(1, 2, 3);
+        assert_eq!(version.is_prerelease(), false);
+    }
+
+    #[test]
+    fn test_is_prerelease_non_empty_pre_returns_true() {
+        let mut version = Version::new(1, 2, 3);
+        version.pre.push(Identifier::Numeric(4));
+        assert_eq!(version.is_prerelease(), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::Version;
+
+    #[test]
+    fn test_new_version() {
+        let version = Version::new(1, 2, 3);
+        
+        assert_eq!(version.major, 1);
+        assert_eq!(version.minor, 2);
+        assert_eq!(version.patch, 3);
+        assert!(version.pre.is_empty());
+        assert!(version.build.is_empty());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::version::Identifier;
+    
+    #[test]
+    fn test_parse_valid_version() {
+        assert_eq!(
+            Version::parse("1.2.3"),
+            Ok(Version {
+                major: 1,
+                minor: 2,
+                patch: 3,
+                pre: vec![],
+                build: vec![],
+            })
+        );
+        assert_eq!(
+            Version::parse("0.1.0"),
+            Ok(Version {
+                major: 0,
+                minor: 1,
+                patch: 0,
+                pre: vec![],
+                build: vec![],
+            })
+        );
+        assert_eq!(
+            Version::parse("2.0.0-alpha"),
+            Ok(Version {
+                major: 2,
+                minor: 0,
+                patch: 0,
+                pre: vec![Identifier::AlphaNumeric("alpha".to_string())],
+                build: vec![],
+            })
+        );
+        assert_eq!(
+            Version::parse("1.5.0-beta.2+build.1848"),
+            Ok(Version {
+                major: 1,
+                minor: 5,
+                patch: 0,
+                pre: vec![
+                    Identifier::AlphaNumeric("beta".to_string()),
+                    Identifier::Numeric(2),
+                ],
+                build: vec![
+                    Identifier::AlphaNumeric("build".to_string()),
+                    Identifier::Numeric(1848),
+                ],
+            })
+        );
+    }
+    
+    #[test]
+    fn test_parse_invalid_version() {
+        assert!(Version::parse("1").is_err());
+        assert!(Version::parse("1.0").is_err());
+        assert!(Version::parse("1.0.01").is_err());
+        assert!(Version::parse("1.0.foo").is_err());
+        assert!(Version::parse("1.0.0foo").is_err());
+        assert!(Version::parse("1.0.0+foo_123").is_err());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::Identifier;
+
+    #[test]
+    fn test_from() {
+        // Test with Numeric identifier
+        let numeric_identifier = Identifier::Numeric(123);
+        let result = Identifier::from(Identifier::Numeric(123));
+        assert_eq!(result, numeric_identifier);
+
+        // Test with AlphaNumeric identifier
+        let alphanumeric_identifier = Identifier::AlphaNumeric(String::from("abc123"));
+        let result = Identifier::from(Identifier::AlphaNumeric(String::from("abc123")));
+        assert_eq!(result, alphanumeric_identifier);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::version::Identifier;
+    use semver_parser::Op; // Import Op from semver_parser
+    use crate::SemVerError; // Import SemVerError from semver crate
+
+    #[test]
+    fn test_exact() {
+        let version = Version::new(1, 2, 3);
+        let expected = Predicate {
+            op: Op::Ex, // Use Op::Ex instead of Ex
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: Vec::new(),
+        };
+        let result = Predicate::exact(&version);
+
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::{Op as ParserOp, Comparator as ParserComparator};
+    use crate::version::Identifier;
+
+    #[test]
+    fn test_has_exactly_one_match() {
+        let predicate1 = Predicate {
+            op: Op::Ex,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+        assert_eq!(predicate1.has_exactly_one_match(), true);
+
+        let predicate2 = Predicate {
+            op: Op::Gt,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+        assert_eq!(predicate2.has_exactly_one_match(), false);
+
+        let predicate3 = Predicate {
+            op: Op::Ex,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![Identifier::Alpha],
+        };
+        assert_eq!(predicate3.has_exactly_one_match(), true);
+    }
+}
+False
+========================================
+    use crate::version_req::{Predicate, Op, Version, Identifier};
+
+    #[test]
+    fn test_matches() {
+        let ver = Version::new(1, 2, 3);
+        let predicate = Predicate {
+            op: Op::Ex,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+        assert!(predicate.matches(&ver));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_matches_exact() {
+        let ver = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+            build: vec![],
+        };
+
+        let predicate = Predicate {
+            op: Op::Ex,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+
+        assert!(predicate.matches_exact(&ver));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_matches_greater() {
+        let predicate = Predicate {
+            op: Op::Gt,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+
+        let version = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+            build: vec![],
+        };
+
+        assert_eq!(predicate.matches_greater(&version), false);
+    }
+}
+True
+========================================
+    use crate::version::Version;
+    use crate::version_req::Predicate;
+    use crate::version::Identifier;
+    use crate::version_req::Op;
+    
+    #[test]
+    fn test_pre_tag_is_compatible() {
+        let ver1 = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![Identifier::AlphaNumeric("alpha".to_string()), Identifier::AlphaNumeric("3".to_string())],
+            build: vec![],
+        };
+        let ver2 = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+            build: vec![],
+        };
+        let ver3 = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![Identifier::AlphaNumeric("alpha".to_string()), Identifier::AlphaNumeric("1".to_string())],
+            build: vec![],
+        };
+    
+        let predicate1 = Predicate {
+            op: Op::Ex,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+        let predicate2 = Predicate {
+            op: Op::Ex,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![Identifier::AlphaNumeric("alpha".to_string())],
+        };
+        let predicate3 = Predicate {
+            op: Op::Gt,
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: vec![],
+        };
+    
+        assert_eq!(predicate1.pre_tag_is_compatible(&ver1), true);
+        assert_eq!(predicate1.pre_tag_is_compatible(&ver2), true);
+        assert_eq!(predicate1.pre_tag_is_compatible(&ver3), false);
+    
+        assert_eq!(predicate2.pre_tag_is_compatible(&ver1), true);
+        assert_eq!(predicate2.pre_tag_is_compatible(&ver2), true);
+        assert_eq!(predicate2.pre_tag_is_compatible(&ver3), true);
+    
+        assert_eq!(predicate3.pre_tag_is_compatible(&ver1), true);
+        assert_eq!(predicate3.pre_tag_is_compatible(&ver2), true);
+        assert_eq!(predicate3.pre_tag_is_compatible(&ver3), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use semver_parser::{Op, Compat};
+
+    #[test]
+    fn test_range_matches() {
+        let range = Range {
+            predicates: vec![
+                Predicate {
+                    op: Op::Eq,
+                    major: Some(1),
+                    minor: Some(2),
+                    patch: Some(3),
+                    pre: Vec::new(),
+                    build: Vec::new(),
+                },
+                Predicate {
+                    op: Op::Greater,
+                    major: Some(2),
+                    minor: Some(0),
+                    patch: None,
+                    pre: Vec::new(),
+                    build: Vec::new(),
+                },
+            ],
+            compat: Compat::Rfc,
+        };
+        
+        let version = Version {
+            major: 1,
+            minor: 2,
+            patch: 3,
+            pre: Vec::new(),
+            build: Vec::new(),
+        };
+        
+        assert_eq!(range.matches(&version), true);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::version::Version;
+    use semver_parser::{version, Predicate, Operator, Compat};
+
+    #[test]
+    fn test_pre_tag_is_compatible_returns_true_if_any_predicate_returns_true() {
+        let range = Range {
+            predicates: vec![
+                Predicate::new(Operator::Tilde, version::Version::new(1, 0, 0)),
+                Predicate::new(Operator::Caret, version::Version::new(2, 0, 0)),
+            ],
+            compat: Compat::Exact,
+        };
+
+        let ver = Version::new(1, 5, 0);
+        assert!(range.pre_tag_is_compatible(&ver));
+    }
+
+    #[test]
+    fn test_pre_tag_is_compatible_returns_false_if_all_predicates_return_false() {
+        let range = Range {
+            predicates: vec![
+                Predicate::new(Operator::Tilde, version::Version::new(1, 0, 0)),
+                Predicate::new(Operator::Caret, version::Version::new(2, 0, 0)),
+            ],
+            compat: Compat::Exact,
+        };
+
+        let ver = Version::new(3, 0, 0);
+        assert!(!range.pre_tag_is_compatible(&ver));
+    }
+
+    #[test]
+    fn test_pre_tag_is_compatible_returns_false_if_predicate_returns_false() {
+        let range = Range {
+            predicates: vec![
+                Predicate::new(Operator::Tilde, version::Version::new(1, 0, 0)),
+            ],
+            compat: Compat::Exact,
+        };
+
+        let ver = Version::new(2, 0, 0);
+        assert!(!range.pre_tag_is_compatible(&ver));
+    }
+}
+False
+========================================
+    use crate::VersionReq;
+
+    #[test]
+    fn test_any() {
+        let result = VersionReq::any();
+
+        assert_eq!(result.ranges.len(), 0);
+        assert_eq!(result.compat, crate::Compat::Cargo);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::Version;
+    
+    #[test]
+    fn test_exact() {
+        let version = Version {
+            major: 1,
+            minor: 1,
+            patch: 1,
+            pre: vec![],
+            build: vec![],
+        };
+        let exact = VersionReq::exact(&version);
+        
+        assert!(exact.matches(&version));
+        assert!(!exact.matches(&Version::new(1, 1, 2)));
+    }
+}
+True
+========================================
+    use crate::ReqParseError;
+    use crate::VersionReq;
+
+    #[test]
+    fn test_is_exact() -> Result<(), ReqParseError> {
+        assert!(VersionReq::parse("=1.0.0")?.is_exact());
+        assert!(!VersionReq::parse("=1.0")?.is_exact());
+        assert!(!VersionReq::parse(">=1.0.0")?.is_exact());
+        Ok(())
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::str::FromStr;
+
+    #[test]
+    fn test_matches() {
+        let version = Version::new(1, 1, 1);
+        let req = VersionReq::exact(&version);
+
+        assert!(req.matches(&version));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::version::Version;
+
+    #[test]
+    fn test_parse_equal() {
+        let version = VersionReq::parse("=1.2.3");
+        assert_eq!(version, Ok(VersionReq::exact(Version::new(1,2,3))));
+    }
+
+    #[test]
+    fn test_parse_greater() {
+        let version = VersionReq::parse(">1.2.3");
+        assert_eq!(version, Ok(VersionReq::gt(Version::new(1,2,3))));
+    }
+
+    #[test]
+    fn test_parse_less() {
+        let version = VersionReq::parse("<1.2.3");
+        assert_eq!(version, Ok(VersionReq::lt(Version::new(1,2,3))));
+    }
+
+    #[test]
+    fn test_parse_tilde() {
+        let version = VersionReq::parse("~1.2.3")?;
+        assert_eq!(version, Ok(VersionReq::parse(">=1.2.3 <1.3.0")?));
+    }
+
+    #[test]
+    fn test_parse_caret() {
+        let version = VersionReq::parse("^1.2.3")?;
+        assert_eq!(version, Ok(VersionReq::parse(">=1.2.3 <2.0.0")?));
+    }
+
+    #[test]
+    fn test_parse_synonym() {
+        let version = VersionReq::parse("1.2.3")?;
+        assert_eq!(version, Ok(VersionReq::parse(">=1.2.3 <2.0.0")?));
+    }
+
+    #[test]
+    fn test_parse_less_equal() {
+        let version = VersionReq::parse("<=1.2.3")?;
+        assert_eq!(version, Ok(VersionReq::parse("<=1.2.3")?));
+    }
+
+    #[test]
+    fn test_parse_greater_equal() {
+        let version = VersionReq::parse(">=1.2.3")?;
+        assert_eq!(version, Ok(VersionReq::parse(">=1.2.3")?));
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_parse_invalid_version() {
+        let version = VersionReq::parse("not a version").unwrap();
+    }
+}
+False
+========================================
+    use crate::VersionReq;
+    use semver_parser::range_set::RangeSet;
+    use crate::Version;
+    use crate::Identifier;
+    use crate::ReqParseError;
+    use semver_parser::range_set;
+    use crate::VersionReqBuilder;
+    use semver_parser::Compat;
+    
+    #[test]
+    fn test_parse_compat() {
+        fn mock_parse_deprecated(_input: &str) -> Option<Version> {
+            // Provide a mock implementation of `parse_deprecated` here
+            unimplemented!();
+        }
+
+        let input = "1.2.3";
+        let expected_compat = Compat::Cargo;
+
+        let range_set = range_set::parse(input, expected_compat).unwrap();
+        let expected_version_req = VersionReqBuilder::new().build().unwrap();
+        let expected_result = Ok(expected_version_req);
+
+        let mock = mock_parse_deprecated(input);
+
+        let result = VersionReq::parse_compat(input, expected_compat);
+
+        assert_eq!(result, expected_result);
+    }
+}
+False
+========================================
+use super::*;
+
+use crate::*;
+use crate::version::Identifier;
+use crate::version_req::VersionReq;
+use std::str::FromStr;
+
+#[test]
+fn test_parse_deprecated() {
+    assert_eq!(VersionReq::parse_deprecated(".*"), Some(VersionReq::any()));
+    assert_eq!(VersionReq::parse_deprecated("0.1.0."), Some(VersionReq::parse("0.1.0").unwrap()));
+    assert_eq!(VersionReq::parse_deprecated("0.3.1.3"), Some(VersionReq::parse("0.3.13").unwrap()));
+    assert_eq!(VersionReq::parse_deprecated("0.2*"), Some(VersionReq::parse("0.2.*").unwrap()));
+    assert_eq!(VersionReq::parse_deprecated("*.0"), Some(VersionReq::any()));
+    assert_eq!(VersionReq::parse_deprecated("1.2.3"), None);
+}
+False
+semver semver 24 37

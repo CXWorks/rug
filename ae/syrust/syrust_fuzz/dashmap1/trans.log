@@ -1,0 +1,6 @@
+err tests_rug_192 sample rug_fuzz_0 42 {'sample': {'rug_fuzz_0': '42'}}
+err tests_rug_193 sample_dashset rug_fuzz_0 42 {'sample_dashset': {'rug_fuzz_0': '42'}}
+err dashmap1 /mnt/sda/xiang/syrust/syrust/dashmap1/./src/lock.rs tests_rug_18
+err tests_rug_58 sample rug_fuzz_0 42 {'sample': {'rug_fuzz_0': '42'}}
+err tests_rug_95 sample rug_fuzz_0 42 {'sample': {'rug_fuzz_0': '42'}}
+dashmap . 95 96 0

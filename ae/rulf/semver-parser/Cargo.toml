@@ -1,0 +1,32 @@
+[package]
+edition = "2018"
+name = "semver-parser"
+version = "0.10.2"
+authors = [ "Steve Klabnik <steve@steveklabnik.com>",]
+description = "Parsing of the semver spec.\n"
+homepage = "https://github.com/steveklabnik/semver-parser"
+documentation = "https://docs.rs/semver-parser"
+readme = "README.md"
+keywords = [ "parser", "semver", "version", "semantic",]
+categories = [ "development-tools", "parsing",]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/steveklabnik/semver-parser"
+
+[dependencies]
+bolero = "0.8.0"
+arbitrary = "1.3.2"
+
+[dependencies.pest]
+version = "2.1.0"
+
+[dev-dependencies.pest_generator]
+version = "2.1"
+
+[dev-dependencies.proc-macro2]
+version = "1.0"
+
+[profile.fuzz]
+inherits = "dev"
+opt-level = 1
+incremental = false
+codegen-units = 1

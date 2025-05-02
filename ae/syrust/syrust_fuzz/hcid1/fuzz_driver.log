@@ -1,0 +1,55 @@
+/mnt/sda/xiang/syrust/syrust/hcid1/hcid/src/error.rs
+/mnt/sda/xiang/syrust/syrust/hcid1/hcid/src/util.rs
+err tests_rug_4 test_rug
+   Compiling hcid v0.0.6 (/mnt/sda/xiang/syrust/syrust/hcid1/hcid)
+error[E0425]: cannot find value `p0` in this scope
+   --> hcid/src/util.rs:127:34
+    |
+127 |         crate::util::b32_correct(p0, &mut p1);
+    |                                  ^^ help: a local variable with a similar name exists: `p1`
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hcid` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/hcid1/hcid/src/lib.rs
+err tests_rug_17 test_rug
+   Compiling hcid v0.0.6 (/mnt/sda/xiang/syrust/syrust/hcid1/hcid)
+error[E0425]: cannot find value `rug_fuzz_7` in this scope
+   --> hcid/src/lib.rs:440:20
+    |
+440 |         let data = rug_fuzz_7;
+    |                    ^^^^^^^^^^ help: a local variable with a similar name exists: `rug_fuzz_0`
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hcid` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/hcid1/hcid/src/b32.rs
+err tests_rug_1 test_rug
+   Compiling hcid v0.0.6 (/mnt/sda/xiang/syrust/syrust/hcid1/hcid)
+error[E0425]: cannot find value `p0` in this scope
+   --> hcid/src/b32.rs:161:28
+    |
+161 |         crate::b32::encode(p0);
+    |                            ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hcid` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+err tests_rug_2 test_decode
+   Compiling hcid v0.0.6 (/mnt/sda/xiang/syrust/syrust/hcid1/hcid)
+error[E0425]: cannot find value `p0` in this scope
+   --> hcid/src/b32.rs:173:28
+    |
+173 |         crate::b32::decode(p0).unwrap();
+    |                            ^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `hcid` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+done
+/mnt/sda/xiang/syrust/syrust/hcid1/hcid-js/rust/src/lib.rs
+done

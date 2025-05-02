@@ -1,0 +1,1705 @@
+-----------------
+trace/src/sys_pid.rs sys_pid::current_pid
+deps:{}
+candidates:{}
++sys_pid::current_pid();
++crate::sys_pid::current_pid();
++crate::sys_pid::current_pid();
+-----------------
+trace/src/sys_tid.rs sys_tid::current_tid
+deps:{}
+candidates:{}
++sys_tid::current_tid();
++crate::sys_tid::current_tid();
++crate::sys_tid::current_tid();
+-----------------
+trace/src/chrome_trace_dump.rs chrome_trace_dump::serialize
+deps:{"chrome_trace_dump::serialize":{"W":["std::io::Write","std::marker::Sized"]},"std::io::impls::<impl std::io::Write for &mut W>":{}}
+candidates:{"chrome_trace_dump::serialize":{"W":["std::io::Sink","std::io::Stderr","std::io::Cursor<std::vec::Vec<u8, A>>","std::os::unix::net::UnixStream","std::sys::unix::stdio::Stderr","std::vec::Vec<u8, A>","std::io::stdio::StdoutRaw","std::io::Cursor<&mut [u8]>","&std::io::Stderr","&'a std::os::unix::net::UnixStream","std::io::stdio::StderrRaw","std::io::Cursor<&mut std::vec::Vec<u8, A>>","std::io::BufWriter<W>","std::io::BorrowedCursor<'a>","std::sys::unix::stdio::Stdout","std::boxed::Box<W>","std::io::StderrLock<'_>","std::io::Cursor<std::boxed::Box<[u8], A>>","std::collections::VecDeque<u8, A>","std::io::StdoutLock<'_>","std::io::Stdout","std::io::buffered::linewritershim::LineWriterShim<'a, W>","std::fs::File","&std::io::Sink","std::io::LineWriter<W>","&std::io::Stdout","std::net::TcpStream","std::io::impls::<impl std::io::Write for &mut W>","&std::fs::File","&std::process::ChildStdin","std::process::ChildStdin","&std::net::TcpStream","std::io::Cursor<[u8; N]>"]},"std::io::impls::<impl std::io::Write for &mut W>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // std::vec::Vec<Sample>
+let mut p1 = MaybeUninit::uninit().assume_init(); // W
++chrome_trace_dump::serialize(p0, p1);
++crate::chrome_trace_dump::serialize(p0, p1);
++crate::chrome_trace_dump::serialize(p0, p1);
+-----------------
+trace/src/chrome_trace_dump.rs chrome_trace_dump::to_value
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // std::vec::Vec<Sample>
++chrome_trace_dump::to_value(p0);
++crate::chrome_trace_dump::to_value(p0);
++crate::chrome_trace_dump::to_value(p0);
+-----------------
+trace/src/chrome_trace_dump.rs chrome_trace_dump::decode
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // serde_json::Value
++chrome_trace_dump::decode(p0);
++crate::chrome_trace_dump::decode(p0);
++crate::chrome_trace_dump::decode(p0);
+-----------------
+trace/src/chrome_trace_dump.rs chrome_trace_dump::deserialize
+deps:{"chrome_trace_dump::deserialize":{"R":["std::io::Read","std::marker::Sized"]},"std::io::impls::<impl std::io::Read for &mut R>":{}}
+candidates:{"chrome_trace_dump::deserialize":{"R":["std::io::impls::<impl std::io::Read for &mut R>","std::os::unix::net::UnixStream","&std::net::TcpStream","std::io::Cursor<T>","std::fs::File","std::sys::unix::stdio::Stdin","&'a std::sys::unix::fd::FileDesc","std::io::Empty","std::boxed::Box<R>","std::io::StdinLock<'_>","std::collections::VecDeque<u8, A>","std::io::Repeat","std::io::Stdin","std::io::Take<T>","&'a std::os::unix::net::UnixStream","&std::fs::File","std::io::stdio::StdinRaw","std::io::BufReader<R>","std::net::TcpStream","std::io::Chain<T, U>","std::process::ChildStdout","std::process::ChildStderr"]},"std::io::impls::<impl std::io::Read for &mut R>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // R
++chrome_trace_dump::deserialize(p0);
++crate::chrome_trace_dump::deserialize(p0);
++crate::chrome_trace_dump::deserialize(p0);
+-----------------
+trace/src/lib.rs ns_to_us
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++ns_to_us(p0);
++crate::ns_to_us(p0);
++crate::ns_to_us(p0);
+-----------------
+trace/src/lib.rs serialize_event_type
+deps:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{},"serialize_event_type":{"S":["serde::Serializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{},"serialize_event_type":{"S":["<&'a mut serde_json::Serializer<W, F> as serde::Serializer>","serde_json::value::Serializer","serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>","serde_json::value::ser::MapKeySerializer","serde::private::ser::FlatMapSerializer<'a, M>","serde::private::ser::content::ContentSerializer<E>","serde::private::ser::TaggedSerializer<S>","serde_json::ser::MapKeySerializer<'a, W, F>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleEventType
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
++serialize_event_type(p0, p1);
++crate::serialize_event_type(p0, p1);
++crate::serialize_event_type(p0, p1);
+-----------------
+trace/src/lib.rs deserialize_event_type
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"deserialize_event_type":{"D":["serde::Deserializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"deserialize_event_type":{"D":["serde_json::value::de::MapDeserializer","serde::de::value::BoolDeserializer<E>","serde::de::value::CharDeserializer<E>","serde::de::value::I16Deserializer<E>","serde_json::value::de::MapRefDeserializer<'de>","serde_json::de::MapKey<'a, R>","serde_json::Number","&'a serde_json::Number","serde::de::value::I32Deserializer<E>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::I8Deserializer<E>","serde::de::value::MapAccessDeserializer<A>","serde::de::value::StrDeserializer<'a, E>","serde::de::value::U64Deserializer<E>","serde::de::value::CowStrDeserializer<'a, E>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","&'de serde_json::Value","serde::de::value::PairDeserializer<A, B, E>","serde_json::value::de::SeqRefDeserializer<'de>","serde::de::value::I128Deserializer<E>","serde::de::value::F32Deserializer<E>","serde_json::Value","serde::de::value::F64Deserializer<E>","serde::de::value::SeqDeserializer<I, E>","serde::de::value::StringDeserializer<E>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::de::value::IsizeDeserializer<E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::U16Deserializer<E>","serde::private::de::BytesDeserializer<'a, E>","serde::private::de::content::MapDeserializer<'de, E>","serde::de::value::I64Deserializer<E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::UnitDeserializer<E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde_json::value::de::SeqDeserializer","serde_json::value::de::MapKeyDeserializer<'de>","serde::de::value::SeqAccessDeserializer<A>","serde::de::value::MapDeserializer<'de, I, E>","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::de::value::UsizeDeserializer<E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::de::value::U8Deserializer<E>","serde::de::value::U128Deserializer<E>","serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::U32Deserializer<E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // D
++deserialize_event_type(p0);
++crate::deserialize_event_type(p0);
++crate::deserialize_event_type(p0);
+-----------------
+trace/src/lib.rs to_cow_str
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"to_cow_str":{"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"to_cow_str":{"S":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
++to_cow_str(p0);
++crate::to_cow_str(p0);
++crate::to_cow_str(p0);
+-----------------
+trace/src/lib.rs exe_name
+deps:{}
+candidates:{}
++exe_name();
++crate::exe_name();
++crate::exe_name();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-1.4.0/src/lib.rs <TRACE as lazy_static::__Deref>::deref::__static_ref_initialize
+deps:{}
+candidates:{}
++<TRACE as lazy_static::__Deref>::deref::__static_ref_initialize();
++crate::<TRACE as lazy_static::__Deref>::deref::__static_ref_initialize();
++<TRACE>::deref::__static_ref_initialize();
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-1.4.0/src/lib.rs <TRACE as lazy_static::__Deref>::deref::__stability
+deps:{}
+candidates:{}
++<TRACE as lazy_static::__Deref>::deref::__stability();
++crate::<TRACE as lazy_static::__Deref>::deref::__stability();
++<TRACE>::deref::__stability();
+-----------------
+trace/src/lib.rs enable_tracing
+deps:{}
+candidates:{}
++enable_tracing();
++crate::enable_tracing();
++crate::enable_tracing();
+-----------------
+trace/src/lib.rs enable_tracing_with_config
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Config
++enable_tracing_with_config(p0);
++crate::enable_tracing_with_config(p0);
++crate::enable_tracing_with_config(p0);
+-----------------
+trace/src/lib.rs disable_tracing
+deps:{}
+candidates:{}
++disable_tracing();
++crate::disable_tracing();
++crate::disable_tracing();
+-----------------
+trace/src/lib.rs is_enabled
+deps:{}
+candidates:{}
++is_enabled();
++crate::is_enabled();
++crate::is_enabled();
+-----------------
+trace/src/lib.rs trace
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"trace":{"C":["std::convert::Into","std::marker::Sized"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"trace":{"C":["std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError"],"S":["<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
++trace(p0, p1);
++crate::trace(p0, p1);
++crate::trace(p0, p1);
+-----------------
+trace/src/lib.rs trace_payload
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"trace_payload":{"C":["std::convert::Into","std::marker::Sized"],"P":["std::marker::Sized","std::convert::Into"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"trace_payload":{"C":["std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected"],"P":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"],"S":["std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected","std::process::ExitStatusError","<T as std::convert::Into<U>>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // P
++trace_payload(p0, p1, p2);
++crate::trace_payload(p0, p1, p2);
++crate::trace_payload(p0, p1, p2);
+-----------------
+trace/src/lib.rs trace_block
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"trace_block":{"C":["std::marker::Sized","std::convert::Into"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"trace_block":{"C":["std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError","<T as std::convert::Into<U>>"],"S":["std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError","<T as std::convert::Into<U>>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
++trace_block(p0, p1);
++crate::trace_block(p0, p1);
++crate::trace_block(p0, p1);
+-----------------
+trace/src/lib.rs trace_block_payload
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"trace_block_payload":{"C":["std::convert::Into","std::marker::Sized"],"P":["std::marker::Sized","std::convert::Into"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"trace_block_payload":{"C":["std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError"],"P":["std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"],"S":["<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // P
++trace_block_payload(p0, p1, p2);
++crate::trace_block_payload(p0, p1, p2);
++crate::trace_block_payload(p0, p1, p2);
+-----------------
+trace/src/lib.rs trace_closure
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{},"trace_closure":{"C":["std::convert::Into","std::marker::Sized"],"F":["std::ops::FnOnce","std::marker::Sized"],"R":["std::marker::Sized"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{},"trace_closure":{"C":["std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected"],"F":["core::slice::ascii::EscapeByte","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","std::panic::AssertUnwindSafe<F>","std::boxed::Box<F, A>","core::str::LinesAnyMap","core::str::CharEscapeDebugContinue","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::IsAsciiWhitespace","std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>","std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>","core::str::IsNotEmpty","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::IsWhitespace","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::str::UnsafeBytesToStr","core::str::CharEscapeDefault","core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>"],"R":["RUG_ANY"],"S":["std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // F
++trace_closure(p0, p1, p2);
++crate::trace_closure(p0, p1, p2);
++crate::trace_closure(p0, p1, p2);
+-----------------
+trace/src/lib.rs trace_closure_payload
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{},"trace_closure_payload":{"C":["std::marker::Sized","std::convert::Into"],"F":["std::marker::Sized","std::ops::FnOnce"],"P":["std::marker::Sized","std::convert::Into"],"R":["std::marker::Sized"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{},"trace_closure_payload":{"C":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"],"F":["core::str::CharEscapeDefault","std::panic::AssertUnwindSafe<F>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::str::UnsafeBytesToStr","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::IsWhitespace","core::str::IsNotEmpty","core::str::CharEscapeDebugContinue","core::str::CharEscapeUnicode","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","std::boxed::Box<F, A>","core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::slice::ascii::EscapeByte","core::str::IsAsciiWhitespace","core::str::LinesAnyMap","std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>"],"P":["std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::process::ExitStatusError"],"R":["RUG_ANY"],"S":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // F
+let mut p3 = MaybeUninit::uninit().assume_init(); // P
++trace_closure_payload(p0, p1, p2, p3);
++crate::trace_closure_payload(p0, p1, p2, p3);
++crate::trace_closure_payload(p0, p1, p2, p3);
+-----------------
+trace/src/lib.rs samples_len
+deps:{}
+candidates:{}
++samples_len();
++crate::samples_len();
++crate::samples_len();
+-----------------
+trace/src/lib.rs samples_cloned_unsorted
+deps:{}
+candidates:{}
++samples_cloned_unsorted();
++crate::samples_cloned_unsorted();
++crate::samples_cloned_unsorted();
+-----------------
+trace/src/lib.rs samples_cloned_sorted
+deps:{}
+candidates:{}
++samples_cloned_sorted();
++crate::samples_cloned_sorted();
++crate::samples_cloned_sorted();
+-----------------
+trace/src/lib.rs save
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"save":{"P":["std::marker::Sized","std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"save":{"P":["<&mut T as std::convert::AsRef<U>>","std::borrow::Cow<'_, T>","std::slice::IterMut<'_, T>","std::boxed::Box<T, A>","std::ffi::CStr","std::slice::Iter<'_, T>","std::ffi::CString","std::rc::Rc<T>","std::vec::IntoIter<T, A>","<&T as std::convert::AsRef<U>>","std::borrow::Cow<'_, std::ffi::OsStr>","std::vec::Drain<'a, T, A>","std::sync::Arc<T>","core::num::dec2flt::common::AsciiStr<'a>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // P
+let mut p1 = true; // None+bool
++save(p0, p1);
++crate::save(p0, p1);
++crate::save(p0, p1);
+-----------------
+trace/src/lib.rs StringArrayEq::arr_eq
+deps:{"<&A as std::alloc::Allocator>":{},"StringArrayEq::arr_eq":{"Self":["StringArrayEq"]},"std::vec::Vec":{"A":["std::alloc::Allocator","std::marker::Sized"],"T":["std::marker::Sized"]}}
+candidates:{"<&A as std::alloc::Allocator>":{},"StringArrayEq::arr_eq":{"Self":["std::vec::Vec"]},"std::vec::Vec":{"A":["std::alloc::Global","<&A as std::alloc::Allocator>","std::alloc::System"],"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Rhs
++p0.arr_eq(p1);
++StringArrayEq::arr_eq(p0, p1);
++crate::StringArrayEq::arr_eq(p0, p1);
++crate::StringArrayEq::arr_eq(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<T> as std::clone::Clone>::clone
+deps:{"<&T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<T> as std::clone::Clone>::clone":{"T":["std::marker::Sized","std::clone::Clone"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::clone::Clone","std::fmt::Debug","std::marker::Copy","std::marker::Sized"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"<&T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<T> as std::clone::Clone>::clone":{"T":["MetadataType","std::clone::impls::<impl std::clone::Clone for *mut T>","SampleEventType","SampleArgs","Sample","fixed_lifo_deque::FixedLifoDeque","Config","CategoriesT","chrome_trace_dump::ChromeTraceArrayEntries","std::clone::impls::<impl std::clone::Clone for &mut T>"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["SampleEventType","<*const T as std::fmt::Debug>"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.clone();
++<fixed_lifo_deque::FixedLifoDeque<T> as std::clone::Clone>::clone(p0);
++crate::<fixed_lifo_deque::FixedLifoDeque<T> as std::clone::Clone>::clone(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::clone(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<T> as std::fmt::Debug>::fmt
+deps:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<T> as std::fmt::Debug>::fmt":{"T":["std::marker::Sized","std::fmt::Debug"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::marker::Sized","std::clone::Clone","std::fmt::Debug","std::marker::Copy"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<T> as std::fmt::Debug>::fmt":{"T":["Sample","SampleEventType","fixed_lifo_deque::FixedLifoDeque","SampleArgs","CategoriesT","<*const T as std::fmt::Debug>","chrome_trace_dump::ChromeTraceArrayEntries","<&mut T as std::fmt::Debug>","MetadataType","chrome_trace_dump::Error"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::clone::impls::<impl std::clone::Clone for *const T>","SampleEventType"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<fixed_lifo_deque::FixedLifoDeque<T> as std::fmt::Debug>::fmt(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<T> as std::fmt::Debug>::fmt(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::fmt(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::new
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::new":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::new":{"T":["RUG_ANY"]}}
++fixed_lifo_deque::FixedLifoDeque::<T>::new();
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::new();
++<fixed_lifo_deque::FixedLifoDeque<T>>::new();
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::with_limit
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::with_limit":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::with_limit":{"T":["RUG_ANY"]}}
+let mut p0 = 0usize; // None+usize
++fixed_lifo_deque::FixedLifoDeque::<T>::with_limit(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::with_limit(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::with_limit(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::reset_limit
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::reset_limit":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::reset_limit":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.reset_limit(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::reset_limit(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::reset_limit(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::reset_limit(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::limit
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::limit":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::limit":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.limit();
++fixed_lifo_deque::FixedLifoDeque::<T>::limit(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::limit(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::limit(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::get
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::get":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::get":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.get(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::get(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::get(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::get(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::get_mut
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::get_mut":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::get_mut":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.get_mut(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::get_mut(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::get_mut(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::get_mut(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::swap
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::swap":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::swap":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.swap(p1, p2);
++fixed_lifo_deque::FixedLifoDeque::<T>::swap(p0, p1, p2);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::swap(p0, p1, p2);
++<fixed_lifo_deque::FixedLifoDeque<T>>::swap(p0, p1, p2);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::capacity
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::capacity":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::capacity":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.capacity();
++fixed_lifo_deque::FixedLifoDeque::<T>::capacity(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::capacity(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::capacity(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::iter
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::iter":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::iter":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.iter();
++fixed_lifo_deque::FixedLifoDeque::<T>::iter(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::iter(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::iter(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::iter_mut
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::iter_mut":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::iter_mut":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.iter_mut();
++fixed_lifo_deque::FixedLifoDeque::<T>::iter_mut(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::iter_mut(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::iter_mut(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::as_slices
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::as_slices":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::as_slices":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.as_slices();
++fixed_lifo_deque::FixedLifoDeque::<T>::as_slices(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::as_slices(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::as_slices(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::as_mut_slices
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::as_mut_slices":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::as_mut_slices":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.as_mut_slices();
++fixed_lifo_deque::FixedLifoDeque::<T>::as_mut_slices(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::as_mut_slices(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::as_mut_slices(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::len
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::len":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::len":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.len();
++fixed_lifo_deque::FixedLifoDeque::<T>::len(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::len(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::len(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::is_empty
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::is_empty":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::is_empty":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.is_empty();
++fixed_lifo_deque::FixedLifoDeque::<T>::is_empty(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::is_empty(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::is_empty(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::drain
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::drain":{"R":["std::marker::Sized","std::ops::RangeBounds"],"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::drain":{"R":["std::ops::RangeToInclusive<T>","(std::collections::Bound<&'a T>, std::collections::Bound<&'a T>)","std::ops::RangeFull","std::ops::RangeFrom<T>","std::ops::RangeInclusive<T>","std::ops::Range<&T>","std::ops::RangeFrom<&T>","std::ops::RangeToInclusive<&T>","std::ops::Range<T>","std::ops::RangeTo<T>","(std::collections::Bound<T>, std::collections::Bound<T>)","std::ops::RangeTo<&T>","std::ops::RangeInclusive<&T>"],"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // R
++p0.drain(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::drain(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::drain(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::drain(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::clear
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::clear":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::clear":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.clear();
++fixed_lifo_deque::FixedLifoDeque::<T>::clear(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::clear(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::clear(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::contains
+deps:{"<&T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::marker::Sized","std::fmt::Debug","std::clone::Clone","std::marker::Copy"]},"fixed_lifo_deque::FixedLifoDeque::<T>::contains":{"T":["std::cmp::PartialEq","std::marker::Sized"]},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+candidates:{"<&T as std::fmt::Debug>":{},"<*const T as std::fmt::Debug>":{},"fixed_lifo_deque::FixedLifoDeque":{"T":["SampleEventType","std::marker::copy_impls::<impl std::marker::Copy for *mut T>"]},"fixed_lifo_deque::FixedLifoDeque::<T>::contains":{"T":["std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>","fixed_lifo_deque::FixedLifoDeque","CategoriesT","SampleArgs","MetadataType","Sample","std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>","SampleEventType"]},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // T
++p0.contains(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::contains(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::contains(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::contains(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::front
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::front":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::front":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.front();
++fixed_lifo_deque::FixedLifoDeque::<T>::front(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::front(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::front(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::front_mut
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::front_mut":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::front_mut":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.front_mut();
++fixed_lifo_deque::FixedLifoDeque::<T>::front_mut(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::front_mut(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::front_mut(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::back
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::back":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::back":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.back();
++fixed_lifo_deque::FixedLifoDeque::<T>::back(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::back(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::back(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::back_mut
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::back_mut":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::back_mut":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.back_mut();
++fixed_lifo_deque::FixedLifoDeque::<T>::back_mut(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::back_mut(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::back_mut(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::drop_excess_for_inserting
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::drop_excess_for_inserting":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::drop_excess_for_inserting":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.drop_excess_for_inserting(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::drop_excess_for_inserting(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::drop_excess_for_inserting(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::drop_excess_for_inserting(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::pop_front
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::pop_front":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::pop_front":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.pop_front();
++fixed_lifo_deque::FixedLifoDeque::<T>::pop_front(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::pop_front(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::pop_front(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::push_back
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::push_back":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::push_back":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.push_back(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::push_back(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::push_back(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::push_back(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::pop_back
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::pop_back":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::pop_back":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.pop_back();
++fixed_lifo_deque::FixedLifoDeque::<T>::pop_back(p0);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::pop_back(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::pop_back(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_back
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_back":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_back":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.swap_remove_back(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_back(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_back(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::swap_remove_back(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_front
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_front":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_front":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.swap_remove_front(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_front(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::swap_remove_front(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::swap_remove_front(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::remove
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::remove":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::remove":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.remove(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::remove(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::remove(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::remove(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::split_off
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::split_off":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::split_off":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
++p0.split_off(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::split_off(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::split_off(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::split_off(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::append
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::append":{"T":["std::marker::Sized"]}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::append":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::collections::VecDeque<T>
++p0.append(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::append(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::append(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::append(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::retain
+deps:{"fixed_lifo_deque::FixedLifoDeque::<T>::retain":{"F":["std::ops::FnMut","std::marker::Sized"],"T":["std::marker::Sized"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque::<T>::retain":{"F":["core::str::LinesAnyMap","core::str::BytesIsNotEmpty","core::slice::ascii::EscapeByte","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::IsWhitespace","core::str::CharEscapeUnicode","core::str::IsNotEmpty","std::ops::function::impls::<impl std::ops::FnMut<A> for &F>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","std::boxed::Box<F, A>","core::str::CharEscapeDefault","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>","core::str::CharEscapeDebugContinue","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::UnsafeBytesToStr","core::str::IsAsciiWhitespace"],"T":["RUG_ANY"]},"std::ops::function::impls::<impl std::ops::FnMut<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnMut<A> for &mut F>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++p0.retain(p1);
++fixed_lifo_deque::FixedLifoDeque::<T>::retain(p0, p1);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::retain(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::retain(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs fixed_lifo_deque::FixedLifoDeque::<T>::resize
+deps:{"fixed_lifo_deque::FixedLifoDeque":{"T":["std::fmt::Debug","std::marker::Copy","std::clone::Clone","std::marker::Sized"]},"fixed_lifo_deque::FixedLifoDeque::<T>::resize":{"T":["std::clone::Clone","std::marker::Sized"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"fixed_lifo_deque::FixedLifoDeque":{"T":["std::marker::copy_impls::<impl std::marker::Copy for &T>","SampleEventType"]},"fixed_lifo_deque::FixedLifoDeque::<T>::resize":{"T":["CategoriesT","MetadataType","Sample","SampleArgs","chrome_trace_dump::ChromeTraceArrayEntries","std::clone::impls::<impl std::clone::Clone for &mut T>","Config","fixed_lifo_deque::FixedLifoDeque","SampleEventType","std::clone::impls::<impl std::clone::Clone for *mut T>"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for &mut T>":{},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = 0usize; // None+usize
+let mut p2 = MaybeUninit::uninit().assume_init(); // T
++p0.resize(p1, p2);
++fixed_lifo_deque::FixedLifoDeque::<T>::resize(p0, p1, p2);
++crate::fixed_lifo_deque::FixedLifoDeque::<T>::resize(p0, p1, p2);
++<fixed_lifo_deque::FixedLifoDeque<T>>::resize(p0, p1, p2);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialEq>::eq
+deps:{"<*const T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialEq>::eq":{"A":["std::cmp::PartialEq","std::marker::Sized"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::marker::Sized","std::clone::Clone","std::fmt::Debug","std::marker::Copy"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+candidates:{"<*const T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialEq>::eq":{"A":["SampleArgs","MetadataType","Sample","SampleEventType","CategoriesT","std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>","fixed_lifo_deque::FixedLifoDeque"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["<*const T as std::fmt::Debug>","SampleEventType"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialEq for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialEq for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
++p0.eq(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialEq>::eq(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialEq>::eq(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::eq(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialOrd>::partial_cmp
+deps:{"<&T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialOrd>::partial_cmp":{"A":["std::cmp::PartialOrd","std::marker::Sized"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::fmt::Debug","std::marker::Sized","std::clone::Clone","std::marker::Copy"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>":{}}
+candidates:{"<&T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialOrd>::partial_cmp":{"A":["std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>","Sample","std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>","fixed_lifo_deque::FixedLifoDeque"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["<&T as std::fmt::Debug>","SampleEventType"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&B> for &A>":{},"std::cmp::impls::<impl std::cmp::PartialOrd<&mut B> for &mut A>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{},"std::ptr::const_ptr::<impl std::cmp::PartialOrd for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::PartialOrd for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
++p0.partial_cmp(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::partial_cmp(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::Ord>::cmp
+deps:{"<*mut T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::Ord>::cmp":{"A":["std::marker::Sized","std::cmp::Ord"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::clone::Clone","std::marker::Sized","std::fmt::Debug","std::marker::Copy"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::cmp::impls::<impl std::cmp::Ord for &A>":{},"std::cmp::impls::<impl std::cmp::Ord for &mut A>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{}}
+candidates:{"<*mut T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::Ord>::cmp":{"A":["Sample","fixed_lifo_deque::FixedLifoDeque","std::cmp::impls::<impl std::cmp::Ord for &mut A>","std::ptr::const_ptr::<impl std::cmp::Ord for *const T>"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["<*mut T as std::fmt::Debug>","SampleEventType"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::cmp::impls::<impl std::cmp::Ord for &A>":{},"std::cmp::impls::<impl std::cmp::Ord for &mut A>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::ptr::const_ptr::<impl std::cmp::Ord for *const T>":{},"std::ptr::mut_ptr::<impl std::cmp::Ord for *mut T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
++p0.cmp(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::Ord>::cmp(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::cmp::Ord>::cmp(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::cmp(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::hash::Hash>::hash":{"A":["std::hash::Hash","std::marker::Sized"],"H":["std::hash::Hasher","std::marker::Sized"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::fmt::Debug","std::marker::Sized","std::marker::Copy","std::clone::Clone"]},"std::hash::impls::<impl std::hash::Hash for &T>":{},"std::hash::impls::<impl std::hash::Hash for &mut T>":{},"std::hash::impls::<impl std::hash::Hash for *const T>":{},"std::hash::impls::<impl std::hash::Hash for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<*const T as std::fmt::Debug>":{},"<*mut T as std::fmt::Debug>":{},"<fixed_lifo_deque::FixedLifoDeque<A> as std::hash::Hash>::hash":{"A":["Sample","std::hash::impls::<impl std::hash::Hash for &T>","std::hash::impls::<impl std::hash::Hash for &mut T>","fixed_lifo_deque::FixedLifoDeque"],"H":["std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::hash::SipHasher13","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["<*const T as std::fmt::Debug>","SampleEventType"]},"std::hash::impls::<impl std::hash::Hash for &T>":{},"std::hash::impls::<impl std::hash::Hash for &mut T>":{},"std::hash::impls::<impl std::hash::Hash for *const T>":{},"std::hash::impls::<impl std::hash::Hash for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // H
++p0.hash(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::hash::Hash>::hash(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::hash::Hash>::hash(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::hash(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::ops::Index<usize>>::index
+deps:{"<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::Index<usize>>::index":{"A":["std::marker::Sized"]}}
+candidates:{"<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::Index<usize>>::index":{"A":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = 0usize; // None+usize
++p0.index(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::Index<usize>>::index(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::Index<usize>>::index(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::index(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::ops::IndexMut<usize>>::index_mut
+deps:{"<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::IndexMut<usize>>::index_mut":{"A":["std::marker::Sized"]}}
+candidates:{"<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::IndexMut<usize>>::index_mut":{"A":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = 0usize; // None+usize
++p0.index_mut(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::IndexMut<usize>>::index_mut(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::ops::IndexMut<usize>>::index_mut(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::index_mut(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter
+deps:{"<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter":{"T":["std::marker::Sized"]}}
+candidates:{"<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter":{"T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.into_iter();
++<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter(p0);
++crate::<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter(p0);
++<fixed_lifo_deque::FixedLifoDeque<T>>::into_iter(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs <&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter
+'a
+deps:{"<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter":{"T":["std::marker::Sized"]}}
+candidates:{"<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter":{"T":["RUG_ANY"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.into_iter();
++<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter(p0);
++crate::<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter(p0);
++<&'a fixed_lifo_deque::FixedLifoDeque<T>>::into_iter(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs <&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter
+'a
+deps:{"<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter":{"T":["std::marker::Sized"]}}
+candidates:{"<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter":{"T":["RUG_ANY"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
++p0.into_iter();
++<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter(p0);
++crate::<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>::into_iter(p0);
++<&'a mut fixed_lifo_deque::FixedLifoDeque<T>>::into_iter(p0);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<A> as std::iter::Extend<A>>::extend
+deps:{"<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<fixed_lifo_deque::FixedLifoDeque<A> as std::iter::Extend<A>>::extend":{"A":["std::marker::Sized"],"T":["std::iter::IntoIterator","std::marker::Sized"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::marker::Sized","std::clone::Clone","std::marker::Copy","std::fmt::Debug"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{}}
+candidates:{"<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::slice::RChunks<'a, T>","std::sys::unix::os::SplitPaths<'a>","std::iter::adapters::GenericShunt<'_, I, R>","std::slice::GroupByMut<'a, T, P>","<&mut I as std::iter::Iterator>","std::iter::Zip<A, B>","std::option::IterMut<'a, A>","std::iter::FromFn<F>","std::collections::hash_map::Drain<'a, K, V>","std::iter::Inspect<I, F>","std::slice::Iter<'a, T>","std::vec::DrainFilter<'_, T, F, A>","std::iter::RepeatN<A>","std::iter::Filter<I, P>","std::str::SplitTerminator<'a, P>","std::iter::Fuse<I>","std::slice::ChunksExact<'a, T>","std::os::unix::net::Incoming<'a>","std::io::Bytes<R>","std::iter::Scan<I, St, F>","std::collections::btree_set::IntoIter<T, A>","std::ops::RangeInclusive<A>","std::os::unix::net::ScmRights<'a>","std::collections::btree_map::Keys<'a, K, V>","std::slice::SplitNMut<'a, T, P>","std::iter::TakeWhile<I, P>","std::collections::linked_list::IntoIter<T>","std::collections::hash_map::DrainFilter<'_, K, V, F>","std::iter::Flatten<I>","std::iter::Copied<I>","std::collections::btree_set::DrainFilter<'_, T, F, A>","std::iter::Rev<I>","std::env::SplitPaths<'a>","std::str::RSplitN<'a, P>","std::slice::ArrayChunksMut<'a, T, N>","std::collections::hash_set::Iter<'a, K>","std::iter::Map<I, F>","std::slice::Chunks<'a, T>","std::str::SplitWhitespace<'a>","std::env::Args","std::collections::linked_list::DrainFilter<'_, T, F>","std::iter::Cloned<I>","std::iter::MapWhile<I, P>","std::iter::Successors<T, F>","std::sync::mpsc::TryIter<'a, T>","std::str::SplitN<'a, P>","std::slice::RSplit<'a, T, P>","std::str::SplitAsciiWhitespace<'a>","std::slice::RSplitMut<'a, T, P>","std::os::unix::net::ancillary::AncillaryDataIter<'a, T>","std::str::Bytes<'_>","std::sys::unix::fs::ReadDir","std::collections::vec_deque::Iter<'a, T>","std::slice::SplitInclusive<'a, T, P>","std::slice::RChunksExact<'a, T>","std::collections::binary_heap::DrainSorted<'_, T>","std::collections::hash_set::Union<'a, T, S>","std::slice::ArrayChunks<'a, T, N>","std::iter::Chain<A, B>","std::ops::Range<A>","std::collections::hash_map::IntoValues<K, V>","std::str::EscapeDebug<'a>","std::collections::linked_list::Iter<'a, T>","std::collections::btree_map::IntoKeys<K, V, A>","std::collections::linked_list::IterMut<'a, T>","std::result::IntoIter<T>","std::str::RMatchIndices<'a, P>","std::sys::unix::os::Env","std::net::Incoming<'a>","std::collections::hash_map::Values<'a, K, V>","core::slice::iter::GenericSplitN<I>","std::path::Iter<'a>","std::str::EscapeDefault<'a>","std::collections::hash_set::Intersection<'a, T, S>","std::collections::btree_map::IterMut<'a, K, V>","std::slice::ChunksMut<'a, T>","std::str::SplitInclusive<'a, P>","std::iter::Repeat<A>","std::env::Vars","std::slice::Split<'a, T, P>","std::ascii::EscapeDefault","std::char::DecodeUtf16<I>","std::iter::OnceWith<F>","std::fs::ReadDir","core::error::Source<'a>","std::collections::btree_set::Iter<'a, T>","std::iter::Skip<I>","std::collections::binary_heap::IntoIter<T>","std::sys::unix::args::Args","std::str::Matches<'a, P>","std::process::CommandArgs<'a>","std::iter::ArrayChunks<I, N>","std::str::RMatches<'a, P>","std::collections::vec_deque::IterMut<'a, T>","std::sys::unix::process::process_common::CommandArgs<'a>","std::slice::ArrayWindows<'a, T, N>","std::collections::hash_set::Difference<'a, T, S>","std::collections::btree_set::Intersection<'a, T, A>","std::slice::Windows<'a, T>","std::str::Chars<'a>","std::path::Ancestors<'a>","std::collections::hash_set::DrainFilter<'_, K, F>","std::os::unix::net::Messages<'a>","std::char::EscapeUnicode","std::iter::StepBy<I>","std::sync::mpsc::Iter<'a, T>","std::result::IterMut<'a, T>","std::collections::btree_map::Iter<'a, K, V>","std::option::Item<A>","std::str::RSplit<'a, P>","std::iter::Enumerate<I>","std::collections::btree_set::Range<'a, T>","std::collections::binary_heap::IntoIterSorted<T>","std::io::Split<B>","std::str::Split<'a, P>","std::env::ArgsOs","std::char::ToUppercase","std::str::EscapeUnicode<'a>","std::slice::ChunksExactMut<'a, T>","std::iter::Peekable<I>","std::process::CommandEnvs<'a>","std::string::Drain<'_>","std::slice::RChunksMut<'a, T>","std::collections::hash_map::Iter<'a, K, V>","std::char::ToLowercase","std::sys_common::wstr::WStrUnits<'_>","std::slice::RSplitN<'a, T, P>","std::os::unix::net::ScmCredentials<'a>","std::slice::SplitInclusiveMut<'a, T, P>","std::iter::Intersperse<I>","std::net::IntoIncoming","std::char::EscapeDefault","std::str::Utf8Chunks<'a>","std::slice::EscapeAscii<'a>","std::ops::RangeFrom<A>","std::str::LinesAny<'a>","std::iter::Take<I>","std::vec::Drain<'_, T, A>","std::str::MatchIndices<'a, P>","std::str::Lines<'a>","std::iter::adapters::flatten::FlattenCompat<I, U>","std::collections::vec_deque::IntoIter<T, A>","std::sys_common::wtf8::EncodeWide<'a>","std::iter::SkipWhile<I, P>","std::collections::hash_map::IntoKeys<K, V>","std::collections::hash_set::Drain<'a, K>","std::iter::FilterMap<I, F>","std::slice::RSplitNMut<'a, T, P>","std::collections::btree_map::IntoValues<K, V, A>","std::iter::RepeatWith<F>","std::collections::btree_set::SymmetricDifference<'a, T>","std::collections::binary_heap::Drain<'_, T>","std::option::Iter<'a, A>","std::sys_common::wtf8::Wtf8CodePoints<'a>","std::iter::Once<T>","std::iter::Cycle<I>","std::collections::btree_map::DrainFilter<'_, K, V, F, A>","std::slice::IterMut<'a, T>","std::vec::IntoIter<T, A>","std::collections::btree_map::ValuesMut<'a, K, V>","std::option::IntoIter<A>","std::io::Lines<B>","std::array::IntoIter<T, N>","std::collections::binary_heap::Iter<'a, T>","std::iter::ByRefSized<'_, I>","std::iter::FlatMap<I, U, F>","std::slice::RChunksExactMut<'a, T>","std::char::EscapeDebug","std::collections::hash_set::SymmetricDifference<'a, T, S>","std::str::CharIndices<'a>","std::sys_common::net::LookupHost","std::sync::mpsc::IntoIter<T>","std::collections::btree_set::Difference<'a, T, A>","std::str::RSplitTerminator<'a, P>","std::collections::vec_deque::Drain<'_, T, A>","std::slice::GroupBy<'a, T, P>","std::iter::IntersperseWith<I, G>","std::collections::btree_map::IntoIter<K, V, A>","std::collections::hash_map::Keys<'a, K, V>","std::collections::hash_map::IterMut<'a, K, V>","std::iter::Empty<T>","std::collections::btree_map::Range<'a, K, V>","std::str::EncodeUtf16<'a>","std::boxed::Box<I, A>","std::result::Iter<'a, T>","std::ops::index_range::IndexRange","std::collections::btree_set::Union<'a, T>","std::collections::hash_map::ValuesMut<'a, K, V>","std::collections::btree_map::RangeMut<'a, K, V>","std::path::Components<'a>","std::iter::sources::from_generator::FromGenerator<G>","std::collections::btree_map::Values<'a, K, V>","std::char::CaseMappingIter","std::vec::Splice<'_, I, A>","std::slice::SplitMut<'a, T, P>","std::slice::SplitN<'a, T, P>","std::collections::hash_set::IntoIter<K>","std::collections::hash_map::IntoIter<K, V>","std::env::VarsOs"]},"<fixed_lifo_deque::FixedLifoDeque<A> as std::iter::Extend<A>>::extend":{"A":["RUG_ANY"],"T":["fixed_lifo_deque::FixedLifoDeque","<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>","<I as std::iter::IntoIterator>"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["SampleEventType","std::marker::copy_impls::<impl std::marker::Copy for &T>"]},"std::clone::impls::<impl std::clone::Clone for *const T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<A>
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.extend(p1);
++<fixed_lifo_deque::FixedLifoDeque<A> as std::iter::Extend<A>>::extend(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<A> as std::iter::Extend<A>>::extend(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<A>>::extend(p0, p1);
+-----------------
+trace/src/fixed_lifo_deque.rs <fixed_lifo_deque::FixedLifoDeque<T> as std::iter::Extend<&'a T>>::extend
+'a
+deps:{"<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::Iterator","std::marker::Sized"]},"<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::Extend<&'a T>>::extend":{"I":["std::marker::Sized","std::iter::IntoIterator"],"T":["std::marker::Sized","std::marker::Copy"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::fmt::Debug","std::marker::Sized","std::clone::Clone","std::marker::Copy"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"<&'a fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut fixed_lifo_deque::FixedLifoDeque<T> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&mut I as std::iter::Iterator>":{},"<I as std::iter::IntoIterator>":{"I":["std::iter::sources::from_generator::FromGenerator<G>","std::collections::hash_map::Iter<'a, K, V>","std::str::RSplitN<'a, P>","std::os::unix::net::ScmRights<'a>","std::sys_common::wtf8::Wtf8CodePoints<'a>","core::error::Source<'a>","std::iter::Cloned<I>","std::str::SplitN<'a, P>","std::iter::Rev<I>","std::iter::IntersperseWith<I, G>","std::env::Args","std::iter::Repeat<A>","std::collections::hash_map::IterMut<'a, K, V>","std::slice::RSplitNMut<'a, T, P>","std::iter::RepeatWith<F>","std::collections::hash_set::Difference<'a, T, S>","std::str::SplitTerminator<'a, P>","std::slice::ChunksExact<'a, T>","std::option::Iter<'a, A>","std::collections::btree_set::DrainFilter<'_, T, F, A>","std::sync::mpsc::Iter<'a, T>","std::str::SplitWhitespace<'a>","std::vec::Drain<'_, T, A>","std::process::CommandArgs<'a>","std::slice::RChunksExact<'a, T>","std::str::RSplit<'a, P>","std::iter::Once<T>","std::char::CaseMappingIter","std::str::RSplitTerminator<'a, P>","std::iter::Inspect<I, F>","std::os::unix::net::ancillary::AncillaryDataIter<'a, T>","std::str::EscapeDefault<'a>","std::slice::RChunksExactMut<'a, T>","std::str::Split<'a, P>","std::slice::ArrayChunks<'a, T, N>","std::str::SplitAsciiWhitespace<'a>","std::char::DecodeUtf16<I>","std::collections::btree_map::IntoKeys<K, V, A>","std::iter::Enumerate<I>","std::result::Iter<'a, T>","std::iter::Fuse<I>","std::slice::SplitN<'a, T, P>","std::collections::linked_list::Iter<'a, T>","std::iter::FlatMap<I, U, F>","std::collections::hash_map::Keys<'a, K, V>","std::ascii::EscapeDefault","std::result::IntoIter<T>","std::sys::unix::fs::ReadDir","std::sys_common::wtf8::EncodeWide<'a>","std::str::EncodeUtf16<'a>","std::str::Chars<'a>","std::sync::mpsc::TryIter<'a, T>","std::collections::binary_heap::IntoIter<T>","std::iter::ByRefSized<'_, I>","std::net::IntoIncoming","std::vec::DrainFilter<'_, T, F, A>","std::iter::Peekable<I>","std::slice::SplitMut<'a, T, P>","std::collections::vec_deque::Drain<'_, T, A>","std::iter::Flatten<I>","std::sys::unix::args::Args","std::env::ArgsOs","std::collections::hash_map::IntoValues<K, V>","std::slice::Iter<'a, T>","std::collections::btree_map::Range<'a, K, V>","std::process::CommandEnvs<'a>","std::str::RMatches<'a, P>","std::iter::Intersperse<I>","std::iter::TakeWhile<I, P>","std::vec::IntoIter<T, A>","std::collections::vec_deque::IterMut<'a, T>","std::collections::hash_map::IntoKeys<K, V>","std::collections::vec_deque::Iter<'a, T>","std::iter::Zip<A, B>","std::sys::unix::os::SplitPaths<'a>","std::iter::Scan<I, St, F>","std::str::EscapeDebug<'a>","std::slice::SplitInclusiveMut<'a, T, P>","std::char::ToUppercase","std::collections::hash_map::DrainFilter<'_, K, V, F>","std::os::unix::net::ScmCredentials<'a>","std::slice::EscapeAscii<'a>","std::str::RMatchIndices<'a, P>","std::iter::FilterMap<I, F>","std::iter::StepBy<I>","std::iter::Map<I, F>","std::iter::Skip<I>","std::slice::Windows<'a, T>","std::str::Lines<'a>","std::iter::adapters::flatten::FlattenCompat<I, U>","std::iter::MapWhile<I, P>","std::iter::ArrayChunks<I, N>","std::string::Drain<'_>","std::slice::Split<'a, T, P>","std::env::VarsOs","std::collections::btree_set::Difference<'a, T, A>","std::sys::unix::process::process_common::CommandArgs<'a>","std::iter::Take<I>","std::io::Bytes<R>","std::vec::Splice<'_, I, A>","std::collections::btree_map::IterMut<'a, K, V>","std::sys_common::wstr::WStrUnits<'_>","std::collections::binary_heap::Drain<'_, T>","std::iter::Filter<I, P>","std::str::Bytes<'_>","std::collections::hash_map::Drain<'a, K, V>","std::env::SplitPaths<'a>","std::slice::RChunks<'a, T>","<&mut I as std::iter::Iterator>","std::slice::GroupBy<'a, T, P>","std::collections::btree_map::Values<'a, K, V>","core::slice::iter::GenericSplitN<I>","std::slice::IterMut<'a, T>","std::iter::Copied<I>","std::slice::RSplit<'a, T, P>","std::sync::mpsc::IntoIter<T>","std::iter::adapters::GenericShunt<'_, I, R>","std::collections::binary_heap::DrainSorted<'_, T>","std::boxed::Box<I, A>","std::collections::btree_set::Iter<'a, T>","std::collections::linked_list::DrainFilter<'_, T, F>","std::sys::unix::os::Env","std::collections::hash_set::Union<'a, T, S>","std::collections::btree_set::Intersection<'a, T, A>","std::option::IntoIter<A>","std::iter::OnceWith<F>","std::iter::FromFn<F>","std::collections::btree_set::IntoIter<T, A>","std::iter::SkipWhile<I, P>","std::iter::RepeatN<A>","std::str::Matches<'a, P>","std::collections::btree_map::Keys<'a, K, V>","std::str::CharIndices<'a>","std::slice::Chunks<'a, T>","std::collections::hash_map::ValuesMut<'a, K, V>","std::collections::vec_deque::IntoIter<T, A>","std::iter::Successors<T, F>","std::collections::btree_map::RangeMut<'a, K, V>","std::collections::hash_set::Iter<'a, K>","std::collections::hash_set::Drain<'a, K>","std::slice::ChunksMut<'a, T>","std::env::Vars","std::slice::GroupByMut<'a, T, P>","std::iter::Cycle<I>","std::collections::hash_set::SymmetricDifference<'a, T, S>","std::option::IterMut<'a, A>","std::sys_common::net::LookupHost","std::path::Ancestors<'a>","std::collections::hash_set::DrainFilter<'_, K, F>","std::str::EscapeUnicode<'a>","std::collections::linked_list::IterMut<'a, T>","std::collections::hash_set::IntoIter<K>","std::str::LinesAny<'a>","std::collections::hash_map::IntoIter<K, V>","std::collections::btree_set::Range<'a, T>","std::ops::RangeInclusive<A>","std::char::ToLowercase","std::os::unix::net::Incoming<'a>","std::char::EscapeUnicode","std::slice::SplitNMut<'a, T, P>","std::collections::btree_map::IntoIter<K, V, A>","std::option::Item<A>","std::collections::btree_map::DrainFilter<'_, K, V, F, A>","std::char::EscapeDefault","std::str::MatchIndices<'a, P>","std::iter::Chain<A, B>","std::collections::btree_set::Union<'a, T>","std::os::unix::net::Messages<'a>","std::collections::linked_list::IntoIter<T>","std::collections::binary_heap::Iter<'a, T>","std::collections::hash_map::Values<'a, K, V>","std::ops::Range<A>","std::ops::index_range::IndexRange","std::slice::ArrayWindows<'a, T, N>","std::fs::ReadDir","std::slice::SplitInclusive<'a, T, P>","std::slice::RChunksMut<'a, T>","std::str::SplitInclusive<'a, P>","std::collections::btree_map::IntoValues<K, V, A>","std::collections::binary_heap::IntoIterSorted<T>","std::slice::ArrayChunksMut<'a, T, N>","std::result::IterMut<'a, T>","std::ops::RangeFrom<A>","std::array::IntoIter<T, N>","std::collections::hash_set::Intersection<'a, T, S>","std::path::Components<'a>","std::slice::RSplitMut<'a, T, P>","std::iter::Empty<T>","std::str::Utf8Chunks<'a>","std::net::Incoming<'a>","std::collections::btree_set::SymmetricDifference<'a, T>","std::io::Split<B>","std::io::Lines<B>","std::slice::RSplitN<'a, T, P>","std::path::Iter<'a>","std::collections::btree_map::ValuesMut<'a, K, V>","std::slice::ChunksExactMut<'a, T>","std::char::EscapeDebug","std::collections::btree_map::Iter<'a, K, V>"]},"<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::Extend<&'a T>>::extend":{"I":["fixed_lifo_deque::FixedLifoDeque","<&'a mut serde_json::Map<std::string::String, serde_json::Value> as std::iter::IntoIterator>","<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>"],"T":["SampleEventType","Config","std::marker::copy_impls::<impl std::marker::Copy for *const T>"]},"fixed_lifo_deque::FixedLifoDeque":{"T":["std::clone::impls::<impl std::clone::Clone for &T>","SampleEventType"]},"std::clone::impls::<impl std::clone::Clone for &T>":{},"std::clone::impls::<impl std::clone::Clone for *mut T>":{},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // fixed_lifo_deque::FixedLifoDeque<T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend(p1);
++<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::Extend<&'a T>>::extend(p0, p1);
++crate::<fixed_lifo_deque::FixedLifoDeque<T> as std::iter::Extend<&'a T>>::extend(p0, p1);
++<fixed_lifo_deque::FixedLifoDeque<T>>::extend(p0, p1);
+-----------------
+trace/src/chrome_trace_dump.rs <chrome_trace_dump::Error as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // chrome_trace_dump::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<chrome_trace_dump::Error as std::fmt::Debug>::fmt(p0, p1);
++crate::<chrome_trace_dump::Error as std::fmt::Debug>::fmt(p0, p1);
++<chrome_trace_dump::Error>::fmt(p0, p1);
+-----------------
+trace/src/chrome_trace_dump.rs <chrome_trace_dump::Error as std::convert::From<std::io::Error>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::io::Error
++<chrome_trace_dump::Error as std::convert::From<std::io::Error>>::from(p0);
++crate::<chrome_trace_dump::Error as std::convert::From<std::io::Error>>::from(p0);
++<chrome_trace_dump::Error>::from(p0);
+-----------------
+trace/src/chrome_trace_dump.rs <chrome_trace_dump::Error as std::convert::From<serde_json::Error>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // serde_json::Error
++<chrome_trace_dump::Error as std::convert::From<serde_json::Error>>::from(p0);
++crate::<chrome_trace_dump::Error as std::convert::From<serde_json::Error>>::from(p0);
++<chrome_trace_dump::Error>::from(p0);
+-----------------
+trace/src/chrome_trace_dump.rs <chrome_trace_dump::Error as std::convert::From<std::string::String>>::from
+deps:{}
+candidates:{}
+let mut p0 = std::string::String::new(); // None+std::string::String
++<chrome_trace_dump::Error as std::convert::From<std::string::String>>::from(p0);
++crate::<chrome_trace_dump::Error as std::convert::From<std::string::String>>::from(p0);
++<chrome_trace_dump::Error>::from(p0);
+-----------------
+trace/src/chrome_trace_dump.rs chrome_trace_dump::Error::already_exists
+deps:{}
+candidates:{}
++chrome_trace_dump::Error::already_exists();
++crate::chrome_trace_dump::Error::already_exists();
++<chrome_trace_dump::Error>::already_exists();
+-----------------
+trace/src/chrome_trace_dump.rs <chrome_trace_dump::ChromeTraceArrayEntries as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // chrome_trace_dump::ChromeTraceArrayEntries
++p0.clone();
++<chrome_trace_dump::ChromeTraceArrayEntries as std::clone::Clone>::clone(p0);
++crate::<chrome_trace_dump::ChromeTraceArrayEntries as std::clone::Clone>::clone(p0);
++<chrome_trace_dump::ChromeTraceArrayEntries>::clone(p0);
+-----------------
+trace/src/chrome_trace_dump.rs <chrome_trace_dump::ChromeTraceArrayEntries as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // chrome_trace_dump::ChromeTraceArrayEntries
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<chrome_trace_dump::ChromeTraceArrayEntries as std::fmt::Debug>::fmt(p0, p1);
++crate::<chrome_trace_dump::ChromeTraceArrayEntries as std::fmt::Debug>::fmt(p0, p1);
++<chrome_trace_dump::ChromeTraceArrayEntries>::fmt(p0, p1);
+-----------------
+trace/src/chrome_trace_dump.rs chrome_trace_dump::_IMPL_DESERIALIZE_FOR_ChromeTraceArrayEntries::<impl serde::Deserialize<'de> for chrome_trace_dump::ChromeTraceArrayEntries>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"chrome_trace_dump::_IMPL_DESERIALIZE_FOR_ChromeTraceArrayEntries::<impl serde::Deserialize<'de> for chrome_trace_dump::ChromeTraceArrayEntries>::deserialize":{"__D":["serde::Deserializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"chrome_trace_dump::_IMPL_DESERIALIZE_FOR_ChromeTraceArrayEntries::<impl serde::Deserialize<'de> for chrome_trace_dump::ChromeTraceArrayEntries>::deserialize":{"__D":["serde::de::value::I16Deserializer<E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::SeqDeserializer<I, E>","serde::de::value::I64Deserializer<E>","serde::private::de::BytesDeserializer<'a, E>","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::de::value::SeqAccessDeserializer<A>","&'a serde_json::Number","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::BoolDeserializer<E>","serde::de::value::StrDeserializer<'a, E>","serde::de::value::CowStrDeserializer<'a, E>","serde::de::value::IsizeDeserializer<E>","serde::de::value::I8Deserializer<E>","serde::de::value::U128Deserializer<E>","serde_json::Value","serde::de::value::U64Deserializer<E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::de::value::I128Deserializer<E>","serde::de::value::F64Deserializer<E>","serde_json::de::MapKey<'a, R>","serde::de::value::CharDeserializer<E>","serde::de::value::PairDeserializer<A, B, E>","serde_json::value::de::SeqRefDeserializer<'de>","serde::de::value::UnitDeserializer<E>","serde::de::value::F32Deserializer<E>","serde_json::Number","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde_json::value::de::MapKeyDeserializer<'de>","serde::de::value::I32Deserializer<E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::de::value::MapDeserializer<'de, I, E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::de::value::U8Deserializer<E>","serde::de::value::StringDeserializer<E>","&'de serde_json::Value","serde::de::value::U16Deserializer<E>","serde::de::value::UsizeDeserializer<E>","serde::de::value::U32Deserializer<E>","serde::de::value::MapAccessDeserializer<A>","serde::private::de::StrDeserializer<'a, E>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::private::de::content::SeqDeserializer<'de, E>","serde::private::de::content::MapDeserializer<'de, E>","serde_json::value::de::MapRefDeserializer<'de>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde_json::value::de::SeqDeserializer","serde_json::value::de::MapDeserializer"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++chrome_trace_dump::_IMPL_DESERIALIZE_FOR_ChromeTraceArrayEntries::<impl serde::Deserialize<'de> for chrome_trace_dump::ChromeTraceArrayEntries>::deserialize(p0);
++crate::chrome_trace_dump::_IMPL_DESERIALIZE_FOR_ChromeTraceArrayEntries::<impl serde::Deserialize<'de> for chrome_trace_dump::ChromeTraceArrayEntries>::deserialize(p0);
++<chrome_trace_dump::ChromeTraceArrayEntries>::deserialize(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CategoriesT
++p0.clone();
++<CategoriesT as std::clone::Clone>::clone(p0);
++crate::<CategoriesT as std::clone::Clone>::clone(p0);
++<CategoriesT>::clone(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CategoriesT
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<CategoriesT as std::fmt::Debug>::fmt(p0, p1);
++crate::<CategoriesT as std::fmt::Debug>::fmt(p0, p1);
++<CategoriesT>::fmt(p0, p1);
+-----------------
+trace/src/lib.rs <std::vec::Vec<std::string::String> as StringArrayEq<[&'static str]>>::arr_eq
+deps:{}
+candidates:{}
+let mut p0 = & std::string::String::new(); // None+std::vec::Vec<std::string::String>
+let mut p1 = & ["a"].as_mut_slice(); // None+[&'static str]
++p0.arr_eq(p1);
++<std::vec::Vec<std::string::String> as StringArrayEq<[&'static str]>>::arr_eq(p0, p1);
++crate::<std::vec::Vec<std::string::String> as StringArrayEq<[&'static str]>>::arr_eq(p0, p1);
++<std::vec::Vec<std::string::String>>::arr_eq(p0, p1);
+-----------------
+trace/src/lib.rs <&'static [&'static str] as StringArrayEq<std::vec::Vec<std::string::String>>>::arr_eq
+deps:{}
+candidates:{}
+let mut p0 = & ["a"].as_mut_slice(); // None+&'static [&'static str]
+let mut p1 = & std::string::String::new(); // None+std::vec::Vec<std::string::String>
++p0.arr_eq(p1);
++<&'static [&'static str] as StringArrayEq<std::vec::Vec<std::string::String>>>::arr_eq(p0, p1);
++crate::<&'static [&'static str] as StringArrayEq<std::vec::Vec<std::string::String>>>::arr_eq(p0, p1);
++<&'static [&'static str]>::arr_eq(p0, p1);
+-----------------
+trace/src/lib.rs <CategoriesT as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CategoriesT
+let mut p1 = & MaybeUninit::uninit().assume_init(); // CategoriesT
++p0.eq(p1);
++<CategoriesT as std::cmp::PartialEq>::eq(p0, p1);
++crate::<CategoriesT as std::cmp::PartialEq>::eq(p0, p1);
++<CategoriesT>::eq(p0, p1);
+-----------------
+trace/src/lib.rs <CategoriesT as serde::Serialize>::serialize
+deps:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"<CategoriesT as serde::Serialize>::serialize":{"S":["serde::Serializer","std::marker::Sized"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+candidates:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"<CategoriesT as serde::Serialize>::serialize":{"S":["serde_json::value::Serializer","serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>","serde::private::ser::content::ContentSerializer<E>","serde_json::value::ser::MapKeySerializer","serde::private::ser::TaggedSerializer<S>","serde::private::ser::FlatMapSerializer<'a, M>","serde_json::ser::MapKeySerializer<'a, W, F>"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CategoriesT
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
++p0.serialize(p1);
++<CategoriesT as serde::Serialize>::serialize(p0, p1);
++crate::<CategoriesT as serde::Serialize>::serialize(p0, p1);
++<CategoriesT>::serialize(p0, p1);
+-----------------
+trace/src/lib.rs <CategoriesT as serde::Deserialize<'de>>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<CategoriesT as serde::Deserialize<'de>>::deserialize":{"D":["std::marker::Sized","serde::Deserializer"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<CategoriesT as serde::Deserialize<'de>>::deserialize":{"D":["serde::de::value::MapAccessDeserializer<A>","serde::de::value::I8Deserializer<E>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::de::value::F64Deserializer<E>","serde::de::value::I128Deserializer<E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde_json::value::de::MapKeyDeserializer<'de>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::PairDeserializer<A, B, E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde::de::value::StrDeserializer<'a, E>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::I32Deserializer<E>","serde_json::value::de::SeqRefDeserializer<'de>","serde_json::Number","serde::de::value::CowStrDeserializer<'a, E>","serde::de::value::CharDeserializer<E>","serde::de::value::U64Deserializer<E>","serde::private::de::content::MapDeserializer<'de, E>","serde::private::de::content::SeqDeserializer<'de, E>","serde_json::value::de::MapDeserializer","serde_json::value::de::SeqDeserializer","serde_json::value::de::MapRefDeserializer<'de>","serde::de::value::MapDeserializer<'de, I, E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","&'de serde_json::Value","serde::de::value::SeqAccessDeserializer<A>","serde_json::de::MapKey<'a, R>","serde::de::value::U16Deserializer<E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::de::value::I64Deserializer<E>","serde::de::value::U128Deserializer<E>","serde::de::value::UsizeDeserializer<E>","serde::de::value::U8Deserializer<E>","serde::de::value::UnitDeserializer<E>","serde::de::value::U32Deserializer<E>","serde::de::value::F32Deserializer<E>","serde::de::value::IsizeDeserializer<E>","serde::de::value::BoolDeserializer<E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::I16Deserializer<E>","serde::de::value::StringDeserializer<E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde_json::Value","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::private::de::BytesDeserializer<'a, E>","&'a serde_json::Number","serde::de::value::SeqDeserializer<I, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // D
++<CategoriesT as serde::Deserialize<'de>>::deserialize(p0);
++crate::<CategoriesT as serde::Deserialize<'de>>::deserialize(p0);
++<CategoriesT>::deserialize(p0);
+-----------------
+trace/src/lib.rs <<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::expecting
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // <CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.expecting(p1);
++<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::expecting(p0, p1);
++crate::<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::expecting(p0, p1);
++<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor>::expecting(p0, p1);
+-----------------
+trace/src/lib.rs <<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::visit_str
+'de
+deps:{"<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::visit_str":{"E":["serde::de::Error","std::marker::Sized"]}}
+candidates:{"<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::visit_str":{"E":["serde_json::Error","serde::de::value::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // <CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor
+let mut p1 = "sample"; // None+&str
++p0.visit_str(&p1);
++<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::visit_str(p0, &p1);
++crate::<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor as serde::de::Visitor<'de>>::visit_str(p0, &p1);
++<<CategoriesT as serde::Deserialize<'de>>::deserialize::CategoriesTVisitor>::visit_str(p0, &p1);
+-----------------
+trace/src/lib.rs CategoriesT::join
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // CategoriesT
+let mut p1 = "sample"; // None+&str
++p0.join(&p1);
++CategoriesT::join(p0, &p1);
++crate::CategoriesT::join(p0, &p1);
++<CategoriesT>::join(p0, &p1);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 0]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 0]
++<CategoriesT as std::convert::From<&'static [&'static str; 0]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 0]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 1]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 1]
++<CategoriesT as std::convert::From<&'static [&'static str; 1]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 1]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 2]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 2]
++<CategoriesT as std::convert::From<&'static [&'static str; 2]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 2]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 3]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 3]
++<CategoriesT as std::convert::From<&'static [&'static str; 3]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 3]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 4]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 4]
++<CategoriesT as std::convert::From<&'static [&'static str; 4]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 4]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 5]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 5]
++<CategoriesT as std::convert::From<&'static [&'static str; 5]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 5]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 6]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 6]
++<CategoriesT as std::convert::From<&'static [&'static str; 6]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 6]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 7]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 7]
++<CategoriesT as std::convert::From<&'static [&'static str; 7]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 7]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 8]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 8]
++<CategoriesT as std::convert::From<&'static [&'static str; 8]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 8]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 9]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 9]
++<CategoriesT as std::convert::From<&'static [&'static str; 9]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 9]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<&'static [&'static str; 10]>>::from
+deps:{}
+candidates:{}
+let mut p0 = & ["a";1]; // None+[&'static str; 10]
++<CategoriesT as std::convert::From<&'static [&'static str; 10]>>::from(p0);
++crate::<CategoriesT as std::convert::From<&'static [&'static str; 10]>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <CategoriesT as std::convert::From<std::vec::Vec<std::string::String>>>::from
+deps:{}
+candidates:{}
+let mut p0 = std::string::String::new(); // None+std::vec::Vec<std::string::String>
++<CategoriesT as std::convert::From<std::vec::Vec<std::string::String>>>::from(p0);
++crate::<CategoriesT as std::convert::From<std::vec::Vec<std::string::String>>>::from(p0);
++<CategoriesT>::from(p0);
+-----------------
+trace/src/lib.rs <Config as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Config
++p0.clone();
++<Config as std::clone::Clone>::clone(p0);
++crate::<Config as std::clone::Clone>::clone(p0);
++<Config>::clone(p0);
+-----------------
+trace/src/lib.rs Config::with_limit_bytes
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Config::with_limit_bytes(p0);
++crate::Config::with_limit_bytes(p0);
++<Config>::with_limit_bytes(p0);
+-----------------
+trace/src/lib.rs Config::with_limit_count
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++Config::with_limit_count(p0);
++crate::Config::with_limit_count(p0);
++<Config>::with_limit_count(p0);
+-----------------
+trace/src/lib.rs Config::default
+deps:{}
+candidates:{}
++Config::default();
++crate::Config::default();
++<Config>::default();
+-----------------
+trace/src/lib.rs Config::max_size_in_bytes
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Config
++p0.max_size_in_bytes();
++Config::max_size_in_bytes(p0);
++crate::Config::max_size_in_bytes(p0);
++<Config>::max_size_in_bytes(p0);
+-----------------
+trace/src/lib.rs Config::max_samples
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Config
++p0.max_samples();
++Config::max_samples(p0);
++crate::Config::max_samples(p0);
++<Config>::max_samples(p0);
+-----------------
+trace/src/lib.rs <SampleEventType as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleEventType
++p0.clone();
++<SampleEventType as std::clone::Clone>::clone(p0);
++crate::<SampleEventType as std::clone::Clone>::clone(p0);
++<SampleEventType>::clone(p0);
+-----------------
+trace/src/lib.rs <SampleEventType as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleEventType
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<SampleEventType as std::fmt::Debug>::fmt(p0, p1);
++crate::<SampleEventType as std::fmt::Debug>::fmt(p0, p1);
++<SampleEventType>::fmt(p0, p1);
+-----------------
+trace/src/lib.rs <SampleEventType as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleEventType
+let mut p1 = & MaybeUninit::uninit().assume_init(); // SampleEventType
++p0.eq(p1);
++<SampleEventType as std::cmp::PartialEq>::eq(p0, p1);
++crate::<SampleEventType as std::cmp::PartialEq>::eq(p0, p1);
++<SampleEventType>::eq(p0, p1);
+-----------------
+trace/src/lib.rs <SampleEventType as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleEventType
++p0.assert_receiver_is_total_eq();
++<SampleEventType as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<SampleEventType as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<SampleEventType>::assert_receiver_is_total_eq(p0);
+-----------------
+trace/src/lib.rs SampleEventType::into_chrome_id
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // SampleEventType
++p0.into_chrome_id();
++SampleEventType::into_chrome_id(p0);
++crate::SampleEventType::into_chrome_id(p0);
++<SampleEventType>::into_chrome_id(p0);
+-----------------
+trace/src/lib.rs SampleEventType::from_chrome_id
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++SampleEventType::from_chrome_id(p0);
++crate::SampleEventType::from_chrome_id(p0);
++<SampleEventType>::from_chrome_id(p0);
+-----------------
+trace/src/lib.rs <MetadataType as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // MetadataType
++p0.clone();
++<MetadataType as std::clone::Clone>::clone(p0);
++crate::<MetadataType as std::clone::Clone>::clone(p0);
++<MetadataType>::clone(p0);
+-----------------
+trace/src/lib.rs <MetadataType as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // MetadataType
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<MetadataType as std::fmt::Debug>::fmt(p0, p1);
++crate::<MetadataType as std::fmt::Debug>::fmt(p0, p1);
++<MetadataType>::fmt(p0, p1);
+-----------------
+trace/src/lib.rs <MetadataType as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // MetadataType
+let mut p1 = & MaybeUninit::uninit().assume_init(); // MetadataType
++p0.eq(p1);
++<MetadataType as std::cmp::PartialEq>::eq(p0, p1);
++crate::<MetadataType as std::cmp::PartialEq>::eq(p0, p1);
++<MetadataType>::eq(p0, p1);
+-----------------
+trace/src/lib.rs <MetadataType as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // MetadataType
++p0.assert_receiver_is_total_eq();
++<MetadataType as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<MetadataType as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<MetadataType>::assert_receiver_is_total_eq(p0);
+-----------------
+trace/src/lib.rs MetadataType::sample_name
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // MetadataType
++p0.sample_name();
++MetadataType::sample_name(p0);
++crate::MetadataType::sample_name(p0);
++<MetadataType>::sample_name(p0);
+-----------------
+trace/src/lib.rs MetadataType::consume
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // MetadataType
++p0.consume();
++MetadataType::consume(p0);
++crate::MetadataType::consume(p0);
++<MetadataType>::consume(p0);
+-----------------
+trace/src/lib.rs _IMPL_SERIALIZE_FOR_SampleArgs::<impl serde::Serialize for SampleArgs>::serialize
+deps:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"_IMPL_SERIALIZE_FOR_SampleArgs::<impl serde::Serialize for SampleArgs>::serialize":{"__S":["std::marker::Sized","serde::Serializer"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+candidates:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"_IMPL_SERIALIZE_FOR_SampleArgs::<impl serde::Serialize for SampleArgs>::serialize":{"__S":["serde::private::ser::FlatMapSerializer<'a, M>","serde_json::value::Serializer","serde_json::ser::MapKeySerializer<'a, W, F>","serde::private::ser::content::ContentSerializer<E>","serde::private::ser::TaggedSerializer<S>","<&'a mut serde_json::Serializer<W, F> as serde::Serializer>","serde_json::value::ser::MapKeySerializer"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleArgs
+let mut p1 = MaybeUninit::uninit().assume_init(); // __S
++p0.serialize(p1);
++_IMPL_SERIALIZE_FOR_SampleArgs::<impl serde::Serialize for SampleArgs>::serialize(p0, p1);
++crate::_IMPL_SERIALIZE_FOR_SampleArgs::<impl serde::Serialize for SampleArgs>::serialize(p0, p1);
++<SampleArgs>::serialize(p0, p1);
+-----------------
+trace/src/lib.rs _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize":{"__D":["serde::Deserializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize":{"__D":["serde::de::value::CharDeserializer<E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::I16Deserializer<E>","serde_json::value::de::SeqRefDeserializer<'de>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::de::value::UnitDeserializer<E>","serde::de::value::U32Deserializer<E>","serde_json::Value","serde::de::value::UsizeDeserializer<E>","serde_json::Number","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::de::value::BoolDeserializer<E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::PairDeserializer<A, B, E>","serde::de::value::I8Deserializer<E>","serde::de::value::F32Deserializer<E>","serde::de::value::SeqDeserializer<I, E>","serde::de::value::I32Deserializer<E>","serde::private::de::BytesDeserializer<'a, E>","&'de serde_json::Value","serde::de::value::MapDeserializer<'de, I, E>","serde::de::value::SeqAccessDeserializer<A>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::private::de::content::MapDeserializer<'de, E>","&'a serde_json::Number","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::de::value::U128Deserializer<E>","serde_json::value::de::MapKeyDeserializer<'de>","serde_json::value::de::MapRefDeserializer<'de>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::F64Deserializer<E>","serde::de::value::CowStrDeserializer<'a, E>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::StringDeserializer<E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde_json::value::de::MapDeserializer","serde::de::value::I128Deserializer<E>","serde::de::value::U64Deserializer<E>","serde::de::value::StrDeserializer<'a, E>","serde::de::value::MapAccessDeserializer<A>","serde::de::value::IsizeDeserializer<E>","serde::de::value::U8Deserializer<E>","serde::de::value::U16Deserializer<E>","serde::de::value::I64Deserializer<E>","serde_json::de::MapKey<'a, R>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde_json::value::de::SeqDeserializer"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize(p0);
++crate::_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize(p0);
++<SampleArgs>::deserialize(p0);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::expecting
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.expecting(p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::expecting(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::expecting(p0, p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor>::expecting(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64
+'de
+deps:{"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64":{"__E":["serde::de::Error","std::marker::Sized"]}}
+candidates:{"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64":{"__E":["serde::de::value::Error","serde_json::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor
+let mut p1 = 0u64; // None+u64
++p0.visit_u64(p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64(p0, p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor>::visit_u64(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str
+'de
+deps:{"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str":{"__E":["serde::de::Error","std::marker::Sized"]}}
+candidates:{"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str":{"__E":["serde_json::Error","serde::de::value::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor
+let mut p1 = "sample"; // None+&str
++p0.visit_str(&p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str(p0, &p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str(p0, &p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor>::visit_str(p0, &p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes
+'de
+deps:{"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes":{"__E":["std::marker::Sized","serde::de::Error"]}}
+candidates:{"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes":{"__E":["serde_json::Error","serde::de::value::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.visit_bytes(p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes(p0, p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__FieldVisitor>::visit_bytes(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Field as serde::Deserialize<'de>>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Field as serde::Deserialize<'de>>::deserialize":{"__D":["std::marker::Sized","serde::Deserializer"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Field as serde::Deserialize<'de>>::deserialize":{"__D":["serde::de::value::MapAccessDeserializer<A>","serde_json::value::de::SeqDeserializer","serde::de::value::I128Deserializer<E>","serde::de::value::I16Deserializer<E>","serde::de::value::U128Deserializer<E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::F32Deserializer<E>","serde::de::value::I32Deserializer<E>","serde::de::value::SeqDeserializer<I, E>","serde_json::value::de::MapKeyDeserializer<'de>","serde::de::value::F64Deserializer<E>","serde::de::value::CowStrDeserializer<'a, E>","serde_json::Number","serde::de::value::UnitDeserializer<E>","serde::de::value::U64Deserializer<E>","serde::private::de::content::MapDeserializer<'de, E>","serde::de::value::I64Deserializer<E>","serde_json::de::MapKey<'a, R>","serde::de::value::StringDeserializer<E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","&'de serde_json::Value","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::de::value::BoolDeserializer<E>","serde::de::value::MapDeserializer<'de, I, E>","serde_json::value::de::MapDeserializer","serde::private::de::BytesDeserializer<'a, E>","&'a serde_json::Number","serde::private::de::content::ContentDeserializer<'de, E>","serde_json::value::de::SeqRefDeserializer<'de>","serde::de::value::SeqAccessDeserializer<A>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::de::value::U8Deserializer<E>","serde::de::value::I8Deserializer<E>","serde::de::value::IsizeDeserializer<E>","serde_json::value::de::MapRefDeserializer<'de>","serde::de::value::U16Deserializer<E>","serde::de::value::StrDeserializer<'a, E>","serde::de::value::U32Deserializer<E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::de::value::CharDeserializer<E>","serde_json::Value","serde::private::de::StrDeserializer<'a, E>","serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::UsizeDeserializer<E>","serde::de::value::PairDeserializer<A, B, E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Field as serde::Deserialize<'de>>::deserialize(p0);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Field as serde::Deserialize<'de>>::deserialize(p0);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Field>::deserialize(p0);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::expecting
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.expecting(p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::expecting(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::expecting(p0, p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de>>::expecting(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq
+'de
+deps:{"<&'a mut A as serde::de::SeqAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq":{"__A":["std::marker::Sized","serde::de::SeqAccess"]}}
+candidates:{"<&'a mut A as serde::de::SeqAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq":{"__A":["<&'a mut A as serde::de::SeqAccess<'de>>","serde_json::value::de::SeqRefDeserializer<'de>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde_json::value::de::SeqDeserializer","serde::de::value::PairVisitor<A, B, E>","serde_json::de::SeqAccess<'a, R>","serde::de::value::SeqDeserializer<I, E>","serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::MapDeserializer<'de, I, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de>
+let mut p1 = MaybeUninit::uninit().assume_init(); // __A
++p0.visit_seq(p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq(p0, p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de>>::visit_seq(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map
+'de
+deps:{"<&'a mut A as serde::de::MapAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map":{"__A":["serde::de::MapAccess","std::marker::Sized"]}}
+candidates:{"<&'a mut A as serde::de::MapAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map":{"__A":["serde_json::value::de::MapDeserializer","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::private::de::FlatMapAccess<'a, 'de, E>","serde::de::value::MapDeserializer<'de, I, E>","serde_json::value::de::MapRefDeserializer<'de>","<&'a mut A as serde::de::MapAccess<'de>>","serde_json::de::MapAccess<'a, R>","serde::private::de::FlatStructAccess<'a, 'de, E>","serde::private::de::content::MapDeserializer<'de, E>","serde::private::de::FlatInternallyTaggedAccess<'a, 'de, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de>
+let mut p1 = MaybeUninit::uninit().assume_init(); // __A
++p0.visit_map(p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map(p0, p1);
++<_IMPL_DESERIALIZE_FOR_SampleArgs::<impl serde::Deserialize<'de> for SampleArgs>::deserialize::__Visitor<'de>>::visit_map(p0, p1);
+-----------------
+trace/src/lib.rs <SampleArgs as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleArgs
++p0.clone();
++<SampleArgs as std::clone::Clone>::clone(p0);
++crate::<SampleArgs as std::clone::Clone>::clone(p0);
++<SampleArgs>::clone(p0);
+-----------------
+trace/src/lib.rs <SampleArgs as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleArgs
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<SampleArgs as std::fmt::Debug>::fmt(p0, p1);
++crate::<SampleArgs as std::fmt::Debug>::fmt(p0, p1);
++<SampleArgs>::fmt(p0, p1);
+-----------------
+trace/src/lib.rs <SampleArgs as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // SampleArgs
+let mut p1 = & MaybeUninit::uninit().assume_init(); // SampleArgs
++p0.eq(p1);
++<SampleArgs as std::cmp::PartialEq>::eq(p0, p1);
++crate::<SampleArgs as std::cmp::PartialEq>::eq(p0, p1);
++<SampleArgs>::eq(p0, p1);
+-----------------
+trace/src/lib.rs _IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize
+deps:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize":{"__S":["std::marker::Sized","serde::Serializer"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+candidates:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize":{"__S":["serde::private::ser::FlatMapSerializer<'a, M>","serde_json::ser::MapKeySerializer<'a, W, F>","serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>","serde_json::value::Serializer","serde::private::ser::content::ContentSerializer<E>","serde_json::value::ser::MapKeySerializer","serde::private::ser::TaggedSerializer<S>"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
+let mut p1 = MaybeUninit::uninit().assume_init(); // __S
++p0.serialize(p1);
++_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize(p0, p1);
++crate::_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize(p0, p1);
++<Sample>::serialize(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a> as serde::Serialize>::serialize
+'__a
+deps:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"<_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a> as serde::Serialize>::serialize":{"__S":["std::marker::Sized","serde::Serializer"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+candidates:{"<&'a mut serde_json::Serializer<W, F> as serde::Serializer>":{},"<_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a> as serde::Serialize>::serialize":{"__S":["serde_json::value::ser::MapKeySerializer","serde::private::ser::FlatMapSerializer<'a, M>","serde_json::ser::MapKeySerializer<'a, W, F>","serde_json::value::Serializer","serde::private::ser::content::ContentSerializer<E>","serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>","serde::private::ser::TaggedSerializer<S>"]},"serde::ser::fmt::<impl serde::Serializer for &'a mut std::fmt::Formatter<'b>>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // _IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a>
+let mut p1 = MaybeUninit::uninit().assume_init(); // __S
++p0.serialize(p1);
++<_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a> as serde::Serialize>::serialize(p0, p1);
++crate::<_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a> as serde::Serialize>::serialize(p0, p1);
++<_IMPL_SERIALIZE_FOR_Sample::<impl serde::Serialize for Sample>::serialize::__SerializeWith<'__a>>::serialize(p0, p1);
+-----------------
+trace/src/lib.rs _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize":{"__D":["serde::Deserializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize":{"__D":["serde::de::value::U16Deserializer<E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::I128Deserializer<E>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::BoolDeserializer<E>","serde::de::value::SeqDeserializer<I, E>","serde::de::value::MapDeserializer<'de, I, E>","serde::private::de::BytesDeserializer<'a, E>","serde::de::value::I8Deserializer<E>","serde::de::value::StringDeserializer<E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::I64Deserializer<E>","serde_json::value::de::SeqRefDeserializer<'de>","serde_json::de::MapKey<'a, R>","serde_json::value::de::SeqDeserializer","&'a serde_json::Number","serde::de::value::U128Deserializer<E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::de::value::I32Deserializer<E>","&'de serde_json::Value","serde_json::Value","serde::de::value::UsizeDeserializer<E>","serde::de::value::F32Deserializer<E>","serde_json::value::de::MapDeserializer","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::private::de::content::MapDeserializer<'de, E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::PairDeserializer<A, B, E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::de::value::CharDeserializer<E>","serde::de::value::MapAccessDeserializer<A>","serde::de::value::U64Deserializer<E>","serde::private::de::content::SeqDeserializer<'de, E>","serde_json::Number","serde::de::value::I16Deserializer<E>","serde::de::value::IsizeDeserializer<E>","serde::de::value::UnitDeserializer<E>","serde::de::value::U8Deserializer<E>","serde::de::value::StrDeserializer<'a, E>","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::de::value::U32Deserializer<E>","serde_json::value::de::MapKeyDeserializer<'de>","serde_json::value::de::MapRefDeserializer<'de>","serde::de::value::F64Deserializer<E>","serde::de::value::SeqAccessDeserializer<A>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::de::value::CowStrDeserializer<'a, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize(p0);
++crate::_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize(p0);
++<Sample>::deserialize(p0);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::expecting
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.expecting(p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::expecting(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::expecting(p0, p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor>::expecting(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64
+'de
+deps:{"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64":{"__E":["serde::de::Error","std::marker::Sized"]}}
+candidates:{"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64":{"__E":["serde_json::Error","serde::de::value::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor
+let mut p1 = 0u64; // None+u64
++p0.visit_u64(p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_u64(p0, p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor>::visit_u64(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str
+'de
+deps:{"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str":{"__E":["serde::de::Error","std::marker::Sized"]}}
+candidates:{"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str":{"__E":["serde::de::value::Error","serde_json::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor
+let mut p1 = "sample"; // None+&str
++p0.visit_str(&p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str(p0, &p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_str(p0, &p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor>::visit_str(p0, &p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes
+'de
+deps:{"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes":{"__E":["std::marker::Sized","serde::de::Error"]}}
+candidates:{"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes":{"__E":["serde_json::Error","serde::de::value::Error"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.visit_bytes(p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor as serde::de::Visitor<'de>>::visit_bytes(p0, p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__FieldVisitor>::visit_bytes(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Field as serde::Deserialize<'de>>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Field as serde::Deserialize<'de>>::deserialize":{"__D":["serde::Deserializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Field as serde::Deserialize<'de>>::deserialize":{"__D":["serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::I64Deserializer<E>","serde_json::value::de::MapKeyDeserializer<'de>","serde::de::value::MapDeserializer<'de, I, E>","serde::de::value::I8Deserializer<E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::MapAccessDeserializer<A>","serde::de::value::CowStrDeserializer<'a, E>","serde::de::value::I32Deserializer<E>","serde::de::value::StrDeserializer<'a, E>","serde::de::value::U64Deserializer<E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::de::value::F32Deserializer<E>","serde_json::value::de::SeqRefDeserializer<'de>","serde::de::value::UsizeDeserializer<E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde_json::value::de::MapRefDeserializer<'de>","serde_json::value::de::MapDeserializer","serde::private::de::BytesDeserializer<'a, E>","&'de serde_json::Value","serde::de::value::U8Deserializer<E>","serde::de::value::U16Deserializer<E>","serde::de::value::F64Deserializer<E>","&'a serde_json::Number","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde::de::value::IsizeDeserializer<E>","serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::StringDeserializer<E>","serde::de::value::SeqAccessDeserializer<A>","serde::de::value::SeqDeserializer<I, E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::de::value::U128Deserializer<E>","serde::de::value::CharDeserializer<E>","serde_json::value::de::SeqDeserializer","serde::de::value::I16Deserializer<E>","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde_json::de::MapKey<'a, R>","serde::private::de::content::MapDeserializer<'de, E>","serde::de::value::U32Deserializer<E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::UnitDeserializer<E>","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::PairDeserializer<A, B, E>","serde::de::value::BoolDeserializer<E>","serde_json::Value","serde::de::value::I128Deserializer<E>","serde_json::Number"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Field as serde::Deserialize<'de>>::deserialize(p0);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Field as serde::Deserialize<'de>>::deserialize(p0);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Field>::deserialize(p0);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::expecting
+'de
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++p0.expecting(p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::expecting(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::expecting(p0, p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de>>::expecting(p0, p1);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq
+'de
+deps:{"<&'a mut A as serde::de::SeqAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq":{"__A":["serde::de::SeqAccess","std::marker::Sized"]}}
+candidates:{"<&'a mut A as serde::de::SeqAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq":{"__A":["serde_json::de::SeqAccess<'a, R>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::MapDeserializer<'de, I, E>","serde_json::value::de::SeqDeserializer","serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::SeqDeserializer<I, E>","serde_json::value::de::SeqRefDeserializer<'de>","<&'a mut A as serde::de::SeqAccess<'de>>","serde::de::value::PairVisitor<A, B, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de>
+let mut p1 = MaybeUninit::uninit().assume_init(); // __A
++p0.visit_seq(p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq(p0, p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de>>::visit_seq(p0, p1);
+-----------------
+trace/src/lib.rs <<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize":{"__D":["serde::Deserializer","std::marker::Sized"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize":{"__D":["serde::de::value::U16Deserializer<E>","serde::de::value::U32Deserializer<E>","serde::de::value::I8Deserializer<E>","serde::de::value::CowStrDeserializer<'a, E>","serde::private::de::content::SeqDeserializer<'de, E>","serde_json::value::de::SeqRefDeserializer<'de>","serde::de::value::I128Deserializer<E>","serde::de::value::SeqAccessDeserializer<A>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::de::value::MapAccessDeserializer<A>","serde::de::value::StringDeserializer<E>","serde::de::value::F32Deserializer<E>","serde::de::value::SeqDeserializer<I, E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::StrDeserializer<'a, E>","&'de serde_json::Value","serde::private::de::BytesDeserializer<'a, E>","serde_json::value::de::MapKeyDeserializer<'de>","serde::de::value::U64Deserializer<E>","serde::de::value::IsizeDeserializer<E>","serde::de::value::CharDeserializer<E>","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::de::value::PairDeserializer<A, B, E>","serde::private::de::content::MapDeserializer<'de, E>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::de::value::I16Deserializer<E>","serde::private::de::content::ContentDeserializer<'de, E>","serde::de::value::UnitDeserializer<E>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::UsizeDeserializer<E>","serde::de::value::I32Deserializer<E>","serde::de::value::U128Deserializer<E>","serde_json::value::de::MapDeserializer","serde::de::value::U8Deserializer<E>","serde::de::value::BoolDeserializer<E>","serde_json::value::de::SeqDeserializer","serde::de::value::F64Deserializer<E>","serde_json::de::MapKey<'a, R>","&'a serde_json::Number","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde_json::Value","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde::de::value::I64Deserializer<E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde_json::value::de::MapRefDeserializer<'de>","serde::de::value::MapDeserializer<'de, I, E>","serde_json::Number"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize(p0);
++crate::<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize(p0);
++<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_seq::__DeserializeWith<'de>>::deserialize(p0);
+-----------------
+trace/src/lib.rs <_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map
+'de
+deps:{"<&'a mut A as serde::de::MapAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map":{"__A":["serde::de::MapAccess","std::marker::Sized"]}}
+candidates:{"<&'a mut A as serde::de::MapAccess<'de>>":{},"<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map":{"__A":["serde::private::de::FlatMapAccess<'a, 'de, E>","serde_json::de::MapAccess<'a, R>","serde_json::value::de::MapDeserializer","serde::de::value::MapDeserializer<'de, I, E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::private::de::FlatStructAccess<'a, 'de, E>","serde_json::value::de::MapRefDeserializer<'de>","serde::private::de::FlatInternallyTaggedAccess<'a, 'de, E>","serde::private::de::content::MapDeserializer<'de, E>","<&'a mut A as serde::de::MapAccess<'de>>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // _IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de>
+let mut p1 = MaybeUninit::uninit().assume_init(); // __A
++p0.visit_map(p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map(p0, p1);
++crate::<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map(p0, p1);
++<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de>>::visit_map(p0, p1);
+-----------------
+trace/src/lib.rs <<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize
+'de
+deps:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize":{"__D":["std::marker::Sized","serde::Deserializer"]}}
+candidates:{"<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>":{},"<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize":{"__D":["serde::private::de::content::SeqDeserializer<'de, E>","serde::de::value::U64Deserializer<E>","serde::de::value::StringDeserializer<E>","serde_json::value::de::BorrowedCowStrDeserializer<'de>","serde_json::value::de::MapKeyDeserializer<'de>","serde::de::value::I128Deserializer<E>","serde_json::de::MapKey<'a, R>","serde::de::value::SeqAccessDeserializer<A>","serde::private::de::missing_field::MissingFieldDeserializer<E>","serde::private::de::content::MapRefDeserializer<'a, 'de, E>","serde::de::value::SeqDeserializer<I, E>","&'a serde_json::Number","serde::de::value::BorrowedBytesDeserializer<'de, E>","serde::de::value::CharDeserializer<E>","serde::private::de::BytesDeserializer<'a, E>","serde::private::de::content::ContentRefDeserializer<'a, 'de, E>","serde::de::value::I8Deserializer<E>","serde_json::Number","serde_json::value::de::MapDeserializer","serde::de::value::I64Deserializer<E>","serde::de::value::MapAccessDeserializer<A>","serde::de::value::UsizeDeserializer<E>","serde::de::value::BoolDeserializer<E>","serde::de::value::CowStrDeserializer<'a, E>","serde::de::value::MapDeserializer<'de, I, E>","serde::de::value::I32Deserializer<E>","serde::de::value::StrDeserializer<'a, E>","&'de serde_json::Value","serde::private::de::FlatMapDeserializer<'a, 'de, E>","serde::de::value::U8Deserializer<E>","serde_json::Value","serde::de::value::U128Deserializer<E>","serde::de::value::IsizeDeserializer<E>","serde_json::value::de::MapRefDeserializer<'de>","serde::de::value::I16Deserializer<E>","serde::private::de::content::MapDeserializer<'de, E>","serde::de::value::PairDeserializer<A, B, E>","serde::de::value::BorrowedStrDeserializer<'de, E>","serde::private::de::content::SeqRefDeserializer<'a, 'de, E>","serde_json::value::de::SeqDeserializer","serde::de::value::F32Deserializer<E>","serde::private::de::StrDeserializer<'a, E>","serde::de::value::F64Deserializer<E>","serde::de::value::U32Deserializer<E>","serde::de::value::U16Deserializer<E>","serde::de::value::UnitDeserializer<E>","serde_json::value::de::SeqRefDeserializer<'de>","<&'a mut serde_json::Deserializer<R> as serde::Deserializer<'de>>","serde::private::de::content::ContentDeserializer<'de, E>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // __D
++<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize(p0);
++crate::<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map::__DeserializeWith<'de> as serde::Deserialize<'de>>::deserialize(p0);
++<<_IMPL_DESERIALIZE_FOR_Sample::<impl serde::Deserialize<'de> for Sample>::deserialize::__Visitor<'de> as serde::de::Visitor<'de>>::visit_map::__DeserializeWith<'de>>::deserialize(p0);
+-----------------
+trace/src/lib.rs <Sample as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
++p0.clone();
++<Sample as std::clone::Clone>::clone(p0);
++crate::<Sample as std::clone::Clone>::clone(p0);
++<Sample>::clone(p0);
+-----------------
+trace/src/lib.rs <Sample as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<Sample as std::fmt::Debug>::fmt(p0, p1);
++crate::<Sample as std::fmt::Debug>::fmt(p0, p1);
++<Sample>::fmt(p0, p1);
+-----------------
+trace/src/lib.rs Sample::thread_name
+deps:{}
+candidates:{}
++Sample::thread_name();
++crate::Sample::thread_name();
++<Sample>::thread_name();
+-----------------
+trace/src/lib.rs Sample::new_duration_marker
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Sample::new_duration_marker":{"C":["std::marker::Sized","std::convert::Into"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Sample::new_duration_marker":{"C":["<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"],"S":["std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<std::borrow::Cow<'static, str>>
+let mut p3 = MaybeUninit::uninit().assume_init(); // SampleEventType
++Sample::new_duration_marker(p0, p1, p2, p3);
++crate::Sample::new_duration_marker(p0, p1, p2, p3);
++<Sample>::new_duration_marker(p0, p1, p2, p3);
+-----------------
+trace/src/lib.rs Sample::new_duration
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Sample::new_duration":{"C":["std::marker::Sized","std::convert::Into"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Sample::new_duration":{"C":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"],"S":["std::sync::mpmc::select::Selected","std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<std::borrow::Cow<'static, str>>
+let mut p3 = 0u64; // None+u64
+let mut p4 = 0u64; // None+u64
++Sample::new_duration(p0, p1, p2, p3, p4);
++crate::Sample::new_duration(p0, p1, p2, p3, p4);
++<Sample>::new_duration(p0, p1, p2, p3, p4);
+-----------------
+trace/src/lib.rs Sample::new_instant
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Sample::new_instant":{"C":["std::marker::Sized","std::convert::Into"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Sample::new_instant":{"C":["std::sync::mpmc::select::Selected","std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError"],"S":["std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // S
+let mut p1 = MaybeUninit::uninit().assume_init(); // C
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<std::borrow::Cow<'static, str>>
++Sample::new_instant(p0, p1, p2);
++crate::Sample::new_instant(p0, p1, p2);
++<Sample>::new_instant(p0, p1, p2);
+-----------------
+trace/src/lib.rs Sample::new_metadata
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = MaybeUninit::uninit().assume_init(); // MetadataType
+let mut p2 = 0u64; // None+u64
++Sample::new_metadata(p0, p1, p2);
++crate::Sample::new_metadata(p0, p1, p2);
++<Sample>::new_metadata(p0, p1, p2);
+-----------------
+trace/src/lib.rs <Sample as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Sample
++p0.eq(p1);
++<Sample as std::cmp::PartialEq>::eq(p0, p1);
++crate::<Sample as std::cmp::PartialEq>::eq(p0, p1);
++<Sample>::eq(p0, p1);
+-----------------
+trace/src/lib.rs <Sample as std::cmp::PartialOrd>::partial_cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Sample
++p0.partial_cmp(p1);
++<Sample as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++crate::<Sample as std::cmp::PartialOrd>::partial_cmp(p0, p1);
++<Sample>::partial_cmp(p0, p1);
+-----------------
+trace/src/lib.rs <Sample as std::cmp::Ord>::cmp
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
+let mut p1 = & MaybeUninit::uninit().assume_init(); // Sample
++p0.cmp(p1);
++<Sample as std::cmp::Ord>::cmp(p0, p1);
++crate::<Sample as std::cmp::Ord>::cmp(p0, p1);
++<Sample>::cmp(p0, p1);
+-----------------
+trace/src/lib.rs <Sample as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<Sample as std::hash::Hash>::hash":{"H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<Sample as std::hash::Hash>::hash":{"H":["std::hash::sip::Hasher<S>","std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","std::hash::SipHasher","<&mut H as std::hash::Hasher>","std::boxed::Box<T, A>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Sample
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // H
++p0.hash(p1);
++<Sample as std::hash::Hash>::hash(p0, p1);
++crate::<Sample as std::hash::Hash>::hash(p0, p1);
++<Sample>::hash(p0, p1);
+-----------------
+trace/src/lib.rs SampleGuard::<'a>::new_disabled
+'a
+deps:{}
+candidates:{}
++SampleGuard::<'a>::new_disabled();
++crate::SampleGuard::<'a>::new_disabled();
++<SampleGuard<'a>>::new_disabled();
+-----------------
+trace/src/lib.rs SampleGuard::<'a>::new
+'a
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"SampleGuard::<'a>::new":{"C":["std::marker::Sized","std::convert::Into"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"SampleGuard::<'a>::new":{"C":["std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected"],"S":["std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
+let mut p3 = MaybeUninit::uninit().assume_init(); // std::option::Option<std::borrow::Cow<'static, str>>
++SampleGuard::<'a>::new(p0, p1, p2, p3);
++crate::SampleGuard::<'a>::new(p0, p1, p2, p3);
++<SampleGuard<'a>>::new(p0, p1, p2, p3);
+-----------------
+trace/src/lib.rs <SampleGuard<'a> as std::ops::Drop>::drop
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // SampleGuard<'a>
++p0.drop();
++<SampleGuard<'a> as std::ops::Drop>::drop(p0);
++crate::<SampleGuard<'a> as std::ops::Drop>::drop(p0);
++<SampleGuard<'a>>::drop(p0);
+-----------------
+trace/src/lib.rs Trace::disabled
+deps:{}
+candidates:{}
++Trace::disabled();
++crate::Trace::disabled();
++<Trace>::disabled();
+-----------------
+trace/src/lib.rs Trace::enabled
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Config
++Trace::enabled(p0);
++crate::Trace::enabled(p0);
++<Trace>::enabled(p0);
+-----------------
+trace/src/lib.rs Trace::disable
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.disable();
++Trace::disable(p0);
++crate::Trace::disable(p0);
++<Trace>::disable(p0);
+-----------------
+trace/src/lib.rs Trace::enable
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.enable();
++Trace::enable(p0);
++crate::Trace::enable(p0);
++<Trace>::enable(p0);
+-----------------
+trace/src/lib.rs Trace::enable_config
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // Config
++p0.enable_config(p1);
++Trace::enable_config(p0, p1);
++crate::Trace::enable_config(p0, p1);
++<Trace>::enable_config(p0, p1);
+-----------------
+trace/src/lib.rs Trace::get_samples_count
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.get_samples_count();
++Trace::get_samples_count(p0);
++crate::Trace::get_samples_count(p0);
++<Trace>::get_samples_count(p0);
+-----------------
+trace/src/lib.rs Trace::get_samples_limit
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.get_samples_limit();
++Trace::get_samples_limit(p0);
++crate::Trace::get_samples_limit(p0);
++<Trace>::get_samples_limit(p0);
+-----------------
+trace/src/lib.rs Trace::record
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // Sample
++p0.record(p1);
++Trace::record(p0, p1);
++crate::Trace::record(p0, p1);
++<Trace>::record(p0, p1);
+-----------------
+trace/src/lib.rs Trace::is_enabled
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.is_enabled();
++Trace::is_enabled(p0);
++crate::Trace::is_enabled(p0);
++<Trace>::is_enabled(p0);
+-----------------
+trace/src/lib.rs Trace::instant
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Trace::instant":{"C":["std::convert::Into","std::marker::Sized"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Trace::instant":{"C":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"],"S":["std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
++p0.instant(p1, p2);
++Trace::instant(p0, p1, p2);
++crate::Trace::instant(p0, p1, p2);
++<Trace>::instant(p0, p1, p2);
+-----------------
+trace/src/lib.rs Trace::instant_payload
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Trace::instant_payload":{"C":["std::marker::Sized","std::convert::Into"],"P":["std::marker::Sized","std::convert::Into"],"S":["std::convert::Into","std::marker::Sized"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Trace::instant_payload":{"C":["std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::process::ExitStatusError"],"P":["std::sync::mpmc::select::Selected","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>"],"S":["std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
+let mut p3 = MaybeUninit::uninit().assume_init(); // P
++p0.instant_payload(p1, p2, p3);
++Trace::instant_payload(p0, p1, p2, p3);
++crate::Trace::instant_payload(p0, p1, p2, p3);
++<Trace>::instant_payload(p0, p1, p2, p3);
+-----------------
+trace/src/lib.rs Trace::block
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Trace::block":{"C":["std::marker::Sized","std::convert::Into"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Trace::block":{"C":["std::sync::mpmc::select::Selected","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"],"S":["std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>","std::process::ExitStatusError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
++p0.block(p1, p2);
++Trace::block(p0, p1, p2);
++crate::Trace::block(p0, p1, p2);
++<Trace>::block(p0, p1, p2);
+-----------------
+trace/src/lib.rs Trace::block_payload
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Trace::block_payload":{"C":["std::convert::Into","std::marker::Sized"],"P":["std::marker::Sized","std::convert::Into"],"S":["std::marker::Sized","std::convert::Into"]}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Trace::block_payload":{"C":["std::sync::mpmc::select::Selected","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","<T as std::convert::Into<U>>"],"P":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"],"S":["<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
+let mut p3 = MaybeUninit::uninit().assume_init(); // P
++p0.block_payload(p1, p2, p3);
++Trace::block_payload(p0, p1, p2, p3);
++crate::Trace::block_payload(p0, p1, p2, p3);
++<Trace>::block_payload(p0, p1, p2, p3);
+-----------------
+trace/src/lib.rs Trace::closure
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Trace::closure":{"C":["std::convert::Into","std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnOnce"],"R":["std::marker::Sized"],"S":["std::marker::Sized","std::convert::Into"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Trace::closure":{"C":["<T as std::convert::Into<U>>","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError","std::process::ExitStatusError"],"F":["core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::str::IsWhitespace","core::str::LinesAnyMap","core::str::IsAsciiWhitespace","core::slice::ascii::EscapeByte","core::str::UnsafeBytesToStr","std::panic::AssertUnwindSafe<F>","std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::IsNotEmpty","core::str::CharEscapeDefault","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","std::boxed::Box<F, A>","core::str::CharEscapeDebugContinue","core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::str::CharEscapeUnicode"],"R":["RUG_ANY"],"S":["std::sync::mpmc::select::Selected","std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
+let mut p3 = MaybeUninit::uninit().assume_init(); // F
++p0.closure(p1, p2, p3);
++Trace::closure(p0, p1, p2, p3);
++crate::Trace::closure(p0, p1, p2, p3);
++<Trace>::closure(p0, p1, p2, p3);
+-----------------
+trace/src/lib.rs Trace::closure_payload
+deps:{"<T as std::convert::Into<U>>":{"T":["std::marker::Sized"]},"Trace::closure_payload":{"C":["std::convert::Into","std::marker::Sized"],"F":["std::marker::Sized","std::ops::FnOnce"],"P":["std::marker::Sized","std::convert::Into"],"R":["std::marker::Sized"],"S":["std::convert::Into","std::marker::Sized"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{}}
+candidates:{"<T as std::convert::Into<U>>":{"T":["RUG_ANY"]},"Trace::closure_payload":{"C":["std::process::ExitStatusError","<T as std::convert::Into<U>>","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"],"F":["std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>","core::str::IsWhitespace","core::str::BytesIsNotEmpty","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C), Function>","core::slice::ascii::EscapeByte","core::str::IsAsciiWhitespace","core::const_closure::ConstFnMutClosure<&'a mut A, Function>","core::str::CharEscapeDefault","core::str::UnsafeBytesToStr","std::panic::AssertUnwindSafe<F>","core::str::CharEscapeUnicode","std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B), Function>","core::str::IsNotEmpty","std::boxed::Box<F, A>","core::str::LinesAnyMap","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D), Function>","core::const_closure::ConstFnMutClosure<(&'a mut A, &'a mut B, &'a mut C, &'a mut D, &'a mut E), Function>","core::str::CharEscapeDebugContinue"],"P":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sys::unix::process::process_inner::ExitStatusError","std::sync::mpmc::select::Selected"],"R":["RUG_ANY"],"S":["<T as std::convert::Into<U>>","std::process::ExitStatusError","std::sync::mpmc::select::Selected","std::sys::unix::process::process_inner::ExitStatusError"]},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &F>":{},"std::ops::function::impls::<impl std::ops::FnOnce<A> for &mut F>":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // S
+let mut p2 = MaybeUninit::uninit().assume_init(); // C
+let mut p3 = MaybeUninit::uninit().assume_init(); // F
+let mut p4 = MaybeUninit::uninit().assume_init(); // P
++p0.closure_payload(p1, p2, p3, p4);
++Trace::closure_payload(p0, p1, p2, p3, p4);
++crate::Trace::closure_payload(p0, p1, p2, p3, p4);
++<Trace>::closure_payload(p0, p1, p2, p3, p4);
+-----------------
+trace/src/lib.rs Trace::samples_cloned_unsorted
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.samples_cloned_unsorted();
++Trace::samples_cloned_unsorted(p0);
++crate::Trace::samples_cloned_unsorted(p0);
++<Trace>::samples_cloned_unsorted(p0);
+-----------------
+trace/src/lib.rs Trace::samples_cloned_sorted
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
++p0.samples_cloned_sorted();
++Trace::samples_cloned_sorted(p0);
++crate::Trace::samples_cloned_sorted(p0);
++<Trace>::samples_cloned_sorted(p0);
+-----------------
+trace/src/lib.rs Trace::save
+deps:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"Trace::save":{"P":["std::marker::Sized","std::convert::AsRef"]}}
+candidates:{"<&T as std::convert::AsRef<U>>":{},"<&mut T as std::convert::AsRef<U>>":{},"Trace::save":{"P":["std::borrow::Cow<'_, T>","std::boxed::Box<T, A>","std::vec::IntoIter<T, A>","std::rc::Rc<T>","<&T as std::convert::AsRef<U>>","core::num::dec2flt::common::AsciiStr<'a>","std::ffi::CString","<&mut T as std::convert::AsRef<U>>","std::ffi::CStr","std::vec::Drain<'a, T, A>","std::slice::IterMut<'_, T>","std::borrow::Cow<'_, std::ffi::OsStr>","std::slice::Iter<'_, T>","std::sync::Arc<T>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Trace
+let mut p1 = MaybeUninit::uninit().assume_init(); // P
+let mut p2 = true; // None+bool
++p0.save(p1, p2);
++Trace::save(p0, p1, p2);
++crate::Trace::save(p0, p1, p2);
++<Trace>::save(p0, p1, p2);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-1.4.0/src/lib.rs <TRACE as lazy_static::__Deref>::deref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TRACE
++p0.deref();
++<TRACE as lazy_static::__Deref>::deref(p0);
++crate::<TRACE as lazy_static::__Deref>::deref(p0);
++<TRACE>::deref(p0);
+-----------------
+/home/xiang/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-1.4.0/src/lib.rs <TRACE as lazy_static::LazyStatic>::initialize
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // TRACE
++<TRACE as lazy_static::LazyStatic>::initialize(p0);
++crate::<TRACE as lazy_static::LazyStatic>::initialize(p0);
++<TRACE>::initialize(p0);
+-----------------
+trace/src/sys_pid.rs sys_pid::current_pid::getpid
+deps:{}
+candidates:{}

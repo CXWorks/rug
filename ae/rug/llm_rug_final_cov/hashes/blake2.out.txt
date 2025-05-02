@@ -1,0 +1,912 @@
+-----------------
+blake2/src/simd/simd_opt.rs simd::simd_opt::u32x4::rotate_right_const
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = 0u32; // None+u32
++simd::simd_opt::u32x4::rotate_right_const(p0, p1);
++crate::simd::simd_opt::u32x4::rotate_right_const(p0, p1);
++crate::simd::simd_opt::u32x4::rotate_right_const(p0, p1);
+-----------------
+blake2/src/simd/simd_opt.rs simd::simd_opt::u64x4::rotate_right_const
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = 0u32; // None+u32
++simd::simd_opt::u64x4::rotate_right_const(p0, p1);
++crate::simd::simd_opt::u64x4::rotate_right_const(p0, p1);
++crate::simd::simd_opt::u64x4::rotate_right_const(p0, p1);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::compress::quarter_round
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u64>; 4]
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++Blake2bVarCore::compress::quarter_round(p0, p1, p2, p3);
++crate::Blake2bVarCore::compress::quarter_round(p0, p1, p2, p3);
++<Blake2bVarCore>::compress::quarter_round(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::compress::shuffle
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u64>; 4]
++Blake2bVarCore::compress::shuffle(p0);
++crate::Blake2bVarCore::compress::shuffle(p0);
++<Blake2bVarCore>::compress::shuffle(p0);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::compress::unshuffle
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u64>; 4]
++Blake2bVarCore::compress::unshuffle(p0);
++crate::Blake2bVarCore::compress::unshuffle(p0);
++<Blake2bVarCore>::compress::unshuffle(p0);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::compress::round
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u64>; 4]
+let mut p1 = & [0u64;1]; // None+[u64; 16]
+let mut p2 = & [0usize;1]; // None+[usize; 16]
++Blake2bVarCore::compress::round(p0, p1, p2);
++crate::Blake2bVarCore::compress::round(p0, p1, p2);
++<Blake2bVarCore>::compress::round(p0, p1, p2);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::compress::quarter_round
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u32>; 4]
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++Blake2sVarCore::compress::quarter_round(p0, p1, p2, p3);
++crate::Blake2sVarCore::compress::quarter_round(p0, p1, p2, p3);
++<Blake2sVarCore>::compress::quarter_round(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::compress::shuffle
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u32>; 4]
++Blake2sVarCore::compress::shuffle(p0);
++crate::Blake2sVarCore::compress::shuffle(p0);
++<Blake2sVarCore>::compress::shuffle(p0);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::compress::unshuffle
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u32>; 4]
++Blake2sVarCore::compress::unshuffle(p0);
++crate::Blake2sVarCore::compress::unshuffle(p0);
++<Blake2sVarCore>::compress::unshuffle(p0);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::compress::round
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [simd::simdty::Simd4<u32>; 4]
+let mut p1 = & [0u32;1]; // None+[u32; 16]
+let mut p2 = & [0usize;1]; // None+[usize; 16]
++Blake2sVarCore::compress::round(p0, p1, p2);
++crate::Blake2sVarCore::compress::round(p0, p1, p2);
++<Blake2sVarCore>::compress::round(p0, p1, p2);
+-----------------
+blake2/src/as_bytes.rs as_bytes::AsBytes::as_bytes
+deps:{"as_bytes::AsBytes::as_bytes":{"Self":["as_bytes::AsBytes"]}}
+candidates:{"as_bytes::AsBytes::as_bytes":{"Self":[]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Self
++p0.as_bytes();
++as_bytes::AsBytes::as_bytes(p0);
++crate::as_bytes::AsBytes::as_bytes(p0);
++crate::as_bytes::AsBytes::as_bytes(p0);
+-----------------
+blake2/src/as_bytes.rs as_bytes::AsBytes::as_mut_bytes
+deps:{"as_bytes::AsBytes::as_mut_bytes":{"Self":["as_bytes::AsBytes"]}}
+candidates:{"as_bytes::AsBytes::as_mut_bytes":{"Self":[]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
++p0.as_mut_bytes();
++as_bytes::AsBytes::as_mut_bytes(p0);
++crate::as_bytes::AsBytes::as_mut_bytes(p0);
++crate::as_bytes::AsBytes::as_mut_bytes(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::gather
+deps:{"simd::Vector4::gather":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::gather":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [T]
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
+let mut p4 = 0usize; // None+usize
++simd::Vector4::gather(p0, p1, p2, p3, p4);
++crate::simd::Vector4::gather(p0, p1, p2, p3, p4);
++crate::simd::Vector4::gather(p0, p1, p2, p3, p4);
+-----------------
+blake2/src/simd.rs simd::Vector4::from_le
+deps:{"simd::Vector4::from_le":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::from_le":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.from_le();
++simd::Vector4::from_le(p0);
++crate::simd::Vector4::from_le(p0);
++crate::simd::Vector4::from_le(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::to_le
+deps:{"simd::Vector4::to_le":{"Self":["core::marker::Copy","simd::Vector4"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::to_le":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.to_le();
++simd::Vector4::to_le(p0);
++crate::simd::Vector4::to_le(p0);
++crate::simd::Vector4::to_le(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::wrapping_add
+deps:{"simd::Vector4::wrapping_add":{"Self":["core::marker::Copy","simd::Vector4"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::wrapping_add":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = MaybeUninit::uninit().assume_init(); // Self
++p0.wrapping_add(p1);
++simd::Vector4::wrapping_add(p0, p1);
++crate::simd::Vector4::wrapping_add(p0, p1);
++crate::simd::Vector4::wrapping_add(p0, p1);
+-----------------
+blake2/src/simd.rs simd::Vector4::rotate_right_const
+deps:{"simd::Vector4::rotate_right_const":{"Self":["core::marker::Copy","simd::Vector4"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::rotate_right_const":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = 0u32; // None+u32
++p0.rotate_right_const(p1);
++simd::Vector4::rotate_right_const(p0, p1);
++crate::simd::Vector4::rotate_right_const(p0, p1);
++crate::simd::Vector4::rotate_right_const(p0, p1);
+-----------------
+blake2/src/simd.rs simd::Vector4::shuffle_left_1
+deps:{"simd::Vector4::shuffle_left_1":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::shuffle_left_1":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.shuffle_left_1();
++simd::Vector4::shuffle_left_1(p0);
++crate::simd::Vector4::shuffle_left_1(p0);
++crate::simd::Vector4::shuffle_left_1(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::shuffle_left_2
+deps:{"simd::Vector4::shuffle_left_2":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::shuffle_left_2":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.shuffle_left_2();
++simd::Vector4::shuffle_left_2(p0);
++crate::simd::Vector4::shuffle_left_2(p0);
++crate::simd::Vector4::shuffle_left_2(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::shuffle_left_3
+deps:{"simd::Vector4::shuffle_left_3":{"Self":["core::marker::Copy","simd::Vector4"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::shuffle_left_3":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.shuffle_left_3();
++simd::Vector4::shuffle_left_3(p0);
++crate::simd::Vector4::shuffle_left_3(p0);
++crate::simd::Vector4::shuffle_left_3(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::shuffle_right_1
+deps:{"simd::Vector4::shuffle_right_1":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::shuffle_right_1":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.shuffle_right_1();
++simd::Vector4::shuffle_right_1(p0);
++crate::simd::Vector4::shuffle_right_1(p0);
++crate::simd::Vector4::shuffle_right_1(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::shuffle_right_2
+deps:{"simd::Vector4::shuffle_right_2":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::shuffle_right_2":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.shuffle_right_2();
++simd::Vector4::shuffle_right_2(p0);
++crate::simd::Vector4::shuffle_right_2(p0);
++crate::simd::Vector4::shuffle_right_2(p0);
+-----------------
+blake2/src/simd.rs simd::Vector4::shuffle_right_3
+deps:{"simd::Vector4::shuffle_right_3":{"Self":["simd::Vector4","core::marker::Copy"],"T":["core::marker::Sized"]}}
+candidates:{"simd::Vector4::shuffle_right_3":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.shuffle_right_3();
++simd::Vector4::shuffle_right_3(p0);
++crate::simd::Vector4::shuffle_right_3(p0);
++crate::simd::Vector4::shuffle_right_3(p0);
+-----------------
+blake2/src/as_bytes.rs <[T] as as_bytes::AsBytes>::as_bytes
+deps:{"<[T] as as_bytes::AsBytes>::as_bytes":{"T":["as_bytes::Safe","core::marker::Sized"]}}
+candidates:{"<[T] as as_bytes::AsBytes>::as_bytes":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // [T]
++p0.as_bytes();
++<[T] as as_bytes::AsBytes>::as_bytes(p0);
++crate::<[T] as as_bytes::AsBytes>::as_bytes(p0);
++<[T]>::as_bytes(p0);
+-----------------
+blake2/src/as_bytes.rs <[T] as as_bytes::AsBytes>::as_mut_bytes
+deps:{"<[T] as as_bytes::AsBytes>::as_mut_bytes":{"T":["core::marker::Sized","as_bytes::Safe"]}}
+candidates:{"<[T] as as_bytes::AsBytes>::as_mut_bytes":{}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // [T]
++p0.as_mut_bytes();
++<[T] as as_bytes::AsBytes>::as_mut_bytes(p0);
++crate::<[T] as as_bytes::AsBytes>::as_mut_bytes(p0);
++<[T]>::as_mut_bytes(p0);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::Add for simd::simdty::Simd4<u32>>::add
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.add(p1);
++simd::simdop::<impl core::ops::Add for simd::simdty::Simd4<u32>>::add(p0, p1);
++crate::simd::simdop::<impl core::ops::Add for simd::simdty::Simd4<u32>>::add(p0, p1);
++<simd::simdty::Simd4<u32>>::add(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::BitXor for simd::simdty::Simd4<u32>>::bitxor
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.bitxor(p1);
++simd::simdop::<impl core::ops::BitXor for simd::simdty::Simd4<u32>>::bitxor(p0, p1);
++crate::simd::simdop::<impl core::ops::BitXor for simd::simdty::Simd4<u32>>::bitxor(p0, p1);
++<simd::simdty::Simd4<u32>>::bitxor(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::Shl for simd::simdty::Simd4<u32>>::shl
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.shl(p1);
++simd::simdop::<impl core::ops::Shl for simd::simdty::Simd4<u32>>::shl(p0, p1);
++crate::simd::simdop::<impl core::ops::Shl for simd::simdty::Simd4<u32>>::shl(p0, p1);
++<simd::simdty::Simd4<u32>>::shl(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::Shr for simd::simdty::Simd4<u32>>::shr
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.shr(p1);
++simd::simdop::<impl core::ops::Shr for simd::simdty::Simd4<u32>>::shr(p0, p1);
++crate::simd::simdop::<impl core::ops::Shr for simd::simdty::Simd4<u32>>::shr(p0, p1);
++<simd::simdty::Simd4<u32>>::shr(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::Add for simd::simdty::Simd4<u64>>::add
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.add(p1);
++simd::simdop::<impl core::ops::Add for simd::simdty::Simd4<u64>>::add(p0, p1);
++crate::simd::simdop::<impl core::ops::Add for simd::simdty::Simd4<u64>>::add(p0, p1);
++<simd::simdty::Simd4<u64>>::add(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::BitXor for simd::simdty::Simd4<u64>>::bitxor
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.bitxor(p1);
++simd::simdop::<impl core::ops::BitXor for simd::simdty::Simd4<u64>>::bitxor(p0, p1);
++crate::simd::simdop::<impl core::ops::BitXor for simd::simdty::Simd4<u64>>::bitxor(p0, p1);
++<simd::simdty::Simd4<u64>>::bitxor(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::Shl for simd::simdty::Simd4<u64>>::shl
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.shl(p1);
++simd::simdop::<impl core::ops::Shl for simd::simdty::Simd4<u64>>::shl(p0, p1);
++crate::simd::simdop::<impl core::ops::Shl for simd::simdty::Simd4<u64>>::shl(p0, p1);
++<simd::simdty::Simd4<u64>>::shl(p0, p1);
+-----------------
+blake2/src/simd/simdop.rs simd::simdop::<impl core::ops::Shr for simd::simdty::Simd4<u64>>::shr
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.shr(p1);
++simd::simdop::<impl core::ops::Shr for simd::simdty::Simd4<u64>>::shr(p0, p1);
++crate::simd::simdop::<impl core::ops::Shr for simd::simdty::Simd4<u64>>::shr(p0, p1);
++<simd::simdty::Simd4<u64>>::shr(p0, p1);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd2<T> as core::clone::Clone>::clone
+deps:{"<simd::simdty::Simd2<T> as core::clone::Clone>::clone":{"T":["core::clone::Clone","core::marker::Sized"]}}
+candidates:{"<simd::simdty::Simd2<T> as core::clone::Clone>::clone":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd2<T>
++p0.clone();
++<simd::simdty::Simd2<T> as core::clone::Clone>::clone(p0);
++crate::<simd::simdty::Simd2<T> as core::clone::Clone>::clone(p0);
++<simd::simdty::Simd2<T>>::clone(p0);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd2<T> as core::fmt::Debug>::fmt
+deps:{"<simd::simdty::Simd2<T> as core::fmt::Debug>::fmt":{"T":["core::marker::Sized","core::fmt::Debug"]}}
+candidates:{"<simd::simdty::Simd2<T> as core::fmt::Debug>::fmt":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd2<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<simd::simdty::Simd2<T> as core::fmt::Debug>::fmt(p0, p1);
++crate::<simd::simdty::Simd2<T> as core::fmt::Debug>::fmt(p0, p1);
++<simd::simdty::Simd2<T>>::fmt(p0, p1);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd4<T> as core::clone::Clone>::clone
+deps:{"<simd::simdty::Simd4<T> as core::clone::Clone>::clone":{"T":["core::marker::Sized","core::clone::Clone"]}}
+candidates:{"<simd::simdty::Simd4<T> as core::clone::Clone>::clone":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<T>
++p0.clone();
++<simd::simdty::Simd4<T> as core::clone::Clone>::clone(p0);
++crate::<simd::simdty::Simd4<T> as core::clone::Clone>::clone(p0);
++<simd::simdty::Simd4<T>>::clone(p0);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd4<T> as core::fmt::Debug>::fmt
+deps:{"<simd::simdty::Simd4<T> as core::fmt::Debug>::fmt":{"T":["core::fmt::Debug","core::marker::Sized"]}}
+candidates:{"<simd::simdty::Simd4<T> as core::fmt::Debug>::fmt":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<simd::simdty::Simd4<T> as core::fmt::Debug>::fmt(p0, p1);
++crate::<simd::simdty::Simd4<T> as core::fmt::Debug>::fmt(p0, p1);
++<simd::simdty::Simd4<T>>::fmt(p0, p1);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd8<T> as core::clone::Clone>::clone
+deps:{"<simd::simdty::Simd8<T> as core::clone::Clone>::clone":{"T":["core::clone::Clone","core::marker::Sized"]}}
+candidates:{"<simd::simdty::Simd8<T> as core::clone::Clone>::clone":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd8<T>
++p0.clone();
++<simd::simdty::Simd8<T> as core::clone::Clone>::clone(p0);
++crate::<simd::simdty::Simd8<T> as core::clone::Clone>::clone(p0);
++<simd::simdty::Simd8<T>>::clone(p0);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd8<T> as core::fmt::Debug>::fmt
+deps:{"<simd::simdty::Simd8<T> as core::fmt::Debug>::fmt":{"T":["core::marker::Sized","core::fmt::Debug"]}}
+candidates:{"<simd::simdty::Simd8<T> as core::fmt::Debug>::fmt":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd8<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<simd::simdty::Simd8<T> as core::fmt::Debug>::fmt(p0, p1);
++crate::<simd::simdty::Simd8<T> as core::fmt::Debug>::fmt(p0, p1);
++<simd::simdty::Simd8<T>>::fmt(p0, p1);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd16<T> as core::clone::Clone>::clone
+deps:{"<simd::simdty::Simd16<T> as core::clone::Clone>::clone":{"T":["core::marker::Sized","core::clone::Clone"]}}
+candidates:{"<simd::simdty::Simd16<T> as core::clone::Clone>::clone":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd16<T>
++p0.clone();
++<simd::simdty::Simd16<T> as core::clone::Clone>::clone(p0);
++crate::<simd::simdty::Simd16<T> as core::clone::Clone>::clone(p0);
++<simd::simdty::Simd16<T>>::clone(p0);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd16<T> as core::fmt::Debug>::fmt
+deps:{"<simd::simdty::Simd16<T> as core::fmt::Debug>::fmt":{"T":["core::marker::Sized","core::fmt::Debug"]}}
+candidates:{"<simd::simdty::Simd16<T> as core::fmt::Debug>::fmt":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd16<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<simd::simdty::Simd16<T> as core::fmt::Debug>::fmt(p0, p1);
++crate::<simd::simdty::Simd16<T> as core::fmt::Debug>::fmt(p0, p1);
++<simd::simdty::Simd16<T>>::fmt(p0, p1);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd32<T> as core::clone::Clone>::clone
+deps:{"<simd::simdty::Simd32<T> as core::clone::Clone>::clone":{"T":["core::clone::Clone","core::marker::Sized"]}}
+candidates:{"<simd::simdty::Simd32<T> as core::clone::Clone>::clone":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd32<T>
++p0.clone();
++<simd::simdty::Simd32<T> as core::clone::Clone>::clone(p0);
++crate::<simd::simdty::Simd32<T> as core::clone::Clone>::clone(p0);
++<simd::simdty::Simd32<T>>::clone(p0);
+-----------------
+blake2/src/simd/simdty.rs <simd::simdty::Simd32<T> as core::fmt::Debug>::fmt
+deps:{"<simd::simdty::Simd32<T> as core::fmt::Debug>::fmt":{"T":["core::fmt::Debug","core::marker::Sized"]}}
+candidates:{"<simd::simdty::Simd32<T> as core::fmt::Debug>::fmt":{}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // simd::simdty::Simd32<T>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<simd::simdty::Simd32<T> as core::fmt::Debug>::fmt(p0, p1);
++crate::<simd::simdty::Simd32<T> as core::fmt::Debug>::fmt(p0, p1);
++<simd::simdty::Simd32<T>>::fmt(p0, p1);
+-----------------
+blake2/src/simd/simdty.rs simd::simdty::Simd4::<T>::new
+deps:{"simd::simdty::Simd4::<T>::new":{"T":["core::marker::Sized"]}}
+candidates:{"simd::simdty::Simd4::<T>::new":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // T
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
+let mut p2 = MaybeUninit::uninit().assume_init(); // T
+let mut p3 = MaybeUninit::uninit().assume_init(); // T
++simd::simdty::Simd4::<T>::new(p0, p1, p2, p3);
++crate::simd::simdty::Simd4::<T>::new(p0, p1, p2, p3);
++<simd::simdty::Simd4<T>>::new(p0, p1, p2, p3);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::gather
+deps:{}
+candidates:{}
+let mut p0 = & [0u32].as_mut_slice(); // None+[u32]
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
+let mut p4 = 0usize; // None+usize
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::gather(p0, p1, p2, p3, p4);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::gather(p0, p1, p2, p3, p4);
++<simd::simdty::Simd4<u32>>::gather(p0, p1, p2, p3, p4);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::from_le
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.from_le();
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::from_le(p0);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::from_le(p0);
++<simd::simdty::Simd4<u32>>::from_le(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::to_le
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.to_le();
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::to_le(p0);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::to_le(p0);
++<simd::simdty::Simd4<u32>>::to_le(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::wrapping_add
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.wrapping_add(p1);
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::wrapping_add(p0, p1);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::wrapping_add(p0, p1);
++<simd::simdty::Simd4<u32>>::wrapping_add(p0, p1);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::rotate_right_const
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
+let mut p1 = 0u32; // None+u32
++p0.rotate_right_const(p1);
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::rotate_right_const(p0, p1);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::rotate_right_const(p0, p1);
++<simd::simdty::Simd4<u32>>::rotate_right_const(p0, p1);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_1
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.shuffle_left_1();
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_1(p0);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_1(p0);
++<simd::simdty::Simd4<u32>>::shuffle_left_1(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_2
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.shuffle_left_2();
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_2(p0);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_2(p0);
++<simd::simdty::Simd4<u32>>::shuffle_left_2(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_3
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u32>
++p0.shuffle_left_3();
++<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_3(p0);
++crate::<simd::simdty::Simd4<u32> as simd::Vector4<u32>>::shuffle_left_3(p0);
++<simd::simdty::Simd4<u32>>::shuffle_left_3(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::gather
+deps:{}
+candidates:{}
+let mut p0 = & [0u64].as_mut_slice(); // None+[u64]
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
+let mut p4 = 0usize; // None+usize
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::gather(p0, p1, p2, p3, p4);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::gather(p0, p1, p2, p3, p4);
++<simd::simdty::Simd4<u64>>::gather(p0, p1, p2, p3, p4);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::from_le
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.from_le();
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::from_le(p0);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::from_le(p0);
++<simd::simdty::Simd4<u64>>::from_le(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::to_le
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.to_le();
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::to_le(p0);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::to_le(p0);
++<simd::simdty::Simd4<u64>>::to_le(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::wrapping_add
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.wrapping_add(p1);
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::wrapping_add(p0, p1);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::wrapping_add(p0, p1);
++<simd::simdty::Simd4<u64>>::wrapping_add(p0, p1);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::rotate_right_const
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
+let mut p1 = 0u32; // None+u32
++p0.rotate_right_const(p1);
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::rotate_right_const(p0, p1);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::rotate_right_const(p0, p1);
++<simd::simdty::Simd4<u64>>::rotate_right_const(p0, p1);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_1
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.shuffle_left_1();
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_1(p0);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_1(p0);
++<simd::simdty::Simd4<u64>>::shuffle_left_1(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_2
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.shuffle_left_2();
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_2(p0);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_2(p0);
++<simd::simdty::Simd4<u64>>::shuffle_left_2(p0);
+-----------------
+blake2/src/simd.rs <simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_3
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // simd::simdty::Simd4<u64>
++p0.shuffle_left_3();
++<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_3(p0);
++crate::<simd::simdty::Simd4<u64> as simd::Vector4<u64>>::shuffle_left_3(p0);
++<simd::simdty::Simd4<u64>>::shuffle_left_3(p0);
+-----------------
+blake2/src/macros.rs <Blake2bVarCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2bVarCore
++p0.clone();
++<Blake2bVarCore as core::clone::Clone>::clone(p0);
++crate::<Blake2bVarCore as core::clone::Clone>::clone(p0);
++<Blake2bVarCore>::clone(p0);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::iv0
+deps:{}
+candidates:{}
++Blake2bVarCore::iv0();
++crate::Blake2bVarCore::iv0();
++<Blake2bVarCore>::iv0();
+-----------------
+blake2/src/macros.rs Blake2bVarCore::iv1
+deps:{}
+candidates:{}
++Blake2bVarCore::iv1();
++crate::Blake2bVarCore::iv1();
++<Blake2bVarCore>::iv1();
+-----------------
+blake2/src/macros.rs Blake2bVarCore::new_with_params
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++Blake2bVarCore::new_with_params(p0, p1, p2, p3);
++crate::Blake2bVarCore::new_with_params(p0, p1, p2, p3);
++<Blake2bVarCore>::new_with_params(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::finalize_with_flag
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2bVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>
+let mut p2 = 0u64; // None+u64
+let mut p3 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2bVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_with_flag(p1, p2, p3);
++Blake2bVarCore::finalize_with_flag(p0, p1, p2, p3);
++crate::Blake2bVarCore::finalize_with_flag(p0, p1, p2, p3);
++<Blake2bVarCore>::finalize_with_flag(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs Blake2bVarCore::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2bVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2bVarCore as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p2 = 0u64; // None+u64
+let mut p3 = 0u64; // None+u64
++p0.compress(p1, p2, p3);
++Blake2bVarCore::compress(p0, p1, p2, p3);
++crate::Blake2bVarCore::compress(p0, p1, p2, p3);
++<Blake2bVarCore>::compress(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs <Blake2bVarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2bVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Blake2bVarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Blake2bVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Blake2bVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Blake2bVarCore>::update_blocks(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2bVarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<Blake2bVarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<Blake2bVarCore as digest::core_api::VariableOutputCore>::new(p0);
++<Blake2bVarCore>::new(p0);
+-----------------
+blake2/src/macros.rs <Blake2bVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2bVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Blake2bVarCore as digest::core_api::BlockSizeUser>::BlockSize, <Blake2bVarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2bVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<Blake2bVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<Blake2bVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<Blake2bVarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+blake2/src/macros.rs <Blake2bVarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Blake2bVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Blake2bVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Blake2bVarCore>::write_alg_name(p0);
+-----------------
+blake2/src/macros.rs <Blake2bVarCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2bVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Blake2bVarCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<Blake2bVarCore as core::fmt::Debug>::fmt(p0, p1);
++<Blake2bVarCore>::fmt(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2bMac<OutSize> as core::clone::Clone>::clone
+deps:{"<Blake2bMac<OutSize> as core::clone::Clone>::clone":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::clone::Clone","digest::typenum::IsLessOrEqual","core::marker::Sized","digest::generic_array::ArrayLength"]}}
+candidates:{"<Blake2bMac<OutSize> as core::clone::Clone>::clone":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::PInt<U>","digest::typenum::UInt<U, B>","digest::typenum::NInt<U>","digest::typenum::B1"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2bMac<OutSize>
++p0.clone();
++<Blake2bMac<OutSize> as core::clone::Clone>::clone(p0);
++crate::<Blake2bMac<OutSize> as core::clone::Clone>::clone(p0);
++<Blake2bMac<OutSize>>::clone(p0);
+-----------------
+blake2/src/macros.rs Blake2bMac::<OutSize>::new_with_salt_and_personal
+deps:{"Blake2bMac::<OutSize>::new_with_salt_and_personal":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::marker::Sized","digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual"]}}
+candidates:{"Blake2bMac::<OutSize>::new_with_salt_and_personal":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::PInt<U>","digest::typenum::NInt<U>","digest::typenum::B1","digest::typenum::UInt<U, B>"]}}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++Blake2bMac::<OutSize>::new_with_salt_and_personal(p0, p1, p2);
++crate::Blake2bMac::<OutSize>::new_with_salt_and_personal(p0, p1, p2);
++<Blake2bMac<OutSize>>::new_with_salt_and_personal(p0, p1, p2);
+-----------------
+blake2/src/macros.rs <Blake2bMac<OutSize> as digest::KeyInit>::new
+deps:{"<Blake2bMac<OutSize> as digest::KeyInit>::new":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual","core::marker::Sized"]}}
+candidates:{"<Blake2bMac<OutSize> as digest::KeyInit>::new":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NInt<U>","digest::typenum::PInt<U>","digest::typenum::UInt<U, B>","digest::typenum::B1"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2bMac<OutSize> as digest::crypto_common::KeySizeUser>::KeySize>
++<Blake2bMac<OutSize> as digest::KeyInit>::new(p0);
++crate::<Blake2bMac<OutSize> as digest::KeyInit>::new(p0);
++<Blake2bMac<OutSize>>::new(p0);
+-----------------
+blake2/src/macros.rs <Blake2bMac<OutSize> as digest::KeyInit>::new_from_slice
+deps:{"<Blake2bMac<OutSize> as digest::KeyInit>::new_from_slice":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual","core::marker::Sized"]}}
+candidates:{"<Blake2bMac<OutSize> as digest::KeyInit>::new_from_slice":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::PInt<U>","digest::typenum::B1","digest::typenum::UInt<U, B>","digest::typenum::NInt<U>"]}}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++<Blake2bMac<OutSize> as digest::KeyInit>::new_from_slice(p0);
++crate::<Blake2bMac<OutSize> as digest::KeyInit>::new_from_slice(p0);
++<Blake2bMac<OutSize>>::new_from_slice(p0);
+-----------------
+blake2/src/macros.rs <Blake2bMac<OutSize> as digest::Update>::update
+deps:{"<Blake2bMac<OutSize> as digest::Update>::update":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::generic_array::ArrayLength","core::marker::Sized","digest::typenum::IsLessOrEqual"]}}
+candidates:{"<Blake2bMac<OutSize> as digest::Update>::update":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NInt<U>","digest::typenum::B1","digest::typenum::PInt<U>","digest::typenum::UInt<U, B>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2bMac<OutSize>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.update(p1);
++<Blake2bMac<OutSize> as digest::Update>::update(p0, p1);
++crate::<Blake2bMac<OutSize> as digest::Update>::update(p0, p1);
++<Blake2bMac<OutSize>>::update(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2bMac<OutSize> as digest::FixedOutput>::finalize_into
+deps:{"<Blake2bMac<OutSize> as digest::FixedOutput>::finalize_into":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::typenum::IsLessOrEqual","core::marker::Sized","digest::generic_array::ArrayLength"]}}
+candidates:{"<Blake2bMac<OutSize> as digest::FixedOutput>::finalize_into":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NInt<U>","digest::typenum::PInt<U>","digest::typenum::UInt<U, B>","digest::typenum::B1"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Blake2bMac<OutSize>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2bMac<OutSize> as digest::OutputSizeUser>::OutputSize>
++p0.finalize_into(p1);
++<Blake2bMac<OutSize> as digest::FixedOutput>::finalize_into(p0, p1);
++crate::<Blake2bMac<OutSize> as digest::FixedOutput>::finalize_into(p0, p1);
++<Blake2bMac<OutSize>>::finalize_into(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2bMac<OutSize> as core::fmt::Debug>::fmt
+deps:{"<Blake2bMac<OutSize> as core::fmt::Debug>::fmt":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::marker::Sized","digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual"]}}
+candidates:{"<Blake2bMac<OutSize> as core::fmt::Debug>::fmt":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::PInt<U>","digest::typenum::B1","digest::typenum::UInt<U, B>","digest::typenum::NInt<U>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2bMac<OutSize>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Blake2bMac<OutSize> as core::fmt::Debug>::fmt(p0, p1);
++crate::<Blake2bMac<OutSize> as core::fmt::Debug>::fmt(p0, p1);
++<Blake2bMac<OutSize>>::fmt(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2sVarCore as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2sVarCore
++p0.clone();
++<Blake2sVarCore as core::clone::Clone>::clone(p0);
++crate::<Blake2sVarCore as core::clone::Clone>::clone(p0);
++<Blake2sVarCore>::clone(p0);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::iv0
+deps:{}
+candidates:{}
++Blake2sVarCore::iv0();
++crate::Blake2sVarCore::iv0();
++<Blake2sVarCore>::iv0();
+-----------------
+blake2/src/macros.rs Blake2sVarCore::iv1
+deps:{}
+candidates:{}
++Blake2sVarCore::iv1();
++crate::Blake2sVarCore::iv1();
++<Blake2sVarCore>::iv1();
+-----------------
+blake2/src/macros.rs Blake2sVarCore::new_with_params
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++Blake2sVarCore::new_with_params(p0, p1, p2, p3);
++crate::Blake2sVarCore::new_with_params(p0, p1, p2, p3);
++<Blake2sVarCore>::new_with_params(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::finalize_with_flag
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2sVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>
+let mut p2 = 0u32; // None+u32
+let mut p3 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2sVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_with_flag(p1, p2, p3);
++Blake2sVarCore::finalize_with_flag(p0, p1, p2, p3);
++crate::Blake2sVarCore::finalize_with_flag(p0, p1, p2, p3);
++<Blake2sVarCore>::finalize_with_flag(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs Blake2sVarCore::compress
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2sVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2sVarCore as digest::core_api::BlockSizeUser>::BlockSize>
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
++p0.compress(p1, p2, p3);
++Blake2sVarCore::compress(p0, p1, p2, p3);
++crate::Blake2sVarCore::compress(p0, p1, p2, p3);
++<Blake2sVarCore>::compress(p0, p1, p2, p3);
+-----------------
+blake2/src/macros.rs <Blake2sVarCore as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2sVarCore
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Blake2sVarCore as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Blake2sVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Blake2sVarCore as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Blake2sVarCore>::update_blocks(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2sVarCore as digest::core_api::VariableOutputCore>::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
++<Blake2sVarCore as digest::core_api::VariableOutputCore>::new(p0);
++crate::<Blake2sVarCore as digest::core_api::VariableOutputCore>::new(p0);
++<Blake2sVarCore>::new(p0);
+-----------------
+blake2/src/macros.rs <Blake2sVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2sVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Blake2sVarCore as digest::core_api::BlockSizeUser>::BlockSize, <Blake2sVarCore as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2sVarCore as digest::OutputSizeUser>::OutputSize>
++p0.finalize_variable_core(p1, p2);
++<Blake2sVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++crate::<Blake2sVarCore as digest::core_api::VariableOutputCore>::finalize_variable_core(p0, p1, p2);
++<Blake2sVarCore>::finalize_variable_core(p0, p1, p2);
+-----------------
+blake2/src/macros.rs <Blake2sVarCore as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Blake2sVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Blake2sVarCore as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Blake2sVarCore>::write_alg_name(p0);
+-----------------
+blake2/src/macros.rs <Blake2sVarCore as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2sVarCore
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Blake2sVarCore as core::fmt::Debug>::fmt(p0, p1);
++crate::<Blake2sVarCore as core::fmt::Debug>::fmt(p0, p1);
++<Blake2sVarCore>::fmt(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2sMac<OutSize> as core::clone::Clone>::clone
+deps:{"<Blake2sMac<OutSize> as core::clone::Clone>::clone":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::marker::Sized","digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual","core::clone::Clone"]}}
+candidates:{"<Blake2sMac<OutSize> as core::clone::Clone>::clone":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::B1","digest::typenum::NInt<U>","digest::typenum::UInt<U, B>","digest::typenum::PInt<U>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2sMac<OutSize>
++p0.clone();
++<Blake2sMac<OutSize> as core::clone::Clone>::clone(p0);
++crate::<Blake2sMac<OutSize> as core::clone::Clone>::clone(p0);
++<Blake2sMac<OutSize>>::clone(p0);
+-----------------
+blake2/src/macros.rs Blake2sMac::<OutSize>::new_with_salt_and_personal
+deps:{"Blake2sMac::<OutSize>::new_with_salt_and_personal":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::marker::Sized","digest::typenum::IsLessOrEqual","digest::generic_array::ArrayLength"]}}
+candidates:{"Blake2sMac::<OutSize>::new_with_salt_and_personal":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::PInt<U>","digest::typenum::B1","digest::typenum::UInt<U, B>","digest::typenum::NInt<U>"]}}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p2 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++Blake2sMac::<OutSize>::new_with_salt_and_personal(p0, p1, p2);
++crate::Blake2sMac::<OutSize>::new_with_salt_and_personal(p0, p1, p2);
++<Blake2sMac<OutSize>>::new_with_salt_and_personal(p0, p1, p2);
+-----------------
+blake2/src/macros.rs <Blake2sMac<OutSize> as digest::KeyInit>::new
+deps:{"<Blake2sMac<OutSize> as digest::KeyInit>::new":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual","core::marker::Sized"]}}
+candidates:{"<Blake2sMac<OutSize> as digest::KeyInit>::new":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NInt<U>","digest::typenum::PInt<U>","digest::typenum::B1","digest::typenum::UInt<U, B>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2sMac<OutSize> as digest::crypto_common::KeySizeUser>::KeySize>
++<Blake2sMac<OutSize> as digest::KeyInit>::new(p0);
++crate::<Blake2sMac<OutSize> as digest::KeyInit>::new(p0);
++<Blake2sMac<OutSize>>::new(p0);
+-----------------
+blake2/src/macros.rs <Blake2sMac<OutSize> as digest::KeyInit>::new_from_slice
+deps:{"<Blake2sMac<OutSize> as digest::KeyInit>::new_from_slice":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::typenum::IsLessOrEqual","core::marker::Sized","digest::generic_array::ArrayLength"]}}
+candidates:{"<Blake2sMac<OutSize> as digest::KeyInit>::new_from_slice":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::PInt<U>","digest::typenum::B1","digest::typenum::NInt<U>","digest::typenum::UInt<U, B>"]}}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++<Blake2sMac<OutSize> as digest::KeyInit>::new_from_slice(p0);
++crate::<Blake2sMac<OutSize> as digest::KeyInit>::new_from_slice(p0);
++<Blake2sMac<OutSize>>::new_from_slice(p0);
+-----------------
+blake2/src/macros.rs <Blake2sMac<OutSize> as digest::Update>::update
+deps:{"<Blake2sMac<OutSize> as digest::Update>::update":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["digest::generic_array::ArrayLength","core::marker::Sized","digest::typenum::IsLessOrEqual"]}}
+candidates:{"<Blake2sMac<OutSize> as digest::Update>::update":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NInt<U>","digest::typenum::UInt<U, B>","digest::typenum::B1","digest::typenum::PInt<U>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Blake2sMac<OutSize>
+let mut p1 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++p0.update(p1);
++<Blake2sMac<OutSize> as digest::Update>::update(p0, p1);
++crate::<Blake2sMac<OutSize> as digest::Update>::update(p0, p1);
++<Blake2sMac<OutSize>>::update(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2sMac<OutSize> as digest::FixedOutput>::finalize_into
+deps:{"<Blake2sMac<OutSize> as digest::FixedOutput>::finalize_into":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::marker::Sized","digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual"]}}
+candidates:{"<Blake2sMac<OutSize> as digest::FixedOutput>::finalize_into":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::UInt<U, B>","digest::typenum::NInt<U>","digest::typenum::B1","digest::typenum::PInt<U>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Blake2sMac<OutSize>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Blake2sMac<OutSize> as digest::OutputSizeUser>::OutputSize>
++p0.finalize_into(p1);
++<Blake2sMac<OutSize> as digest::FixedOutput>::finalize_into(p0, p1);
++crate::<Blake2sMac<OutSize> as digest::FixedOutput>::finalize_into(p0, p1);
++<Blake2sMac<OutSize>>::finalize_into(p0, p1);
+-----------------
+blake2/src/macros.rs <Blake2sMac<OutSize> as core::fmt::Debug>::fmt
+deps:{"<Blake2sMac<OutSize> as core::fmt::Debug>::fmt":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::NonZero"],"OutSize":["core::marker::Sized","digest::generic_array::ArrayLength","digest::typenum::IsLessOrEqual"]}}
+candidates:{"<Blake2sMac<OutSize> as core::fmt::Debug>::fmt":{"<OutSize as digest::typenum::IsLessOrEqual<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UInt<digest::typenum::UTerm, digest::typenum::B1>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>, digest::typenum::B0>>>::Output":["digest::typenum::B1","digest::typenum::UInt<U, B>","digest::typenum::PInt<U>","digest::typenum::NInt<U>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Blake2sMac<OutSize>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Blake2sMac<OutSize> as core::fmt::Debug>::fmt(p0, p1);
++crate::<Blake2sMac<OutSize> as core::fmt::Debug>::fmt(p0, p1);
++<Blake2sMac<OutSize>>::fmt(p0, p1);

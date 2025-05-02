@@ -1,0 +1,27 @@
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/skip.rs
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/encoder.rs
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/value.rs
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/slice.rs
+err tests_rug_115 test_rug
+   Compiling cbor-codec v0.7.1 (/mnt/sda/xiang/syrust/syrust/cbor1)
+error[E0597]: `rug_fuzz_0_ext` does not live long enough
+   --> src/slice.rs:95:18
+    |
+95  | let rug_fuzz_0 = & rug_fuzz_0_ext;
+    |                  ^^^^^^^^^^^^^^^^ borrowed value does not live long enough
+96  |         let mut p0: std::io::Cursor<&'static [u8]> = {
+97  |             let data: &'static [u8] = rug_fuzz_0;
+    |                       ------------- type annotation requires that `rug_fuzz_0_ext` is borrowed for `'static`
+...
+103 | });    }
+    | - `rug_fuzz_0_ext` dropped here while still borrowed
+
+For more information about this error, try `rustc --explain E0597`.
+error: could not compile `cbor-codec` due to previous error
+warning: build failed, waiting for other jobs to finish...
+
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/random.rs
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/types.rs
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/decoder.rs
+/mnt/sda/xiang/syrust/syrust/cbor1/./src/lib.rs
+done

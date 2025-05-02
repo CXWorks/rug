@@ -1,0 +1,11 @@
+cbor1 cbor-codec . ['/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/skip.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/encoder.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/value.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/slice.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/random.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/types.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/decoder.rs', '/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/lib.rs']
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/skip.rs
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/encoder.rs
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/value.rs
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/slice.rs
+err tests_rug_115 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/random.rs
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/types.rs
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/decoder.rs
+/mnt/sda/xiang/syrust/syrust_replay/cbor1/./src/lib.rs
+done

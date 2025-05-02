@@ -1,0 +1,2417 @@
+-----------------
+src/connect_four.rs <connect_four::ConnectFour as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
++p0.clone();
++<connect_four::ConnectFour as std::clone::Clone>::clone(p0);
++crate::<connect_four::ConnectFour as std::clone::Clone>::clone(p0);
++<connect_four::ConnectFour>::clone(p0);
+-----------------
+src/connect_four.rs <connect_four::ConnectFour as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::ConnectFour as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::ConnectFour as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::ConnectFour>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::Column as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
++p0.clone();
++<connect_four::Column as std::clone::Clone>::clone(p0);
++crate::<connect_four::Column as std::clone::Clone>::clone(p0);
++<connect_four::Column>::clone(p0);
+-----------------
+src/connect_four.rs <connect_four::Column as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::Column as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::Column as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::Column>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::Column as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
++p0.assert_receiver_is_total_eq();
++<connect_four::Column as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<connect_four::Column as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<connect_four::Column>::assert_receiver_is_total_eq(p0);
+-----------------
+src/connect_four.rs <connect_four::Column as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
+let mut p1 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
++p0.eq(p1);
++<connect_four::Column as std::cmp::PartialEq>::eq(p0, p1);
++crate::<connect_four::Column as std::cmp::PartialEq>::eq(p0, p1);
++<connect_four::Column>::eq(p0, p1);
+-----------------
+src/connect_four.rs connect_four::Column::is_full
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
++p0.is_full();
++connect_four::Column::is_full(p0);
++crate::connect_four::Column::is_full(p0);
++<connect_four::Column>::is_full(p0);
+-----------------
+src/connect_four.rs connect_four::Column::push
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // connect_four::Column
+let mut p1 = MaybeUninit::uninit().assume_init(); // connect_four::Player
++p0.push(p1);
++connect_four::Column::push(p0, p1);
++crate::connect_four::Column::push(p0, p1);
++<connect_four::Column>::push(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::Column as std::default::Default>::default
+deps:{}
+candidates:{}
++<connect_four::Column as std::default::Default>::default();
++crate::<connect_four::Column as std::default::Default>::default();
++<connect_four::Column>::default();
+-----------------
+src/connect_four.rs <connect_four::Column as std::ops::Index<usize>>::index
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Column
+let mut p1 = 0usize; // None+usize
++p0.index(p1);
++<connect_four::Column as std::ops::Index<usize>>::index(p0, p1);
++crate::<connect_four::Column as std::ops::Index<usize>>::index(p0, p1);
++<connect_four::Column>::index(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::Column as std::ops::IndexMut<usize>>::index_mut
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // connect_four::Column
+let mut p1 = 0usize; // None+usize
++p0.index_mut(p1);
++<connect_four::Column as std::ops::IndexMut<usize>>::index_mut(p0, p1);
++crate::<connect_four::Column as std::ops::IndexMut<usize>>::index_mut(p0, p1);
++<connect_four::Column>::index_mut(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::Player as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Player
++p0.clone();
++<connect_four::Player as std::clone::Clone>::clone(p0);
++crate::<connect_four::Player as std::clone::Clone>::clone(p0);
++<connect_four::Player>::clone(p0);
+-----------------
+src/connect_four.rs <connect_four::Player as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Player
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::Player as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::Player as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::Player>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::Player as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Player
++p0.assert_receiver_is_total_eq();
++<connect_four::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<connect_four::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<connect_four::Player>::assert_receiver_is_total_eq(p0);
+-----------------
+src/connect_four.rs <connect_four::Player as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::Player
+let mut p1 = & MaybeUninit::uninit().assume_init(); // connect_four::Player
++p0.eq(p1);
++<connect_four::Player as std::cmp::PartialEq>::eq(p0, p1);
++crate::<connect_four::Player as std::cmp::PartialEq>::eq(p0, p1);
++<connect_four::Player>::eq(p0, p1);
+-----------------
+src/connect_four.rs connect_four::Player::other
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::Player
++p0.other();
++connect_four::Player::other(p0);
++crate::connect_four::Player::other(p0);
++<connect_four::Player>::other(p0);
+-----------------
+src/connect_four.rs <connect_four::GameState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::GameState
++p0.clone();
++<connect_four::GameState as std::clone::Clone>::clone(p0);
++crate::<connect_four::GameState as std::clone::Clone>::clone(p0);
++<connect_four::GameState>::clone(p0);
+-----------------
+src/connect_four.rs <connect_four::GameState as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::GameState
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::GameState as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::GameState as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::GameState>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::GameState as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::GameState
++p0.assert_receiver_is_total_eq();
++<connect_four::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<connect_four::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<connect_four::GameState>::assert_receiver_is_total_eq(p0);
+-----------------
+src/connect_four.rs <connect_four::GameState as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::GameState
+let mut p1 = & MaybeUninit::uninit().assume_init(); // connect_four::GameState
++p0.eq(p1);
++<connect_four::GameState as std::cmp::PartialEq>::eq(p0, p1);
++crate::<connect_four::GameState as std::cmp::PartialEq>::eq(p0, p1);
++<connect_four::GameState>::eq(p0, p1);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::new
+deps:{}
+candidates:{}
++connect_four::ConnectFour::new();
++crate::connect_four::ConnectFour::new();
++<connect_four::ConnectFour>::new();
+-----------------
+src/connect_four.rs connect_four::ConnectFour::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.get(p1, p2);
++connect_four::ConnectFour::get(p0, p1, p2);
++crate::connect_four::ConnectFour::get(p0, p1, p2);
++<connect_four::ConnectFour>::get(p0, p1, p2);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::is_ended
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
++p0.is_ended();
++connect_four::ConnectFour::is_ended(p0);
++crate::connect_four::ConnectFour::is_ended(p0);
++<connect_four::ConnectFour>::is_ended(p0);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::winner
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
++p0.winner();
++connect_four::ConnectFour::winner(p0);
++crate::connect_four::ConnectFour::winner(p0);
++<connect_four::ConnectFour>::winner(p0);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::status
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
++p0.status();
++connect_four::ConnectFour::status(p0);
++crate::connect_four::ConnectFour::status(p0);
++<connect_four::ConnectFour>::status(p0);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::get_next_player
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
++p0.get_next_player();
++connect_four::ConnectFour::get_next_player(p0);
++crate::connect_four::ConnectFour::get_next_player(p0);
++<connect_four::ConnectFour>::get_next_player(p0);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::put
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
+let mut p1 = MaybeUninit::uninit().assume_init(); // connect_four::Player
+let mut p2 = 0usize; // None+usize
++p0.put(p1, p2);
++connect_four::ConnectFour::put(p0, p1, p2);
++crate::connect_four::ConnectFour::put(p0, p1, p2);
++<connect_four::ConnectFour>::put(p0, p1, p2);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::check_state
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // connect_four::ConnectFour
++p0.check_state();
++connect_four::ConnectFour::check_state(p0);
++crate::connect_four::ConnectFour::check_state(p0);
++<connect_four::ConnectFour>::check_state(p0);
+-----------------
+src/connect_four.rs connect_four::ConnectFour::get_connectable
+deps:{}
+candidates:{}
++connect_four::ConnectFour::get_connectable();
++crate::connect_four::ConnectFour::get_connectable();
++<connect_four::ConnectFour>::get_connectable();
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::ConnectFourError as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::ConnectFourError as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::ConnectFourError>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
++p0.assert_receiver_is_total_eq();
++<connect_four::ConnectFourError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<connect_four::ConnectFourError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<connect_four::ConnectFourError>::assert_receiver_is_total_eq(p0);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
++p0.eq(p1);
++<connect_four::ConnectFourError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<connect_four::ConnectFourError as std::cmp::PartialEq>::eq(p0, p1);
++<connect_four::ConnectFourError>::eq(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::WrongPlayerSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::WrongPlayerSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::WrongPlayerSnafu>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::WrongPlayerSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::WrongPlayerSnafu
++p0.clone();
++<connect_four::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++crate::<connect_four::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++<connect_four::WrongPlayerSnafu>::clone(p0);
+-----------------
+src/connect_four.rs connect_four::WrongPlayerSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::WrongPlayerSnafu
++p0.build();
++connect_four::WrongPlayerSnafu::build(p0);
++crate::connect_four::WrongPlayerSnafu::build(p0);
++<connect_four::WrongPlayerSnafu>::build(p0);
+-----------------
+src/connect_four.rs connect_four::WrongPlayerSnafu::fail
+deps:{"connect_four::WrongPlayerSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"connect_four::WrongPlayerSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::WrongPlayerSnafu
++p0.fail();
++connect_four::WrongPlayerSnafu::fail(p0);
++crate::connect_four::WrongPlayerSnafu::fail(p0);
++<connect_four::WrongPlayerSnafu>::fail(p0);
+-----------------
+src/connect_four.rs <connect_four::WrongPlayerSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error
+deps:{"<connect_four::WrongPlayerSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error":{"connect_four::ConnectFourError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<connect_four::WrongPlayerSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error":{"connect_four::ConnectFourError":["connect_four::ConnectFourError","tictactoe::TicTacToeError","gomoku::GomokuError","minesweeper::MinesweeperError","reversi::ReversiError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::WrongPlayerSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <connect_four::WrongPlayerSnafu as snafu::IntoError<connect_four::ConnectFourError>>::Source
++p0.into_error(p1);
++<connect_four::WrongPlayerSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error(p0, p1);
++crate::<connect_four::WrongPlayerSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error(p0, p1);
++<connect_four::WrongPlayerSnafu>::into_error(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::ColumnFilledSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ColumnFilledSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::ColumnFilledSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::ColumnFilledSnafu as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::ColumnFilledSnafu>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::ColumnFilledSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ColumnFilledSnafu
++p0.clone();
++<connect_four::ColumnFilledSnafu as std::clone::Clone>::clone(p0);
++crate::<connect_four::ColumnFilledSnafu as std::clone::Clone>::clone(p0);
++<connect_four::ColumnFilledSnafu>::clone(p0);
+-----------------
+src/connect_four.rs connect_four::ColumnFilledSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::ColumnFilledSnafu
++p0.build();
++connect_four::ColumnFilledSnafu::build(p0);
++crate::connect_four::ColumnFilledSnafu::build(p0);
++<connect_four::ColumnFilledSnafu>::build(p0);
+-----------------
+src/connect_four.rs connect_four::ColumnFilledSnafu::fail
+deps:{"connect_four::ColumnFilledSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"connect_four::ColumnFilledSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::ColumnFilledSnafu
++p0.fail();
++connect_four::ColumnFilledSnafu::fail(p0);
++crate::connect_four::ColumnFilledSnafu::fail(p0);
++<connect_four::ColumnFilledSnafu>::fail(p0);
+-----------------
+src/connect_four.rs <connect_four::ColumnFilledSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error
+deps:{"<connect_four::ColumnFilledSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error":{"connect_four::ConnectFourError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<connect_four::ColumnFilledSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error":{"connect_four::ConnectFourError":["minesweeper::MinesweeperError","reversi::ReversiError","connect_four::ConnectFourError","tictactoe::TicTacToeError","gomoku::GomokuError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::ColumnFilledSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <connect_four::ColumnFilledSnafu as snafu::IntoError<connect_four::ConnectFourError>>::Source
++p0.into_error(p1);
++<connect_four::ColumnFilledSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error(p0, p1);
++crate::<connect_four::ColumnFilledSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error(p0, p1);
++<connect_four::ColumnFilledSnafu>::into_error(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::GameEndedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::GameEndedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<connect_four::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<connect_four::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<connect_four::GameEndedSnafu>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::GameEndedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::GameEndedSnafu
++p0.clone();
++<connect_four::GameEndedSnafu as std::clone::Clone>::clone(p0);
++crate::<connect_four::GameEndedSnafu as std::clone::Clone>::clone(p0);
++<connect_four::GameEndedSnafu>::clone(p0);
+-----------------
+src/connect_four.rs connect_four::GameEndedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::GameEndedSnafu
++p0.build();
++connect_four::GameEndedSnafu::build(p0);
++crate::connect_four::GameEndedSnafu::build(p0);
++<connect_four::GameEndedSnafu>::build(p0);
+-----------------
+src/connect_four.rs connect_four::GameEndedSnafu::fail
+deps:{"connect_four::GameEndedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"connect_four::GameEndedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::GameEndedSnafu
++p0.fail();
++connect_four::GameEndedSnafu::fail(p0);
++crate::connect_four::GameEndedSnafu::fail(p0);
++<connect_four::GameEndedSnafu>::fail(p0);
+-----------------
+src/connect_four.rs <connect_four::GameEndedSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error
+deps:{"<connect_four::GameEndedSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error":{"connect_four::ConnectFourError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<connect_four::GameEndedSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error":{"connect_four::ConnectFourError":["tictactoe::TicTacToeError","minesweeper::MinesweeperError","gomoku::GomokuError","reversi::ReversiError","connect_four::ConnectFourError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // connect_four::GameEndedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <connect_four::GameEndedSnafu as snafu::IntoError<connect_four::ConnectFourError>>::Source
++p0.into_error(p1);
++<connect_four::GameEndedSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error(p0, p1);
++crate::<connect_four::GameEndedSnafu as snafu::IntoError<connect_four::ConnectFourError>>::into_error(p0, p1);
++<connect_four::GameEndedSnafu>::into_error(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<connect_four::ConnectFourError as std::fmt::Display>::fmt(p0, p1);
++crate::<connect_four::ConnectFourError as std::fmt::Display>::fmt(p0, p1);
++<connect_four::ConnectFourError>::fmt(p0, p1);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as snafu::Error>::description
+deps:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<connect_four::ConnectFourError as snafu::Error>::description":{"connect_four::ConnectFourError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<connect_four::ConnectFourError as snafu::Error>::description":{"connect_four::ConnectFourError":["<&mut T as std::fmt::Display>","minesweeper::MinesweeperError","connect_four::ConnectFourError","gomoku::GomokuError","tictactoe::TicTacToeError","reversi::ReversiError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
++p0.description();
++<connect_four::ConnectFourError as snafu::Error>::description(p0);
++crate::<connect_four::ConnectFourError as snafu::Error>::description(p0);
++<connect_four::ConnectFourError>::description(p0);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as snafu::Error>::cause
+deps:{"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<connect_four::ConnectFourError as snafu::Error>::cause":{"connect_four::ConnectFourError":["std::fmt::Display","std::fmt::Debug"]}}
+candidates:{"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<connect_four::ConnectFourError as snafu::Error>::cause":{"connect_four::ConnectFourError":["tictactoe::TicTacToeError","reversi::ReversiError","minesweeper::MinesweeperError","gomoku::GomokuError","<&T as std::fmt::Display>","connect_four::ConnectFourError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
++p0.cause();
++<connect_four::ConnectFourError as snafu::Error>::cause(p0);
++crate::<connect_four::ConnectFourError as snafu::Error>::cause(p0);
++<connect_four::ConnectFourError>::cause(p0);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as snafu::Error>::source
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<connect_four::ConnectFourError as snafu::Error>::source":{"connect_four::ConnectFourError":["std::fmt::Display","std::fmt::Debug"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<connect_four::ConnectFourError as snafu::Error>::source":{"connect_four::ConnectFourError":["tictactoe::TicTacToeError","<&T as std::fmt::Display>","minesweeper::MinesweeperError","<&T as std::fmt::Debug>","gomoku::GomokuError","reversi::ReversiError","connect_four::ConnectFourError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
++p0.source();
++<connect_four::ConnectFourError as snafu::Error>::source(p0);
++crate::<connect_four::ConnectFourError as snafu::Error>::source(p0);
++<connect_four::ConnectFourError>::source(p0);
+-----------------
+src/connect_four.rs <connect_four::ConnectFourError as snafu::ErrorCompat>::backtrace
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // connect_four::ConnectFourError
++p0.backtrace();
++<connect_four::ConnectFourError as snafu::ErrorCompat>::backtrace(p0);
++crate::<connect_four::ConnectFourError as snafu::ErrorCompat>::backtrace(p0);
++<connect_four::ConnectFourError>::backtrace(p0);
+-----------------
+src/gomoku.rs <gomoku::Gomoku as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
++p0.clone();
++<gomoku::Gomoku as std::clone::Clone>::clone(p0);
++crate::<gomoku::Gomoku as std::clone::Clone>::clone(p0);
++<gomoku::Gomoku>::clone(p0);
+-----------------
+src/gomoku.rs <gomoku::Gomoku as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::Gomoku as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::Gomoku as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::Gomoku>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::Player as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Player
++p0.clone();
++<gomoku::Player as std::clone::Clone>::clone(p0);
++crate::<gomoku::Player as std::clone::Clone>::clone(p0);
++<gomoku::Player>::clone(p0);
+-----------------
+src/gomoku.rs <gomoku::Player as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Player
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::Player as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::Player as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::Player>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::Player as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Player
++p0.assert_receiver_is_total_eq();
++<gomoku::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<gomoku::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<gomoku::Player>::assert_receiver_is_total_eq(p0);
+-----------------
+src/gomoku.rs <gomoku::Player as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Player
+let mut p1 = & MaybeUninit::uninit().assume_init(); // gomoku::Player
++p0.eq(p1);
++<gomoku::Player as std::cmp::PartialEq>::eq(p0, p1);
++crate::<gomoku::Player as std::cmp::PartialEq>::eq(p0, p1);
++<gomoku::Player>::eq(p0, p1);
+-----------------
+src/gomoku.rs gomoku::Player::other
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::Player
++p0.other();
++gomoku::Player::other(p0);
++crate::gomoku::Player::other(p0);
++<gomoku::Player>::other(p0);
+-----------------
+src/gomoku.rs <gomoku::GameState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GameState
++p0.clone();
++<gomoku::GameState as std::clone::Clone>::clone(p0);
++crate::<gomoku::GameState as std::clone::Clone>::clone(p0);
++<gomoku::GameState>::clone(p0);
+-----------------
+src/gomoku.rs <gomoku::GameState as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GameState
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::GameState as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::GameState as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::GameState>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::GameState as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GameState
++p0.assert_receiver_is_total_eq();
++<gomoku::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<gomoku::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<gomoku::GameState>::assert_receiver_is_total_eq(p0);
+-----------------
+src/gomoku.rs <gomoku::GameState as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GameState
+let mut p1 = & MaybeUninit::uninit().assume_init(); // gomoku::GameState
++p0.eq(p1);
++<gomoku::GameState as std::cmp::PartialEq>::eq(p0, p1);
++crate::<gomoku::GameState as std::cmp::PartialEq>::eq(p0, p1);
++<gomoku::GameState>::eq(p0, p1);
+-----------------
+src/gomoku.rs gomoku::Gomoku::new
+deps:{}
+candidates:{}
++gomoku::Gomoku::new();
++crate::gomoku::Gomoku::new();
++<gomoku::Gomoku>::new();
+-----------------
+src/gomoku.rs gomoku::Gomoku::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.get(p1, p2);
++gomoku::Gomoku::get(p0, p1, p2);
++crate::gomoku::Gomoku::get(p0, p1, p2);
++<gomoku::Gomoku>::get(p0, p1, p2);
+-----------------
+src/gomoku.rs gomoku::Gomoku::is_ended
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
++p0.is_ended();
++gomoku::Gomoku::is_ended(p0);
++crate::gomoku::Gomoku::is_ended(p0);
++<gomoku::Gomoku>::is_ended(p0);
+-----------------
+src/gomoku.rs gomoku::Gomoku::winner
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
++p0.winner();
++gomoku::Gomoku::winner(p0);
++crate::gomoku::Gomoku::winner(p0);
++<gomoku::Gomoku>::winner(p0);
+-----------------
+src/gomoku.rs gomoku::Gomoku::status
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
++p0.status();
++gomoku::Gomoku::status(p0);
++crate::gomoku::Gomoku::status(p0);
++<gomoku::Gomoku>::status(p0);
+-----------------
+src/gomoku.rs gomoku::Gomoku::get_next_player
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
++p0.get_next_player();
++gomoku::Gomoku::get_next_player(p0);
++crate::gomoku::Gomoku::get_next_player(p0);
++<gomoku::Gomoku>::get_next_player(p0);
+-----------------
+src/gomoku.rs gomoku::Gomoku::place
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
+let mut p1 = MaybeUninit::uninit().assume_init(); // gomoku::Player
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++p0.place(p1, p2, p3);
++gomoku::Gomoku::place(p0, p1, p2, p3);
++crate::gomoku::Gomoku::place(p0, p1, p2, p3);
++<gomoku::Gomoku>::place(p0, p1, p2, p3);
+-----------------
+src/gomoku.rs gomoku::Gomoku::check_state
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // gomoku::Gomoku
++p0.check_state();
++gomoku::Gomoku::check_state(p0);
++crate::gomoku::Gomoku::check_state(p0);
++<gomoku::Gomoku>::check_state(p0);
+-----------------
+src/gomoku.rs gomoku::Gomoku::get_connectable
+deps:{}
+candidates:{}
++gomoku::Gomoku::get_connectable();
++crate::gomoku::Gomoku::get_connectable();
++<gomoku::Gomoku>::get_connectable();
+-----------------
+src/gomoku.rs <gomoku::GomokuError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::GomokuError as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::GomokuError as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::GomokuError>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
++p0.assert_receiver_is_total_eq();
++<gomoku::GomokuError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<gomoku::GomokuError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<gomoku::GomokuError>::assert_receiver_is_total_eq(p0);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
++p0.eq(p1);
++<gomoku::GomokuError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<gomoku::GomokuError as std::cmp::PartialEq>::eq(p0, p1);
++<gomoku::GomokuError>::eq(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::WrongPlayerSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::WrongPlayerSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::WrongPlayerSnafu>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::WrongPlayerSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::WrongPlayerSnafu
++p0.clone();
++<gomoku::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++crate::<gomoku::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++<gomoku::WrongPlayerSnafu>::clone(p0);
+-----------------
+src/gomoku.rs gomoku::WrongPlayerSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::WrongPlayerSnafu
++p0.build();
++gomoku::WrongPlayerSnafu::build(p0);
++crate::gomoku::WrongPlayerSnafu::build(p0);
++<gomoku::WrongPlayerSnafu>::build(p0);
+-----------------
+src/gomoku.rs gomoku::WrongPlayerSnafu::fail
+deps:{"gomoku::WrongPlayerSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"gomoku::WrongPlayerSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::WrongPlayerSnafu
++p0.fail();
++gomoku::WrongPlayerSnafu::fail(p0);
++crate::gomoku::WrongPlayerSnafu::fail(p0);
++<gomoku::WrongPlayerSnafu>::fail(p0);
+-----------------
+src/gomoku.rs <gomoku::WrongPlayerSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error
+deps:{"<gomoku::WrongPlayerSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error":{"gomoku::GomokuError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<gomoku::WrongPlayerSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error":{"gomoku::GomokuError":["gomoku::GomokuError","minesweeper::MinesweeperError","tictactoe::TicTacToeError","connect_four::ConnectFourError","reversi::ReversiError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::WrongPlayerSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <gomoku::WrongPlayerSnafu as snafu::IntoError<gomoku::GomokuError>>::Source
++p0.into_error(p1);
++<gomoku::WrongPlayerSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error(p0, p1);
++crate::<gomoku::WrongPlayerSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error(p0, p1);
++<gomoku::WrongPlayerSnafu>::into_error(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::OccupiedPositionSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::OccupiedPositionSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::OccupiedPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::OccupiedPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::OccupiedPositionSnafu>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::OccupiedPositionSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::OccupiedPositionSnafu
++p0.clone();
++<gomoku::OccupiedPositionSnafu as std::clone::Clone>::clone(p0);
++crate::<gomoku::OccupiedPositionSnafu as std::clone::Clone>::clone(p0);
++<gomoku::OccupiedPositionSnafu>::clone(p0);
+-----------------
+src/gomoku.rs gomoku::OccupiedPositionSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::OccupiedPositionSnafu
++p0.build();
++gomoku::OccupiedPositionSnafu::build(p0);
++crate::gomoku::OccupiedPositionSnafu::build(p0);
++<gomoku::OccupiedPositionSnafu>::build(p0);
+-----------------
+src/gomoku.rs gomoku::OccupiedPositionSnafu::fail
+deps:{"gomoku::OccupiedPositionSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"gomoku::OccupiedPositionSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::OccupiedPositionSnafu
++p0.fail();
++gomoku::OccupiedPositionSnafu::fail(p0);
++crate::gomoku::OccupiedPositionSnafu::fail(p0);
++<gomoku::OccupiedPositionSnafu>::fail(p0);
+-----------------
+src/gomoku.rs <gomoku::OccupiedPositionSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error
+deps:{"<gomoku::OccupiedPositionSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error":{"gomoku::GomokuError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<gomoku::OccupiedPositionSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error":{"gomoku::GomokuError":["connect_four::ConnectFourError","minesweeper::MinesweeperError","tictactoe::TicTacToeError","reversi::ReversiError","gomoku::GomokuError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::OccupiedPositionSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <gomoku::OccupiedPositionSnafu as snafu::IntoError<gomoku::GomokuError>>::Source
++p0.into_error(p1);
++<gomoku::OccupiedPositionSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error(p0, p1);
++crate::<gomoku::OccupiedPositionSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error(p0, p1);
++<gomoku::OccupiedPositionSnafu>::into_error(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::GameEndedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GameEndedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<gomoku::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<gomoku::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<gomoku::GameEndedSnafu>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::GameEndedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GameEndedSnafu
++p0.clone();
++<gomoku::GameEndedSnafu as std::clone::Clone>::clone(p0);
++crate::<gomoku::GameEndedSnafu as std::clone::Clone>::clone(p0);
++<gomoku::GameEndedSnafu>::clone(p0);
+-----------------
+src/gomoku.rs gomoku::GameEndedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::GameEndedSnafu
++p0.build();
++gomoku::GameEndedSnafu::build(p0);
++crate::gomoku::GameEndedSnafu::build(p0);
++<gomoku::GameEndedSnafu>::build(p0);
+-----------------
+src/gomoku.rs gomoku::GameEndedSnafu::fail
+deps:{"gomoku::GameEndedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"gomoku::GameEndedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::GameEndedSnafu
++p0.fail();
++gomoku::GameEndedSnafu::fail(p0);
++crate::gomoku::GameEndedSnafu::fail(p0);
++<gomoku::GameEndedSnafu>::fail(p0);
+-----------------
+src/gomoku.rs <gomoku::GameEndedSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error
+deps:{"<gomoku::GameEndedSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error":{"gomoku::GomokuError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<gomoku::GameEndedSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error":{"gomoku::GomokuError":["connect_four::ConnectFourError","minesweeper::MinesweeperError","gomoku::GomokuError","reversi::ReversiError","tictactoe::TicTacToeError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // gomoku::GameEndedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <gomoku::GameEndedSnafu as snafu::IntoError<gomoku::GomokuError>>::Source
++p0.into_error(p1);
++<gomoku::GameEndedSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error(p0, p1);
++crate::<gomoku::GameEndedSnafu as snafu::IntoError<gomoku::GomokuError>>::into_error(p0, p1);
++<gomoku::GameEndedSnafu>::into_error(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<gomoku::GomokuError as std::fmt::Display>::fmt(p0, p1);
++crate::<gomoku::GomokuError as std::fmt::Display>::fmt(p0, p1);
++<gomoku::GomokuError>::fmt(p0, p1);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as snafu::Error>::description
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<gomoku::GomokuError as snafu::Error>::description":{"gomoku::GomokuError":["std::fmt::Display","std::fmt::Debug"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<gomoku::GomokuError as snafu::Error>::description":{"gomoku::GomokuError":["<&mut T as std::fmt::Debug>","gomoku::GomokuError","connect_four::ConnectFourError","minesweeper::MinesweeperError","reversi::ReversiError","tictactoe::TicTacToeError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
++p0.description();
++<gomoku::GomokuError as snafu::Error>::description(p0);
++crate::<gomoku::GomokuError as snafu::Error>::description(p0);
++<gomoku::GomokuError>::description(p0);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as snafu::Error>::cause
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Display>":{},"<gomoku::GomokuError as snafu::Error>::cause":{"gomoku::GomokuError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Display>":{},"<gomoku::GomokuError as snafu::Error>::cause":{"gomoku::GomokuError":["gomoku::GomokuError","reversi::ReversiError","<&mut T as std::fmt::Display>","tictactoe::TicTacToeError","connect_four::ConnectFourError","minesweeper::MinesweeperError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
++p0.cause();
++<gomoku::GomokuError as snafu::Error>::cause(p0);
++crate::<gomoku::GomokuError as snafu::Error>::cause(p0);
++<gomoku::GomokuError>::cause(p0);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as snafu::Error>::source
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<gomoku::GomokuError as snafu::Error>::source":{"gomoku::GomokuError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<gomoku::GomokuError as snafu::Error>::source":{"gomoku::GomokuError":["tictactoe::TicTacToeError","reversi::ReversiError","connect_four::ConnectFourError","<&T as std::fmt::Display>","<&T as std::fmt::Debug>","minesweeper::MinesweeperError","gomoku::GomokuError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
++p0.source();
++<gomoku::GomokuError as snafu::Error>::source(p0);
++crate::<gomoku::GomokuError as snafu::Error>::source(p0);
++<gomoku::GomokuError>::source(p0);
+-----------------
+src/gomoku.rs <gomoku::GomokuError as snafu::ErrorCompat>::backtrace
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // gomoku::GomokuError
++p0.backtrace();
++<gomoku::GomokuError as snafu::ErrorCompat>::backtrace(p0);
++crate::<gomoku::GomokuError as snafu::ErrorCompat>::backtrace(p0);
++<gomoku::GomokuError>::backtrace(p0);
+-----------------
+src/minesweeper.rs <minesweeper::Minesweeper as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
++p0.clone();
++<minesweeper::Minesweeper as std::clone::Clone>::clone(p0);
++crate::<minesweeper::Minesweeper as std::clone::Clone>::clone(p0);
++<minesweeper::Minesweeper>::clone(p0);
+-----------------
+src/minesweeper.rs <minesweeper::Minesweeper as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::Minesweeper as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::Minesweeper as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::Minesweeper>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::Cell as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Cell
++p0.clone();
++<minesweeper::Cell as std::clone::Clone>::clone(p0);
++crate::<minesweeper::Cell as std::clone::Clone>::clone(p0);
++<minesweeper::Cell>::clone(p0);
+-----------------
+src/minesweeper.rs <minesweeper::Cell as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Cell
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::Cell as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::Cell as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::Cell>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::Cell as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Cell
++p0.assert_receiver_is_total_eq();
++<minesweeper::Cell as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<minesweeper::Cell as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<minesweeper::Cell>::assert_receiver_is_total_eq(p0);
+-----------------
+src/minesweeper.rs <minesweeper::Cell as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Cell
+let mut p1 = & MaybeUninit::uninit().assume_init(); // minesweeper::Cell
++p0.eq(p1);
++<minesweeper::Cell as std::cmp::PartialEq>::eq(p0, p1);
++crate::<minesweeper::Cell as std::cmp::PartialEq>::eq(p0, p1);
++<minesweeper::Cell>::eq(p0, p1);
+-----------------
+src/minesweeper.rs minesweeper::Cell::new
+deps:{}
+candidates:{}
+let mut p0 = true; // None+bool
++minesweeper::Cell::new(p0);
++crate::minesweeper::Cell::new(p0);
++<minesweeper::Cell>::new(p0);
+-----------------
+src/minesweeper.rs <minesweeper::GameState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameState
++p0.clone();
++<minesweeper::GameState as std::clone::Clone>::clone(p0);
++crate::<minesweeper::GameState as std::clone::Clone>::clone(p0);
++<minesweeper::GameState>::clone(p0);
+-----------------
+src/minesweeper.rs <minesweeper::GameState as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameState
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::GameState as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::GameState as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::GameState>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::GameState as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameState
++p0.assert_receiver_is_total_eq();
++<minesweeper::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<minesweeper::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<minesweeper::GameState>::assert_receiver_is_total_eq(p0);
+-----------------
+src/minesweeper.rs <minesweeper::GameState as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameState
+let mut p1 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameState
++p0.eq(p1);
++<minesweeper::GameState as std::cmp::PartialEq>::eq(p0, p1);
++crate::<minesweeper::GameState as std::cmp::PartialEq>::eq(p0, p1);
++<minesweeper::GameState>::eq(p0, p1);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::new
+deps:{"<&'a mut R as rand::RngCore>":{},"<R as rand::Rng>":{"R":["rand::RngCore"]},"minesweeper::Minesweeper::new":{"R":["rand::Rng"]}}
+candidates:{"<&'a mut R as rand::RngCore>":{},"<R as rand::Rng>":{"R":["rand_core::block::BlockRng<R>","std::boxed::Box<R>","rand_core::block::BlockRng64<R>","<&'a mut R as rand::RngCore>"]},"minesweeper::Minesweeper::new":{"R":["<R as rand::Rng>"]}}
+let mut p0 = 0usize; // None+usize
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = &mut  MaybeUninit::uninit().assume_init(); // R
++minesweeper::Minesweeper::new(p0, p1, p2, p3);
++crate::minesweeper::Minesweeper::new(p0, p1, p2, p3);
++<minesweeper::Minesweeper>::new(p0, p1, p2, p3);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::randomize
+deps:{"<&'a mut R as rand::RngCore>":{},"<R as rand::Rng>":{"R":["rand::RngCore"]},"minesweeper::Minesweeper::randomize":{"R":["rand::Rng"]}}
+candidates:{"<&'a mut R as rand::RngCore>":{},"<R as rand::Rng>":{"R":["std::boxed::Box<R>","rand_core::block::BlockRng64<R>","rand_core::block::BlockRng<R>","<&'a mut R as rand::RngCore>"]},"minesweeper::Minesweeper::randomize":{"R":["<R as rand::Rng>"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // R
++p0.randomize(p1);
++minesweeper::Minesweeper::randomize(p0, p1);
++crate::minesweeper::Minesweeper::randomize(p0, p1);
++<minesweeper::Minesweeper>::randomize(p0, p1);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.get(p1, p2);
++minesweeper::Minesweeper::get(p0, p1, p2);
++crate::minesweeper::Minesweeper::get(p0, p1, p2);
++<minesweeper::Minesweeper>::get(p0, p1, p2);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::is_ended
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
++p0.is_ended();
++minesweeper::Minesweeper::is_ended(p0);
++crate::minesweeper::Minesweeper::is_ended(p0);
++<minesweeper::Minesweeper>::is_ended(p0);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::status
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
++p0.status();
++minesweeper::Minesweeper::status(p0);
++crate::minesweeper::Minesweeper::status(p0);
++<minesweeper::Minesweeper>::status(p0);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::click
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = true; // None+bool
++p0.click(p1, p2, p3);
++minesweeper::Minesweeper::click(p0, p1, p2, p3);
++crate::minesweeper::Minesweeper::click(p0, p1, p2, p3);
++<minesweeper::Minesweeper>::click(p0, p1, p2, p3);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::toggle_flag
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.toggle_flag(p1, p2);
++minesweeper::Minesweeper::toggle_flag(p0, p1, p2);
++crate::minesweeper::Minesweeper::toggle_flag(p0, p1, p2);
++<minesweeper::Minesweeper>::toggle_flag(p0, p1, p2);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::click_unrevealed
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.click_unrevealed(p1, p2);
++minesweeper::Minesweeper::click_unrevealed(p0, p1, p2);
++crate::minesweeper::Minesweeper::click_unrevealed(p0, p1, p2);
++<minesweeper::Minesweeper>::click_unrevealed(p0, p1, p2);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::click_revealed
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = true; // None+bool
++p0.click_revealed(p1, p2, p3);
++minesweeper::Minesweeper::click_revealed(p0, p1, p2, p3);
++crate::minesweeper::Minesweeper::click_revealed(p0, p1, p2, p3);
++<minesweeper::Minesweeper>::click_revealed(p0, p1, p2, p3);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::reveal_from
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
++p0.reveal_from(p1);
++minesweeper::Minesweeper::reveal_from(p0, p1);
++crate::minesweeper::Minesweeper::reveal_from(p0, p1);
++<minesweeper::Minesweeper>::reveal_from(p0, p1);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::check_state
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
++p0.check_state();
++minesweeper::Minesweeper::check_state(p0);
++crate::minesweeper::Minesweeper::check_state(p0);
++<minesweeper::Minesweeper>::check_state(p0);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::update_around_mine_count
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
++p0.update_around_mine_count();
++minesweeper::Minesweeper::update_around_mine_count(p0);
++crate::minesweeper::Minesweeper::update_around_mine_count(p0);
++<minesweeper::Minesweeper>::update_around_mine_count(p0);
+-----------------
+src/minesweeper.rs minesweeper::Minesweeper::get_adjacent_cells
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::Minesweeper
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.get_adjacent_cells(p1, p2);
++minesweeper::Minesweeper::get_adjacent_cells(p0, p1, p2);
++crate::minesweeper::Minesweeper::get_adjacent_cells(p0, p1, p2);
++<minesweeper::Minesweeper>::get_adjacent_cells(p0, p1, p2);
+-----------------
+src/minesweeper.rs <minesweeper::AdjacentCells as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::AdjacentCells
++p0.clone();
++<minesweeper::AdjacentCells as std::clone::Clone>::clone(p0);
++crate::<minesweeper::AdjacentCells as std::clone::Clone>::clone(p0);
++<minesweeper::AdjacentCells>::clone(p0);
+-----------------
+src/minesweeper.rs <minesweeper::AdjacentCells as std::iter::Iterator>::next
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // minesweeper::AdjacentCells
++p0.next();
++<minesweeper::AdjacentCells as std::iter::Iterator>::next(p0);
++crate::<minesweeper::AdjacentCells as std::iter::Iterator>::next(p0);
++<minesweeper::AdjacentCells>::next(p0);
+-----------------
+src/minesweeper.rs minesweeper::AdjacentCells::new
+deps:{}
+candidates:{}
+let mut p0 = 0usize; // None+usize
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++minesweeper::AdjacentCells::new(p0, p1, p2, p3);
++crate::minesweeper::AdjacentCells::new(p0, p1, p2, p3);
++<minesweeper::AdjacentCells>::new(p0, p1, p2, p3);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::MinesweeperError as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::MinesweeperError as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::MinesweeperError>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
++p0.assert_receiver_is_total_eq();
++<minesweeper::MinesweeperError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<minesweeper::MinesweeperError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<minesweeper::MinesweeperError>::assert_receiver_is_total_eq(p0);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
++p0.eq(p1);
++<minesweeper::MinesweeperError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<minesweeper::MinesweeperError as std::cmp::PartialEq>::eq(p0, p1);
++<minesweeper::MinesweeperError>::eq(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::TooManyMinesSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::TooManyMinesSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::TooManyMinesSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::TooManyMinesSnafu as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::TooManyMinesSnafu>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::TooManyMinesSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::TooManyMinesSnafu
++p0.clone();
++<minesweeper::TooManyMinesSnafu as std::clone::Clone>::clone(p0);
++crate::<minesweeper::TooManyMinesSnafu as std::clone::Clone>::clone(p0);
++<minesweeper::TooManyMinesSnafu>::clone(p0);
+-----------------
+src/minesweeper.rs minesweeper::TooManyMinesSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::TooManyMinesSnafu
++p0.build();
++minesweeper::TooManyMinesSnafu::build(p0);
++crate::minesweeper::TooManyMinesSnafu::build(p0);
++<minesweeper::TooManyMinesSnafu>::build(p0);
+-----------------
+src/minesweeper.rs minesweeper::TooManyMinesSnafu::fail
+deps:{"minesweeper::TooManyMinesSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"minesweeper::TooManyMinesSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::TooManyMinesSnafu
++p0.fail();
++minesweeper::TooManyMinesSnafu::fail(p0);
++crate::minesweeper::TooManyMinesSnafu::fail(p0);
++<minesweeper::TooManyMinesSnafu>::fail(p0);
+-----------------
+src/minesweeper.rs <minesweeper::TooManyMinesSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error
+deps:{"<minesweeper::TooManyMinesSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<minesweeper::TooManyMinesSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["tictactoe::TicTacToeError","minesweeper::MinesweeperError","connect_four::ConnectFourError","gomoku::GomokuError","reversi::ReversiError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::TooManyMinesSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <minesweeper::TooManyMinesSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::Source
++p0.into_error(p1);
++<minesweeper::TooManyMinesSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++crate::<minesweeper::TooManyMinesSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++<minesweeper::TooManyMinesSnafu>::into_error(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::AlreadyFlaggedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyFlaggedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::AlreadyFlaggedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::AlreadyFlaggedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::AlreadyFlaggedSnafu>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::AlreadyFlaggedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyFlaggedSnafu
++p0.clone();
++<minesweeper::AlreadyFlaggedSnafu as std::clone::Clone>::clone(p0);
++crate::<minesweeper::AlreadyFlaggedSnafu as std::clone::Clone>::clone(p0);
++<minesweeper::AlreadyFlaggedSnafu>::clone(p0);
+-----------------
+src/minesweeper.rs minesweeper::AlreadyFlaggedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyFlaggedSnafu
++p0.build();
++minesweeper::AlreadyFlaggedSnafu::build(p0);
++crate::minesweeper::AlreadyFlaggedSnafu::build(p0);
++<minesweeper::AlreadyFlaggedSnafu>::build(p0);
+-----------------
+src/minesweeper.rs minesweeper::AlreadyFlaggedSnafu::fail
+deps:{"minesweeper::AlreadyFlaggedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"minesweeper::AlreadyFlaggedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyFlaggedSnafu
++p0.fail();
++minesweeper::AlreadyFlaggedSnafu::fail(p0);
++crate::minesweeper::AlreadyFlaggedSnafu::fail(p0);
++<minesweeper::AlreadyFlaggedSnafu>::fail(p0);
+-----------------
+src/minesweeper.rs <minesweeper::AlreadyFlaggedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error
+deps:{"<minesweeper::AlreadyFlaggedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<minesweeper::AlreadyFlaggedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["minesweeper::MinesweeperError","tictactoe::TicTacToeError","gomoku::GomokuError","connect_four::ConnectFourError","reversi::ReversiError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyFlaggedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <minesweeper::AlreadyFlaggedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::Source
++p0.into_error(p1);
++<minesweeper::AlreadyFlaggedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++crate::<minesweeper::AlreadyFlaggedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++<minesweeper::AlreadyFlaggedSnafu>::into_error(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::AlreadyRevealedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyRevealedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::AlreadyRevealedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::AlreadyRevealedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::AlreadyRevealedSnafu>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::AlreadyRevealedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyRevealedSnafu
++p0.clone();
++<minesweeper::AlreadyRevealedSnafu as std::clone::Clone>::clone(p0);
++crate::<minesweeper::AlreadyRevealedSnafu as std::clone::Clone>::clone(p0);
++<minesweeper::AlreadyRevealedSnafu>::clone(p0);
+-----------------
+src/minesweeper.rs minesweeper::AlreadyRevealedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyRevealedSnafu
++p0.build();
++minesweeper::AlreadyRevealedSnafu::build(p0);
++crate::minesweeper::AlreadyRevealedSnafu::build(p0);
++<minesweeper::AlreadyRevealedSnafu>::build(p0);
+-----------------
+src/minesweeper.rs minesweeper::AlreadyRevealedSnafu::fail
+deps:{"minesweeper::AlreadyRevealedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"minesweeper::AlreadyRevealedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyRevealedSnafu
++p0.fail();
++minesweeper::AlreadyRevealedSnafu::fail(p0);
++crate::minesweeper::AlreadyRevealedSnafu::fail(p0);
++<minesweeper::AlreadyRevealedSnafu>::fail(p0);
+-----------------
+src/minesweeper.rs <minesweeper::AlreadyRevealedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error
+deps:{"<minesweeper::AlreadyRevealedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<minesweeper::AlreadyRevealedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["connect_four::ConnectFourError","tictactoe::TicTacToeError","gomoku::GomokuError","reversi::ReversiError","minesweeper::MinesweeperError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::AlreadyRevealedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <minesweeper::AlreadyRevealedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::Source
++p0.into_error(p1);
++<minesweeper::AlreadyRevealedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++crate::<minesweeper::AlreadyRevealedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++<minesweeper::AlreadyRevealedSnafu>::into_error(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::GameEndedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameEndedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<minesweeper::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<minesweeper::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<minesweeper::GameEndedSnafu>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::GameEndedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::GameEndedSnafu
++p0.clone();
++<minesweeper::GameEndedSnafu as std::clone::Clone>::clone(p0);
++crate::<minesweeper::GameEndedSnafu as std::clone::Clone>::clone(p0);
++<minesweeper::GameEndedSnafu>::clone(p0);
+-----------------
+src/minesweeper.rs minesweeper::GameEndedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::GameEndedSnafu
++p0.build();
++minesweeper::GameEndedSnafu::build(p0);
++crate::minesweeper::GameEndedSnafu::build(p0);
++<minesweeper::GameEndedSnafu>::build(p0);
+-----------------
+src/minesweeper.rs minesweeper::GameEndedSnafu::fail
+deps:{"minesweeper::GameEndedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"minesweeper::GameEndedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::GameEndedSnafu
++p0.fail();
++minesweeper::GameEndedSnafu::fail(p0);
++crate::minesweeper::GameEndedSnafu::fail(p0);
++<minesweeper::GameEndedSnafu>::fail(p0);
+-----------------
+src/minesweeper.rs <minesweeper::GameEndedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error
+deps:{"<minesweeper::GameEndedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<minesweeper::GameEndedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error":{"minesweeper::MinesweeperError":["tictactoe::TicTacToeError","gomoku::GomokuError","connect_four::ConnectFourError","reversi::ReversiError","minesweeper::MinesweeperError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // minesweeper::GameEndedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <minesweeper::GameEndedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::Source
++p0.into_error(p1);
++<minesweeper::GameEndedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++crate::<minesweeper::GameEndedSnafu as snafu::IntoError<minesweeper::MinesweeperError>>::into_error(p0, p1);
++<minesweeper::GameEndedSnafu>::into_error(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<minesweeper::MinesweeperError as std::fmt::Display>::fmt(p0, p1);
++crate::<minesweeper::MinesweeperError as std::fmt::Display>::fmt(p0, p1);
++<minesweeper::MinesweeperError>::fmt(p0, p1);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as snafu::Error>::description
+deps:{"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<minesweeper::MinesweeperError as snafu::Error>::description":{"minesweeper::MinesweeperError":["std::fmt::Display","std::fmt::Debug"]}}
+candidates:{"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<minesweeper::MinesweeperError as snafu::Error>::description":{"minesweeper::MinesweeperError":["minesweeper::MinesweeperError","tictactoe::TicTacToeError","<&T as std::fmt::Display>","connect_four::ConnectFourError","reversi::ReversiError","gomoku::GomokuError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
++p0.description();
++<minesweeper::MinesweeperError as snafu::Error>::description(p0);
++crate::<minesweeper::MinesweeperError as snafu::Error>::description(p0);
++<minesweeper::MinesweeperError>::description(p0);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as snafu::Error>::cause
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<minesweeper::MinesweeperError as snafu::Error>::cause":{"minesweeper::MinesweeperError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<minesweeper::MinesweeperError as snafu::Error>::cause":{"minesweeper::MinesweeperError":["connect_four::ConnectFourError","<&T as std::fmt::Debug>","reversi::ReversiError","minesweeper::MinesweeperError","<&T as std::fmt::Display>","tictactoe::TicTacToeError","gomoku::GomokuError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
++p0.cause();
++<minesweeper::MinesweeperError as snafu::Error>::cause(p0);
++crate::<minesweeper::MinesweeperError as snafu::Error>::cause(p0);
++<minesweeper::MinesweeperError>::cause(p0);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as snafu::Error>::source
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Display>":{},"<minesweeper::MinesweeperError as snafu::Error>::source":{"minesweeper::MinesweeperError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Display>":{},"<minesweeper::MinesweeperError as snafu::Error>::source":{"minesweeper::MinesweeperError":["reversi::ReversiError","gomoku::GomokuError","<&mut T as std::fmt::Display>","tictactoe::TicTacToeError","minesweeper::MinesweeperError","connect_four::ConnectFourError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
++p0.source();
++<minesweeper::MinesweeperError as snafu::Error>::source(p0);
++crate::<minesweeper::MinesweeperError as snafu::Error>::source(p0);
++<minesweeper::MinesweeperError>::source(p0);
+-----------------
+src/minesweeper.rs <minesweeper::MinesweeperError as snafu::ErrorCompat>::backtrace
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // minesweeper::MinesweeperError
++p0.backtrace();
++<minesweeper::MinesweeperError as snafu::ErrorCompat>::backtrace(p0);
++crate::<minesweeper::MinesweeperError as snafu::ErrorCompat>::backtrace(p0);
++<minesweeper::MinesweeperError>::backtrace(p0);
+-----------------
+src/reversi.rs <reversi::Reversi as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
++p0.clone();
++<reversi::Reversi as std::clone::Clone>::clone(p0);
++crate::<reversi::Reversi as std::clone::Clone>::clone(p0);
++<reversi::Reversi>::clone(p0);
+-----------------
+src/reversi.rs <reversi::Reversi as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::Reversi as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::Reversi as std::fmt::Debug>::fmt(p0, p1);
++<reversi::Reversi>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::Player as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.clone();
++<reversi::Player as std::clone::Clone>::clone(p0);
++crate::<reversi::Player as std::clone::Clone>::clone(p0);
++<reversi::Player>::clone(p0);
+-----------------
+src/reversi.rs <reversi::Player as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Player
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::Player as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::Player as std::fmt::Debug>::fmt(p0, p1);
++<reversi::Player>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::Player as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.assert_receiver_is_total_eq();
++<reversi::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<reversi::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<reversi::Player>::assert_receiver_is_total_eq(p0);
+-----------------
+src/reversi.rs <reversi::Player as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Player
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.eq(p1);
++<reversi::Player as std::cmp::PartialEq>::eq(p0, p1);
++crate::<reversi::Player as std::cmp::PartialEq>::eq(p0, p1);
++<reversi::Player>::eq(p0, p1);
+-----------------
+src/reversi.rs reversi::Player::other
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.other();
++reversi::Player::other(p0);
++crate::reversi::Player::other(p0);
++<reversi::Player>::other(p0);
+-----------------
+src/reversi.rs <reversi::GameState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::GameState
++p0.clone();
++<reversi::GameState as std::clone::Clone>::clone(p0);
++crate::<reversi::GameState as std::clone::Clone>::clone(p0);
++<reversi::GameState>::clone(p0);
+-----------------
+src/reversi.rs <reversi::GameState as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::GameState
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::GameState as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::GameState as std::fmt::Debug>::fmt(p0, p1);
++<reversi::GameState>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::GameState as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::GameState
++p0.assert_receiver_is_total_eq();
++<reversi::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<reversi::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<reversi::GameState>::assert_receiver_is_total_eq(p0);
+-----------------
+src/reversi.rs <reversi::GameState as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::GameState
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reversi::GameState
++p0.eq(p1);
++<reversi::GameState as std::cmp::PartialEq>::eq(p0, p1);
++crate::<reversi::GameState as std::cmp::PartialEq>::eq(p0, p1);
++<reversi::GameState>::eq(p0, p1);
+-----------------
+src/reversi.rs reversi::Reversi::new
+deps:{}
+candidates:{}
++reversi::Reversi::new();
++crate::reversi::Reversi::new();
++<reversi::Reversi>::new();
+-----------------
+src/reversi.rs reversi::Reversi::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.get(p1, p2);
++reversi::Reversi::get(p0, p1, p2);
++crate::reversi::Reversi::get(p0, p1, p2);
++<reversi::Reversi>::get(p0, p1, p2);
+-----------------
+src/reversi.rs reversi::Reversi::is_ended
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
++p0.is_ended();
++reversi::Reversi::is_ended(p0);
++crate::reversi::Reversi::is_ended(p0);
++<reversi::Reversi>::is_ended(p0);
+-----------------
+src/reversi.rs reversi::Reversi::winner
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
++p0.winner();
++reversi::Reversi::winner(p0);
++crate::reversi::Reversi::winner(p0);
++<reversi::Reversi>::winner(p0);
+-----------------
+src/reversi.rs reversi::Reversi::status
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
++p0.status();
++reversi::Reversi::status(p0);
++crate::reversi::Reversi::status(p0);
++<reversi::Reversi>::status(p0);
+-----------------
+src/reversi.rs reversi::Reversi::get_next_player
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
++p0.get_next_player();
++reversi::Reversi::get_next_player(p0);
++crate::reversi::Reversi::get_next_player(p0);
++<reversi::Reversi>::get_next_player(p0);
+-----------------
+src/reversi.rs reversi::Reversi::place
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = MaybeUninit::uninit().assume_init(); // reversi::Player
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++p0.place(p1, p2, p3);
++reversi::Reversi::place(p0, p1, p2, p3);
++crate::reversi::Reversi::place(p0, p1, p2, p3);
++<reversi::Reversi>::place(p0, p1, p2, p3);
+-----------------
+src/reversi.rs reversi::Reversi::check_position_validity
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.check_position_validity(p1, p2, p3);
++reversi::Reversi::check_position_validity(p0, p1, p2, p3);
++crate::reversi::Reversi::check_position_validity(p0, p1, p2, p3);
++<reversi::Reversi>::check_position_validity(p0, p1, p2, p3);
+-----------------
+src/reversi.rs reversi::Reversi::simple_check_position_validity
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.simple_check_position_validity(p1, p2, p3);
++reversi::Reversi::simple_check_position_validity(p0, p1, p2, p3);
++crate::reversi::Reversi::simple_check_position_validity(p0, p1, p2, p3);
++<reversi::Reversi>::simple_check_position_validity(p0, p1, p2, p3);
+-----------------
+src/reversi.rs reversi::Reversi::can_player_move
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.can_player_move(p1);
++reversi::Reversi::can_player_move(p0, p1);
++crate::reversi::Reversi::can_player_move(p0, p1);
++<reversi::Reversi>::can_player_move(p0, p1);
+-----------------
+src/reversi.rs reversi::Reversi::check_state
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reversi::Reversi
++p0.check_state();
++reversi::Reversi::check_state(p0);
++crate::reversi::Reversi::check_state(p0);
++<reversi::Reversi>::check_state(p0);
+-----------------
+src/reversi.rs reversi::Reversi::flip
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
+let mut p4 = 0usize; // None+usize
+let mut p5 = MaybeUninit::uninit().assume_init(); // reversi::Direction
+let mut p6 = MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.flip(p1, p2, p3, p4, p5, p6);
++reversi::Reversi::flip(p0, p1, p2, p3, p4, p5, p6);
++crate::reversi::Reversi::flip(p0, p1, p2, p3, p4, p5, p6);
++<reversi::Reversi>::flip(p0, p1, p2, p3, p4, p5, p6);
+-----------------
+src/reversi.rs reversi::Reversi::check_occupied_line_in_direction
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = MaybeUninit::uninit().assume_init(); // reversi::Direction
+let mut p4 = MaybeUninit::uninit().assume_init(); // reversi::Player
++p0.check_occupied_line_in_direction(p1, p2, p3, p4);
++reversi::Reversi::check_occupied_line_in_direction(p0, p1, p2, p3, p4);
++crate::reversi::Reversi::check_occupied_line_in_direction(p0, p1, p2, p3, p4);
++<reversi::Reversi>::check_occupied_line_in_direction(p0, p1, p2, p3, p4);
+-----------------
+src/reversi.rs reversi::Reversi::iter_positions_in_direction_from
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Reversi
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
+let mut p3 = MaybeUninit::uninit().assume_init(); // reversi::Direction
++p0.iter_positions_in_direction_from(p1, p2, p3);
++reversi::Reversi::iter_positions_in_direction_from(p0, p1, p2, p3);
++crate::reversi::Reversi::iter_positions_in_direction_from(p0, p1, p2, p3);
++<reversi::Reversi>::iter_positions_in_direction_from(p0, p1, p2, p3);
+-----------------
+src/reversi.rs <reversi::Direction as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Direction
++p0.clone();
++<reversi::Direction as std::clone::Clone>::clone(p0);
++crate::<reversi::Direction as std::clone::Clone>::clone(p0);
++<reversi::Direction>::clone(p0);
+-----------------
+src/reversi.rs <reversi::Direction as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Direction
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::Direction as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::Direction as std::fmt::Debug>::fmt(p0, p1);
++<reversi::Direction>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::Direction as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Direction
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reversi::Direction
++p0.eq(p1);
++<reversi::Direction as std::cmp::PartialEq>::eq(p0, p1);
++crate::<reversi::Direction as std::cmp::PartialEq>::eq(p0, p1);
++<reversi::Direction>::eq(p0, p1);
+-----------------
+src/reversi.rs reversi::Direction::as_offset
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::Direction
++p0.as_offset();
++reversi::Direction::as_offset(p0);
++crate::reversi::Direction::as_offset(p0);
++<reversi::Direction>::as_offset(p0);
+-----------------
+src/reversi.rs reversi::Direction::iter
+deps:{}
+candidates:{}
++reversi::Direction::iter();
++crate::reversi::Direction::iter();
++<reversi::Direction>::iter();
+-----------------
+src/reversi.rs <reversi::ReversiError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::ReversiError as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::ReversiError as std::fmt::Debug>::fmt(p0, p1);
++<reversi::ReversiError>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::ReversiError as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
++p0.assert_receiver_is_total_eq();
++<reversi::ReversiError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<reversi::ReversiError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<reversi::ReversiError>::assert_receiver_is_total_eq(p0);
+-----------------
+src/reversi.rs <reversi::ReversiError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
++p0.eq(p1);
++<reversi::ReversiError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<reversi::ReversiError as std::cmp::PartialEq>::eq(p0, p1);
++<reversi::ReversiError>::eq(p0, p1);
+-----------------
+src/reversi.rs <reversi::WrongPlayerSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::WrongPlayerSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++<reversi::WrongPlayerSnafu>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::WrongPlayerSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::WrongPlayerSnafu
++p0.clone();
++<reversi::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++crate::<reversi::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++<reversi::WrongPlayerSnafu>::clone(p0);
+-----------------
+src/reversi.rs reversi::WrongPlayerSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::WrongPlayerSnafu
++p0.build();
++reversi::WrongPlayerSnafu::build(p0);
++crate::reversi::WrongPlayerSnafu::build(p0);
++<reversi::WrongPlayerSnafu>::build(p0);
+-----------------
+src/reversi.rs reversi::WrongPlayerSnafu::fail
+deps:{"reversi::WrongPlayerSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"reversi::WrongPlayerSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::WrongPlayerSnafu
++p0.fail();
++reversi::WrongPlayerSnafu::fail(p0);
++crate::reversi::WrongPlayerSnafu::fail(p0);
++<reversi::WrongPlayerSnafu>::fail(p0);
+-----------------
+src/reversi.rs <reversi::WrongPlayerSnafu as snafu::IntoError<reversi::ReversiError>>::into_error
+deps:{"<reversi::WrongPlayerSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<reversi::WrongPlayerSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["connect_four::ConnectFourError","reversi::ReversiError","minesweeper::MinesweeperError","gomoku::GomokuError","tictactoe::TicTacToeError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::WrongPlayerSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <reversi::WrongPlayerSnafu as snafu::IntoError<reversi::ReversiError>>::Source
++p0.into_error(p1);
++<reversi::WrongPlayerSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++crate::<reversi::WrongPlayerSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++<reversi::WrongPlayerSnafu>::into_error(p0, p1);
+-----------------
+src/reversi.rs <reversi::OccupiedPositionSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::OccupiedPositionSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::OccupiedPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::OccupiedPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++<reversi::OccupiedPositionSnafu>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::OccupiedPositionSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::OccupiedPositionSnafu
++p0.clone();
++<reversi::OccupiedPositionSnafu as std::clone::Clone>::clone(p0);
++crate::<reversi::OccupiedPositionSnafu as std::clone::Clone>::clone(p0);
++<reversi::OccupiedPositionSnafu>::clone(p0);
+-----------------
+src/reversi.rs reversi::OccupiedPositionSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::OccupiedPositionSnafu
++p0.build();
++reversi::OccupiedPositionSnafu::build(p0);
++crate::reversi::OccupiedPositionSnafu::build(p0);
++<reversi::OccupiedPositionSnafu>::build(p0);
+-----------------
+src/reversi.rs reversi::OccupiedPositionSnafu::fail
+deps:{"reversi::OccupiedPositionSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"reversi::OccupiedPositionSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::OccupiedPositionSnafu
++p0.fail();
++reversi::OccupiedPositionSnafu::fail(p0);
++crate::reversi::OccupiedPositionSnafu::fail(p0);
++<reversi::OccupiedPositionSnafu>::fail(p0);
+-----------------
+src/reversi.rs <reversi::OccupiedPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error
+deps:{"<reversi::OccupiedPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["snafu::ErrorCompat","snafu::Error"]}}
+candidates:{"<reversi::OccupiedPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["minesweeper::MinesweeperError","tictactoe::TicTacToeError","reversi::ReversiError","connect_four::ConnectFourError","gomoku::GomokuError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::OccupiedPositionSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <reversi::OccupiedPositionSnafu as snafu::IntoError<reversi::ReversiError>>::Source
++p0.into_error(p1);
++<reversi::OccupiedPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++crate::<reversi::OccupiedPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++<reversi::OccupiedPositionSnafu>::into_error(p0, p1);
+-----------------
+src/reversi.rs <reversi::InvalidPositionSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::InvalidPositionSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::InvalidPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::InvalidPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++<reversi::InvalidPositionSnafu>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::InvalidPositionSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::InvalidPositionSnafu
++p0.clone();
++<reversi::InvalidPositionSnafu as std::clone::Clone>::clone(p0);
++crate::<reversi::InvalidPositionSnafu as std::clone::Clone>::clone(p0);
++<reversi::InvalidPositionSnafu>::clone(p0);
+-----------------
+src/reversi.rs reversi::InvalidPositionSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::InvalidPositionSnafu
++p0.build();
++reversi::InvalidPositionSnafu::build(p0);
++crate::reversi::InvalidPositionSnafu::build(p0);
++<reversi::InvalidPositionSnafu>::build(p0);
+-----------------
+src/reversi.rs reversi::InvalidPositionSnafu::fail
+deps:{"reversi::InvalidPositionSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"reversi::InvalidPositionSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::InvalidPositionSnafu
++p0.fail();
++reversi::InvalidPositionSnafu::fail(p0);
++crate::reversi::InvalidPositionSnafu::fail(p0);
++<reversi::InvalidPositionSnafu>::fail(p0);
+-----------------
+src/reversi.rs <reversi::InvalidPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error
+deps:{"<reversi::InvalidPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<reversi::InvalidPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["connect_four::ConnectFourError","tictactoe::TicTacToeError","gomoku::GomokuError","reversi::ReversiError","minesweeper::MinesweeperError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::InvalidPositionSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <reversi::InvalidPositionSnafu as snafu::IntoError<reversi::ReversiError>>::Source
++p0.into_error(p1);
++<reversi::InvalidPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++crate::<reversi::InvalidPositionSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++<reversi::InvalidPositionSnafu>::into_error(p0, p1);
+-----------------
+src/reversi.rs <reversi::GameEndedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::GameEndedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<reversi::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<reversi::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<reversi::GameEndedSnafu>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::GameEndedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::GameEndedSnafu
++p0.clone();
++<reversi::GameEndedSnafu as std::clone::Clone>::clone(p0);
++crate::<reversi::GameEndedSnafu as std::clone::Clone>::clone(p0);
++<reversi::GameEndedSnafu>::clone(p0);
+-----------------
+src/reversi.rs reversi::GameEndedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::GameEndedSnafu
++p0.build();
++reversi::GameEndedSnafu::build(p0);
++crate::reversi::GameEndedSnafu::build(p0);
++<reversi::GameEndedSnafu>::build(p0);
+-----------------
+src/reversi.rs reversi::GameEndedSnafu::fail
+deps:{"reversi::GameEndedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"reversi::GameEndedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::GameEndedSnafu
++p0.fail();
++reversi::GameEndedSnafu::fail(p0);
++crate::reversi::GameEndedSnafu::fail(p0);
++<reversi::GameEndedSnafu>::fail(p0);
+-----------------
+src/reversi.rs <reversi::GameEndedSnafu as snafu::IntoError<reversi::ReversiError>>::into_error
+deps:{"<reversi::GameEndedSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<reversi::GameEndedSnafu as snafu::IntoError<reversi::ReversiError>>::into_error":{"reversi::ReversiError":["reversi::ReversiError","gomoku::GomokuError","minesweeper::MinesweeperError","connect_four::ConnectFourError","tictactoe::TicTacToeError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // reversi::GameEndedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <reversi::GameEndedSnafu as snafu::IntoError<reversi::ReversiError>>::Source
++p0.into_error(p1);
++<reversi::GameEndedSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++crate::<reversi::GameEndedSnafu as snafu::IntoError<reversi::ReversiError>>::into_error(p0, p1);
++<reversi::GameEndedSnafu>::into_error(p0, p1);
+-----------------
+src/reversi.rs <reversi::ReversiError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<reversi::ReversiError as std::fmt::Display>::fmt(p0, p1);
++crate::<reversi::ReversiError as std::fmt::Display>::fmt(p0, p1);
++<reversi::ReversiError>::fmt(p0, p1);
+-----------------
+src/reversi.rs <reversi::ReversiError as snafu::Error>::description
+deps:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<reversi::ReversiError as snafu::Error>::description":{"reversi::ReversiError":["std::fmt::Display","std::fmt::Debug"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<reversi::ReversiError as snafu::Error>::description":{"reversi::ReversiError":["minesweeper::MinesweeperError","tictactoe::TicTacToeError","connect_four::ConnectFourError","<&T as std::fmt::Debug>","reversi::ReversiError","gomoku::GomokuError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
++p0.description();
++<reversi::ReversiError as snafu::Error>::description(p0);
++crate::<reversi::ReversiError as snafu::Error>::description(p0);
++<reversi::ReversiError>::description(p0);
+-----------------
+src/reversi.rs <reversi::ReversiError as snafu::Error>::cause
+deps:{"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<reversi::ReversiError as snafu::Error>::cause":{"reversi::ReversiError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<reversi::ReversiError as snafu::Error>::cause":{"reversi::ReversiError":["tictactoe::TicTacToeError","<&T as std::fmt::Display>","reversi::ReversiError","minesweeper::MinesweeperError","gomoku::GomokuError","<&mut T as std::fmt::Display>","connect_four::ConnectFourError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
++p0.cause();
++<reversi::ReversiError as snafu::Error>::cause(p0);
++crate::<reversi::ReversiError as snafu::Error>::cause(p0);
++<reversi::ReversiError>::cause(p0);
+-----------------
+src/reversi.rs <reversi::ReversiError as snafu::Error>::source
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<reversi::ReversiError as snafu::Error>::source":{"reversi::ReversiError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<reversi::ReversiError as snafu::Error>::source":{"reversi::ReversiError":["reversi::ReversiError","tictactoe::TicTacToeError","<&T as std::fmt::Display>","minesweeper::MinesweeperError","connect_four::ConnectFourError","gomoku::GomokuError","<&mut T as std::fmt::Debug>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
++p0.source();
++<reversi::ReversiError as snafu::Error>::source(p0);
++crate::<reversi::ReversiError as snafu::Error>::source(p0);
++<reversi::ReversiError>::source(p0);
+-----------------
+src/reversi.rs <reversi::ReversiError as snafu::ErrorCompat>::backtrace
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // reversi::ReversiError
++p0.backtrace();
++<reversi::ReversiError as snafu::ErrorCompat>::backtrace(p0);
++crate::<reversi::ReversiError as snafu::ErrorCompat>::backtrace(p0);
++<reversi::ReversiError>::backtrace(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToe as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
++p0.clone();
++<tictactoe::TicTacToe as std::clone::Clone>::clone(p0);
++crate::<tictactoe::TicTacToe as std::clone::Clone>::clone(p0);
++<tictactoe::TicTacToe>::clone(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToe as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::TicTacToe as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::TicTacToe as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::TicTacToe>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::Player as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::Player
++p0.clone();
++<tictactoe::Player as std::clone::Clone>::clone(p0);
++crate::<tictactoe::Player as std::clone::Clone>::clone(p0);
++<tictactoe::Player>::clone(p0);
+-----------------
+src/tictactoe.rs <tictactoe::Player as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::Player
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::Player as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::Player as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::Player>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::Player as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::Player
++p0.assert_receiver_is_total_eq();
++<tictactoe::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<tictactoe::Player as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<tictactoe::Player>::assert_receiver_is_total_eq(p0);
+-----------------
+src/tictactoe.rs <tictactoe::Player as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::Player
+let mut p1 = & MaybeUninit::uninit().assume_init(); // tictactoe::Player
++p0.eq(p1);
++<tictactoe::Player as std::cmp::PartialEq>::eq(p0, p1);
++crate::<tictactoe::Player as std::cmp::PartialEq>::eq(p0, p1);
++<tictactoe::Player>::eq(p0, p1);
+-----------------
+src/tictactoe.rs tictactoe::Player::other
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::Player
++p0.other();
++tictactoe::Player::other(p0);
++crate::tictactoe::Player::other(p0);
++<tictactoe::Player>::other(p0);
+-----------------
+src/tictactoe.rs <tictactoe::GameState as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameState
++p0.clone();
++<tictactoe::GameState as std::clone::Clone>::clone(p0);
++crate::<tictactoe::GameState as std::clone::Clone>::clone(p0);
++<tictactoe::GameState>::clone(p0);
+-----------------
+src/tictactoe.rs <tictactoe::GameState as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameState
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::GameState as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::GameState as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::GameState>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::GameState as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameState
++p0.assert_receiver_is_total_eq();
++<tictactoe::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<tictactoe::GameState as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<tictactoe::GameState>::assert_receiver_is_total_eq(p0);
+-----------------
+src/tictactoe.rs <tictactoe::GameState as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameState
+let mut p1 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameState
++p0.eq(p1);
++<tictactoe::GameState as std::cmp::PartialEq>::eq(p0, p1);
++crate::<tictactoe::GameState as std::cmp::PartialEq>::eq(p0, p1);
++<tictactoe::GameState>::eq(p0, p1);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::new
+deps:{}
+candidates:{}
++tictactoe::TicTacToe::new();
++crate::tictactoe::TicTacToe::new();
++<tictactoe::TicTacToe>::new();
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::get
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
+let mut p1 = 0usize; // None+usize
+let mut p2 = 0usize; // None+usize
++p0.get(p1, p2);
++tictactoe::TicTacToe::get(p0, p1, p2);
++crate::tictactoe::TicTacToe::get(p0, p1, p2);
++<tictactoe::TicTacToe>::get(p0, p1, p2);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::is_ended
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
++p0.is_ended();
++tictactoe::TicTacToe::is_ended(p0);
++crate::tictactoe::TicTacToe::is_ended(p0);
++<tictactoe::TicTacToe>::is_ended(p0);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::winner
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
++p0.winner();
++tictactoe::TicTacToe::winner(p0);
++crate::tictactoe::TicTacToe::winner(p0);
++<tictactoe::TicTacToe>::winner(p0);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::status
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
++p0.status();
++tictactoe::TicTacToe::status(p0);
++crate::tictactoe::TicTacToe::status(p0);
++<tictactoe::TicTacToe>::status(p0);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::get_next_player
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
++p0.get_next_player();
++tictactoe::TicTacToe::get_next_player(p0);
++crate::tictactoe::TicTacToe::get_next_player(p0);
++<tictactoe::TicTacToe>::get_next_player(p0);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::place
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
+let mut p1 = MaybeUninit::uninit().assume_init(); // tictactoe::Player
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++p0.place(p1, p2, p3);
++tictactoe::TicTacToe::place(p0, p1, p2, p3);
++crate::tictactoe::TicTacToe::place(p0, p1, p2, p3);
++<tictactoe::TicTacToe>::place(p0, p1, p2, p3);
+-----------------
+src/tictactoe.rs tictactoe::TicTacToe::check_state
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToe
++p0.check_state();
++tictactoe::TicTacToe::check_state(p0);
++crate::tictactoe::TicTacToe::check_state(p0);
++<tictactoe::TicTacToe>::check_state(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::TicTacToeError as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::TicTacToeError as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::TicTacToeError>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
++p0.assert_receiver_is_total_eq();
++<tictactoe::TicTacToeError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<tictactoe::TicTacToeError as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<tictactoe::TicTacToeError>::assert_receiver_is_total_eq(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
+let mut p1 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
++p0.eq(p1);
++<tictactoe::TicTacToeError as std::cmp::PartialEq>::eq(p0, p1);
++crate::<tictactoe::TicTacToeError as std::cmp::PartialEq>::eq(p0, p1);
++<tictactoe::TicTacToeError>::eq(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::WrongPlayerSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::WrongPlayerSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::WrongPlayerSnafu as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::WrongPlayerSnafu>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::WrongPlayerSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::WrongPlayerSnafu
++p0.clone();
++<tictactoe::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++crate::<tictactoe::WrongPlayerSnafu as std::clone::Clone>::clone(p0);
++<tictactoe::WrongPlayerSnafu>::clone(p0);
+-----------------
+src/tictactoe.rs tictactoe::WrongPlayerSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::WrongPlayerSnafu
++p0.build();
++tictactoe::WrongPlayerSnafu::build(p0);
++crate::tictactoe::WrongPlayerSnafu::build(p0);
++<tictactoe::WrongPlayerSnafu>::build(p0);
+-----------------
+src/tictactoe.rs tictactoe::WrongPlayerSnafu::fail
+deps:{"tictactoe::WrongPlayerSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"tictactoe::WrongPlayerSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::WrongPlayerSnafu
++p0.fail();
++tictactoe::WrongPlayerSnafu::fail(p0);
++crate::tictactoe::WrongPlayerSnafu::fail(p0);
++<tictactoe::WrongPlayerSnafu>::fail(p0);
+-----------------
+src/tictactoe.rs <tictactoe::WrongPlayerSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error
+deps:{"<tictactoe::WrongPlayerSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error":{"tictactoe::TicTacToeError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<tictactoe::WrongPlayerSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error":{"tictactoe::TicTacToeError":["minesweeper::MinesweeperError","connect_four::ConnectFourError","tictactoe::TicTacToeError","gomoku::GomokuError","reversi::ReversiError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::WrongPlayerSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <tictactoe::WrongPlayerSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::Source
++p0.into_error(p1);
++<tictactoe::WrongPlayerSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error(p0, p1);
++crate::<tictactoe::WrongPlayerSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error(p0, p1);
++<tictactoe::WrongPlayerSnafu>::into_error(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::OccupiedPositionSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::OccupiedPositionSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::OccupiedPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::OccupiedPositionSnafu as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::OccupiedPositionSnafu>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::OccupiedPositionSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::OccupiedPositionSnafu
++p0.clone();
++<tictactoe::OccupiedPositionSnafu as std::clone::Clone>::clone(p0);
++crate::<tictactoe::OccupiedPositionSnafu as std::clone::Clone>::clone(p0);
++<tictactoe::OccupiedPositionSnafu>::clone(p0);
+-----------------
+src/tictactoe.rs tictactoe::OccupiedPositionSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::OccupiedPositionSnafu
++p0.build();
++tictactoe::OccupiedPositionSnafu::build(p0);
++crate::tictactoe::OccupiedPositionSnafu::build(p0);
++<tictactoe::OccupiedPositionSnafu>::build(p0);
+-----------------
+src/tictactoe.rs tictactoe::OccupiedPositionSnafu::fail
+deps:{"tictactoe::OccupiedPositionSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"tictactoe::OccupiedPositionSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::OccupiedPositionSnafu
++p0.fail();
++tictactoe::OccupiedPositionSnafu::fail(p0);
++crate::tictactoe::OccupiedPositionSnafu::fail(p0);
++<tictactoe::OccupiedPositionSnafu>::fail(p0);
+-----------------
+src/tictactoe.rs <tictactoe::OccupiedPositionSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error
+deps:{"<tictactoe::OccupiedPositionSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error":{"tictactoe::TicTacToeError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<tictactoe::OccupiedPositionSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error":{"tictactoe::TicTacToeError":["connect_four::ConnectFourError","gomoku::GomokuError","tictactoe::TicTacToeError","reversi::ReversiError","minesweeper::MinesweeperError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::OccupiedPositionSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <tictactoe::OccupiedPositionSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::Source
++p0.into_error(p1);
++<tictactoe::OccupiedPositionSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error(p0, p1);
++crate::<tictactoe::OccupiedPositionSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error(p0, p1);
++<tictactoe::OccupiedPositionSnafu>::into_error(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::GameEndedSnafu as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameEndedSnafu
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<tictactoe::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++crate::<tictactoe::GameEndedSnafu as std::fmt::Debug>::fmt(p0, p1);
++<tictactoe::GameEndedSnafu>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::GameEndedSnafu as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::GameEndedSnafu
++p0.clone();
++<tictactoe::GameEndedSnafu as std::clone::Clone>::clone(p0);
++crate::<tictactoe::GameEndedSnafu as std::clone::Clone>::clone(p0);
++<tictactoe::GameEndedSnafu>::clone(p0);
+-----------------
+src/tictactoe.rs tictactoe::GameEndedSnafu::build
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::GameEndedSnafu
++p0.build();
++tictactoe::GameEndedSnafu::build(p0);
++crate::tictactoe::GameEndedSnafu::build(p0);
++<tictactoe::GameEndedSnafu>::build(p0);
+-----------------
+src/tictactoe.rs tictactoe::GameEndedSnafu::fail
+deps:{"tictactoe::GameEndedSnafu::fail":{"__T":["std::marker::Sized"]}}
+candidates:{"tictactoe::GameEndedSnafu::fail":{"__T":["RUG_ANY"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::GameEndedSnafu
++p0.fail();
++tictactoe::GameEndedSnafu::fail(p0);
++crate::tictactoe::GameEndedSnafu::fail(p0);
++<tictactoe::GameEndedSnafu>::fail(p0);
+-----------------
+src/tictactoe.rs <tictactoe::GameEndedSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error
+deps:{"<tictactoe::GameEndedSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error":{"tictactoe::TicTacToeError":["snafu::Error","snafu::ErrorCompat"]}}
+candidates:{"<tictactoe::GameEndedSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error":{"tictactoe::TicTacToeError":["minesweeper::MinesweeperError","gomoku::GomokuError","tictactoe::TicTacToeError","reversi::ReversiError","connect_four::ConnectFourError"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // tictactoe::GameEndedSnafu
+let mut p1 = MaybeUninit::uninit().assume_init(); // <tictactoe::GameEndedSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::Source
++p0.into_error(p1);
++<tictactoe::GameEndedSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error(p0, p1);
++crate::<tictactoe::GameEndedSnafu as snafu::IntoError<tictactoe::TicTacToeError>>::into_error(p0, p1);
++<tictactoe::GameEndedSnafu>::into_error(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<tictactoe::TicTacToeError as std::fmt::Display>::fmt(p0, p1);
++crate::<tictactoe::TicTacToeError as std::fmt::Display>::fmt(p0, p1);
++<tictactoe::TicTacToeError>::fmt(p0, p1);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as snafu::Error>::description
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<tictactoe::TicTacToeError as snafu::Error>::description":{"tictactoe::TicTacToeError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<&mut T as std::fmt::Display>":{},"<tictactoe::TicTacToeError as snafu::Error>::description":{"tictactoe::TicTacToeError":["connect_four::ConnectFourError","<&mut T as std::fmt::Display>","tictactoe::TicTacToeError","minesweeper::MinesweeperError","reversi::ReversiError","<&mut T as std::fmt::Debug>","gomoku::GomokuError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
++p0.description();
++<tictactoe::TicTacToeError as snafu::Error>::description(p0);
++crate::<tictactoe::TicTacToeError as snafu::Error>::description(p0);
++<tictactoe::TicTacToeError>::description(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as snafu::Error>::cause
+deps:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<tictactoe::TicTacToeError as snafu::Error>::cause":{"tictactoe::TicTacToeError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&mut T as std::fmt::Debug>":{},"<tictactoe::TicTacToeError as snafu::Error>::cause":{"tictactoe::TicTacToeError":["gomoku::GomokuError","<&T as std::fmt::Debug>","connect_four::ConnectFourError","minesweeper::MinesweeperError","reversi::ReversiError","tictactoe::TicTacToeError"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
++p0.cause();
++<tictactoe::TicTacToeError as snafu::Error>::cause(p0);
++crate::<tictactoe::TicTacToeError as snafu::Error>::cause(p0);
++<tictactoe::TicTacToeError>::cause(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as snafu::Error>::source
+deps:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<tictactoe::TicTacToeError as snafu::Error>::source":{"tictactoe::TicTacToeError":["std::fmt::Debug","std::fmt::Display"]}}
+candidates:{"<&T as std::fmt::Debug>":{},"<&T as std::fmt::Display>":{},"<&mut T as std::fmt::Debug>":{},"<tictactoe::TicTacToeError as snafu::Error>::source":{"tictactoe::TicTacToeError":["tictactoe::TicTacToeError","connect_four::ConnectFourError","<&T as std::fmt::Display>","reversi::ReversiError","gomoku::GomokuError","minesweeper::MinesweeperError","<&T as std::fmt::Debug>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
++p0.source();
++<tictactoe::TicTacToeError as snafu::Error>::source(p0);
++crate::<tictactoe::TicTacToeError as snafu::Error>::source(p0);
++<tictactoe::TicTacToeError>::source(p0);
+-----------------
+src/tictactoe.rs <tictactoe::TicTacToeError as snafu::ErrorCompat>::backtrace
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // tictactoe::TicTacToeError
++p0.backtrace();
++<tictactoe::TicTacToeError as snafu::ErrorCompat>::backtrace(p0);
++crate::<tictactoe::TicTacToeError as snafu::ErrorCompat>::backtrace(p0);
++<tictactoe::TicTacToeError>::backtrace(p0);

@@ -1,0 +1,567 @@
+-----------------
+percent_encoding/src/lib.rs _static_assert
+deps:{}
+candidates:{}
++_static_assert();
++crate::_static_assert();
++crate::_static_assert();
+-----------------
+percent_encoding/src/lib.rs percent_encode_byte
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++percent_encode_byte(p0);
++crate::percent_encode_byte(p0);
++crate::percent_encode_byte(p0);
+-----------------
+percent_encoding/src/lib.rs percent_encode
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // AsciiSet
++percent_encode(p0, p1);
++crate::percent_encode(p0, p1);
++crate::percent_encode(p0, p1);
+-----------------
+percent_encoding/src/lib.rs utf8_percent_encode
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = & MaybeUninit::uninit().assume_init(); // AsciiSet
++utf8_percent_encode(&p0, p1);
++crate::utf8_percent_encode(&p0, p1);
++crate::utf8_percent_encode(&p0, p1);
+-----------------
+percent_encoding/src/lib.rs percent_decode_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++percent_decode_str(&p0);
++crate::percent_decode_str(&p0);
++crate::percent_decode_str(&p0);
+-----------------
+percent_encoding/src/lib.rs percent_decode
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++percent_decode(p0);
++crate::percent_decode(p0);
++crate::percent_decode(p0);
+-----------------
+percent_encoding/src/lib.rs after_percent_sign
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::slice::Iter<'_, u8>
++after_percent_sign(p0);
++crate::after_percent_sign(p0);
++crate::after_percent_sign(p0);
+-----------------
+percent_encoding/src/lib.rs decode_utf8_lossy
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::borrow::Cow<'_, [u8]>
++decode_utf8_lossy(p0);
++crate::decode_utf8_lossy(p0);
++crate::decode_utf8_lossy(p0);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::contains
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.contains(p1);
++AsciiSet::contains(p0, p1);
++crate::AsciiSet::contains(p0, p1);
++<AsciiSet>::contains(p0, p1);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::should_percent_encode
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.should_percent_encode(p1);
++AsciiSet::should_percent_encode(p0, p1);
++crate::AsciiSet::should_percent_encode(p0, p1);
++<AsciiSet>::should_percent_encode(p0, p1);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::add
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.add(p1);
++AsciiSet::add(p0, p1);
++crate::AsciiSet::add(p0, p1);
++<AsciiSet>::add(p0, p1);
+-----------------
+percent_encoding/src/lib.rs AsciiSet::remove
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // AsciiSet
+let mut p1 = 0u8; // None+u8
++p0.remove(p1);
++AsciiSet::remove(p0, p1);
++crate::AsciiSet::remove(p0, p1);
++<AsciiSet>::remove(p0, p1);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++p0.clone();
++<PercentEncode<'a> as std::clone::Clone>::clone(p0);
++crate::<PercentEncode<'a> as std::clone::Clone>::clone(p0);
++<PercentEncode<'a>>::clone(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++p0.next();
++<PercentEncode<'a> as std::iter::Iterator>::next(p0);
++crate::<PercentEncode<'a> as std::iter::Iterator>::next(p0);
++<PercentEncode<'a>>::next(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::iter::Iterator>::size_hint
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++p0.size_hint();
++<PercentEncode<'a> as std::iter::Iterator>::size_hint(p0);
++crate::<PercentEncode<'a> as std::iter::Iterator>::size_hint(p0);
++<PercentEncode<'a>>::size_hint(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentEncode<'a> as std::fmt::Display>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<PercentEncode<'a> as std::fmt::Display>::fmt(p0, p1);
++crate::<PercentEncode<'a> as std::fmt::Display>::fmt(p0, p1);
++<PercentEncode<'a>>::fmt(p0, p1);
+-----------------
+percent_encoding/src/lib.rs <impl std::convert::From<PercentEncode<'a>> for std::borrow::Cow<'a, str>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentEncode<'a>
++<impl std::convert::From<PercentEncode<'a>> for std::borrow::Cow<'a, str>>::from(p0);
++crate::<impl std::convert::From<PercentEncode<'a>> for std::borrow::Cow<'a, str>>::from(p0);
++<std::borrow::Cow<'a, str>>::from(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.clone();
++<PercentDecode<'a> as std::clone::Clone>::clone(p0);
++crate::<PercentDecode<'a> as std::clone::Clone>::clone(p0);
++<PercentDecode<'a>>::clone(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<PercentDecode<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<PercentDecode<'a> as std::fmt::Debug>::fmt(p0, p1);
++<PercentDecode<'a>>::fmt(p0, p1);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.next();
++<PercentDecode<'a> as std::iter::Iterator>::next(p0);
++crate::<PercentDecode<'a> as std::iter::Iterator>::next(p0);
++<PercentDecode<'a>>::next(p0);
+-----------------
+percent_encoding/src/lib.rs <PercentDecode<'a> as std::iter::Iterator>::size_hint
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.size_hint();
++<PercentDecode<'a> as std::iter::Iterator>::size_hint(p0);
++crate::<PercentDecode<'a> as std::iter::Iterator>::size_hint(p0);
++<PercentDecode<'a>>::size_hint(p0);
+-----------------
+percent_encoding/src/lib.rs <impl std::convert::From<PercentDecode<'a>> for std::borrow::Cow<'a, [u8]>>::from
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++<impl std::convert::From<PercentDecode<'a>> for std::borrow::Cow<'a, [u8]>>::from(p0);
++crate::<impl std::convert::From<PercentDecode<'a>> for std::borrow::Cow<'a, [u8]>>::from(p0);
++<std::borrow::Cow<'a, [u8]>>::from(p0);
+-----------------
+percent_encoding/src/lib.rs PercentDecode::<'a>::if_any
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.if_any();
++PercentDecode::<'a>::if_any(p0);
++crate::PercentDecode::<'a>::if_any(p0);
++<PercentDecode<'a>>::if_any(p0);
+-----------------
+percent_encoding/src/lib.rs PercentDecode::<'a>::decode_utf8
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.decode_utf8();
++PercentDecode::<'a>::decode_utf8(p0);
++crate::PercentDecode::<'a>::decode_utf8(p0);
++<PercentDecode<'a>>::decode_utf8(p0);
+-----------------
+percent_encoding/src/lib.rs PercentDecode::<'a>::decode_utf8_lossy
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // PercentDecode<'a>
++p0.decode_utf8_lossy();
++PercentDecode::<'a>::decode_utf8_lossy(p0);
++crate::PercentDecode::<'a>::decode_utf8_lossy(p0);
++<PercentDecode<'a>>::decode_utf8_lossy(p0);
+-----------------
+form_urlencoded/src/lib.rs parse
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++parse(p0);
++crate::parse(p0);
++crate::parse(p0);
+-----------------
+form_urlencoded/src/lib.rs decode
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++decode(p0);
++crate::decode(p0);
++crate::decode(p0);
+-----------------
+form_urlencoded/src/lib.rs replace_plus
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++replace_plus(p0);
++crate::replace_plus(p0);
++crate::replace_plus(p0);
+-----------------
+form_urlencoded/src/lib.rs byte_serialize
+deps:{}
+candidates:{}
+let mut p0 = [0u8,0,0].as_mut_slice(); // None+&[u8]
++byte_serialize(p0);
++crate::byte_serialize(p0);
++crate::byte_serialize(p0);
+-----------------
+form_urlencoded/src/lib.rs byte_serialized_unchanged
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
++byte_serialized_unchanged(p0);
++crate::byte_serialized_unchanged(p0);
++crate::byte_serialized_unchanged(p0);
+-----------------
+form_urlencoded/src/lib.rs append_separator_if_needed
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+std::string::String
+let mut p1 = 0usize; // None+usize
++append_separator_if_needed(p0, p1);
++crate::append_separator_if_needed(p0, p1);
++crate::append_separator_if_needed(p0, p1);
+-----------------
+form_urlencoded/src/lib.rs string
+deps:{"string":{"T":["std::marker::Sized","Target"]}}
+candidates:{"string":{"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::option::Option<T>
++string(p0);
++crate::string(p0);
++crate::string(p0);
+-----------------
+form_urlencoded/src/lib.rs append_pair
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+std::string::String
+let mut p1 = 0usize; // None+usize
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&dyn for<'a> std::ops::Fn(&'a str) -> std::borrow::Cow<'_, [u8]>>
+let mut p3 = "sample"; // None+&str
+let mut p4 = "sample"; // None+&str
++append_pair(p0, p1, p2, &p3, &p4);
++crate::append_pair(p0, p1, p2, &p3, &p4);
++crate::append_pair(p0, p1, p2, &p3, &p4);
+-----------------
+form_urlencoded/src/lib.rs append_key_only
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+std::string::String
+let mut p1 = 0usize; // None+usize
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&dyn for<'a> std::ops::Fn(&'a str) -> std::borrow::Cow<'_, [u8]>>
+let mut p3 = "sample"; // None+&str
++append_key_only(p0, p1, p2, &p3);
++crate::append_key_only(p0, p1, p2, &p3);
++crate::append_key_only(p0, p1, p2, &p3);
+-----------------
+form_urlencoded/src/lib.rs append_encoded
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = &mut std::string::String::new(); // None+std::string::String
+let mut p2 = MaybeUninit::uninit().assume_init(); // std::option::Option<&dyn for<'a> std::ops::Fn(&'a str) -> std::borrow::Cow<'_, [u8]>>
++append_encoded(&p0, p1, p2);
++crate::append_encoded(&p0, p1, p2);
++crate::append_encoded(&p0, p1, p2);
+-----------------
+form_urlencoded/src/lib.rs encode
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::option::Option<&dyn for<'a> std::ops::Fn(&'a str) -> std::borrow::Cow<'_, [u8]>>
+let mut p1 = "sample"; // None+&str
++encode(p0, &p1);
++crate::encode(p0, &p1);
++crate::encode(p0, &p1);
+-----------------
+form_urlencoded/src/lib.rs decode_utf8_lossy
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::borrow::Cow<'_, [u8]>
++decode_utf8_lossy(p0);
++crate::decode_utf8_lossy(p0);
++crate::decode_utf8_lossy(p0);
+-----------------
+form_urlencoded/src/lib.rs Target::as_mut_string
+deps:{"Target::as_mut_string":{"Self":["Target"]}}
+candidates:{"Target::as_mut_string":{"Self":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Self
++p0.as_mut_string();
++Target::as_mut_string(p0);
++crate::Target::as_mut_string(p0);
++crate::Target::as_mut_string(p0);
+-----------------
+form_urlencoded/src/lib.rs Target::finish
+deps:{"Target::finish":{"Self":["Target"]}}
+candidates:{"Target::finish":{"Self":["std::string::String"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.finish();
++Target::finish(p0);
++crate::Target::finish(p0);
++crate::Target::finish(p0);
+-----------------
+form_urlencoded/src/lib.rs <Parse<'a> as std::clone::Clone>::clone
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Parse<'a>
++p0.clone();
++<Parse<'a> as std::clone::Clone>::clone(p0);
++crate::<Parse<'a> as std::clone::Clone>::clone(p0);
++<Parse<'a>>::clone(p0);
+-----------------
+form_urlencoded/src/lib.rs <Parse<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Parse<'a>
++p0.next();
++<Parse<'a> as std::iter::Iterator>::next(p0);
++crate::<Parse<'a> as std::iter::Iterator>::next(p0);
++<Parse<'a>>::next(p0);
+-----------------
+form_urlencoded/src/lib.rs Parse::<'a>::into_owned
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Parse<'a>
++p0.into_owned();
++Parse::<'a>::into_owned(p0);
++crate::Parse::<'a>::into_owned(p0);
++<Parse<'a>>::into_owned(p0);
+-----------------
+form_urlencoded/src/lib.rs <ParseIntoOwned<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // ParseIntoOwned<'a>
++p0.next();
++<ParseIntoOwned<'a> as std::iter::Iterator>::next(p0);
++crate::<ParseIntoOwned<'a> as std::iter::Iterator>::next(p0);
++<ParseIntoOwned<'a>>::next(p0);
+-----------------
+form_urlencoded/src/lib.rs <ByteSerialize<'a> as std::fmt::Debug>::fmt
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // ByteSerialize<'a>
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<ByteSerialize<'a> as std::fmt::Debug>::fmt(p0, p1);
++crate::<ByteSerialize<'a> as std::fmt::Debug>::fmt(p0, p1);
++<ByteSerialize<'a>>::fmt(p0, p1);
+-----------------
+form_urlencoded/src/lib.rs <ByteSerialize<'a> as std::iter::Iterator>::next
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // ByteSerialize<'a>
++p0.next();
++<ByteSerialize<'a> as std::iter::Iterator>::next(p0);
++crate::<ByteSerialize<'a> as std::iter::Iterator>::next(p0);
++<ByteSerialize<'a>>::next(p0);
+-----------------
+form_urlencoded/src/lib.rs <ByteSerialize<'a> as std::iter::Iterator>::size_hint
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // ByteSerialize<'a>
++p0.size_hint();
++<ByteSerialize<'a> as std::iter::Iterator>::size_hint(p0);
++crate::<ByteSerialize<'a> as std::iter::Iterator>::size_hint(p0);
++<ByteSerialize<'a>>::size_hint(p0);
+-----------------
+form_urlencoded/src/lib.rs <std::string::String as Target>::as_mut_string
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+std::string::String
++p0.as_mut_string();
++<std::string::String as Target>::as_mut_string(p0);
++crate::<std::string::String as Target>::as_mut_string(p0);
++<std::string::String>::as_mut_string(p0);
+-----------------
+form_urlencoded/src/lib.rs <std::string::String as Target>::finish
+deps:{}
+candidates:{}
+let mut p0 = std::string::String::new(); // None+std::string::String
++p0.finish();
++<std::string::String as Target>::finish(p0);
++crate::<std::string::String as Target>::finish(p0);
++<std::string::String>::finish(p0);
+-----------------
+form_urlencoded/src/lib.rs <&'a mut std::string::String as Target>::as_mut_string
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+&'a mut std::string::String
++p0.as_mut_string();
++<&'a mut std::string::String as Target>::as_mut_string(p0);
++crate::<&'a mut std::string::String as Target>::as_mut_string(p0);
++<&'a mut std::string::String>::as_mut_string(p0);
+-----------------
+form_urlencoded/src/lib.rs <&'a mut std::string::String as Target>::finish
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut std::string::String::new(); // None+std::string::String
++p0.finish();
++<&'a mut std::string::String as Target>::finish(p0);
++crate::<&'a mut std::string::String as Target>::finish(p0);
++<&'a mut std::string::String>::finish(p0);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::new
+'a
+deps:{"Serializer::<'a, T>::new":{"T":["Target","std::marker::Sized"]}}
+candidates:{"Serializer::<'a, T>::new":{"T":["std::string::String"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // T
++Serializer::<'a, T>::new(p0);
++crate::Serializer::<'a, T>::new(p0);
++<Serializer<'a, T>>::new(p0);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::for_suffix
+'a
+deps:{"Serializer::<'a, T>::for_suffix":{"T":["Target","std::marker::Sized"]}}
+candidates:{"Serializer::<'a, T>::for_suffix":{"T":["std::string::String"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // T
+let mut p1 = 0usize; // None+usize
++Serializer::<'a, T>::for_suffix(p0, p1);
++crate::Serializer::<'a, T>::for_suffix(p0, p1);
++<Serializer<'a, T>>::for_suffix(p0, p1);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::clear
+'a
+deps:{"Serializer::<'a, T>::clear":{"T":["std::marker::Sized","Target"]}}
+candidates:{"Serializer::<'a, T>::clear":{"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
++p0.clear();
++Serializer::<'a, T>::clear(p0);
++crate::Serializer::<'a, T>::clear(p0);
++<Serializer<'a, T>>::clear(p0);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::encoding_override
+'a
+deps:{"Serializer::<'a, T>::encoding_override":{"T":["std::marker::Sized","Target"]}}
+candidates:{"Serializer::<'a, T>::encoding_override":{"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // std::option::Option<&'a (dyn for<'a> std::ops::Fn(&'a str) -> std::borrow::Cow<'_, [u8]> + 'a)>
++p0.encoding_override(p1);
++Serializer::<'a, T>::encoding_override(p0, p1);
++crate::Serializer::<'a, T>::encoding_override(p0, p1);
++<Serializer<'a, T>>::encoding_override(p0, p1);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::append_pair
+'a
+deps:{"Serializer::<'a, T>::append_pair":{"T":["std::marker::Sized","Target"]}}
+candidates:{"Serializer::<'a, T>::append_pair":{"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
+let mut p1 = "sample"; // None+&str
+let mut p2 = "sample"; // None+&str
++p0.append_pair(&p1, &p2);
++Serializer::<'a, T>::append_pair(p0, &p1, &p2);
++crate::Serializer::<'a, T>::append_pair(p0, &p1, &p2);
++<Serializer<'a, T>>::append_pair(p0, &p1, &p2);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::append_key_only
+'a
+deps:{"Serializer::<'a, T>::append_key_only":{"T":["std::marker::Sized","Target"]}}
+candidates:{"Serializer::<'a, T>::append_key_only":{"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
+let mut p1 = "sample"; // None+&str
++p0.append_key_only(&p1);
++Serializer::<'a, T>::append_key_only(p0, &p1);
++crate::Serializer::<'a, T>::append_key_only(p0, &p1);
++<Serializer<'a, T>>::append_key_only(p0, &p1);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::extend_pairs
+'a
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&T as std::borrow::Borrow<T>>":{},"<&T as std::convert::AsRef<U>>":{},"<&mut I as std::iter::Iterator>":{},"<&mut T as std::borrow::Borrow<T>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<T as std::borrow::Borrow<T>>":{},"Serializer::<'a, T>::extend_pairs":{"<I as std::iter::IntoIterator>::Item":["std::borrow::Borrow"],"I":["std::iter::IntoIterator","std::marker::Sized"],"K":["std::convert::AsRef","std::marker::Sized"],"T":["std::marker::Sized","Target"],"V":["std::convert::AsRef","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&T as std::borrow::Borrow<T>>":{},"<&T as std::convert::AsRef<U>>":{},"<&mut I as std::iter::Iterator>":{},"<&mut T as std::borrow::Borrow<T>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<I as std::iter::IntoIterator>":{"I":["ByteSerialize","ParseIntoOwned","<&mut I as std::iter::Iterator>","Parse"]},"<T as std::borrow::Borrow<T>>":{},"Serializer::<'a, T>::extend_pairs":{"<I as std::iter::IntoIterator>::Item":["std::path::PathBuf","std::rc::Rc<T>","<&mut T as std::borrow::Borrow<T>>","std::sync::Arc<T>","std::ffi::CString","std::ffi::OsString","std::vec::Vec<T, A>","std::boxed::Box<T, A>","std::borrow::Cow<'a, B>","std::string::String"],"I":["std::sync::mpsc::Receiver<T>","std::collections::VecDeque<T, A>","<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>","std::vec::Vec<T, A>","&'a std::os::unix::net::UnixListener","std::collections::HashMap<K, V, S>","&'a std::path::Path","std::option::Option<T>","std::collections::BTreeMap<K, V, A>","std::collections::BTreeSet<T, A>","<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>","std::collections::HashSet<T, S>","&'a std::path::PathBuf","std::collections::BinaryHeap<T>","std::result::Result<T, E>","std::collections::LinkedList<T>"],"K":["std::slice::IterMut<'_, T>","<&T as std::convert::AsRef<U>>","std::ffi::CString","std::ffi::CStr","<&mut T as std::convert::AsRef<U>>","core::num::dec2flt::common::AsciiStr<'a>","std::vec::IntoIter<T, A>","std::vec::Drain<'a, T, A>","std::sync::Arc<T>","std::borrow::Cow<'_, T>","std::rc::Rc<T>","std::borrow::Cow<'_, std::ffi::OsStr>","std::boxed::Box<T, A>","std::slice::Iter<'_, T>"],"T":["std::string::String"],"V":["std::slice::IterMut<'_, T>","std::vec::Drain<'a, T, A>","std::borrow::Cow<'_, std::ffi::OsStr>","std::boxed::Box<T, A>","std::ffi::CStr","std::slice::Iter<'_, T>","std::borrow::Cow<'_, T>","core::num::dec2flt::common::AsciiStr<'a>","std::vec::IntoIter<T, A>","std::sync::Arc<T>","std::rc::Rc<T>","<&T as std::convert::AsRef<U>>","std::ffi::CString"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend_pairs(p1);
++Serializer::<'a, T>::extend_pairs(p0, p1);
++crate::Serializer::<'a, T>::extend_pairs(p0, p1);
++<Serializer<'a, T>>::extend_pairs(p0, p1);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::extend_keys_only
+'a
+deps:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&T as std::borrow::Borrow<T>>":{},"<&T as std::convert::AsRef<U>>":{},"<&mut I as std::iter::Iterator>":{},"<&mut T as std::borrow::Borrow<T>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<I as std::iter::IntoIterator>":{"I":["std::marker::Sized","std::iter::Iterator"]},"<T as std::borrow::Borrow<T>>":{},"Serializer::<'a, T>::extend_keys_only":{"<I as std::iter::IntoIterator>::Item":["std::borrow::Borrow"],"I":["std::marker::Sized","std::iter::IntoIterator"],"K":["std::marker::Sized","std::convert::AsRef"],"T":["Target","std::marker::Sized"]}}
+candidates:{"<&'a hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>":{},"<&'a mut hashbrown::map::HashMap<K, V, S, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a mut std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a mut std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a mut std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a mut std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a mut std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a mut std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BTreeSet<T, A> as std::iter::IntoIterator>":{},"<&'a std::collections::BinaryHeap<T> as std::iter::IntoIterator>":{},"<&'a std::collections::HashMap<K, V, S> as std::iter::IntoIterator>":{},"<&'a std::collections::HashSet<T, S> as std::iter::IntoIterator>":{},"<&'a std::collections::LinkedList<T> as std::iter::IntoIterator>":{},"<&'a std::collections::VecDeque<T, A> as std::iter::IntoIterator>":{},"<&'a std::option::Option<T> as std::iter::IntoIterator>":{},"<&'a std::result::Result<T, E> as std::iter::IntoIterator>":{},"<&'a std::sync::mpsc::Receiver<T> as std::iter::IntoIterator>":{},"<&'a std::vec::Vec<T, A> as std::iter::IntoIterator>":{},"<&T as std::borrow::Borrow<T>>":{},"<&T as std::convert::AsRef<U>>":{},"<&mut I as std::iter::Iterator>":{},"<&mut T as std::borrow::Borrow<T>>":{},"<&mut T as std::convert::AsRef<U>>":{},"<I as std::iter::IntoIterator>":{"I":["<&mut I as std::iter::Iterator>","ByteSerialize","ParseIntoOwned","Parse"]},"<T as std::borrow::Borrow<T>>":{},"Serializer::<'a, T>::extend_keys_only":{"<I as std::iter::IntoIterator>::Item":["std::ffi::OsString","std::string::String","std::sync::Arc<T>","std::vec::Vec<T, A>","std::ffi::CString","std::boxed::Box<T, A>","std::rc::Rc<T>","std::borrow::Cow<'a, B>","std::path::PathBuf","<&mut T as std::borrow::Borrow<T>>"],"I":["&'a std::path::Path","&'a std::path::PathBuf","std::result::Result<T, E>","std::collections::HashSet<T, S>","&'a std::os::unix::net::UnixListener","std::option::Option<T>","std::collections::BTreeMap<K, V, A>","std::collections::BinaryHeap<T>","std::collections::HashMap<K, V, S>","std::collections::BTreeSet<T, A>","std::vec::Vec<T, A>","std::collections::LinkedList<T>","<&'a hashbrown::set::HashSet<T, S, A> as std::iter::IntoIterator>","<&'a mut std::collections::BTreeMap<K, V, A> as std::iter::IntoIterator>","std::sync::mpsc::Receiver<T>","std::collections::VecDeque<T, A>"],"K":["std::ffi::CString","std::slice::Iter<'_, T>","std::borrow::Cow<'_, std::ffi::OsStr>","std::slice::IterMut<'_, T>","std::borrow::Cow<'_, T>","std::ffi::CStr","std::vec::IntoIter<T, A>","std::sync::Arc<T>","std::vec::Drain<'a, T, A>","std::boxed::Box<T, A>","<&mut T as std::convert::AsRef<U>>","<&T as std::convert::AsRef<U>>","core::num::dec2flt::common::AsciiStr<'a>","std::rc::Rc<T>"],"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
+let mut p1 = MaybeUninit::uninit().assume_init(); // I
++p0.extend_keys_only(p1);
++Serializer::<'a, T>::extend_keys_only(p0, p1);
++crate::Serializer::<'a, T>::extend_keys_only(p0, p1);
++<Serializer<'a, T>>::extend_keys_only(p0, p1);
+-----------------
+form_urlencoded/src/lib.rs Serializer::<'a, T>::finish
+'a
+deps:{"Serializer::<'a, T>::finish":{"T":["std::marker::Sized","Target"]}}
+candidates:{"Serializer::<'a, T>::finish":{"T":["std::string::String"]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Serializer<'a, T>
++p0.finish();
++Serializer::<'a, T>::finish(p0);
++crate::Serializer::<'a, T>::finish(p0);
++<Serializer<'a, T>>::finish(p0);

@@ -1,0 +1,5 @@
+522 2225
+error: cov/*: No such file or directory
+cov err ['/mnt/sda/xiang/rug/llm_rug_final_replay/bincode/target/debug/deps/bincode_compatibility-9b0efe243fc51662']
+error: cov/*: No such file or directory
+cov err ['/mnt/sda/xiang/rug/llm_rug_final_replay/bincode/target/debug/deps/bincode_derive-e4ebf158d8792267']

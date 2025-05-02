@@ -1,0 +1,3118 @@
+========================================
+    use super::*;
+
+use crate::*;
+    use std::boxed::Box;
+
+    #[derive(Clone)]
+    struct MockCallback;
+
+    trait Callback {
+        fn call(self: Box<Self>, result: Result<Value, Error>);
+        fn box_clone(&self) -> Box<dyn Callback>;
+    }
+
+    impl Callback for MockCallback {
+        fn call(self: Box<Self>, result: Result<Value, Error>) {
+            // Insert your test code here
+        }
+
+        fn box_clone(&self) -> Box<dyn Callback> {
+            Box::new((*self).clone())
+        }
+    }
+
+    #[test]
+    fn test_call() {
+        // Insert your test code here
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::boxed::Box;
+    use std::clone::Clone;
+    use crate::IdleProc;
+    use crate::Peer;
+    use serde_json::Value;
+    use crate::error::Error;
+    use crate::Callback;
+    use std::time::Instant;
+
+    #[derive(Clone)]
+    struct MockPeer;
+
+    impl Peer for MockPeer {
+        fn box_clone(&self) -> Box<dyn Peer> {
+            Box::new(MockPeer)
+        }
+
+        fn send_rpc_notification(&self, method: &str, params: &Value) {
+            unimplemented!()
+        }
+
+        fn send_rpc_request_async(&self, method: &str, params: &Value, f: Box<dyn Callback>) {
+            unimplemented!()
+        }
+
+        fn send_rpc_request(&self, method: &str, params: &Value) -> Result<Value, Error> {
+            unimplemented!()
+        }
+
+        fn request_is_pending(&self) -> bool {
+            unimplemented!()
+        }
+
+        fn schedule_idle(&self, token: usize) {
+            unimplemented!()
+        }
+
+        fn schedule_timer(&self, after: Instant, token: usize) {
+            unimplemented!()
+        }
+    }
+
+    impl IdleProc for MockPeer {
+        fn call(self: Box<Self>, token: usize) {
+            // Testing logic goes here
+        }
+    }
+
+    #[test]
+    fn test_call() {
+        let mock_peer = Box::new(MockPeer);
+
+        mock_peer.call(0);
+
+        // Write assertions here
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::Write;
+    use crate::{RawPeer, PanicGuard};
+    use std::sync::{Arc, Mutex};
+    use crate::test_utils::DummyWriter;
+    use std::time::Duration;
+
+    #[test]
+    fn test_drop() {
+        let target_dummy_writer = DummyWriter::new();
+        let target_raw_peer = RawPeer(Arc::new(RpcState {
+            writer: Mutex::new(Box::new(target_dummy_writer) as Box<dyn Write + Send>),
+            ..Default::default()
+        }));
+        let target_panic_guard = PanicGuard(&target_raw_peer);
+        drop(target_panic_guard);
+        // assert the behavior of the function here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::collections::HashMap;
+    use std::sync::mpsc::channel;
+    use std::sync::{Arc, Mutex};
+    use std::time::{Duration, Instant};
+    use serde_json::Value;
+
+    // Define a mock implementation of Write
+    struct MockWriter;
+
+    impl std::io::Write for MockWriter {
+        fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
+            Ok(buf.len())
+        }
+
+        fn flush(&mut self) -> std::io::Result<()> {
+            Ok(())
+        }
+    }
+
+    // Define a mock implementation of Peer
+    struct MockPeer;
+
+    impl Peer for MockPeer {
+        fn box_clone(&self) -> Box<dyn Peer> {
+            Box::new(MockPeer {})
+        }
+
+        fn send_rpc_notification(&self, _: &str, _: &Value) {}
+
+        fn send_rpc_request_async(&self, _: &str, _: &Value, _: Box<dyn Callback>) {}
+
+        fn send_rpc_request(&self, _: &str, _: &Value) -> Result<Value, Error> {
+            Ok(Value::Null)
+        }
+
+        fn request_is_pending(&self) -> bool {
+            false
+        }
+
+        fn schedule_idle(&self, _: usize) {}
+
+        fn schedule_timer(&self, _: Instant, _: usize) {}
+    }
+
+    #[test]
+    fn test_box_clone() {
+        // Create a new instance of RawPeer with a mock writer
+        let writer = Box::new(MockWriter {});
+        let rpc_state = RpcState {
+            writer: Mutex::new(writer),
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            idle_queue: Mutex::new(VecDeque::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            pending: Mutex::new(HashMap::new()),
+            id: AtomicUsize::new(0),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        };
+        let raw_peer = RawPeer(Arc::new(rpc_state));
+
+        // Clone the RawPeer
+        let cloned_peer = raw_peer.box_clone();
+
+        // Ensure the cloned peer is a RawPeer
+        assert!(cloned_peer.is::<RawPeer>());
+    }
+}
+False
+========================================
+    use crate::RawPeer;
+    use crate::test_utils::DummyWriter;
+    use std::io::Write;
+    use std::sync::Arc;
+    use std::sync::Mutex;
+    use std::sync::mpsc;
+    use serde_json::Value;
+
+    #[test]
+    fn test_request_is_pending() {
+        // Create a dummy writer and a RawPeer instance
+        let writer = DummyWriter(Arc::new(Mutex::new(mpsc::channel()))); // Replace DummyWriter(Arc::new(Mutex::new(mpsc::channel()))) with relevant constructor
+        let raw_peer = RawPeer(Arc::new(RpcState {
+            writer: Arc::new(Mutex::new(writer)),
+            rx_queue: Arc::new(Mutex::new(Vec::new())),
+            rx_cvar: Arc::new(Condvar::new()),
+            pending: Arc::new(Mutex::new(HashMap::new())),
+            idle_queue: Arc::new(Mutex::new(VecDeque::new())),
+            timers: Arc::new(Mutex::new(BinaryHeap::new())),
+            id: Arc::new(AtomicUsize::new(0)),
+            is_blocked: Arc::new(AtomicBool::new(false)),
+            needs_exit: Arc::new(AtomicBool::new(false)),
+        })); // Replace RawPeer(Arc::new(RpcState { ... })) with relevant constructor
+        
+        // Perform the test
+        let result = raw_peer.request_is_pending();
+        
+        // Assertion
+        assert_eq!(result, false); // Replace false with the expected result
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::{Arc, Mutex};
+    use std::sync::mpsc;
+    use std::time::Duration;
+    use std::time::Instant;
+    use std::collections::VecDeque;
+    use serde_json::json;
+    use serde_json::Value;
+    use std::io::{Error, Write};
+    use std::sync::atomic::{AtomicBool, Ordering};
+
+    use xi_rpc::peer::{Peer, RpcObject, ResponseHandler, Error as RpcError, ReadError};
+    use crate::test_utils::DummyWriter;
+
+    struct RpcState<W: Write> {
+        idle_queue: Arc<Mutex<VecDeque<usize>>>,
+        timers: Arc<Mutex<Vec<Timer>>>,
+        writer: Arc<Mutex<W>>,
+    }
+
+    #[derive(Clone)]
+    struct Timer {
+        fire_after: Instant,
+        token: usize,
+    }
+
+    struct Rpc<W: Write> {
+        id: Arc<AtomicUsize>,
+        state: Arc<Mutex<RpcState<W>>>,
+    }
+
+    impl<W: Write> Rpc<W> {
+        fn new(writer: W) -> Rpc<W> {
+            let state = RpcState {
+                idle_queue: Arc::new(Mutex::new(VecDeque::new())),
+                timers: Arc::new(Mutex::new(Vec::new())),
+                writer: Arc::new(Mutex::new(writer)),
+            };
+            Rpc {
+                id: Arc::new(AtomicUsize::new(0)),
+                state: Arc::new(Mutex::new(state)),
+            }
+        }
+    }
+
+    impl<W: Write> Peer for Rpc<W> {
+        fn box_clone(&self) -> Box<dyn Peer> {
+            Box::new(Clone::clone(self))
+        }
+
+        fn send_rpc_request(&self, method: &str, params: &Value) -> Result<Value, Error> {
+            Ok(Value::Null)
+        }
+
+        fn send_rpc_request_async(&self, method: &str, params: &Value, f: Box<dyn ResponseHandler>) {
+        }
+
+        fn send_rpc_notification(&self, method: &str, params: &Value) {
+        }
+
+        fn request_is_pending(&self) -> bool {
+            false
+        }
+
+        fn schedule_idle(&self, token: usize) {
+            let mut idle_queue = self.state.lock().unwrap().idle_queue.lock().unwrap();
+            idle_queue.push_back(token);
+        }
+        
+        fn schedule_timer(&self, after: Instant, token: usize) {
+            let mut timers = self.state.lock().unwrap().timers.lock().unwrap();
+            timers.push(Timer { fire_after: after, token });
+        }
+    }
+
+    #[test]
+    fn test_schedule_idle() {
+        let rpc = Rpc::new(DummyWriter(mpsc::channel().0));
+
+        let token = 42;
+        rpc.schedule_idle(token);
+
+        let idle_queue = rpc.state.lock().unwrap().idle_queue.lock().unwrap();
+        let result: Vec<usize> = idle_queue.iter().cloned().collect();
+        let expected = vec![token];
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::test_utils::DummyWriter;
+    use std::collections::{BinaryHeap, VecDeque};
+    use std::sync::{Arc, Mutex};
+    use std::time::{Duration, Instant};
+    use std::thread;
+
+    #[test]
+    fn test_schedule_timer() {
+        let writer = Arc::new(Mutex::new(DummyWriter::new()));
+        let rpc_state = RpcState {
+            writer: writer.clone(),
+            idle_queue: Arc::new(Mutex::new(VecDeque::new())),
+            timers: Arc::new(Mutex::new(BinaryHeap::new())),
+            rx_queue: Arc::new(Mutex::new(VecDeque::new())),
+            rx_cvar: Arc::new(Condvar::new()),
+            pending: Arc::new(Mutex::new(HashMap::new())),
+            id: AtomicU64::new(0),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        };
+        let raw_peer = RawPeer(Arc::new(rpc_state));
+        let after = Instant::now() + Duration::from_secs(1);
+        let token = 123;
+
+        raw_peer.schedule_timer(after, token);
+        thread::sleep(Duration::from_secs(2));
+
+        let timers = raw_peer.0.timers.lock().unwrap();
+        assert_eq!(timers.len(), 1);
+        let timer = timers.peek().unwrap();
+        assert!(timer.fire_after <= Instant::now());
+        assert_eq!(timer.token, token);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::Write;
+    use serde_json::json;
+    use std::sync::Arc;
+    use std::sync::Mutex;
+    use std::sync::mpsc;
+    use std::time::Duration;
+    use std::time::Instant;
+
+    use crate::rpc::test_utils::DummyWriter;
+
+    #[test]
+    fn test_send_rpc_notification() {
+        struct RpcState<W: Write + Send + 'static> {
+            writer: Mutex<Box<dyn Write + Send>>,
+            ..RpcState<W>
+        }
+        impl<W: Write + Send + 'static> RpcState<W> {
+            fn new() -> Self {
+                RpcState {
+                    writer: Mutex::new(Box::new(DummyWriter::new())),
+                    ..Default::default()
+                }
+            }
+        }
+
+        let writer = DummyWriter::new();
+        let peer = RawPeer(Arc::new(RpcState {
+            writer: Mutex::new(Box::new(writer)),
+            ..RpcState::new()
+        }));
+        peer.send_rpc_notification("method", &json!({"param": "value"}));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use serde_json::json;
+    use std::sync::mpsc;
+    use std::io::Write;
+
+    struct MockPeer {
+        pub is_blocked: bool,
+        pub response: Result<Value, Error>,
+    }
+    
+    impl Peer for MockPeer {
+        fn box_clone(&self) -> Box<dyn Peer> {
+          Box::new(*self)
+        }
+    
+        fn send_rpc_notification(&self, method: &str, params: &Value) {
+          unimplemented!()
+        }
+    
+        fn send_rpc_request(&self, method: &str, params: &Value) -> Result<Value, Error> {
+          assert_eq!(method, "test method");
+          assert_eq!(params, &json!({"foo": "bar"}));
+          if self.is_blocked {
+            Err(Error::PeerDisconnect)
+          } else {
+            self.response.clone()
+          }
+        }
+    
+        fn send_rpc_request_async(&self, method: &str, params: &Value, f: Box<dyn Callback>) {
+          unimplemented!()
+        }
+    
+        fn request_is_pending(&self) -> bool {
+          unimplemented!()
+        }
+    
+        fn schedule_idle(&self, token: usize) {
+          unimplemented!()
+        }
+    
+        fn schedule_timer(&self, after: Instant, token: usize) {
+          unimplemented!()
+        }
+    }
+
+    struct DummyWriter(mpsc::Sender<String>);
+    
+    impl Write for DummyWriter {
+        fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
+          let s = String::from_utf8_lossy(buf).to_string();
+          self.0
+            .send(s)
+            .map_err(|err| std::io::Error::new(std::io::ErrorKind::Other, format!("{:?}", err)))
+            .map(|_| buf.len())
+        }
+    
+        fn flush(&mut self) -> std::io::Result<()> {
+          Ok(())
+        }
+    }
+
+    fn send_rpc_request_mock(is_blocked: bool, response: Result<Value, Error>) -> Result<Value, Error> {
+        let method = "test method";
+        let params = json!({"foo": "bar"});
+        let peer = MockPeer {
+            is_blocked,
+            response,
+        };
+        let result = peer.send_rpc_request(method, &params);
+        result
+    }
+
+    #[test]
+    fn test_send_rpc_request() {
+        let response = Ok(json!("result"));
+        let result = send_rpc_request_mock(false, response);
+        assert_eq!(result.unwrap(), json!("result"));
+
+        let result = send_rpc_request_mock(true, response);
+        assert_eq!(result.unwrap_err(), Error::PeerDisconnect);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+    use std::sync::mpsc;
+    use std::sync::{Arc, Mutex};
+
+    struct MockPeer<W> {
+        writer: Mutex<W>,
+        is_blocked: bool,
+        pending: Mutex<HashMap<u64, ResponseHandler>>,
+        idle_queue: Mutex<VecDeque<usize>>,
+        timers: Mutex<BinaryHeap<Timer>>,
+        rx_queue: Mutex<VecDeque<Result<RpcObject, ReadError>>>,
+        rx_cvar: Condvar,
+        id: AtomicU64,
+        needs_exit: AtomicBool,
+    }
+
+    impl<W> Clone for MockPeer<W>
+    where
+        W: Write,
+    {
+        fn clone(&self) -> Self {
+            MockPeer {
+                writer: Mutex::new(self.writer.lock().unwrap().clone()),
+                is_blocked: self.is_blocked,
+                pending: Mutex::new(self.pending.lock().unwrap().clone()),
+                idle_queue: Mutex::new(self.idle_queue.lock().unwrap().clone()),
+                timers: Mutex::new(self.timers.lock().unwrap().clone()),
+                rx_queue: Mutex::new(self.rx_queue.lock().unwrap().clone()),
+                rx_cvar: self.rx_cvar.clone(),
+                id: self.id.clone(),
+                needs_exit: self.needs_exit.clone(),
+            }
+        }
+    }
+
+    impl<W> MockPeer<W>
+    where
+        W: Write,
+    {
+        fn new(writer: W) -> Self {
+            MockPeer {
+                writer: Mutex::new(writer),
+                is_blocked: false,
+                pending: Mutex::new(HashMap::new()),
+                idle_queue: Mutex::new(VecDeque::new()),
+                timers: Mutex::new(BinaryHeap::new()),
+                rx_queue: Mutex::new(VecDeque::new()),
+                rx_cvar: Condvar::new(),
+                id: AtomicU64::new(0),
+                needs_exit: AtomicBool::new(false),
+            }
+        }
+    }
+
+    #[test]
+    fn test_send_rpc_request_async() {
+        let (tx, _rx) = mpsc::channel();
+        let method = "test_method";
+        let params = &json!({ "key": "value" });
+        let callback = Box::new(move |result| {
+            tx.send(result).unwrap();
+        });
+        let peer: Box<dyn Peer> = Box::new(MockPeer::new(DummyWriter(tx)));
+        peer.send_rpc_request_async(method, params, callback);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::Arc;
+    use std::sync::mpsc;
+    use std::io::Write;
+    use std::time::{Duration, Instant};
+    use serde_json::{json, Value};
+    use std::collections::VecDeque;
+    use std::sync::{Mutex, Condvar};
+    use serde::Deserialize;
+    use std::cmp::Ordering;
+    use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+    use std::collections::HashMap;
+    use std::str::FromStr;
+
+    pub struct RpcState<W: Write + 'static> {
+        writer: Mutex<Box<W>>,
+        id: AtomicU64,
+        is_blocked: AtomicBool,
+        pending: Mutex<HashMap<usize, ResponseHandler>>,
+        rx_queue: Mutex<VecDeque<Result<RpcObject, ReadError>>>,
+        rx_cvar: Condvar,
+        idle_queue: Mutex<VecDeque<usize>>,
+        timers: Mutex<Vec<Timer>>,
+        needs_exit: AtomicBool,
+    }
+
+    impl<W: Write + 'static> Default for RpcState<Box<W>> {
+        fn default() -> Self {
+            RpcState {
+                writer: Mutex::new(Box::new(test_utils::DummyWriter(tx))),
+                id: AtomicU64::new(0),
+                is_blocked: AtomicBool::new(false),
+                pending: Mutex::new(HashMap::new()),
+                rx_queue: Mutex::new(VecDeque::new()),
+                rx_cvar: Condvar::new(),
+                idle_queue: Mutex::new(VecDeque::new()),
+                timers: Mutex::new(Vec::new()),
+                needs_exit: AtomicBool::new(false),
+            }
+        }
+    }
+
+    impl<W: Write + 'static> Clone for RpcState<Box<W>> {
+        fn clone(&self) -> Self {
+            RpcState {
+                writer: Mutex::new(self.writer.lock().unwrap().clone()),
+                id: self.id.clone(),
+                is_blocked: self.is_blocked.clone(),
+                pending: Mutex::new(self.pending.lock().unwrap().clone()),
+                rx_queue: Mutex::new(self.rx_queue.lock().unwrap().clone()),
+                rx_cvar: self.rx_cvar.clone(),
+                idle_queue: Mutex::new(self.idle_queue.lock().unwrap().clone()),
+                timers: Mutex::new(self.timers.lock().unwrap().clone()),
+                needs_exit: self.needs_exit.clone(),
+            }
+        }
+    }
+
+    fn clone_impl_usize(raw_peer: &RawPeer<usize>) -> RawPeer<usize> {
+        RawPeer(std::sync::Arc::clone(&raw_peer.0))
+    }
+
+    #[test]
+    fn test_clone() {
+        let (tx, _rx) = mpsc::channel();
+        let writer = Box::new(test_utils::DummyWriter(tx));
+        let rpc_state = RpcState::default();
+        let raw_peer = RawPeer(Arc::new(rpc_state));
+        let clone = clone_impl_usize(&raw_peer);
+        assert_eq!(clone.0, raw_peer.0);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::cmp::Ordering;
+
+    #[test]
+    fn test_cmp() {
+        let instant1 = Instant::now();
+        let instant2 = instant1 + Duration::from_secs(1);
+        let timer1 = Timer {
+            fire_after: instant1,
+            token: 1,
+        };
+        let timer2 = Timer {
+            fire_after: instant2,
+            token: 2,
+        };
+
+        assert_eq!(timer1.cmp(&timer2), Ordering::Greater);
+        assert_eq!(timer2.cmp(&timer1), Ordering::Less);
+        assert_eq!(timer1.cmp(&timer1), Ordering::Equal);
+    }
+}
+True
+========================================
+    use std::cmp;
+    use std::time::Instant;
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_partial_cmp() {
+        let timer_1 = Timer {
+            fire_after: Instant::now(),
+            token: 1,
+        };
+        let timer_2 = Timer {
+            fire_after: Instant::now(),
+            token: 2,
+        };
+        let timer_3 = Timer {
+            fire_after: Instant::now(),
+            token: 3,
+        };
+
+        assert_eq!(timer_1.partial_cmp(&timer_1), Some(cmp::Ordering::Equal));
+        assert_eq!(timer_1.partial_cmp(&timer_2), Some(cmp::Ordering::Greater));
+        assert_eq!(timer_2.partial_cmp(&timer_1), Some(cmp::Ordering::Less));
+        assert_eq!(timer_2.partial_cmp(&timer_3), Some(cmp::Ordering::Equal));
+        assert_eq!(timer_3.partial_cmp(&timer_2), Some(cmp::Ordering::Equal));
+        assert_eq!(timer_1.partial_cmp(&timer_3), Some(cmp::Ordering::Greater));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io;
+    use serde_json::Value;
+
+    #[test]
+    fn test_from() {
+        let err = RemoteError::InvalidRequest(Some(Value::String("Additional details".into())));
+        let expected_err = Error::RemoteError(err.clone());
+        let result = Error::from(err);
+        assert_eq!(result, expected_err);
+
+        let err2 = RemoteError::custom(404, "Not Found", None);
+        let expected_err2 = Error::RemoteError(err2.clone());
+        let result2 = Error::from(err2);
+        assert_eq!(result2, expected_err2);
+
+        let err3 = RemoteError::Unknown(Value::Null);
+        let expected_err3 = Error::RemoteError(err3.clone());
+        let result3 = Error::from(err3);
+        assert_eq!(result3, expected_err3);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::Error;
+
+    #[test]
+    fn test_from_json_error_to_read_error() {
+        let err = Error::custom("test error");
+        let read_err: ReadError = From::from(err);
+        assert_eq!(read_err, ReadError::Json(Error::custom("test error")));
+    }
+}
+False
+========================================
+    use std::io;
+    use serde_json::Error as JsonError;
+    use crate::error::ReadError;
+
+    #[test]
+    fn test_from() {
+        let err = io::Error::new(io::ErrorKind::NotFound, "File not found");
+        let result = <error::ReadError as std::convert::From<io::Error>>::from(err);
+        assert_eq!(result, error::ReadError::Io(err));
+
+        let json_err = JsonError::new("Invalid JSON");
+        let result = <error::ReadError as std::convert::From<JsonError>>::from(json_err);
+        assert_eq!(result, error::ReadError::Json(json_err));
+        
+        // test other variants as well
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::str::FromStr;
+    use serde::Deserialize;
+    use serde_json::Deserializer;
+
+    #[test]
+    fn test_deserialize() {
+        let deserializer = Deserializer::from_str("{}").into_iter();
+        let result = <error::RemoteError as Deserialize>::deserialize(&mut deserializer);
+        assert!(result.is_err());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+    use serde::Serializer;
+
+    #[test]
+    fn test_serialize_remote_error_invalid_request() {
+        let remote_error = RemoteError::InvalidRequest(Some(json!("Additional details")));
+        let serializer = serde_json::Serializer::new(Vec::new());
+        let result = remote_error.serialize(&mut serializer);
+
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_serialize_remote_error_custom() {
+        let remote_error = RemoteError::custom(404, "Not Found", None);
+        let serializer = serde_json::Serializer::new(Vec::new());
+        let result = remote_error.serialize(&mut serializer);
+
+        assert!(result.is_ok());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_rpc::error::JsonError;
+    use xi_rpc::error::RemoteError;
+    use serde_json::json;
+    use serde_json::Value;
+    
+    #[test]
+    fn test_from() {
+        let err = JsonError::ParseError;
+        let result = <error::RemoteError as std::convert::From<JsonError>>::from(err);
+        assert_eq!(result, RemoteError::InvalidRequest(Some(json!(err.to_string()))));
+    }
+}
+False
+========================================
+    use std::boxed::Box;
+    use std::clone::Clone;
+    
+    trait Peer {
+        // define trait methods here
+    }
+    
+    // Define a mock struct for Peer trait implementation
+    struct MockPeer;
+    
+    // Implementing Peer trait for MockPeer
+    impl Peer for MockPeer {
+        // Implement trait methods here
+    }
+    
+    // Implementing Clone trait for MockPeer
+    impl Clone for MockPeer {
+        fn clone(&self) -> Box<dyn Peer> {
+            Box::new(MockPeer {})
+        }
+    }
+    
+    // Unit test for clone function
+    #[test]
+    fn test_clone() {
+        let mock_peer = MockPeer {};
+        let cloned_peer = mock_peer.clone();
+        // TODO: Add assertions here        
+    }
+}
+False
+========================================
+    use serde_json::Value;
+    use crate::parse::RpcObject;
+
+    #[test]
+    fn test_from() {
+        let v: Value = serde_json::json!({"id": 1, "method": "test_method"});
+        let rpc_obj: RpcObject = RpcObject::from(v);
+
+        assert_eq!(rpc_obj.get_id(), Some(1_u64));
+        assert_eq!(rpc_obj.get_method(), Some("test_method"));
+        assert!(rpc_obj.is_response());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_box_clone() {
+        let dummy_peer = DummyPeer;
+        let cloned_peer = dummy_peer.box_clone();
+        assert_eq!(cloned_peer.send_rpc_request("method", &serde_json::Value::Null), Ok(serde_json::Value::String("dummy peer".into())));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::Value;
+
+    #[test]
+    fn test_request_is_pending() {
+        let peer = test_utils::DummyPeer;
+        assert_eq!(peer.request_is_pending(), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::test_utils::DummyPeer;
+    use serde_json::Value;
+    use std::time::Instant;
+
+    #[test]
+    fn test_schedule_idle() {
+        let dummy_peer = DummyPeer;
+        let token = 123;
+        dummy_peer.schedule_idle(token);
+
+        // Add your assertions here
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::time::Instant;
+
+    #[derive(Clone, Debug)]
+    struct MockPeer;
+
+    impl Peer for MockPeer {
+        fn box_clone(&self) -> Box<dyn Peer> {
+            Box::new(self.clone())
+        }
+        fn send_rpc_notification(&self, _method: &str, _params: &Value) {}
+        fn send_rpc_request_async(&self, _method: &str, _params: &Value, f: Box<dyn Callback>) {
+            f.call(Ok("dummy peer".into()))
+        }
+        fn send_rpc_request(&self, _method: &str, _params: &Value) -> Result<Value, Error> {
+            Ok("dummy peer".into())
+        }
+        fn request_is_pending(&self) -> bool {
+            false
+        }
+        fn schedule_idle(&self, _token: usize) {}
+        fn schedule_timer(&self, _time: Instant, _token: usize) {}
+    }
+    
+    #[test]
+    fn test_schedule_timer() {
+        let peer: Box<dyn Peer> = Box::new(MockPeer);
+        let time = Instant::now();
+        let token = 123;
+        peer.schedule_timer(time, token);
+    }
+}
+True
+========================================
+    use crate::test_utils;
+    use serde_json::Value;
+    use std::clone::Clone;
+    use std::fmt::Debug;
+    use xi_rpc::Peer;
+    use std::time::Instant;
+
+    #[test]
+    fn test_send_rpc_notification() {
+        let peer = test_utils::DummyPeer;
+        peer.send_rpc_notification("method", &Value::Null);
+        assert!(true);  // placeholder assertion
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::test_utils::DummyPeer;
+    use crate::rpc::{Peer, Error};
+    use serde_json::Value;
+    use std::time::Instant;
+    
+    #[test]
+    fn test_send_rpc_request() {
+        let dummy_peer = DummyPeer;
+        let method = "test_method";
+        let params = serde_json::json!({
+            "param1": "test_param1",
+            "param2": "test_param2",
+        });
+        
+        let result = dummy_peer.send_rpc_request(method, &params);
+        
+        assert_eq!(result, Ok("dummy peer".into()));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::Value;
+    use std::sync::Arc;
+    use std::sync::atomic::{AtomicBool, Ordering};
+    use xi_rpc::tests::DummyPeer;
+    use xi_rpc::{Peer, Callback, Error};
+    use xi_trace::trace_new_test;
+
+    #[test]
+    fn test_send_rpc_request_async() {
+        trace_new_test();
+
+        let dummy_peer = DummyPeer;
+
+        let method = "test_method";
+        let params = json!({ "param1": "value1" });
+
+        struct CallbackTest {
+            success: Arc<AtomicBool>,
+        }
+
+        impl Callback for CallbackTest {
+            fn call(self: Box<Self>, result: Result<Value, Error>) {
+                if result.is_ok() && result.unwrap() == "dummy peer".into() {
+                    self.success.store(true, Ordering::SeqCst);
+                }
+            }
+        }
+
+        let success = Arc::new(AtomicBool::new(false));
+
+        dummy_peer.send_rpc_request_async(method, &params, Box::new(CallbackTest {
+            success: success.clone(),
+        }));
+
+        assert_eq!(success.load(Ordering::SeqCst), true);
+    }
+}
+False
+========================================
+    use std::io::{self, Write};
+    use crate::test_utils::DummyWriter;
+    use std::sync::mpsc::{self, Sender};
+
+    #[test]
+    fn test_flush() {
+        let (tx, _) = mpsc::channel();
+        let mut writer = DummyWriter(tx);
+
+        let result = <crate::test_utils::DummyWriter as Write>::flush(&mut writer);
+
+        assert!(result.is_ok());
+    }
+}
+True
+========================================
+    use std::io::{self, Write};
+    use std::sync::mpsc::Sender;
+    use crate::test_utils::DummyWriter;
+
+    #[test]
+    fn test_write() {
+        let (tx, _rx) = std::sync::mpsc::channel();
+        let mut writer = DummyWriter(tx);
+        
+        let buf: &[u8] = b"test";
+        let result = writer.write(buf);
+        
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), buf.len());
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use xi_rpc::peer::RpcPeer;
+
+    struct MockPeer;
+
+    impl RpcPeer for MockPeer {
+        fn schedule_idle(&self, _token: usize) {
+            unimplemented!()
+        }
+    }
+
+    #[test]
+    fn test_idle_handler() {
+        let peer: Box<dyn RpcPeer> = Box::new(MockPeer);
+        let ctx = RpcCtx { peer };
+        let token = 123;
+
+        let mut handler = Handler {};
+
+        handler.idle(&ctx, token);
+
+        assert_eq!(peer.scheduled_idle_token(), None);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use std::io::Write;
+    use std::sync::mpsc::channel;
+    use std::time::{Duration, Instant};
+    use std::collections::BinaryHeap;
+    use std::sync::{Arc, Mutex};
+    use serde_json::Value;
+    use test_utils::DummyWriter;
+
+    #[test]
+    fn test_check_timers_no_timers_registered() {
+        let peer: RawPeer<DummyWriter> = RawPeer(Arc::new(RpcState {
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            writer: Mutex::new(DummyWriter(channel().0)),
+            id: AtomicU64::new(0),
+            pending: Mutex::new(HashMap::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        assert_eq!(peer.check_timers(), None);
+    }
+
+    #[test]
+    fn test_check_timers_timer_not_expired() {
+        let peer: RawPeer<DummyWriter> = RawPeer(Arc::new(RpcState {
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            writer: Mutex::new(DummyWriter(channel().0)),
+            id: AtomicU64::new(0),
+            pending: Mutex::new(HashMap::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        let (tx, rx) = channel();
+        let now = Instant::now();
+        let token = 1;
+
+        peer.schedule_timer(now + Duration::from_secs(10), token);
+        assert_eq!(peer.check_timers(), Some(Err(Duration::from_secs(10))));
+    }
+
+    #[test]
+    fn test_check_timers_timer_expired() {
+        let peer: RawPeer<DummyWriter> = RawPeer(Arc::new(RpcState {
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            writer: Mutex::new(DummyWriter(channel().0)),
+            id: AtomicU64::new(0),
+            pending: Mutex::new(HashMap::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        let (tx, rx) = channel();
+        let now = Instant::now();
+        let token = 1;
+
+        peer.schedule_timer(now - Duration::from_secs(10), token);
+        assert_eq!(peer.check_timers(), Some(Ok(token)));
+    }
+
+    #[test]
+    fn test_check_timers_multiple_timers() {
+        let peer: RawPeer<DummyWriter> = RawPeer(Arc::new(RpcState {
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            writer: Mutex::new(DummyWriter(channel().0)),
+            id: AtomicU64::new(0),
+            pending: Mutex::new(HashMap::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        let (tx, rx) = channel();
+        let now = Instant::now();
+        let token1 = 1;
+        let token2 = 2;
+
+        peer.schedule_timer(now + Duration::from_secs(10), token1);
+        peer.schedule_timer(now - Duration::from_secs(10), token2);
+        assert_eq!(peer.check_timers(), Some(Ok(token2)));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::mpsc::channel;
+
+    struct MockCallback;
+
+    impl Callback for MockCallback {
+        fn invoke(&self, resp: Result<Value, Error>) {
+            // Implement mock invoke behavior
+        }
+    }
+    
+    struct MockPeer {
+        pending: Arc<Mutex<HashMap<u64, Box<dyn Callback>>>>,
+        needs_exit: Arc<AtomicBool>,
+    }
+
+    impl MockPeer {
+        fn new() -> Self {
+            MockPeer {
+                pending: Arc::new(Mutex::new(HashMap::new())),
+                needs_exit: Arc::new(AtomicBool::new(false)),
+            }
+        }
+    }
+
+    impl<W: Write> Peer for MockPeer {
+        fn box_clone(&self) -> Box<dyn Peer> {
+            Box::new((*self).clone())
+        }
+    
+        fn send_rpc_notification(&self, method: &str, params: &Value) {
+            // Implement mock send_rpc_notification behavior
+        }
+    
+        fn send_rpc_request_async(&self, method: &str, params: &Value, f: Box<dyn Callback>) {
+            // Implement mock send_rpc_request_async behavior
+        }
+    
+        fn send_rpc_request(&self, method: &str, params: &Value) -> Result<Value, Error> {
+            // Implement mock send_rpc_request behavior
+            Ok(json!({}))
+        }
+    
+        fn request_is_pending(&self) -> bool {
+            // Implement mock request_is_pending behavior
+            true
+        }
+    
+        fn schedule_idle(&self, token: usize) {
+            // Implement mock schedule_idle behavior
+        }
+    
+        fn schedule_timer(&self, after: Instant, token: usize) {
+            // Implement mock schedule_timer behavior
+        }
+    
+        fn handle_response(&self, id: u64, resp: Result<Value, Error>) {
+            // Implement mock handle_response behavior
+        }
+    
+        fn try_get_rx(&self) -> Option<Result<RpcObject, ReadError>> {
+            // Implement mock try_get_rx behavior
+            None
+        }
+    
+        fn get_rx_timeout(&self, dur: Duration) -> Option<Result<RpcObject, ReadError>> {
+            // Implement mock get_rx_timeout behavior
+            None
+        }
+    
+        fn put_rx(&self, json: Result<RpcObject, ReadError>) {
+            // Implement mock put_rx behavior
+        }
+    
+        fn try_get_idle(&self) -> Option<usize> {
+            // Implement mock try_get_idle behavior
+            None
+        }
+    
+        fn check_timers(&self) -> Option<Result<usize, Duration>> {
+            // Implement mock check_timers behavior
+            None
+        }
+    
+        fn needs_exit(&self) -> bool {
+            // Implement mock needs_exit behavior
+            false
+        }
+    
+        fn reset_needs_exit(&self) {
+            // Implement mock reset_needs_exit behavior
+        }
+    }
+
+    #[test]
+    fn test_disconnect() {
+        let peer = Arc::new(MockPeer::new());
+        let callback = Box::new(MockCallback);
+
+        let mut pending = peer.pending.lock().unwrap();
+        pending.insert(1, callback);
+
+        {
+            let callback = pending.get(&1).unwrap();
+            assert_eq!(callback.invoked, false);
+        }
+
+        peer.disconnect();
+        assert!(peer.needs_exit());
+
+        {
+            let callback = pending.get(&1).unwrap();
+            assert_eq!(callback.invoked, true);
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::Arc;
+    use std::sync::atomic::{AtomicBool, AtomicUsize};
+    use std::sync::mpsc::{self, Sender};
+    use std::sync::{Condvar, Mutex};
+    use std::time::Duration;
+    use std::collections::{BinaryHeap, HashMap, VecDeque};
+    use std::io::{self, Write};
+    use serde_json::Value;
+
+    struct RpcState<W: Write + Send + 'static> {
+        rx_queue: Mutex<VecDeque<Result<RpcObject, ReadError>>>,
+        rx_cvar: Condvar,
+        writer: Mutex<W>,
+        id: AtomicUsize,
+        pending: Mutex<HashMap<usize, ResponseHandler>>,
+        is_blocked: AtomicBool,
+        idle_queue: Mutex<VecDeque<usize>>,
+        timers: Mutex<BinaryHeap<Timer>>,
+        needs_exit: AtomicBool,
+    }
+
+    struct Timer {
+        fire_after: Instant,
+        token: usize,
+    }
+
+    trait ResponseHandler {
+        fn invoke(&self, result: Result<Value, Error>);
+    }
+
+    #[test]
+    fn test_get_rx_timeout() {
+        let (tx, rx) = mpsc::channel();
+        let writer = DummyWriter(tx);
+        let peer = RawPeer(Arc::new(RpcState {
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            writer: Mutex::new(writer),
+            id: AtomicUsize::new(0),
+            pending: Mutex::new(HashMap::new()),
+            is_blocked: AtomicBool::new(false),
+            idle_queue: Mutex::new(VecDeque::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        let dur = Duration::from_secs(1);
+        let result = peer.get_rx_timeout(dur);
+        assert_eq!(result, None);
+    }
+}
+False
+========================================
+    use std::sync::{Arc, Mutex, Condvar};
+    use std::time::{Instant, Duration};
+    use std::thread;
+    use std::io::{self, Write};
+    use std::collections::{VecDeque, BinaryHeap, HashMap};
+    use std::sync::atomic::{AtomicU64, AtomicBool};
+    use serde_json::{json, Value};
+    use crate::rpc::{RawPeer, Peer};
+    use crate::test_utils::DummyWriter;
+    use crate::error::Error;
+    use crate::object::{RpcObject, ReadError};
+    use crate::timer::Timer;
+    use crate::response_handler::ResponseHandler;
+    use crate::state::RpcState;
+    use crate::response::Response;
+
+    #[test]
+    fn test_handle_response() {
+        let id: u64 = 1;
+        let resp: Result<Value, Error> = Ok(json!("response"));
+
+        let dummy_writer = DummyWriter(mpsc::Sender::new());
+        let rpc_state = RpcState {
+            writer: Mutex::new(dummy_writer),
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            idle_queue: Mutex::new(VecDeque::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            pending: Mutex::new(HashMap::new()),
+            id: AtomicU64::new(0),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        };
+
+        let raw_peer = RawPeer(Arc::new(rpc_state));
+
+        raw_peer.handle_response(id, resp);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::Mutex;
+    use std::sync::Arc;
+    use std::sync::atomic::{AtomicBool, Ordering};
+    use std::time::Duration;
+
+    struct MockState<W: Write> {
+        needs_exit: AtomicBool,
+        writer: Arc<Mutex<W>>,
+        // Other fields in MockState
+    }
+
+    struct MockRawPeer<W: Write> {
+        mock_state: Arc<MockState<W>>,
+    }
+
+    struct MockWriter;
+
+    impl Write for MockWriter {
+        fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+            Ok(buf.len())
+        }
+
+        fn flush(&mut self) -> io::Result<()> {
+            Ok(())
+        }
+    }
+
+    impl<W: Write> Clone for MockRawPeer<W> {
+        fn clone(&self) -> Self {
+            MockRawPeer {
+                mock_state: self.mock_state.clone(),
+            }
+        }
+    }
+
+    impl<W: Write> MockRawPeer<W> {
+        fn new(writer: W) -> Self {
+            MockRawPeer {
+                mock_state: Arc::new(MockState {
+                    needs_exit: AtomicBool::new(false),
+                    writer: Arc::new(Mutex::new(writer)),
+                    // Other fields in MockState
+                }),
+            }
+        }
+    }
+
+    impl<W: Write> RpcPeer<W> for MockRawPeer<W> {
+        fn needs_exit(&self) -> bool {
+            self.mock_state.needs_exit.load(Ordering::Relaxed)
+        }
+    }
+
+    #[test]
+    fn test_needs_exit() {
+        let writer = MockWriter;
+        let peer = MockRawPeer::new(writer);
+        assert_eq!(peer.needs_exit(), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::Value;
+    use std::io;
+    use std::sync::mpsc;
+    use std::time::Duration;
+    use std::sync::{Arc, Mutex, Condvar};
+    use std::sync::atomic::{AtomicBool, Ordering};
+    use std::collections::VecDeque;
+    use std::time::Instant;
+    use crate::test_utils::DummyWriter;
+    use crate::rpc::{RawPeer, Peer, Error, RpcObject, ReadError};
+
+    #[test]
+    fn test_put_rx() {
+        let peer = RawPeer::<DummyWriter>::new(Arc::new(RpcState {
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            writer: Mutex::new(DummyWriter(mpsc::channel().0)),
+            id: AtomicUsize::new(0),
+            pending: Mutex::new(HashMap::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        let json = Err(ReadError);
+
+        peer.put_rx(json);
+
+        let queue = peer.0.rx_queue.lock().unwrap();
+        assert_eq!(queue.len(), 1);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::{Arc, atomic::{AtomicBool, Ordering}};
+    use std::io::{Write};
+    use std::collections::{HashMap, VecDeque, BinaryHeap};
+    use serde_json::json;
+    use std::time::{Duration, Instant};
+    use std::sync::mpsc;
+    use std::sync::mpsc::Sender;
+    use std::sync::Mutex;
+    use std::sync::Condvar;
+    use std::io;
+    use xi_rpc::{RpcObject, Peer, Response, Callback};
+    use xi_rpc::test_utils::DummyWriter;
+    use serde_json::Value;
+
+    struct RpcState<W: std::io::Write> {
+        writer: Mutex<W>,
+        pending: Mutex<HashMap<usize, ResponseHandler>>,
+        rx_queue: Mutex<VecDeque<Result<RpcObject, ReadError>>>,
+        rx_cvar: Condvar,
+        idle_queue: Mutex<VecDeque<usize>>,
+        timers: Mutex<BinaryHeap<Timer>>,
+        id: AtomicU64,
+        is_blocked: AtomicBool,
+        needs_exit: AtomicBool,
+    }
+
+    struct Timer {
+        fire_after: Instant,
+        token: usize,
+    }
+
+    struct RawPeer<W: Write + 'static>(Arc<RpcState<W>>);
+
+    enum ResponseHandler {
+        Callback(Box<dyn Callback>),
+        Chan(Sender<Result<Value, Error>>),
+    }
+
+    fn reset_needs_exit<W: Write>(peer: &RawPeer<W>) {
+        peer.0.needs_exit.store(false, Ordering::SeqCst);
+    }
+
+    #[test]
+    fn test_reset_needs_exit() {
+        let (tx, _rx) = mpsc::channel(); // DummySender
+        let peer = RawPeer(Arc::new(RpcState {
+            writer: Mutex::new(DummyWriter(tx)),
+            pending: Mutex::new(HashMap::new()),
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            idle_queue: Mutex::new(VecDeque::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            id: AtomicU64::new(0),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(true),
+        }));
+        reset_needs_exit(&peer);
+        assert_eq!(peer.0.needs_exit.load(Ordering::Relaxed), false);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+    use std::sync::Arc;
+    use std::sync::Mutex;
+    use std::sync::mpsc;
+    use std::io;
+    use std::time::Duration;
+    use std::time::Instant;
+    use std::io::Write;
+    use std::io::Result;
+    use serde_json::Value;
+    use log::{error, warn};
+
+    struct RpcState<W: Write + 'static> {
+        writer: Arc<Mutex<W>>,
+    }
+    
+    enum Response {
+        Ok(Value),
+        Err(Value),
+    }
+    
+    trait Peer {
+        fn send(&self, v: &Value) -> Result<()>;
+    }
+    
+    impl<W: Write + Send + 'static> Peer for RawPeer<W> {
+        fn send(&self, v: &Value) -> Result<()> {
+            let mut s = serde_json::to_string(v).unwrap();
+            s.push('\n');
+            self.0.writer.lock().unwrap().write_all(s.as_bytes())
+        }
+    }
+    
+    struct RawPeer<W: Write + 'static>(Arc<RpcState<W>>);
+    
+    impl<W: Write + Send + 'static> Peer for RawPeer<W> {
+        fn send(&self, v: &Value) -> Result<()> {
+            let mut s = serde_json::to_string(v).unwrap();
+            s.push('\n');
+            self.0.writer.lock().unwrap().write_all(s.as_bytes())
+        }
+    }
+    
+    struct DummyWriter(Sender<String>);
+    
+    impl Write for DummyWriter {
+        fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+            let s = String::from_utf8(buf.to_vec()).unwrap();
+            self.0
+                .send(s)
+                .map_err(|err| io::Error::new(io::ErrorKind::Other, format!("{:?}", err)))
+                .map(|_| buf.len())
+        }
+    
+        fn flush(&mut self) -> io::Result<()> {
+            Ok(())
+        }
+    }
+    
+    fn respond<W: Write>(peer: &RawPeer<W>, result: Response, id: u64) {
+        let mut response = json!({ "id": id });
+        match result {
+            Response::Ok(result) => response["result"] = result,
+            Response::Err(error) => response["error"] = json!(error),
+        };
+        if let Err(e) = peer.send(&response) {
+            error!("error {} sending response to RPC {:?}", e, id);
+        }
+    }
+    
+    #[test]
+    fn test_respond_sends_successful_response() {
+        let (sender, receiver) = mpsc::channel();
+        let rpc_state = RpcState {
+            writer: Arc::new(Mutex::new(DummyWriter(sender))),
+        };
+        let peer = RawPeer(Arc::new(rpc_state));
+    
+        let response_value = json!({"result": "Success"});
+        let response = Response::Ok(response_value);
+        let id = 1;
+    
+        respond(&peer, response, id);
+    
+        let expected = format!("{{\"id\":1,\"result\":\"Success\"}}\n");
+        assert_eq!(receiver.recv().unwrap(), expected);
+    }
+    
+    #[test]
+    fn test_respond_sends_error_response() {
+        let (sender, receiver) = mpsc::channel();
+        let rpc_state = RpcState {
+            writer: Arc::new(Mutex::new(DummyWriter(sender))),
+        };
+        let peer = RawPeer(Arc::new(rpc_state));
+    
+        let error_value = json!({"code": 500, "message": "Internal Server Error"});
+        let error_response = Response::Err(error_value);
+        let id = 1;
+    
+        respond(&peer, error_response, id);
+    
+        let expected = format!("{{\"id\":1,\"error\":{\"code\":500,\"message\":\"Internal Server Error\"}}}\n");
+        assert_eq!(receiver.recv().unwrap(), expected);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use std::io::{self, Write};
+    use std::sync::Arc;
+    use std::sync::atomic::{AtomicBool, Ordering};
+    use std::sync::mpsc::{self, Sender};
+    use std::time::{Duration, Instant};
+    use std::collections::{BinaryHeap, HashMap, VecDeque};
+    use serde_json::json;
+
+    struct DummyWriter(Sender<String>);
+
+    impl Write for DummyWriter {
+        fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+            let s = String::from_utf8(buf.to_vec()).unwrap();
+            self.0.send(s).map_err(|err| io::Error::new(io::ErrorKind::Other, format!("{:?}", err))).map(|_| buf.len())
+        }
+
+        fn flush(&mut self) -> io::Result<()> {
+            Ok(())
+        }
+    }
+
+    #[test]
+    fn test_send() {
+        let (tx, _) = mpsc::channel();
+        let writer: Box<dyn Write> = Box::new(DummyWriter(tx));
+        let rpc_state = RpcState {
+            writer: Mutex::new(writer),
+            is_blocked: AtomicBool::new(false),
+            id: AtomicUsize::new(0),
+            rx_queue: Mutex::new(VecDeque::new()),
+            rx_cvar: Condvar::new(),
+            pending: Mutex::new(HashMap::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            timers: Mutex::new(BinaryHeap::new()),
+            needs_exit: AtomicBool::new(false),
+        };
+        let raw_peer = RawPeer(Arc::new(rpc_state));
+        let value = json!({});
+        let result = raw_peer.send(&value);
+        assert!(result.is_ok());
+    }
+}
+False
+========================================
+        use super::*;
+
+use crate::*;
+
+        #[test]
+        fn test_send_rpc_request_common() {
+            let writer = Arc::new(Mutex::new(DummyWriter(mpsc::channel().0)));
+            let id = Arc::new(AtomicU64::new(0));
+            let pending = Arc::new(Mutex::new(HashMap::new()));
+            let peer = RawPeer(Arc::new(RpcState {
+                writer: writer.clone(),
+                id: id.clone(),
+                pending: pending.clone(),
+                rx_queue: Arc::new(Mutex::new(VecDeque::new())),
+                rx_cvar: Arc::new(Condvar::new()),
+                idle_queue: Arc::new(Mutex::new(VecDeque::new())),
+                timers: Arc::new(Mutex::new(BinaryHeap::new())),
+                is_blocked: Arc::new(AtomicBool::new(false)),
+                needs_exit: Arc::new(AtomicBool::new(false)),
+            }));
+            let method = "test_method";
+            let params = &json!({});
+            let rh = ResponseHandler::Chan(mpsc::channel().0);
+            peer.send_rpc_request_common(method, params, rh);
+            // Add assertions here
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::mpsc;
+
+    struct DummyWriter(Sender<String>);
+
+    impl DummyWriter {
+        fn new(sender: Sender<String>) -> Self {
+            DummyWriter(sender)
+        }
+    }
+
+    impl Write for DummyWriter {
+        fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+            let s = String::from_utf8(buf.to_vec()).unwrap();
+            self.0
+                .send(s)
+                .map_err(|err| io::Error::new(io::ErrorKind::Other, format!("{:?}", err)))
+                .map(|_| buf.len())
+        }
+
+        fn flush(&mut self) -> io::Result<()> {
+            Ok(())
+        }
+    }
+
+    #[test]
+    fn test_try_get_idle() {
+        let (sender, _receiver) = mpsc::channel();
+        let writer = DummyWriter::new(sender);
+        let peer = RawPeer(writer);
+        let idle_queue = peer.0.idle_queue;
+
+        peer.schedule_idle(1);
+        peer.schedule_idle(2);
+        peer.schedule_idle(3);
+
+        assert_eq!(peer.try_get_idle(), Some(1));
+        assert_eq!(peer.try_get_idle(), Some(2));
+        assert_eq!(peer.try_get_idle(), Some(3));
+        assert_eq!(peer.try_get_idle(), None);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    #[cfg(test)]
+    use crate::*;
+
+    #[test]
+    fn test_try_get_rx() {
+        let (tx, rx) = mpsc::channel();
+        let writer = DummyWriter(tx);
+        let rpc_state = RpcState::<DummyWriter>::new(writer);
+        let raw_peer = RawPeer::<DummyWriter>::new(rpc_state);
+        let result = raw_peer.try_get_rx();
+        assert_eq!(result, None);
+        rx.send("test".to_owned()).unwrap();
+        let result = raw_peer.try_get_rx();
+        assert_eq!(result, Some(Ok("test".to_owned())));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::mpsc;
+
+    trait Callback {
+        fn call(&self, result: Result<Value, Error>);
+    }
+
+    struct MockCallback;
+    impl Callback for MockCallback {
+        fn call(&self, result: Result<Value, Error>) {
+            // mock implementation
+        }
+    }
+
+    #[test]
+    fn test_invoke_with_channnel() {
+        let (tx, rx) = mpsc::channel();
+        let result = Ok(Value::Null);
+        let handler = ResponseHandler::Chan(tx);
+        handler.invoke(result);
+        let received_result = rx.recv().unwrap();
+        // assertion for received_result
+    }
+
+    #[test]
+    fn test_invoke_with_callback() {
+        let result = Ok(Value::Null);
+        let callback: Box<dyn Callback> = Box::new(MockCallback);
+        let handler = ResponseHandler::Callback(callback);
+        handler.invoke(result);
+        // assertion for mock callback
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::rpc_peer::RpcPeer;
+
+    #[test]
+    fn test_get_peer() {
+        let peer = Box::new(RpcPeer::new()) as Box<dyn Peer>; // Create a mock RpcPeer
+        let ctx = RpcCtx { peer };
+
+        let result = ctx.get_peer();
+
+        assert_eq!(result, &ctx.peer);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::boxed::Box;
+    use crate::RpcCtx;
+
+    // Mock implementation for RpcPeer
+    struct MockRpcPeer;
+
+    impl RpcPeer for MockRpcPeer {
+        // implementation for schedule_idle
+        fn schedule_idle(&self, token: usize) {
+            // implementation for schedule_idle mock
+        }
+    }
+
+    // Mock implementation for RpcCtx
+    struct MockRpcCtx {
+        peer: Box<dyn RpcPeer>,
+    }
+
+    impl RpcCtx {
+        // implementation for get_peer
+        fn get_peer(&self) -> &dyn RpcPeer {
+            &*self.peer
+        }
+    }
+
+    // implementation for Box<dyn RpcPeer>
+    impl RpcPeer for Box<dyn RpcPeer> {
+        // implementation for schedule_idle
+        fn schedule_idle(&self, token: usize) {
+            // implementation for schedule_idle mock
+        }
+    }
+
+    #[test]
+    fn test_schedule_idle() {
+        let mock_peer = Box::new(MockRpcPeer {}) as Box<dyn RpcPeer>;
+        let rpc_ctx = RpcCtx {
+            peer: mock_peer,
+        };
+
+        rpc_ctx.schedule_idle(0);
+        // assert for schedule_idle
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::*;
+    use serde_json::json;
+    use std::sync::mpsc::channel;
+    use std::sync::Arc;
+    use std::thread;
+
+    use crate::test_utils::DummyWriter;
+    use std::sync::mpsc::Sender;
+    use std::io::Write;
+
+    #[test]
+    fn test_get_raw_peer() {
+        let (tx, rx) = channel();
+        let writer: test_utils::DummyWriter = test_utils::DummyWriter(Sender::clone(&tx)).into();
+        let rpc_loop = RpcLoop::new(writer);
+        let rpc_peer1 = rpc_loop.get_raw_peer();
+        let rpc_peer2 = rpc_loop.get_raw_peer();
+
+        let json = json!({
+            "id": 1,
+            "method": "test",
+            "params": {"foo": "bar"}
+        });
+        let json_str = serde_json::to_string(&json).unwrap();
+        rpc_peer1.send(&json).unwrap();
+
+        let received_json_str = rx.recv().unwrap();
+        assert_eq!(received_json_str, json_str);
+    }
+}
+False
+========================================
+    use crate::rpc::{RawPeer, RpcLoop, RpcCtx, ReadError, Error, Handler, Peer, Response, Call, RpcObject, Value, RemoteError};
+    use serde::de::DeserializeOwned;
+    use serde_json::json;
+    use std::io::{BufRead, Write, Error as IoError};
+    use std::sync::mpsc::{Sender, channel};
+    use std::sync::atomic::{AtomicBool, Ordering};
+    use std::sync::{Arc, Mutex};
+    use std::time::{Duration, Instant};
+    use std::collections::{VecDeque, BTreeMap, BinaryHeap};
+    use std::sync::Condvar;
+    use std::io;
+    use std::io::Write;
+    use std::sync::mpsc;
+    use std::sync::mpsc::Sender;
+    use std::time::Duration;
+    use std::time::Instant;
+    use std::collections::VecDeque;
+    use std::collections::BTreeMap;
+    use std::collections::BinaryHeap;
+    use std::sync::Condvar;
+    use std::sync::Condvar;
+    use std::sync::Mutex;
+    use std::sync::Mutex;
+    use std::sync::MutexGuard;
+    use std::conditional::Mutex;
+    use std::conditional::Arc;
+    use std::conditional::PanicGuard;
+    use std::conditional::trace;
+    use std::conditional::trace_block;
+    use std::conditional::trace_block_payload;
+    use std::conditional::trace_payload;
+    use std::conditional::xi_trace;
+    use xi_trace::trace_block_payload;
+    use xi_trace::trace_payload;
+    use std::io::BufReader;
+    use crate::rpc::tests_llm_16_88::RawPeerMock;
+    use crate::rpc::DummyWriter;
+    use std::sync::atomic::AtomicUsize;
+    use std::sync::atomic::Ordering;
+    use std::sync::Arc;
+    use std::sync::Mutex;
+    use std::sync::MutexGuard;
+    use std::sync::mpsc;
+    use std::sync::mpsc::Sender;
+    use std::time::Duration;
+    use std::time::Instant;
+    use std::collections::VecDeque;
+    use std::collections::BTreeMap;
+    use std::collections::BinaryHeap;
+    use std::conditional::Condvar;
+    use std::conditional::Mutex;
+    use std::conditional::Arc;
+    use std::conditional::PanicGuard;
+    use std::conditional::trace;
+    use std::conditional::trace_block;
+    use std::conditional::trace_block_payload;
+    use std::conditional::trace_payload;
+    use std::conditional::xi_trace;
+    use xi_trace::trace_block_payload;
+    use xi_trace::trace_payload;
+    use crate::rpc::RawPeer;
+    use crate::rpc::RpcLoop;
+    use crate::rpc::RpcCtx;
+    use crate::rpc::ReadError;
+    use crate::rpc::Error;
+    use crate::rpc::Handler;
+    use crate::rpc::Peer;
+    use crate::rpc::Response;
+    use crate::rpc::Call;
+    use crate::rpc::RpcObject;
+    use crate::rpc::Value;
+    use crate::rpc::RemoteError;
+    use serde::de::DeserializeOwned;
+    use serde_json::json;
+    use std::io::BufRead;
+    use std::io::Write;
+    use std::io;
+    use std::sync::Arc;
+    use std::sync::Mutex;
+    use std::sync::MutexGuard;
+    use std::sync::mpsc;
+    use std::sync::mpsc::Sender;
+    use std::sync::atomic::Ordering;
+    use std::sync::atomic::AtomicUsize;
+    use std::time::Duration;
+    use std::time::Instant;
+    use std::collections::VecDeque;
+    use std::collections::BTreeMap;
+    use std::collections::BinaryHeap;
+    use std::conditional::Condvar;
+    use std::conditional::Mutex;
+    use std::conditional::Arc;
+    use std::conditional::PanicGuard;
+    use std::conditional::trace;
+    use std::conditional::trace_block;
+    use std::conditional::trace_block_payload;
+    use std::conditional::trace_payload;
+    use std::conditional::xi_trace;
+    use xi_trace::trace_block_payload;
+    use xi_trace::trace_payload;
+    
+    struct RawPeerMock {
+    }
+    impl Peer for RawPeerMock {
+        fn box_clone(&self) -> Box<dyn Peer> {
+            Box::new((*self).clone())
+        }
+    
+        fn send_rpc_notification(&self, method: &str, params: &Value) {
+            let _trace = trace_block_payload("send notif", &["rpc"], method.to_owned());
+            if let Err(e) = self.send(&json!({
+                "method": method,
+                "params": params,
+            })) {
+                error!("send error on send_rpc_notification method {}: {}", method, e);
+            }
+        }
+    
+        fn send_rpc_request_async(&self, method: &str, params: &Value, f: Box<dyn Callback>) {
+            let _trace = trace_block_payload("send req async", &["rpc"], method.to_owned());
+            self.send_rpc_request_common(method, params, ResponseHandler::Callback(f));
+        }
+    
+        fn send_rpc_request(&self, method: &str, params: &Value) -> Result<Value, Error> {
+            let _trace = trace_block_payload("send req sync", &["rpc"], method.to_owned());
+            self.0.is_blocked.store(true, Ordering::Release);
+            let (tx, rx) = mpsc::channel();
+            self.send_rpc_request_common(method, params, ResponseHandler::Chan(tx));
+            rx.recv().unwrap_or(Err(Error::PeerDisconnect))
+        }
+    
+        fn request_is_pending(&self) -> bool {
+            let queue = self.0.rx_queue.lock().unwrap();
+            !queue.is_empty()
+        }
+    
+        fn schedule_idle(&self, token: usize) {
+            self.0.idle_queue.lock().unwrap().push_back(token);
+        }
+    
+        fn schedule_timer(&self, after: Instant, token: usize) {
+            self.0.timers.lock().unwrap().push(Timer { fire_after: after, token });
+        }
+    
+        fn send(&self, v: &Value) -> Result<(), io::Error> {
+            let _trace = trace_block("send", &["rpc"]);
+            let mut s = serde_json::to_string(v).unwrap();
+            s.push('\n');
+            self.0.writer.lock().unwrap().write_all(s.as_bytes())
+        }
+    
+        fn send_rpc_request_common(&self, method: &str, params: &Value, rh: ResponseHandler) {
+            let id = self.0.id.fetch_add(1, Ordering::Relaxed);
+            {
+                let mut pending = self.0.pending.lock().unwrap();
+                pending.insert(id, rh);
+            }
+            if let Err(e) = self.send(&json!({
+                "id": id,
+                "method": method,
+                "params": params,
+            })) {
+                let mut pending = self.0.pending.lock().unwrap();
+                if let Some(rh) = pending.remove(&id) {
+                    rh.invoke(Err(Error::Io(e)));
+                }
+            }
+        }
+    
+        fn handle_response(&self, id: u64, resp: Result<Value, Error>) {
+            let id = id as usize;
+            let handler = {
+                let mut pending = self.0.pending.lock().unwrap();
+                pending.remove(&id)
+            };
+            match handler {
+                Some(responsehandler) => responsehandler.invoke(resp),
+                None => warn!("id {} not found in pending", id),
+            }
+        }
+    
+        /// Get a message from the receive queue if available.
+        fn try_get_rx(&self) -> Option<Result<RpcObject, ReadError>> {
+            let mut queue = self.0.rx_queue.lock().unwrap();
+            queue.pop_front()
+        }
+    
+        /// Get a message from the receive queue, waiting for at most `Duration`
+        /// and returning `None` if no message is available.
+        fn get_rx_timeout(&self, dur: Duration) -> Option<Result<RpcObject, ReadError>> {
+            let mut queue = self.0.rx_queue.lock().unwrap();
+            let result = self.0.rx_cvar.wait_timeout(queue, dur).unwrap();
+            queue = result.0;
+            queue.pop_front()
+        }
+    
+        /// Adds a message to the receive queue. The message should only
+        /// be `None` if the read thread is exiting.
+        fn put_rx(&self, json: Result<RpcObject, ReadError>) {
+            let mut queue = self.0.rx_queue.lock().unwrap();
+            queue.push_back(json);
+            self.0.rx_cvar.notify_one();
+        }
+    
+        fn try_get_idle(&self) -> Option<usize> {
+            self.0.idle_queue.lock().unwrap().pop_front()
+        }
+    
+        /// Checks status of the most imminent timer. If that timer has expired,
+        /// returns `Some(Ok(_))`, with the corresponding token.
+        /// If a timer exists but has not expired, returns `Some(Err(_))`,
+        /// with the error value being the `Duration` until the timer is ready.
+        /// Returns `None` if no timers are registered.
+        fn check_timers(&self) -> Option<Result<usize, Duration>> {
+            let mut timers = self.0.timers.lock().unwrap();
+            match timers.peek() {
+                None => return None,
+                Some(t) => {
+                    let now = Instant::now();
+                    if t.fire_after > now {
+                        return Some(Err(t.fire_after - now));
+                    }
+                }
+            }
+            Some(Ok(timers.pop().unwrap().token))
+        }
+    
+        /// send disconnect error to pending requests.
+        fn disconnect(&self) {
+            let mut pending = self.0.pending.lock().unwrap();
+            let ids = pending.keys().cloned().collect::<Vec<_>>();
+            for id in &ids {
+                let callback = pending.remove(id).unwrap();
+                callback.invoke(Err(Error::PeerDisconnect));
+            }
+            self.0.needs_exit.store(true, Ordering::Relaxed);
+        }
+    
+        /// Returns `true` if an error has occured in the main thread.
+        fn needs_exit(&self) -> bool {
+            self.0.needs_exit.load(Ordering::Relaxed)
+        }
+    
+        fn reset_needs_exit(&self) {
+            self.0.needs_exit.store(false, Ordering::SeqCst);
+        }
+    }
+    
+    impl<W: Write> Clone for RawPeer<W> {
+        fn clone(&self) -> Self {
+            RawPeer(self.0.clone())
+        }
+    }
+    
+    struct DummyWriter::<W: Write>(Sender<String>);
+    
+    impl Write for DummyWriter {
+        fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+            let s = String::from_utf8(buf.to_vec()).unwrap();
+            self.0
+                .send(s)
+                .map_err(|err| io::Error::new(io::ErrorKind::Other, format!("{:?}", err)))
+                .map(|_| buf.len())
+        }
+    
+        fn flush(&mut self) -> io::Result<()> {
+            Ok(())
+        }
+    }
+    
+    #[test]
+    fn test_mainloop() {
+        let (tx, rx) = mpsc::channel();
+        let writer = DummyWriter(tx);
+        let raw_peer = RawPeer::new_dummy_writer(writer);
+        let mut rpc_loop = RpcLoop {
+            reader: MessageReader::default(),
+            peer: raw_peer.clone(),
+        };
+    
+        let rf_mock = || -> BufReader<&[u8]> {
+            BufReader::new(&[][..])
+        };
+    
+        struct HandlerMock {
+        }
+    
+        impl<W: Write + Send + 'static> RpcLoop<W> {
+            fn new_dummy_writer(tx: Sender<String>) -> Self {
+                let dummy_writer = test_utils::DummyWriter(tx);
+                RawPeer(Arc::new(RpcState {
+                    rx_queue: Mutex::new(VecDeque::new()),
+                    rx_cvar: Condvar::new(),
+                    writer: Mutex::new(dummy_writer),
+                    id: AtomicUsize::new(0),
+                    pending: Mutex::new(BTreeMap::new()),
+                    idle_queue: Mutex::new(VecDeque::new()),
+                    timers: Mutex::new(BinaryHeap::new()),
+                    needs_exit: AtomicBool::new(false),
+                    is_blocked: AtomicBool::new(false),
+                }))
+            }
+        }
+    
+        impl<W: Write> Clone for RawPeer<W> {
+            fn clone(&self) -> Self {
+                RawPeer(self.0.clone())
+            }
+        }
+    
+        impl<W: Write> RawPeer<W> {
+            fn send(&self, v: &Value) -> Result<(), io::Error> {
+                let _trace = trace_block("send", &["rpc"]);
+                let mut s = serde_json::to_string(v).unwrap();
+                s.push('\n');
+                self.0.writer.lock().unwrap().write_all(s.as_bytes())
+            }
+        }
+    
+        struct DummyWriter<W: Write>(Sender<String>);
+    
+        impl Write for DummyWriter<W: Write> {
+            fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+                let s = String::from_utf8(buf.to_vec()).unwrap();
+                self.0
+                    .send(s)
+                    .map_err(|err| io::Error::new(io::ErrorKind::Other, format!("{:?}", err)))
+                    .map(|_| buf.len())
+            }
+    
+            fn flush(&mut self) -> io::Result<()> {
+                Ok(())
+            }
+        }
+        let mut rpc_loop = RpcLoop::<String> {
+            reader: MessageReader::default(),
+            peer: RawPeer(Arc::new(RpcState {
+                rx_queue: Mutex::new(VecDeque::new()),
+                rx_cvar: Condvar::new(),
+                writer: Mutex::new(writer),
+                id: AtomicUsize::new(0),
+                pending: Mutex::new(BTreeMap::new()),
+                idle_queue: Mutex::new(VecDeque::new()),
+                timers: Mutex::new(BinaryHeap::new()),
+                needs_exit: AtomicBool::new(false),
+                is_blocked: AtomicBool::new(false),
+            })),
+        };
+    
+        let rf_mock = || -> BufReader<&[u8]> {
+            BufReader::new(&[][..])
+        };
+    
+        struct HandlerMock {
+        }
+    
+        impl Handler for HandlerMock {
+            type Notification = String;
+            type Request = String;
+    
+            fn handle_notification(&mut self, ctx: &RpcCtx, rpc: Self::Notification) {
+                ()
+            }
+    
+            fn handle_request(&mut self, ctx: &RpcCtx, rpc: Self::Request) -> Result<Value, RemoteError> {
+                Ok(json!({
+                    "status": "success"
+                }))
+            }
+    
+            #[allow(unused_variables)]
+            fn idle(&mut self, ctx: &RpcCtx, token: usize) {
+                ()
+            }
+        }
+    
+        let mut handler = HandlerMock {};
+        let result = rpc_loop.mainloop(rf_mock, &mut handler);
+    
+        assert!(result.is_err());
+        if let Err(e) = result {
+            assert_eq!(e, ReadError::Disconnect);
+        }
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::peer::RawPeer;
+    use crate::read_write::Write;
+    use crate::parse::MessageReader;
+    use crate::timer::Timer;
+    use crate::timer::Duration;
+    use crate::timer::Instant;
+    use xi_rpc::test_utils::DummyWriter;
+    use std::sync::Arc;
+    use std::thread::scope;
+    use std::sync::atomic::Ordering;
+    use std::io;
+    use std::sync::Mutex;
+    use std::collections::VecDeque;
+    use std::collections::BTreeMap;
+    use std::sync::atomic::AtomicUsize;
+    use std::sync::mpsc;
+    use std::sync::atomic::AtomicBool;
+    use std::sync::mpsc::Sender;
+    use std::io::Write;
+    use xi_rpc::test_utils::sender;
+    use xi_rpc::test_utils::ReadError;
+    use xi_rpc::test_utils::RpcObject;
+    use xi_rpc::test_utils::Error;
+    use xi_rpc::test_utils::Response;
+    use xi_rpc::test_utils::Value;
+    use xi_trace::test::*;
+    use xi_trace::test::trace as trace_payload;
+    use xi_trace::test::trace_block as trace_block_payload;
+    use xi_trace::trace;
+
+    #[test]
+    fn test_new_rpc_loop() {
+        let (tx, _rx) = mpsc::channel();
+        let writer = DummyWriter(tx);
+        let _rpc_loop = RpcLoop::new(writer);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use crate::common::EditBuilder;
+    use crate::interfaces::*;
+
+    #[derive(Default)]
+    struct MockHandler;
+
+    impl Handler for MockHandler {
+        type Notification = ();
+        type Request = ();
+        
+        fn handle_notification(&mut self, ctx: &RpcCtx, rpc: Self::Notification) {
+        }
+        
+        fn handle_request(&mut self, ctx: &RpcCtx, rpc: Self::Request) -> Result<Value, RemoteError> {
+            Ok(Value::Null)
+        }
+    }
+
+    #[derive(Default)]
+    struct MockPeer;
+
+    impl Peer for MockPeer {
+        fn send_rpc_notification(&self, rpc: &str) -> Result<(), RpcError> {
+            Ok(())
+        }
+        fn send_rpc_request(&self, rpc: &str) -> Result<Value, RpcError> {
+            Ok(Value::Null)
+        }
+        fn schedule_idle(&self, token: usize) {
+        }
+    }
+
+    #[test]
+    fn test_do_idle() {
+        let mut handler = MockHandler::default();
+        let ctx = RpcCtx {
+            peer: Box::new(MockPeer::default()),
+        };
+        let token = 123;
+
+        do_idle(&mut handler, &ctx, token);
+        // Add assertions here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io;
+    use serde_json::error::Error as JsonError;
+
+    #[test]
+    fn test_is_disconnect() {
+        let error = ReadError::Disconnect;
+        assert!(error.is_disconnect());
+    }
+}
+True
+========================================
+    use serde_json::json;
+    use serde_json::Value;
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_custom_error() {
+        let expected = RemoteError::custom(404, "Not Found", None);
+        let actual = RemoteError::custom(404, "Not Found", None);
+        assert_eq!(expected, actual);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::sync::mpsc;
+    use std::time::Duration;
+    use std::collections::VecDeque;
+    use std::sync::atomic::{AtomicU64, AtomicBool, Ordering};
+    use std::sync::{Arc, Mutex, Condvar};
+    use serde_json::Value;
+    use serde::de::DeserializeOwned;
+    use serde_json::json;
+    use std::io::{Error as ioError, Write};
+    use std::collections::BTreeSet;
+    use std::collections::BTreeMap;
+    use std::clone::Clone;
+
+    #[derive(Deserialize)]
+    struct DummyNotification {}
+
+    #[derive(Deserialize)]
+    struct DummyRequest {}
+
+    use crate::{RpcCtx, Peer, RpcPeer, RpcState, Response, ResponseHandler, RpcObject, ReadError, Error, RemoteError};
+
+    struct DummyHandler {}
+
+    impl Handler for DummyHandler {
+        type Notification = DummyNotification;
+        type Request = DummyRequest;
+
+        fn handle_notification(&mut self, ctx: &RpcCtx, rpc: Self::Notification) {}
+
+        fn handle_request(&mut self, ctx: &RpcCtx, rpc: Self::Request) -> Result<Value, RemoteError> {
+            Ok(json!("response"))
+        }
+
+        fn idle(&mut self, ctx: &RpcCtx, token: usize) {}
+    }
+
+    struct DummyWriter(Sender<String>);
+
+    impl Write for DummyWriter {
+        fn write(&mut self, buf: &[u8]) -> Result<usize, ioError> {
+            let s = String::from_utf8(buf.to_vec()).unwrap();
+            self.0
+                .send(s)
+                .map_err(|err| ioError::new(ioError::Other, format!("{:?}", err)))
+                .map(|_| buf.len())
+        }
+
+        fn flush(&mut self) -> Result<(), ioError> {
+            Ok(())
+        }
+    }
+
+    #[test]
+    fn test_next_read() {
+        let (tx, rx) = mpsc::channel();
+        let writer = Box::new(DummyWriter(tx));
+
+        let peer = RawPeer(Arc::new(RpcState {
+            writer: Mutex::new(writer),
+            rx_queue: Mutex::new(VecDeque::new()),
+            idle_queue: Mutex::new(VecDeque::new()),
+            timers: Mutex::new(BTreeSet::new()),
+            id: AtomicU64::new(0),
+            pending: Mutex::new(BTreeMap::new()),
+            rx_cvar: Condvar::new(),
+            is_blocked: AtomicBool::new(false),
+            needs_exit: AtomicBool::new(false),
+        }));
+
+        let mut handler = DummyHandler {};
+        let ctx = RpcCtx {
+            peer: RpcPeer::new(peer.clone()).unwrap()
+        };
+
+        let result = next_read(&peer, &mut handler, &ctx);
+
+        assert!(result.is_err());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::BufReader;
+
+    #[test]
+    fn test_next_empty() {
+        let mut reader = BufReader::new("".as_bytes());
+        let mut message_reader = MessageReader::default();
+        let result = message_reader.next(&mut reader);
+        assert_eq!(result, Err(ReadError::Disconnect));
+    }
+
+    #[test]
+    fn test_next_valid() {
+        let mut reader = BufReader::new(r#"{"key": "value"}"#.as_bytes());
+        let mut message_reader = MessageReader::default();
+        let result = message_reader.next(&mut reader);
+        assert_eq!(result, Ok(RpcObject::new()));
+    }
+
+    #[test]
+    fn test_next_invalid() {
+        let mut reader = BufReader::new("invalid\n".as_bytes());
+        let mut message_reader = MessageReader::default();
+        let result = message_reader.next(&mut reader);
+        assert_eq!(result, Err(ReadError::NotObject));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::error::ReadError;
+    use serde_json::json;
+
+    #[test]
+    fn test_parse_valid_json() {
+        let reader = MessageReader(String::new());
+        let result = reader.parse(r#"{"key": "value"}"#);
+        assert_eq!(result, Ok(RpcObject(json!({"key": "value"}))));
+    }
+
+    #[test]
+    fn test_parse_invalid_json() {
+        let reader = MessageReader(String::new());
+        let result = reader.parse(r#"{"key": "value""#);
+        assert_eq!(result, Err(ReadError::NotObject));
+    }
+
+    #[test]
+    fn test_parse_empty_string() {
+        let reader = MessageReader(String::new());
+        let result = reader.parse("");
+        assert_eq!(result, Err(ReadError::NotObject));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::{json, Value};
+    use crate::error::RemoteError;
+    use crate::parse::{RpcObject, Request, Response, Notification, Call, RequestId};
+    use crate::error::JsonError;
+    use serde::de::DeserializeOwned;
+    use serde_json::error::Error as JsonError;
+    
+    #[test]
+    fn test_get_id() {
+        let obj = RpcObject(json!({
+            "id": 42
+        }));
+        assert_eq!(obj.get_id(), Some(42));
+    }
+    
+    #[test]
+    fn test_get_id_none() {
+        let obj = RpcObject(json!({
+            "method": "foo"
+        }));
+        assert_eq!(obj.get_id(), None);
+    }
+    
+    #[test]
+    fn test_get_id_invalid() {
+        let obj = RpcObject(json!({
+            "id": "invalid"
+        }));
+        assert_eq!(obj.get_id(), None);
+    }
+    
+    #[test]
+    fn test_get_method() {
+        let obj = RpcObject(json!({
+            "method": "foo"
+        }));
+        assert_eq!(obj.get_method(), Some("foo"));
+    }
+    
+    #[test]
+    fn test_get_method_none() {
+        let obj = RpcObject(json!({
+            "id": 42
+        }));
+        assert_eq!(obj.get_method(), None);
+    }
+    
+    #[test]
+    fn test_is_response_true() {
+        let obj = RpcObject(json!({
+            "id": 42
+        }));
+        assert_eq!(obj.is_response(), true);
+    }
+    
+    #[test]
+    fn test_is_response_false() {
+        let obj = RpcObject(json!({
+            "id": 42,
+            "method": "foo"
+        }));
+        assert_eq!(obj.is_response(), false);
+    }
+    
+    #[test]
+    fn test_into_response_ok() {
+        let obj = RpcObject(json!({
+            "id": 42,
+            "result": "success"
+        }));
+        assert_eq!(obj.into_response(), Ok(Ok(json!("success"))));
+    }
+    
+    #[test]
+    fn test_into_response_error() {
+        let obj = RpcObject(json!({
+            "id": 42,
+            "error": {
+                "code": -1,
+                "message": "error"
+            }
+        }));
+        assert_eq!(obj.into_response(), Ok(Err(RemoteError {
+            code: -1,
+            message: "error".to_string(),
+        })));
+    }
+    
+    #[test]
+    fn test_into_rpc_request() {
+        let obj = RpcObject(json!({
+            "id": 42,
+            "method": "foo",
+            "params": {
+                "param1": "value1",
+                "param2": "value2"
+            }
+        }));
+        assert_eq!(obj.into_rpc::<Request, Response>(), Ok(Call::Request(42, Request {
+            param1: "value1".to_string(),
+            param2: "value2".to_string(),
+        })));
+    }
+    
+    #[test]
+    fn test_into_rpc_notification() {
+        let obj = RpcObject(json!({
+            "method": "foo",
+            "params": {
+                "param1": "value1",
+                "param2": "value2"
+            }
+        }));
+        assert_eq!(obj.into_rpc::<Notification, Response>(), Ok(Call::Notification(Notification {
+            param1: "value1".to_string(),
+            param2: "value2".to_string(),
+        })));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_get_method_with_method_present() {
+        let object = RpcObject(json!({
+            "id": 1,
+            "method": "foo",
+        }));
+
+        let result = object.get_method();
+        assert_eq!(result, Some("foo"));
+    }
+
+    #[test]
+    fn test_get_method_with_method_absent() {
+        let object = RpcObject(json!({
+            "id": 1,
+        }));
+
+        let result = object.get_method();
+        assert_eq!(result, None);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+
+    #[test]
+    fn test_into_response_ok_and_error() {
+        let obj = RpcObject(json!({
+            "id": 1,
+            "result": "success"
+        }));
+
+        let result = obj.into_response();
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), Ok(json!("success")));
+
+        let obj = RpcObject(json!({
+            "id": 1,
+            "error": {
+                "code": -1,
+                "message": "error message"
+            }
+        }));
+
+        let result = obj.into_response();
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), Err(json!({
+            "code": -1,
+            "message": "error message"
+        })));
+    }
+
+    #[test]
+    fn test_into_response_missing_id() {
+        let obj = RpcObject(json!({
+            "result": "success"
+        }));
+
+        let result = obj.into_response();
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn test_into_response_invalid_response() {
+        let obj = RpcObject(json!({
+            "id": 1,
+            "error": {
+                "code": "invalid",
+                "message": "error message"
+            }
+        }));
+
+        let result = obj.into_response();
+        assert!(result.is_err());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde::Deserialize;
+
+    // Test case for RPC request
+    #[derive(Debug, Deserialize)]
+    struct Request {
+        // Add fields for RPC request
+    }
+
+    // Test case for RPC response
+    #[derive(Debug, Deserialize)]
+    struct Response {
+        // Add fields for RPC response
+    }
+
+    #[test]
+    fn test_into_rpc_request() {
+        let rpc_object = RpcObject(json!({
+            "id": 1,
+            // Add fields specific to request
+        }));
+        let result: Result<Call<Request, Response>, JsonError> = rpc_object.into_rpc();
+        assert!(result.is_ok());
+
+        let call = result.unwrap();
+        match call {
+            Call::Request(id, request) => {
+                assert_eq!(id, 1);
+                // Add your additional assertions for request object
+            },
+            Call::InvalidRequest(_, _) => {
+                panic!("Invalid request");
+            },
+            Call::Notification(_) => {
+                panic!("Expected request, but got notification");
+            },
+        }
+    }
+
+    #[test]
+    fn test_into_rpc_response() {
+        let rpc_object = RpcObject(json!({
+            "id": 1,
+            "result": {
+                // Add fields specific to response result
+            },
+        }));
+        let result: Result<Call<Request, Response>, JsonError> = rpc_object.into_rpc();
+        assert!(result.is_ok());
+
+        let call = result.unwrap();
+        match call {
+            Call::Request(_, _) => {
+                panic!("Expected response, but got request");
+            },
+            Call::InvalidRequest(_, _) => {
+                panic!("Expected response, but got invalid request");
+            },
+            Call::Notification(_) => {
+                panic!("Expected response, but got notification");
+            },
+        }
+    }
+
+    #[test]
+    fn test_into_rpc_notification() {
+        let rpc_object = RpcObject(json!({
+            // Add fields specific to notification
+        }));
+        let result: Result<Call<Request, Response>, JsonError> = rpc_object.into_rpc();
+        assert!(result.is_ok());
+
+        let call = result.unwrap();
+        match call {
+            Call::Request(_, _) => {
+                panic!("Expected notification, but got request");
+            },
+            Call::InvalidRequest(_, _) => {
+                panic!("Expected notification, but got invalid request");
+            },
+            Call::Notification(notification) => {
+                // Add your additional assertions for notification object
+            },
+        }
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+
+    #[test]
+    fn test_is_response() {
+        let object_no_id = RpcObject(json!({
+            "method": "test_method",
+            "params": [],
+            "jsonrpc": "2.0"
+        }));
+        assert_eq!(object_no_id.is_response(), false);
+
+        let object_no_method = RpcObject(json!({
+            "id": 1,
+            "params": [],
+            "jsonrpc": "2.0"
+        }));
+        assert_eq!(object_no_method.is_response(), true);
+
+        let object_with_id_and_method = RpcObject(json!({
+            "id": 1,
+            "method": "test_method",
+            "params": [],
+            "jsonrpc": "2.0"
+        }));
+        assert_eq!(object_with_id_and_method.is_response(), false);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parse::MessageReader;
+    use crate::test_utils::DummyReader;
+    use std::io::BufRead;
+    use std::sync::mpsc::Receiver;
+    use std::thread;
+    use std::time::Duration;
+
+    #[test]
+    fn test_expect_nothing() {
+        let (sender, receiver) = std::sync::mpsc::channel();
+        let reader = DummyReader(MessageReader(String::new()), receiver);
+
+        // Spawn a thread that sends a message after a delay
+        let handle = thread::spawn(move || {
+            thread::sleep(Duration::from_millis(1000));
+            sender.send("Hello".to_owned()).unwrap();
+        });
+
+        // Execute the expect_nothing function
+        reader.expect_nothing();
+
+        // Join the spawned thread
+        handle.join().unwrap();
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use std::io::BufRead;
+    use std::time::Duration;
+    use std::sync::mpsc;
+    
+    #[test]
+    fn test_expect_object() {
+        let (sender, receiver) = mpsc::channel();
+        let mut dummy_reader = DummyReader(MessageReader(String::new()), receiver);
+        let result = dummy_reader.expect_object();
+        // Add your assertions here
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::parse::MessageReader;
+    use crate::parse::ReadError;
+    use crate::RpcObject;
+    use serde_json::Value;
+    use serde_json::from_str;
+    use std::sync::mpsc::Receiver;
+    use std::io::BufRead;
+    use std::time::Duration;
+
+    #[test]
+    #[should_panic]
+    fn test_expect_response_no_response() {
+        let mut dummy_reader = DummyReader(MessageReader(String::new()), Receiver::default());
+        dummy_reader.expect_response();
+    }
+
+    #[test]
+    fn test_expect_response_bad_response() {
+        let mut dummy_reader = DummyReader(MessageReader(String::new()), Receiver::default());
+        dummy_reader.1.try_send(String::from("invalid_response")).ok();
+        let result = std::panic::catch_unwind(move || {
+            dummy_reader.expect_response();
+        });
+        dummy_reader.1.try_recv().ok();
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn test_expect_response_valid_response() {
+        let mut dummy_reader = DummyReader(MessageReader(String::new()), Receiver::default());
+        let response_str = "valid_response";
+        let response = RpcObject::from(Value::String(response_str.to_owned()));
+        dummy_reader.1.try_send(from_str(response_str).unwrap()).ok();
+        let result = std::panic::catch_unwind(move || {
+            let result = dummy_reader.expect_response();
+            assert_eq!(result, response);
+        });
+        dummy_reader.1.try_recv().ok();
+        assert!(result.is_ok());
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use serde_json::json;
+    use std::io::BufRead;
+    use std::sync::mpsc::Receiver;
+    use std::time::Duration;
+
+    #[test]
+    fn test_expect_rpc() {
+        let mut reader = DummyReader(
+            MessageReader(String::new()),
+            std::sync::mpsc::channel::<String>().1,
+        );
+        let method = "test_method";
+
+        let obj = RpcObject(json!({
+            "method": method
+        }));
+
+        reader.1 = Ok(json!(obj.clone()).to_string()).into();
+
+        let result = reader.expect_rpc(method);
+
+        assert_eq!(result.get_method(), Some(method));
+    }
+}
+False
+========================================
+    use crate::test_utils::DummyReader;
+    use crate::test_utils::ReadError;
+    use std::time::Duration;
+    use std::sync::mpsc::channel;
+    use serde_json::Value;
+    use serde_json::json;
+    use xi_trace;
+    use std::io::BufRead;
+    use crate::parse::MessageReader;
+    use std::sync::mpsc::Sender;
+    use std::sync::mpsc::Receiver;
+    use crate::parse::ReadError;
+
+    #[test]
+    fn test_next_timeout() {
+        let (sender, receiver): (Sender<String>, Receiver<String>) = channel();
+        let mut dummy_reader = DummyReader(MessageReader(String), receiver);
+
+        sender.send(json!({"id": 1, "method": "test", "params": {}}).to_string()).unwrap();
+        let result = dummy_reader.next_timeout(Duration::from_secs(1));
+        let expected = Ok(json!({"id": 1, "method": "test", "params": {}}).into());
+        assert_eq!(result, Some(expected));
+    }
+}
+False
+========================================
+    use std::io::{Cursor, Read};
+
+    #[test]
+    fn test_make_reader() {
+        use crate::test_utils::make_reader;
+        
+        let input = "Hello, World!";
+        let reader = make_reader(input);
+        
+        let mut buffer = String::new();
+        let bytes_read = reader.read_to_string(&mut buffer).unwrap();
+        
+        assert_eq!(buffer, "Hello, World!");
+        assert_eq!(bytes_read, 13);
+    }
+}
+False
+========================================
+    use crate::test_utils::{test_channel, DummyWriter, DummyReader};
+    use std::io::Write;
+    use std::sync::mpsc::{channel, Receiver};
+    use std::time::Duration;
+    use crate::parse::{MessageReader, RpcObject};
+    use crate::error::ReadError;
+    use serde_json::Value;
+
+    #[test]
+    fn test_test_channel() {
+        let (writer, reader) = test_channel();
+        let mut dummy_writer = DummyWriter(writer);
+        dummy_writer.write(b"test").unwrap();
+        let dummy_reader = DummyReader(MessageReader::default(), reader);
+        let result = dummy_reader.expect_object();
+        assert_eq!(result, RpcObject::default());
+    }
+}
+False
+xi-editor xi-rpc 15 67

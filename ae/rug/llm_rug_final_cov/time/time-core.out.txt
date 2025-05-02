@@ -1,0 +1,264 @@
+-----------------
+time-core/src/util.rs util::is_leap_year
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++util::is_leap_year(p0);
++crate::util::is_leap_year(p0);
++crate::util::is_leap_year(p0);
+-----------------
+time-core/src/util.rs util::days_in_year
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++util::days_in_year(p0);
++crate::util::days_in_year(p0);
++crate::util::days_in_year(p0);
+-----------------
+time-core/src/util.rs util::weeks_in_year
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++util::weeks_in_year(p0);
++crate::util::weeks_in_year(p0);
++crate::util::weeks_in_year(p0);
+-----------------
+time-core/src/convert.rs <convert::Nanosecond as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Nanosecond
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Nanosecond as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Nanosecond as std::fmt::Debug>::fmt(p0, p1);
++<convert::Nanosecond>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Nanosecond as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Nanosecond
++p0.clone();
++<convert::Nanosecond as std::clone::Clone>::clone(p0);
++crate::<convert::Nanosecond as std::clone::Clone>::clone(p0);
++<convert::Nanosecond>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Nanosecond::per
+deps:{"convert::Nanosecond::per":{"(convert::Nanosecond, T)":["convert::Per"],"T":["std::marker::Sized","std::marker::Copy"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Nanosecond::per":{"(convert::Nanosecond, T)":[],"T":["convert::Millisecond","convert::Minute","convert::Day","convert::Microsecond","std::marker::copy_impls::<impl std::marker::Copy for *mut T>","convert::Second","convert::Hour","convert::Nanosecond","convert::Week"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Nanosecond
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Nanosecond::per(p0, p1);
++crate::convert::Nanosecond::per(p0, p1);
++<convert::Nanosecond>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Microsecond as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Microsecond
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Microsecond as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Microsecond as std::fmt::Debug>::fmt(p0, p1);
++<convert::Microsecond>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Microsecond as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Microsecond
++p0.clone();
++<convert::Microsecond as std::clone::Clone>::clone(p0);
++crate::<convert::Microsecond as std::clone::Clone>::clone(p0);
++<convert::Microsecond>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Microsecond::per
+deps:{"convert::Microsecond::per":{"(convert::Microsecond, T)":["convert::Per"],"T":["std::marker::Sized","std::marker::Copy"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Microsecond::per":{"(convert::Microsecond, T)":[],"T":["convert::Day","convert::Millisecond","convert::Hour","std::marker::copy_impls::<impl std::marker::Copy for *const T>","convert::Microsecond","std::marker::copy_impls::<impl std::marker::Copy for &T>","convert::Minute","convert::Nanosecond","convert::Second","convert::Week"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Microsecond
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Microsecond::per(p0, p1);
++crate::convert::Microsecond::per(p0, p1);
++<convert::Microsecond>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Millisecond as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Millisecond
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Millisecond as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Millisecond as std::fmt::Debug>::fmt(p0, p1);
++<convert::Millisecond>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Millisecond as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Millisecond
++p0.clone();
++<convert::Millisecond as std::clone::Clone>::clone(p0);
++crate::<convert::Millisecond as std::clone::Clone>::clone(p0);
++<convert::Millisecond>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Millisecond::per
+deps:{"convert::Millisecond::per":{"(convert::Millisecond, T)":["convert::Per"],"T":["std::marker::Sized","std::marker::Copy"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Millisecond::per":{"(convert::Millisecond, T)":[],"T":["std::marker::copy_impls::<impl std::marker::Copy for *mut T>","convert::Nanosecond","convert::Week","convert::Microsecond","std::marker::copy_impls::<impl std::marker::Copy for *const T>","convert::Day","convert::Millisecond","convert::Hour","convert::Minute","convert::Second"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Millisecond
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Millisecond::per(p0, p1);
++crate::convert::Millisecond::per(p0, p1);
++<convert::Millisecond>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Second as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Second
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Second as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Second as std::fmt::Debug>::fmt(p0, p1);
++<convert::Second>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Second as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Second
++p0.clone();
++<convert::Second as std::clone::Clone>::clone(p0);
++crate::<convert::Second as std::clone::Clone>::clone(p0);
++<convert::Second>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Second::per
+deps:{"convert::Second::per":{"(convert::Second, T)":["convert::Per"],"T":["std::marker::Copy","std::marker::Sized"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Second::per":{"(convert::Second, T)":[],"T":["convert::Microsecond","convert::Day","convert::Nanosecond","convert::Minute","convert::Hour","convert::Millisecond","std::marker::copy_impls::<impl std::marker::Copy for *mut T>","convert::Week","std::marker::copy_impls::<impl std::marker::Copy for &T>","convert::Second"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Second
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Second::per(p0, p1);
++crate::convert::Second::per(p0, p1);
++<convert::Second>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Minute as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Minute
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Minute as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Minute as std::fmt::Debug>::fmt(p0, p1);
++<convert::Minute>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Minute as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Minute
++p0.clone();
++<convert::Minute as std::clone::Clone>::clone(p0);
++crate::<convert::Minute as std::clone::Clone>::clone(p0);
++<convert::Minute>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Minute::per
+deps:{"convert::Minute::per":{"(convert::Minute, T)":["convert::Per"],"T":["std::marker::Sized","std::marker::Copy"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Minute::per":{"(convert::Minute, T)":[],"T":["std::marker::copy_impls::<impl std::marker::Copy for &T>","convert::Day","convert::Second","convert::Microsecond","convert::Minute","convert::Millisecond","convert::Hour","convert::Week","std::marker::copy_impls::<impl std::marker::Copy for *const T>","convert::Nanosecond"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Minute
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Minute::per(p0, p1);
++crate::convert::Minute::per(p0, p1);
++<convert::Minute>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Hour as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Hour
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Hour as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Hour as std::fmt::Debug>::fmt(p0, p1);
++<convert::Hour>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Hour as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Hour
++p0.clone();
++<convert::Hour as std::clone::Clone>::clone(p0);
++crate::<convert::Hour as std::clone::Clone>::clone(p0);
++<convert::Hour>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Hour::per
+deps:{"convert::Hour::per":{"(convert::Hour, T)":["convert::Per"],"T":["std::marker::Copy","std::marker::Sized"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Hour::per":{"(convert::Hour, T)":[],"T":["convert::Hour","std::marker::copy_impls::<impl std::marker::Copy for &T>","convert::Microsecond","convert::Millisecond","convert::Week","convert::Minute","convert::Nanosecond","convert::Day","convert::Second"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Hour
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Hour::per(p0, p1);
++crate::convert::Hour::per(p0, p1);
++<convert::Hour>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Day as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Day
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Day as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Day as std::fmt::Debug>::fmt(p0, p1);
++<convert::Day>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Day as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Day
++p0.clone();
++<convert::Day as std::clone::Clone>::clone(p0);
++crate::<convert::Day as std::clone::Clone>::clone(p0);
++<convert::Day>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Day::per
+deps:{"convert::Day::per":{"(convert::Day, T)":["convert::Per"],"T":["std::marker::Copy","std::marker::Sized"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Day::per":{"(convert::Day, T)":[],"T":["convert::Minute","convert::Week","convert::Millisecond","convert::Second","std::marker::copy_impls::<impl std::marker::Copy for *mut T>","convert::Nanosecond","convert::Day","convert::Hour","convert::Microsecond","std::marker::copy_impls::<impl std::marker::Copy for *const T>"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Day
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Day::per(p0, p1);
++crate::convert::Day::per(p0, p1);
++<convert::Day>::per(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Week as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Week
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<convert::Week as std::fmt::Debug>::fmt(p0, p1);
++crate::<convert::Week as std::fmt::Debug>::fmt(p0, p1);
++<convert::Week>::fmt(p0, p1);
+-----------------
+time-core/src/convert.rs <convert::Week as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // convert::Week
++p0.clone();
++<convert::Week as std::clone::Clone>::clone(p0);
++crate::<convert::Week as std::clone::Clone>::clone(p0);
++<convert::Week>::clone(p0);
+-----------------
+time-core/src/convert.rs convert::Week::per
+deps:{"convert::Week::per":{"(convert::Week, T)":["convert::Per"],"T":["std::marker::Sized","std::marker::Copy"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+candidates:{"convert::Week::per":{"(convert::Week, T)":[],"T":["std::marker::copy_impls::<impl std::marker::Copy for &T>","std::marker::copy_impls::<impl std::marker::Copy for *const T>","convert::Minute","convert::Hour","convert::Microsecond","convert::Millisecond","convert::Day","convert::Week","convert::Second","convert::Nanosecond"]},"std::marker::copy_impls::<impl std::marker::Copy for &T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *const T>":{},"std::marker::copy_impls::<impl std::marker::Copy for *mut T>":{}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // convert::Week
+let mut p1 = MaybeUninit::uninit().assume_init(); // T
++p0.per(p1);
++convert::Week::per(p0, p1);
++crate::convert::Week::per(p0, p1);
++<convert::Week>::per(p0, p1);

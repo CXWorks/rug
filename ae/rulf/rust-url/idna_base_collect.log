@@ -1,0 +1,799 @@
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_default() {
+        let config = <uts46::Config as std::default::Default>::default();
+
+        assert_eq!(config.use_std3_ascii_rules, false);
+        assert_eq!(config.transitional_processing, false);
+        assert_eq!(config.check_hyphens, false);
+        assert_eq!(config.verify_dns_length, false);
+    }
+}
+True
+========================================
+    use crate::domain_to_ascii;
+    use crate::uts46::Errors;
+    use std::result::Result;
+    use std::convert::From;
+    
+    #[test]
+    fn test_domain_to_ascii() {
+        let domain = "example.com";
+        let result: Result<String, Errors> = domain_to_ascii(domain.to_owned());
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), "example.com");
+    }
+    
+    #[test]
+    fn test_domain_to_ascii_invalid() {
+        let domain = "example@invalid.com";
+        let result: Result<String, Errors> = domain_to_ascii(domain.to_owned());
+        assert!(result.is_err());
+    }
+    
+    // Add more test cases if needed
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use uts46::Errors;
+    use std::result::Result;
+
+    #[test]
+    fn test_domain_to_ascii_strict() {
+        assert_eq!(domain_to_ascii_strict("test.com").as_ref(), Ok("test.com"));
+        assert_eq!(domain_to_ascii_strict("ünicode.com").as_ref(), Ok("ünicode.com"));
+        assert_eq!(domain_to_ascii_strict("münicode.com").as_ref(), Ok("xn--mnicode-9sa.com"));
+        assert_eq!(domain_to_ascii_strict("münicodeünicode.com").as_ref(), Ok("xn--mnicode9sa9etp.com"));
+
+        assert_eq!(
+            domain_to_ascii_strict("invalid ünicode.com").err(),
+            Some(Errors {
+                punycode: false,
+                validity_criteria: false,
+                disallowed_by_std3_ascii_rules: false,
+                disallowed_mapped_in_std3: false,
+                disallowed_character: true,
+                too_long_for_dns: false,
+                too_short_for_dns: false,
+            })
+        );
+
+        assert_eq!(
+            domain_to_ascii_strict("invalidünicode.com").err(),
+            Some(Errors {
+                punycode: false,
+                validity_criteria: false,
+                disallowed_by_std3_ascii_rules: false,
+                disallowed_mapped_in_std3: false,
+                disallowed_character: true,
+                too_long_for_dns: false,
+                too_short_for_dns: false,
+            })
+        );
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_domain_to_unicode() {
+        let domain = "www.例子.com";
+        let (unicode, result) = domain_to_unicode(domain);
+        assert_eq!(unicode, "www.xn--fsq.example.com");
+        assert_eq!(result.is_ok(), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_adapt() {
+        assert_eq!(adapt(0, 0, true), 0); // Test case with delta=0, num_points=0, first_time=true
+        assert_eq!(adapt(0, 1, false), 0); // Test case with delta=0, num_points=1, first_time=false
+        assert_eq!(adapt(100, 10, true), 87); // Test case with delta=100, num_points=10, first_time=true
+        assert_eq!(adapt(200, 5, false), 200); // Test case with delta=200, num_points=5, first_time=false
+        // Add more test cases here...
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_decode() {
+        // Test case 1: valid input
+        let input1 = "xn--bcher-kva.example";
+        let output1 = Some("bücher".chars().collect::<Vec<char>>());
+        assert_eq!(decode(input1), output1);
+        
+        // Test case 2: valid input with no delimiter
+        let input2 = "xn--bcher-kva";
+        let output2 = Some("bücher".chars().collect::<Vec<char>>());
+        assert_eq!(decode(input2), output2);
+        
+        // Test case 3: input with overflow
+        let input3 = "xn--bcher-kva.exampleoverflow";
+        let output3: Option<Vec<char>> = None;
+        assert_eq!(decode(input3), output3);
+        
+        // Test case 4: input with malformed input
+        let input4 = "xn--bcher-kva.example!@#$";
+        let output4: Option<Vec<char>> = None;
+        assert_eq!(decode(input4), output4);
+    }
+}
+True
+========================================
+    use crate::punycode::decode_to_string;
+
+    #[test]
+    fn test_decode_to_string() {
+        assert_eq!(decode_to_string("xn--4gbrim"), Some("مثال-إختبار".to_string()));
+        assert_eq!(decode_to_string("xn--t4c"), Some("tést".to_string()));
+        assert_eq!(decode_to_string("xn--4db9c8c"), Some("hello".to_string()));
+        assert_eq!(decode_to_string("xn--q9jyb4c"), Some("點心".to_string()));
+        assert_eq!(decode_to_string("xn--bcher-kva"), Some("bücher".to_string()));
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_encode() {
+        assert_eq!(punycode::encode(&['a', 'b', 'c']).unwrap(), "abc");
+        assert_eq!(punycode::encode(&['☺', '☃', '☷']).unwrap(), "xn--74h");
+        assert_eq!(punycode::encode(&['!', '@', '#']).unwrap(), "xn--21h");
+        assert_eq!(punycode::encode(&['&', '*', '$']).unwrap(), "xn--imz");
+        assert_eq!(punycode::encode(&['%', '^', '(']).unwrap(), "xn--vnu");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::punycode;
+    use uts46::{Config, Errors};
+    use std::result::Result;
+
+    #[test]
+    fn test_encode_into() {
+        let input: Vec<char> = vec!['a', 'b', 'c'];
+        let mut output = String::new();
+        let result: Result<(), ()> = encode_into(input.iter().cloned(), &mut output);
+
+        assert_eq!(result, Ok(()));
+        assert_eq!(output, "abc");
+    }
+
+    #[test]
+    fn test_encode_into_with_non_ascii() {
+        let input: Vec<char> = vec!['a', 'b', 'c', '😀'];
+        let mut output = String::new();
+        let result: Result<(), ()> = encode_into(input.iter().cloned(), &mut output);
+
+        assert_eq!(result, Ok(()));
+        assert_eq!(output, "abc😀");
+    }
+
+    #[test]
+    fn test_encode_into_with_overflow() {
+        let input: Vec<char> = vec!['a', 'b', 'c'];
+        let mut output = String::new();
+        let result: Result<(), ()> = encode_into(input.iter().cloned(), &mut output);
+
+        assert_eq!(result, Err(()));
+        assert_eq!(output, ""); // The output should be empty if an overflow occurs
+    }
+
+    // Add more test cases here
+    // ...
+}
+
+#[cfg(test)]
+mod uts46_tests {
+    use super::*;
+
+use crate::*;
+    use crate::punycode;
+
+    #[test]
+    fn test_to_ascii() {
+        let config = Config::default();
+        let domain = "测试.com";
+        let expected = "xn--0zwm56d.com";
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, Ok(expected.to_string()));
+    }
+
+    #[test]
+    fn test_to_unicode() {
+        let config = Config::default();
+        let domain = "xn--0zwm56d.com";
+        let expected = "测试.com";
+
+        let (result, _) = config.to_unicode(domain);
+
+        assert_eq!(result, expected.to_string());
+    }
+
+    #[test]
+    fn test_to_unicode_with_errors() {
+        let config = Config::default();
+        let domain = "xn--test.com";
+        let expected = "xn--test.com";
+        let errors = Errors {
+            punycode: true,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: false,
+            too_short_for_dns: false,
+        };
+
+        let (result, result_errors) = config.to_unicode(domain);
+
+        assert_eq!(result, expected.to_string());
+        assert_eq!(result_errors, errors);
+    }
+
+    #[test]
+    fn test_to_ascii_with_errors() {
+        let config = Config::default();
+        let domain = "测试.abc.com";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: true,
+            too_short_for_dns: false,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_to_ascii_with_empty_domain() {
+        let config = Config::default();
+        let domain = "";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: true,
+            too_short_for_dns: true,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_to_ascii_with_invalid_labels() {
+        let config = Config::default();
+        let domain = "xn--test..com";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: true,
+            too_short_for_dns: false,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_to_ascii_with_single_label_too_long() {
+        let config = Config::default();
+        let domain = "xn--testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestte.com";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: true,
+            too_short_for_dns: false,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_to_ascii_with_label_too_long() {
+        let config = Config::default();
+        let domain = "xn--testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestte.c.com";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: true,
+            too_short_for_dns: false,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_to_ascii_with_label_too_short() {
+        let config = Config::default();
+        let domain = "xn--.com";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: false,
+            too_short_for_dns: true,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_to_ascii_with_label_too_long_with_label_2() {
+        let config = Config::default();
+        let domain = "xn--testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest.cc";
+        let expected = Err(Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: true,
+            too_short_for_dns: false,
+        });
+
+        let result = config.to_ascii(domain);
+
+        assert_eq!(result, expected);
+    }
+}
+False
+========================================
+    use crate::punycode::encode_str;
+
+    #[test]
+    fn test_encode_str() {
+        assert_eq!(encode_str("example.com"), Some("example.com".to_string()));
+        assert_eq!(encode_str("ünicödé.com"), Some("xn--nicd-estb.com".to_string()));
+        assert_eq!(encode_str("bücher"), Some("bcher-kva".to_string()));
+        assert_eq!(encode_str("🌍.com"), Some("xn--ls8h.com".to_string()));
+        assert_eq!(encode_str("いぬ.com"), Some("xn--eckwd4c.com".to_string()));
+    }
+}
+True
+========================================
+    use crate::punycode::value_to_digit;
+
+    #[test]
+    fn test_value_to_digit() {
+        assert_eq!(value_to_digit(0), 'a');
+        assert_eq!(value_to_digit(25), 'z');
+        assert_eq!(value_to_digit(26), '0');
+        assert_eq!(value_to_digit(35), '9');
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_from() {
+        let mut errors = Errors {
+            punycode: false,
+            validity_criteria: false,
+            disallowed_by_std3_ascii_rules: false,
+            disallowed_mapped_in_std3: false,
+            disallowed_character: false,
+            too_long_for_dns: false,
+            too_short_for_dns: false,
+        };
+        
+        let result: Result<(), Errors> = std::result::Result::from(errors.clone());
+        assert_eq!(result.unwrap(), ());
+
+        errors.punycode = true;
+        let result: Result<(), Errors> = std::result::Result::from(errors.clone());
+        assert_eq!(result.unwrap_err().punycode, true);
+
+        // Set other error flags too if needed and write appropriate assertions
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_check_hyphens() {
+        let config = Config::default().check_hyphens(true);
+        assert_eq!(config.check_hyphens, true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use std::string::ToString;
+    
+    #[test]
+    fn test_to_ascii() {
+        let config = Config::default();
+        let domain = "example.com";
+        let result = config.to_ascii(domain).unwrap();
+        assert_eq!(result, "example.com".to_string());
+    }
+    
+    #[test]
+    fn test_to_ascii_with_punycode() {
+        let config = Config::default();
+        let domain = "ünicode.com";
+        let result = config.to_ascii(domain).unwrap();
+        assert_eq!(result, "xn--nicode-6qa.com".to_string());
+    }
+    
+    #[test]
+    fn test_to_ascii_with_empty_string() {
+        let config = Config::default();
+        let domain = "";
+        let result = config.to_ascii(domain).unwrap();
+        assert_eq!(result, "".to_string());
+    }
+    
+    #[test]
+    fn test_to_ascii_with_invalid_label() {
+        let config = Config::default();
+        let domain = "example.comü";
+        let result = config.to_ascii(domain).unwrap_err();
+        assert!(result.punycode);
+    }
+    
+    #[test]
+    fn test_to_ascii_with_invalid_dns_length() {
+        let config = Config::default().verify_dns_length(true);
+        let domain = "example.com".to_string() + &"a".repeat(250);
+        let result = config.to_ascii(&domain).unwrap_err();
+        assert!(result.too_long_for_dns);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use uts46::Errors;
+
+    #[test]
+    fn test_to_unicode() {
+        #[derive(PartialEq)]
+        struct Errors {
+            pub punycode: bool,
+            pub validity_criteria: bool,
+            pub disallowed_by_std3_ascii_rules: bool,
+            pub disallowed_mapped_in_std3: bool,
+            pub disallowed_character: bool,
+            pub too_long_for_dns: bool,
+            pub too_short_for_dns: bool,
+        }
+
+        let config = Config::default();
+        let domain = "example.com";
+        let (result, errors): (String, Result<(), Errors>) = config.to_unicode(domain);
+
+        assert_eq!(result, "example.com");
+        assert_eq!(errors, Ok(()));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_transitional_processing() {
+        let config = Config::default();
+        let new_config = config.transitional_processing(true);
+        assert_eq!(new_config.transitional_processing, true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_use_std3_ascii_rules() {
+        let config = Config::default().use_std3_ascii_rules(true);
+        assert_eq!(config.use_std3_ascii_rules, true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_verify_dns_length() {
+        let config = Config::default().verify_dns_length(true);
+        assert_eq!(config.verify_dns_length, true);
+    }
+}
+True
+========================================
+    use crate::uts46::decode_slice;
+    use crate::uts46::StringTableSlice;
+    
+    #[test]
+    fn test_decode_slice() {
+        let slice = StringTableSlice {
+            byte_start_lo: 0,
+            byte_start_hi: 0,
+            byte_len: 0,
+        };
+        assert_eq!(decode_slice(&slice), "");
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::uts46;
+
+    #[test]
+    fn test_find_char() {
+        let codepoint = 'a';
+        let mapping = Mapping::Valid;
+        assert_eq!(find_char(codepoint), &mapping);
+    }
+}
+False
+========================================
+    use crate::uts46::{is_bidi_domain, bidi_class, BidiClass};
+    
+    #[test]
+    fn test_is_bidi_domain() {
+        assert_eq!(is_bidi_domain(""), false);
+        assert_eq!(is_bidi_domain("abc"), false);
+        assert_eq!(is_bidi_domain("123"), false);
+        assert_eq!(is_bidi_domain("abc123"), false);
+        assert_eq!(is_bidi_domain("العالم"), true);
+        assert_eq!(is_bidi_domain("hello 世界"), true);
+        assert_eq!(is_bidi_domain("abc 123 العالم"), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use uts46::Mapping;
+
+    #[test]
+    fn test_is_valid() {
+        let config = Config::default();
+
+        // Test empty string
+        assert!(is_valid("", config));
+
+        // Test label with no hyphen in third and fourth positions
+        assert!(is_valid("example", config));
+
+        // Test label starts with hyphen
+        assert!(!is_valid("-example", config));
+
+        // Test label ends with hyphen
+        assert!(!is_valid("example-", config));
+
+        // Test label with full stop
+        assert!(!is_valid("example.com", config));
+
+        // Test label starts with GC=Mark
+        assert!(!is_valid("◌example", config));
+
+        // Test label with valid characters, no deviations, no disallowed characters
+        assert!(is_valid("example", config));
+
+        // Test label with deviation and transitional processing enabled
+        let config_deviation = Config::default().transitional_processing(true);
+        assert!(is_valid("ex❼mple", config_deviation));
+
+        // Test label with disallowed characters and use of STD3 ASCII rules enabled
+        let config_disallowed = Config::default().use_std3_ascii_rules(true);
+        assert!(!is_valid("ex!ample", config_disallowed));
+
+        // Test label with disallowed characters and use of STD3 ASCII rules disabled
+        assert!(is_valid("ex!ample", config));
+    }
+}
+True
+========================================
+use std::fmt;
+use super::*;
+
+use crate::*;
+
+
+    #[derive(Default)]
+    pub struct Errors {
+        pub punycode: bool,
+        pub validity_criteria: bool,
+        pub disallowed_by_std3_ascii_rules: bool,
+        pub disallowed_mapped_in_std3: bool,
+        pub disallowed_character: bool,
+        pub too_long_for_dns: bool,
+        pub too_short_for_dns: bool,
+    }
+
+    impl std::error::Error for Errors {}
+
+    impl std::fmt::Debug for Errors {
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+            std::fmt::Debug::fmt(self, f)
+        }
+    }
+
+    impl std::fmt::Display for Errors {
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+            std::fmt::Debug::fmt(self, f)
+        }
+    }
+
+    #[test]
+    fn test_map_char() {
+        let mut output = String::new();
+        let mut errors = Errors::default();
+        let config = Config::default();
+
+        // Test case 1
+        let codepoint1 = '.';
+        map_char(codepoint1, config, &mut output, &mut errors);
+        assert_eq!(output, ".");
+        assert_eq!(errors, Errors::default());
+
+        // Test case 2
+        let codepoint2 = '-';
+        map_char(codepoint2, config, &mut output, &mut errors);
+        assert_eq!(output, "-");
+        assert_eq!(errors, Errors::default());
+
+        // Test case 3
+        let codepoint3 = 'a';
+        map_char(codepoint3, config, &mut output, &mut errors);
+        assert_eq!(output, "a");
+        assert_eq!(errors, Errors::default());
+
+        // Test case 4
+        let codepoint4 = '!';
+        map_char(codepoint4, config, &mut output, &mut errors);
+        assert_eq!(output, "!");
+        assert_eq!(errors, Errors {
+            disallowed_character: true,
+            ..Errors::default()
+        });
+
+        // Test case 5
+        let codepoint5 = '\u{1F4A9}'; // Unicode codepoint for "PILE OF POO" emoji
+        map_char(codepoint5, config, &mut output, &mut errors);
+        assert_eq!(output, "\u{1F4A9}");
+        assert_eq!(errors, Errors {
+            disallowed_character: true,
+            ..Errors::default()
+        });
+    }
+}
+False
+========================================
+    use crate::uts46::passes_bidi;
+    
+    #[test]
+    fn test_passes_bidi() {
+        assert_eq!(passes_bidi("abc", false), true);
+        assert_eq!(passes_bidi("xn--abc", false), true);
+        assert_eq!(passes_bidi("xn--abc", true), false);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("xn--abc", true), false);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("xn--abc", true), false);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("xn--abc", true), false);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("abc", true), true);
+        assert_eq!(passes_bidi("xn--abc", true), false);
+        assert_eq!(passes_bidi("abc", true), true);
+    }
+}
+True
+========================================
+    use super::*;
+
+use crate::*;
+    use uts46::Errors;
+
+    #[test]
+    fn test_processing_simple() {
+        let domain = "example.com";
+        let config = Config::default();
+        let (result, errors) = processing(domain, config);
+        assert_eq!(result, "example.com");
+        assert_eq!(errors, Errors::default());
+    }
+
+    #[test]
+    fn test_processing_punycode() {
+        let domain = "xn--tst-6la.com";
+        let config = Config::default();
+        let (result, errors) = processing(domain, config);
+        assert_eq!(result, "test.com");
+        assert_eq!(errors, Errors::default());
+    }
+
+    #[test]
+    fn test_processing_errors() {
+        let domain = "example.123";
+        let config = Config::default();
+        let (result, errors) = processing(domain, config);
+        assert_eq!(result, "example.123");
+        let expected_errors = Errors {
+            disallowed_character: true,
+            ..Errors::default()
+        };
+        assert_eq!(errors, expected_errors);
+    }
+}
+
+False
+rust-url idna 17 25

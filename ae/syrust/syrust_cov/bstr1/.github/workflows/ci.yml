@@ -1,0 +1,94 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: '00 01 * * *'
+jobs:
+  test:
+    name: test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # The docs seem to suggest that we can have a matrix with just an
+        # include directive, but it results in a "matrix must define at least
+        # one vector" error in the CI system.
+        build: [pinned, stable, beta, nightly, macos, win-msvc, win-gnu]
+        include:
+        - build: pinned
+          os: ubuntu-18.04
+          rust: 1.28.0
+        - build: stable
+          os: ubuntu-18.04
+          rust: stable
+        - build: beta
+          os: ubuntu-18.04
+          rust: beta
+        - build: nightly
+          os: ubuntu-18.04
+          rust: nightly
+        - build: macos
+          os: macOS-10.14
+          rust: stable
+        - build: win-msvc
+          os: windows-2019
+          rust: stable
+        - build: win-gnu
+          os: windows-2019
+          rust: stable-x86_64-gnu
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.rust }}
+        override: true
+        profile: minimal
+    - run: cargo build --verbose
+    - run: cargo doc --verbose
+    # We run a few other builds, but only on one instance to avoid doing
+    # more work than we need to.
+    - if: matrix.build == 'stable'
+      run: cargo build --verbose --features serde1
+    - if: matrix.build == 'stable'
+      run: cargo build --verbose --no-default-features
+    - if: matrix.build == 'stable'
+      run: cargo build --verbose --no-default-features --features serde1
+    # Our dev dependencies evolve more rapidly than we'd like, so only run
+    # tests when we aren't pinning the Rust version.
+    - if: matrix.build != 'pinned'
+      run: cargo test --verbose
+    - if: matrix.build == 'stable'
+      run: cargo test --verbose --features serde1
+    - name: Run benchmarks as tests
+      if: matrix.build == 'stable'
+      working-directory: ./bench
+      run: cargo test --verbose --benches
+
+  rustfmt:
+    name: rustfmt
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        profile: minimal
+        components: rustfmt
+    - name: Check formatting
+      run: |
+        cargo fmt -- --check
+    - name: Check formatting in ./bench
+      working-directory: ./bench
+      run: |
+        cargo fmt -- --check

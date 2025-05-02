@@ -1,0 +1,3 @@
+err bstr1 /mnt/sda/xiang/syrust/syrust/bstr1/./src/search/twoway.rs tests_rug_407
+err tests_rug_150 sample rug_fuzz_0 "hello" {'sample': {'rug_fuzz_0': '"hello"'}}
+bstr . 250 251 0

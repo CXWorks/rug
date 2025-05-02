@@ -1,0 +1,376 @@
+use crate::Ratio;
+use core::cmp;
+use num_integer::Integer;
+use num_traits::{One, Pow};
+macro_rules! pow_unsigned_impl {
+    (@ $exp:ty) => {
+        type Output = Ratio < T >; #[inline] fn pow(self, expon : $exp) -> Ratio < T > {
+        Ratio::new_raw(self.numer.pow(expon), self.denom.pow(expon)) }
+    };
+    ($exp:ty) => {
+        impl < T : Clone + Integer + Pow <$exp, Output = T >> Pow <$exp > for Ratio < T >
+        { pow_unsigned_impl!(@ $exp); } impl <'a, T : Clone + Integer > Pow <$exp > for
+        &'a Ratio < T > where &'a T : Pow <$exp, Output = T >, { pow_unsigned_impl!(@
+        $exp); } impl <'b, T : Clone + Integer + Pow <$exp, Output = T >> Pow <&'b $exp >
+        for Ratio < T > { type Output = Ratio < T >; #[inline] fn pow(self, expon : &'b
+        $exp) -> Ratio < T > { Pow::pow(self, * expon) } } impl <'a, 'b, T : Clone +
+        Integer > Pow <&'b $exp > for &'a Ratio < T > where &'a T : Pow <$exp, Output = T
+        >, { type Output = Ratio < T >; #[inline] fn pow(self, expon : &'b $exp) -> Ratio
+        < T > { Pow::pow(self, * expon) } }
+    };
+}
+pow_unsigned_impl!(u8);
+pow_unsigned_impl!(u16);
+pow_unsigned_impl!(u32);
+pow_unsigned_impl!(u64);
+pow_unsigned_impl!(u128);
+pow_unsigned_impl!(usize);
+macro_rules! pow_signed_impl {
+    (@ &'b BigInt, BigUint) => {
+        type Output = Ratio < T >; #[inline] fn pow(self, expon : &'b BigInt) -> Ratio <
+        T > { match expon.sign() { Sign::NoSign => One::one(), Sign::Minus => {
+        Pow::pow(self, expon.magnitude()).into_recip() } Sign::Plus => Pow::pow(self,
+        expon.magnitude()), } }
+    };
+    (@ $exp:ty, $unsigned:ty) => {
+        type Output = Ratio < T >; #[inline] fn pow(self, expon : $exp) -> Ratio < T > {
+        match expon.cmp(& 0) { cmp::Ordering::Equal => One::one(), cmp::Ordering::Less =>
+        { let expon = expon.wrapping_abs() as $unsigned; Pow::pow(self, expon)
+        .into_recip() } cmp::Ordering::Greater => Pow::pow(self, expon as $unsigned), } }
+    };
+    ($exp:ty, $unsigned:ty) => {
+        impl < T : Clone + Integer + Pow <$unsigned, Output = T >> Pow <$exp > for Ratio
+        < T > { pow_signed_impl!(@ $exp, $unsigned); } impl <'a, T : Clone + Integer >
+        Pow <$exp > for &'a Ratio < T > where &'a T : Pow <$unsigned, Output = T >, {
+        pow_signed_impl!(@ $exp, $unsigned); } impl <'b, T : Clone + Integer + Pow
+        <$unsigned, Output = T >> Pow <&'b $exp > for Ratio < T > { type Output = Ratio <
+        T >; #[inline] fn pow(self, expon : &'b $exp) -> Ratio < T > { Pow::pow(self, *
+        expon) } } impl <'a, 'b, T : Clone + Integer > Pow <&'b $exp > for &'a Ratio < T
+        > where &'a T : Pow <$unsigned, Output = T >, { type Output = Ratio < T >;
+        #[inline] fn pow(self, expon : &'b $exp) -> Ratio < T > { Pow::pow(self, * expon)
+        } }
+    };
+}
+pow_signed_impl!(i8, u8);
+pow_signed_impl!(i16, u16);
+pow_signed_impl!(i32, u32);
+pow_signed_impl!(i64, u64);
+pow_signed_impl!(i128, u128);
+pow_signed_impl!(isize, usize);
+#[cfg(feature = "num-bigint")]
+mod bigint {
+    use super::*;
+    use num_bigint::{BigInt, BigUint, Sign};
+    impl<T: Clone + Integer + for<'b> Pow<&'b BigUint, Output = T>> Pow<BigUint>
+    for Ratio<T> {
+        type Output = Ratio<T>;
+        #[inline]
+        fn pow(self, expon: BigUint) -> Ratio<T> {
+            Pow::pow(self, &expon)
+        }
+    }
+    impl<'a, T: Clone + Integer> Pow<BigUint> for &'a Ratio<T>
+    where
+        &'a T: for<'b> Pow<&'b BigUint, Output = T>,
+    {
+        type Output = Ratio<T>;
+        #[inline]
+        fn pow(self, expon: BigUint) -> Ratio<T> {
+            Pow::pow(self, &expon)
+        }
+    }
+    impl<'b, T: Clone + Integer + Pow<&'b BigUint, Output = T>> Pow<&'b BigUint>
+    for Ratio<T> {
+        pow_unsigned_impl!(@ &'b BigUint);
+    }
+    impl<'a, 'b, T: Clone + Integer> Pow<&'b BigUint> for &'a Ratio<T>
+    where
+        &'a T: Pow<&'b BigUint, Output = T>,
+    {
+        pow_unsigned_impl!(@ &'b BigUint);
+    }
+    impl<T: Clone + Integer + for<'b> Pow<&'b BigUint, Output = T>> Pow<BigInt>
+    for Ratio<T> {
+        type Output = Ratio<T>;
+        #[inline]
+        fn pow(self, expon: BigInt) -> Ratio<T> {
+            Pow::pow(self, &expon)
+        }
+    }
+    impl<'a, T: Clone + Integer> Pow<BigInt> for &'a Ratio<T>
+    where
+        &'a T: for<'b> Pow<&'b BigUint, Output = T>,
+    {
+        type Output = Ratio<T>;
+        #[inline]
+        fn pow(self, expon: BigInt) -> Ratio<T> {
+            Pow::pow(self, &expon)
+        }
+    }
+    impl<'b, T: Clone + Integer + Pow<&'b BigUint, Output = T>> Pow<&'b BigInt>
+    for Ratio<T> {
+        pow_signed_impl!(@ &'b BigInt, BigUint);
+    }
+    impl<'a, 'b, T: Clone + Integer> Pow<&'b BigInt> for &'a Ratio<T>
+    where
+        &'a T: Pow<&'b BigUint, Output = T>,
+    {
+        pow_signed_impl!(@ &'b BigInt, BigUint);
+    }
+}
+#[cfg(test)]
+mod tests_rug_203 {
+    use super::*;
+    use crate::{Ratio, Pow};
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, u8) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let p1: u8 = rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_204 {
+    use super::*;
+    use crate::Ratio;
+    use num_traits::Pow;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, u8) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let mut p1: u8 = rug_fuzz_2;
+        <&Ratio<i32>>::pow(&p0, p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_205 {
+    use super::*;
+    use crate::Ratio;
+    use num_traits::Pow;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, u8) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let mut p1: &u8 = &rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_206 {
+    use super::*;
+    use num_traits::Pow;
+    use crate::Ratio;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(u32, u32, u8) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<u32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let p1: &u8 = &rug_fuzz_2;
+        <&Ratio<u32>>::pow(&p0, p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_211 {
+    use super::*;
+    use crate::Ratio;
+    use num_traits::Pow;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(u32, u32, u32) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<u32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let p1: u32 = rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_223 {
+    use super::*;
+    use crate::Ratio;
+    use num_traits::Pow;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(u32, u32, usize) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let p0: Ratio<u32> = Ratio::new(rug_fuzz_0, rug_fuzz_1);
+        let p1: usize = rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_227 {
+    use super::*;
+    use crate::Ratio;
+    use num_traits::identities::{One, Zero};
+    use num_traits::Pow;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, i8) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let mut p1: i8 = rug_fuzz_2;
+        <Ratio<i32> as Pow<i8>>::pow(p0, p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_230 {
+    use super::*;
+    use crate::Ratio;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, i8) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let p1: i8 = rug_fuzz_2;
+        p0.pow(&p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_232 {
+    use super::*;
+    use crate::{Ratio, Pow};
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, i16) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let p1: i16 = rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_235 {
+    use super::*;
+    use crate::{Ratio, Pow};
+    use num_traits::One;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, i32) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new(rug_fuzz_0, rug_fuzz_1);
+        let p1: i32 = rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_236 {
+    use super::*;
+    use crate::{Ratio, Pow};
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, i32) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let mut p1: i32 = rug_fuzz_2;
+        p0.pow(p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_247 {
+    use super::*;
+    use crate::{Ratio, Pow, One};
+    use std::cmp;
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, isize) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let p0 = Ratio::new(rug_fuzz_0, rug_fuzz_1);
+        let p1: isize = -rug_fuzz_2;
+        <Ratio<_> as Pow<_>>::pow(p0, p1);
+             }
+});    }
+}
+#[cfg(test)]
+mod tests_rug_249 {
+    use super::*;
+    use crate::{Ratio, Pow};
+    #[test]
+    fn test_rug() {
+
+    extern crate bolero;
+    extern crate arbitrary;
+    bolero::check!()
+        .for_each(|rug_data| {
+            if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(i32, i32, isize) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+        let mut p0: Ratio<i32> = Ratio::new_raw(rug_fuzz_0, rug_fuzz_1);
+        let p1: isize = rug_fuzz_2;
+        p0.pow(&p1);
+             }
+});    }
+}

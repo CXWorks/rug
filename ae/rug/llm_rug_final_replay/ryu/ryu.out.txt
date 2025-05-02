@@ -1,0 +1,384 @@
+-----------------
+src/common.rs common::decimal_length9
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++common::decimal_length9(p0);
++crate::common::decimal_length9(p0);
++crate::common::decimal_length9(p0);
+-----------------
+src/common.rs common::log2_pow5
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++common::log2_pow5(p0);
++crate::common::log2_pow5(p0);
++crate::common::log2_pow5(p0);
+-----------------
+src/common.rs common::pow5bits
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++common::pow5bits(p0);
++crate::common::pow5bits(p0);
++crate::common::pow5bits(p0);
+-----------------
+src/common.rs common::ceil_log2_pow5
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++common::ceil_log2_pow5(p0);
++crate::common::ceil_log2_pow5(p0);
++crate::common::ceil_log2_pow5(p0);
+-----------------
+src/common.rs common::log10_pow2
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++common::log10_pow2(p0);
++crate::common::log10_pow2(p0);
++crate::common::log10_pow2(p0);
+-----------------
+src/common.rs common::log10_pow5
+deps:{}
+candidates:{}
+let mut p0 = 0i32; // None+i32
++common::log10_pow5(p0);
++crate::common::log10_pow5(p0);
++crate::common::log10_pow5(p0);
+-----------------
+src/d2s.rs d2s::decimal_length17
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++d2s::decimal_length17(p0);
++crate::d2s::decimal_length17(p0);
++crate::d2s::decimal_length17(p0);
+-----------------
+src/d2s.rs d2s::d2d
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u32; // None+u32
++d2s::d2d(p0, p1);
++crate::d2s::d2d(p0, p1);
++crate::d2s::d2d(p0, p1);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::div5
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++d2s_intrinsics::div5(p0);
++crate::d2s_intrinsics::div5(p0);
++crate::d2s_intrinsics::div5(p0);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::div10
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++d2s_intrinsics::div10(p0);
++crate::d2s_intrinsics::div10(p0);
++crate::d2s_intrinsics::div10(p0);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::div100
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++d2s_intrinsics::div100(p0);
++crate::d2s_intrinsics::div100(p0);
++crate::d2s_intrinsics::div100(p0);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::pow5_factor
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++d2s_intrinsics::pow5_factor(p0);
++crate::d2s_intrinsics::pow5_factor(p0);
++crate::d2s_intrinsics::pow5_factor(p0);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::multiple_of_power_of_5
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u32; // None+u32
++d2s_intrinsics::multiple_of_power_of_5(p0, p1);
++crate::d2s_intrinsics::multiple_of_power_of_5(p0, p1);
++crate::d2s_intrinsics::multiple_of_power_of_5(p0, p1);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::multiple_of_power_of_2
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u32; // None+u32
++d2s_intrinsics::multiple_of_power_of_2(p0, p1);
++crate::d2s_intrinsics::multiple_of_power_of_2(p0, p1);
++crate::d2s_intrinsics::multiple_of_power_of_2(p0, p1);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::mul_shift_64
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = & MaybeUninit::uninit().assume_init(); // (u64, u64)
+let mut p2 = 0u32; // None+u32
++d2s_intrinsics::mul_shift_64(p0, p1, p2);
++crate::d2s_intrinsics::mul_shift_64(p0, p1, p2);
++crate::d2s_intrinsics::mul_shift_64(p0, p1, p2);
+-----------------
+src/d2s_intrinsics.rs d2s_intrinsics::mul_shift_all_64
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = & MaybeUninit::uninit().assume_init(); // (u64, u64)
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u64; // None+*mut u64
+let mut p4 = 0u64; // None+*mut u64
+let mut p5 = 0u32; // None+u32
++d2s_intrinsics::mul_shift_all_64(p0, p1, p2, p3, p4, p5);
++crate::d2s_intrinsics::mul_shift_all_64(p0, p1, p2, p3, p4, p5);
++crate::d2s_intrinsics::mul_shift_all_64(p0, p1, p2, p3, p4, p5);
+-----------------
+src/f2s.rs f2s::f2d
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
++f2s::f2d(p0, p1);
++crate::f2s::f2d(p0, p1);
++crate::f2s::f2d(p0, p1);
+-----------------
+src/f2s_intrinsics.rs f2s_intrinsics::pow5factor_32
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++f2s_intrinsics::pow5factor_32(p0);
++crate::f2s_intrinsics::pow5factor_32(p0);
++crate::f2s_intrinsics::pow5factor_32(p0);
+-----------------
+src/f2s_intrinsics.rs f2s_intrinsics::multiple_of_power_of_5_32
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
++f2s_intrinsics::multiple_of_power_of_5_32(p0, p1);
++crate::f2s_intrinsics::multiple_of_power_of_5_32(p0, p1);
++crate::f2s_intrinsics::multiple_of_power_of_5_32(p0, p1);
+-----------------
+src/f2s_intrinsics.rs f2s_intrinsics::multiple_of_power_of_2_32
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
++f2s_intrinsics::multiple_of_power_of_2_32(p0, p1);
++crate::f2s_intrinsics::multiple_of_power_of_2_32(p0, p1);
++crate::f2s_intrinsics::multiple_of_power_of_2_32(p0, p1);
+-----------------
+src/f2s_intrinsics.rs f2s_intrinsics::mul_shift_32
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0i32; // None+i32
++f2s_intrinsics::mul_shift_32(p0, p1, p2);
++crate::f2s_intrinsics::mul_shift_32(p0, p1, p2);
++crate::f2s_intrinsics::mul_shift_32(p0, p1, p2);
+-----------------
+src/f2s_intrinsics.rs f2s_intrinsics::mul_pow5_inv_div_pow2
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0i32; // None+i32
++f2s_intrinsics::mul_pow5_inv_div_pow2(p0, p1, p2);
++crate::f2s_intrinsics::mul_pow5_inv_div_pow2(p0, p1, p2);
++crate::f2s_intrinsics::mul_pow5_inv_div_pow2(p0, p1, p2);
+-----------------
+src/f2s_intrinsics.rs f2s_intrinsics::mul_pow5_div_pow2
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0i32; // None+i32
++f2s_intrinsics::mul_pow5_div_pow2(p0, p1, p2);
++crate::f2s_intrinsics::mul_pow5_div_pow2(p0, p1, p2);
++crate::f2s_intrinsics::mul_pow5_div_pow2(p0, p1, p2);
+-----------------
+src/pretty/exponent.rs pretty::exponent::write_exponent3
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
+let mut p1 = 0u8; // None+*mut u8
++pretty::exponent::write_exponent3(p0, p1);
++crate::pretty::exponent::write_exponent3(p0, p1);
++crate::pretty::exponent::write_exponent3(p0, p1);
+-----------------
+src/pretty/exponent.rs pretty::exponent::write_exponent2
+deps:{}
+candidates:{}
+let mut p0 = 0isize; // None+isize
+let mut p1 = 0u8; // None+*mut u8
++pretty::exponent::write_exponent2(p0, p1);
++crate::pretty::exponent::write_exponent2(p0, p1);
++crate::pretty::exponent::write_exponent2(p0, p1);
+-----------------
+src/pretty/mantissa.rs pretty::mantissa::write_mantissa_long
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u8; // None+*mut u8
++pretty::mantissa::write_mantissa_long(p0, p1);
++crate::pretty::mantissa::write_mantissa_long(p0, p1);
++crate::pretty::mantissa::write_mantissa_long(p0, p1);
+-----------------
+src/pretty/mantissa.rs pretty::mantissa::write_mantissa
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u8; // None+*mut u8
++pretty::mantissa::write_mantissa(p0, p1);
++crate::pretty::mantissa::write_mantissa(p0, p1);
++crate::pretty::mantissa::write_mantissa(p0, p1);
+-----------------
+src/pretty/mod.rs pretty::format64
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
+let mut p1 = 0u8; // None+*mut u8
++pretty::format64(p0, p1);
++crate::pretty::format64(p0, p1);
++crate::pretty::format64(p0, p1);
+-----------------
+src/pretty/mod.rs pretty::format32
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
+let mut p1 = 0u8; // None+*mut u8
++pretty::format32(p0, p1);
++crate::pretty::format32(p0, p1);
++crate::pretty::format32(p0, p1);
+-----------------
+src/buffer/mod.rs buffer::Sealed::is_nonfinite
+deps:{"buffer::Sealed::is_nonfinite":{"Self":["buffer::Sealed","std::marker::Copy"]}}
+candidates:{"buffer::Sealed::is_nonfinite":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.is_nonfinite();
++buffer::Sealed::is_nonfinite(p0);
++crate::buffer::Sealed::is_nonfinite(p0);
++crate::buffer::Sealed::is_nonfinite(p0);
+-----------------
+src/buffer/mod.rs buffer::Sealed::format_nonfinite
+deps:{"buffer::Sealed::format_nonfinite":{"Self":["buffer::Sealed","std::marker::Copy"]}}
+candidates:{"buffer::Sealed::format_nonfinite":{"Self":["f32","f64"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
++p0.format_nonfinite();
++buffer::Sealed::format_nonfinite(p0);
++crate::buffer::Sealed::format_nonfinite(p0);
++crate::buffer::Sealed::format_nonfinite(p0);
+-----------------
+src/buffer/mod.rs buffer::Sealed::write_to_ryu_buffer
+deps:{"buffer::Sealed::write_to_ryu_buffer":{"Self":["buffer::Sealed","std::marker::Copy"]}}
+candidates:{"buffer::Sealed::write_to_ryu_buffer":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = 0u8; // None+*mut u8
++p0.write_to_ryu_buffer(p1);
++buffer::Sealed::write_to_ryu_buffer(p0, p1);
++crate::buffer::Sealed::write_to_ryu_buffer(p0, p1);
++crate::buffer::Sealed::write_to_ryu_buffer(p0, p1);
+-----------------
+src/buffer/mod.rs buffer::Buffer::new
+deps:{}
+candidates:{}
++buffer::Buffer::new();
++crate::buffer::Buffer::new();
++<buffer::Buffer>::new();
+-----------------
+src/buffer/mod.rs buffer::Buffer::format
+deps:{"buffer::Buffer::format":{"F":["buffer::Float","std::marker::Sized"]}}
+candidates:{"buffer::Buffer::format":{"F":[]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // buffer::Buffer
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++p0.format(p1);
++buffer::Buffer::format(p0, p1);
++crate::buffer::Buffer::format(p0, p1);
++<buffer::Buffer>::format(p0, p1);
+-----------------
+src/buffer/mod.rs buffer::Buffer::format_finite
+deps:{"buffer::Buffer::format_finite":{"F":["std::marker::Sized","buffer::Float"]}}
+candidates:{"buffer::Buffer::format_finite":{"F":[]}}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // buffer::Buffer
+let mut p1 = MaybeUninit::uninit().assume_init(); // F
++p0.format_finite(p1);
++buffer::Buffer::format_finite(p0, p1);
++crate::buffer::Buffer::format_finite(p0, p1);
++<buffer::Buffer>::format_finite(p0, p1);
+-----------------
+src/buffer/mod.rs <buffer::Buffer as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // buffer::Buffer
++p0.clone();
++<buffer::Buffer as std::clone::Clone>::clone(p0);
++crate::<buffer::Buffer as std::clone::Clone>::clone(p0);
++<buffer::Buffer>::clone(p0);
+-----------------
+src/buffer/mod.rs <buffer::Buffer as std::default::Default>::default
+deps:{}
+candidates:{}
++<buffer::Buffer as std::default::Default>::default();
++crate::<buffer::Buffer as std::default::Default>::default();
++<buffer::Buffer>::default();
+-----------------
+src/buffer/mod.rs <f32 as buffer::Sealed>::is_nonfinite
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++p0.is_nonfinite();
++<f32 as buffer::Sealed>::is_nonfinite(p0);
++crate::<f32 as buffer::Sealed>::is_nonfinite(p0);
++<f32>::is_nonfinite(p0);
+-----------------
+src/buffer/mod.rs <f32 as buffer::Sealed>::format_nonfinite
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
++p0.format_nonfinite();
++<f32 as buffer::Sealed>::format_nonfinite(p0);
++crate::<f32 as buffer::Sealed>::format_nonfinite(p0);
++<f32>::format_nonfinite(p0);
+-----------------
+src/buffer/mod.rs <f32 as buffer::Sealed>::write_to_ryu_buffer
+deps:{}
+candidates:{}
+let mut p0 = 0f32; // None+f32
+let mut p1 = 0u8; // None+*mut u8
++p0.write_to_ryu_buffer(p1);
++<f32 as buffer::Sealed>::write_to_ryu_buffer(p0, p1);
++crate::<f32 as buffer::Sealed>::write_to_ryu_buffer(p0, p1);
++<f32>::write_to_ryu_buffer(p0, p1);
+-----------------
+src/buffer/mod.rs <f64 as buffer::Sealed>::is_nonfinite
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++p0.is_nonfinite();
++<f64 as buffer::Sealed>::is_nonfinite(p0);
++crate::<f64 as buffer::Sealed>::is_nonfinite(p0);
++<f64>::is_nonfinite(p0);
+-----------------
+src/buffer/mod.rs <f64 as buffer::Sealed>::format_nonfinite
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
++p0.format_nonfinite();
++<f64 as buffer::Sealed>::format_nonfinite(p0);
++crate::<f64 as buffer::Sealed>::format_nonfinite(p0);
++<f64>::format_nonfinite(p0);
+-----------------
+src/buffer/mod.rs <f64 as buffer::Sealed>::write_to_ryu_buffer
+deps:{}
+candidates:{}
+let mut p0 = 0f64; // None+f64
+let mut p1 = 0u8; // None+*mut u8
++p0.write_to_ryu_buffer(p1);
++<f64 as buffer::Sealed>::write_to_ryu_buffer(p0, p1);
++crate::<f64 as buffer::Sealed>::write_to_ryu_buffer(p0, p1);
++<f64>::write_to_ryu_buffer(p0, p1);

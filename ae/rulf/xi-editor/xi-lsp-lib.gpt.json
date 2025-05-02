@@ -1,0 +1,1 @@
+{"init_logger": "```rust\n#[cfg(test)]\nmod tests {\n    use super::*;\n    \n    #[test]\n    fn test_init_logger() {\n        let result = init_logger();\n        assert!(result.is_ok());\n    }\n}\n```", "main": "```rust\n#[cfg(test)]\nmod tests {\n    use serde_json::json;\n    use super::*;\n    \n    #[test]\n    fn test_main() {\n        main();\n    }\n}\n```"}

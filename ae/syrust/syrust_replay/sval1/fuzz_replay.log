@@ -1,0 +1,87 @@
+sval1 sval . ['/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/test.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/value/owned.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/value/impls.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/value/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/stream/stack.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/stream/owned.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/stream/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/error.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/to_value.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/error.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/to_serialize.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/derive.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/collect/value.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/collect/owned.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/collect/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/lib.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/fmt/to_debug.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/fmt/mod.rs']
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/test.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/value/owned.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/value/impls.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/value/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/stream/stack.rs
+err tests_rug_9 test_rug
+err tests_rug_16 test_rug
+err tests_rug_31 test_rug
+err tests_rug_32 test_rug
+err tests_rug_33 test_rug
+err tests_rug_34 test_rug
+err tests_rug_35 test_rug
+err tests_rug_36 test_rug
+err tests_rug_37 test_rug
+err tests_rug_38 test_rug
+err tests_rug_40 test_rug
+err tests_rug_44 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/stream/owned.rs
+err tests_rug_207 test_rug
+err tests_rug_208 test_rug
+err tests_rug_209 test_u128
+err tests_rug_211 test_bool
+err tests_rug_212 test_char
+err tests_rug_213 test_str
+err tests_rug_215 test_rug
+err tests_rug_219 test_rug
+err tests_rug_231 test_char
+err tests_rug_238 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/stream/mod.rs
+err tests_rug_78 test_rug
+err tests_rug_79 test_rug
+err tests_rug_80 test_rug
+err tests_rug_81 test_rug
+err tests_rug_82 test_rug
+err tests_rug_83 test_rug
+err tests_rug_84 test_rug
+err tests_rug_85_prepare sample
+err tests_rug_87 test_rug
+err tests_rug_91 test_rug
+err tests_rug_93 test_rug
+err tests_rug_94 test_rug
+err tests_rug_95 test_rug
+err tests_rug_96 test_rug
+err tests_rug_97 test_rug
+err tests_rug_98 test_rug
+err tests_rug_99 test_rug
+err tests_rug_100 test_rug
+err tests_rug_101 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/error.rs
+err tests_rug_111 test_msg
+err tests_rug_112 test_rug
+err tests_rug_113 test_rug
+err tests_rug_114 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/to_value.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/error.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/to_serialize.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/serde/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/derive.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/collect/value.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/collect/owned.rs
+err tests_rug_143 test_rug
+err tests_rug_144 test_rug
+err tests_rug_145 test_rug
+err tests_rug_146 test_rug
+err tests_rug_147 test_rug
+err tests_rug_148 test_rug
+err tests_rug_149 test_rug
+err tests_rug_150 test_rug
+err tests_rug_152 test_rug
+err tests_rug_156 test_rug
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/collect/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/lib.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/fmt/to_debug.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/./src/fmt/mod.rs
+done
+sval1 sval_derive derive ['/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/value.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/attr.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/bound.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/lib.rs']
+/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/value.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/attr.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/bound.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/derive/src/lib.rs
+done
+sval1 sval_json json ['/mnt/sda/xiang/syrust/syrust_replay/sval1/json/src/std_support.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/json/src/lib.rs', '/mnt/sda/xiang/syrust/syrust_replay/sval1/json/src/fmt.rs']
+/mnt/sda/xiang/syrust/syrust_replay/sval1/json/src/std_support.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/json/src/lib.rs
+/mnt/sda/xiang/syrust/syrust_replay/sval1/json/src/fmt.rs
+done

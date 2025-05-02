@@ -1,0 +1,142 @@
+-----------------
+md4/src/lib.rs compress
+deps:{}
+candidates:{}
+let mut p0 = &mut [0u32;1]; // None+[u32; 4]
+let mut p1 = & MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Md4Core as digest::core_api::BlockSizeUser>::BlockSize>
++compress(p0, p1);
++crate::compress(p0, p1);
++crate::compress(p0, p1);
+-----------------
+md4/src/lib.rs compress::f
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::f(p0, p1, p2);
++crate::compress::f(p0, p1, p2);
++crate::compress::f(p0, p1, p2);
+-----------------
+md4/src/lib.rs compress::g
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::g(p0, p1, p2);
++crate::compress::g(p0, p1, p2);
++crate::compress::g(p0, p1, p2);
+-----------------
+md4/src/lib.rs compress::h
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
++compress::h(p0, p1, p2);
++crate::compress::h(p0, p1, p2);
++crate::compress::h(p0, p1, p2);
+-----------------
+md4/src/lib.rs compress::op1
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
++compress::op1(p0, p1, p2, p3, p4, p5);
++crate::compress::op1(p0, p1, p2, p3, p4, p5);
++crate::compress::op1(p0, p1, p2, p3, p4, p5);
+-----------------
+md4/src/lib.rs compress::op2
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
++compress::op2(p0, p1, p2, p3, p4, p5);
++crate::compress::op2(p0, p1, p2, p3, p4, p5);
++crate::compress::op2(p0, p1, p2, p3, p4, p5);
+-----------------
+md4/src/lib.rs compress::op3
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = 0u32; // None+u32
+let mut p3 = 0u32; // None+u32
+let mut p4 = 0u32; // None+u32
+let mut p5 = 0u32; // None+u32
++compress::op3(p0, p1, p2, p3, p4, p5);
++crate::compress::op3(p0, p1, p2, p3, p4, p5);
++crate::compress::op3(p0, p1, p2, p3, p4, p5);
+-----------------
+md4/src/lib.rs <Md4Core as core::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Md4Core
++p0.clone();
++<Md4Core as core::clone::Clone>::clone(p0);
++crate::<Md4Core as core::clone::Clone>::clone(p0);
++<Md4Core>::clone(p0);
+-----------------
+md4/src/lib.rs <Md4Core as digest::core_api::UpdateCore>::update_blocks
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md4Core
+let mut p1 = & MaybeUninit::uninit().assume_init(); // [digest::generic_array::GenericArray<u8, <Md4Core as digest::core_api::BlockSizeUser>::BlockSize>]
++p0.update_blocks(p1);
++<Md4Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++crate::<Md4Core as digest::core_api::UpdateCore>::update_blocks(p0, p1);
++<Md4Core>::update_blocks(p0, p1);
+-----------------
+md4/src/lib.rs <Md4Core as digest::core_api::FixedOutputCore>::finalize_fixed_core
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md4Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // digest::block_buffer::BlockBuffer<<Md4Core as digest::core_api::BlockSizeUser>::BlockSize, <Md4Core as digest::core_api::BufferKindUser>::BufferKind>
+let mut p2 = &mut  MaybeUninit::uninit().assume_init(); // digest::generic_array::GenericArray<u8, <Md4Core as digest::OutputSizeUser>::OutputSize>
++p0.finalize_fixed_core(p1, p2);
++<Md4Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++crate::<Md4Core as digest::core_api::FixedOutputCore>::finalize_fixed_core(p0, p1, p2);
++<Md4Core>::finalize_fixed_core(p0, p1, p2);
+-----------------
+md4/src/lib.rs <Md4Core as core::default::Default>::default
+deps:{}
+candidates:{}
++<Md4Core as core::default::Default>::default();
++crate::<Md4Core as core::default::Default>::default();
++<Md4Core>::default();
+-----------------
+md4/src/lib.rs <Md4Core as digest::Reset>::reset
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // Md4Core
++p0.reset();
++<Md4Core as digest::Reset>::reset(p0);
++crate::<Md4Core as digest::Reset>::reset(p0);
++<Md4Core>::reset(p0);
+-----------------
+md4/src/lib.rs <Md4Core as digest::core_api::AlgorithmName>::write_alg_name
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++<Md4Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++crate::<Md4Core as digest::core_api::AlgorithmName>::write_alg_name(p0);
++<Md4Core>::write_alg_name(p0);
+-----------------
+md4/src/lib.rs <Md4Core as core::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // Md4Core
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // core::fmt::Formatter<'_>
++p0.fmt(p1);
++<Md4Core as core::fmt::Debug>::fmt(p0, p1);
++crate::<Md4Core as core::fmt::Debug>::fmt(p0, p1);
++<Md4Core>::fmt(p0, p1);

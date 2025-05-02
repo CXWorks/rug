@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/tim/Documents/master-thesis/evaluation/quick-xml'
+rm -f -r target
+rm -f -r coverage
+rm -f -f tests.error
+rm -f -f tests.log
+rm -f -r analysis
+make: Leaving directory `/Users/tim/Documents/master-thesis/evaluation/quick-xml'
+ 

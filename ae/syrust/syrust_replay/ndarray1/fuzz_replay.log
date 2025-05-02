@@ -1,0 +1,87 @@
+ndarray1 ndarray . ['/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/logspace.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_1d.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linalg/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linalg/impl_linalg.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/numeric_util.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/constructors.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/conversions.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/indexing.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/splitting.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_dyn.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/par.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/zipmacro.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/into_impls.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/impl_par_methods.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_cow.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/shape_builder.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/layout/layoutfmt.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/layout/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/conversion.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/axis.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/ndindex.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/dimension_trait.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/macros.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/dynindeximpl.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/axes.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/remove_axis.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/dim.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/aliases.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/stacking.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/slice.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_ops.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_owned_array.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/free_functions.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/numeric/impl_numeric.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/numeric/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/data_repr.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/zip/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/zip/zipmacro.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_clone.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/array_serde.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/arrayformat.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/extension.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_raw_views.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/error.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linspace.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/argument_traits.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/itertools.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/private.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/array_approx.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/rk_step.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/simple_math.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/coord_transform.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/macro_utils.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/data_traits.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/arraytraits.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_constructors.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/prelude.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/extension/nonnull.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/lib.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_methods.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/geomspace.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_2d.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linalg_traits.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/lanes.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/iter.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/macros.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/chunks.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/mod.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/windows.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/indexes.rs', '/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_special_element_types.rs']
+err tests_rug_94_prepare sample rug_fuzz_0 i32 {'sample': [('rug_fuzz_0', 'i32'), ('rug_fuzz_1', 'i32'), ('rug_fuzz_2', 'i32'), ('rug_fuzz_3', 'i32'), ('rug_fuzz_4', 'i32')]}
+err tests_rug_94_prepare sample rug_fuzz_1 i32 {'sample': [('rug_fuzz_0', 'i32'), ('rug_fuzz_1', 'i32'), ('rug_fuzz_2', 'i32'), ('rug_fuzz_3', 'i32'), ('rug_fuzz_4', 'i32')]}
+err tests_rug_94_prepare sample rug_fuzz_2 i32 {'sample': [('rug_fuzz_0', 'i32'), ('rug_fuzz_1', 'i32'), ('rug_fuzz_2', 'i32'), ('rug_fuzz_3', 'i32'), ('rug_fuzz_4', 'i32')]}
+err tests_rug_521_prepare sample rug_fuzz_0 i32 {'sample': [('rug_fuzz_0', 'i32'), ('rug_fuzz_1', 'i32'), ('rug_fuzz_2', 'i32'), ('rug_fuzz_3', 'i32'), ('rug_fuzz_4', 'i32')]}
+err tests_rug_521_prepare sample rug_fuzz_1 i32 {'sample': [('rug_fuzz_0', 'i32'), ('rug_fuzz_1', 'i32'), ('rug_fuzz_2', 'i32'), ('rug_fuzz_3', 'i32'), ('rug_fuzz_4', 'i32')]}
+err tests_rug_521_prepare sample rug_fuzz_2 i32 {'sample': [('rug_fuzz_0', 'i32'), ('rug_fuzz_1', 'i32'), ('rug_fuzz_2', 'i32'), ('rug_fuzz_3', 'i32'), ('rug_fuzz_4', 'i32')]}
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/logspace.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_1d.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linalg/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linalg/impl_linalg.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/numeric_util.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/constructors.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/conversions.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/indexing.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_views/splitting.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_dyn.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/par.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/zipmacro.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/into_impls.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/parallel/impl_par_methods.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_cow.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/shape_builder.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/layout/layoutfmt.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/layout/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/conversion.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/axis.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/ndindex.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/dimension_trait.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/macros.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/dynindeximpl.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/axes.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/remove_axis.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/dim.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/dimension/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/aliases.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/stacking.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/slice.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_ops.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_owned_array.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/free_functions.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/numeric/impl_numeric.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/numeric/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/data_repr.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/zip/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/zip/zipmacro.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_clone.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/array_serde.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/arrayformat.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/extension.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_raw_views.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/error.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linspace.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/argument_traits.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/itertools.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/private.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/array_approx.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/rk_step.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/simple_math.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/coord_transform.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/ndarray_for_numpy_users/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/doc/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/macro_utils.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/data_traits.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/arraytraits.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_constructors.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/prelude.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/extension/nonnull.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/lib.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_methods.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/geomspace.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_2d.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/linalg_traits.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/lanes.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/iter.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/macros.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/chunks.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/mod.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/iterators/windows.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/indexes.rs
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/./src/impl_special_element_types.rs
+done
+ndarray1 ndarray-rand ndarray-rand ['/mnt/sda/xiang/syrust/syrust_replay/ndarray1/ndarray-rand/src/lib.rs']
+/mnt/sda/xiang/syrust/syrust_replay/ndarray1/ndarray-rand/src/lib.rs
+done

@@ -1,0 +1,25 @@
+========================================
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_init_logger() {
+        let result = init_logger();
+        assert!(result.is_ok());
+    }
+}
+True
+========================================
+    use serde_json::json;
+    use super::*;
+
+use crate::*;
+    
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
+True
+xi-editor xi-lsp-lib 2 2

@@ -1,0 +1,328 @@
+========================================
+    use xi_plugin_lib::View;
+    use xi_plugin_lib::ConfigTable;
+    use xi_rope::Interval;
+    use crate::SamplePlugin;
+    use crate::ChunkCache;
+    use crate::Error;
+
+    #[test]
+    fn test_config_changed() {
+        let mut plugin = SamplePlugin;
+        let mut view = View::<ChunkCache>::default();
+        let changes = ConfigTable::new();
+        plugin.config_changed(&mut view, &changes);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+    use crate::xi_plugin_lib::{Plugin, View};
+    use crate::xi_rope::delta::DeltaBuilder;
+    use crate::xi_rope::RopeDelta;
+    use crate::xi_plugin_lib::Interval;
+    use crate::xi_plugin_lib::ConfigTable;
+    use crate::ChunkCache;
+    use crate::PluginBufferInfo;
+    use crate::PluginPid;
+    use crate::RpcPeer;
+    use crate::Proxy;
+
+    #[test]
+    fn test_did_close() {
+        let mut plugin = SamplePlugin;
+        let mut view = View::new(RpcPeer::new(Proxy::new()), PluginPid::new(), PluginBufferInfo::new());
+        plugin.did_close(&view);
+        // add assertions here
+    }
+}
+
+False
+========================================
+    use std::path::Path;
+    use xi_plugin_lib::{Plugin, View, Error, RopeDelta, Interval, EditBuilder};
+    use crate::SamplePlugin;
+    use crate::ChunkCache;
+
+    fn example_setup_view() -> View<ChunkCache> {
+        let mut plugin = SamplePlugin;
+        let mut view = View::new(ChunkCache::default());
+        plugin.new_view(&mut view);
+        view
+    }
+
+    #[test]
+    fn did_save_test() {
+        let mut view = example_setup_view();
+        let path = Path::new("/path/to/file");
+        SamplePlugin::did_save(&mut view, Some(&path));
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    use std::io::stdout;
+    use xi_plugin_lib::View;
+    use xi_plugin_lib::Plugin;
+    use xi_plugin_lib::ChunkCache;
+    use xi_plugin_lib::ViewItem;
+    use xi_plugin_lib::PluginPid;
+    use xi_plugin_lib::PluginCtx;
+    use xi_plugin_lib::ViewId;
+    use xi_plugin_lib::PluginBufferInfo;
+    use xi_plugin_lib::RpcPeer;
+    use xi_plugin_lib::Error;
+
+    use std::io::Write;
+
+    struct SamplePlugin;
+
+    impl Plugin for SamplePlugin {
+        type Cache = ChunkCache;
+
+        fn new_view(&mut self, view: &mut View<Self::Cache>) {
+            eprintln!("new view {}", view.get_id());
+        }
+
+        fn did_close(&mut self, view: &View<Self::Cache>) {
+            eprintln!("close view {}", view.get_id());
+        }
+
+        fn did_save(&mut self, view: &mut View<Self::Cache>, _old: Option<&Path>) {
+            eprintln!("saved view {}", view.get_id());
+        }
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+
+        fn update(
+            &mut self,
+            view: &mut View<Self::Cache>,
+            delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        ) {
+            if let Some(delta) = delta {
+                let (iv, _) = delta.summary();
+                let text: String = delta.as_simple_insert().map(String::from).unwrap_or_default();
+                if text == "!" {
+                    let _ = self.capitalize_word(view, iv.end());
+                }
+            }
+        }
+    }
+
+    impl SamplePlugin {
+        fn capitalize_word(&self, view: &mut View<ChunkCache>, end_offset: usize) -> Result<(), Error> {
+            let line_nb = view.line_of_offset(end_offset)?;
+            let line_start = view.offset_of_line(line_nb)?;
+    
+            let mut cur_utf8_ix = 0;
+            let mut word_start = 0;
+            for c in view.get_line(line_nb)?.chars() {
+                if c.is_whitespace() {
+                    word_start = cur_utf8_ix;
+                }
+    
+                cur_utf8_ix += c.len_utf8();
+    
+                if line_start + cur_utf8_ix == end_offset {
+                    break;
+                }
+            }
+    
+            let new_text = view.get_line(line_nb)?[word_start..end_offset - line_start].to_uppercase();
+            let buf_size = view.get_buf_size();
+            let mut builder = EditBuilder::new(buf_size);
+            let iv = Interval::new(line_start + word_start, end_offset);
+            builder.replace(iv, new_text.into());
+            view.edit(builder.build(), 0, false, true, "sample".into());
+            Ok(())
+        }
+    }
+
+    #[test]
+    fn test_new_view() {
+        let mut plugin = SamplePlugin;
+        let buf_info = PluginBufferInfo::default();
+        let plugin_id = PluginPid::new("sample".to_owned());
+        let peer = PluginCtx::new().new_plugin(peer, PluginPid::new("sample".to_owned()), buf_info).unwrap();
+        let mut view = View::new(peer, plugin_id, buf_info);
+
+        let expected_output = "new view 0\n".to_string();
+        let mut output = Vec::new();
+        view.set_writer(Box::new(&mut output));
+
+        plugin.new_view(&mut view);
+        let result = String::from_utf8(output.clone()).unwrap();
+
+        assert_eq!(result, expected_output);
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_update_with_delta_none() {
+        let mut plugin = SamplePlugin {};
+        let mut view = View::<ChunkCache>::new(RpcPeer::new(), PluginPid::new(0), PluginBufferInfo::new());
+        let delta: Option<RopeDelta<RopeInfo>> = None;
+        let edit_type = String::from("");
+        let author = String::from("");
+
+        plugin.update(&mut view, delta.as_ref(), edit_type, author);
+    }
+
+    #[test]
+    fn test_update_with_delta_simple_insert_not_exclamation() {
+        let mut plugin = SamplePlugin {};
+        let mut view = View::<ChunkCache>::new(RpcPeer::new(), PluginPid::new(0), PluginBufferInfo::new());
+        let delta = Some(RopeDelta::<RopeInfo>::default());
+        let edit_type = String::from("");
+        let author = String::from("");
+
+        plugin.update(&mut view, delta.as_ref(), edit_type, author);
+    }
+
+    #[test]
+    fn test_update_with_delta_simple_insert_exclamation() {
+        let mut plugin = SamplePlugin {};
+        let mut view = View::<ChunkCache>::new(RpcPeer::new(), PluginPid::new(0), PluginBufferInfo::new());
+        let delta = Some(RopeDelta::<RopeInfo>::default().simple_insert(0, "!", String::new()));
+        let edit_type = String::from("");
+        let author = String::from("");
+
+        plugin.update(&mut view, delta.as_ref(), edit_type, author);
+    }
+}
+False
+========================================
+    use crate::main::SamplePlugin;
+    use xi_core_lib::ConfigTable;
+    use xi_core_lib::EditBuilder;
+    use xi_core_lib::Plugin;
+    use xi_core_lib::View;
+    use xi_core_lib::ChunkCache;
+    use xi_core_lib::Error;
+    use xi_core_lib::Interval;
+    use xi_core_lib::RopeDelta;
+    use xi_rope::Rope;
+    use xi_rope::ViewConfig;
+    use std::path::Path;
+
+    struct MockView;
+    impl View<ChunkCache> for MockView {
+        fn line_of_offset(&mut self, _offset: usize) -> Result<usize, Error> {
+            unimplemented!()
+        }
+
+        fn offset_of_line(&mut self, _line: usize) -> Result<usize, Error> {
+            unimplemented!()
+        }
+
+        fn get_line(&mut self, _line: usize) -> Result<&str, Error> {
+            unimplemented!()
+        }
+
+        fn get_buf_size(&mut self) -> usize {
+            unimplemented!()
+        }
+
+        fn edit(
+            &mut self,
+            _edit: EditBuilder,
+            _rev: usize,
+            _author: bool,
+            _new_undo_group: bool,
+            _nm: String,
+        ) {
+            unimplemented!()
+        }
+
+        fn get_id(&self) -> usize {
+            unimplemented!()
+        }
+
+        fn get_cache(&mut self) -> &mut ChunkCache {
+            unimplemented!()
+        }
+
+        fn get_cache_size(&self) -> usize {
+            unimplemented!()
+        }
+
+        fn get_path(&self) -> &Option<String> {
+            unimplemented!()
+        }
+
+        fn get_config(&self) -> &Option<ConfigTable> {
+            unimplemented!()
+        }
+
+        fn get_user_config(&self) -> &Option<ConfigTable> {
+            unimplemented!()
+        }
+
+        fn send_rpc_notification(&mut self, _cmd: &str, _params: &str) {
+            unimplemented!()
+        }
+
+        fn restart_autosave(&mut self) {
+            unimplemented!()
+        }
+
+        fn restart_save_analysis(&mut self) {
+            unimplemented!()
+        }
+    }
+
+    struct MockPlugin;
+    impl Plugin for MockPlugin {
+        type Cache = ChunkCache;
+
+        fn new_view(&mut self, _view: &mut View<Self::Cache>) {}
+
+        fn did_close(&mut self, _view: &View<Self::Cache>) {}
+
+        fn did_save(&mut self, _view: &mut View<Self::Cache>, _old: Option<&Path>) {}
+
+        fn config_changed(&mut self, _view: &mut View<Self::Cache>, _changes: &ConfigTable) {}
+
+        fn update(
+            &mut self,
+            _view: &mut View<Self::Cache>,
+            _delta: Option<&RopeDelta>,
+            _edit_type: String,
+            _author: String,
+        ) {
+        }
+    }
+
+    #[test]
+    fn test_capitalize_word() {
+        let mut view = MockView;
+        let plugin = SamplePlugin;
+        plugin.capitalize_word(&mut view, 10).unwrap();
+    }
+}
+False
+========================================
+    use super::*;
+
+use crate::*;
+
+    #[test]
+    fn test_main() {
+        let mut plugin = SamplePlugin;
+        mainloop(&mut plugin).unwrap();
+    }
+}
+True
+xi-editor xi-sample-plugin 1 7

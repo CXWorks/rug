@@ -1,0 +1,78 @@
+[package]
+name = "im"
+version = "15.0.0"
+authors = [ "Bodil Stokke <bodil@bodil.org>",]
+edition = "2018"
+license = "MPL-2.0+"
+description = "Immutable collection datatypes"
+repository = "https://github.com/bodil/im-rs"
+documentation = "http://immutable.rs/"
+homepage = "http://immutable.rs/"
+readme = "./README.md"
+categories = [ "data-structures",]
+keywords = [ "immutable", "persistent", "hamt", "b-tree", "rrb-tree",]
+build = "./build.rs"
+exclude = [ "dist/**", "rc/**", "release.toml", "Makefile.toml", "proptest-regressions/**",]
+
+[lib]
+path = "./src/lib.rs"
+
+[build-dependencies]
+version_check = "0.9"
+
+[features]
+debug = []
+
+[dependencies]
+typenum = "1.12"
+bitmaps = "2"
+sized-chunks = "0.6"
+rand_core = "0.5.1"
+rand_xoshiro = "0.4"
+arbitrary = "1.3.2"
+bolero = "0.8.0"
+
+[dev-dependencies]
+proptest = "0.9"
+serde = "1"
+serde_json = "1"
+rayon = "1"
+pretty_assertions = "0.6"
+metrohash = "1"
+proptest-derive = "0.1"
+
+[dependencies.quickcheck]
+version = "0.9"
+optional = true
+
+[dependencies.proptest]
+version = "0.9"
+optional = true
+
+[dependencies.serde]
+version = "1"
+optional = true
+
+[dependencies.rayon]
+version = "1"
+optional = true
+
+[dependencies.refpool]
+version = "0.4"
+optional = true
+
+[dev-dependencies.rand]
+version = "0.7"
+features = [ "small_rng",]
+
+[badges.travis-ci]
+repository = "bodil/im-rs"
+
+[profile.fuzz]
+inherits = "dev"
+opt-level = 1
+incremental = false
+codegen-units = 1
+
+[package.metadata.docs.rs]
+all-features = true

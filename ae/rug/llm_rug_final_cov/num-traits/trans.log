@@ -1,0 +1,32 @@
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/cast.rs tests_rug_452
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1024
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1028
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1032
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1036
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1056
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1068
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1080
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1100
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1104
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1109
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1112
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1128
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1133
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1144
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1148
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1160
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1165
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1180
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1181
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1184
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1192
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1196
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1204
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1208
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1223
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1251
+err tests_rug_1252 sample rug_fuzz_0 42 {'sample': {'rug_fuzz_0': '42'}}
+err tests_rug_1285 sample rug_fuzz_0 42 {'sample': {'rug_fuzz_0': '42'}}
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1323
+err num-traits /mnt/sda/xiang/rug/llm_rug_final/num-traits/./src/pow.rs tests_rug_1331
+num-traits . 1023 1052 0

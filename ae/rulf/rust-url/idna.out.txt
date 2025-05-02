@@ -1,0 +1,280 @@
+-----------------
+idna/src/punycode.rs punycode::adapt
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
+let mut p1 = 0u32; // None+u32
+let mut p2 = true; // None+bool
++punycode::adapt(p0, p1, p2);
++crate::punycode::adapt(p0, p1, p2);
++crate::punycode::adapt(p0, p1, p2);
+-----------------
+idna/src/punycode.rs punycode::decode_to_string
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++punycode::decode_to_string(&p0);
++crate::punycode::decode_to_string(&p0);
++crate::punycode::decode_to_string(&p0);
+-----------------
+idna/src/punycode.rs punycode::decode
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++punycode::decode(&p0);
++crate::punycode::decode(&p0);
++crate::punycode::decode(&p0);
+-----------------
+idna/src/punycode.rs punycode::encode_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++punycode::encode_str(&p0);
++crate::punycode::encode_str(&p0);
++crate::punycode::encode_str(&p0);
+-----------------
+idna/src/punycode.rs punycode::encode
+deps:{}
+candidates:{}
+let mut p0 = & ['a'].as_mut_slice(); // None+[char]
++punycode::encode(p0);
++crate::punycode::encode(p0);
++crate::punycode::encode(p0);
+-----------------
+idna/src/punycode.rs punycode::encode_into
+deps:{"punycode::encode_into":{"I":["std::iter::Iterator","std::clone::Clone","std::marker::Sized"]}}
+candidates:{"punycode::encode_into":{"I":["std::str::SplitN<'a, P>","std::collections::vec_deque::IntoIter<T, A>","std::char::EscapeUnicode","std::iter::IntersperseWith<I, G>","std::iter::OnceWith<F>","std::iter::Intersperse<I>","std::iter::Once<T>","std::iter::Scan<I, St, F>","std::str::RMatches<'a, P>","std::str::Split<'a, P>","std::iter::Map<I, F>","std::str::Chars<'a>","std::path::Iter<'a>","std::str::SplitInclusive<'a, P>","std::str::EncodeUtf16<'a>","std::str::Utf8Chunks<'a>","std::sys_common::wtf8::EncodeWide<'a>","std::ascii::EscapeDefault","std::option::Item<A>","std::iter::FromFn<F>","std::str::EscapeDefault<'a>","std::iter::Successors<T, F>","std::collections::binary_heap::IntoIter<T>","std::str::RSplitN<'a, P>","std::char::ToLowercase","std::iter::Empty<T>","std::iter::Chain<A, B>","std::char::CaseMappingIter","std::iter::Take<I>","std::str::RSplit<'a, P>","std::collections::binary_heap::IntoIterSorted<T>","std::vec::IntoIter<T, A>","std::iter::ArrayChunks<I, N>","std::str::RSplitTerminator<'a, P>","std::iter::RepeatWith<F>","std::str::Lines<'a>","std::ops::index_range::IndexRange","std::str::LinesAny<'a>","std::option::IntoIter<A>","std::iter::SkipWhile<I, P>","std::iter::FilterMap<I, F>","std::iter::Fuse<I>","std::iter::Cloned<I>","std::str::SplitWhitespace<'a>","std::array::IntoIter<T, N>","std::sys_common::wtf8::Wtf8CodePoints<'a>","std::iter::MapWhile<I, P>","std::collections::linked_list::IntoIter<T>","std::slice::ArrayWindows<'a, T, N>","std::iter::adapters::flatten::FlattenCompat<I, U>","std::iter::Skip<I>","std::str::MatchIndices<'a, P>","std::char::EscapeDebug","std::char::ToUppercase","std::iter::Filter<I, P>","std::path::Components<'a>","std::iter::StepBy<I>","std::iter::TakeWhile<I, P>","std::str::EscapeUnicode<'a>","std::str::SplitTerminator<'a, P>","std::char::EscapeDefault","std::str::SplitAsciiWhitespace<'a>","std::iter::Copied<I>","std::str::Matches<'a, P>","std::iter::Peekable<I>","std::str::CharIndices<'a>","std::iter::RepeatN<A>","std::iter::Enumerate<I>","std::path::Ancestors<'a>","std::str::EscapeDebug<'a>","std::char::DecodeUtf16<I>","std::iter::Inspect<I, F>","std::slice::EscapeAscii<'a>","std::iter::Repeat<A>","std::result::IntoIter<T>","std::iter::FlatMap<I, U, F>","std::str::RMatchIndices<'a, P>","std::iter::Cycle<I>","std::iter::Flatten<I>","std::iter::Zip<A, B>","std::slice::RChunksExact<'a, T>","core::error::Source<'a>"]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // I
+let mut p1 = &mut std::string::String::new(); // None+std::string::String
++punycode::encode_into(p0, p1);
++crate::punycode::encode_into(p0, p1);
++crate::punycode::encode_into(p0, p1);
+-----------------
+idna/src/punycode.rs punycode::value_to_digit
+deps:{}
+candidates:{}
+let mut p0 = 0u32; // None+u32
++punycode::value_to_digit(p0);
++crate::punycode::value_to_digit(p0);
++crate::punycode::value_to_digit(p0);
+-----------------
+idna/src/uts46.rs uts46::decode_slice
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // uts46::StringTableSlice
++uts46::decode_slice(p0);
++crate::uts46::decode_slice(p0);
++crate::uts46::decode_slice(p0);
+-----------------
+idna/src/uts46.rs uts46::find_char
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
++uts46::find_char(p0);
++crate::uts46::find_char(p0);
++crate::uts46::find_char(p0);
+-----------------
+idna/src/uts46.rs uts46::map_char
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
+let mut p1 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p2 = &mut std::string::String::new(); // None+std::string::String
+let mut p3 = &mut  MaybeUninit::uninit().assume_init(); // uts46::Errors
++uts46::map_char(p0, p1, p2, p3);
++crate::uts46::map_char(p0, p1, p2, p3);
++crate::uts46::map_char(p0, p1, p2, p3);
+-----------------
+idna/src/uts46.rs uts46::passes_bidi
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = true; // None+bool
++uts46::passes_bidi(&p0, p1);
++crate::uts46::passes_bidi(&p0, p1);
++crate::uts46::passes_bidi(&p0, p1);
+-----------------
+idna/src/uts46.rs uts46::is_valid
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // uts46::Config
++uts46::is_valid(&p0, p1);
++crate::uts46::is_valid(&p0, p1);
++crate::uts46::is_valid(&p0, p1);
+-----------------
+idna/src/uts46.rs uts46::processing
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
+let mut p1 = MaybeUninit::uninit().assume_init(); // uts46::Config
++uts46::processing(&p0, p1);
++crate::uts46::processing(&p0, p1);
++crate::uts46::processing(&p0, p1);
+-----------------
+idna/src/uts46.rs uts46::is_bidi_domain
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++uts46::is_bidi_domain(&p0);
++crate::uts46::is_bidi_domain(&p0);
++crate::uts46::is_bidi_domain(&p0);
+-----------------
+idna/src/lib.rs domain_to_ascii
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++domain_to_ascii(&p0);
++crate::domain_to_ascii(&p0);
++crate::domain_to_ascii(&p0);
+-----------------
+idna/src/lib.rs domain_to_ascii_strict
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++domain_to_ascii_strict(&p0);
++crate::domain_to_ascii_strict(&p0);
++crate::domain_to_ascii_strict(&p0);
+-----------------
+idna/src/lib.rs domain_to_unicode
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++domain_to_unicode(&p0);
++crate::domain_to_unicode(&p0);
++crate::domain_to_unicode(&p0);
+-----------------
+idna/src/uts46.rs <uts46::StringTableSlice as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // uts46::StringTableSlice
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<uts46::StringTableSlice as std::fmt::Debug>::fmt(p0, p1);
++crate::<uts46::StringTableSlice as std::fmt::Debug>::fmt(p0, p1);
++<uts46::StringTableSlice>::fmt(p0, p1);
+-----------------
+idna/src/uts46.rs <uts46::Mapping as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // uts46::Mapping
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<uts46::Mapping as std::fmt::Debug>::fmt(p0, p1);
++crate::<uts46::Mapping as std::fmt::Debug>::fmt(p0, p1);
++<uts46::Mapping>::fmt(p0, p1);
+-----------------
+idna/src/uts46.rs <uts46::Config as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // uts46::Config
++p0.clone();
++<uts46::Config as std::clone::Clone>::clone(p0);
++crate::<uts46::Config as std::clone::Clone>::clone(p0);
++<uts46::Config>::clone(p0);
+-----------------
+idna/src/uts46.rs <uts46::Config as std::default::Default>::default
+deps:{}
+candidates:{}
++<uts46::Config as std::default::Default>::default();
++crate::<uts46::Config as std::default::Default>::default();
++<uts46::Config>::default();
+-----------------
+idna/src/uts46.rs uts46::Config::use_std3_ascii_rules
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p1 = true; // None+bool
++p0.use_std3_ascii_rules(p1);
++uts46::Config::use_std3_ascii_rules(p0, p1);
++crate::uts46::Config::use_std3_ascii_rules(p0, p1);
++<uts46::Config>::use_std3_ascii_rules(p0, p1);
+-----------------
+idna/src/uts46.rs uts46::Config::transitional_processing
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p1 = true; // None+bool
++p0.transitional_processing(p1);
++uts46::Config::transitional_processing(p0, p1);
++crate::uts46::Config::transitional_processing(p0, p1);
++<uts46::Config>::transitional_processing(p0, p1);
+-----------------
+idna/src/uts46.rs uts46::Config::verify_dns_length
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p1 = true; // None+bool
++p0.verify_dns_length(p1);
++uts46::Config::verify_dns_length(p0, p1);
++crate::uts46::Config::verify_dns_length(p0, p1);
++<uts46::Config>::verify_dns_length(p0, p1);
+-----------------
+idna/src/uts46.rs uts46::Config::check_hyphens
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p1 = true; // None+bool
++p0.check_hyphens(p1);
++uts46::Config::check_hyphens(p0, p1);
++crate::uts46::Config::check_hyphens(p0, p1);
++<uts46::Config>::check_hyphens(p0, p1);
+-----------------
+idna/src/uts46.rs uts46::Config::to_ascii
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p1 = "sample"; // None+&str
++p0.to_ascii(&p1);
++uts46::Config::to_ascii(p0, &p1);
++crate::uts46::Config::to_ascii(p0, &p1);
++<uts46::Config>::to_ascii(p0, &p1);
+-----------------
+idna/src/uts46.rs uts46::Config::to_unicode
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Config
+let mut p1 = "sample"; // None+&str
++p0.to_unicode(&p1);
++uts46::Config::to_unicode(p0, &p1);
++crate::uts46::Config::to_unicode(p0, &p1);
++<uts46::Config>::to_unicode(p0, &p1);
+-----------------
+idna/src/uts46.rs <uts46::Errors as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // uts46::Errors
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<uts46::Errors as std::fmt::Debug>::fmt(p0, p1);
++crate::<uts46::Errors as std::fmt::Debug>::fmt(p0, p1);
++<uts46::Errors>::fmt(p0, p1);
+-----------------
+idna/src/uts46.rs <uts46::Errors as std::default::Default>::default
+deps:{}
+candidates:{}
++<uts46::Errors as std::default::Default>::default();
++crate::<uts46::Errors as std::default::Default>::default();
++<uts46::Errors>::default();
+-----------------
+idna/src/uts46.rs uts46::<impl std::convert::From<uts46::Errors> for std::result::Result<(), uts46::Errors>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // uts46::Errors
++uts46::<impl std::convert::From<uts46::Errors> for std::result::Result<(), uts46::Errors>>::from(p0);
++crate::uts46::<impl std::convert::From<uts46::Errors> for std::result::Result<(), uts46::Errors>>::from(p0);
++<std::result::Result<(), uts46::Errors>>::from(p0);
+-----------------
+idna/src/uts46.rs <uts46::Errors as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // uts46::Errors
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<uts46::Errors as std::fmt::Display>::fmt(p0, p1);
++crate::<uts46::Errors as std::fmt::Display>::fmt(p0, p1);
++<uts46::Errors>::fmt(p0, p1);
