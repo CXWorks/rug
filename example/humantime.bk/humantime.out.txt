@@ -1,0 +1,600 @@
+-----------------
+src/duration.rs duration::parse_duration
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++duration::parse_duration(&p0);
++crate::duration::parse_duration(&p0);
++crate::duration::parse_duration(&p0);
+-----------------
+src/duration.rs duration::format_duration
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::Duration
++duration::format_duration(p0);
++crate::duration::format_duration(p0);
++crate::duration::format_duration(p0);
+-----------------
+src/duration.rs duration::item_plural
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
+let mut p1 = &mut true; // None+bool
+let mut p2 = "sample"; // None+&str
+let mut p3 = 0u64; // None+u64
++duration::item_plural(p0, p1, &p2, p3);
++crate::duration::item_plural(p0, p1, &p2, p3);
++crate::duration::item_plural(p0, p1, &p2, p3);
+-----------------
+src/duration.rs duration::item
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
+let mut p1 = &mut true; // None+bool
+let mut p2 = "sample"; // None+&str
+let mut p3 = 0u32; // None+u32
++duration::item(p0, p1, &p2, p3);
++crate::duration::item(p0, p1, &p2, p3);
++crate::duration::item(p0, p1, &p2, p3);
+-----------------
+src/date.rs date::two_digits
+deps:{}
+candidates:{}
+let mut p0 = 0u8; // None+u8
+let mut p1 = 0u8; // None+u8
++date::two_digits(p0, p1);
++crate::date::two_digits(p0, p1);
++crate::date::two_digits(p0, p1);
+-----------------
+src/date.rs date::two_digits::two_digits_inner
+deps:{}
+candidates:{}
+let mut p0 = 'a'; // None+char
+let mut p1 = 'a'; // None+char
++date::two_digits::two_digits_inner(p0, p1);
++crate::date::two_digits::two_digits_inner(p0, p1);
++crate::date::two_digits::two_digits_inner(p0, p1);
+-----------------
+src/date.rs date::parse_rfc3339
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++date::parse_rfc3339(&p0);
++crate::date::parse_rfc3339(&p0);
++crate::date::parse_rfc3339(&p0);
+-----------------
+src/date.rs date::parse_rfc3339_weak
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++date::parse_rfc3339_weak(&p0);
++crate::date::parse_rfc3339_weak(&p0);
++crate::date::parse_rfc3339_weak(&p0);
+-----------------
+src/date.rs date::is_leap_year
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
++date::is_leap_year(p0);
++crate::date::is_leap_year(p0);
++crate::date::is_leap_year(p0);
+-----------------
+src/date.rs date::format_rfc3339
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::SystemTime
++date::format_rfc3339(p0);
++crate::date::format_rfc3339(p0);
++crate::date::format_rfc3339(p0);
+-----------------
+src/date.rs date::format_rfc3339_seconds
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::SystemTime
++date::format_rfc3339_seconds(p0);
++crate::date::format_rfc3339_seconds(p0);
++crate::date::format_rfc3339_seconds(p0);
+-----------------
+src/date.rs date::format_rfc3339_millis
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::SystemTime
++date::format_rfc3339_millis(p0);
++crate::date::format_rfc3339_millis(p0);
++crate::date::format_rfc3339_millis(p0);
+-----------------
+src/date.rs date::format_rfc3339_micros
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::SystemTime
++date::format_rfc3339_micros(p0);
++crate::date::format_rfc3339_micros(p0);
++crate::date::format_rfc3339_micros(p0);
+-----------------
+src/date.rs date::format_rfc3339_nanos
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::SystemTime
++date::format_rfc3339_nanos(p0);
++crate::date::format_rfc3339_nanos(p0);
++crate::date::format_rfc3339_nanos(p0);
+-----------------
+src/duration.rs duration::OverflowOp::mul
+deps:{"duration::OverflowOp::mul":{"Self":["duration::OverflowOp","std::marker::Sized"]}}
+candidates:{"duration::OverflowOp::mul":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = MaybeUninit::uninit().assume_init(); // Self
++p0.mul(p1);
++duration::OverflowOp::mul(p0, p1);
++crate::duration::OverflowOp::mul(p0, p1);
++crate::duration::OverflowOp::mul(p0, p1);
+-----------------
+src/duration.rs duration::OverflowOp::add
+deps:{"duration::OverflowOp::add":{"Self":["duration::OverflowOp","std::marker::Sized"]}}
+candidates:{"duration::OverflowOp::add":{"Self":[]}}
+let mut p0 = MaybeUninit::uninit().assume_init(); // Self
+let mut p1 = MaybeUninit::uninit().assume_init(); // Self
++p0.add(p1);
++duration::OverflowOp::add(p0, p1);
++crate::duration::OverflowOp::add(p0, p1);
++crate::duration::OverflowOp::add(p0, p1);
+-----------------
+src/duration.rs <duration::Error as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<duration::Error as std::fmt::Debug>::fmt(p0, p1);
++crate::<duration::Error as std::fmt::Debug>::fmt(p0, p1);
++<duration::Error>::fmt(p0, p1);
+-----------------
+src/duration.rs <duration::Error as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::Error
+let mut p1 = & MaybeUninit::uninit().assume_init(); // duration::Error
++p0.eq(p1);
++<duration::Error as std::cmp::PartialEq>::eq(p0, p1);
++crate::<duration::Error as std::cmp::PartialEq>::eq(p0, p1);
++<duration::Error>::eq(p0, p1);
+-----------------
+src/duration.rs <duration::Error as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::Error
++p0.clone();
++<duration::Error as std::clone::Clone>::clone(p0);
++crate::<duration::Error as std::clone::Clone>::clone(p0);
++<duration::Error>::clone(p0);
+-----------------
+src/duration.rs <duration::Error as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<duration::Error as std::fmt::Display>::fmt(p0, p1);
++crate::<duration::Error as std::fmt::Display>::fmt(p0, p1);
++<duration::Error>::fmt(p0, p1);
+-----------------
+src/duration.rs <duration::FormattedDuration as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::FormattedDuration
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<duration::FormattedDuration as std::fmt::Debug>::fmt(p0, p1);
++crate::<duration::FormattedDuration as std::fmt::Debug>::fmt(p0, p1);
++<duration::FormattedDuration>::fmt(p0, p1);
+-----------------
+src/duration.rs <duration::FormattedDuration as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::FormattedDuration
++p0.clone();
++<duration::FormattedDuration as std::clone::Clone>::clone(p0);
++crate::<duration::FormattedDuration as std::clone::Clone>::clone(p0);
++<duration::FormattedDuration>::clone(p0);
+-----------------
+src/duration.rs <u64 as duration::OverflowOp>::mul
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
++p0.mul(p1);
++<u64 as duration::OverflowOp>::mul(p0, p1);
++crate::<u64 as duration::OverflowOp>::mul(p0, p1);
++<u64>::mul(p0, p1);
+-----------------
+src/duration.rs <u64 as duration::OverflowOp>::add
+deps:{}
+candidates:{}
+let mut p0 = 0u64; // None+u64
+let mut p1 = 0u64; // None+u64
++p0.add(p1);
++<u64 as duration::OverflowOp>::add(p0, p1);
++crate::<u64 as duration::OverflowOp>::add(p0, p1);
++<u64>::add(p0, p1);
+-----------------
+src/duration.rs duration::Parser::<'a>::off
+'a
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::Parser<'a>
++p0.off();
++duration::Parser::<'a>::off(p0);
++crate::duration::Parser::<'a>::off(p0);
++<duration::Parser<'a>>::off(p0);
+-----------------
+src/duration.rs duration::Parser::<'a>::parse_first_char
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // duration::Parser<'a>
++p0.parse_first_char();
++duration::Parser::<'a>::parse_first_char(p0);
++crate::duration::Parser::<'a>::parse_first_char(p0);
++<duration::Parser<'a>>::parse_first_char(p0);
+-----------------
+src/duration.rs duration::Parser::<'a>::parse_unit
+'a
+deps:{}
+candidates:{}
+let mut p0 = &mut  MaybeUninit::uninit().assume_init(); // duration::Parser<'a>
+let mut p1 = 0u64; // None+u64
+let mut p2 = 0usize; // None+usize
+let mut p3 = 0usize; // None+usize
++p0.parse_unit(p1, p2, p3);
++duration::Parser::<'a>::parse_unit(p0, p1, p2, p3);
++crate::duration::Parser::<'a>::parse_unit(p0, p1, p2, p3);
++<duration::Parser<'a>>::parse_unit(p0, p1, p2, p3);
+-----------------
+src/duration.rs duration::Parser::<'a>::parse
+'a
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // duration::Parser<'a>
++p0.parse();
++duration::Parser::<'a>::parse(p0);
++crate::duration::Parser::<'a>::parse(p0);
++<duration::Parser<'a>>::parse(p0);
+-----------------
+src/duration.rs duration::FormattedDuration::get_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::FormattedDuration
++p0.get_ref();
++duration::FormattedDuration::get_ref(p0);
++crate::duration::FormattedDuration::get_ref(p0);
++<duration::FormattedDuration>::get_ref(p0);
+-----------------
+src/duration.rs <duration::FormattedDuration as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // duration::FormattedDuration
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<duration::FormattedDuration as std::fmt::Display>::fmt(p0, p1);
++crate::<duration::FormattedDuration as std::fmt::Display>::fmt(p0, p1);
++<duration::FormattedDuration>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<wrapper::Duration as std::fmt::Debug>::fmt(p0, p1);
++crate::<wrapper::Duration as std::fmt::Debug>::fmt(p0, p1);
++<wrapper::Duration>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
+let mut p1 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
++p0.eq(p1);
++<wrapper::Duration as std::cmp::PartialEq>::eq(p0, p1);
++crate::<wrapper::Duration as std::cmp::PartialEq>::eq(p0, p1);
++<wrapper::Duration>::eq(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
++p0.assert_receiver_is_total_eq();
++<wrapper::Duration as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<wrapper::Duration as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<wrapper::Duration>::assert_receiver_is_total_eq(p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::hash::Hash>::hash
+deps:{"<&mut H as std::hash::Hasher>":{},"<wrapper::Duration as std::hash::Hash>::hash":{"__H":["std::hash::Hasher","std::marker::Sized"]}}
+candidates:{"<&mut H as std::hash::Hasher>":{},"<wrapper::Duration as std::hash::Hash>::hash":{"__H":["std::hash::SipHasher13","std::collections::hash_map::DefaultHasher","std::hash::SipHasher","std::hash::sip::Hasher<S>","std::boxed::Box<T, A>","<&mut H as std::hash::Hasher>"]}}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // __H
++p0.hash(p1);
++<wrapper::Duration as std::hash::Hash>::hash(p0, p1);
++crate::<wrapper::Duration as std::hash::Hash>::hash(p0, p1);
++<wrapper::Duration>::hash(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
++p0.clone();
++<wrapper::Duration as std::clone::Clone>::clone(p0);
++crate::<wrapper::Duration as std::clone::Clone>::clone(p0);
++<wrapper::Duration>::clone(p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<wrapper::Timestamp as std::fmt::Debug>::fmt(p0, p1);
++crate::<wrapper::Timestamp as std::fmt::Debug>::fmt(p0, p1);
++<wrapper::Timestamp>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
+let mut p1 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
++p0.eq(p1);
++<wrapper::Timestamp as std::cmp::PartialEq>::eq(p0, p1);
++crate::<wrapper::Timestamp as std::cmp::PartialEq>::eq(p0, p1);
++<wrapper::Timestamp>::eq(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
++p0.assert_receiver_is_total_eq();
++<wrapper::Timestamp as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<wrapper::Timestamp as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<wrapper::Timestamp>::assert_receiver_is_total_eq(p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
++p0.clone();
++<wrapper::Timestamp as std::clone::Clone>::clone(p0);
++crate::<wrapper::Timestamp as std::clone::Clone>::clone(p0);
++<wrapper::Timestamp>::clone(p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::convert::AsRef<std::time::Duration>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
++p0.as_ref();
++<wrapper::Duration as std::convert::AsRef<std::time::Duration>>::as_ref(p0);
++crate::<wrapper::Duration as std::convert::AsRef<std::time::Duration>>::as_ref(p0);
++<wrapper::Duration>::as_ref(p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::ops::Deref>::deref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
++p0.deref();
++<wrapper::Duration as std::ops::Deref>::deref(p0);
++crate::<wrapper::Duration as std::ops::Deref>::deref(p0);
++<wrapper::Duration>::deref(p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::convert::Into<std::time::Duration>>::into
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // wrapper::Duration
++p0.into();
++<wrapper::Duration as std::convert::Into<std::time::Duration>>::into(p0);
++crate::<wrapper::Duration as std::convert::Into<std::time::Duration>>::into(p0);
++<wrapper::Duration>::into(p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::convert::From<std::time::Duration>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::Duration
++<wrapper::Duration as std::convert::From<std::time::Duration>>::from(p0);
++crate::<wrapper::Duration as std::convert::From<std::time::Duration>>::from(p0);
++<wrapper::Duration>::from(p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<wrapper::Duration as std::str::FromStr>::from_str(&p0);
++crate::<wrapper::Duration as std::str::FromStr>::from_str(&p0);
++<wrapper::Duration>::from_str(&p0);
+-----------------
+src/wrapper.rs <wrapper::Duration as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Duration
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<wrapper::Duration as std::fmt::Display>::fmt(p0, p1);
++crate::<wrapper::Duration as std::fmt::Display>::fmt(p0, p1);
++<wrapper::Duration>::fmt(p0, p1);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::convert::AsRef<std::time::SystemTime>>::as_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
++p0.as_ref();
++<wrapper::Timestamp as std::convert::AsRef<std::time::SystemTime>>::as_ref(p0);
++crate::<wrapper::Timestamp as std::convert::AsRef<std::time::SystemTime>>::as_ref(p0);
++<wrapper::Timestamp>::as_ref(p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::ops::Deref>::deref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
++p0.deref();
++<wrapper::Timestamp as std::ops::Deref>::deref(p0);
++crate::<wrapper::Timestamp as std::ops::Deref>::deref(p0);
++<wrapper::Timestamp>::deref(p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::convert::Into<std::time::SystemTime>>::into
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
++p0.into();
++<wrapper::Timestamp as std::convert::Into<std::time::SystemTime>>::into(p0);
++crate::<wrapper::Timestamp as std::convert::Into<std::time::SystemTime>>::into(p0);
++<wrapper::Timestamp>::into(p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::convert::From<std::time::SystemTime>>::from
+deps:{}
+candidates:{}
+let mut p0 = MaybeUninit::uninit().assume_init(); // std::time::SystemTime
++<wrapper::Timestamp as std::convert::From<std::time::SystemTime>>::from(p0);
++crate::<wrapper::Timestamp as std::convert::From<std::time::SystemTime>>::from(p0);
++<wrapper::Timestamp>::from(p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::str::FromStr>::from_str
+deps:{}
+candidates:{}
+let mut p0 = "sample"; // None+&str
++<wrapper::Timestamp as std::str::FromStr>::from_str(&p0);
++crate::<wrapper::Timestamp as std::str::FromStr>::from_str(&p0);
++<wrapper::Timestamp>::from_str(&p0);
+-----------------
+src/wrapper.rs <wrapper::Timestamp as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // wrapper::Timestamp
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<wrapper::Timestamp as std::fmt::Display>::fmt(p0, p1);
++crate::<wrapper::Timestamp as std::fmt::Display>::fmt(p0, p1);
++<wrapper::Timestamp>::fmt(p0, p1);
+-----------------
+src/date.rs <date::Error as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<date::Error as std::fmt::Debug>::fmt(p0, p1);
++crate::<date::Error as std::fmt::Debug>::fmt(p0, p1);
++<date::Error>::fmt(p0, p1);
+-----------------
+src/date.rs <date::Error as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Error
+let mut p1 = & MaybeUninit::uninit().assume_init(); // date::Error
++p0.eq(p1);
++<date::Error as std::cmp::PartialEq>::eq(p0, p1);
++crate::<date::Error as std::cmp::PartialEq>::eq(p0, p1);
++<date::Error>::eq(p0, p1);
+-----------------
+src/date.rs <date::Error as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Error
++p0.clone();
++<date::Error as std::clone::Clone>::clone(p0);
++crate::<date::Error as std::clone::Clone>::clone(p0);
++<date::Error>::clone(p0);
+-----------------
+src/date.rs <date::Error as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Error
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<date::Error as std::fmt::Display>::fmt(p0, p1);
++crate::<date::Error as std::fmt::Display>::fmt(p0, p1);
++<date::Error>::fmt(p0, p1);
+-----------------
+src/date.rs <date::Precision as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Precision
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<date::Precision as std::fmt::Debug>::fmt(p0, p1);
++crate::<date::Precision as std::fmt::Debug>::fmt(p0, p1);
++<date::Precision>::fmt(p0, p1);
+-----------------
+src/date.rs <date::Precision as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Precision
++p0.clone();
++<date::Precision as std::clone::Clone>::clone(p0);
++crate::<date::Precision as std::clone::Clone>::clone(p0);
++<date::Precision>::clone(p0);
+-----------------
+src/date.rs <date::Precision as std::cmp::PartialEq>::eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Precision
+let mut p1 = & MaybeUninit::uninit().assume_init(); // date::Precision
++p0.eq(p1);
++<date::Precision as std::cmp::PartialEq>::eq(p0, p1);
++crate::<date::Precision as std::cmp::PartialEq>::eq(p0, p1);
++<date::Precision>::eq(p0, p1);
+-----------------
+src/date.rs <date::Precision as std::cmp::Eq>::assert_receiver_is_total_eq
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Precision
++p0.assert_receiver_is_total_eq();
++<date::Precision as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++crate::<date::Precision as std::cmp::Eq>::assert_receiver_is_total_eq(p0);
++<date::Precision>::assert_receiver_is_total_eq(p0);
+-----------------
+src/date.rs <date::Rfc3339Timestamp as std::fmt::Debug>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Rfc3339Timestamp
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{:?}", p0);
++p0.fmt(p1);
++<date::Rfc3339Timestamp as std::fmt::Debug>::fmt(p0, p1);
++crate::<date::Rfc3339Timestamp as std::fmt::Debug>::fmt(p0, p1);
++<date::Rfc3339Timestamp>::fmt(p0, p1);
+-----------------
+src/date.rs <date::Rfc3339Timestamp as std::clone::Clone>::clone
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Rfc3339Timestamp
++p0.clone();
++<date::Rfc3339Timestamp as std::clone::Clone>::clone(p0);
++crate::<date::Rfc3339Timestamp as std::clone::Clone>::clone(p0);
++<date::Rfc3339Timestamp>::clone(p0);
+-----------------
+src/date.rs date::Rfc3339Timestamp::get_ref
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Rfc3339Timestamp
++p0.get_ref();
++date::Rfc3339Timestamp::get_ref(p0);
++crate::date::Rfc3339Timestamp::get_ref(p0);
++<date::Rfc3339Timestamp>::get_ref(p0);
+-----------------
+src/date.rs <date::Rfc3339Timestamp as std::fmt::Display>::fmt
+deps:{}
+candidates:{}
+let mut p0 = & MaybeUninit::uninit().assume_init(); // date::Rfc3339Timestamp
+let mut p1 = &mut  MaybeUninit::uninit().assume_init(); // std::fmt::Formatter<'_>
++format!("{}", p0);
++p0.fmt(p1);
++<date::Rfc3339Timestamp as std::fmt::Display>::fmt(p0, p1);
++crate::<date::Rfc3339Timestamp as std::fmt::Display>::fmt(p0, p1);
++<date::Rfc3339Timestamp>::fmt(p0, p1);

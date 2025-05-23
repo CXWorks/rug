@@ -7,7 +7,7 @@ For questions or issues, please submit the issue through GitHub or email me.
 
 [ae](ae) is the artifact of RUG generated tests against LLM, RULF/RPG, RustyUnit and SyRUst's dataset. Feel free to use them directly for evaluation comparison.
 
-[code](https://github.com/CXWorks/rug-ae/tree/main/rug_ae1) is the code of RUG.
+[code](https://github.com/CXWorks/rug-ae/tree/main/rug_ae1) is the code of RUG. Check [example](./example) on how to run RUG on your crate!
 
 
 Citation:
