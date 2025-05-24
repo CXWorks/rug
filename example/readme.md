@@ -45,6 +45,8 @@ Run the [apply_bolero.py](./apply_driver.py), simpled add bolero dependency to y
 
 **Please ensure the crate can be built after this step**
 
+**For code coverage, please save a copy of crate at this step and jump to step 8**
+
 ## 6. Apply fuzzing driver transformation
 
 Run [apply_driver.py](./apply_driver.py), the expected result should be like [humantime](./humantime/):
@@ -81,3 +83,35 @@ Use the [fuzz_engine.py](https://github.com/CXWorks/rug-ae/blob/main/rug_ae1/sou
 
 
 **By default RUG has 60 seconds timeout for each target, you can change it to longer time for bug hunting, etc**
+
+
+## 8. Coverage Collection
+
+From step 5, apply the [apply_cov.py](./apply_cov.py) on the crate, the generated replay test is like below, example shown in [humantime_cov](./humantime_cov/), independent of bolero and the data can be passed through env variable:
+
+
+        #[cfg(test)]
+        mod tests_rug_9 {
+        use super::*;
+        use crate::duration::{Parser, Error};
+        #[test]
+        fn test_rug() {
+
+        extern crate arbitrary;
+        if let Ok(folder) = std::env::var("FUZZ_CORPUS"){
+                        for f in std::fs::read_dir(folder).unwrap(){
+                        if let Ok(corpus) = f{
+                                let rug_data: &[u8] = &std::fs::read(corpus.path()).unwrap();
+                if let Ok((mut rug_fuzz_0, mut rug_fuzz_1, mut rug_fuzz_2)) = <(u64, usize, usize) as arbitrary::Arbitrary>::arbitrary(&mut arbitrary::Unstructured::new(rug_data)){
+
+                let mut p0: Parser = unimplemented!();
+                let p1: u64 = rug_fuzz_0;
+                let p2: usize = rug_fuzz_1;
+                let p3: usize = rug_fuzz_2;
+                let result = p0.parse_unit(p1, p2, p3);
+                debug_assert!(result.is_ok());
+                }
+        }
+        }
+        }    }
+        }
